@@ -22,6 +22,7 @@
 		D98CA420185D338600746059 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98CA3FF185D338600746059 /* UIKit.framework */; };
 		D98CA428185D338600746059 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D98CA426185D338600746059 /* InfoPlist.strings */; };
 		D98CA42A185D338600746059 /* ImposterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA429185D338600746059 /* ImposterTests.m */; };
+		D98CA434185D35A600746059 /* homeScreenBackground~iPhone.gif in Resources */ = {isa = PBXBuildFile; fileRef = D98CA433185D35A600746059 /* homeScreenBackground~iPhone.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		D98CA425185D338600746059 /* ImposterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImposterTests-Info.plist"; sourceTree = "<group>"; };
 		D98CA427185D338600746059 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D98CA429185D338600746059 /* ImposterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImposterTests.m; sourceTree = "<group>"; };
+		D98CA433185D35A600746059 /* homeScreenBackground~iPhone.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "homeScreenBackground~iPhone.gif"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				D98CA404185D338600746059 /* InfoPlist.strings */,
 				D98CA407185D338600746059 /* main.m */,
 				D98CA409185D338600746059 /* Imposter-Prefix.pch */,
+				D98CA433185D35A600746059 /* homeScreenBackground~iPhone.gif */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			files = (
 				D98CA412185D338600746059 /* Main_iPad.storyboard in Resources */,
 				D98CA417185D338600746059 /* Images.xcassets in Resources */,
+				D98CA434185D35A600746059 /* homeScreenBackground~iPhone.gif in Resources */,
 				D98CA40F185D338600746059 /* Main_iPhone.storyboard in Resources */,
 				D98CA406185D338600746059 /* InfoPlist.strings in Resources */,
 			);
