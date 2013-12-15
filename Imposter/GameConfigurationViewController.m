@@ -24,6 +24,9 @@
         _playerCount = 12;
     else
         _playerCount = playerCount;
+    self.numberOfPlayersLabel.text = [NSString stringWithFormat:@"%d players", self.playerCount];
+    [self.playerPhotoCollectionView reloadData];
+    [self.view setNeedsLayout];
 }
 
 - (void)viewDidLoad
@@ -36,18 +39,22 @@
 #warning GET FROM PREFERENCES
 #warning GET PLAYER FACES
     self.numberOfPlayersLabel.text = [NSString stringWithFormat:@"%d players", self.playerCount];
+    
+    
+    
+    [(UICollectionViewFlowLayout *)self.playerPhotoCollectionView.collectionViewLayout setMinimumInteritemSpacing:10];
+    [(UICollectionViewFlowLayout *)self.playerPhotoCollectionView.collectionViewLayout setMinimumLineSpacing:10];
+  
+    
+    
 }
 
 - (IBAction)decrementPlayerCount:(id)sender {
     self.playerCount--;
-    self.numberOfPlayersLabel.text = [NSString stringWithFormat:@"%d players", self.playerCount];
-    [self.playerPhotoCollectionView reloadData];
 }
 
 - (IBAction)incrementPlayerCount:(id)sender {
     self.playerCount++;
-    self.numberOfPlayersLabel.text = [NSString stringWithFormat:@"%d players", self.playerCount];
-    [self.playerPhotoCollectionView reloadData];
 }
 
 - (IBAction)showInstructions:(id)sender {
@@ -60,6 +67,12 @@
 
 - (IBAction)startGame:(id)sender {
 #warning TODO
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+    [self.view setNeedsLayout];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -82,5 +95,23 @@
     [imageView setImage:photo];
     return cell;
 }
+
+- (void)viewDidLayoutSubviews
+{
+    NSInteger PLAYERS = self.playerCount;
+
+    NSInteger cellMaxSide = 0, rows=9999, cols=9999;
+    do {
+        // if your cellWidth != cellHeight, switch here to set the larger then smaller of the two
+        cols = floorf((self.playerPhotoCollectionView.frame.size.width+10)/((cellMaxSide+1)+10));
+        rows = floorf((self.playerPhotoCollectionView.frame.size.height+10)/((cellMaxSide+1)+10));
+    } while ((rows * cols >= PLAYERS) && ++cellMaxSide);
+    CGFloat dim = MIN(cellMaxSide, cellMaxSide);
+    
+    [(UICollectionViewFlowLayout *)self.playerPhotoCollectionView.collectionViewLayout setItemSize:CGSizeMake(dim,dim)];
+    [self.playerPhotoCollectionView reloadData];
+}
+
+
 
 @end
