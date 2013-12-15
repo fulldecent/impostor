@@ -10,10 +10,12 @@
 #import "ImposterGameModel.h"
 #import "KxIntroViewController.h"
 #import "KxIntroViewPage.h"
+#import <MessageUI/MessageUI.h>
 
-@interface GameConfigurationViewController () <UICollectionViewDataSource>
+@interface GameConfigurationViewController () <UICollectionViewDataSource, UIActionSheetDelegate, MFMailComposeViewControllerDelegate>
 @property (nonatomic) NSInteger playerCount;
 @property (nonatomic) ImposterGameModel *game;
+@property (nonatomic) UIActionSheet *actionSheet;
 @end
 
 @implementation GameConfigurationViewController
@@ -81,6 +83,9 @@
 }
 
 - (IBAction)showGameOptions:(id)sender {
+    self.actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self
+                                          cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Reset player photos", @"Help translate this app", @"Recommend game words", @"Share this app", nil];
+    [self.actionSheet showFromRect:[(UIView *)[self.view viewWithTag:9] frame]  inView:self.view animated:YES];
 #warning TODO
 }
 
@@ -135,6 +140,50 @@
     [self.playerPhotoCollectionView reloadData];
 }
 
+#pragma mark - UIActionSheetDelegate
 
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == self.actionSheet.cancelButtonIndex)
+        return;
+    else if (buttonIndex == 0)
+        ;
+#warning TODO: reset player images
+    else if (buttonIndex == 1) {
+        if ([MFMailComposeViewController canSendMail]) {
+            MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+            picker.mailComposeDelegate = self;
+            [picker setSubject:@"Imposter: Help translate"];
+            [picker setToRecipients:[NSArray arrayWithObject:@"imposter@phor.net"]];
+            [picker setMessageBody:@"I love the Imposter app and can help translate into: [[[WHICH LANGUAGE?]]]" isHTML:NO];
+            [self presentViewController:picker animated:YES completion:nil];
+        }
+    } else if (buttonIndex == 2) {
+        if ([MFMailComposeViewController canSendMail]) {
+            MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+            picker.mailComposeDelegate = self;
+            [picker setSubject:@"Imposter: Recommend game words"];
+            [picker setToRecipients:[NSArray arrayWithObject:@"imposter@phor.net"]];
+            [picker setMessageBody:@"I love the Imposter app and have an ideo of some more pairs of words you can use in it:" isHTML:NO];
+            [self presentViewController:picker animated:YES completion:nil];
+        }
+    } else if (buttonIndex == 3) {
+        // Create the item to share (in this example, a url)
+        NSString *urlString = @"http://phor.net";
+        NSURL *url = [NSURL URLWithString:urlString];
+        NSString *title = @"I am playing the party game Imposter";
+        NSArray *itemsToShare = @[url, title];
+        UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
+        activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll]; //or whichever you don't need
+        [self presentViewController:activityVC animated:YES completion:nil];
+    }
+}
+
+#pragma mark - MFMailComposeViewControllerDelegate
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end
