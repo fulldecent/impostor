@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *playerLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *playerImage;
 @property (weak, nonatomic) IBOutlet UITextView *topSecretLabel;
+
 - (IBAction)showSecretWord:(id)sender;
 - (IBAction)stopGame:(id)sender;
 @end

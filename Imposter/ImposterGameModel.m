@@ -39,15 +39,19 @@
     NSMutableArray *words = [[NSMutableArray alloc] initWithCapacity:numPlayers];
     NSMutableArray *eliminated = [[NSMutableArray alloc] initWithCapacity:numPlayers];
     
+    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"gameWords" ofType:@"json"];
+    NSString *jsonString = [NSString stringWithContentsOfFile:jsonPath encoding:NSUTF8StringEncoding error:nil];
+    NSDictionary *allWordSets = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:nil];
+    int chosenWordSet = arc4random() % allWordSets.count;
+    int chosenImposterWord = arc4random() % 2;
+    
     for (int i=0; i<numPlayers; i++) {
         if (i == imposterIndex) {
             [roles addObject:[NSNumber numberWithInt:PlayerRoleImposter]];
-            [words addObject:@"IMPOSTER WORD"];
-#warning SET CORRECT WORD
+            [words addObject:[(NSArray *)[(NSArray *)allWordSets objectAtIndex:chosenWordSet] objectAtIndex:chosenImposterWord]];
         } else {
             [roles addObject:[NSNumber numberWithInt:PlayerRoleNormalPlayer]];
-            [words addObject:@"NORMAL WORD"];
-#warning SET CORRECT WORD
+            [words addObject:[(NSArray *)[(NSArray *)allWordSets objectAtIndex:chosenWordSet] objectAtIndex:1-chosenImposterWord]];
         }
         [eliminated addObject:[NSNumber numberWithBool:FALSE]];
     }

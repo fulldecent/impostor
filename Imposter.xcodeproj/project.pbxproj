@@ -29,6 +29,7 @@
 		D98CA442185D699E00746059 /* SecretWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA441185D699E00746059 /* SecretWordViewController.m */; };
 		D98CA445185E1C8C00746059 /* EliminationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA444185E1C8C00746059 /* EliminationViewController.m */; };
 		D9A4F763185E310A0060AA2D /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4F762185E310A0060AA2D /* ResultsViewController.m */; };
+		D9A4F765185E43090060AA2D /* gameWords.json in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F764185E43090060AA2D /* gameWords.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		D98CA444185E1C8C00746059 /* EliminationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EliminationViewController.m; sourceTree = "<group>"; };
 		D9A4F761185E310A0060AA2D /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
 		D9A4F762185E310A0060AA2D /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
+		D9A4F764185E43090060AA2D /* gameWords.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gameWords.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				D98CA409185D338600746059 /* Imposter-Prefix.pch */,
 				D98CA433185D35A600746059 /* homeScreenBackground.gif */,
 				D98CA435185D380A00746059 /* defaultHeadshot.gif */,
+				D9A4F764185E43090060AA2D /* gameWords.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D98CA412185D338600746059 /* Main_iPad.storyboard in Resources */,
+				D9A4F765185E43090060AA2D /* gameWords.json in Resources */,
 				D98CA417185D338600746059 /* Images.xcassets in Resources */,
 				D98CA434185D35A600746059 /* homeScreenBackground.gif in Resources */,
 				D98CA40F185D338600746059 /* Main_iPhone.storyboard in Resources */,

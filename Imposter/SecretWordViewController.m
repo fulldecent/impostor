@@ -38,7 +38,8 @@
     [super viewWillAppear:animated];
     
     self.topSecretLabel.transform = CGAffineTransformMakeRotation(-10 * M_PI / 180.0);
-
+    self.topSecretLabel.clipsToBounds = NO;
+    
     self.playerLabel.text = [NSString stringWithFormat:@"Player #%d", self.playerNumber];
     UIImage *photo = [UIImage imageNamed:@"defaultHeadshot.gif"];
     [self.playerImage setImage:photo];
@@ -56,11 +57,11 @@
     }
     
     UIStoryboard *storyboard;
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        storyboard = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
-    } else {
+//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+//        storyboard = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
+//    } else {
         storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
-    }
+//    }
     SecretWordViewController *newController = [storyboard instantiateViewControllerWithIdentifier:@"secretWord"];
     newController.playerNumber = self.playerNumber+1;
     
