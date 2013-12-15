@@ -61,8 +61,6 @@
 }
 
 - (IBAction)showInstructions:(id)sender {
-#warning TODO
-
     KxIntroViewController *vc;
     vc = [[KxIntroViewController alloc] initWithPages:@[
                                                         [KxIntroViewPage introViewPageWithTitle: @"A party game"
@@ -86,7 +84,6 @@
     self.actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self
                                           cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Reset player photos", @"Help translate this app", @"Recommend game words", @"Share this app", nil];
     [self.actionSheet showFromRect:[(UIView *)[self.view viewWithTag:9] frame]  inView:self.view animated:YES];
-#warning TODO
 }
 
 - (IBAction)startGame:(id)sender {
@@ -120,10 +117,15 @@
     UICollectionViewCell *cell = [self.playerPhotoCollectionView dequeueReusableCellWithReuseIdentifier:@"playerCell" forIndexPath:indexPath];
     UIImage *photo = [UIImage imageNamed:@"defaultHeadshot.gif"];
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
-    [imageView setImage:photo];
-    return cell;
+    imageView.image = photo;
     
-#warning GET PLAYER FACES
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+    NSString *targetPhotoPath = [basePath stringByAppendingPathComponent:[NSString stringWithFormat:@"player%d.png",indexPath.row]];
+    photo = [UIImage imageWithContentsOfFile:targetPhotoPath];
+    if (photo)
+        imageView.image = photo;
+    return cell;
 }
 
 - (void)viewDidLayoutSubviews
@@ -146,10 +148,15 @@
 {
     if (buttonIndex == self.actionSheet.cancelButtonIndex)
         return;
-    else if (buttonIndex == 0)
-        ;
-#warning TODO: reset player images
-    else if (buttonIndex == 1) {
+    else if (buttonIndex == 0) {
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        NSArray *photoPaths = [fileManager contentsOfDirectoryAtPath:basePath error:nil];
+        for (NSString *path in photoPaths)
+            [fileManager removeItemAtPath:[basePath stringByAppendingPathComponent:path] error:nil];
+        [self.playerPhotoCollectionView reloadData];
+    } else if (buttonIndex == 1) {
         if ([MFMailComposeViewController canSendMail]) {
             MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
             picker.mailComposeDelegate = self;

@@ -74,9 +74,7 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"resultCell"];
     UIImage *photo = [UIImage imageNamed:@"defaultHeadshot.gif"];
-#warning GET REAL PHOTO
-
-    enum PlayerRoles role = [(NSNumber *)[self.game.playerRoles objectAtIndex:indexPath.row] intValue];
+    
     BOOL eliminated = [(NSNumber *)[self.game.playerEliminated objectAtIndex:indexPath.row] boolValue];
     NSString *word = (NSString *)[self.game.playerWords objectAtIndex:indexPath.row];
 
@@ -85,23 +83,20 @@
         [title stringByAppendingString:@" ELIMINATED"];
     
     NSString *subtitle;
-    /*
-    switch (role) {
-        case PlayerRoleNormalPlayer:
-            subtitle = @"Normal player";
-            break;
-        case PlayerRoleImposter:
-            subtitle = @"Imposter";
-            break;
-    }
-    subtitle = [NSString stringWithFormat:@"%@: %@", subtitle, word];
-     */
     subtitle = word;
     
     cell.textLabel.text = title;
     cell.detailTextLabel.text = subtitle;
     cell.imageView.image = photo;
     cell.imageView.alpha = eliminated ? 0.4 : 1.0;
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+    NSString *targetPhotoPath = [basePath stringByAppendingPathComponent:[NSString stringWithFormat:@"player%d.png",indexPath.row]];
+    photo = [UIImage imageWithContentsOfFile:targetPhotoPath];
+    if (photo)
+        cell.imageView.image = photo;
+
     return cell;
 }
 

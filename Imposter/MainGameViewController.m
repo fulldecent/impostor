@@ -58,7 +58,7 @@
 {
     if ([segue.destinationViewController isKindOfClass:[SecretWordViewController class]]) {
         SecretWordViewController *controller = (SecretWordViewController *)segue.destinationViewController;
-        controller.playerNumber = 1;
+        controller.playerNumber = 0;
     }
 }
 

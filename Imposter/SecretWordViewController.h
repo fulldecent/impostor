@@ -14,7 +14,7 @@
 #pragma mark - IB
 @property (weak, nonatomic) IBOutlet UILabel *playerLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *playerImage;
-@property (weak, nonatomic) IBOutlet UITextView *topSecretLabel;
+@property (weak, nonatomic) IBOutlet UILabel *topSecretLabel;
 
 - (IBAction)showSecretWord:(id)sender;
 - (IBAction)stopGame:(id)sender;
