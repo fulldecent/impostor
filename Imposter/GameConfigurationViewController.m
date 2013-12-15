@@ -34,7 +34,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.playerPhotoCollectionView.dataSource = self;
-    self.playerCount = 6;
+    self.playerCount = 3;
     self.game = [ImposterGameModel game];
 #warning GET FROM PREFERENCES
 #warning GET PLAYER FACES
@@ -66,7 +66,7 @@
 }
 
 - (IBAction)startGame:(id)sender {
-#warning TODO
+    [self.game startGameWithNumberOfPlayers:self.playerCount];
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
@@ -98,14 +98,12 @@
 
 - (void)viewDidLayoutSubviews
 {
-    NSInteger PLAYERS = self.playerCount;
-
     NSInteger cellMaxSide = 0, rows=9999, cols=9999;
     do {
         // if your cellWidth != cellHeight, switch here to set the larger then smaller of the two
         cols = floorf((self.playerPhotoCollectionView.frame.size.width+10)/((cellMaxSide+1)+10));
         rows = floorf((self.playerPhotoCollectionView.frame.size.height+10)/((cellMaxSide+1)+10));
-    } while ((rows * cols >= PLAYERS) && ++cellMaxSide);
+    } while ((rows * cols >= self.playerCount) && ++cellMaxSide);
     CGFloat dim = MIN(cellMaxSide, cellMaxSide);
     
     [(UICollectionViewFlowLayout *)self.playerPhotoCollectionView.collectionViewLayout setItemSize:CGSizeMake(dim,dim)];

@@ -30,6 +30,7 @@ enum GameStatus {
 @property (nonatomic, readonly) enum GameStatus gameStatus;
 @property (nonatomic, readonly) NSInteger playerNumberToStartRound;
 - (void)startGameWithNumberOfPlayers:(NSInteger)numPlayers;
+- (void)doneShowingSecretWords;
 - (void)eliminatePlayer:(NSInteger)playerNumber;
 + (ImposterGameModel *)game;
 @end

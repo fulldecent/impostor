@@ -43,6 +43,8 @@
     self.game = [ImposterGameModel game];
     if (self.game.gameStatus == GameStatusNewGame) {
         [self performSegueWithIdentifier:@"secretWord" sender:self];
+    } else if (self.game.gameStatus == GameStatusTheImposterRemains) {
+        [self performSegueWithIdentifier:@"elimination" sender:self];
     }
 }
 
