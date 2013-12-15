@@ -8,6 +8,8 @@
 
 #import "GameConfigurationViewController.h"
 #import "ImposterGameModel.h"
+#import "KxIntroViewController.h"
+#import "KxIntroViewPage.h"
 
 @interface GameConfigurationViewController () <UICollectionViewDataSource>
 @property (nonatomic) NSInteger playerCount;
@@ -58,6 +60,24 @@
 
 - (IBAction)showInstructions:(id)sender {
 #warning TODO
+
+    KxIntroViewController *vc;
+    vc = [[KxIntroViewController alloc] initWithPages:@[
+                                                        [KxIntroViewPage introViewPageWithTitle: @"A party game"
+                                                                                     withDetail: @"For 3 to 12 players"
+                                                                                      withImage: [UIImage imageNamed:@"homeScreenBackground.gif"]],
+                                                        [KxIntroViewPage introViewPageWithTitle: @"Everyone sees their secret word"
+                                                                                     withDetail: @"But the imposter's word is different"
+                                                                                      withImage: [UIImage imageNamed:@"homeScreenBackground.gif"]],
+                                                        [KxIntroViewPage introViewPageWithTitle: @"Each round players describe their word"
+                                                                                     withDetail: @"and then vote to eliminate one player (can't use word to describe itself, break ties with a revote)"
+                                                                                      withImage: [UIImage imageNamed:@"homeScreenBackground.gif"]],
+                                                        [KxIntroViewPage introViewPageWithTitle: @"To win"
+                                                                                     withDetail: @"the imposter must survive with one other player"
+                                                                                      withImage: [UIImage imageNamed:@"homeScreenBackground.gif"]],
+                                                        ]],
+//    [self presentViewController:vc animated:YES completion:nil];
+    [vc presentInViewController:self fullScreenLayout:YES];
 }
 
 - (IBAction)showGameOptions:(id)sender {

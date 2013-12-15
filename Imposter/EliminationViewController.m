@@ -41,6 +41,13 @@
     }
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    self.alertView = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"Player #%d was randomly selected to start the first round", self.game.playerNumberToStartRound+1] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [self.alertView show];
+}
+
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView

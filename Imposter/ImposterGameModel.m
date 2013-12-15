@@ -53,7 +53,7 @@
             [roles addObject:[NSNumber numberWithInt:PlayerRoleNormalPlayer]];
             [words addObject:[(NSArray *)[(NSArray *)allWordSets objectAtIndex:chosenWordSet] objectAtIndex:1-chosenImposterWord]];
         }
-        [eliminated addObject:[NSNumber numberWithBool:FALSE]];
+        [eliminated addObject:[NSNumber numberWithBool:NO]];
     }
 
     self.playerRoles = roles;
@@ -66,14 +66,14 @@
 - (void)eliminatePlayer:(NSInteger)playerNumber
 {
     NSNumber *currentStatus = [self.playerEliminated objectAtIndex:playerNumber];
-    if ([currentStatus isEqualToNumber:[NSNumber numberWithBool:TRUE]])
+    if ([currentStatus isEqualToNumber:[NSNumber numberWithBool:YES]])
         NSLog(@"WARNING eliminating player that is already eliminated");
-    [self.playerEliminated replaceObjectAtIndex:playerNumber withObject:[NSNumber numberWithBool:TRUE]];
+    [self.playerEliminated replaceObjectAtIndex:playerNumber withObject:[NSNumber numberWithBool:YES]];
     
     int countOfRemainingImposters = 0;
     int countOfRemainingNormalPlayers = 0;
     for (int i=0; i<self.numberOfPlayers; i++) {
-        if ([(NSNumber *)[self.playerEliminated objectAtIndex:i] isEqualToNumber:[NSNumber numberWithBool:TRUE]])
+        if ([(NSNumber *)[self.playerEliminated objectAtIndex:i] isEqualToNumber:[NSNumber numberWithBool:YES]])
             continue;
         enum PlayerRoles role = [(NSNumber *)[self.playerRoles objectAtIndex:i] intValue];
         switch (role) {
@@ -91,7 +91,7 @@
         self.gameStatus = GameStatusTheImposterWon;
 
     self.playerNumberToStartRound = playerNumber;
-    while ([[self.playerEliminated objectAtIndex:self.playerNumberToStartRound] isEqualToNumber:[NSNumber numberWithBool:TRUE]])
+    while ([[self.playerEliminated objectAtIndex:self.playerNumberToStartRound] isEqualToNumber:[NSNumber numberWithBool:YES]])
         self.playerNumberToStartRound = (self.playerNumberToStartRound + 1) % self.numberOfPlayers;
 }
 

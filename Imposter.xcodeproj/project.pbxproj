@@ -30,6 +30,9 @@
 		D98CA445185E1C8C00746059 /* EliminationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA444185E1C8C00746059 /* EliminationViewController.m */; };
 		D9A4F763185E310A0060AA2D /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4F762185E310A0060AA2D /* ResultsViewController.m */; };
 		D9A4F765185E43090060AA2D /* gameWords.json in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F764185E43090060AA2D /* gameWords.json */; };
+		D9A4F76C185E54480060AA2D /* KxIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4F767185E54480060AA2D /* KxIntroView.m */; };
+		D9A4F76D185E54480060AA2D /* KxIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4F769185E54480060AA2D /* KxIntroViewController.m */; };
+		D9A4F76E185E54480060AA2D /* KxIntroViewPage.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4F76B185E54480060AA2D /* KxIntroViewPage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +79,12 @@
 		D9A4F761185E310A0060AA2D /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
 		D9A4F762185E310A0060AA2D /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
 		D9A4F764185E43090060AA2D /* gameWords.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gameWords.json; sourceTree = "<group>"; };
+		D9A4F766185E54480060AA2D /* KxIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxIntroView.h; sourceTree = "<group>"; };
+		D9A4F767185E54480060AA2D /* KxIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxIntroView.m; sourceTree = "<group>"; };
+		D9A4F768185E54480060AA2D /* KxIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxIntroViewController.h; sourceTree = "<group>"; };
+		D9A4F769185E54480060AA2D /* KxIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxIntroViewController.m; sourceTree = "<group>"; };
+		D9A4F76A185E54480060AA2D /* KxIntroViewPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxIntroViewPage.h; sourceTree = "<group>"; };
+		D9A4F76B185E54480060AA2D /* KxIntroViewPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxIntroViewPage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +176,12 @@
 				D98CA433185D35A600746059 /* homeScreenBackground.gif */,
 				D98CA435185D380A00746059 /* defaultHeadshot.gif */,
 				D9A4F764185E43090060AA2D /* gameWords.json */,
+				D9A4F766185E54480060AA2D /* KxIntroView.h */,
+				D9A4F767185E54480060AA2D /* KxIntroView.m */,
+				D9A4F768185E54480060AA2D /* KxIntroViewController.h */,
+				D9A4F769185E54480060AA2D /* KxIntroViewController.m */,
+				D9A4F76A185E54480060AA2D /* KxIntroViewPage.h */,
+				D9A4F76B185E54480060AA2D /* KxIntroViewPage.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -290,12 +305,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9A4F76D185E54480060AA2D /* KxIntroViewController.m in Sources */,
 				D98CA439185D3A3900746059 /* ImposterGameModel.m in Sources */,
 				D98CA415185D338600746059 /* GameConfigurationViewController.m in Sources */,
 				D98CA442185D699E00746059 /* SecretWordViewController.m in Sources */,
 				D9A4F763185E310A0060AA2D /* ResultsViewController.m in Sources */,
+				D9A4F76E185E54480060AA2D /* KxIntroViewPage.m in Sources */,
 				D98CA445185E1C8C00746059 /* EliminationViewController.m in Sources */,
 				D98CA40C185D338600746059 /* AppDelegate.m in Sources */,
+				D9A4F76C185E54480060AA2D /* KxIntroView.m in Sources */,
 				D98CA43C185D67E800746059 /* MainGameViewController.m in Sources */,
 				D98CA408185D338600746059 /* main.m in Sources */,
 			);

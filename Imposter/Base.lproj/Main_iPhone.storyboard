@@ -59,6 +59,7 @@
                                     <constraint firstAttribute="height" constant="40" id="VaT-ra-ghh"/>
                                     <constraint firstAttribute="width" constant="40" id="hKj-Bq-5q9"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
                                 <state key="normal" title="-">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -73,6 +74,7 @@
                                     <constraint firstAttribute="height" constant="40" id="vmG-i5-WBe"/>
                                     <constraint firstAttribute="width" constant="40" id="ym3-1g-rGH"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
                                 <state key="normal" title="+">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -131,6 +133,7 @@
                                     <constraint firstAttribute="width" constant="40" id="68S-XH-TrD"/>
                                     <constraint firstAttribute="height" constant="40" id="mua-Tp-4EB"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
                                 <state key="normal" title="?">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -145,6 +148,7 @@
                                     <constraint firstAttribute="width" constant="40" id="346-0x-xHG"/>
                                     <constraint firstAttribute="height" constant="40" id="8Eb-2I-2zr"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
                                 <state key="normal" title="X">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -214,15 +218,7 @@
                     <view key="view" contentMode="scaleToFill" id="aRs-wj-Pb4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GAME MAIN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8b-bB-k40">
-                                <rect key="frame" x="60" y="167" width="97" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="pjJ-zj-FfG"/>
                     <connections>
@@ -462,6 +458,7 @@ For your eyes only</string>
                                     <constraint firstAttribute="height" constant="40" id="sBn-oW-Dd0"/>
                                     <constraint firstAttribute="width" constant="40" id="zIH-26-nT5"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
                                 <state key="normal" title="X">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
