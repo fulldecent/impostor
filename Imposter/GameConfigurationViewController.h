@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface GameConfigurationViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *numberOfPlayers;
+@property (weak, nonatomic) IBOutlet UILabel *numberOfPlayersLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *playerPhotoCollectionView;
 - (IBAction)decrementPlayerCount:(id)sender;
 - (IBAction)incrementPlayerCount:(id)sender;

@@ -22,8 +22,11 @@
 		D98CA420185D338600746059 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98CA3FF185D338600746059 /* UIKit.framework */; };
 		D98CA428185D338600746059 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D98CA426185D338600746059 /* InfoPlist.strings */; };
 		D98CA42A185D338600746059 /* ImposterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA429185D338600746059 /* ImposterTests.m */; };
-		D98CA434185D35A600746059 /* homeScreenBackground~iPhone.gif in Resources */ = {isa = PBXBuildFile; fileRef = D98CA433185D35A600746059 /* homeScreenBackground~iPhone.gif */; };
+		D98CA434185D35A600746059 /* homeScreenBackground.gif in Resources */ = {isa = PBXBuildFile; fileRef = D98CA433185D35A600746059 /* homeScreenBackground.gif */; };
 		D98CA436185D380A00746059 /* defaultHeadshot.gif in Resources */ = {isa = PBXBuildFile; fileRef = D98CA435185D380A00746059 /* defaultHeadshot.gif */; };
+		D98CA439185D3A3900746059 /* ImposterGameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA438185D3A3900746059 /* ImposterGameModel.m */; };
+		D98CA43C185D67E800746059 /* MainGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA43B185D67E800746059 /* MainGameViewController.m */; };
+		D98CA442185D699E00746059 /* SecretWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA441185D699E00746059 /* SecretWordViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +60,14 @@
 		D98CA425185D338600746059 /* ImposterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImposterTests-Info.plist"; sourceTree = "<group>"; };
 		D98CA427185D338600746059 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D98CA429185D338600746059 /* ImposterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImposterTests.m; sourceTree = "<group>"; };
-		D98CA433185D35A600746059 /* homeScreenBackground~iPhone.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "homeScreenBackground~iPhone.gif"; sourceTree = "<group>"; };
+		D98CA433185D35A600746059 /* homeScreenBackground.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = homeScreenBackground.gif; sourceTree = "<group>"; };
 		D98CA435185D380A00746059 /* defaultHeadshot.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = defaultHeadshot.gif; sourceTree = "<group>"; };
+		D98CA437185D3A3900746059 /* ImposterGameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImposterGameModel.h; sourceTree = "<group>"; };
+		D98CA438185D3A3900746059 /* ImposterGameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImposterGameModel.m; sourceTree = "<group>"; };
+		D98CA43A185D67E800746059 /* MainGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainGameViewController.h; sourceTree = "<group>"; };
+		D98CA43B185D67E800746059 /* MainGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainGameViewController.m; sourceTree = "<group>"; };
+		D98CA440185D699E00746059 /* SecretWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecretWordViewController.h; sourceTree = "<group>"; };
+		D98CA441185D699E00746059 /* SecretWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecretWordViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,9 +131,15 @@
 				D98CA40B185D338600746059 /* AppDelegate.m */,
 				D98CA40D185D338600746059 /* Main_iPhone.storyboard */,
 				D98CA410185D338600746059 /* Main_iPad.storyboard */,
+				D98CA416185D338600746059 /* Images.xcassets */,
+				D98CA437185D3A3900746059 /* ImposterGameModel.h */,
+				D98CA438185D3A3900746059 /* ImposterGameModel.m */,
 				D98CA413185D338600746059 /* GameConfigurationViewController.h */,
 				D98CA414185D338600746059 /* GameConfigurationViewController.m */,
-				D98CA416185D338600746059 /* Images.xcassets */,
+				D98CA43A185D67E800746059 /* MainGameViewController.h */,
+				D98CA43B185D67E800746059 /* MainGameViewController.m */,
+				D98CA440185D699E00746059 /* SecretWordViewController.h */,
+				D98CA441185D699E00746059 /* SecretWordViewController.m */,
 				D98CA402185D338600746059 /* Supporting Files */,
 			);
 			path = Imposter;
@@ -137,7 +152,7 @@
 				D98CA404185D338600746059 /* InfoPlist.strings */,
 				D98CA407185D338600746059 /* main.m */,
 				D98CA409185D338600746059 /* Imposter-Prefix.pch */,
-				D98CA433185D35A600746059 /* homeScreenBackground~iPhone.gif */,
+				D98CA433185D35A600746059 /* homeScreenBackground.gif */,
 				D98CA435185D380A00746059 /* defaultHeadshot.gif */,
 			);
 			name = "Supporting Files";
@@ -239,7 +254,7 @@
 			files = (
 				D98CA412185D338600746059 /* Main_iPad.storyboard in Resources */,
 				D98CA417185D338600746059 /* Images.xcassets in Resources */,
-				D98CA434185D35A600746059 /* homeScreenBackground~iPhone.gif in Resources */,
+				D98CA434185D35A600746059 /* homeScreenBackground.gif in Resources */,
 				D98CA40F185D338600746059 /* Main_iPhone.storyboard in Resources */,
 				D98CA436185D380A00746059 /* defaultHeadshot.gif in Resources */,
 				D98CA406185D338600746059 /* InfoPlist.strings in Resources */,
@@ -261,8 +276,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D98CA439185D3A3900746059 /* ImposterGameModel.m in Sources */,
 				D98CA415185D338600746059 /* GameConfigurationViewController.m in Sources */,
+				D98CA442185D699E00746059 /* SecretWordViewController.m in Sources */,
 				D98CA40C185D338600746059 /* AppDelegate.m in Sources */,
+				D98CA43C185D67E800746059 /* MainGameViewController.m in Sources */,
 				D98CA408185D338600746059 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
