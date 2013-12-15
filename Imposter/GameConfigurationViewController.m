@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 William Entriken. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "GameConfigurationViewController.h"
 
-@interface ViewController ()
+@interface GameConfigurationViewController ()
 
 @end
 
-@implementation ViewController
+@implementation GameConfigurationViewController
 
 - (void)viewDidLoad
 {
@@ -26,4 +26,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)decrementPlayerCount:(id)sender {
+}
+
+- (IBAction)incrementPlayerCount:(id)sender {
+}
+
+- (IBAction)showInstructions:(id)sender {
+}
+
+- (IBAction)showGameOptions:(id)sender {
+}
+
+- (IBAction)startGame:(id)sender {
+}
 @end

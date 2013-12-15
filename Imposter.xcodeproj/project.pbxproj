@@ -15,7 +15,7 @@
 		D98CA40C185D338600746059 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA40B185D338600746059 /* AppDelegate.m */; };
 		D98CA40F185D338600746059 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98CA40D185D338600746059 /* Main_iPhone.storyboard */; };
 		D98CA412185D338600746059 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98CA410185D338600746059 /* Main_iPad.storyboard */; };
-		D98CA415185D338600746059 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA414185D338600746059 /* ViewController.m */; };
+		D98CA415185D338600746059 /* GameConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA414185D338600746059 /* GameConfigurationViewController.m */; };
 		D98CA417185D338600746059 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98CA416185D338600746059 /* Images.xcassets */; };
 		D98CA41E185D338600746059 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98CA41D185D338600746059 /* XCTest.framework */; };
 		D98CA41F185D338600746059 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98CA3FB185D338600746059 /* Foundation.framework */; };
@@ -23,6 +23,7 @@
 		D98CA428185D338600746059 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D98CA426185D338600746059 /* InfoPlist.strings */; };
 		D98CA42A185D338600746059 /* ImposterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA429185D338600746059 /* ImposterTests.m */; };
 		D98CA434185D35A600746059 /* homeScreenBackground~iPhone.gif in Resources */ = {isa = PBXBuildFile; fileRef = D98CA433185D35A600746059 /* homeScreenBackground~iPhone.gif */; };
+		D98CA436185D380A00746059 /* defaultHeadshot.gif in Resources */ = {isa = PBXBuildFile; fileRef = D98CA435185D380A00746059 /* defaultHeadshot.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +49,8 @@
 		D98CA40B185D338600746059 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D98CA40E185D338600746059 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		D98CA411185D338600746059 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		D98CA413185D338600746059 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D98CA414185D338600746059 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D98CA413185D338600746059 /* GameConfigurationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfigurationViewController.h; sourceTree = "<group>"; };
+		D98CA414185D338600746059 /* GameConfigurationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameConfigurationViewController.m; sourceTree = "<group>"; };
 		D98CA416185D338600746059 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D98CA41C185D338600746059 /* ImposterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImposterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98CA41D185D338600746059 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -57,6 +58,7 @@
 		D98CA427185D338600746059 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D98CA429185D338600746059 /* ImposterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImposterTests.m; sourceTree = "<group>"; };
 		D98CA433185D35A600746059 /* homeScreenBackground~iPhone.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "homeScreenBackground~iPhone.gif"; sourceTree = "<group>"; };
+		D98CA435185D380A00746059 /* defaultHeadshot.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = defaultHeadshot.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +122,8 @@
 				D98CA40B185D338600746059 /* AppDelegate.m */,
 				D98CA40D185D338600746059 /* Main_iPhone.storyboard */,
 				D98CA410185D338600746059 /* Main_iPad.storyboard */,
-				D98CA413185D338600746059 /* ViewController.h */,
-				D98CA414185D338600746059 /* ViewController.m */,
+				D98CA413185D338600746059 /* GameConfigurationViewController.h */,
+				D98CA414185D338600746059 /* GameConfigurationViewController.m */,
 				D98CA416185D338600746059 /* Images.xcassets */,
 				D98CA402185D338600746059 /* Supporting Files */,
 			);
@@ -136,6 +138,7 @@
 				D98CA407185D338600746059 /* main.m */,
 				D98CA409185D338600746059 /* Imposter-Prefix.pch */,
 				D98CA433185D35A600746059 /* homeScreenBackground~iPhone.gif */,
+				D98CA435185D380A00746059 /* defaultHeadshot.gif */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				D98CA417185D338600746059 /* Images.xcassets in Resources */,
 				D98CA434185D35A600746059 /* homeScreenBackground~iPhone.gif in Resources */,
 				D98CA40F185D338600746059 /* Main_iPhone.storyboard in Resources */,
+				D98CA436185D380A00746059 /* defaultHeadshot.gif in Resources */,
 				D98CA406185D338600746059 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,7 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D98CA415185D338600746059 /* ViewController.m in Sources */,
+				D98CA415185D338600746059 /* GameConfigurationViewController.m in Sources */,
 				D98CA40C185D338600746059 /* AppDelegate.m in Sources */,
 				D98CA408185D338600746059 /* main.m in Sources */,
 			);
