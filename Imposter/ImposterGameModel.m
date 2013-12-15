@@ -43,11 +43,11 @@
         if (i == imposterIndex) {
             [roles addObject:[NSNumber numberWithInt:PlayerRoleImposter]];
             [words addObject:@"IMPOSTER WORD"];
-#warning SET CORRECTLY
+#warning SET CORRECT WORD
         } else {
             [roles addObject:[NSNumber numberWithInt:PlayerRoleNormalPlayer]];
             [words addObject:@"NORMAL WORD"];
-#warning SET CORRECTLY
+#warning SET CORRECT WORD
         }
         [eliminated addObject:[NSNumber numberWithBool:FALSE]];
     }
@@ -71,7 +71,8 @@
     for (int i=0; i<self.numberOfPlayers; i++) {
         if ([(NSNumber *)[self.playerEliminated objectAtIndex:i] isEqualToNumber:[NSNumber numberWithBool:TRUE]])
             continue;
-        switch ([(NSNumber *)[self.playerRoles objectAtIndex:i] intValue]) {
+        enum PlayerRoles role = [(NSNumber *)[self.playerRoles objectAtIndex:i] intValue];
+        switch (role) {
             case PlayerRoleImposter:
                 countOfRemainingImposters++;
                 break;

@@ -28,6 +28,7 @@
 		D98CA43C185D67E800746059 /* MainGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA43B185D67E800746059 /* MainGameViewController.m */; };
 		D98CA442185D699E00746059 /* SecretWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA441185D699E00746059 /* SecretWordViewController.m */; };
 		D98CA445185E1C8C00746059 /* EliminationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA444185E1C8C00746059 /* EliminationViewController.m */; };
+		D9A4F763185E310A0060AA2D /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4F762185E310A0060AA2D /* ResultsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		D98CA441185D699E00746059 /* SecretWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecretWordViewController.m; sourceTree = "<group>"; };
 		D98CA443185E1C8C00746059 /* EliminationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EliminationViewController.h; sourceTree = "<group>"; };
 		D98CA444185E1C8C00746059 /* EliminationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EliminationViewController.m; sourceTree = "<group>"; };
+		D9A4F761185E310A0060AA2D /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
+		D9A4F762185E310A0060AA2D /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +148,8 @@
 				D98CA441185D699E00746059 /* SecretWordViewController.m */,
 				D98CA443185E1C8C00746059 /* EliminationViewController.h */,
 				D98CA444185E1C8C00746059 /* EliminationViewController.m */,
+				D9A4F761185E310A0060AA2D /* ResultsViewController.h */,
+				D9A4F762185E310A0060AA2D /* ResultsViewController.m */,
 				D98CA402185D338600746059 /* Supporting Files */,
 			);
 			path = Imposter;
@@ -284,6 +289,7 @@
 				D98CA439185D3A3900746059 /* ImposterGameModel.m in Sources */,
 				D98CA415185D338600746059 /* GameConfigurationViewController.m in Sources */,
 				D98CA442185D699E00746059 /* SecretWordViewController.m in Sources */,
+				D9A4F763185E310A0060AA2D /* ResultsViewController.m in Sources */,
 				D98CA445185E1C8C00746059 /* EliminationViewController.m in Sources */,
 				D98CA40C185D338600746059 /* AppDelegate.m in Sources */,
 				D98CA43C185D67E800746059 /* MainGameViewController.m in Sources */,
@@ -506,6 +512,7 @@
 				D98CA42F185D338600746059 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D98CA430185D338600746059 /* Build configuration list for PBXNativeTarget "ImposterTests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +521,7 @@
 				D98CA432185D338600746059 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

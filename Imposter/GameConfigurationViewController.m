@@ -34,19 +34,18 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.playerPhotoCollectionView.dataSource = self;
-    self.playerCount = 3;
     self.game = [ImposterGameModel game];
-#warning GET FROM PREFERENCES
-#warning GET PLAYER FACES
     self.numberOfPlayersLabel.text = [NSString stringWithFormat:@"%d players", self.playerCount];
     
-    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSNumber *savedPlayerCount = [defaults objectForKey:@"playerCount"];
+    if (savedPlayerCount)
+        self.playerCount = [savedPlayerCount intValue];
+    else
+        self.playerCount = 3;
     
     [(UICollectionViewFlowLayout *)self.playerPhotoCollectionView.collectionViewLayout setMinimumInteritemSpacing:10];
     [(UICollectionViewFlowLayout *)self.playerPhotoCollectionView.collectionViewLayout setMinimumLineSpacing:10];
-  
-    
-    
 }
 
 - (IBAction)decrementPlayerCount:(id)sender {
@@ -66,6 +65,10 @@
 }
 
 - (IBAction)startGame:(id)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSNumber *playerCountToSave = [NSNumber numberWithInt:self.playerCount];
+    [defaults setObject:playerCountToSave forKey:@"playerCount"];
+    [defaults synchronize];
     [self.game startGameWithNumberOfPlayers:self.playerCount];
 }
 
@@ -94,6 +97,8 @@
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
     [imageView setImage:photo];
     return cell;
+    
+#warning GET PLAYER FACES
 }
 
 - (void)viewDidLayoutSubviews

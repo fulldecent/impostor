@@ -40,11 +40,17 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    self.game = [ImposterGameModel game];
-    if (self.game.gameStatus == GameStatusNewGame) {
-        [self performSegueWithIdentifier:@"secretWord" sender:self];
-    } else if (self.game.gameStatus == GameStatusTheImposterRemains) {
-        [self performSegueWithIdentifier:@"elimination" sender:self];
+    switch ([[ImposterGameModel game] gameStatus]) {
+        case GameStatusNewGame:
+            [self performSegueWithIdentifier:@"secretWord" sender:self];
+            break;
+        case GameStatusTheImposterRemains:
+            [self performSegueWithIdentifier:@"elimination" sender:self];
+            break;
+        case GameStatusTheImposterWasDefeated:
+        case GameStatusTheImposterWon:
+            [self performSegueWithIdentifier:@"results" sender:self];
+            break;
     }
 }
 
