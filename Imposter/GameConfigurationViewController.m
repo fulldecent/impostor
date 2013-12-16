@@ -19,6 +19,7 @@
 @property (nonatomic) ImposterGameModel *game;
 @property (nonatomic) UIActionSheet *actionSheet;
 @property (nonatomic) AVAudioPlayer *audioPlayer;
+@property (nonatomic) SystemSoundID buttonPress;
 @end
 
 @implementation GameConfigurationViewController
@@ -53,6 +54,11 @@
     
     [(UICollectionViewFlowLayout *)self.playerPhotoCollectionView.collectionViewLayout setMinimumInteritemSpacing:10];
     [(UICollectionViewFlowLayout *)self.playerPhotoCollectionView.collectionViewLayout setMinimumLineSpacing:10];
+    
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"buttonPress" ofType:@"mp3"];
+    SystemSoundID soundID;
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
+    self.buttonPress = soundID;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -67,26 +73,17 @@
 
 - (IBAction)decrementPlayerCount:(id)sender {
     self.playerCount--;
-    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"buttonPress" ofType:@"mp3"];
-    SystemSoundID soundID;
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
-    AudioServicesPlaySystemSound (soundID);
+    AudioServicesPlaySystemSound (self.buttonPress);
 }
 
 - (IBAction)incrementPlayerCount:(id)sender {
     self.playerCount++;
-    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"buttonPress" ofType:@"mp3"];
-    SystemSoundID soundID;
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
-    AudioServicesPlaySystemSound (soundID);
+    AudioServicesPlaySystemSound (self.buttonPress);
 }
 
 - (IBAction)showInstructions:(id)sender {
     KxIntroViewController *vc;
-    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"buttonPress" ofType:@"mp3"];
-    SystemSoundID soundID;
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
-    AudioServicesPlaySystemSound (soundID);
+    AudioServicesPlaySystemSound (self.buttonPress);
     vc = [[KxIntroViewController alloc] initWithPages:@[
                                                         [KxIntroViewPage introViewPageWithTitle: @"A party game"
                                                                                      withDetail: @"For 3 to 12 players"
@@ -106,10 +103,7 @@
 }
 
 - (IBAction)showGameOptions:(id)sender {
-    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"buttonPress" ofType:@"mp3"];
-    SystemSoundID soundID;
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
-    AudioServicesPlaySystemSound (soundID);
+    AudioServicesPlaySystemSound (self.buttonPress);
     self.actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self
                                           cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Reset player photos", @"Help translate this app", @"Recommend game words", @"Share this app", nil];
     [self.actionSheet showFromRect:[(UIView *)[self.view viewWithTag:9] frame]  inView:self.view animated:YES];
@@ -148,10 +142,7 @@
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
     imageView.image = photo;
     
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
-    NSString *targetPhotoPath = [basePath stringByAppendingPathComponent:[NSString stringWithFormat:@"player%d.png",indexPath.row]];
-    photo = [UIImage imageWithContentsOfFile:targetPhotoPath];
+    photo = [self.game.playerPhotos objectForKey:[NSNumber numberWithInt:indexPath.row]];
     if (photo)
         imageView.image = photo;
     return cell;
@@ -184,6 +175,7 @@
         NSArray *photoPaths = [fileManager contentsOfDirectoryAtPath:basePath error:nil];
         for (NSString *path in photoPaths)
             [fileManager removeItemAtPath:[basePath stringByAppendingPathComponent:path] error:nil];
+        [self.game.playerPhotos removeAllObjects];
         [self.playerPhotoCollectionView reloadData];
     } else if (buttonIndex == 1) {
         if ([MFMailComposeViewController canSendMail]) {

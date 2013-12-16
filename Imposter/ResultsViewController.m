@@ -97,10 +97,7 @@
     cell.imageView.image = photo;
     cell.imageView.alpha = eliminated ? 0.4 : 1.0;
     
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
-    NSString *targetPhotoPath = [basePath stringByAppendingPathComponent:[NSString stringWithFormat:@"player%d.png",indexPath.row]];
-    photo = [UIImage imageWithContentsOfFile:targetPhotoPath];
+    photo = [self.game.playerPhotos objectForKey:[NSNumber numberWithInt:indexPath.row]];
     if (photo)
         cell.imageView.image = photo;
 

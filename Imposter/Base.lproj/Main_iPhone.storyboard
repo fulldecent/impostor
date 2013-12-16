@@ -64,7 +64,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="decrementPlayerCount:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="52w-Az-i1H"/>
+                                    <action selector="decrementPlayerCount:" destination="vXZ-lx-hvc" eventType="touchDown" id="IWV-fR-t5m"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PXD-BG-rEc" userLabel="More players button">
@@ -79,7 +79,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="incrementPlayerCount:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Poj-bG-DsP"/>
+                                    <action selector="incrementPlayerCount:" destination="vXZ-lx-hvc" eventType="touchDown" id="hM2-mC-4Cg"/>
                                 </connections>
                             </button>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ka2-NZ-eUj">
@@ -138,7 +138,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showInstructions:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="V8w-74-LeU"/>
+                                    <action selector="showInstructions:" destination="vXZ-lx-hvc" eventType="touchDown" id="bSH-At-xha"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QM7-6p-WB8" userLabel="Game options button">
@@ -153,7 +153,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showGameOptions:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Omv-J9-0x3"/>
+                                    <action selector="showGameOptions:" destination="vXZ-lx-hvc" eventType="touchDown" id="cEU-dn-vOP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVR-0R-kXy" userLabel="Start game button">

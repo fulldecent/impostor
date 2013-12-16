@@ -28,7 +28,7 @@
 }
 
 - (IBAction)showSecretWord:(id)sender {
-    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"buttonPress" ofType:@"mp3"];
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"peek" ofType:@"mp3"];
     SystemSoundID soundID;
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
     AudioServicesPlaySystemSound (soundID);
@@ -51,11 +51,8 @@
     self.playerLabel.text = [NSString stringWithFormat:@"Player #%d", self.playerNumber+1];
     UIImage *photo = [UIImage imageNamed:@"defaultHeadshot.gif"];
     self.playerImage.image = photo;
-    
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
-    NSString *targetPhotoPath = [basePath stringByAppendingPathComponent:[NSString stringWithFormat:@"player%d.png",self.playerNumber]];
-    photo = [UIImage imageWithContentsOfFile:targetPhotoPath];
+
+    photo = [self.game.playerPhotos objectForKey:[NSNumber numberWithInt:self.playerNumber]];
     if (photo)
         self.playerImage.image = photo;
     self.wantsToTakePhoto = !photo;
@@ -70,7 +67,11 @@
         self.imagePickerController = [[UIImagePickerController alloc] init];
         self.imagePickerController.delegate = self;
         self.imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-        [[self presentingViewController] presentViewController:self.imagePickerController animated:YES completion:nil];
+        self.imagePickerController.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:
+                                                 UIImagePickerControllerSourceTypeCamera];
+//        [[self presentingViewController] presentViewController:self.imagePickerController animated:YES completion:nil];
+        [self presentViewController:self.imagePickerController animated:YES completion:nil];
+
     } else {
         // THIS IS JUST FOR IPODS AND THE SIMULATOR
         self.imagePickerController = [[UIImagePickerController alloc] init];
@@ -124,12 +125,76 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *photo = [info objectForKey:UIImagePickerControllerOriginalImage];
-    self.playerImage.image = photo;
+    // http://stackoverflow.com/questions/5427656/ios-uiimagepickercontroller-result-image-orientation-after-upload/5427890#5427890
+    UIImage *normalizedImage;
+    if (photo.imageOrientation == UIImageOrientationUp)
+        normalizedImage = photo;
+    else {
+        UIGraphicsBeginImageContextWithOptions(photo.size, NO, photo.scale);
+        [photo drawInRect:(CGRect){0, 0, photo.size}];
+        normalizedImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+    }
+    normalizedImage = [[self class] cropBiggestCenteredSquareImageFromImage:normalizedImage withSide:800];
+    
+    self.playerImage.image = normalizedImage;
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
-    NSString *targetPhotoPath = [basePath stringByAppendingPathComponent:[NSString stringWithFormat:@"player%d.png",self.playerNumber]];
-    [UIImagePNGRepresentation(photo) writeToFile:targetPhotoPath atomically:YES];
+    NSString *targetPhotoPath = [basePath stringByAppendingPathComponent:[NSString stringWithFormat:@"player%i.png",self.playerNumber]];
+    [UIImagePNGRepresentation(normalizedImage) writeToFile:targetPhotoPath atomically:YES];
+    [self.game.playerPhotos setObject:normalizedImage forKey:[NSNumber numberWithInt:self.playerNumber]];
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+// http://stackoverflow.com/questions/14917770/finding-the-biggest-centered-square-from-a-landscape-or-a-portrait-uiimage-and-s
++ (UIImage*) cropBiggestCenteredSquareImageFromImage:(UIImage*)image withSide:(CGFloat)side
+{
+    // Get size of current image
+    CGSize size = [image size];
+    if( size.width == size.height && size.width == side){
+        return image;
+    }
+    
+    CGSize newSize = CGSizeMake(side, side);
+    double ratio;
+    double delta;
+    CGPoint offset;
+    
+    //make a new square size, that is the resized imaged width
+    CGSize sz = CGSizeMake(newSize.width, newSize.width);
+    
+    //figure out if the picture is landscape or portrait, then
+    //calculate scale factor and offset
+    if (image.size.width > image.size.height) {
+        ratio = newSize.height / image.size.height;
+        delta = ratio*(image.size.width - image.size.height);
+        offset = CGPointMake(delta/2, 0);
+    } else {
+        ratio = newSize.width / image.size.width;
+        delta = ratio*(image.size.height - image.size.width);
+        offset = CGPointMake(0, delta/2);
+    }
+    
+    //make the final clipping rect based on the calculated values
+    CGRect clipRect = CGRectMake(-offset.x, -offset.y,
+                                 (ratio * image.size.width),
+                                 (ratio * image.size.height));
+    
+    //start a new context, with scale factor 0.0 so retina displays get
+    //high quality image
+    if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
+        UIGraphicsBeginImageContextWithOptions(sz, YES, 0.0);
+    } else {
+        UIGraphicsBeginImageContext(sz);
+    }
+    UIRectClip(clipRect);
+    [image drawInRect:clipRect];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 
 

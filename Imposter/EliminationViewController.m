@@ -39,7 +39,7 @@
     [self.playerPhotoCollectionView reloadData];
     
     if (self.game.gameStatus == GameStatusTheImposterRemains) {
-        self.alertView = [[UIAlertView alloc] initWithTitle:@"The imposter remains" message:[NSString stringWithFormat:@"Player #%d starts this round", self.game.playerNumberToStartRound+1] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        self.alertView = [[UIAlertView alloc] initWithTitle:@"The imposter remains" message:[NSString stringWithFormat:@"Player #%i starts this round", self.game.playerNumberToStartRound+1] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [self.alertView show];
     } else if (self.game.gameStatus == GameStatusTheImposterWasDefeated ||
                self.game.gameStatus == GameStatusTheImposterWon) {
@@ -80,10 +80,7 @@
         imageView.alpha = 1.0;
         button.userInteractionEnabled = YES;
     }
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
-    NSString *targetPhotoPath = [basePath stringByAppendingPathComponent:[NSString stringWithFormat:@"player%d.png",indexPath.row]];
-    photo = [UIImage imageWithContentsOfFile:targetPhotoPath];
+    photo = [self.game.playerPhotos objectForKey:[NSNumber numberWithInt:indexPath.row]];
     if (photo)
         imageView.image = photo;
 
