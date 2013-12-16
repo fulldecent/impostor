@@ -11,11 +11,14 @@
 #import "KxIntroViewController.h"
 #import "KxIntroViewPage.h"
 #import <MessageUI/MessageUI.h>
+#import <AVFoundation/AVAudioPlayer.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface GameConfigurationViewController () <UICollectionViewDataSource, UIActionSheetDelegate, MFMailComposeViewControllerDelegate>
 @property (nonatomic) NSInteger playerCount;
 @property (nonatomic) ImposterGameModel *game;
 @property (nonatomic) UIActionSheet *actionSheet;
+@property (nonatomic) AVAudioPlayer *audioPlayer;
 @end
 
 @implementation GameConfigurationViewController
@@ -52,16 +55,38 @@
     [(UICollectionViewFlowLayout *)self.playerPhotoCollectionView.collectionViewLayout setMinimumLineSpacing:10];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    NSString* bundleDirectory = (NSString*)[[NSBundle mainBundle] bundlePath];
+    NSURL *url = [NSURL fileURLWithPath:[bundleDirectory stringByAppendingPathComponent:@"intro.mp3"]];
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    [self.audioPlayer play];
+}
+
 - (IBAction)decrementPlayerCount:(id)sender {
     self.playerCount--;
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"buttonPress" ofType:@"mp3"];
+    SystemSoundID soundID;
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
+    AudioServicesPlaySystemSound (soundID);
 }
 
 - (IBAction)incrementPlayerCount:(id)sender {
     self.playerCount++;
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"buttonPress" ofType:@"mp3"];
+    SystemSoundID soundID;
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
+    AudioServicesPlaySystemSound (soundID);
 }
 
 - (IBAction)showInstructions:(id)sender {
     KxIntroViewController *vc;
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"buttonPress" ofType:@"mp3"];
+    SystemSoundID soundID;
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
+    AudioServicesPlaySystemSound (soundID);
     vc = [[KxIntroViewController alloc] initWithPages:@[
                                                         [KxIntroViewPage introViewPageWithTitle: @"A party game"
                                                                                      withDetail: @"For 3 to 12 players"
@@ -81,6 +106,10 @@
 }
 
 - (IBAction)showGameOptions:(id)sender {
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"buttonPress" ofType:@"mp3"];
+    SystemSoundID soundID;
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
+    AudioServicesPlaySystemSound (soundID);
     self.actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self
                                           cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Reset player photos", @"Help translate this app", @"Recommend game words", @"Share this app", nil];
     [self.actionSheet showFromRect:[(UIView *)[self.view viewWithTag:9] frame]  inView:self.view animated:YES];

@@ -33,6 +33,13 @@
 		D9A4F76C185E54480060AA2D /* KxIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4F767185E54480060AA2D /* KxIntroView.m */; };
 		D9A4F76D185E54480060AA2D /* KxIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4F769185E54480060AA2D /* KxIntroViewController.m */; };
 		D9A4F76E185E54480060AA2D /* KxIntroViewPage.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4F76B185E54480060AA2D /* KxIntroViewPage.m */; };
+		D9A4F771185E7D9F0060AA2D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9A4F770185E7D9F0060AA2D /* AVFoundation.framework */; };
+		D9A4F773185E7DEA0060AA2D /* intro.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F772185E7DEA0060AA2D /* intro.mp3 */; };
+		D9A4F775185E7EDE0060AA2D /* buttonPress.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F774185E7EDE0060AA2D /* buttonPress.mp3 */; };
+		D9A4F777185E7EFA0060AA2D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9A4F776185E7EFA0060AA2D /* AudioToolbox.framework */; };
+		D9A4F779185E80040060AA2D /* peek.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F778185E80040060AA2D /* peek.mp3 */; };
+		D9A4F77B185E80650060AA2D /* eliminate.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F77A185E80650060AA2D /* eliminate.mp3 */; };
+		D9A4F77D185E80D10060AA2D /* results.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F77C185E80D10060AA2D /* results.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +92,13 @@
 		D9A4F769185E54480060AA2D /* KxIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxIntroViewController.m; sourceTree = "<group>"; };
 		D9A4F76A185E54480060AA2D /* KxIntroViewPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxIntroViewPage.h; sourceTree = "<group>"; };
 		D9A4F76B185E54480060AA2D /* KxIntroViewPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxIntroViewPage.m; sourceTree = "<group>"; };
+		D9A4F770185E7D9F0060AA2D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D9A4F772185E7DEA0060AA2D /* intro.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = intro.mp3; sourceTree = "<group>"; };
+		D9A4F774185E7EDE0060AA2D /* buttonPress.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = buttonPress.mp3; sourceTree = "<group>"; };
+		D9A4F776185E7EFA0060AA2D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D9A4F778185E80040060AA2D /* peek.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = peek.mp3; sourceTree = "<group>"; };
+		D9A4F77A185E80650060AA2D /* eliminate.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = eliminate.mp3; sourceTree = "<group>"; };
+		D9A4F77C185E80D10060AA2D /* results.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = results.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +106,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9A4F777185E7EFA0060AA2D /* AudioToolbox.framework in Frameworks */,
+				D9A4F771185E7D9F0060AA2D /* AVFoundation.framework in Frameworks */,
 				D98CA3FE185D338600746059 /* CoreGraphics.framework in Frameworks */,
 				D98CA400185D338600746059 /* UIKit.framework in Frameworks */,
 				D98CA3FC185D338600746059 /* Foundation.framework in Frameworks */,
@@ -133,6 +149,8 @@
 		D98CA3FA185D338600746059 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D9A4F776185E7EFA0060AA2D /* AudioToolbox.framework */,
+				D9A4F770185E7D9F0060AA2D /* AVFoundation.framework */,
 				D98CA3FB185D338600746059 /* Foundation.framework */,
 				D98CA3FD185D338600746059 /* CoreGraphics.framework */,
 				D98CA3FF185D338600746059 /* UIKit.framework */,
@@ -175,6 +193,11 @@
 				D98CA409185D338600746059 /* Imposter-Prefix.pch */,
 				D98CA433185D35A600746059 /* homeScreenBackground.gif */,
 				D98CA435185D380A00746059 /* defaultHeadshot.gif */,
+				D9A4F772185E7DEA0060AA2D /* intro.mp3 */,
+				D9A4F774185E7EDE0060AA2D /* buttonPress.mp3 */,
+				D9A4F778185E80040060AA2D /* peek.mp3 */,
+				D9A4F77A185E80650060AA2D /* eliminate.mp3 */,
+				D9A4F77C185E80D10060AA2D /* results.mp3 */,
 				D9A4F764185E43090060AA2D /* gameWords.json */,
 				D9A4F766185E54480060AA2D /* KxIntroView.h */,
 				D9A4F767185E54480060AA2D /* KxIntroView.m */,
@@ -280,9 +303,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9A4F77B185E80650060AA2D /* eliminate.mp3 in Resources */,
 				D98CA412185D338600746059 /* Main_iPad.storyboard in Resources */,
+				D9A4F779185E80040060AA2D /* peek.mp3 in Resources */,
 				D9A4F765185E43090060AA2D /* gameWords.json in Resources */,
 				D98CA417185D338600746059 /* Images.xcassets in Resources */,
+				D9A4F773185E7DEA0060AA2D /* intro.mp3 in Resources */,
+				D9A4F775185E7EDE0060AA2D /* buttonPress.mp3 in Resources */,
+				D9A4F77D185E80D10060AA2D /* results.mp3 in Resources */,
 				D98CA434185D35A600746059 /* homeScreenBackground.gif in Resources */,
 				D98CA40F185D338600746059 /* Main_iPhone.storyboard in Resources */,
 				D98CA436185D380A00746059 /* defaultHeadshot.gif in Resources */,

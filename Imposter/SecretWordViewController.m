@@ -8,6 +8,7 @@
 
 #import "SecretWordViewController.h"
 #import "ImposterGameModel.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface SecretWordViewController () <UIAlertViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (nonatomic) ImposterGameModel *game;
@@ -27,6 +28,10 @@
 }
 
 - (IBAction)showSecretWord:(id)sender {
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"buttonPress" ofType:@"mp3"];
+    SystemSoundID soundID;
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
+    AudioServicesPlaySystemSound (soundID);
     NSString *theWord = [self.game.playerWords objectAtIndex:self.playerNumber];
     self.alertView = [[UIAlertView alloc] initWithTitle:@"YOUR SECRET WORD IS" message:theWord delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [self.alertView show];

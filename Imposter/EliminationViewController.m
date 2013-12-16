@@ -8,6 +8,7 @@
 
 #import "EliminationViewController.h"
 #import "ImposterGameModel.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface EliminationViewController () <UICollectionViewDataSource>
 @property (nonatomic) ImposterGameModel *game;
@@ -26,6 +27,11 @@
 
 - (void)eliminatePlayer:(UIButton *)sender
 {
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"eliminate" ofType:@"mp3"];
+    SystemSoundID soundID;
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
+    AudioServicesPlaySystemSound (soundID);
+
     CGPoint center = sender.center;
     CGPoint rootViewPoint = [sender.superview convertPoint:center toView:self.playerPhotoCollectionView];
     NSIndexPath *indexPath = [self.playerPhotoCollectionView indexPathForItemAtPoint:rootViewPoint];

@@ -8,6 +8,7 @@
 
 #import "ResultsViewController.h"
 #import "ImposterGameModel.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface ResultsViewController () <UITableViewDataSource>
 @property (nonatomic) ImposterGameModel *game;
@@ -36,6 +37,12 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"results" ofType:@"mp3"];
+    SystemSoundID soundID;
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
+    AudioServicesPlaySystemSound (soundID);
+    
     switch (self.game.gameStatus) {
         case GameStatusTheImposterWasDefeated:
             self.alertView = [[UIAlertView alloc] initWithTitle:nil message:@"The imposter was defeated" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
