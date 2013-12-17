@@ -48,8 +48,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeScreenBackground.gif" translatesAutoresizingMaskIntoConstraints="NO" id="wRZ-KT-PDJ">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="wRZ-KT-PDJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OiZ-JI-Jir" userLabel="Less players button" customClass="QBFlatButton">
@@ -123,7 +123,7 @@
                                     <constraint firstAttribute="height" constant="40" id="3BK-un-whB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1c-LY-4ek" userLabel="Show tutorial button" customClass="QBFlatButton">
@@ -173,13 +173,13 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Ka2-NZ-eUj" secondAttribute="trailing" constant="20" id="4bE-j9-hmE"/>
                             <constraint firstItem="PXD-BG-rEc" firstAttribute="leading" secondItem="4Tt-BJ-vN0" secondAttribute="trailing" constant="8" id="A2f-UV-uJ2"/>
+                            <constraint firstItem="wRZ-KT-PDJ" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="Bn9-En-VWc"/>
                             <constraint firstAttribute="trailing" secondItem="PXD-BG-rEc" secondAttribute="trailing" constant="20" id="CWL-bh-waf"/>
                             <constraint firstItem="Ka2-NZ-eUj" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="GEz-3g-tKA"/>
                             <constraint firstItem="V1c-LY-4ek" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="HTQ-qN-Rum"/>
                             <constraint firstItem="OiZ-JI-Jir" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="IIv-5P-eul"/>
                             <constraint firstItem="PXD-BG-rEc" firstAttribute="top" secondItem="Uw0-zQ-7ja" secondAttribute="bottom" constant="20" id="IZM-mM-2Gr"/>
                             <constraint firstItem="IT4-jv-pXy" firstAttribute="top" secondItem="QM7-6p-WB8" secondAttribute="bottom" constant="20" id="Jpe-he-lVZ"/>
-                            <constraint firstItem="wRZ-KT-PDJ" firstAttribute="top" secondItem="Uw0-zQ-7ja" secondAttribute="bottom" id="UbA-3A-Xfp"/>
                             <constraint firstItem="QM7-6p-WB8" firstAttribute="leading" secondItem="dVR-0R-kXy" secondAttribute="trailing" constant="8" id="Y2R-9G-oqY"/>
                             <constraint firstItem="IT4-jv-pXy" firstAttribute="top" secondItem="V1c-LY-4ek" secondAttribute="bottom" constant="20" id="egN-UN-yxL"/>
                             <constraint firstItem="OiZ-JI-Jir" firstAttribute="top" secondItem="Uw0-zQ-7ja" secondAttribute="bottom" constant="20" id="epN-Ar-cPW"/>
@@ -243,10 +243,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="tW8-DC-ied">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which Player Was Eliminated?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="0ht-Ce-gHe">
                                 <rect key="frame" x="20" y="20" width="280" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="45y-Au-Y38">
@@ -330,11 +335,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="JrX-Qx-Kf4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0e-Jd-6ve">
                                 <rect key="frame" x="20" y="20" width="280" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mOo-md-1fi" customClass="QBFlatButton">
@@ -351,7 +360,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ck2-rq-tQg">
                                 <rect key="frame" x="20" y="71" width="280" height="414"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="resultCell" textLabel="YMm-JH-uit" detailTextLabel="LBC-UZ-UFg" style="IBUITableViewCellStyleSubtitle" id="rXT-Jp-OCX">
                                         <rect key="frame" x="0.0" y="22" width="280" height="44"/>
@@ -364,18 +373,19 @@
                                                     <rect key="frame" x="15" y="3" width="34" height="22"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LBC-UZ-UFg">
                                                     <rect key="frame" x="15" y="25" width="43" height="15"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -415,6 +425,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="wWs-zT-FPh">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player #" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dU-HJ-O6j">
                                 <rect key="frame" x="20" y="20" width="280" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -422,14 +436,15 @@
                                     <constraint firstAttribute="height" constant="40" id="vvg-kY-Fkh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cyq-QX-c2g">
-                                <rect key="frame" x="0.0" y="131" width="320" height="437"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cyq-QX-c2g">
+                                <rect key="frame" x="0.0" y="116" width="320" height="452"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKr-a3-6GX" customClass="QBFlatButton">
-                                <rect key="frame" x="20" y="68" width="280" height="55"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKr-a3-6GX" customClass="QBFlatButton">
+                                <rect key="frame" x="20" y="68" width="280" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="JH1-g6-u27"/>
@@ -453,7 +468,7 @@ For your eyes only</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnT-8p-v0z" customClass="QBFlatButton">
-                                <rect key="frame" x="20" y="508" width="40" height="40"/>
+                                <rect key="frame" x="260" y="508" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="sBn-oW-Dd0"/>
@@ -468,19 +483,22 @@ For your eyes only</string>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="kKr-a3-6GX" firstAttribute="top" secondItem="8dU-HJ-O6j" secondAttribute="bottom" constant="8" id="12L-ml-MUx"/>
                             <constraint firstItem="Cyq-QX-c2g" firstAttribute="top" secondItem="kKr-a3-6GX" secondAttribute="bottom" constant="8" id="1v5-mj-Jz2"/>
                             <constraint firstItem="blE-eR-isE" firstAttribute="leading" secondItem="X0u-CR-Mae" secondAttribute="leading" id="21u-4I-Ey0"/>
                             <constraint firstItem="8dU-HJ-O6j" firstAttribute="top" secondItem="Ehm-2p-QUA" secondAttribute="bottom" id="4GC-lr-Cyd"/>
                             <constraint firstAttribute="trailing" secondItem="blE-eR-isE" secondAttribute="trailing" id="6oh-Xm-mHm"/>
+                            <constraint firstAttribute="trailing" secondItem="wWs-zT-FPh" secondAttribute="trailing" id="9MW-6W-ybl"/>
                             <constraint firstItem="AKT-Xd-ban" firstAttribute="top" secondItem="Cyq-QX-c2g" secondAttribute="bottom" id="E3d-he-oiN"/>
                             <constraint firstAttribute="trailing" secondItem="kKr-a3-6GX" secondAttribute="trailing" constant="20" id="GIR-pU-tST"/>
+                            <constraint firstItem="wWs-zT-FPh" firstAttribute="top" secondItem="X0u-CR-Mae" secondAttribute="top" id="GzA-aK-7VI"/>
                             <constraint firstAttribute="trailing" secondItem="8dU-HJ-O6j" secondAttribute="trailing" constant="20" id="JAc-z4-ugp"/>
-                            <constraint firstItem="xnT-8p-v0z" firstAttribute="leading" secondItem="X0u-CR-Mae" secondAttribute="leading" constant="20" id="QNz-pG-F2W"/>
+                            <constraint firstItem="wWs-zT-FPh" firstAttribute="leading" secondItem="X0u-CR-Mae" secondAttribute="leading" id="aE5-JJ-d6N"/>
                             <constraint firstItem="kKr-a3-6GX" firstAttribute="leading" secondItem="X0u-CR-Mae" secondAttribute="leading" constant="20" id="aFP-Pl-f9t"/>
                             <constraint firstItem="AKT-Xd-ban" firstAttribute="top" secondItem="blE-eR-isE" secondAttribute="bottom" id="gCI-h0-ip1"/>
+                            <constraint firstAttribute="trailing" secondItem="xnT-8p-v0z" secondAttribute="trailing" constant="20" id="gpL-ZE-mAe"/>
+                            <constraint firstItem="AKT-Xd-ban" firstAttribute="top" secondItem="wWs-zT-FPh" secondAttribute="bottom" id="kGX-5T-T4H"/>
                             <constraint firstAttribute="trailing" secondItem="Cyq-QX-c2g" secondAttribute="trailing" id="nk5-oN-xjB"/>
                             <constraint firstItem="AKT-Xd-ban" firstAttribute="top" secondItem="xnT-8p-v0z" secondAttribute="bottom" constant="20" id="qI4-kq-BWt"/>
                             <constraint firstItem="8dU-HJ-O6j" firstAttribute="leading" secondItem="X0u-CR-Mae" secondAttribute="leading" constant="20" id="qhx-wE-nTW"/>
@@ -519,8 +537,8 @@ For your eyes only</string>
         </scene>
     </scenes>
     <resources>
+        <image name="background.jpg" width="1257" height="1410"/>
         <image name="defaultHeadshot.gif" width="400" height="400"/>
-        <image name="homeScreenBackground.gif" width="640" height="1136"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

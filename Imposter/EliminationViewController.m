@@ -69,7 +69,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionViewCell *cell = [self.playerPhotoCollectionView dequeueReusableCellWithReuseIdentifier:@"playerCell" forIndexPath:indexPath];
-    UIImage *photo = [UIImage imageNamed:@"defaultHeadshot.gif"];
+    UIImage *photo = [UIImage imageNamed:@"defaultHeadshot.png"];
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
     [imageView setImage:photo];
     UIButton *button = (UIButton *)[cell viewWithTag:2];

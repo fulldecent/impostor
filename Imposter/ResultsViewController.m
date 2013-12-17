@@ -80,7 +80,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"resultCell"];
-    UIImage *photo = [UIImage imageNamed:@"defaultHeadshot.gif"];
+    UIImage *photo = [UIImage imageNamed:@"defaultHeadshot.png"];
     
     BOOL eliminated = [(NSNumber *)[self.game.playerEliminated objectAtIndex:indexPath.row] boolValue];
     NSString *word = (NSString *)[self.game.playerWords objectAtIndex:indexPath.row];

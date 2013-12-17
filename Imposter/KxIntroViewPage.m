@@ -124,7 +124,7 @@
     CGSize titleSize = _titleLabel ? [_titleLabel sizeThatFits:CGSizeMake(W, H)] : CGSizeMake(0, 0);
     CGSize detailSize = _detailLabel ? [_detailLabel sizeThatFits:CGSizeMake(W, H)] : CGSizeMake(0, 0);
     
-    float Y = yPadding;
+    float Y = yPadding + 40;
     
     if (_titleLabel) {
         _titleLabel.frame = CGRectMake(xPadding, Y, W, titleSize.height);

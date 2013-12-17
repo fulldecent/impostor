@@ -16,6 +16,7 @@
 @property (nonatomic) UIImagePickerController *imagePickerController;
 @property (nonatomic) UIPopoverController *imagePopoverController;
 @property (nonatomic) BOOL wantsToTakePhoto;
+@property (nonatomic) BOOL photoDenied;
 @end
 
 @implementation SecretWordViewController
@@ -25,6 +26,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.game = [ImposterGameModel game];
+    self.topSecretLabel.transform = CGAffineTransformMakeRotation(-10 * M_PI / 180.0);
+    self.topSecretLabel.clipsToBounds = NO;
 }
 
 - (IBAction)showSecretWord:(id)sender {
@@ -45,11 +48,8 @@
 {
     [super viewWillAppear:animated];
     
-    self.topSecretLabel.transform = CGAffineTransformMakeRotation(-10 * M_PI / 180.0);
-    self.topSecretLabel.clipsToBounds = NO;
-    
     self.playerLabel.text = [NSString stringWithFormat:@"Player #%d", self.playerNumber+1];
-    UIImage *photo = [UIImage imageNamed:@"defaultHeadshot.gif"];
+    UIImage *photo = [UIImage imageNamed:@"defaultHeadshot.png"];
     self.playerImage.image = photo;
 
     photo = [self.game.playerPhotos objectForKey:[NSNumber numberWithInt:self.playerNumber]];
@@ -61,7 +61,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    if (!self.wantsToTakePhoto)
+    if (!self.wantsToTakePhoto || self.photoDenied)
         return;
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         self.imagePickerController = [[UIImagePickerController alloc] init];
@@ -145,6 +145,12 @@
     [UIImagePNGRepresentation(normalizedImage) writeToFile:targetPhotoPath atomically:YES];
     [self.game.playerPhotos setObject:normalizedImage forKey:[NSNumber numberWithInt:self.playerNumber]];
     
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    self.photoDenied = YES;
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
