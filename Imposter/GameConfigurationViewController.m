@@ -69,7 +69,16 @@
     NSURL *url = [NSURL fileURLWithPath:[bundleDirectory stringByAppendingPathComponent:@"intro.mp3"]];
     self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     [self.audioPlayer play];
+    
+    /* TMPORARY TO GET LAUNCH IMAGES
+    for (UIView *subview in self.view.subviews)
+        if (![subview isKindOfClass:[UIImageView class]])
+            subview.hidden=YES;
+    */
 }
+/* TEMPORARY TO GET LAUNCH IMAGES
+- (BOOL)prefersStatusBarHidden{return YES;}
+*/
 
 - (IBAction)decrementPlayerCount:(id)sender {
     self.playerCount--;
