@@ -16,5 +16,6 @@
 - (IBAction)showInstructions:(id)sender;
 - (IBAction)showGameOptions:(id)sender;
 - (IBAction)startGame:(id)sender;
+- (IBAction)fadeOutMusic;
 
 @end

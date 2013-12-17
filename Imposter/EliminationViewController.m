@@ -9,6 +9,7 @@
 #import "EliminationViewController.h"
 #import "ImposterGameModel.h"
 #import <AudioToolbox/AudioToolbox.h>
+#import "GameConfigurationViewController.h"
 
 @interface EliminationViewController () <UICollectionViewDataSource>
 @property (nonatomic) ImposterGameModel *game;
@@ -52,6 +53,9 @@
     [super viewDidAppear:animated];
     self.alertView = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"Player #%d was randomly selected to start the first round", self.game.playerNumberToStartRound+1] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [self.alertView show];
+    
+    GameConfigurationViewController *root = (GameConfigurationViewController *)self.navigationController.viewControllers.firstObject;
+    [root fadeOutMusic];
 }
 
 #pragma mark - UICollectionViewDataSource

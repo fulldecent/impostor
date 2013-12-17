@@ -117,6 +117,22 @@
     [self.game startGameWithNumberOfPlayers:self.playerCount];
 }
 
+- (void)fadeOutMusic
+{
+    // http://stackoverflow.com/questions/1216581/avaudioplayer-fade-volume-out
+    if (self.audioPlayer.volume > 0.1) {
+        self.audioPlayer.volume -= 0.1;
+        [self performSelector:@selector(fadeOutMusic) withObject:nil afterDelay:0.1];
+    } else {
+        // Stop and get the sound ready for playing again
+        [self.audioPlayer stop];
+        self.audioPlayer.currentTime = 0;
+        [self.audioPlayer prepareToPlay];
+        self.audioPlayer.volume = 1.0;
+    }
+
+}
+
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
     [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
