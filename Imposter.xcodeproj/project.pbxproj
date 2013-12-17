@@ -40,6 +40,7 @@
 		D9A4F779185E80040060AA2D /* peek.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F778185E80040060AA2D /* peek.mp3 */; };
 		D9A4F77B185E80650060AA2D /* eliminate.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F77A185E80650060AA2D /* eliminate.mp3 */; };
 		D9A4F77D185E80D10060AA2D /* results.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F77C185E80D10060AA2D /* results.mp3 */; };
+		D9A4F780185FD6C40060AA2D /* QBFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4F77F185FD6C40060AA2D /* QBFlatButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,8 @@
 		D9A4F778185E80040060AA2D /* peek.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = peek.mp3; sourceTree = "<group>"; };
 		D9A4F77A185E80650060AA2D /* eliminate.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = eliminate.mp3; sourceTree = "<group>"; };
 		D9A4F77C185E80D10060AA2D /* results.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = results.mp3; sourceTree = "<group>"; };
+		D9A4F77E185FD6C40060AA2D /* QBFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBFlatButton.h; sourceTree = "<group>"; };
+		D9A4F77F185FD6C40060AA2D /* QBFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBFlatButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +208,8 @@
 				D9A4F769185E54480060AA2D /* KxIntroViewController.m */,
 				D9A4F76A185E54480060AA2D /* KxIntroViewPage.h */,
 				D9A4F76B185E54480060AA2D /* KxIntroViewPage.m */,
+				D9A4F77E185FD6C40060AA2D /* QBFlatButton.h */,
+				D9A4F77F185FD6C40060AA2D /* QBFlatButton.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -344,6 +349,7 @@
 				D9A4F76C185E54480060AA2D /* KxIntroView.m in Sources */,
 				D98CA43C185D67E800746059 /* MainGameViewController.m in Sources */,
 				D98CA408185D338600746059 /* main.m in Sources */,
+				D9A4F780185FD6C40060AA2D /* QBFlatButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
