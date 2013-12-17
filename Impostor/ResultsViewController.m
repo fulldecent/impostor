@@ -10,7 +10,7 @@
 #import "ImpostorGameModel.h"
 #import <AudioToolbox/AudioToolbox.h>
 
-@interface ResultsViewController () <UITableViewDataSource>
+@interface ResultsViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic) ImpostorGameModel *game;
 @property (nonatomic) UIAlertView *alertView;
 @end
@@ -31,6 +31,7 @@
     [super viewDidLoad];
     self.game = [ImpostorGameModel game];
     self.tableView.dataSource = self;
+    self.tableView.delegate = self;
 	// Do any additional setup after loading the view.
 }
 
@@ -103,5 +104,15 @@
 
     return cell;
 }
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView
+  willDisplayCell:(UITableViewCell *)cell
+forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [cell setBackgroundColor:[UIColor clearColor]];
+}
+
 
 @end
