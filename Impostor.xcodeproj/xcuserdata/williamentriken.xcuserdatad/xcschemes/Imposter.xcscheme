@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D98CA3F7185D338600746059"
-               BuildableName = "Imposter.app"
+               BuildableName = "Impostor.app"
                BlueprintName = "Impostor"
                ReferencedContainer = "container:Impostor.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D98CA41B185D338600746059"
-               BuildableName = "ImposterTests.xctest"
+               BuildableName = "ImpostorTests.xctest"
                BlueprintName = "ImpostorTests"
                ReferencedContainer = "container:Impostor.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D98CA3F7185D338600746059"
-            BuildableName = "Imposter.app"
+            BuildableName = "Impostor.app"
             BlueprintName = "Impostor"
             ReferencedContainer = "container:Impostor.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D98CA3F7185D338600746059"
-            BuildableName = "Imposter.app"
+            BuildableName = "Impostor.app"
             BlueprintName = "Impostor"
             ReferencedContainer = "container:Impostor.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D98CA3F7185D338600746059"
-            BuildableName = "Imposter.app"
+            BuildableName = "Impostor.app"
             BlueprintName = "Impostor"
             ReferencedContainer = "container:Impostor.xcodeproj">
          </BuildableReference>
