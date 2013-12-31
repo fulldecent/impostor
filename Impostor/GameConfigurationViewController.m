@@ -120,7 +120,7 @@
 
 - (IBAction)startGame:(id)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSNumber *playerCountToSave = [NSNumber numberWithInt:self.playerCount];
+    NSNumber *playerCountToSave = [NSNumber numberWithInteger:self.playerCount];
     [defaults setObject:playerCountToSave forKey:@"playerCount"];
     [defaults synchronize];
     [self.game startGameWithNumberOfPlayers:self.playerCount];
@@ -222,7 +222,7 @@
         }
     } else if (buttonIndex == 3) {
         // Create the item to share (in this example, a url)
-        NSString *urlString = @"http://phor.net";
+        NSString *urlString = @"https://itunes.apple.com/us/app/whos-the-impostor/id784258202?mt=8‎";
         NSURL *url = [NSURL URLWithString:urlString];
         NSString *title = @"I am playing the party game Impostor";
         NSArray *itemsToShare = @[url, title];
