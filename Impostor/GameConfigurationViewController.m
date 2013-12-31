@@ -70,6 +70,13 @@
     self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     [self.audioPlayer play];
     
+    // Show instructions on first run
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"didShowInstructions"]) {
+        [self showInstructions:self];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"didShowInstructions"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    
     /* TMPORARY TO GET LAUNCH IMAGES
     for (UIView *subview in self.view.subviews)
         if (![subview isKindOfClass:[UIImageView class]])
@@ -167,7 +174,7 @@
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
     imageView.image = photo;
     
-    photo = [self.game.playerPhotos objectForKey:[NSNumber numberWithInt:indexPath.row]];
+    photo = [self.game.playerPhotos objectForKey:[NSNumber numberWithInteger:indexPath.row]];
     if (photo)
         imageView.image = photo;
     return cell;
