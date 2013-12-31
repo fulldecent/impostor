@@ -21,7 +21,7 @@
 		D98CA41F185D338600746059 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98CA3FB185D338600746059 /* Foundation.framework */; };
 		D98CA420185D338600746059 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98CA3FF185D338600746059 /* UIKit.framework */; };
 		D98CA428185D338600746059 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D98CA426185D338600746059 /* InfoPlist.strings */; };
-		D98CA42A185D338600746059 /* ImposterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA429185D338600746059 /* ImposterTests.m */; };
+		D98CA42A185D338600746059 /* ImpostorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA429185D338600746059 /* ImpostorTests.m */; };
 		D98CA439185D3A3900746059 /* ImpostorGameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA438185D3A3900746059 /* ImpostorGameModel.m */; };
 		D98CA43C185D67E800746059 /* MainGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA43B185D67E800746059 /* MainGameViewController.m */; };
 		D98CA442185D699E00746059 /* SecretWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA441185D699E00746059 /* SecretWordViewController.m */; };
@@ -49,7 +49,7 @@
 			containerPortal = D98CA3F0185D338600746059 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = D98CA3F7185D338600746059;
-			remoteInfo = Imposter;
+			remoteInfo = Impostor;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -61,7 +61,7 @@
 		D98CA403185D338600746059 /* Impostor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Impostor-Info.plist"; sourceTree = "<group>"; };
 		D98CA405185D338600746059 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D98CA407185D338600746059 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D98CA409185D338600746059 /* Imposter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Imposter-Prefix.pch"; sourceTree = "<group>"; };
+		D98CA409185D338600746059 /* Impostor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Impostor-Prefix.pch"; sourceTree = "<group>"; };
 		D98CA40A185D338600746059 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D98CA40B185D338600746059 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D98CA40E185D338600746059 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
@@ -73,7 +73,7 @@
 		D98CA41D185D338600746059 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		D98CA425185D338600746059 /* ImpostorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImpostorTests-Info.plist"; sourceTree = "<group>"; };
 		D98CA427185D338600746059 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D98CA429185D338600746059 /* ImposterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImposterTests.m; sourceTree = "<group>"; };
+		D98CA429185D338600746059 /* ImpostorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImpostorTests.m; sourceTree = "<group>"; };
 		D98CA437185D3A3900746059 /* ImpostorGameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImpostorGameModel.h; sourceTree = "<group>"; };
 		D98CA438185D3A3900746059 /* ImpostorGameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ImpostorGameModel.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D98CA43A185D67E800746059 /* MainGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainGameViewController.h; sourceTree = "<group>"; };
@@ -193,7 +193,7 @@
 				D98CA403185D338600746059 /* Impostor-Info.plist */,
 				D98CA404185D338600746059 /* InfoPlist.strings */,
 				D98CA407185D338600746059 /* main.m */,
-				D98CA409185D338600746059 /* Imposter-Prefix.pch */,
+				D98CA409185D338600746059 /* Impostor-Prefix.pch */,
 				D9A4F783185FE0F50060AA2D /* background.jpg */,
 				D9A4F781185FDDA90060AA2D /* defaultHeadshot.png */,
 				D9A4F772185E7DEA0060AA2D /* intro.mp3 */,
@@ -217,7 +217,7 @@
 		D98CA423185D338600746059 /* ImpostorTests */ = {
 			isa = PBXGroup;
 			children = (
-				D98CA429185D338600746059 /* ImposterTests.m */,
+				D98CA429185D338600746059 /* ImpostorTests.m */,
 				D98CA424185D338600746059 /* Supporting Files */,
 			);
 			path = ImpostorTests;
@@ -248,7 +248,7 @@
 			dependencies = (
 			);
 			name = Impostor;
-			productName = Imposter;
+			productName = Impostor;
 			productReference = D98CA3F8185D338600746059 /* Impostor.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -266,7 +266,7 @@
 				D98CA422185D338600746059 /* PBXTargetDependency */,
 			);
 			name = ImpostorTests;
-			productName = ImposterTests;
+			productName = ImpostorTests;
 			productReference = D98CA41C185D338600746059 /* ImpostorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -360,7 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D98CA42A185D338600746059 /* ImposterTests.m in Sources */,
+				D98CA42A185D338600746059 /* ImpostorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

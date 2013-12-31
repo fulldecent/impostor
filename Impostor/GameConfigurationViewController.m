@@ -229,8 +229,7 @@
         }
     } else if (buttonIndex == 3) {
         // Create the item to share (in this example, a url)
-        NSString *urlString = @"https://itunes.apple.com/us/app/whos-the-impostor/id784258202?mt=8‎";
-        NSURL *url = [NSURL URLWithString:urlString];
+        NSURL *url = [NSURL URLWithString:@"https://itunes.apple.com/us/app/whos-the-impostor/id784258202"];
         NSString *title = @"I am playing the party game Impostor";
         NSArray *itemsToShare = @[url, title];
         UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
