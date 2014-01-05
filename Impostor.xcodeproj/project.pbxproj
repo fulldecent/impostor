@@ -41,6 +41,11 @@
 		D9A4F780185FD6C40060AA2D /* QBFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4F77F185FD6C40060AA2D /* QBFlatButton.m */; };
 		D9A4F782185FDDA90060AA2D /* defaultHeadshot.png in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F781185FDDA90060AA2D /* defaultHeadshot.png */; };
 		D9A4F784185FE0F50060AA2D /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F783185FE0F50060AA2D /* background.jpg */; };
+		D9CDEBDE1879D97900AE4163 /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CDEBDA1879D97900AE4163 /* minus.png */; };
+		D9CDEBDF1879D97900AE4163 /* question.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CDEBDB1879D97900AE4163 /* question.png */; };
+		D9CDEBE01879D97900AE4163 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CDEBDC1879D97900AE4163 /* plus.png */; };
+		D9CDEBE11879D97900AE4163 /* remove.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CDEBDD1879D97900AE4163 /* remove.png */; };
+		D9CDEBE31879DA2800AE4163 /* cogs.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CDEBE21879DA2800AE4163 /* cogs.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +107,11 @@
 		D9A4F77F185FD6C40060AA2D /* QBFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBFlatButton.m; sourceTree = "<group>"; };
 		D9A4F781185FDDA90060AA2D /* defaultHeadshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultHeadshot.png; sourceTree = "<group>"; };
 		D9A4F783185FE0F50060AA2D /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		D9CDEBDA1879D97900AE4163 /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minus.png; sourceTree = "<group>"; };
+		D9CDEBDB1879D97900AE4163 /* question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question.png; sourceTree = "<group>"; };
+		D9CDEBDC1879D97900AE4163 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		D9CDEBDD1879D97900AE4163 /* remove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = remove.png; sourceTree = "<group>"; };
+		D9CDEBE21879DA2800AE4163 /* cogs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cogs.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +206,11 @@
 				D98CA409185D338600746059 /* Impostor-Prefix.pch */,
 				D9A4F783185FE0F50060AA2D /* background.jpg */,
 				D9A4F781185FDDA90060AA2D /* defaultHeadshot.png */,
+				D9CDEBDA1879D97900AE4163 /* minus.png */,
+				D9CDEBDB1879D97900AE4163 /* question.png */,
+				D9CDEBDC1879D97900AE4163 /* plus.png */,
+				D9CDEBDD1879D97900AE4163 /* remove.png */,
+				D9CDEBE21879DA2800AE4163 /* cogs.png */,
 				D9A4F772185E7DEA0060AA2D /* intro.mp3 */,
 				D9A4F774185E7EDE0060AA2D /* buttonPress.mp3 */,
 				D9A4F778185E80040060AA2D /* peek.mp3 */,
@@ -313,13 +328,18 @@
 			files = (
 				D9A4F77B185E80650060AA2D /* eliminate.mp3 in Resources */,
 				D9A4F784185FE0F50060AA2D /* background.jpg in Resources */,
+				D9CDEBDE1879D97900AE4163 /* minus.png in Resources */,
 				D98CA412185D338600746059 /* Main_iPad.storyboard in Resources */,
 				D9A4F782185FDDA90060AA2D /* defaultHeadshot.png in Resources */,
+				D9CDEBE31879DA2800AE4163 /* cogs.png in Resources */,
 				D9A4F779185E80040060AA2D /* peek.mp3 in Resources */,
 				D9A4F765185E43090060AA2D /* gameWords.json in Resources */,
 				D98CA417185D338600746059 /* Images.xcassets in Resources */,
 				D9A4F773185E7DEA0060AA2D /* intro.mp3 in Resources */,
+				D9CDEBDF1879D97900AE4163 /* question.png in Resources */,
 				D9A4F775185E7EDE0060AA2D /* buttonPress.mp3 in Resources */,
+				D9CDEBE11879D97900AE4163 /* remove.png in Resources */,
+				D9CDEBE01879D97900AE4163 /* plus.png in Resources */,
 				D9A4F77D185E80D10060AA2D /* results.mp3 in Resources */,
 				D98CA40F185D338600746059 /* Main_iPhone.storyboard in Resources */,
 				D98CA406185D338600746059 /* InfoPlist.strings in Resources */,
