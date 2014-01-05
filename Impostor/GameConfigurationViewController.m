@@ -32,7 +32,7 @@
         _playerCount = 12;
     else
         _playerCount = playerCount;
-    self.numberOfPlayersLabel.text = [NSString stringWithFormat:@"%d players", self.playerCount];
+    self.numberOfPlayersLabel.text = [NSString stringWithFormat:@"%ld players", (long)self.playerCount];
     [self.playerPhotoCollectionView reloadData];
     [self.view setNeedsLayout];
 }
@@ -43,7 +43,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.playerPhotoCollectionView.dataSource = self;
     self.game = [ImpostorGameModel game];
-    self.numberOfPlayersLabel.text = [NSString stringWithFormat:@"%d players", self.playerCount];
+    self.numberOfPlayersLabel.text = [NSString stringWithFormat:@"%ld players", (long)self.playerCount];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSNumber *savedPlayerCount = [defaults objectForKey:@"playerCount"];

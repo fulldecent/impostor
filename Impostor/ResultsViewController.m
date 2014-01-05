@@ -86,7 +86,7 @@
     BOOL eliminated = [(NSNumber *)[self.game.playerEliminated objectAtIndex:indexPath.row] boolValue];
     NSString *word = (NSString *)[self.game.playerWords objectAtIndex:indexPath.row];
 
-    NSString *title = [NSString stringWithFormat:@"Player #%d", indexPath.row+1];
+    NSString *title = [NSString stringWithFormat:@"Player #%ld", (long)indexPath.row+1];
     if (eliminated)
         [title stringByAppendingString:@" ELIMINATED"];
     
@@ -98,7 +98,7 @@
     cell.imageView.image = photo;
     cell.imageView.alpha = eliminated ? 0.4 : 1.0;
     
-    photo = [self.game.playerPhotos objectForKey:[NSNumber numberWithInt:indexPath.row]];
+    photo = [self.game.playerPhotos objectForKey:[NSNumber numberWithInteger:indexPath.row]];
     if (photo)
         cell.imageView.image = photo;
 

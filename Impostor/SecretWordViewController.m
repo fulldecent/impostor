@@ -48,12 +48,12 @@
 {
     [super viewWillAppear:animated];
     
-    self.playerLabel.text = [NSString stringWithFormat:@"Player #%d", self.playerNumber+1];
+    self.playerLabel.text = [NSString stringWithFormat:@"Player #%ld", (long)self.playerNumber+1];
     UIImage *photo = [UIImage imageNamed:@"defaultHeadshot.png"];
     self.playerImage.image = photo;
 
-    photo = [self.game.playerPhotos objectForKey:[NSNumber numberWithInt:self.playerNumber]];
-    if (photo)
+    photo = [self.game.playerPhotos objectForKey:[NSNumber numberWithInteger:self.playerNumber]];
+    if (photo)  
         self.playerImage.image = photo;
     self.wantsToTakePhoto = !photo;
 }
@@ -141,9 +141,9 @@
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
-    NSString *targetPhotoPath = [basePath stringByAppendingPathComponent:[NSString stringWithFormat:@"player%i.png",self.playerNumber]];
+    NSString *targetPhotoPath = [basePath stringByAppendingPathComponent:[NSString stringWithFormat:@"player%ld.png",(long)self.playerNumber]];
     [UIImagePNGRepresentation(normalizedImage) writeToFile:targetPhotoPath atomically:YES];
-    [self.game.playerPhotos setObject:normalizedImage forKey:[NSNumber numberWithInt:self.playerNumber]];
+    [self.game.playerPhotos setObject:normalizedImage forKey:[NSNumber numberWithInteger:self.playerNumber]];
     
     [picker dismissViewControllerAnimated:YES completion:nil];
 }

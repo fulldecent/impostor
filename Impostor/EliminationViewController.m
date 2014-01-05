@@ -40,7 +40,7 @@
     [self.playerPhotoCollectionView reloadData];
     
     if (self.game.gameStatus == GameStatusTheImpostorRemains) {
-        self.alertView = [[UIAlertView alloc] initWithTitle:@"The impostor remains" message:[NSString stringWithFormat:@"Player #%i starts this round", self.game.playerNumberToStartRound+1] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        self.alertView = [[UIAlertView alloc] initWithTitle:@"The impostor remains" message:[NSString stringWithFormat:@"Player #%ld starts this round", (long)self.game.playerNumberToStartRound+1] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [self.alertView show];
     } else if (self.game.gameStatus == GameStatusTheImpostorWasDefeated ||
                self.game.gameStatus == GameStatusTheImpostorWon) {
@@ -51,7 +51,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    self.alertView = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"Player #%d was randomly selected to start the first round", self.game.playerNumberToStartRound+1] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    self.alertView = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"Player #%ld was randomly selected to start the first round", (long)self.game.playerNumberToStartRound+1] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [self.alertView show];
     
     GameConfigurationViewController *root = (GameConfigurationViewController *)self.navigationController.viewControllers.firstObject;
@@ -84,7 +84,7 @@
         imageView.alpha = 1.0;
         button.userInteractionEnabled = YES;
     }
-    photo = [self.game.playerPhotos objectForKey:[NSNumber numberWithInt:indexPath.row]];
+    photo = [self.game.playerPhotos objectForKey:[NSNumber numberWithInteger:indexPath.row]];
     if (photo)
         imageView.image = photo;
 
