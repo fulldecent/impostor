@@ -16,9 +16,6 @@
 		D98CA40F185D338600746059 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98CA40D185D338600746059 /* Main_iPhone.storyboard */; };
 		D98CA415185D338600746059 /* GameConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA414185D338600746059 /* GameConfigurationViewController.m */; };
 		D98CA417185D338600746059 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98CA416185D338600746059 /* Images.xcassets */; };
-		D98CA41E185D338600746059 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98CA41D185D338600746059 /* XCTest.framework */; };
-		D98CA41F185D338600746059 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98CA3FB185D338600746059 /* Foundation.framework */; };
-		D98CA420185D338600746059 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98CA3FF185D338600746059 /* UIKit.framework */; };
 		D98CA439185D3A3900746059 /* ImpostorGameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA438185D3A3900746059 /* ImpostorGameModel.m */; };
 		D98CA43C185D67E800746059 /* MainGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA43B185D67E800746059 /* MainGameViewController.m */; };
 		D98CA442185D699E00746059 /* SecretWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA441185D699E00746059 /* SecretWordViewController.m */; };
@@ -43,17 +40,8 @@
 		D9CDEBE01879D97900AE4163 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CDEBDC1879D97900AE4163 /* plus.png */; };
 		D9CDEBE11879D97900AE4163 /* remove.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CDEBDD1879D97900AE4163 /* remove.png */; };
 		D9CDEBE31879DA2800AE4163 /* cogs.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CDEBE21879DA2800AE4163 /* cogs.png */; };
+		D9CDEBEE187A3B4A00AE4163 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9CDEBEC187A3B4A00AE4163 /* Localizable.strings */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		D98CA421185D338600746059 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D98CA3F0185D338600746059 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D98CA3F7185D338600746059;
-			remoteInfo = Impostor;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D98CA3F8185D338600746059 /* Impostor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Impostor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,7 +58,6 @@
 		D98CA413185D338600746059 /* GameConfigurationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfigurationViewController.h; sourceTree = "<group>"; };
 		D98CA414185D338600746059 /* GameConfigurationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = GameConfigurationViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D98CA416185D338600746059 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D98CA41C185D338600746059 /* ImpostorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImpostorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98CA41D185D338600746059 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		D98CA437185D3A3900746059 /* ImpostorGameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImpostorGameModel.h; sourceTree = "<group>"; };
 		D98CA438185D3A3900746059 /* ImpostorGameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ImpostorGameModel.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -105,6 +92,10 @@
 		D9CDEBDC1879D97900AE4163 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 		D9CDEBDD1879D97900AE4163 /* remove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = remove.png; sourceTree = "<group>"; };
 		D9CDEBE21879DA2800AE4163 /* cogs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cogs.png; sourceTree = "<group>"; };
+		D9CDEBEA187A379500AE4163 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main_iPhone.strings"; sourceTree = "<group>"; };
+		D9CDEBEB187A379500AE4163 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		D9CDEBED187A3B4A00AE4163 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D9CDEBEF187A3B8100AE4163 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,16 +108,6 @@
 				D98CA3FE185D338600746059 /* CoreGraphics.framework in Frameworks */,
 				D98CA400185D338600746059 /* UIKit.framework in Frameworks */,
 				D98CA3FC185D338600746059 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D98CA419185D338600746059 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D98CA41E185D338600746059 /* XCTest.framework in Frameworks */,
-				D98CA420185D338600746059 /* UIKit.framework in Frameworks */,
-				D98CA41F185D338600746059 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				D98CA3F8185D338600746059 /* Impostor.app */,
-				D98CA41C185D338600746059 /* ImpostorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -170,6 +150,7 @@
 				D98CA40A185D338600746059 /* AppDelegate.h */,
 				D98CA40B185D338600746059 /* AppDelegate.m */,
 				D98CA40D185D338600746059 /* Main_iPhone.storyboard */,
+				D9CDEBEC187A3B4A00AE4163 /* Localizable.strings */,
 				D98CA416185D338600746059 /* Images.xcassets */,
 				D98CA437185D3A3900746059 /* ImpostorGameModel.h */,
 				D98CA438185D3A3900746059 /* ImpostorGameModel.m */,
@@ -240,24 +221,6 @@
 			productReference = D98CA3F8185D338600746059 /* Impostor.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D98CA41B185D338600746059 /* ImpostorTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D98CA430185D338600746059 /* Build configuration list for PBXNativeTarget "ImpostorTests" */;
-			buildPhases = (
-				D98CA418185D338600746059 /* Sources */,
-				D98CA419185D338600746059 /* Frameworks */,
-				D98CA41A185D338600746059 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D98CA422185D338600746059 /* PBXTargetDependency */,
-			);
-			name = ImpostorTests;
-			productName = ImpostorTests;
-			productReference = D98CA41C185D338600746059 /* ImpostorTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -270,9 +233,6 @@
 					D98CA3F7185D338600746059 = {
 						DevelopmentTeam = 8Q693ZG5RN;
 					};
-					D98CA41B185D338600746059 = {
-						TestTargetID = D98CA3F7185D338600746059;
-					};
 				};
 			};
 			buildConfigurationList = D98CA3F3185D338600746059 /* Build configuration list for PBXProject "Impostor" */;
@@ -282,6 +242,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = D98CA3EF185D338600746059;
 			productRefGroup = D98CA3F9185D338600746059 /* Products */;
@@ -289,7 +250,6 @@
 			projectRoot = "";
 			targets = (
 				D98CA3F7185D338600746059 /* Impostor */,
-				D98CA41B185D338600746059 /* ImpostorTests */,
 			);
 		};
 /* End PBXProject section */
@@ -299,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9CDEBEE187A3B4A00AE4163 /* Localizable.strings in Resources */,
 				D9A4F77B185E80650060AA2D /* eliminate.mp3 in Resources */,
 				D9A4F784185FE0F50060AA2D /* background.jpg in Resources */,
 				D9CDEBDE1879D97900AE4163 /* minus.png in Resources */,
@@ -315,13 +276,6 @@
 				D9A4F77D185E80D10060AA2D /* results.mp3 in Resources */,
 				D98CA40F185D338600746059 /* Main_iPhone.storyboard in Resources */,
 				D98CA406185D338600746059 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D98CA41A185D338600746059 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,28 +301,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D98CA418185D338600746059 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D98CA422185D338600746059 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D98CA3F7185D338600746059 /* Impostor */;
-			targetProxy = D98CA421185D338600746059 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D98CA404185D338600746059 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				D98CA405185D338600746059 /* en */,
+				D9CDEBEB187A379500AE4163 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -377,8 +317,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				D98CA40E185D338600746059 /* Base */,
+				D9CDEBEA187A379500AE4163 /* zh-Hans */,
 			);
 			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		D9CDEBEC187A3B4A00AE4163 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D9CDEBED187A3B4A00AE4163 /* en */,
+				D9CDEBEF187A3B8100AE4163 /* zh-Hans */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -486,48 +436,6 @@
 			};
 			name = Release;
 		};
-		D98CA431185D338600746059 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Impostor.app/Impostor";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Impostor/Impostor-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "ImpostorTests/ImpostorTests-Info.plist";
-				PRODUCT_NAME = ImpostorTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		D98CA432185D338600746059 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Impostor.app/Impostor";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Impostor/Impostor-Prefix.pch";
-				INFOPLIST_FILE = "ImpostorTests/ImpostorTests-Info.plist";
-				PRODUCT_NAME = ImpostorTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -545,15 +453,6 @@
 			buildConfigurations = (
 				D98CA42E185D338600746059 /* Debug */,
 				D98CA42F185D338600746059 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D98CA430185D338600746059 /* Build configuration list for PBXNativeTarget "ImpostorTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D98CA431185D338600746059 /* Debug */,
-				D98CA432185D338600746059 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

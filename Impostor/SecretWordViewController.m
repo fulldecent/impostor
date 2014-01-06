@@ -36,7 +36,7 @@
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
     AudioServicesPlaySystemSound (soundID);
     NSString *theWord = [self.game.playerWords objectAtIndex:self.playerNumber];
-    self.alertView = [[UIAlertView alloc] initWithTitle:@"YOUR SECRET WORD IS" message:theWord delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    self.alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Your secret word is", @"On the secret word screen") message:theWord delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [self.alertView show];
 }
 
@@ -48,7 +48,7 @@
 {
     [super viewWillAppear:animated];
     
-    self.playerLabel.text = [NSString stringWithFormat:@"Player #%ld", (long)self.playerNumber+1];
+    self.playerLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Player #%ld", @"Current player"), (long)self.playerNumber+1];
     UIImage *photo = [UIImage imageNamed:@"defaultHeadshot.png"];
     self.playerImage.image = photo;
 

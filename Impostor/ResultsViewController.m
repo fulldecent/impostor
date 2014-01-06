@@ -46,10 +46,10 @@
     
     switch (self.game.gameStatus) {
         case GameStatusTheImpostorWasDefeated:
-            self.alertView = [[UIAlertView alloc] initWithTitle:nil message:@"The impostor was defeated" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            self.alertView = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"The impostor was defeated",@"After the game is over") delegate:self cancelButtonTitle:NSLocalizedString(@"OK",@"Dismiss the popup") otherButtonTitles:nil];
             break;
         case GameStatusTheImpostorWon:
-            self.alertView = [[UIAlertView alloc] initWithTitle:nil message:@"The impostor won" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            self.alertView = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"The impostor won",@"After the game is over") delegate:self cancelButtonTitle:NSLocalizedString(@"OK",@"Dismiss the popup") otherButtonTitles:nil];
             break;
         default:;
     }
@@ -86,9 +86,7 @@
     BOOL eliminated = [(NSNumber *)[self.game.playerEliminated objectAtIndex:indexPath.row] boolValue];
     NSString *word = (NSString *)[self.game.playerWords objectAtIndex:indexPath.row];
 
-    NSString *title = [NSString stringWithFormat:@"Player #%ld", (long)indexPath.row+1];
-    if (eliminated)
-        [title stringByAppendingString:@" ELIMINATED"];
+    NSString *title = [NSString stringWithFormat:NSLocalizedString(@"Player #%ld", @"Current player"), (long)indexPath.row+1];
     
     NSString *subtitle;
     subtitle = word;

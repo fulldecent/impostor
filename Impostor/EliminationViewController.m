@@ -40,7 +40,7 @@
     [self.playerPhotoCollectionView reloadData];
     
     if (self.game.gameStatus == GameStatusTheImpostorRemains) {
-        self.alertView = [[UIAlertView alloc] initWithTitle:@"The impostor remains" message:[NSString stringWithFormat:@"Player #%ld starts this round", (long)self.game.playerNumberToStartRound+1] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        self.alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"The impostor remains",@"After someone was killed") message:[NSString stringWithFormat:@"Player #%ld starts this round", (long)self.game.playerNumberToStartRound+1] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [self.alertView show];
     } else if (self.game.gameStatus == GameStatusTheImpostorWasDefeated ||
                self.game.gameStatus == GameStatusTheImpostorWon) {
@@ -51,7 +51,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    self.alertView = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"Player #%ld was randomly selected to start the first round", (long)self.game.playerNumberToStartRound+1] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    self.alertView = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:NSLocalizedString(@"Player #%ld was randomly selected to start the first round",@"When the game starts"), (long)self.game.playerNumberToStartRound+1] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [self.alertView show];
     
     GameConfigurationViewController *root = (GameConfigurationViewController *)self.navigationController.viewControllers.firstObject;

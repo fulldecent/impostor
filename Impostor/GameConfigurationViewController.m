@@ -32,7 +32,8 @@
         _playerCount = 12;
     else
         _playerCount = playerCount;
-    self.numberOfPlayersLabel.text = [NSString stringWithFormat:@"%ld players", (long)self.playerCount];
+    
+    self.numberOfPlayersLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%ld players",@"Number of players in the game"), (long)self.playerCount];
     [self.playerPhotoCollectionView reloadData];
     [self.view setNeedsLayout];
 }
@@ -101,17 +102,17 @@
     KxIntroViewController *vc;
     AudioServicesPlaySystemSound (self.buttonPress);
     vc = [[KxIntroViewController alloc] initWithPages:@[
-                                                        [KxIntroViewPage introViewPageWithTitle: @"A party game"
-                                                                                     withDetail: @"For 3 to 12 players"
+                                                        [KxIntroViewPage introViewPageWithTitle: NSLocalizedString(@"A party game", @"Intro screen 1 title")
+                                                                                     withDetail: NSLocalizedString(@"For 3 to 12 players", @"Intro screen 1 detail")
                                                                                       withImage: nil],
-                                                        [KxIntroViewPage introViewPageWithTitle: @"Everyone sees their secret word"
-                                                                                     withDetail: @"But the impostor's word is different"
+                                                        [KxIntroViewPage introViewPageWithTitle: NSLocalizedString(@"Everyone sees their secret word", @"Intro screen 2 title")
+                                                                                     withDetail: NSLocalizedString(@"But the impostor's word is different", @"Intro screen 2 detail")
                                                                                       withImage: nil],
-                                                        [KxIntroViewPage introViewPageWithTitle: @"Each round players describe their word"
-                                                                                     withDetail: @"and then vote to eliminate one player (can't use word to describe itself or repeat other players, break ties with a revote)"
+                                                        [KxIntroViewPage introViewPageWithTitle: NSLocalizedString(@"Each round players describe their word", @"Intro screen 3 title")
+                                                                                     withDetail: NSLocalizedString(@"and then vote to eliminate one player (can't use word to describe itself or repeat other players, break ties with a revote)", @"Intro screen 3 detail")
                                                                                       withImage: nil],
-                                                        [KxIntroViewPage introViewPageWithTitle: @"To win"
-                                                                                     withDetail: @"the impostor must survive with one other player"
+                                                        [KxIntroViewPage introViewPageWithTitle: NSLocalizedString(@"To win", @"Intro screen 4 title")
+                                                                                     withDetail: NSLocalizedString(@"the impostor must survive with one other player", @"Intro screen 4 detail")
                                                                                       withImage: nil],
                                                         ]],
 //    [self presentViewController:vc animated:YES completion:nil];
@@ -121,7 +122,13 @@
 - (IBAction)showGameOptions:(id)sender {
     AudioServicesPlaySystemSound (self.buttonPress);
     self.actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self
-                                          cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Reset player photos", @"Help translate this app", @"Recommend game words", @"Share this app", nil];
+                                          cancelButtonTitle:NSLocalizedString(@"Cancel", @"Close the settings menu")
+                                     destructiveButtonTitle:nil
+                                          otherButtonTitles:NSLocalizedString(@"Reset player photos", @"In the settings menu"),
+                                                            NSLocalizedString(@"Help translate this app", @"In the settings menu"),
+                                                            NSLocalizedString(@"Recommend game words", @"In the settings menu"),
+                                                            NSLocalizedString(@"Share this app", @"In the settings menu"),
+                                                            nil];
     [self.actionSheet showFromRect:[(UIView *)[self.view viewWithTag:9] frame]  inView:self.view animated:YES];
 }
 
@@ -213,24 +220,27 @@
         if ([MFMailComposeViewController canSendMail]) {
             MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
             picker.mailComposeDelegate = self;
-            [picker setSubject:@"Impostor: Help translate"];
+            NSString *appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
+            [picker setSubject:[NSString stringWithFormat:NSLocalizedString(@"%@: Help translate", @"Email subject to help translate"), appName]];
             [picker setToRecipients:[NSArray arrayWithObject:@"impostor@phor.net"]];
-            [picker setMessageBody:@"I love the Impostor app and can help translate into: [[[WHICH LANGUAGE?]]]" isHTML:NO];
+            [picker setMessageBody:[NSString stringWithFormat:NSLocalizedString(@"I love the %@ app and can help translate into: [[[WHICH LANGUAGE?]]]", @"Email body"), appName] isHTML:NO];
             [self presentViewController:picker animated:YES completion:nil];
         }
     } else if (buttonIndex == 2) {
         if ([MFMailComposeViewController canSendMail]) {
             MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
             picker.mailComposeDelegate = self;
-            [picker setSubject:@"Impostor: Recommend game words"];
+            NSString *appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
+            [picker setSubject:[NSString stringWithFormat:NSLocalizedString(@"%@: Recommend game words", @"Email subject to recommend words"), appName]];
             [picker setToRecipients:[NSArray arrayWithObject:@"impostor@phor.net"]];
-            [picker setMessageBody:@"I love the Impostor app and have an ideo of some more pairs of words you can use in it:" isHTML:NO];
+            [picker setMessageBody:[NSString stringWithFormat:NSLocalizedString(@"I love the %@ app and have an idea of some more pairs of words you can use in it:", @"Email body"), appName] isHTML:NO];
             [self presentViewController:picker animated:YES completion:nil];
         }
     } else if (buttonIndex == 3) {
         // Create the item to share (in this example, a url)
+        NSString *appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
         NSURL *url = [NSURL URLWithString:@"https://itunes.apple.com/us/app/whos-the-impostor/id784258202"];
-        NSString *title = @"I am playing the party game Impostor";
+        NSString *title = [NSString stringWithFormat:NSLocalizedString(@"I am playing the party game %@", @"Text for sharing on social network"), appName];
         NSArray *itemsToShare = @[url, title];
         UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
         activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll]; //or whichever you don't need
