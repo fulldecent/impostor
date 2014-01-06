@@ -14,14 +14,11 @@
 		D98CA408185D338600746059 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA407185D338600746059 /* main.m */; };
 		D98CA40C185D338600746059 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA40B185D338600746059 /* AppDelegate.m */; };
 		D98CA40F185D338600746059 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98CA40D185D338600746059 /* Main_iPhone.storyboard */; };
-		D98CA412185D338600746059 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98CA410185D338600746059 /* Main_iPad.storyboard */; };
 		D98CA415185D338600746059 /* GameConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA414185D338600746059 /* GameConfigurationViewController.m */; };
 		D98CA417185D338600746059 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98CA416185D338600746059 /* Images.xcassets */; };
 		D98CA41E185D338600746059 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98CA41D185D338600746059 /* XCTest.framework */; };
 		D98CA41F185D338600746059 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98CA3FB185D338600746059 /* Foundation.framework */; };
 		D98CA420185D338600746059 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98CA3FF185D338600746059 /* UIKit.framework */; };
-		D98CA428185D338600746059 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D98CA426185D338600746059 /* InfoPlist.strings */; };
-		D98CA42A185D338600746059 /* ImpostorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA429185D338600746059 /* ImpostorTests.m */; };
 		D98CA439185D3A3900746059 /* ImpostorGameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA438185D3A3900746059 /* ImpostorGameModel.m */; };
 		D98CA43C185D67E800746059 /* MainGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA43B185D67E800746059 /* MainGameViewController.m */; };
 		D98CA442185D699E00746059 /* SecretWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA441185D699E00746059 /* SecretWordViewController.m */; };
@@ -70,15 +67,11 @@
 		D98CA40A185D338600746059 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D98CA40B185D338600746059 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D98CA40E185D338600746059 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		D98CA411185D338600746059 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		D98CA413185D338600746059 /* GameConfigurationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfigurationViewController.h; sourceTree = "<group>"; };
 		D98CA414185D338600746059 /* GameConfigurationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = GameConfigurationViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D98CA416185D338600746059 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D98CA41C185D338600746059 /* ImpostorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImpostorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98CA41D185D338600746059 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		D98CA425185D338600746059 /* ImpostorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImpostorTests-Info.plist"; sourceTree = "<group>"; };
-		D98CA427185D338600746059 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D98CA429185D338600746059 /* ImpostorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImpostorTests.m; sourceTree = "<group>"; };
 		D98CA437185D3A3900746059 /* ImpostorGameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImpostorGameModel.h; sourceTree = "<group>"; };
 		D98CA438185D3A3900746059 /* ImpostorGameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ImpostorGameModel.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D98CA43A185D67E800746059 /* MainGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainGameViewController.h; sourceTree = "<group>"; };
@@ -144,7 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				D98CA401185D338600746059 /* Impostor */,
-				D98CA423185D338600746059 /* ImpostorTests */,
 				D98CA3FA185D338600746059 /* Frameworks */,
 				D98CA3F9185D338600746059 /* Products */,
 			);
@@ -178,7 +170,6 @@
 				D98CA40A185D338600746059 /* AppDelegate.h */,
 				D98CA40B185D338600746059 /* AppDelegate.m */,
 				D98CA40D185D338600746059 /* Main_iPhone.storyboard */,
-				D98CA410185D338600746059 /* Main_iPad.storyboard */,
 				D98CA416185D338600746059 /* Images.xcassets */,
 				D98CA437185D3A3900746059 /* ImpostorGameModel.h */,
 				D98CA438185D3A3900746059 /* ImpostorGameModel.m */,
@@ -225,24 +216,6 @@
 				D9A4F76B185E54480060AA2D /* KxIntroViewPage.m */,
 				D9A4F77E185FD6C40060AA2D /* QBFlatButton.h */,
 				D9A4F77F185FD6C40060AA2D /* QBFlatButton.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		D98CA423185D338600746059 /* ImpostorTests */ = {
-			isa = PBXGroup;
-			children = (
-				D98CA429185D338600746059 /* ImpostorTests.m */,
-				D98CA424185D338600746059 /* Supporting Files */,
-			);
-			path = ImpostorTests;
-			sourceTree = "<group>";
-		};
-		D98CA424185D338600746059 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D98CA425185D338600746059 /* ImpostorTests-Info.plist */,
-				D98CA426185D338600746059 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -329,7 +302,6 @@
 				D9A4F77B185E80650060AA2D /* eliminate.mp3 in Resources */,
 				D9A4F784185FE0F50060AA2D /* background.jpg in Resources */,
 				D9CDEBDE1879D97900AE4163 /* minus.png in Resources */,
-				D98CA412185D338600746059 /* Main_iPad.storyboard in Resources */,
 				D9A4F782185FDDA90060AA2D /* defaultHeadshot.png in Resources */,
 				D9CDEBE31879DA2800AE4163 /* cogs.png in Resources */,
 				D9A4F779185E80040060AA2D /* peek.mp3 in Resources */,
@@ -350,7 +322,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D98CA428185D338600746059 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,7 +351,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D98CA42A185D338600746059 /* ImpostorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,22 +379,6 @@
 				D98CA40E185D338600746059 /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		D98CA410185D338600746059 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D98CA411185D338600746059 /* Base */,
-			);
-			name = Main_iPad.storyboard;
-			sourceTree = "<group>";
-		};
-		D98CA426185D338600746059 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D98CA427185D338600746059 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
