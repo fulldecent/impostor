@@ -21,7 +21,6 @@
 		D98CA442185D699E00746059 /* SecretWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA441185D699E00746059 /* SecretWordViewController.m */; };
 		D98CA445185E1C8C00746059 /* EliminationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA444185E1C8C00746059 /* EliminationViewController.m */; };
 		D9A4F763185E310A0060AA2D /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4F762185E310A0060AA2D /* ResultsViewController.m */; };
-		D9A4F765185E43090060AA2D /* gameWords.json in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F764185E43090060AA2D /* gameWords.json */; };
 		D9A4F76C185E54480060AA2D /* KxIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4F767185E54480060AA2D /* KxIntroView.m */; };
 		D9A4F76D185E54480060AA2D /* KxIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4F769185E54480060AA2D /* KxIntroViewController.m */; };
 		D9A4F76E185E54480060AA2D /* KxIntroViewPage.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4F76B185E54480060AA2D /* KxIntroViewPage.m */; };
@@ -41,6 +40,7 @@
 		D9CDEBE11879D97900AE4163 /* remove.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CDEBDD1879D97900AE4163 /* remove.png */; };
 		D9CDEBE31879DA2800AE4163 /* cogs.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CDEBE21879DA2800AE4163 /* cogs.png */; };
 		D9CDEBEE187A3B4A00AE4163 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9CDEBEC187A3B4A00AE4163 /* Localizable.strings */; };
+		D9CDEBF0187A4B6C00AE4163 /* gameWords.json in Resources */ = {isa = PBXBuildFile; fileRef = D9CDEBF2187A4B6C00AE4163 /* gameWords.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,7 +69,6 @@
 		D98CA444185E1C8C00746059 /* EliminationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = EliminationViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D9A4F761185E310A0060AA2D /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
 		D9A4F762185E310A0060AA2D /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ResultsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		D9A4F764185E43090060AA2D /* gameWords.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gameWords.json; sourceTree = "<group>"; };
 		D9A4F766185E54480060AA2D /* KxIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxIntroView.h; sourceTree = "<group>"; };
 		D9A4F767185E54480060AA2D /* KxIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxIntroView.m; sourceTree = "<group>"; };
 		D9A4F768185E54480060AA2D /* KxIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxIntroViewController.h; sourceTree = "<group>"; };
@@ -96,6 +95,8 @@
 		D9CDEBEB187A379500AE4163 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		D9CDEBED187A3B4A00AE4163 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D9CDEBEF187A3B8100AE4163 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		D9CDEBF1187A4B6C00AE4163 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/gameWords.json; sourceTree = "<group>"; };
+		D9CDEBF3187A4B8200AE4163 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zh-Hans"; path = "zh-Hans.lproj/gameWords.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,7 +189,7 @@
 				D9A4F778185E80040060AA2D /* peek.mp3 */,
 				D9A4F77A185E80650060AA2D /* eliminate.mp3 */,
 				D9A4F77C185E80D10060AA2D /* results.mp3 */,
-				D9A4F764185E43090060AA2D /* gameWords.json */,
+				D9CDEBF2187A4B6C00AE4163 /* gameWords.json */,
 				D9A4F766185E54480060AA2D /* KxIntroView.h */,
 				D9A4F767185E54480060AA2D /* KxIntroView.m */,
 				D9A4F768185E54480060AA2D /* KxIntroViewController.h */,
@@ -266,7 +267,7 @@
 				D9A4F782185FDDA90060AA2D /* defaultHeadshot.png in Resources */,
 				D9CDEBE31879DA2800AE4163 /* cogs.png in Resources */,
 				D9A4F779185E80040060AA2D /* peek.mp3 in Resources */,
-				D9A4F765185E43090060AA2D /* gameWords.json in Resources */,
+				D9CDEBF0187A4B6C00AE4163 /* gameWords.json in Resources */,
 				D98CA417185D338600746059 /* Images.xcassets in Resources */,
 				D9A4F773185E7DEA0060AA2D /* intro.mp3 in Resources */,
 				D9CDEBDF1879D97900AE4163 /* question.png in Resources */,
@@ -329,6 +330,15 @@
 				D9CDEBEF187A3B8100AE4163 /* zh-Hans */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		D9CDEBF2187A4B6C00AE4163 /* gameWords.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D9CDEBF1187A4B6C00AE4163 /* en */,
+				D9CDEBF3187A4B8200AE4163 /* zh-Hans */,
+			);
+			name = gameWords.json;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
