@@ -3,7 +3,7 @@
 "0ht-Ce-gHe.text" = "谁被杀了？";
 
 /* Class = "IBUILabel"; text = "TOP SECRET\nFor your eyes only"; ObjectID = "blE-eR-isE"; */
-"blE-eR-isE.text" = "绝密\n为您一个人看";
+"blE-eR-isE.text" = "机密\n仅您一人阅读";
 
 /* Class = "IBUIButton"; normalTitle = "Start Game"; ObjectID = "dVR-0R-kXy"; */
 "dVR-0R-kXy.normalTitle" = "开始游戏";

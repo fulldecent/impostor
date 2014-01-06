@@ -40,7 +40,7 @@
     [self.playerPhotoCollectionView reloadData];
     
     if (self.game.gameStatus == GameStatusTheImpostorRemains) {
-        self.alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"The impostor remains",@"After someone was killed") message:[NSString stringWithFormat:@"Player #%ld starts this round", (long)self.game.playerNumberToStartRound+1] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        self.alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"The impostor remains",@"After someone was killed") message:[NSString stringWithFormat:NSLocalizedString(@"Player #%ld starts this round",@"After someone killed"), (long)self.game.playerNumberToStartRound+1] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [self.alertView show];
     } else if (self.game.gameStatus == GameStatusTheImpostorWasDefeated ||
                self.game.gameStatus == GameStatusTheImpostorWon) {
