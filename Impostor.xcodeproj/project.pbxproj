@@ -99,8 +99,8 @@
 		D9CDEBEB187A379500AE4163 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		D9CDEBED187A3B4A00AE4163 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D9CDEBEF187A3B8100AE4163 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		D9CDEBF1187A4B6C00AE4163 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/gameWords.json; sourceTree = "<group>"; };
-		D9CDEBF3187A4B8200AE4163 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zh-Hans"; path = "zh-Hans.lproj/gameWords.json"; sourceTree = "<group>"; };
+		D9CDEBF1187A4B6C00AE4163 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/gameWords.json; sourceTree = "<group>"; };
+		D9CDEBF3187A4B8200AE4163 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "zh-Hans"; path = "zh-Hans.lproj/gameWords.json"; sourceTree = "<group>"; };
 		D9CDEBF4187B89F900AE4163 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
 		D9CDEBF5187B89F900AE4163 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
 		D9CDEBF6187B89F900AE4163 /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
@@ -460,6 +460,7 @@
 					/Users/williamentriken/Developer/Impostor/Impostor,
 				);
 				PRODUCT_NAME = Impostor;
+				VALID_ARCHS = "armv7s armv7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -478,6 +479,7 @@
 					/Users/williamentriken/Developer/Impostor/Impostor,
 				);
 				PRODUCT_NAME = Impostor;
+				VALID_ARCHS = "armv7s armv7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
