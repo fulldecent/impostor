@@ -449,6 +449,7 @@
 		D98CA42E185D338600746059 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Will Entriken (LZSQ9DS457)";
@@ -460,7 +461,7 @@
 					/Users/williamentriken/Developer/Impostor/Impostor,
 				);
 				PRODUCT_NAME = Impostor;
-				VALID_ARCHS = "armv7s armv7";
+				VALID_ARCHS = "armv7s armv7 i386";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -468,6 +469,7 @@
 		D98CA42F185D338600746059 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Will Entriken (LZSQ9DS457)";
@@ -479,7 +481,7 @@
 					/Users/williamentriken/Developer/Impostor/Impostor,
 				);
 				PRODUCT_NAME = Impostor;
-				VALID_ARCHS = "armv7s armv7";
+				VALID_ARCHS = "armv7s armv7 i386";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
