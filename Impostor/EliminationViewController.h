@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GAI.h"
 
-@interface EliminationViewController : UIViewController
+@interface EliminationViewController : GAITrackedViewController
 @property (weak, nonatomic) IBOutlet UICollectionView *playerPhotoCollectionView;
 - (IBAction)eliminatePlayer:(UIButton *)sender;
 

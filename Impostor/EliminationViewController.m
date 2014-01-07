@@ -51,6 +51,8 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    self.screenName = @"EliminationViewController";
+
     self.alertView = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:NSLocalizedString(@"Player #%ld was randomly selected to start the first round",@"When the game starts"), (long)self.game.playerNumberToStartRound+1] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [self.alertView show];
     

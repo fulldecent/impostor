@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GAI.h"
 
-@interface GameConfigurationViewController : UIViewController
+@interface GameConfigurationViewController : GAITrackedViewController
 @property (weak, nonatomic) IBOutlet UILabel *numberOfPlayersLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *playerPhotoCollectionView;
 - (IBAction)decrementPlayerCount:(id)sender;

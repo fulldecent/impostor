@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GAI.h"
 
-@interface SecretWordViewController : UIViewController
+@interface SecretWordViewController : GAITrackedViewController
 @property (nonatomic) NSInteger playerNumber;
 
 #pragma mark - IB

@@ -65,6 +65,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    self.screenName = @"GameConfigurationViewController";
     
     NSString* bundleDirectory = (NSString*)[[NSBundle mainBundle] bundlePath];
     NSURL *url = [NSURL fileURLWithPath:[bundleDirectory stringByAppendingPathComponent:@"intro.mp3"]];

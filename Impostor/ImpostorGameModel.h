@@ -29,6 +29,8 @@ enum GameStatus {
 @property (nonatomic, readonly) NSMutableArray *playerEliminated; // of NSNumber of BOOLs
 @property (nonatomic, readonly) enum GameStatus gameStatus;
 @property (nonatomic, readonly) NSInteger playerNumberToStartRound;
+@property (nonatomic, readonly) NSString *normalWord;
+@property (nonatomic, readonly) NSString *impostorWord;
 - (void)startGameWithNumberOfPlayers:(NSInteger)numPlayers;
 - (void)doneShowingSecretWords;
 - (void)eliminatePlayer:(NSInteger)playerNumber;

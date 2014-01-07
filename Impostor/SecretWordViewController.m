@@ -61,6 +61,8 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    self.screenName = @"SecretWordViewController";
+    
     if (!self.wantsToTakePhoto || self.photoDenied)
         return;
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {

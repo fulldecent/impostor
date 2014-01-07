@@ -40,6 +40,8 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    self.screenName = @"MainGameViewController";
+
     switch ([[ImpostorGameModel game] gameStatus]) {
         case GameStatusNewGame:
             [self performSegueWithIdentifier:@"secretWord" sender:self];

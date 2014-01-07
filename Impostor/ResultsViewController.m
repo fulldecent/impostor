@@ -9,6 +9,7 @@
 #import "ResultsViewController.h"
 #import "ImpostorGameModel.h"
 #import <AudioToolbox/AudioToolbox.h>
+#import "GAIDictionaryBuilder.h"
 
 @interface ResultsViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic) ImpostorGameModel *game;
@@ -38,6 +39,20 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    self.screenName = @"ResultsViewController";
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
+                                                          action:@"Gameover"
+                                                           label:@"NumberOfPlayers"
+                                                           value:@(self.game.numberOfPlayers)] build]];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
+                                                          action:@"Gameover"
+                                                           label:@"ImpostorWon"
+                                                           value:@(self.game.gameStatus==GameStatusTheImpostorWon)] build]];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
+                                                          action:@"Words"
+                                                           label:[NSString stringWithFormat:@"%@ - %@",self.game.normalWord,self.game.impostorWord]
+                                                           value:@(self.game.gameStatus==GameStatusTheImpostorWon)] build]];
     
     NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"results" ofType:@"mp3"];
     SystemSoundID soundID;

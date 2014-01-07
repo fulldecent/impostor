@@ -41,6 +41,10 @@
 		D9CDEBE31879DA2800AE4163 /* cogs.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CDEBE21879DA2800AE4163 /* cogs.png */; };
 		D9CDEBEE187A3B4A00AE4163 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9CDEBEC187A3B4A00AE4163 /* Localizable.strings */; };
 		D9CDEBF0187A4B6C00AE4163 /* gameWords.json in Resources */ = {isa = PBXBuildFile; fileRef = D9CDEBF2187A4B6C00AE4163 /* gameWords.json */; };
+		D9CDEBFB187B89F900AE4163 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CDEBFA187B89F900AE4163 /* libGoogleAnalyticsServices.a */; };
+		D9CDEBFD187B8A2800AE4163 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CDEBFC187B8A2800AE4163 /* CoreData.framework */; };
+		D9CDEBFF187B8A2F00AE4163 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CDEBFE187B8A2F00AE4163 /* SystemConfiguration.framework */; };
+		D9CDEC01187B8A3A00AE4163 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CDEC00187B8A3A00AE4163 /* libz.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +101,16 @@
 		D9CDEBEF187A3B8100AE4163 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D9CDEBF1187A4B6C00AE4163 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/gameWords.json; sourceTree = "<group>"; };
 		D9CDEBF3187A4B8200AE4163 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zh-Hans"; path = "zh-Hans.lproj/gameWords.json"; sourceTree = "<group>"; };
+		D9CDEBF4187B89F900AE4163 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		D9CDEBF5187B89F900AE4163 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		D9CDEBF6187B89F900AE4163 /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		D9CDEBF7187B89F900AE4163 /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		D9CDEBF8187B89F900AE4163 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		D9CDEBF9187B89F900AE4163 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		D9CDEBFA187B89F900AE4163 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		D9CDEBFC187B8A2800AE4163 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D9CDEBFE187B8A2F00AE4163 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D9CDEC00187B8A3A00AE4163 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +118,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9CDEC01187B8A3A00AE4163 /* libz.dylib in Frameworks */,
+				D9CDEBFF187B8A2F00AE4163 /* SystemConfiguration.framework in Frameworks */,
+				D9CDEBFD187B8A2800AE4163 /* CoreData.framework in Frameworks */,
+				D9CDEBFB187B89F900AE4163 /* libGoogleAnalyticsServices.a in Frameworks */,
 				D9A4F777185E7EFA0060AA2D /* AudioToolbox.framework in Frameworks */,
 				D9A4F771185E7D9F0060AA2D /* AVFoundation.framework in Frameworks */,
 				D98CA3FE185D338600746059 /* CoreGraphics.framework in Frameworks */,
@@ -135,6 +153,9 @@
 		D98CA3FA185D338600746059 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D9CDEC00187B8A3A00AE4163 /* libz.dylib */,
+				D9CDEBFE187B8A2F00AE4163 /* SystemConfiguration.framework */,
+				D9CDEBFC187B8A2800AE4163 /* CoreData.framework */,
 				D9A4F776185E7EFA0060AA2D /* AudioToolbox.framework */,
 				D9A4F770185E7D9F0060AA2D /* AVFoundation.framework */,
 				D98CA3FB185D338600746059 /* Foundation.framework */,
@@ -198,6 +219,13 @@
 				D9A4F76B185E54480060AA2D /* KxIntroViewPage.m */,
 				D9A4F77E185FD6C40060AA2D /* QBFlatButton.h */,
 				D9A4F77F185FD6C40060AA2D /* QBFlatButton.m */,
+				D9CDEBF4187B89F900AE4163 /* GAI.h */,
+				D9CDEBF5187B89F900AE4163 /* GAIDictionaryBuilder.h */,
+				D9CDEBF6187B89F900AE4163 /* GAIFields.h */,
+				D9CDEBF7187B89F900AE4163 /* GAILogger.h */,
+				D9CDEBF8187B89F900AE4163 /* GAITrackedViewController.h */,
+				D9CDEBF9187B89F900AE4163 /* GAITracker.h */,
+				D9CDEBFA187B89F900AE4163 /* libGoogleAnalyticsServices.a */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -427,6 +455,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Impostor/Impostor-Prefix.pch";
 				INFOPLIST_FILE = "Impostor/Impostor-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/williamentriken/Developer/Impostor/Impostor,
+				);
 				PRODUCT_NAME = Impostor;
 				WRAPPER_EXTENSION = app;
 			};
@@ -441,6 +473,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Impostor/Impostor-Prefix.pch";
 				INFOPLIST_FILE = "Impostor/Impostor-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/williamentriken/Developer/Impostor/Impostor,
+				);
 				PRODUCT_NAME = Impostor;
 				WRAPPER_EXTENSION = app;
 			};

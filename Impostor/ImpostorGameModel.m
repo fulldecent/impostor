@@ -15,6 +15,8 @@
 @property (nonatomic) NSMutableArray *playerEliminated; // of NSNumber of BOOLs
 @property (nonatomic) enum GameStatus gameStatus;
 @property (nonatomic) NSInteger playerNumberToStartRound;
+@property (nonatomic) NSString *normalWord;
+@property (nonatomic) NSString *impostorWord;
 @end
 
 @implementation ImpostorGameModel
@@ -41,17 +43,19 @@
     
     NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"gameWords" ofType:@"json"];
     NSString *jsonString = [NSString stringWithContentsOfFile:jsonPath encoding:NSUTF8StringEncoding error:nil];
-    NSDictionary *allWordSets = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:nil];
+    NSArray *allWordSets = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:nil];
     int chosenWordSet = arc4random() % allWordSets.count;
     int chosenImpostorWord = arc4random() % 2;
+    self.impostorWord = [(NSArray *)[allWordSets objectAtIndex:chosenWordSet] objectAtIndex:chosenImpostorWord];
+    self.normalWord = [(NSArray *)[allWordSets objectAtIndex:chosenWordSet] objectAtIndex:1-chosenImpostorWord];
     
     for (int i=0; i<numPlayers; i++) {
         if (i == impostorIndex) {
             [roles addObject:[NSNumber numberWithInt:PlayerRoleImpostor]];
-            [words addObject:[(NSArray *)[(NSArray *)allWordSets objectAtIndex:chosenWordSet] objectAtIndex:chosenImpostorWord]];
+            [words addObject:self.impostorWord];
         } else {
             [roles addObject:[NSNumber numberWithInt:PlayerRoleNormalPlayer]];
-            [words addObject:[(NSArray *)[(NSArray *)allWordSets objectAtIndex:chosenWordSet] objectAtIndex:1-chosenImpostorWord]];
+            [words addObject:self.normalWord];
         }
         [eliminated addObject:[NSNumber numberWithBool:NO]];
     }

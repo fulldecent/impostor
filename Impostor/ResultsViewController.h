@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GAI.h"
 
-@interface ResultsViewController : UIViewController
+@interface ResultsViewController : GAITrackedViewController
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)playAgain:(id)sender;
 
