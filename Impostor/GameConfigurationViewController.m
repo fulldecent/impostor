@@ -13,6 +13,9 @@
 #import <MessageUI/MessageUI.h>
 #import <AVFoundation/AVAudioPlayer.h>
 #import <AudioToolbox/AudioToolbox.h>
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
+#import "GAIFields.h"
 
 @interface GameConfigurationViewController () <UICollectionViewDataSource, UIActionSheetDelegate, MFMailComposeViewControllerDelegate>
 @property (nonatomic) NSInteger playerCount;
@@ -131,6 +134,14 @@
                                                             NSLocalizedString(@"Share this app", @"In the settings menu"),
                                                             nil];
     [self.actionSheet showFromRect:[(UIView *)[self.view viewWithTag:9] frame]  inView:self.view animated:YES];
+    
+    // May return nil if a tracker has not already been initialized with a
+    // property ID.
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    // This screen name value will remain set on the tracker and sent with
+    // hits until it is set to a new value or to nil.
+    [tracker set:kGAIScreenName value:@"Game Options"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 }
 
 - (IBAction)startGame:(id)sender {
