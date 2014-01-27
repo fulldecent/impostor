@@ -54,6 +54,16 @@
                                                            label:[NSString stringWithFormat:@"%@ - %@",self.game.normalWord,self.game.impostorWord]
                                                            value:@(self.game.gameStatus==GameStatusTheImpostorWon)] build]];
     
+    BOOL allPhotos = YES;
+    for (NSInteger i=0; i<self.game.numberOfPlayers; i++) {
+        if (![self.game.playerPhotos objectForKey:@(i)])
+            allPhotos = NO;
+    }
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
+                                                          action:@"Gameover"
+                                                           label:@"All users did have photos"
+                                                           value:@(allPhotos)] build]];
+    
     NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"results" ofType:@"mp3"];
     SystemSoundID soundID;
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
