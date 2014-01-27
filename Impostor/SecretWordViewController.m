@@ -71,6 +71,9 @@
         self.imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
         self.imagePickerController.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:
                                                  UIImagePickerControllerSourceTypeCamera];
+        if([UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceFront])
+            self.imagePickerController.cameraDevice = UIImagePickerControllerCameraDeviceFront;
+            
 //        [[self presentingViewController] presentViewController:self.imagePickerController animated:YES completion:nil];
         [self presentViewController:self.imagePickerController animated:YES completion:nil];
 
