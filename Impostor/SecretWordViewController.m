@@ -74,7 +74,9 @@
 //        [[self presentingViewController] presentViewController:self.imagePickerController animated:YES completion:nil];
         [self presentViewController:self.imagePickerController animated:YES completion:nil];
 
-    } else {
+    }
+/*
+    else {
         // THIS IS JUST FOR IPODS AND THE SIMULATOR
         self.imagePickerController = [[UIImagePickerController alloc] init];
         self.imagePickerController.delegate = self;
@@ -92,6 +94,7 @@
             [[self presentingViewController] presentViewController:self.imagePickerController animated:YES completion:nil];
         }
     }
+*/
 }
 
 #pragma mark - UIAlertViewDelegate
