@@ -111,6 +111,10 @@
 		D9CDEBFC187B8A2800AE4163 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D9CDEBFE187B8A2F00AE4163 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D9CDEC00187B8A3A00AE4163 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		D9D29A3D189C66F60054BEFF /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
+		D9D29A3E189C66F60054BEFF /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D9D29A3F189C66F60054BEFF /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D9D29A40189C66F60054BEFF /* es */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = es; path = es.lproj/gameWords.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +276,7 @@
 				en,
 				Base,
 				"zh-Hans",
+				es,
 			);
 			mainGroup = D98CA3EF185D338600746059;
 			productRefGroup = D98CA3F9185D338600746059 /* Products */;
@@ -338,6 +343,7 @@
 			children = (
 				D98CA405185D338600746059 /* en */,
 				D9CDEBEB187A379500AE4163 /* zh-Hans */,
+				D9D29A3F189C66F60054BEFF /* es */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -347,6 +353,7 @@
 			children = (
 				D98CA40E185D338600746059 /* Base */,
 				D9CDEBEA187A379500AE4163 /* zh-Hans */,
+				D9D29A3D189C66F60054BEFF /* es */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -356,6 +363,7 @@
 			children = (
 				D9CDEBED187A3B4A00AE4163 /* en */,
 				D9CDEBEF187A3B8100AE4163 /* zh-Hans */,
+				D9D29A3E189C66F60054BEFF /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -365,6 +373,7 @@
 			children = (
 				D9CDEBF1187A4B6C00AE4163 /* en */,
 				D9CDEBF3187A4B8200AE4163 /* zh-Hans */,
+				D9D29A40189C66F60054BEFF /* es */,
 			);
 			name = gameWords.json;
 			sourceTree = "<group>";
