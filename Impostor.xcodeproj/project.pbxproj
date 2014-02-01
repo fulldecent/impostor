@@ -48,6 +48,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D93B5CEC189D679F00E90ACD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D93B5CED189D679F00E90ACD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D93B5CEE189D679F00E90ACD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ru; path = ru.lproj/gameWords.json; sourceTree = "<group>"; };
+		D93B5CEF189D67A000E90ACD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
 		D98CA3F8185D338600746059 /* Impostor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Impostor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98CA3FB185D338600746059 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D98CA3FD185D338600746059 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -277,6 +281,7 @@
 				Base,
 				"zh-Hans",
 				es,
+				ru,
 			);
 			mainGroup = D98CA3EF185D338600746059;
 			productRefGroup = D98CA3F9185D338600746059 /* Products */;
@@ -344,6 +349,7 @@
 				D98CA405185D338600746059 /* en */,
 				D9CDEBEB187A379500AE4163 /* zh-Hans */,
 				D9D29A3F189C66F60054BEFF /* es */,
+				D93B5CED189D679F00E90ACD /* ru */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -354,6 +360,7 @@
 				D98CA40E185D338600746059 /* Base */,
 				D9CDEBEA187A379500AE4163 /* zh-Hans */,
 				D9D29A3D189C66F60054BEFF /* es */,
+				D93B5CEF189D67A000E90ACD /* ru */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -364,6 +371,7 @@
 				D9CDEBED187A3B4A00AE4163 /* en */,
 				D9CDEBEF187A3B8100AE4163 /* zh-Hans */,
 				D9D29A3E189C66F60054BEFF /* es */,
+				D93B5CEC189D679F00E90ACD /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -374,6 +382,7 @@
 				D9CDEBF1187A4B6C00AE4163 /* en */,
 				D9CDEBF3187A4B8200AE4163 /* zh-Hans */,
 				D9D29A40189C66F60054BEFF /* es */,
+				D93B5CEE189D679F00E90ACD /* ru */,
 			);
 			name = gameWords.json;
 			sourceTree = "<group>";
