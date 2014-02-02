@@ -56,6 +56,10 @@
 		D93B5CF1189D696B00E90ACD /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D93B5CF2189D696B00E90ACD /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D93B5CF3189D696B00E90ACD /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ko; path = ko.lproj/gameWords.json; sourceTree = "<group>"; };
+		D93B5CF4189EA8A900E90ACD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
+		D93B5CF5189EA8A900E90ACD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D93B5CF6189EA8A900E90ACD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D93B5CF7189EA8A900E90ACD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ja; path = ja.lproj/gameWords.json; sourceTree = "<group>"; };
 		D98CA3F8185D338600746059 /* Impostor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Impostor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98CA3FB185D338600746059 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D98CA3FD185D338600746059 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -287,6 +291,7 @@
 				es,
 				ru,
 				ko,
+				ja,
 			);
 			mainGroup = D98CA3EF185D338600746059;
 			productRefGroup = D98CA3F9185D338600746059 /* Products */;
@@ -356,6 +361,7 @@
 				D9D29A3F189C66F60054BEFF /* es */,
 				D93B5CED189D679F00E90ACD /* ru */,
 				D93B5CF2189D696B00E90ACD /* ko */,
+				D93B5CF6189EA8A900E90ACD /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -368,6 +374,7 @@
 				D9D29A3D189C66F60054BEFF /* es */,
 				D93B5CEF189D67A000E90ACD /* ru */,
 				D93B5CF0189D696B00E90ACD /* ko */,
+				D93B5CF4189EA8A900E90ACD /* ja */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -380,6 +387,7 @@
 				D9D29A3E189C66F60054BEFF /* es */,
 				D93B5CEC189D679F00E90ACD /* ru */,
 				D93B5CF1189D696B00E90ACD /* ko */,
+				D93B5CF5189EA8A900E90ACD /* ja */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -392,6 +400,7 @@
 				D9D29A40189C66F60054BEFF /* es */,
 				D93B5CEE189D679F00E90ACD /* ru */,
 				D93B5CF3189D696B00E90ACD /* ko */,
+				D93B5CF7189EA8A900E90ACD /* ja */,
 			);
 			name = gameWords.json;
 			sourceTree = "<group>";
