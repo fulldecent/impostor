@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "GAI.h"
 
-@interface MainGameViewController : GAITrackedViewController
-
+//@interface MainGameViewController : GAITrackedViewController
+@interface MainGameViewController : UIViewController
 @end

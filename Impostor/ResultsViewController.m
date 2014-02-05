@@ -40,6 +40,7 @@
 {
     [super viewDidAppear:animated];
     self.screenName = @"ResultsViewController";
+    
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
                                                           action:@"Gameover"

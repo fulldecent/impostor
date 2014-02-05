@@ -40,7 +40,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    self.screenName = @"MainGameViewController";
+//    self.screenName = @"MainGameViewController";
 
     switch ([[ImpostorGameModel game] gameStatus]) {
         case GameStatusNewGame:
