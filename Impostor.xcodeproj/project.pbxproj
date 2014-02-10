@@ -48,6 +48,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D90C9E8F18A98C5000DEF541 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
+		D90C9E9018A98C5000DEF541 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D90C9E9118A98C5000DEF541 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D90C9E9218A98C5000DEF541 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/gameWords.json; sourceTree = "<group>"; };
 		D93B5CEC189D679F00E90ACD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D93B5CED189D679F00E90ACD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D93B5CEE189D679F00E90ACD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ru; path = ru.lproj/gameWords.json; sourceTree = "<group>"; };
@@ -297,6 +301,7 @@
 				ko,
 				ja,
 				de,
+				fr,
 			);
 			mainGroup = D98CA3EF185D338600746059;
 			productRefGroup = D98CA3F9185D338600746059 /* Products */;
@@ -368,6 +373,7 @@
 				D93B5CF2189D696B00E90ACD /* ko */,
 				D93B5CF6189EA8A900E90ACD /* ja */,
 				D9DA621518A0061D0087706B /* de */,
+				D90C9E9118A98C5000DEF541 /* fr */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -382,6 +388,7 @@
 				D93B5CF0189D696B00E90ACD /* ko */,
 				D93B5CF4189EA8A900E90ACD /* ja */,
 				D9DA621318A0061D0087706B /* de */,
+				D90C9E8F18A98C5000DEF541 /* fr */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -396,6 +403,7 @@
 				D93B5CF1189D696B00E90ACD /* ko */,
 				D93B5CF5189EA8A900E90ACD /* ja */,
 				D9DA621418A0061D0087706B /* de */,
+				D90C9E9018A98C5000DEF541 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -410,6 +418,7 @@
 				D93B5CF3189D696B00E90ACD /* ko */,
 				D93B5CF7189EA8A900E90ACD /* ja */,
 				D9DA621618A0061E0087706B /* de */,
+				D90C9E9218A98C5000DEF541 /* fr */,
 			);
 			name = gameWords.json;
 			sourceTree = "<group>";
