@@ -74,9 +74,7 @@
         if([UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceFront])
             self.imagePickerController.cameraDevice = UIImagePickerControllerCameraDeviceFront;
             
-//        [[self presentingViewController] presentViewController:self.imagePickerController animated:YES completion:nil];
         [self presentViewController:self.imagePickerController animated:YES completion:nil];
-
     }
 /*
     else {
@@ -149,8 +147,8 @@
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
-    NSString *targetPhotoPath = [basePath stringByAppendingPathComponent:[NSString stringWithFormat:@"player%ld.png",(long)self.playerNumber]];
-    [UIImagePNGRepresentation(normalizedImage) writeToFile:targetPhotoPath atomically:YES];
+    NSString *targetPhotoPath = [basePath stringByAppendingPathComponent:[NSString stringWithFormat:@"player%ld.jpg",(long)self.playerNumber]];
+    [UIImageJPEGRepresentation(normalizedImage, 0.9) writeToFile:targetPhotoPath atomically:YES];
     [self.game.playerPhotos setObject:normalizedImage forKey:[NSNumber numberWithInteger:self.playerNumber]];
     
     [picker dismissViewControllerAnimated:YES completion:nil];
