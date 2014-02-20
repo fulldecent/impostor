@@ -535,7 +535,6 @@
 					/Users/williamentriken/Developer/Impostor/Impostor,
 				);
 				PRODUCT_NAME = Impostor;
-				VALID_ARCHS = "armv7s armv7 i386";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -556,7 +555,6 @@
 					/Users/williamentriken/Developer/Impostor/Impostor,
 				);
 				PRODUCT_NAME = Impostor;
-				VALID_ARCHS = "armv7s armv7 i386";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
