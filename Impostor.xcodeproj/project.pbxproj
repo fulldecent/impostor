@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92BC469BDABE4ED8A01A790D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFB5E1997B743519AFE492A /* libPods.a */; };
 		D98CA3FC185D338600746059 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98CA3FB185D338600746059 /* Foundation.framework */; };
 		D98CA3FE185D338600746059 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98CA3FD185D338600746059 /* CoreGraphics.framework */; };
 		D98CA400185D338600746059 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98CA3FF185D338600746059 /* UIKit.framework */; };
@@ -31,7 +32,6 @@
 		D9A4F779185E80040060AA2D /* peek.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F778185E80040060AA2D /* peek.mp3 */; };
 		D9A4F77B185E80650060AA2D /* eliminate.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F77A185E80650060AA2D /* eliminate.mp3 */; };
 		D9A4F77D185E80D10060AA2D /* results.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F77C185E80D10060AA2D /* results.mp3 */; };
-		D9A4F780185FD6C40060AA2D /* QBFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4F77F185FD6C40060AA2D /* QBFlatButton.m */; };
 		D9A4F782185FDDA90060AA2D /* defaultHeadshot.png in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F781185FDDA90060AA2D /* defaultHeadshot.png */; };
 		D9A4F784185FE0F50060AA2D /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F783185FE0F50060AA2D /* background.jpg */; };
 		D9CDEBDE1879D97900AE4163 /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CDEBDA1879D97900AE4163 /* minus.png */; };
@@ -41,7 +41,6 @@
 		D9CDEBE31879DA2800AE4163 /* cogs.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CDEBE21879DA2800AE4163 /* cogs.png */; };
 		D9CDEBEE187A3B4A00AE4163 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9CDEBEC187A3B4A00AE4163 /* Localizable.strings */; };
 		D9CDEBF0187A4B6C00AE4163 /* gameWords.json in Resources */ = {isa = PBXBuildFile; fileRef = D9CDEBF2187A4B6C00AE4163 /* gameWords.json */; };
-		D9CDEBFB187B89F900AE4163 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CDEBFA187B89F900AE4163 /* libGoogleAnalyticsServices.a */; };
 		D9CDEBFD187B8A2800AE4163 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CDEBFC187B8A2800AE4163 /* CoreData.framework */; };
 		D9CDEBFF187B8A2F00AE4163 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CDEBFE187B8A2F00AE4163 /* SystemConfiguration.framework */; };
 		D9CDEC01187B8A3A00AE4163 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CDEC00187B8A3A00AE4163 /* libz.dylib */; };
@@ -102,8 +101,6 @@
 		D9A4F778185E80040060AA2D /* peek.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = peek.mp3; sourceTree = "<group>"; };
 		D9A4F77A185E80650060AA2D /* eliminate.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = eliminate.mp3; sourceTree = "<group>"; };
 		D9A4F77C185E80D10060AA2D /* results.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = results.mp3; sourceTree = "<group>"; };
-		D9A4F77E185FD6C40060AA2D /* QBFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBFlatButton.h; sourceTree = "<group>"; };
-		D9A4F77F185FD6C40060AA2D /* QBFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBFlatButton.m; sourceTree = "<group>"; };
 		D9A4F781185FDDA90060AA2D /* defaultHeadshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultHeadshot.png; sourceTree = "<group>"; };
 		D9A4F783185FE0F50060AA2D /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		D9CDEBDA1879D97900AE4163 /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minus.png; sourceTree = "<group>"; };
@@ -117,13 +114,6 @@
 		D9CDEBEF187A3B8100AE4163 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D9CDEBF1187A4B6C00AE4163 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/gameWords.json; sourceTree = "<group>"; };
 		D9CDEBF3187A4B8200AE4163 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "zh-Hans"; path = "zh-Hans.lproj/gameWords.json"; sourceTree = "<group>"; };
-		D9CDEBF4187B89F900AE4163 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
-		D9CDEBF5187B89F900AE4163 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
-		D9CDEBF6187B89F900AE4163 /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
-		D9CDEBF7187B89F900AE4163 /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
-		D9CDEBF8187B89F900AE4163 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
-		D9CDEBF9187B89F900AE4163 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
-		D9CDEBFA187B89F900AE4163 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		D9CDEBFC187B8A2800AE4163 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D9CDEBFE187B8A2F00AE4163 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D9CDEC00187B8A3A00AE4163 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -135,6 +125,8 @@
 		D9DA621418A0061D0087706B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D9DA621518A0061D0087706B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D9DA621618A0061E0087706B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/gameWords.json; sourceTree = "<group>"; };
+		E8E142BDE0F74EDDBCF47688 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		FAFB5E1997B743519AFE492A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,12 +137,12 @@
 				D9CDEC01187B8A3A00AE4163 /* libz.dylib in Frameworks */,
 				D9CDEBFF187B8A2F00AE4163 /* SystemConfiguration.framework in Frameworks */,
 				D9CDEBFD187B8A2800AE4163 /* CoreData.framework in Frameworks */,
-				D9CDEBFB187B89F900AE4163 /* libGoogleAnalyticsServices.a in Frameworks */,
 				D9A4F777185E7EFA0060AA2D /* AudioToolbox.framework in Frameworks */,
 				D9A4F771185E7D9F0060AA2D /* AVFoundation.framework in Frameworks */,
 				D98CA3FE185D338600746059 /* CoreGraphics.framework in Frameworks */,
 				D98CA400185D338600746059 /* UIKit.framework in Frameworks */,
 				D98CA3FC185D338600746059 /* Foundation.framework in Frameworks */,
+				92BC469BDABE4ED8A01A790D /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +155,7 @@
 				D98CA401185D338600746059 /* Impostor */,
 				D98CA3FA185D338600746059 /* Frameworks */,
 				D98CA3F9185D338600746059 /* Products */,
+				E8E142BDE0F74EDDBCF47688 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -186,6 +179,7 @@
 				D98CA3FD185D338600746059 /* CoreGraphics.framework */,
 				D98CA3FF185D338600746059 /* UIKit.framework */,
 				D98CA41D185D338600746059 /* XCTest.framework */,
+				FAFB5E1997B743519AFE492A /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -241,15 +235,6 @@
 				D9A4F769185E54480060AA2D /* KxIntroViewController.m */,
 				D9A4F76A185E54480060AA2D /* KxIntroViewPage.h */,
 				D9A4F76B185E54480060AA2D /* KxIntroViewPage.m */,
-				D9A4F77E185FD6C40060AA2D /* QBFlatButton.h */,
-				D9A4F77F185FD6C40060AA2D /* QBFlatButton.m */,
-				D9CDEBF4187B89F900AE4163 /* GAI.h */,
-				D9CDEBF5187B89F900AE4163 /* GAIDictionaryBuilder.h */,
-				D9CDEBF6187B89F900AE4163 /* GAIFields.h */,
-				D9CDEBF7187B89F900AE4163 /* GAILogger.h */,
-				D9CDEBF8187B89F900AE4163 /* GAITrackedViewController.h */,
-				D9CDEBF9187B89F900AE4163 /* GAITracker.h */,
-				D9CDEBFA187B89F900AE4163 /* libGoogleAnalyticsServices.a */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -261,9 +246,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D98CA42D185D338600746059 /* Build configuration list for PBXNativeTarget "Impostor" */;
 			buildPhases = (
+				B3684E4B2DBC40C193E7F8DA /* Check Pods Manifest.lock */,
 				D98CA3F4185D338600746059 /* Sources */,
 				D98CA3F5185D338600746059 /* Frameworks */,
 				D98CA3F6185D338600746059 /* Resources */,
+				ED1F966979FD4F28AE506B1F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -340,6 +327,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B3684E4B2DBC40C193E7F8DA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		ED1F966979FD4F28AE506B1F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D98CA3F4185D338600746059 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -356,7 +376,6 @@
 				D9A4F76C185E54480060AA2D /* KxIntroView.m in Sources */,
 				D98CA43C185D67E800746059 /* MainGameViewController.m in Sources */,
 				D98CA408185D338600746059 /* main.m in Sources */,
-				D9A4F780185FD6C40060AA2D /* QBFlatButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +521,7 @@
 		};
 		D98CA42E185D338600746059 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8E142BDE0F74EDDBCF47688 /* Pods.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -522,6 +542,7 @@
 		};
 		D98CA42F185D338600746059 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8E142BDE0F74EDDBCF47688 /* Pods.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
