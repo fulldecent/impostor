@@ -12,7 +12,7 @@
                         <viewControllerLayoutGuide type="top" id="Uw0-zQ-7ja"/>
                         <viewControllerLayoutGuide type="bottom" id="IT4-jv-pXy"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -187,7 +187,7 @@
                         <viewControllerLayoutGuide type="top" id="uAA-V8-zQt"/>
                         <viewControllerLayoutGuide type="bottom" id="oHz-PU-Xl8"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="aRs-wj-Pb4">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="aRs-wj-Pb4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -211,7 +211,7 @@
                         <viewControllerLayoutGuide type="top" id="Tnh-EA-Hhm"/>
                         <viewControllerLayoutGuide type="bottom" id="dx4-4m-Eda"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="QMf-vS-rya">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="QMf-vS-rya">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -307,7 +307,7 @@
                         <viewControllerLayoutGuide type="top" id="5W5-C0-Cdb"/>
                         <viewControllerLayoutGuide type="bottom" id="1pK-kP-fGD"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bOt-sE-23B">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="bOt-sE-23B">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -406,7 +406,7 @@
                         <viewControllerLayoutGuide type="top" id="Ehm-2p-QUA"/>
                         <viewControllerLayoutGuide type="bottom" id="AKT-Xd-ban"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="X0u-CR-Mae">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="X0u-CR-Mae">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
