@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "GAI.h"
+#import <Appirater.h>
 
 @implementation AppDelegate
 
@@ -25,7 +26,14 @@
     // Initialize tracker.
     [[GAI sharedInstance] trackerWithTrackingId:@"UA-52764-17"];
     
-    // Override point for customization after application launch.
+    
+    [Appirater setAppId:@"784258202"];
+    [Appirater setDaysUntilPrompt:5];
+    [Appirater setUsesUntilPrompt:5];
+    [Appirater setSignificantEventsUntilPrompt:5];
+    [Appirater setTimeBeforeReminding:5];
+    [Appirater appLaunched:YES];
+    
     return YES;
 }
 							
@@ -43,7 +51,7 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    [Appirater appEnteredForeground:YES];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application

@@ -10,6 +10,7 @@
 #import "ImpostorGameModel.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import "GAIDictionaryBuilder.h"
+#import <Appirater.h>
 
 @interface ResultsViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic) ImpostorGameModel *game;
@@ -80,6 +81,8 @@
         default:;
     }
     [self.alertView show];
+    
+    [Appirater userDidSignificantEvent:YES];
 }
 
 - (void)didReceiveMemoryWarning
