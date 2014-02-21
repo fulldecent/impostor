@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "GAI.h"
+#import <QBFlatButton.h>
 
 @interface ResultsViewController : GAITrackedViewController
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)playAgain:(id)sender;
-
+@property (weak, nonatomic) IBOutlet QBFlatButton *collage;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *shim;
 @end

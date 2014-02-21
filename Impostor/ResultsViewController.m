@@ -37,6 +37,23 @@
 	// Do any additional setup after loading the view.
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    BOOL allPhotos = YES;
+    for (NSInteger i=0; i<self.game.numberOfPlayers; i++) {
+        if (![self.game.playerPhotos objectForKey:@(i)])
+            allPhotos = NO;
+    }
+
+    if ((arc4random() % 6 == 0) && allPhotos) {
+        self.collage.hidden = NO;
+        self.shim.constant = 8;
+    } else {
+        self.collage.hidden = YES;
+        self.shim.constant = -self.collage.frame.size.height;
+    }
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -140,6 +157,5 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [cell setBackgroundColor:[UIColor clearColor]];
 }
-
 
 @end

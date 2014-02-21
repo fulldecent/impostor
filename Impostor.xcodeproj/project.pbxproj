@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		92BC469BDABE4ED8A01A790D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFB5E1997B743519AFE492A /* libPods.a */; };
+		D9744FC418B5C1CA00697357 /* CollageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9744FC318B5C1CA00697357 /* CollageViewController.m */; };
 		D98CA3FC185D338600746059 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98CA3FB185D338600746059 /* Foundation.framework */; };
 		D98CA3FE185D338600746059 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98CA3FD185D338600746059 /* CoreGraphics.framework */; };
 		D98CA400185D338600746059 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98CA3FF185D338600746059 /* UIKit.framework */; };
@@ -63,6 +64,8 @@
 		D93B5CF5189EA8A900E90ACD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D93B5CF6189EA8A900E90ACD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D93B5CF7189EA8A900E90ACD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ja; path = ja.lproj/gameWords.json; sourceTree = "<group>"; };
+		D9744FC218B5C1CA00697357 /* CollageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollageViewController.h; sourceTree = "<group>"; };
+		D9744FC318B5C1CA00697357 /* CollageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollageViewController.m; sourceTree = "<group>"; };
 		D98CA3F8185D338600746059 /* Impostor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Impostor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98CA3FB185D338600746059 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D98CA3FD185D338600746059 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -204,6 +207,8 @@
 				D98CA444185E1C8C00746059 /* EliminationViewController.m */,
 				D9A4F761185E310A0060AA2D /* ResultsViewController.h */,
 				D9A4F762185E310A0060AA2D /* ResultsViewController.m */,
+				D9744FC218B5C1CA00697357 /* CollageViewController.h */,
+				D9744FC318B5C1CA00697357 /* CollageViewController.m */,
 				D98CA402185D338600746059 /* Supporting Files */,
 			);
 			path = Impostor;
@@ -365,6 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9744FC418B5C1CA00697357 /* CollageViewController.m in Sources */,
 				D9A4F76D185E54480060AA2D /* KxIntroViewController.m in Sources */,
 				D98CA439185D3A3900746059 /* ImpostorGameModel.m in Sources */,
 				D98CA415185D338600746059 /* GameConfigurationViewController.m in Sources */,
