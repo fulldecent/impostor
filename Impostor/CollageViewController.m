@@ -8,6 +8,7 @@
 
 #import "CollageViewController.h"
 #import "ImpostorGameModel.h"
+#import "GAIDictionaryBuilder.h"
 
 @interface CollageViewController () <UICollectionViewDataSource>
 @property (nonatomic) ImpostorGameModel *game;
@@ -119,6 +120,11 @@
     activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact];
     
     [activityVC setCompletionHandler:^(NSString *activityType, BOOL completed) {
+        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
+                                                              action:@"Gameover"
+                                                               label:@"SharedCollage"
+                                                               value:@(completed)] build]];
         [self.navigationController popToRootViewControllerAnimated:YES];
     }];
     [self presentViewController:activityVC animated:YES completion:nil];
