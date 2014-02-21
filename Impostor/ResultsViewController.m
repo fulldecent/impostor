@@ -45,7 +45,7 @@
             allPhotos = NO;
     }
 
-    if ((arc4random() % 6 == 0) && allPhotos) {
+    if ((arc4random() % 3 == 0) && allPhotos) {
         self.collage.hidden = NO;
         self.shim.constant = 8;
     } else {
