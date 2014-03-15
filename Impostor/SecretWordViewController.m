@@ -73,7 +73,7 @@
                                                  UIImagePickerControllerSourceTypeCamera];
         if([UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceFront])
             self.imagePickerController.cameraDevice = UIImagePickerControllerCameraDeviceFront;
-            
+        
         [self presentViewController:self.imagePickerController animated:YES completion:nil];
     }
 /*

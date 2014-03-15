@@ -9,9 +9,13 @@
 #import "CollageViewController.h"
 #import "ImpostorGameModel.h"
 #import "GAIDictionaryBuilder.h"
+#import <AVFoundation/AVAudioPlayer.h>
+#import <AudioToolbox/AudioToolbox.h>
+#import "GameConfigurationViewController.h"
 
 @interface CollageViewController () <UICollectionViewDataSource>
 @property (nonatomic) ImpostorGameModel *game;
+@property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 @end
 
 @implementation CollageViewController
@@ -27,7 +31,34 @@
 {
     [super viewDidAppear:animated];
     self.screenName = @"CollageViewController";
-    [self performSelector:@selector(showShareBox) withObject:nil afterDelay:1.2];
+    
+    NSString* bundleDirectory = (NSString*)[[NSBundle mainBundle] bundlePath];
+    NSURL *url = [NSURL fileURLWithPath:[bundleDirectory stringByAppendingPathComponent:@"camera.mp3"]];
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    [self performSelector:@selector(flashScreen) withObject:nil afterDelay:1.0];
+    [self performSelector:@selector(showShareBox) withObject:nil afterDelay:1.8];
+    
+    GameConfigurationViewController *root = (GameConfigurationViewController *)self.navigationController.viewControllers.firstObject;
+    [root fadeOutMusic];
+}
+
+- (void)flashScreen
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.audioPlayer play];
+        UIView *flashView = [[UIView alloc] initWithFrame:self.view.frame];
+        [flashView setBackgroundColor:[UIColor whiteColor]];
+        [[[self view] window] addSubview:flashView];
+        
+        [UIView animateWithDuration:0.7f
+                         animations:^{
+                             [flashView setAlpha:0.f];
+                         }
+                         completion:^(BOOL finished){
+                             [flashView removeFromSuperview];
+                         }
+         ];
+    });
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration

@@ -26,12 +26,15 @@
     // Initialize tracker.
     [[GAI sharedInstance] trackerWithTrackingId:@"UA-52764-17"];
     
+#if TARGET_IPHONE_SIMULATOR
+    [[GAI sharedInstance] setDryRun:YES];
+#endif
     
     [Appirater setAppId:@"784258202"];
-    [Appirater setDaysUntilPrompt:5];
-    [Appirater setUsesUntilPrompt:5];
-    [Appirater setSignificantEventsUntilPrompt:5];
-    [Appirater setTimeBeforeReminding:5];
+    [Appirater setDaysUntilPrompt:6];
+    [Appirater setUsesUntilPrompt:6];
+    [Appirater setSignificantEventsUntilPrompt:6];
+    [Appirater setTimeBeforeReminding:6];
     [Appirater appLaunched:YES];
     
     return YES;
