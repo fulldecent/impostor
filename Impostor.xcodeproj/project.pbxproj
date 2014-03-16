@@ -91,6 +91,10 @@
 		D98CA443185E1C8C00746059 /* EliminationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EliminationViewController.h; sourceTree = "<group>"; };
 		D98CA444185E1C8C00746059 /* EliminationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = EliminationViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D9A2405E18D50DF7005D4DCD /* camera.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = camera.mp3; sourceTree = "<group>"; };
+		D9A2406018D510FF005D4DCD /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
+		D9A2406118D510FF005D4DCD /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D9A2406218D510FF005D4DCD /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D9A2406318D510FF005D4DCD /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = nl; path = nl.lproj/gameWords.json; sourceTree = "<group>"; };
 		D9A4F761185E310A0060AA2D /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
 		D9A4F762185E310A0060AA2D /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ResultsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D9A4F766185E54480060AA2D /* KxIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxIntroView.h; sourceTree = "<group>"; };
@@ -297,6 +301,7 @@
 				ja,
 				de,
 				fr,
+				nl,
 			);
 			mainGroup = D98CA3EF185D338600746059;
 			productRefGroup = D98CA3F9185D338600746059 /* Products */;
@@ -403,6 +408,7 @@
 				D93B5CF6189EA8A900E90ACD /* ja */,
 				D9DA621518A0061D0087706B /* de */,
 				D90C9E9118A98C5000DEF541 /* fr */,
+				D9A2406218D510FF005D4DCD /* nl */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -418,6 +424,7 @@
 				D93B5CF4189EA8A900E90ACD /* ja */,
 				D9DA621318A0061D0087706B /* de */,
 				D90C9E8F18A98C5000DEF541 /* fr */,
+				D9A2406018D510FF005D4DCD /* nl */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -433,6 +440,7 @@
 				D93B5CF5189EA8A900E90ACD /* ja */,
 				D9DA621418A0061D0087706B /* de */,
 				D90C9E9018A98C5000DEF541 /* fr */,
+				D9A2406118D510FF005D4DCD /* nl */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -448,6 +456,7 @@
 				D93B5CF7189EA8A900E90ACD /* ja */,
 				D9DA621618A0061E0087706B /* de */,
 				D90C9E9218A98C5000DEF541 /* fr */,
+				D9A2406318D510FF005D4DCD /* nl */,
 			);
 			name = gameWords.json;
 			sourceTree = "<group>";
