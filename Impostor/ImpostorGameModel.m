@@ -25,8 +25,23 @@
 
 - (NSMutableDictionary *)playerPhotos
 {
-    if (!_playerPhotos)
+    if (!_playerPhotos) {
         _playerPhotos = [[NSMutableDictionary alloc] init];
+        
+#if TARGET_IPHONE_SIMULATOR
+        UIImage *image;
+        image = [UIImage imageWithContentsOfFile:@"/Users/williamentriken/Developer/Impostor media/1.jpg"];
+        [_playerPhotos setObject:image forKey:@(1)];
+        image = [UIImage imageWithContentsOfFile:@"/Users/williamentriken/Developer/Impostor media/4.jpg"];
+        [_playerPhotos setObject:image forKey:@(2)];
+        image = [UIImage imageWithContentsOfFile:@"/Users/williamentriken/Developer/Impostor media/2.jpg"];
+        [_playerPhotos setObject:image forKey:@(3)];
+        image = [UIImage imageWithContentsOfFile:@"/Users/williamentriken/Developer/Impostor media/3.jpg"];
+        [_playerPhotos setObject:image forKey:@(4)];
+        image = [UIImage imageWithContentsOfFile:@"/Users/williamentriken/Developer/Impostor media/5.jpg"];
+        [_playerPhotos setObject:image forKey:@(0)];
+#endif
+    }
     return _playerPhotos;
 }
 
