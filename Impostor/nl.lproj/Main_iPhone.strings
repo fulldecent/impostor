@@ -9,7 +9,7 @@
 "dVR-0R-kXy.normalTitle" = "Start het spel";
 
 /* Class = "IBUILabel"; text = "Results"; ObjectID = "f0e-Jd-6ve"; */
-"f0e-Jd-6ve.text" = "Results";
+"f0e-Jd-6ve.text" = "Resultaten";
 
 /* Class = "IBUIButton"; normalTitle = "Show secret word"; ObjectID = "kKr-a3-6GX"; */
 "kKr-a3-6GX.normalTitle" = "Toon het geheime woord";

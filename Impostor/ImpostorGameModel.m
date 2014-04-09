@@ -54,7 +54,7 @@
     
     NSMutableArray *roles = [[NSMutableArray alloc] initWithCapacity:numPlayers];
     NSMutableArray *words = [[NSMutableArray alloc] initWithCapacity:numPlayers];
-    NSMutableArray *eliminated = [[NSMutableArray alloc] initWithCapacity:numPlayers];
+    self.playerEliminated = [[NSMutableArray alloc] initWithCapacity:numPlayers];
     
     NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"gameWords" ofType:@"json"];
     NSString *jsonString = [NSString stringWithContentsOfFile:jsonPath encoding:NSUTF8StringEncoding error:nil];
@@ -72,12 +72,11 @@
             [roles addObject:[NSNumber numberWithInt:PlayerRoleNormalPlayer]];
             [words addObject:self.normalWord];
         }
-        [eliminated addObject:[NSNumber numberWithBool:NO]];
+        [self.playerEliminated addObject:[NSNumber numberWithBool:NO]];
     }
 
-    self.playerRoles = roles;
-    self.playerWords = words;
-    self.playerEliminated = eliminated;
+    self.playerRoles = [roles copy];
+    self.playerWords = [words copy];
     self.gameStatus = GameStatusNewGame;
     self.playerNumberToStartRound = arc4random() % self.numberOfPlayers;
 }

@@ -29,12 +29,11 @@
 
 - (void)setPlayerCount:(NSInteger)playerCount
 {
-    if (playerCount < 3)
+    _playerCount = playerCount;
+    if (_playerCount < 3)
         _playerCount = 3;
-    else if (playerCount > 12)
+    else if (_playerCount > 12)
         _playerCount = 12;
-    else
-        _playerCount = playerCount;
     
     self.numberOfPlayersLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%ld players",@"Number of players in the game"), (long)self.playerCount];
     [self.playerPhotoCollectionView reloadData];
@@ -221,7 +220,7 @@
         return;
     else if (buttonIndex == 0) {
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+        NSString *basePath = [paths firstObject];
         NSFileManager *fileManager = [NSFileManager defaultManager];
         NSArray *photoPaths = [fileManager contentsOfDirectoryAtPath:basePath error:nil];
         for (NSString *path in photoPaths)
@@ -258,6 +257,13 @@
         activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll]; //or whichever you don't need
         [self presentViewController:activityVC animated:YES completion:nil];
     }
+    // May return nil if a tracker has not already been initialized with a
+    // property ID.
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    // This screen name value will remain set on the tracker and sent with
+    // hits until it is set to a new value or to nil.
+    [tracker set:kGAIScreenName value:@"GameConfigurationViewController"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 }
 
 #pragma mark - MFMailComposeViewControllerDelegate
