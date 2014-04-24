@@ -16,8 +16,9 @@
 #import "GAI.h"
 #import "GAIDictionaryBuilder.h"
 #import "GAIFields.h"
+#import <TOWebViewController.h>
 
-@interface GameConfigurationViewController () <UICollectionViewDataSource, UIActionSheetDelegate, MFMailComposeViewControllerDelegate>
+@interface GameConfigurationViewController () <UICollectionViewDataSource, UIActionSheetDelegate>
 @property (nonatomic) NSInteger playerCount;
 @property (nonatomic) ImpostorGameModel *game;
 @property (nonatomic) UIActionSheet *actionSheet;
@@ -128,7 +129,6 @@
                                           cancelButtonTitle:NSLocalizedString(@"Cancel", @"Close the settings menu")
                                      destructiveButtonTitle:nil
                                           otherButtonTitles:NSLocalizedString(@"Reset player photos", @"In the settings menu"),
-                                                            NSLocalizedString(@"Help translate this app", @"In the settings menu"),
                                                             NSLocalizedString(@"Recommend game words", @"In the settings menu"),
                                                             NSLocalizedString(@"Share this app", @"In the settings menu"),
                                                             nil];
@@ -207,7 +207,6 @@
         rows = floorf((self.playerPhotoCollectionView.frame.size.height+10)/((cellMaxSide+1)+10));
     } while ((rows * cols >= self.playerCount) && ++cellMaxSide);
     CGFloat dim = MIN(cellMaxSide, cellMaxSide);
-    
     [(UICollectionViewFlowLayout *)self.playerPhotoCollectionView.collectionViewLayout setItemSize:CGSizeMake(dim,dim)];
     [self.playerPhotoCollectionView reloadData];
 }
@@ -216,6 +215,14 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
+    // May return nil if a tracker has not already been initialized with a
+    // property ID.
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    // This screen name value will remain set on the tracker and sent with
+    // hits until it is set to a new value or to nil.
+    [tracker set:kGAIScreenName value:@"GameConfigurationViewController"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+
     if (buttonIndex == self.actionSheet.cancelButtonIndex)
         return;
     else if (buttonIndex == 0) {
@@ -227,27 +234,21 @@
             [fileManager removeItemAtPath:[basePath stringByAppendingPathComponent:path] error:nil];
         [self.game.playerPhotos removeAllObjects];
         [self.playerPhotoCollectionView reloadData];
+        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
+                                                              action:@"Configuration"
+                                                               label:@"ResetPlayerPhotos"
+                                                               value:@(1)] build]];
     } else if (buttonIndex == 1) {
-        if ([MFMailComposeViewController canSendMail]) {
-            MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
-            picker.mailComposeDelegate = self;
-            NSString *appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
-            [picker setSubject:[NSString stringWithFormat:NSLocalizedString(@"%@: Help translate", @"Email subject to help translate"), appName]];
-            [picker setToRecipients:[NSArray arrayWithObject:@"impostor@phor.net"]];
-            [picker setMessageBody:[NSString stringWithFormat:NSLocalizedString(@"I love the %@ app and can help translate into: [[[WHICH LANGUAGE?]]]", @"Email body"), appName] isHTML:NO];
-            [self presentViewController:picker animated:YES completion:nil];
-        }
+        NSURL *url = [NSURL URLWithString:@"http://phor.net/apps/impostor/newWords.php"];
+        TOWebViewController *webViewController = [[TOWebViewController alloc] initWithURL:url];
+        [self presentViewController:[[UINavigationController alloc] initWithRootViewController:webViewController] animated:YES completion:nil];
+        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
+                                                              action:@"Configuration"
+                                                               label:@"SuggestWords"
+                                                               value:@(1)] build]];
     } else if (buttonIndex == 2) {
-        if ([MFMailComposeViewController canSendMail]) {
-            MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
-            picker.mailComposeDelegate = self;
-            NSString *appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
-            [picker setSubject:[NSString stringWithFormat:NSLocalizedString(@"%@: Recommend game words", @"Email subject to recommend words"), appName]];
-            [picker setToRecipients:[NSArray arrayWithObject:@"impostor@phor.net"]];
-            [picker setMessageBody:[NSString stringWithFormat:NSLocalizedString(@"I love the %@ app and have an idea of some more pairs of words you can use in it:", @"Email body"), appName] isHTML:NO];
-            [self presentViewController:picker animated:YES completion:nil];
-        }
-    } else if (buttonIndex == 3) {
         // Create the item to share (in this example, a url)
         NSString *appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
         NSURL *url = [NSURL URLWithString:@"https://itunes.apple.com/us/app/whos-the-impostor/id784258202"];
@@ -255,22 +256,15 @@
         NSArray *itemsToShare = @[url, title];
         UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
         activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll]; //or whichever you don't need
+        activityVC.completionHandler = ^(NSString *activityType, BOOL completed) {
+            id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+            [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
+                                                                  action:@"Share"
+                                                                   label:activityType
+                                                                   value:@(completed)] build]];
+        };
         [self presentViewController:activityVC animated:YES completion:nil];
     }
-    // May return nil if a tracker has not already been initialized with a
-    // property ID.
-    id tracker = [[GAI sharedInstance] defaultTracker];
-    // This screen name value will remain set on the tracker and sent with
-    // hits until it is set to a new value or to nil.
-    [tracker set:kGAIScreenName value:@"GameConfigurationViewController"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-}
-
-#pragma mark - MFMailComposeViewControllerDelegate
-
-- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
