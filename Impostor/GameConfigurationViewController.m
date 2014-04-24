@@ -103,6 +103,10 @@
 }
 
 - (IBAction)showInstructions:(id)sender {
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"IntroViewController"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+
     KxIntroViewController *vc;
     AudioServicesPlaySystemSound (self.buttonPress);
     vc = [[KxIntroViewController alloc] initWithPages:@[
@@ -215,14 +219,6 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-    // May return nil if a tracker has not already been initialized with a
-    // property ID.
-    id tracker = [[GAI sharedInstance] defaultTracker];
-    // This screen name value will remain set on the tracker and sent with
-    // hits until it is set to a new value or to nil.
-    [tracker set:kGAIScreenName value:@"GameConfigurationViewController"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-
     if (buttonIndex == self.actionSheet.cancelButtonIndex)
         return;
     else if (buttonIndex == 0) {
@@ -265,6 +261,11 @@
         };
         [self presentViewController:activityVC animated:YES completion:nil];
     }
+    
+    // Go back to what it was    
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"GameConfigurationViewController"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 }
 
 @end
