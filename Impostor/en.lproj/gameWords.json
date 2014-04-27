@@ -10,7 +10,6 @@
  ["Britney Spears","Christina Aguilera"],
  ["Bubblegum","Lollipops"],
  ["Bus","Subway"],
- ["Bus","Subway"],
  ["Cabbage","Lettuce"],
  ["Carnation","Rose"],
  ["Cheddar cheese","Parmesean cheese"],
@@ -60,5 +59,13 @@
  ["Tea","Wine"],
  ["Tissue","Handkerchief"],
  ["Twitter","Facebook"],
- ["Vampire","Zombie"]
+ ["Vampire","Zombie"],
+ ["Apple (fruit)","Tomato"],
+ ["Ocean","Lake"],
+ ["Camaro","Corvette"],
+ ["House","Apartment"],
+ ["Flowers","Weeds"],
+ ["Spring","Summer"],
+ ["iPhone","Android (phone)"],
+ ["Winter","Autumn"]
 ]
