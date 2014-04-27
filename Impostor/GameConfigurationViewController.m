@@ -235,12 +235,14 @@
     if (buttonIndex == self.actionSheet.cancelButtonIndex)
         return;
     else if (buttonIndex == 0) {
+        /*
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *basePath = [paths firstObject];
         NSFileManager *fileManager = [NSFileManager defaultManager];
         NSArray *photoPaths = [fileManager contentsOfDirectoryAtPath:basePath error:nil];
         for (NSString *path in photoPaths)
             [fileManager removeItemAtPath:[basePath stringByAppendingPathComponent:path] error:nil];
+        */
         [self.game.playerPhotos removeAllObjects];
         [self.playerPhotoCollectionView reloadData];
         id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
