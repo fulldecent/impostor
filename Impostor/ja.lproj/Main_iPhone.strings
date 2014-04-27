@@ -16,3 +16,6 @@
 
 /* Class = "IBUIButton"; normalTitle = "Play Again"; ObjectID = "mOo-md-1fi"; */
 "mOo-md-1fi.normalTitle" = "もう一度プレー";
+
+/* Class = "IBUIButton"; normalTitle = "View Selfies"; ObjectID = "aQS-ki-vZO"; */
+"aQS-ki-vZO.normalTitle" = "自己の肖像画を表示";

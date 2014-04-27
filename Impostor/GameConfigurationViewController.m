@@ -136,6 +136,19 @@
                                                             NSLocalizedString(@"Recommend game words", @"In the settings menu"),
                                                             NSLocalizedString(@"Share this app", @"In the settings menu"),
                                                             nil];
+
+    NSString * language = [[NSLocale preferredLanguages] objectAtIndex:0];
+    if ([language isEqualToString:@"zh-Hans"]) {
+        self.actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self
+                                              cancelButtonTitle:NSLocalizedString(@"Cancel", @"Close the settings menu")
+                                         destructiveButtonTitle:nil
+                                              otherButtonTitles:NSLocalizedString(@"Reset player photos", @"In the settings menu"),
+                                                                NSLocalizedString(@"Recommend game words", @"In the settings menu"),
+                                                                NSLocalizedString(@"Share this app", @"In the settings menu"),
+                                                                NSLocalizedString(@"看开发者的微信", @"In the settings menu"),
+                            nil];
+    }
+    
     [self.actionSheet showFromRect:[(UIView *)[self.view viewWithTag:9] frame]  inView:self.view animated:YES];
     
     // May return nil if a tracker has not already been initialized with a
@@ -260,9 +273,24 @@
                                                                    value:@(completed)] build]];
         };
         [self presentViewController:activityVC animated:YES completion:nil];
+    } else if (buttonIndex == 3) {
+        // See developer's Weixin
+        NSURL *wxurl = [NSURL URLWithString:@"weixin://contacts/profile/fulldecent"];
+        NSURL *backupurl = [NSURL URLWithString:@"http://user.qzone.qq.com/858772059"];
+        if ([[UIApplication sharedApplication] canOpenURL: wxurl]){
+            [[UIApplication sharedApplication] openURL:wxurl];
+        } else {
+            [[UIApplication sharedApplication] openURL:backupurl];
+        }
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"weixin://contacts/profile/fulldecent"]];
+        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
+                                                              action:@"Social"
+                                                               label:@"View Weixin"
+                                                               value:@([[UIApplication sharedApplication] canOpenURL: wxurl])] build]];
     }
     
-    // Go back to what it was    
+    // Go back to what it was
     id tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"GameConfigurationViewController"];
     [tracker send:[[GAIDictionaryBuilder createAppView] build]];
