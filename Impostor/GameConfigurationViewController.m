@@ -123,7 +123,6 @@
                                                                                      withDetail: NSLocalizedString(@"the impostor must survive with one other player", @"Intro screen 4 detail")
                                                                                       withImage: nil],
                                                         ]],
-//    [self presentViewController:vc animated:YES completion:nil];
     [vc presentInViewController:self fullScreenLayout:YES];
 }
 
@@ -151,11 +150,7 @@
     
     [self.actionSheet showFromRect:[(UIView *)[self.view viewWithTag:9] frame]  inView:self.view animated:YES];
     
-    // May return nil if a tracker has not already been initialized with a
-    // property ID.
     id tracker = [[GAI sharedInstance] defaultTracker];
-    // This screen name value will remain set on the tracker and sent with
-    // hits until it is set to a new value or to nil.
     [tracker set:kGAIScreenName value:@"Game Options"];
     [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 }
@@ -181,7 +176,6 @@
         [self.audioPlayer prepareToPlay];
         self.audioPlayer.volume = 1.0;
     }
-
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
