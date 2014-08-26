@@ -49,6 +49,10 @@
 		D9CDEBFD187B8A2800AE4163 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CDEBFC187B8A2800AE4163 /* CoreData.framework */; };
 		D9CDEBFF187B8A2F00AE4163 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CDEBFE187B8A2F00AE4163 /* SystemConfiguration.framework */; };
 		D9CDEC01187B8A3A00AE4163 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CDEC00187B8A3A00AE4163 /* libz.dylib */; };
+		D9D432F719AC0E4200E0A408 /* help1.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D432F319AC0E4200E0A408 /* help1.png */; };
+		D9D432F819AC0E4200E0A408 /* help4.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D432F419AC0E4200E0A408 /* help4.png */; };
+		D9D432F919AC0E4200E0A408 /* help2.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D432F519AC0E4200E0A408 /* help2.png */; };
+		D9D432FA19AC0E4200E0A408 /* help3.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D432F619AC0E4200E0A408 /* help3.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +140,10 @@
 		D9D29A3E189C66F60054BEFF /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D9D29A3F189C66F60054BEFF /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D9D29A40189C66F60054BEFF /* es */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = es; path = es.lproj/gameWords.json; sourceTree = "<group>"; };
+		D9D432F319AC0E4200E0A408 /* help1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help1.png; sourceTree = "<group>"; };
+		D9D432F419AC0E4200E0A408 /* help4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help4.png; sourceTree = "<group>"; };
+		D9D432F519AC0E4200E0A408 /* help2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help2.png; sourceTree = "<group>"; };
+		D9D432F619AC0E4200E0A408 /* help3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help3.png; sourceTree = "<group>"; };
 		D9DA621318A0061D0087706B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
 		D9DA621418A0061D0087706B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D9DA621518A0061D0087706B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -227,6 +235,10 @@
 				D9A4F762185E310A0060AA2D /* ResultsViewController.m */,
 				D9744FC218B5C1CA00697357 /* CollageViewController.h */,
 				D9744FC318B5C1CA00697357 /* CollageViewController.m */,
+				D9D432F319AC0E4200E0A408 /* help1.png */,
+				D9D432F419AC0E4200E0A408 /* help4.png */,
+				D9D432F519AC0E4200E0A408 /* help2.png */,
+				D9D432F619AC0E4200E0A408 /* help3.png */,
 				D98CA402185D338600746059 /* Supporting Files */,
 			);
 			path = Impostor;
@@ -335,17 +347,21 @@
 				D9A4F784185FE0F50060AA2D /* background.jpg in Resources */,
 				D9CDEBDE1879D97900AE4163 /* minus.png in Resources */,
 				D9A4F782185FDDA90060AA2D /* defaultHeadshot.png in Resources */,
+				D9D432F819AC0E4200E0A408 /* help4.png in Resources */,
 				D9CDEBE31879DA2800AE4163 /* cogs.png in Resources */,
 				D9A4F779185E80040060AA2D /* peek.mp3 in Resources */,
 				D9CDEBF0187A4B6C00AE4163 /* gameWords.json in Resources */,
 				D98CA417185D338600746059 /* Images.xcassets in Resources */,
+				D9D432F919AC0E4200E0A408 /* help2.png in Resources */,
 				D9A4F773185E7DEA0060AA2D /* intro.mp3 in Resources */,
+				D9D432FA19AC0E4200E0A408 /* help3.png in Resources */,
 				D9CDEBDF1879D97900AE4163 /* question.png in Resources */,
 				D9A4F775185E7EDE0060AA2D /* buttonPress.mp3 in Resources */,
 				D9CDEBE11879D97900AE4163 /* remove.png in Resources */,
 				D9A2405F18D50DF7005D4DCD /* camera.mp3 in Resources */,
 				D9CDEBE01879D97900AE4163 /* plus.png in Resources */,
 				D9A4F77D185E80D10060AA2D /* results.mp3 in Resources */,
+				D9D432F719AC0E4200E0A408 /* help1.png in Resources */,
 				D98CA40F185D338600746059 /* Main_iPhone.storyboard in Resources */,
 				D98CA406185D338600746059 /* InfoPlist.strings in Resources */,
 			);

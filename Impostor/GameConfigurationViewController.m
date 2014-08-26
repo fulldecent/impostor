@@ -112,16 +112,16 @@
     vc = [[KxIntroViewController alloc] initWithPages:@[
                                                         [KxIntroViewPage introViewPageWithTitle: NSLocalizedString(@"A party game", @"Intro screen 1 title")
                                                                                      withDetail: NSLocalizedString(@"For 3 to 12 players", @"Intro screen 1 detail")
-                                                                                      withImage: nil],
+                                                                                      withImage: [UIImage imageNamed:@"help1"]],
                                                         [KxIntroViewPage introViewPageWithTitle: NSLocalizedString(@"Everyone sees their secret word", @"Intro screen 2 title")
                                                                                      withDetail: NSLocalizedString(@"But the impostor's word is different", @"Intro screen 2 detail")
-                                                                                      withImage: nil],
+                                                                                      withImage: [UIImage imageNamed:@"help2"]],
                                                         [KxIntroViewPage introViewPageWithTitle: NSLocalizedString(@"Each round players describe their word", @"Intro screen 3 title")
                                                                                      withDetail: NSLocalizedString(@"and then vote to eliminate one player (can't use word to describe itself or repeat other players, break ties with a revote)", @"Intro screen 3 detail")
-                                                                                      withImage: nil],
+                                                                                      withImage: [UIImage imageNamed:@"help3"]],
                                                         [KxIntroViewPage introViewPageWithTitle: NSLocalizedString(@"To win", @"Intro screen 4 title")
                                                                                      withDetail: NSLocalizedString(@"the impostor must survive with one other player", @"Intro screen 4 detail")
-                                                                                      withImage: nil],
+                                                                                      withImage: [UIImage imageNamed:@"help4"]],
                                                         ]],
     [vc presentInViewController:self fullScreenLayout:YES];
 }
