@@ -97,7 +97,7 @@
 - (void)introView:(KxIntroView *)view didComplete:(BOOL)finished
 {
     if (self.presentingViewController) {
-        [self dismissViewControllerAnimated:!finished completion:NO];
+        [self dismissViewControllerAnimated:!finished completion:nil];
     } else if (self.view.superview) {
         if (!finished) {
             [UIView animateWithDuration:0.2
