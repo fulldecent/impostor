@@ -32,8 +32,7 @@
     [super viewDidAppear:animated];
     self.screenName = @"CollageViewController";
     
-    NSString* bundleDirectory = (NSString*)[[NSBundle mainBundle] bundlePath];
-    NSURL *url = [NSURL fileURLWithPath:[bundleDirectory stringByAppendingPathComponent:@"camera.mp3"]];
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"camera" withExtension:@"mp3"];
     self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     [self performSelector:@selector(flashScreen) withObject:nil afterDelay:1.0];
     [self performSelector:@selector(showShareBox) withObject:nil afterDelay:1.8];
@@ -81,8 +80,6 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"%@",indexPath);
-    
     UICollectionViewCell *cell = [self.playerPhotoCollectionView dequeueReusableCellWithReuseIdentifier:@"playerCell" forIndexPath:indexPath];
     UIImage *photo = [UIImage imageNamed:@"defaultHeadshot.png"];
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];

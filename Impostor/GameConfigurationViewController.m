@@ -59,9 +59,9 @@
     [(UICollectionViewFlowLayout *)self.playerPhotoCollectionView.collectionViewLayout setMinimumInteritemSpacing:10];
     [(UICollectionViewFlowLayout *)self.playerPhotoCollectionView.collectionViewLayout setMinimumLineSpacing:10];
     
-    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"buttonPress" ofType:@"mp3"];
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"buttonPress" withExtension:@"mp3"];
     SystemSoundID soundID;
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &soundID);
     self.buttonPress = soundID;
 }
 
@@ -70,8 +70,7 @@
     [super viewDidAppear:animated];
     self.screenName = @"GameConfigurationViewController";
     
-    NSString* bundleDirectory = (NSString*)[[NSBundle mainBundle] bundlePath];
-    NSURL *url = [NSURL fileURLWithPath:[bundleDirectory stringByAppendingPathComponent:@"intro.mp3"]];
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"intro" withExtension:@"mp3"];
     self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     [self.audioPlayer play];
     
@@ -229,14 +228,6 @@
     if (buttonIndex == self.actionSheet.cancelButtonIndex)
         return;
     else if (buttonIndex == 0) {
-        /*
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *basePath = [paths firstObject];
-        NSFileManager *fileManager = [NSFileManager defaultManager];
-        NSArray *photoPaths = [fileManager contentsOfDirectoryAtPath:basePath error:nil];
-        for (NSString *path in photoPaths)
-            [fileManager removeItemAtPath:[basePath stringByAppendingPathComponent:path] error:nil];
-        */
         [self.game.playerPhotos removeAllObjects];
         [self.playerPhotoCollectionView reloadData];
         id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];

@@ -28,9 +28,9 @@
 
 - (void)eliminatePlayer:(UIButton *)sender
 {
-    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"eliminate" ofType:@"mp3"];
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"eliminate" withExtension:@"mp3"];
     SystemSoundID soundID;
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &soundID);
     AudioServicesPlaySystemSound (soundID);
 
     CGPoint center = sender.center;

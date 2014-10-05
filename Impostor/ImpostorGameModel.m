@@ -56,8 +56,8 @@
     NSMutableArray *words = [[NSMutableArray alloc] initWithCapacity:numPlayers];
     self.playerEliminated = [[NSMutableArray alloc] initWithCapacity:numPlayers];
     
-    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"gameWords" ofType:@"json"];
-    NSString *jsonString = [NSString stringWithContentsOfFile:jsonPath encoding:NSUTF8StringEncoding error:nil];
+    NSURL *jsonURL = [[NSBundle mainBundle] URLForResource:@"gameWords" withExtension:@"json"];
+    NSString *jsonString = [NSString stringWithContentsOfURL:jsonURL encoding:NSUTF8StringEncoding error:nil];
     NSArray *allWordSets = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:nil];
     int chosenWordSet = arc4random() % allWordSets.count;
     int chosenImpostorWord = arc4random() % 2;

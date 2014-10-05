@@ -39,6 +39,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     BOOL allPhotos = YES;
     for (NSInteger i=0; i<self.game.numberOfPlayers; i++) {
         if (![self.game.playerPhotos objectForKey:@(i)])
@@ -83,9 +84,9 @@
                                                            label:@"All users did have photos"
                                                            value:@(allPhotos)] build]];
     
-    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"results" ofType:@"mp3"];
     SystemSoundID soundID;
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"results" withExtension:@"mp3"];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &soundID);
     AudioServicesPlaySystemSound (soundID);
     
     switch (self.game.gameStatus) {

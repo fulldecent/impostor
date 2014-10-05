@@ -31,9 +31,9 @@
 }
 
 - (IBAction)showSecretWord:(id)sender {
-    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"peek" ofType:@"mp3"];
     SystemSoundID soundID;
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"peek" withExtension:@"mp3"];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &soundID);
     AudioServicesPlaySystemSound (soundID);
     NSString *theWord = [self.game.playerWords objectAtIndex:self.playerNumber];
     self.alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Your secret word is", @"On the secret word screen") message:theWord delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -144,13 +144,7 @@
     normalizedImage = [[self class] cropBiggestCenteredSquareImageFromImage:normalizedImage withSide:800];
     
     self.playerImage.image = normalizedImage;
-    /*
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
-    NSString *targetPhotoPath = [basePath stringByAppendingPathComponent:[NSString stringWithFormat:@"player%ld.jpg",(long)self.playerNumber]];
-    [UIImageJPEGRepresentation(normalizedImage, 0.9) writeToFile:targetPhotoPath atomically:YES];
-    */
-     [self.game.playerPhotos setObject:normalizedImage forKey:[NSNumber numberWithInteger:self.playerNumber]];
+    [self.game.playerPhotos setObject:normalizedImage forKey:[NSNumber numberWithInteger:self.playerNumber]];
     
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
