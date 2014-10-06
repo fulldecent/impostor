@@ -13,7 +13,7 @@
 @property (nonatomic) NSArray *playerRoles; // of NSNumber of PlayerRoles
 @property (nonatomic) NSArray *playerWords; // of NSStrings
 @property (nonatomic) NSMutableArray *playerEliminated; // of NSNumber of BOOLs
-@property (nonatomic) enum GameStatus gameStatus;
+@property (nonatomic) GameStatus gameStatus;
 @property (nonatomic) NSInteger playerNumberToStartRound;
 @property (nonatomic) NSString *normalWord;
 @property (nonatomic) NSString *impostorWord;
@@ -22,30 +22,6 @@
 @implementation ImpostorGameModel
 
 #pragma mark - ACESSORS FOR INITIALIZERS
-
-- (NSMutableDictionary *)playerPhotos
-{
-    if (!_playerPhotos) {
-        _playerPhotos = [[NSMutableDictionary alloc] init];
-        
-#if TARGET_IPHONE_SIMULATOR
-        UIImage *image;
-        image = [UIImage imageWithContentsOfFile:@"/Users/williamentriken/Developer/Impostor media/1.jpg"];
-        [_playerPhotos setObject:image forKey:@(1)];
-        image = [UIImage imageWithContentsOfFile:@"/Users/williamentriken/Developer/Impostor media/4.jpg"];
-        [_playerPhotos setObject:image forKey:@(2)];
-        image = [UIImage imageWithContentsOfFile:@"/Users/williamentriken/Developer/Impostor media/2.jpg"];
-        [_playerPhotos setObject:image forKey:@(3)];
-        image = [UIImage imageWithContentsOfFile:@"/Users/williamentriken/Developer/Impostor media/3.jpg"];
-        [_playerPhotos setObject:image forKey:@(4)];
-        image = [UIImage imageWithContentsOfFile:@"/Users/williamentriken/Developer/Impostor media/5.jpg"];
-        [_playerPhotos setObject:image forKey:@(0)];
-#endif
-    }
-    return _playerPhotos;
-}
-
-#pragma mark - REAL FUNCTIONS
 
 - (void)startGameWithNumberOfPlayers:(NSInteger)numPlayers
 {
@@ -77,7 +53,7 @@
 
     self.playerRoles = [roles copy];
     self.playerWords = [words copy];
-    self.gameStatus = GameStatusNewGame;
+    self.gameStatus = GameStatusShowSecretWords;
     self.playerNumberToStartRound = arc4random() % self.numberOfPlayers;
 }
 
@@ -93,7 +69,7 @@
     for (int i=0; i<self.numberOfPlayers; i++) {
         if ([(NSNumber *)[self.playerEliminated objectAtIndex:i] isEqualToNumber:[NSNumber numberWithBool:YES]])
             continue;
-        enum PlayerRoles role = [(NSNumber *)[self.playerRoles objectAtIndex:i] intValue];
+        PlayerRoles role = [(NSNumber *)[self.playerRoles objectAtIndex:i] intValue];
         switch (role) {
             case PlayerRoleImpostor:
                 countOfRemainingImpostors++;

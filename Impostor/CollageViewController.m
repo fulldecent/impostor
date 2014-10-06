@@ -12,6 +12,7 @@
 #import <AVFoundation/AVAudioPlayer.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import "GameConfigurationViewController.h"
+#import "CachedPersistentJPEGImageStore.h"
 
 @interface CollageViewController () <UICollectionViewDataSource>
 @property (nonatomic) ImpostorGameModel *game;
@@ -85,7 +86,8 @@
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
     imageView.image = photo;
     
-    photo = [self.game.playerPhotos objectForKey:[NSNumber numberWithInteger:indexPath.row]];
+    NSString *imageName = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
+    photo = [[CachedPersistentJPEGImageStore sharedStore] imageWithName:imageName];
     if (photo)
         imageView.image = photo;
 

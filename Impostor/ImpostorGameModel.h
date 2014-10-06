@@ -8,26 +8,24 @@
 
 #import <Foundation/Foundation.h>
 
-enum PlayerRoles {
+typedef enum PlayerRoles {
     PlayerRoleNormalPlayer,
     PlayerRoleImpostor
-};
+} PlayerRoles;
 
-enum GameStatus {
-    GameStatusNewGame,
+typedef enum GameStatus {
+    GameStatusShowSecretWords,
     GameStatusTheImpostorRemains,
     GameStatusTheImpostorWasDefeated,
     GameStatusTheImpostorWon
-};
+} GameStatus;
 
 @interface ImpostorGameModel : NSObject
-@property (nonatomic, readwrite) NSMutableDictionary *playerPhotos; // MODEL DOES NOT USE THIS
-
 @property (nonatomic, readonly) NSInteger numberOfPlayers;
 @property (nonatomic, readonly) NSArray *playerRoles; // of NSNumber of PlayerRoles
 @property (nonatomic, readonly) NSArray *playerWords; // of NSStrings
 @property (nonatomic, readonly) NSMutableArray *playerEliminated; // of NSNumber of BOOLs
-@property (nonatomic, readonly) enum GameStatus gameStatus;
+@property (nonatomic, readonly) GameStatus gameStatus;
 @property (nonatomic, readonly) NSInteger playerNumberToStartRound;
 @property (nonatomic, readonly) NSString *normalWord;
 @property (nonatomic, readonly) NSString *impostorWord;

@@ -21,7 +21,7 @@
     [super viewDidAppear:animated];
 
     switch ([[ImpostorGameModel game] gameStatus]) {
-        case GameStatusNewGame:
+        case GameStatusShowSecretWords:
             [self performSegueWithIdentifier:@"secretWord" sender:self];
             break;
         case GameStatusTheImpostorRemains:

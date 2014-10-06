@@ -17,6 +17,7 @@
 #import "GAIDictionaryBuilder.h"
 #import "GAIFields.h"
 #import <TOWebViewController.h>
+#import "CachedPersistentJPEGImageStore.h"
 
 @interface GameConfigurationViewController () <UICollectionViewDataSource, UIActionSheetDelegate>
 @property (nonatomic) NSInteger playerCount;
@@ -202,7 +203,8 @@
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
     imageView.image = photo;
     
-    photo = [self.game.playerPhotos objectForKey:[NSNumber numberWithInteger:indexPath.row]];
+    NSString *imageName = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
+    photo = [[CachedPersistentJPEGImageStore sharedStore] imageWithName:imageName];
     if (photo)
         imageView.image = photo;
     return cell;
@@ -228,7 +230,7 @@
     if (buttonIndex == self.actionSheet.cancelButtonIndex)
         return;
     else if (buttonIndex == 0) {
-        [self.game.playerPhotos removeAllObjects];
+        [[CachedPersistentJPEGImageStore sharedStore] deleteAllImages];
         [self.playerPhotoCollectionView reloadData];
         id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
         [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"

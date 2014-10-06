@@ -11,6 +11,7 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "GAIDictionaryBuilder.h"
 #import <Appirater.h>
+#import "CachedPersistentJPEGImageStore.h"
 
 @interface ResultsViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic) ImpostorGameModel *game;
@@ -42,10 +43,11 @@
     [super viewWillAppear:animated];
     BOOL allPhotos = YES;
     for (NSInteger i=0; i<self.game.numberOfPlayers; i++) {
-        if (![self.game.playerPhotos objectForKey:@(i)])
+        NSString *imageName = [NSString stringWithFormat:@"%ld", (long)i];
+        if (![[CachedPersistentJPEGImageStore sharedStore] imageWithName:imageName])
             allPhotos = NO;
     }
-
+    
     if (allPhotos) {
         self.collage.hidden = NO;
         self.shim.constant = 8;
@@ -76,7 +78,8 @@
     
     BOOL allPhotos = YES;
     for (NSInteger i=0; i<self.game.numberOfPlayers; i++) {
-        if (![self.game.playerPhotos objectForKey:@(i)])
+        NSString *imageName = [NSString stringWithFormat:@"%ld", (long)i];
+        if (![[CachedPersistentJPEGImageStore sharedStore] imageWithName:imageName])
             allPhotos = NO;
     }
     [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
@@ -143,7 +146,8 @@
     cell.imageView.image = photo;
     cell.imageView.alpha = eliminated ? 0.4 : 1.0;
     
-    photo = [self.game.playerPhotos objectForKey:[NSNumber numberWithInteger:indexPath.row]];
+    NSString *imageName = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
+    photo = [[CachedPersistentJPEGImageStore sharedStore] imageWithName:imageName];
     if (photo)
         cell.imageView.image = photo;
 

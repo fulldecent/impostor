@@ -100,7 +100,7 @@ fi
 			<key>name</key>
 			<string>fr</string>
 			<key>path</key>
-			<string>fr.lproj/Main_iPhone.strings</string>
+			<string>fr.lproj/Main.strings</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -191,7 +191,7 @@ fi
 			<key>name</key>
 			<string>ru</string>
 			<key>path</key>
-			<string>ru.lproj/Main_iPhone.strings</string>
+			<string>ru.lproj/Main.strings</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -204,7 +204,7 @@ fi
 			<key>name</key>
 			<string>ko</string>
 			<key>path</key>
-			<string>ko.lproj/Main_iPhone.strings</string>
+			<string>ko.lproj/Main.strings</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -256,7 +256,7 @@ fi
 			<key>name</key>
 			<string>ja</string>
 			<key>path</key>
-			<string>ja.lproj/Main_iPhone.strings</string>
+			<string>ja.lproj/Main.strings</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -397,6 +397,7 @@ fi
 			<key>children</key>
 			<array>
 				<string>D98CA401185D338600746059</string>
+				<string>D9917B2519E1DB7700E2F104</string>
 				<string>D98CA3FA185D338600746059</string>
 				<string>D98CA3F9185D338600746059</string>
 				<string>0DE6F65A4157BD137CCDFDA9</string>
@@ -420,6 +421,13 @@ fi
 					<dict>
 						<key>DevelopmentTeam</key>
 						<string>8Q693ZG5RN</string>
+					</dict>
+					<key>D9917B2319E1DB7700E2F104</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>6.0</string>
+						<key>TestTargetID</key>
+						<string>D98CA3F7185D338600746059</string>
 					</dict>
 				</dict>
 			</dict>
@@ -459,6 +467,7 @@ fi
 			<key>targets</key>
 			<array>
 				<string>D98CA3F7185D338600746059</string>
+				<string>D9917B2319E1DB7700E2F104</string>
 			</array>
 		</dict>
 		<key>D98CA3F3185D338600746059</key>
@@ -486,6 +495,7 @@ fi
 				<string>D98CA439185D3A3900746059</string>
 				<string>D98CA415185D338600746059</string>
 				<string>D98CA442185D699E00746059</string>
+				<string>D9AD710B19E1E2E0007FC6D6</string>
 				<string>D9A4F763185E310A0060AA2D</string>
 				<string>D9A4F76E185E54480060AA2D</string>
 				<string>D98CA445185E1C8C00746059</string>
@@ -602,6 +612,7 @@ fi
 			<key>children</key>
 			<array>
 				<string>D98CA3F8185D338600746059</string>
+				<string>D9917B2419E1DB7700E2F104</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -706,6 +717,8 @@ fi
 				<string>D98CA416185D338600746059</string>
 				<string>D98CA437185D3A3900746059</string>
 				<string>D98CA438185D3A3900746059</string>
+				<string>D9AD710919E1E2E0007FC6D6</string>
+				<string>D9AD710A19E1E2E0007FC6D6</string>
 				<string>D98CA413185D338600746059</string>
 				<string>D98CA414185D338600746059</string>
 				<string>D98CA43A185D67E800746059</string>
@@ -894,7 +907,7 @@ fi
 			<key>isa</key>
 			<string>PBXVariantGroup</string>
 			<key>name</key>
-			<string>Main_iPhone.storyboard</string>
+			<string>Main.storyboard</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -907,7 +920,7 @@ fi
 			<key>name</key>
 			<string>Base</string>
 			<key>path</key>
-			<string>Base.lproj/Main_iPhone.storyboard</string>
+			<string>Base.lproj/Main.storyboard</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1343,6 +1356,317 @@ fi
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>D9917B2019E1DB7700E2F104</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>D9917B2919E1DB7700E2F104</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>D9917B2119E1DB7700E2F104</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>D9917B2219E1DB7700E2F104</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>D9917B2319E1DB7700E2F104</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>D9917B2C19E1DB7700E2F104</string>
+			<key>buildPhases</key>
+			<array>
+				<string>D9917B2019E1DB7700E2F104</string>
+				<string>D9917B2119E1DB7700E2F104</string>
+				<string>D9917B2219E1DB7700E2F104</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>D9917B2B19E1DB7700E2F104</string>
+				<string>D9917B3019E1DB7E00E2F104</string>
+				<string>D9917B3219E1DB7E00E2F104</string>
+				<string>D9917B3419E1DB9C00E2F104</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Impostor Tests</string>
+			<key>productName</key>
+			<string>Impostor Tests</string>
+			<key>productReference</key>
+			<string>D9917B2419E1DB7700E2F104</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.unit-test</string>
+		</dict>
+		<key>D9917B2419E1DB7700E2F104</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Impostor Tests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>D9917B2519E1DB7700E2F104</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>D9917B2819E1DB7700E2F104</string>
+				<string>D9917B2619E1DB7700E2F104</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Impostor Tests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D9917B2619E1DB7700E2F104</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>D9917B2719E1DB7700E2F104</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D9917B2719E1DB7700E2F104</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D9917B2819E1DB7700E2F104</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ImpostorGameModel_Tests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D9917B2919E1DB7700E2F104</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D9917B2819E1DB7700E2F104</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D9917B2A19E1DB7700E2F104</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D98CA3F0185D338600746059</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>D98CA3F7185D338600746059</string>
+			<key>remoteInfo</key>
+			<string>Impostor</string>
+		</dict>
+		<key>D9917B2B19E1DB7700E2F104</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>D98CA3F7185D338600746059</string>
+			<key>targetProxy</key>
+			<string>D9917B2A19E1DB7700E2F104</string>
+		</dict>
+		<key>D9917B2C19E1DB7700E2F104</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>D9917B2D19E1DB7700E2F104</string>
+				<string>D9917B2E19E1DB7700E2F104</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>D9917B2D19E1DB7700E2F104</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Impostor Tests/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/Impostor.app/Impostor</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>D9917B2E19E1DB7700E2F104</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Impostor Tests/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/Impostor.app/Impostor</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>D9917B2F19E1DB7E00E2F104</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D98CA3F0185D338600746059</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>D98CA3F7185D338600746059</string>
+			<key>remoteInfo</key>
+			<string>Impostor</string>
+		</dict>
+		<key>D9917B3019E1DB7E00E2F104</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>D98CA3F7185D338600746059</string>
+			<key>targetProxy</key>
+			<string>D9917B2F19E1DB7E00E2F104</string>
+		</dict>
+		<key>D9917B3119E1DB7E00E2F104</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D98CA3F0185D338600746059</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>D98CA3F7185D338600746059</string>
+			<key>remoteInfo</key>
+			<string>Impostor</string>
+		</dict>
+		<key>D9917B3219E1DB7E00E2F104</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>D98CA3F7185D338600746059</string>
+			<key>targetProxy</key>
+			<string>D9917B3119E1DB7E00E2F104</string>
+		</dict>
+		<key>D9917B3319E1DB9C00E2F104</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D98CA3F0185D338600746059</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>D98CA3F7185D338600746059</string>
+			<key>remoteInfo</key>
+			<string>Impostor</string>
+		</dict>
+		<key>D9917B3419E1DB9C00E2F104</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>D98CA3F7185D338600746059</string>
+			<key>targetProxy</key>
+			<string>D9917B3319E1DB9C00E2F104</string>
+		</dict>
 		<key>D9A2405E18D50DF7005D4DCD</key>
 		<dict>
 			<key>isa</key>
@@ -1370,7 +1694,7 @@ fi
 			<key>name</key>
 			<string>nl</string>
 			<key>path</key>
-			<string>nl.lproj/Main_iPhone.strings</string>
+			<string>nl.lproj/Main.strings</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1715,6 +2039,39 @@ fi
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>D9AD710919E1E2E0007FC6D6</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>CachedPersistentJPEGImageStore.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D9AD710A19E1E2E0007FC6D6</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>CachedPersistentJPEGImageStore.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D9AD710B19E1E2E0007FC6D6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D9AD710A19E1E2E0007FC6D6</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>D9CDEBDA1879D97900AE4163</key>
 		<dict>
 			<key>isa</key>
@@ -1814,7 +2171,7 @@ fi
 			<key>name</key>
 			<string>zh-Hans</string>
 			<key>path</key>
-			<string>zh-Hans.lproj/Main_iPhone.strings</string>
+			<string>zh-Hans.lproj/Main.strings</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -2008,7 +2365,7 @@ fi
 			<key>name</key>
 			<string>es</string>
 			<key>path</key>
-			<string>es.lproj/Main_iPhone.strings</string>
+			<string>es.lproj/Main.strings</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -2132,7 +2489,7 @@ fi
 			<key>name</key>
 			<string>de</string>
 			<key>path</key>
-			<string>de.lproj/Main_iPhone.strings</string>
+			<string>de.lproj/Main.strings</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>

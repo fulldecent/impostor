@@ -9,6 +9,7 @@
 #import "SecretWordViewController.h"
 #import "ImpostorGameModel.h"
 #import <AudioToolbox/AudioToolbox.h>
+#import "CachedPersistentJPEGImageStore.h"
 
 @interface SecretWordViewController () <UIAlertViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (nonatomic) ImpostorGameModel *game;
@@ -51,9 +52,11 @@
     self.playerLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Player #%ld", @"Current player"), (long)self.playerNumber+1];
     UIImage *photo = [UIImage imageNamed:@"defaultHeadshot.png"];
     self.playerImage.image = photo;
+    
+    NSString *imageName = [NSString stringWithFormat:@"%ld", (long)self.playerNumber];
+    photo = [[CachedPersistentJPEGImageStore sharedStore] imageWithName:imageName];
 
-    photo = [self.game.playerPhotos objectForKey:[NSNumber numberWithInteger:self.playerNumber]];
-    if (photo)  
+    if (photo)
         self.playerImage.image = photo;
     self.wantsToTakePhoto = !photo;
 }
@@ -103,27 +106,17 @@
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     if (self.playerNumber == self.game.numberOfPlayers-1) {
-        [self.navigationController popViewControllerAnimated:YES];
         [self.game doneShowingSecretWords];
+        NSArray *viewControllers = [self.navigationController viewControllers];
+        [self.navigationController popToViewController:viewControllers[1] animated:YES];
         return;
     }
     
     UIStoryboard *storyboard;
-//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-//        storyboard = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
-//    } else {
-        storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
-//    }
+    storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     SecretWordViewController *newController = [storyboard instantiateViewControllerWithIdentifier:@"secretWord"];
     newController.playerNumber = self.playerNumber+1;
-    
-    // locally store the navigation controller since
-    // self.navigationController will be nil once we are popped
-    UINavigationController *navController = self.navigationController;
-    
-    // Pop this controller and replace with another
-    [navController popViewControllerAnimated:NO];
-    [navController pushViewController:newController animated:YES];
+    [self.navigationController pushViewController:newController animated:YES];
 }
 
 #pragma mark - UIImagePickerControllerDelegate
@@ -143,8 +136,9 @@
     }
     normalizedImage = [[self class] cropBiggestCenteredSquareImageFromImage:normalizedImage withSide:800];
     
+    NSString *imageName = [NSString stringWithFormat:@"%ld", (long)self.playerNumber];
+    [[CachedPersistentJPEGImageStore sharedStore] saveImage:normalizedImage withName:imageName];
     self.playerImage.image = normalizedImage;
-    [self.game.playerPhotos setObject:normalizedImage forKey:[NSNumber numberWithInteger:self.playerNumber]];
     
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
