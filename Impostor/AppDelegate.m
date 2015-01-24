@@ -8,7 +8,11 @@
 
 #import "AppDelegate.h"
 #import "GAI.h"
+#import "GAIDictionaryBuilder.h"
 #import <Appirater.h>
+
+@interface AppDelegate() <AppiraterDelegate>
+@end
 
 @implementation AppDelegate
 
@@ -36,6 +40,7 @@
     [Appirater setSignificantEventsUntilPrompt:6];
     [Appirater setTimeBeforeReminding:6];
     [Appirater appLaunched:YES];
+    [Appirater setDelegate:self];
     
     return YES;
 }
@@ -65,6 +70,62 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - AppiraterDelegate
+
+- (void)appiraterDidDisplayAlert:(Appirater *)appirater
+{
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Appirater"
+                                                          action:@"DisplayAlert"
+                                                           label:@"done"
+                                                           value:@1] build]];
+}
+
+- (void)appiraterDidDeclineToRate:(Appirater *)appirater
+{
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Appirater"
+                                                          action:@"DeclineToRate"
+                                                           label:@"done"
+                                                           value:@1] build]];
+}
+
+- (void)appiraterDidOptToRate:(Appirater *)appirater
+{
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Appirater"
+                                                          action:@"OptToRate"
+                                                           label:@"done"
+                                                           value:@1] build]];
+}
+
+- (void)appiraterDidOptToRemindLater:(Appirater *)appirater
+{
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Appirater"
+                                                          action:@"OptToRemindLater"
+                                                           label:@"done"
+                                                           value:@1] build]];
+}
+
+- (void)appiraterWillPresentModalView:(Appirater *)appirater animated:(BOOL)animated
+{
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Appirater"
+                                                          action:@"WillPresentModalView"
+                                                           label:@"done"
+                                                           value:@1] build]];
+}
+
+- (void)appiraterDidDismissModalView:(Appirater *)appirater animated:(BOOL)animated
+{
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Appirater"
+                                                          action:@"DidDismissModalView"
+                                                           label:@"done"
+                                                           value:@1] build]];
 }
 
 @end
