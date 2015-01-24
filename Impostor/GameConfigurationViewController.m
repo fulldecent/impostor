@@ -117,7 +117,7 @@
                                                                                      withDetail: NSLocalizedString(@"But the impostor's word is different", @"Intro screen 2 detail")
                                                                                       withImage: [UIImage imageNamed:@"help2"]],
                                                         [KxIntroViewPage introViewPageWithTitle: NSLocalizedString(@"Each round players describe their word", @"Intro screen 3 title")
-                                                                                     withDetail: NSLocalizedString(@"and then vote to eliminate one player (can't use word to describe itself or repeat other players, break ties with a revote)", @"Intro screen 3 detail")
+                                                                                     withDetail: NSLocalizedString(@"and vote to eliminate one player (can't use word to describe itself or repeat other players, break ties with a revote)", @"Intro screen 3 detail")
                                                                                       withImage: [UIImage imageNamed:@"help3"]],
                                                         [KxIntroViewPage introViewPageWithTitle: NSLocalizedString(@"To win", @"Intro screen 4 title")
                                                                                      withDetail: NSLocalizedString(@"the impostor must survive with one other player", @"Intro screen 4 detail")

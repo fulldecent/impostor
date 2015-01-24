@@ -9,6 +9,7 @@
 #import "CollageViewController.h"
 #import "ImpostorGameModel.h"
 #import "GAIDictionaryBuilder.h"
+#import "GAIFields.h"
 #import <AVFoundation/AVAudioPlayer.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import "GameConfigurationViewController.h"
@@ -31,7 +32,10 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    self.screenName = @"CollageViewController";
+//    self.screenName = @"CollageViewController";
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"CollageViewController"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
     
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"camera" withExtension:@"mp3"];
     self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];

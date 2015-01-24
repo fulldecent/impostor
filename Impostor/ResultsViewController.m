@@ -10,6 +10,7 @@
 #import "ImpostorGameModel.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import "GAIDictionaryBuilder.h"
+#import "GAIFields.h"
 #import <Appirater.h>
 #import "CachedPersistentJPEGImageStore.h"
 
@@ -60,9 +61,12 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    self.screenName = @"ResultsViewController";
+//    self.screenName = @"ResultsViewController";
     
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"ResultsViewController"];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];    
+    
     [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
                                                           action:@"Gameover"
                                                            label:@"NumberOfPlayers"
