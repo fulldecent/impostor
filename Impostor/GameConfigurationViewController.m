@@ -19,7 +19,7 @@
 #import <TOWebViewController.h>
 #import "CachedPersistentJPEGImageStore.h"
 
-@interface GameConfigurationViewController () <UICollectionViewDataSource, UIActionSheetDelegate>
+@interface GameConfigurationViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UIActionSheetDelegate>
 @property (nonatomic) NSInteger playerCount;
 @property (nonatomic) ImpostorGameModel *game;
 @property (nonatomic) UIActionSheet *actionSheet;
@@ -38,7 +38,13 @@
         _playerCount = 12;
     
     self.numberOfPlayersLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%ld players",@"Number of players in the game"), (long)self.playerCount];
-    [self.playerPhotoCollectionView reloadData];
+    for (int i = [self.playerPhotoCollectionView numberOfItemsInSection:0]; i < _playerCount; i++) {
+        [self.playerPhotoCollectionView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:i inSection:0]]];
+    }
+    for (int i = [self.playerPhotoCollectionView numberOfItemsInSection:0]; i > _playerCount; i--) {
+        [self.playerPhotoCollectionView deleteItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:i-1 inSection:0]]];
+    }
+    
     [self.view setNeedsLayout];
 }
 
@@ -47,6 +53,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.playerPhotoCollectionView.dataSource = self;
+    self.playerPhotoCollectionView.delegate = self;
     self.game = [ImpostorGameModel game];
     self.numberOfPlayersLabel.text = [NSString stringWithFormat:@"%ld players", (long)self.playerCount];
     
@@ -220,8 +227,31 @@
     } while ((rows * cols >= self.playerCount) && ++cellMaxSide);
     CGFloat dim = MIN(cellMaxSide, cellMaxSide);
     [(UICollectionViewFlowLayout *)self.playerPhotoCollectionView.collectionViewLayout setItemSize:CGSizeMake(dim,dim)];
-    [self.playerPhotoCollectionView reloadData];
+//    [self.playerPhotoCollectionView reloadData];
 }
+
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView
+       willDisplayCell:(UICollectionViewCell *)cell
+    forItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self makeItBounce:cell];
+}
+
+- (void)makeItBounce:(UIView *)view
+{
+    CAKeyframeAnimation *bounceAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
+    bounceAnimation.values = [NSArray arrayWithObjects:[NSNumber numberWithFloat:1], [NSNumber numberWithFloat:1.2], nil];
+    bounceAnimation.duration = 0.15;
+    bounceAnimation.removedOnCompletion = NO;
+    bounceAnimation.repeatCount = 2;
+    bounceAnimation.autoreverses = YES;
+    bounceAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+    [view.layer addAnimation:bounceAnimation forKey:@"bounce"];
+}
+
+
 
 #pragma mark - UIActionSheetDelegate
 
