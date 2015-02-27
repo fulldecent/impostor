@@ -38,10 +38,10 @@
         _playerCount = 12;
     
     self.numberOfPlayersLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%ld players",@"Number of players in the game"), (long)self.playerCount];
-    for (int i = [self.playerPhotoCollectionView numberOfItemsInSection:0]; i < _playerCount; i++) {
+    for (long i = [self.playerPhotoCollectionView numberOfItemsInSection:0]; i < _playerCount; i++) {
         [self.playerPhotoCollectionView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:i inSection:0]]];
     }
-    for (int i = [self.playerPhotoCollectionView numberOfItemsInSection:0]; i > _playerCount; i--) {
+    for (long i = [self.playerPhotoCollectionView numberOfItemsInSection:0]; i > _playerCount; i--) {
         [self.playerPhotoCollectionView deleteItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:i-1 inSection:0]]];
     }
     
@@ -124,7 +124,7 @@
                                                                                      withDetail: NSLocalizedString(@"But the impostor's word is different", @"Intro screen 2 detail")
                                                                                       withImage: [UIImage imageNamed:@"help2"]],
                                                         [KxIntroViewPage introViewPageWithTitle: NSLocalizedString(@"Each round players describe their word", @"Intro screen 3 title")
-                                                                                     withDetail: NSLocalizedString(@"and vote to eliminate one player (can't use word to describe itself or repeat other players, break ties with a revote)", @"Intro screen 3 detail")
+                                                                                     withDetail: NSLocalizedString(@"then vote to eliminate one player (can't use word to describe itself or repeat other players, break ties with a revote)", @"Intro screen 3 detail")
                                                                                       withImage: [UIImage imageNamed:@"help3"]],
                                                         [KxIntroViewPage introViewPageWithTitle: NSLocalizedString(@"To win", @"Intro screen 4 title")
                                                                                      withDetail: NSLocalizedString(@"the impostor must survive with one other player", @"Intro screen 4 detail")
