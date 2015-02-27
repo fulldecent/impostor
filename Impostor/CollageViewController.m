@@ -39,8 +39,8 @@
     
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"camera" withExtension:@"mp3"];
     self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-    [self performSelector:@selector(flashScreen) withObject:nil afterDelay:1.0];
-    [self performSelector:@selector(showShareBox) withObject:nil afterDelay:1.8];
+    [self performSelector:@selector(flashScreen) withObject:nil afterDelay:0.7];
+    [self performSelector:@selector(showShareBox) withObject:nil afterDelay:1.3];
     
     GameConfigurationViewController *root = (GameConfigurationViewController *)self.navigationController.viewControllers.firstObject;
     [root fadeOutMusic];

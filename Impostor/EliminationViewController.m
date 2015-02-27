@@ -11,10 +11,11 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "GameConfigurationViewController.h"
 #import "CachedPersistentJPEGImageStore.h"
+#import <SCLAlertView.h>
 
 @interface EliminationViewController () <UICollectionViewDataSource>
 @property (nonatomic) ImpostorGameModel *game;
-@property (nonatomic) UIAlertView *alertView;
+@property (nonatomic) SCLAlertView *sclAlertView;
 @end
 
 @implementation EliminationViewController
@@ -41,8 +42,13 @@
     [self.playerPhotoCollectionView reloadData];
     
     if (self.game.gameStatus == GameStatusTheImpostorRemains) {
-        self.alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"The impostor remains",@"After someone was killed") message:[NSString stringWithFormat:NSLocalizedString(@"Player #%ld starts this round",@"After someone killed"), (long)self.game.playerNumberToStartRound+1] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [self.alertView show];
+        self.sclAlertView = [[SCLAlertView alloc] init];
+        self.sclAlertView.shouldDismissOnTapOutside = YES;
+        self.sclAlertView.backgroundType = Blur;
+        self.sclAlertView.labelTitle.font = [UIFont fontWithName:@"Chalkboard SE" size:20.0];
+        self.sclAlertView.viewText.font = [UIFont fontWithName:@"Chalkboard SE" size:16.0];
+        UIImage *appIcon = [UIImage imageNamed:@"AppIcon60x60"];
+        [self.sclAlertView showCustom:self image:appIcon color:[UIColor blackColor] title:NSLocalizedString(@"The impostor remains",@"After someone was killed") subTitle:[NSString stringWithFormat:NSLocalizedString(@"Player #%ld starts this round",@"After someone killed"), (long)self.game.playerNumberToStartRound+1] closeButtonTitle:NSLocalizedString(@"OK",@"Dismiss the popup") duration:0.0f];
     } else if (self.game.gameStatus == GameStatusTheImpostorWasDefeated ||
                self.game.gameStatus == GameStatusTheImpostorWon) {
         [self.navigationController popViewControllerAnimated:YES];
@@ -54,8 +60,13 @@
     [super viewDidAppear:animated];
     self.screenName = @"EliminationViewController";
 
-    self.alertView = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:NSLocalizedString(@"Player #%ld was randomly selected to start the first round",@"When the game starts"), (long)self.game.playerNumberToStartRound+1] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [self.alertView show];
+    self.sclAlertView = [[SCLAlertView alloc] init];
+    self.sclAlertView.shouldDismissOnTapOutside = YES;
+    self.sclAlertView.backgroundType = Blur;
+    self.sclAlertView.labelTitle.font = [UIFont fontWithName:@"Chalkboard SE" size:20.0];
+    self.sclAlertView.viewText.font = [UIFont fontWithName:@"Chalkboard SE" size:16.0];
+    UIImage *appIcon = [UIImage imageNamed:@"AppIcon60x60"];
+    [self.sclAlertView showCustom:self image:appIcon color:[UIColor blackColor] title:nil subTitle:[NSString stringWithFormat:NSLocalizedString(@"Player #%ld was randomly selected to start the first round",@"When the game starts"), (long)self.game.playerNumberToStartRound+1] closeButtonTitle:NSLocalizedString(@"OK",@"Dismiss the popup") duration:0.0f];
     
     GameConfigurationViewController *root = (GameConfigurationViewController *)self.navigationController.viewControllers.firstObject;
     [root fadeOutMusic];

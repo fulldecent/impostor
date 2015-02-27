@@ -13,10 +13,11 @@
 #import "GAIFields.h"
 #import <Appirater.h>
 #import "CachedPersistentJPEGImageStore.h"
+#import <SCLAlertView.h>
 
 @interface ResultsViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic) ImpostorGameModel *game;
-@property (nonatomic) UIAlertView *alertView;
+@property (nonatomic) SCLAlertView *sclAlertView;
 @end
 
 @implementation ResultsViewController
@@ -96,16 +97,26 @@
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &soundID);
     AudioServicesPlaySystemSound (soundID);
     
+    UIImage *appIcon = [UIImage imageNamed:@"AppIcon60x60"];
     switch (self.game.gameStatus) {
         case GameStatusTheImpostorWasDefeated:
-            self.alertView = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"The impostor was defeated",@"After the game is over") delegate:self cancelButtonTitle:NSLocalizedString(@"OK",@"Dismiss the popup") otherButtonTitles:nil];
+            self.sclAlertView = [[SCLAlertView alloc] init];
+            self.sclAlertView.shouldDismissOnTapOutside = YES;
+            self.sclAlertView.backgroundType = Blur;
+            self.sclAlertView.labelTitle.font = [UIFont fontWithName:@"Chalkboard SE" size:20.0];
+            self.sclAlertView.viewText.font = [UIFont fontWithName:@"Chalkboard SE" size:16.0];
+            [self.sclAlertView showCustom:self image:appIcon color:[UIColor blackColor] title:nil subTitle:NSLocalizedString(@"The impostor was defeated",@"After the game is over") closeButtonTitle:NSLocalizedString(@"OK",@"Dismiss the popup") duration:0.0f];
             break;
         case GameStatusTheImpostorWon:
-            self.alertView = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"The impostor won",@"After the game is over") delegate:self cancelButtonTitle:NSLocalizedString(@"OK",@"Dismiss the popup") otherButtonTitles:nil];
+            self.sclAlertView = [[SCLAlertView alloc] init];
+            self.sclAlertView.shouldDismissOnTapOutside = YES;
+            self.sclAlertView.backgroundType = Blur;
+            self.sclAlertView.labelTitle.font = [UIFont fontWithName:@"Chalkboard SE" size:20.0];
+            self.sclAlertView.viewText.font = [UIFont fontWithName:@"Chalkboard SE" size:16.0];
+            [self.sclAlertView showCustom:self image:appIcon color:[UIColor blackColor] title:nil subTitle:NSLocalizedString(@"The impostor won",@"After the game is over") closeButtonTitle:NSLocalizedString(@"OK",@"Dismiss the popup") duration:0.0f];
             break;
         default:;
     }
-    [self.alertView show];
     
     [Appirater userDidSignificantEvent:YES];
 }

@@ -10,10 +10,11 @@
 #import "ImpostorGameModel.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import "CachedPersistentJPEGImageStore.h"
+#import <SCLAlertView.h>
 
-@interface SecretWordViewController () <UIAlertViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface SecretWordViewController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (nonatomic) ImpostorGameModel *game;
-@property (nonatomic) UIAlertView *alertView;
+@property (nonatomic) SCLAlertView *sclAlertView;
 @property (nonatomic) UIImagePickerController *imagePickerController;
 @property (nonatomic) UIPopoverController *imagePopoverController;
 @property (nonatomic) BOOL wantsToTakePhoto;
@@ -37,8 +38,29 @@
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &soundID);
     AudioServicesPlaySystemSound (soundID);
     NSString *theWord = [self.game.playerWords objectAtIndex:self.playerNumber];
-    self.alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Your secret word is", @"On the secret word screen") message:theWord delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [self.alertView show];
+    
+    self.sclAlertView = [[SCLAlertView alloc] init];
+    self.sclAlertView.shouldDismissOnTapOutside = YES;
+    self.sclAlertView.backgroundType = Blur;
+    self.sclAlertView.labelTitle.font = [UIFont fontWithName:@"Chalkboard SE" size:20.0];
+    self.sclAlertView.viewText.font = [UIFont fontWithName:@"Chalkboard SE" size:16.0];
+    UIImage *appIcon = [UIImage imageNamed:@"AppIcon60x60"];
+    [self.sclAlertView showCustom:self image:appIcon color:[UIColor blackColor] title:NSLocalizedString(@"Your secret word is", @"On the secret word screen") subTitle:theWord closeButtonTitle:NSLocalizedString(@"OK",@"Dismiss the popup") duration:0.0f];
+    
+    [self.sclAlertView alertIsDismissed:^{
+        if (self.playerNumber == self.game.numberOfPlayers-1) {
+            [self.game doneShowingSecretWords];
+            NSArray *viewControllers = [self.navigationController viewControllers];
+            [self.navigationController popToViewController:viewControllers[1] animated:YES];
+            return;
+        }
+        
+        UIStoryboard *storyboard;
+        storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        SecretWordViewController *newController = [storyboard instantiateViewControllerWithIdentifier:@"secretWord"];
+        newController.playerNumber = self.playerNumber+1;
+        [self.navigationController pushViewController:newController animated:YES];
+    }];
 }
 
 - (IBAction)stopGame:(id)sender {
@@ -99,24 +121,6 @@
         }
     }
 */
-}
-
-#pragma mark - UIAlertViewDelegate
-
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
-{
-    if (self.playerNumber == self.game.numberOfPlayers-1) {
-        [self.game doneShowingSecretWords];
-        NSArray *viewControllers = [self.navigationController viewControllers];
-        [self.navigationController popToViewController:viewControllers[1] animated:YES];
-        return;
-    }
-    
-    UIStoryboard *storyboard;
-    storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    SecretWordViewController *newController = [storyboard instantiateViewControllerWithIdentifier:@"secretWord"];
-    newController.playerNumber = self.playerNumber+1;
-    [self.navigationController pushViewController:newController animated:YES];
 }
 
 #pragma mark - UIImagePickerControllerDelegate
