@@ -22,7 +22,7 @@
 
 @implementation ResultsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -121,12 +121,6 @@
     [Appirater userDidSignificantEvent:YES];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (IBAction)playAgain:(id)sender {
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
@@ -146,15 +140,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"resultCell"];
-    UIImage *photo = [UIImage imageNamed:@"defaultHeadshot.png"];
     
-    BOOL eliminated = [(NSNumber *)[self.game.playerEliminated objectAtIndex:indexPath.row] boolValue];
-    NSString *word = (NSString *)[self.game.playerWords objectAtIndex:indexPath.row];
-
     NSString *title = [NSString stringWithFormat:NSLocalizedString(@"Player #%ld", @"Current player"), (long)indexPath.row+1];
-    
-    NSString *subtitle;
-    subtitle = word;
+    NSString *subtitle = (NSString *)(self.game.playerWords)[indexPath.row];
+    UIImage *photo = [UIImage imageNamed:@"defaultHeadshot.png"];
+    BOOL eliminated = [(NSNumber *)(self.game.playerEliminated)[indexPath.row] boolValue];
     
     cell.textLabel.text = title;
     cell.detailTextLabel.text = subtitle;
@@ -167,15 +157,6 @@
         cell.imageView.image = photo;
 
     return cell;
-}
-
-#pragma mark - UITableViewDelegate
-
-- (void)tableView:(UITableView *)tableView
-  willDisplayCell:(UITableViewCell *)cell
-forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [cell setBackgroundColor:[UIColor clearColor]];
 }
 
 @end

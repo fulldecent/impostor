@@ -37,7 +37,7 @@
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"peek" withExtension:@"mp3"];
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &soundID);
     AudioServicesPlaySystemSound (soundID);
-    NSString *theWord = [self.game.playerWords objectAtIndex:self.playerNumber];
+    NSString *theWord = (self.game.playerWords)[self.playerNumber];
     
     self.sclAlertView = [[SCLAlertView alloc] init];
     self.sclAlertView.shouldDismissOnTapOutside = YES;
@@ -127,7 +127,7 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    UIImage *photo = [info objectForKey:UIImagePickerControllerOriginalImage];
+    UIImage *photo = info[UIImagePickerControllerOriginalImage];
     // http://stackoverflow.com/questions/5427656/ios-uiimagepickercontroller-result-image-orientation-after-upload/5427890#5427890
     UIImage *normalizedImage;
     if (photo.imageOrientation == UIImageOrientationUp)

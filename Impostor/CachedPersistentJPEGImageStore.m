@@ -32,7 +32,7 @@
 
 - (void)saveImage:(UIImage *)image withName:(NSString *)name
 {
-    [self.cachedImages setObject:image forKey:name];
+    (self.cachedImages)[name] = image;
     [UIImageJPEGRepresentation(image, 0.9) writeToURL:[self urlForImageWithName:name] atomically:YES];
 }
 
@@ -52,8 +52,8 @@
     return nil;
 #endif
     
-    if ([self.cachedImages objectForKey:name]) {
-        return [self.cachedImages objectForKey:name];
+    if ((self.cachedImages)[name]) {
+        return (self.cachedImages)[name];
     }
     
     return [UIImage imageWithData:[NSData dataWithContentsOfURL:[self urlForImageWithName:name]]];

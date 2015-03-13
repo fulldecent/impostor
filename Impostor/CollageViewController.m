@@ -101,7 +101,7 @@
 
     imageView.transform = CGAffineTransformMakeRotation(rotate);
     CAKeyframeAnimation *bounceAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.rotation.z"];
-    bounceAnimation.values = [NSArray arrayWithObjects:@(0), @(rotate*0.5), @(-rotate*2), @(rotate), nil];
+    bounceAnimation.values = @[@(0), @(rotate*0.5), @(-rotate*2), @(rotate)];
     bounceAnimation.duration = ((double)arc4random() / ARC4RANDOM_MAX);
     bounceAnimation.removedOnCompletion = YES;
     bounceAnimation.repeatCount = 0;
@@ -129,7 +129,7 @@
 - (void)makeItBounce:(UIView *)view
 {
     CAKeyframeAnimation *bounceAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
-    bounceAnimation.values = [NSArray arrayWithObjects:[NSNumber numberWithFloat:1], [NSNumber numberWithFloat:1.2], nil];
+    bounceAnimation.values = @[@1.0f, @1.2f];
     bounceAnimation.duration = 0.15;
     bounceAnimation.removedOnCompletion = NO;
     bounceAnimation.repeatCount = 2;

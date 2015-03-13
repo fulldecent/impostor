@@ -43,9 +43,9 @@
     [self.gameModel startGameWithNumberOfPlayers:10];
     [self.gameModel doneShowingSecretWords];
     [self.gameModel eliminatePlayer:0];
-    XCTAssertEqual(self.gameModel.playerEliminated[0], @(YES));
+    XCTAssertEqual(self.gameModel.playerEliminated[0], @YES);
     for (int i=1; i<10; i++) {
-        XCTAssertEqual(self.gameModel.playerEliminated[i], @(NO));
+        XCTAssertEqual(self.gameModel.playerEliminated[i], @NO);
     }
 }
 

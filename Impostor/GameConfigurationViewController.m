@@ -143,7 +143,7 @@
                                                             NSLocalizedString(@"Share this app", @"In the settings menu"),
                                                             nil];
 
-    NSString * language = [[NSLocale preferredLanguages] objectAtIndex:0];
+    NSString * language = [NSLocale preferredLanguages][0];
     if ([language isEqualToString:@"zh-Hans"]) {
         self.actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self
                                               cancelButtonTitle:NSLocalizedString(@"Cancel", @"Close the settings menu")
@@ -164,7 +164,7 @@
 
 - (IBAction)startGame:(id)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSNumber *playerCountToSave = [NSNumber numberWithInteger:self.playerCount];
+    NSNumber *playerCountToSave = @(self.playerCount);
     [defaults setObject:playerCountToSave forKey:@"playerCount"];
     [defaults synchronize];
     [self.game startGameWithNumberOfPlayers:self.playerCount];
@@ -242,7 +242,7 @@
 - (void)makeItBounce:(UIView *)view
 {
     CAKeyframeAnimation *bounceAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
-    bounceAnimation.values = [NSArray arrayWithObjects:[NSNumber numberWithFloat:1], [NSNumber numberWithFloat:1.2], nil];
+    bounceAnimation.values = @[@1.0f, @1.2f];
     bounceAnimation.duration = 0.15;
     bounceAnimation.removedOnCompletion = NO;
     bounceAnimation.repeatCount = 2;

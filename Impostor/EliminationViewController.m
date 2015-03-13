@@ -91,7 +91,7 @@
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
     [imageView setImage:photo];
     UIButton *button = (UIButton *)[cell viewWithTag:2];
-    if ([(NSNumber *)[self.game.playerEliminated objectAtIndex:indexPath.row] isEqualToNumber:[NSNumber numberWithBool:TRUE]]) {
+    if ([(NSNumber *)(self.game.playerEliminated)[indexPath.row] boolValue]) {
         imageView.alpha = 0.4;
         button.userInteractionEnabled = NO;
     } else {

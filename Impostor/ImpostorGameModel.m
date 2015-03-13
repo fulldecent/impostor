@@ -37,18 +37,18 @@
     NSArray *allWordSets = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:nil];
     int chosenWordSet = arc4random() % allWordSets.count;
     int chosenImpostorWord = arc4random() % 2;
-    self.impostorWord = [(NSArray *)[allWordSets objectAtIndex:chosenWordSet] objectAtIndex:chosenImpostorWord];
-    self.normalWord = [(NSArray *)[allWordSets objectAtIndex:chosenWordSet] objectAtIndex:1-chosenImpostorWord];
+    self.impostorWord = ((NSArray *)allWordSets[chosenWordSet])[chosenImpostorWord];
+    self.normalWord = ((NSArray *)allWordSets[chosenWordSet])[1-chosenImpostorWord];
     
     for (int i=0; i<numPlayers; i++) {
         if (i == impostorIndex) {
-            [roles addObject:[NSNumber numberWithInt:PlayerRoleImpostor]];
+            [roles addObject:@(PlayerRoleImpostor)];
             [words addObject:self.impostorWord];
         } else {
-            [roles addObject:[NSNumber numberWithInt:PlayerRoleNormalPlayer]];
+            [roles addObject:@(PlayerRoleNormalPlayer)];
             [words addObject:self.normalWord];
         }
-        [self.playerEliminated addObject:[NSNumber numberWithBool:NO]];
+        [self.playerEliminated addObject:@NO];
     }
 
     self.playerRoles = [roles copy];
@@ -59,18 +59,16 @@
 
 - (void)eliminatePlayer:(NSInteger)playerNumber
 {
-    NSNumber *currentStatus = [self.playerEliminated objectAtIndex:playerNumber];
-    if ([currentStatus isEqualToNumber:[NSNumber numberWithBool:YES]])
+    if ([(NSNumber *)self.playerEliminated[playerNumber] boolValue])
         NSLog(@"WARNING eliminating player that is already eliminated");
-    [self.playerEliminated replaceObjectAtIndex:playerNumber withObject:[NSNumber numberWithBool:YES]];
+    self.playerEliminated[playerNumber] = @YES;
     
     int countOfRemainingImpostors = 0;
     int countOfRemainingNormalPlayers = 0;
     for (int i=0; i<self.numberOfPlayers; i++) {
-        if ([(NSNumber *)[self.playerEliminated objectAtIndex:i] isEqualToNumber:[NSNumber numberWithBool:YES]])
+        if ([(NSNumber *)self.playerEliminated[i] boolValue])
             continue;
-        PlayerRoles role = [(NSNumber *)[self.playerRoles objectAtIndex:i] intValue];
-        switch (role) {
+        switch ([(NSNumber *)self.playerRoles[i] intValue]) {
             case PlayerRoleImpostor:
                 countOfRemainingImpostors++;
                 break;
@@ -85,7 +83,7 @@
         self.gameStatus = GameStatusTheImpostorWon;
 
     self.playerNumberToStartRound = playerNumber;
-    while ([[self.playerEliminated objectAtIndex:self.playerNumberToStartRound] isEqualToNumber:[NSNumber numberWithBool:YES]])
+    while ([(NSNumber *)self.playerEliminated[self.playerNumberToStartRound] boolValue])
         self.playerNumberToStartRound = (self.playerNumberToStartRound + 1) % self.numberOfPlayers;
 }
 
