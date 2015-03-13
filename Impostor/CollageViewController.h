@@ -11,4 +11,6 @@
 
 @interface CollageViewController : GAITrackedViewController
 @property (weak, nonatomic) IBOutlet UICollectionView *playerPhotoCollectionView;
+- (IBAction)wantToShare;
+- (IBAction)returnToMainScreen;
 @end

@@ -37,11 +37,6 @@
     [tracker set:kGAIScreenName value:@"CollageViewController"];
     [tracker send:[[GAIDictionaryBuilder createAppView] build]];
     
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"camera" withExtension:@"mp3"];
-    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-    [self performSelector:@selector(flashScreen) withObject:nil afterDelay:0.7];
-    [self performSelector:@selector(showShareBox) withObject:nil afterDelay:1.3];
-    
     GameConfigurationViewController *root = (GameConfigurationViewController *)self.navigationController.viewControllers.firstObject;
     [root fadeOutMusic];
 }
@@ -69,6 +64,52 @@
 {
     [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
     [self.view setNeedsLayout];
+}
+
+- (IBAction)wantToShare
+{
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"camera" withExtension:@"mp3"];
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    [self performSelector:@selector(flashScreen) withObject:nil afterDelay:0.1];
+    [self performSelector:@selector(showShareBox) withObject:nil afterDelay:0.4];
+}
+
+- (void)showShareBox
+{
+    // Create the item to share (in this example, a url)
+    NSString *appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
+    NSURL *url = [NSURL URLWithString:@"https://itunes.apple.com/us/app/whos-the-impostor/id784258202"];
+    NSString *title = [NSString stringWithFormat:NSLocalizedString(@"I am playing the party game %@", @"Text for sharing on social network"), appName];
+    UIImage* image = nil;
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    for (UIView* subView in self.view.subviews) {
+        if ([subView isKindOfClass:[UIButton class]])
+            subView.hidden = YES;
+    }
+    [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    for (UIView* subView in self.view.subviews) {
+        if ([subView isKindOfClass:[UIButton class]])
+            subView.hidden = NO;
+    }
+    image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    NSArray *itemsToShare = @[image, title, url];
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
+    activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact];
+    
+    [activityVC setCompletionHandler:^(NSString *activityType, BOOL completed) {
+        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
+                                                              action:@"Shared"
+                                                               label:activityType
+                                                               value:@(completed)] build]];
+    }];
+    [self presentViewController:activityVC animated:YES completion:nil];
+}
+
+- (IBAction)returnToMainScreen;
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -136,32 +177,6 @@
     bounceAnimation.autoreverses = YES;
     bounceAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
     [view.layer addAnimation:bounceAnimation forKey:@"bounce"];
-}
-
-- (void)showShareBox
-{
-    // Create the item to share (in this example, a url)
-    NSString *appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
-    NSURL *url = [NSURL URLWithString:@"https://itunes.apple.com/us/app/whos-the-impostor/id784258202"];
-    NSString *title = [NSString stringWithFormat:NSLocalizedString(@"I am playing the party game %@", @"Text for sharing on social network"), appName];
-    UIImage* image = nil;
-    UIGraphicsBeginImageContext(self.view.frame.size);
-    [self.view.layer renderInContext: UIGraphicsGetCurrentContext()];
-    image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    NSArray *itemsToShare = @[image, title, url];
-    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
-    activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact];
-    
-    [activityVC setCompletionHandler:^(NSString *activityType, BOOL completed) {
-        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
-                                                              action:@"Gameover"
-                                                               label:@"SharedCollage"
-                                                               value:@(completed)] build]];
-        [self.navigationController popToRootViewControllerAnimated:YES];
-    }];
-    [self presentViewController:activityVC animated:YES completion:nil];
 }
 
 @end

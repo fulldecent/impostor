@@ -25,6 +25,7 @@
 		D98CA43C185D67E800746059 /* MainGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA43B185D67E800746059 /* MainGameViewController.m */; };
 		D98CA442185D699E00746059 /* SecretWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA441185D699E00746059 /* SecretWordViewController.m */; };
 		D98CA445185E1C8C00746059 /* EliminationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA444185E1C8C00746059 /* EliminationViewController.m */; };
+		D98D977C1AB31F5300C0CA99 /* share-alt.png in Resources */ = {isa = PBXBuildFile; fileRef = D98D977B1AB31F5300C0CA99 /* share-alt.png */; };
 		D9917B2919E1DB7700E2F104 /* ImpostorGameModel_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D9917B2819E1DB7700E2F104 /* ImpostorGameModel_Tests.m */; };
 		D9A2405F18D50DF7005D4DCD /* camera.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A2405E18D50DF7005D4DCD /* camera.mp3 */; };
 		D9A4F763185E310A0060AA2D /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4F762185E310A0060AA2D /* ResultsViewController.m */; };
@@ -135,6 +136,7 @@
 		D98CA441185D699E00746059 /* SecretWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecretWordViewController.m; sourceTree = "<group>"; };
 		D98CA443185E1C8C00746059 /* EliminationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EliminationViewController.h; sourceTree = "<group>"; };
 		D98CA444185E1C8C00746059 /* EliminationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = EliminationViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		D98D977B1AB31F5300C0CA99 /* share-alt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share-alt.png"; sourceTree = "<group>"; };
 		D9917B2419E1DB7700E2F104 /* Impostor Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Impostor Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9917B2719E1DB7700E2F104 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9917B2819E1DB7700E2F104 /* ImpostorGameModel_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImpostorGameModel_Tests.m; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 				D9CDEBDC1879D97900AE4163 /* plus.png */,
 				D9CDEBDD1879D97900AE4163 /* remove.png */,
 				D9CDEBE21879DA2800AE4163 /* cogs.png */,
+				D98D977B1AB31F5300C0CA99 /* share-alt.png */,
 				D9A4F772185E7DEA0060AA2D /* intro.mp3 */,
 				D9A4F774185E7EDE0060AA2D /* buttonPress.mp3 */,
 				D9A4F778185E80040060AA2D /* peek.mp3 */,
@@ -466,6 +469,7 @@
 				D9D432F719AC0E4200E0A408 /* help1.png in Resources */,
 				D98CA40F185D338600746059 /* Main.storyboard in Resources */,
 				D98CA406185D338600746059 /* InfoPlist.strings in Resources */,
+				D98D977C1AB31F5300C0CA99 /* share-alt.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

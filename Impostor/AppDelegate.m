@@ -25,7 +25,7 @@
     [GAI sharedInstance].dispatchInterval = 20;
     
     // Optional: set Logger to VERBOSE for debug information.
-    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+//    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
     
     // Initialize tracker.
     [[GAI sharedInstance] trackerWithTrackingId:@"UA-52764-17"];
@@ -33,7 +33,7 @@
 #if TARGET_IPHONE_SIMULATOR
     [[GAI sharedInstance] setDryRun:YES];
 #endif
-    
+        
     [Appirater setAppId:@"784258202"];
     [Appirater setDaysUntilPrompt:18];
     [Appirater setUsesUntilPrompt:9];

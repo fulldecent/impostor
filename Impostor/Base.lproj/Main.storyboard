@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="JxD-3W-7Z8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="JxD-3W-7Z8">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6246"/>
@@ -130,7 +130,7 @@
                                 </state>
                                 <connections>
                                     <action selector="startGame:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xVY-Cd-L4b"/>
-                                    <segue destination="ay1-QR-sKT" kind="push" id="0wy-by-9et"/>
+                                    <segue destination="ay1-QR-sKT" kind="push" id="IJJ-Ht-6T6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -301,6 +301,13 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="QaH-mI-DY1">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultHeadshot.png" translatesAutoresizingMaskIntoConstraints="NO" id="MdF-ei-p3Z">
+                                <rect key="frame" x="0.0" y="528" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="WmY-FO-uCY"/>
+                                    <constraint firstAttribute="width" constant="40" id="dPT-Ql-har"/>
+                                </constraints>
+                            </imageView>
                             <collectionView opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="j0h-g5-org">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -336,23 +343,50 @@
                                     <outlet property="dataSource" destination="o0E-D0-JHW" id="Vol-ir-hi7"/>
                                 </connections>
                             </collectionView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultHeadshot.png" translatesAutoresizingMaskIntoConstraints="NO" id="MdF-ei-p3Z">
-                                <rect key="frame" x="0.0" y="528" width="40" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22Q-Z2-0BS" userLabel="Close button" customClass="QBFlatButton">
+                                <rect key="frame" x="16" y="40" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="WmY-FO-uCY"/>
-                                    <constraint firstAttribute="width" constant="40" id="dPT-Ql-har"/>
+                                    <constraint firstAttribute="width" constant="40" id="GcQ-Jq-HQV"/>
+                                    <constraint firstAttribute="height" constant="40" id="maS-cJ-kNs"/>
                                 </constraints>
-                            </imageView>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                <state key="normal" image="remove.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="returnToMainScreen" destination="o0E-D0-JHW" eventType="touchDown" id="OgT-r3-COx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="299-rT-v8M" userLabel="Share button" customClass="QBFlatButton">
+                                <rect key="frame" x="264" y="40" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="4WZ-jb-BOh"/>
+                                    <constraint firstAttribute="width" constant="40" id="875-3q-NC0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                <state key="normal" image="share-alt.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="wantToShare" destination="o0E-D0-JHW" eventType="touchDown" id="bOF-og-6cg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="299-rT-v8M" firstAttribute="leading" secondItem="j0h-g5-org" secondAttribute="trailing" constant="-56" id="5S9-wz-ktQ"/>
                             <constraint firstItem="MdF-ei-p3Z" firstAttribute="leading" secondItem="KHW-yc-2RZ" secondAttribute="leading" id="6l1-LJ-sjc"/>
+                            <constraint firstItem="299-rT-v8M" firstAttribute="top" secondItem="frv-Rc-faA" secondAttribute="bottom" constant="20" id="7wp-3X-euw"/>
                             <constraint firstAttribute="bottom" secondItem="QaH-mI-DY1" secondAttribute="bottom" id="9sI-0e-qmT"/>
                             <constraint firstItem="j0h-g5-org" firstAttribute="bottom" secondItem="QaH-mI-DY1" secondAttribute="bottom" id="A5b-96-Tkw"/>
                             <constraint firstItem="QaH-mI-DY1" firstAttribute="top" secondItem="KHW-yc-2RZ" secondAttribute="top" id="Dt8-iS-cAH"/>
                             <constraint firstAttribute="trailing" secondItem="QaH-mI-DY1" secondAttribute="trailing" id="KDI-3L-X3T"/>
+                            <constraint firstItem="22Q-Z2-0BS" firstAttribute="top" secondItem="frv-Rc-faA" secondAttribute="bottom" constant="20" id="MGP-TP-zAU"/>
                             <constraint firstItem="j0h-g5-org" firstAttribute="leading" secondItem="QaH-mI-DY1" secondAttribute="leading" id="UWI-QD-Ygo"/>
                             <constraint firstItem="QaH-mI-DY1" firstAttribute="leading" secondItem="KHW-yc-2RZ" secondAttribute="leading" id="bhr-H0-tWc"/>
+                            <constraint firstItem="j0h-g5-org" firstAttribute="leading" secondItem="22Q-Z2-0BS" secondAttribute="trailing" constant="-56" id="gsy-Eb-sMK"/>
                             <constraint firstItem="j0h-g5-org" firstAttribute="top" secondItem="QaH-mI-DY1" secondAttribute="top" id="kOv-cH-VBB"/>
                             <constraint firstItem="Pag-SM-bTh" firstAttribute="top" secondItem="MdF-ei-p3Z" secondAttribute="bottom" id="n1F-bx-cV8"/>
                             <constraint firstItem="j0h-g5-org" firstAttribute="trailing" secondItem="QaH-mI-DY1" secondAttribute="trailing" id="xj2-Wl-5ze"/>
@@ -466,7 +500,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Llt-Eo-Aa2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1632" y="872"/>
+            <point key="canvasLocation" x="875" y="760"/>
         </scene>
         <!--Secret Word-->
         <scene sceneID="PW9-5o-MOI">
@@ -602,6 +636,7 @@ For your eyes only</string>
         <image name="plus.png" width="128" height="128"/>
         <image name="question.png" width="128" height="128"/>
         <image name="remove.png" width="128" height="128"/>
+        <image name="share-alt.png" width="128" height="128"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
