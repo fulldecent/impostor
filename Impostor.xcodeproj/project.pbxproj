@@ -27,6 +27,8 @@
 		D98CA445185E1C8C00746059 /* EliminationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA444185E1C8C00746059 /* EliminationViewController.m */; };
 		D98D977C1AB31F5300C0CA99 /* share-alt.png in Resources */ = {isa = PBXBuildFile; fileRef = D98D977B1AB31F5300C0CA99 /* share-alt.png */; };
 		D9917B2919E1DB7700E2F104 /* ImpostorGameModel_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D9917B2819E1DB7700E2F104 /* ImpostorGameModel_Tests.m */; };
+		D99673011AB343050033780B /* teaseColors.png in Resources */ = {isa = PBXBuildFile; fileRef = D99672FF1AB343050033780B /* teaseColors.png */; };
+		D99673041AB3441A0033780B /* teaseSpy.png in Resources */ = {isa = PBXBuildFile; fileRef = D99673031AB3441A0033780B /* teaseSpy.png */; };
 		D9A2405F18D50DF7005D4DCD /* camera.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A2405E18D50DF7005D4DCD /* camera.mp3 */; };
 		D9A4F763185E310A0060AA2D /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4F762185E310A0060AA2D /* ResultsViewController.m */; };
 		D9A4F76C185E54480060AA2D /* KxIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4F767185E54480060AA2D /* KxIntroView.m */; };
@@ -42,6 +44,7 @@
 		D9A4F782185FDDA90060AA2D /* defaultHeadshot.png in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F781185FDDA90060AA2D /* defaultHeadshot.png */; };
 		D9A4F784185FE0F50060AA2D /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F783185FE0F50060AA2D /* background.jpg */; };
 		D9AD710B19E1E2E0007FC6D6 /* CachedPersistentJPEGImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D9AD710A19E1E2E0007FC6D6 /* CachedPersistentJPEGImageStore.m */; };
+		D9B94A701AB349BB00117C39 /* TeaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B94A6F1AB349BB00117C39 /* TeaseViewController.m */; };
 		D9CDEBDE1879D97900AE4163 /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CDEBDA1879D97900AE4163 /* minus.png */; };
 		D9CDEBDF1879D97900AE4163 /* question.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CDEBDB1879D97900AE4163 /* question.png */; };
 		D9CDEBE01879D97900AE4163 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CDEBDC1879D97900AE4163 /* plus.png */; };
@@ -140,6 +143,8 @@
 		D9917B2419E1DB7700E2F104 /* Impostor Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Impostor Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9917B2719E1DB7700E2F104 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9917B2819E1DB7700E2F104 /* ImpostorGameModel_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImpostorGameModel_Tests.m; sourceTree = "<group>"; };
+		D99672FF1AB343050033780B /* teaseColors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teaseColors.png; sourceTree = "<group>"; };
+		D99673031AB3441A0033780B /* teaseSpy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teaseSpy.png; sourceTree = "<group>"; };
 		D9A2405E18D50DF7005D4DCD /* camera.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = camera.mp3; sourceTree = "<group>"; };
 		D9A2406018D510FF005D4DCD /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
 		D9A2406118D510FF005D4DCD /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -164,6 +169,8 @@
 		D9A4F783185FE0F50060AA2D /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		D9AD710919E1E2E0007FC6D6 /* CachedPersistentJPEGImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CachedPersistentJPEGImageStore.h; sourceTree = "<group>"; };
 		D9AD710A19E1E2E0007FC6D6 /* CachedPersistentJPEGImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CachedPersistentJPEGImageStore.m; sourceTree = "<group>"; };
+		D9B94A6E1AB349BB00117C39 /* TeaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TeaseViewController.h; path = ../TeaseViewController.h; sourceTree = "<group>"; };
+		D9B94A6F1AB349BB00117C39 /* TeaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TeaseViewController.m; path = ../TeaseViewController.m; sourceTree = "<group>"; };
 		D9CDEBDA1879D97900AE4163 /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minus.png; sourceTree = "<group>"; };
 		D9CDEBDB1879D97900AE4163 /* question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question.png; sourceTree = "<group>"; };
 		D9CDEBDC1879D97900AE4163 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
@@ -282,6 +289,8 @@
 				D98CA416185D338600746059 /* Images.xcassets */,
 				D98CA437185D3A3900746059 /* ImpostorGameModel.h */,
 				D98CA438185D3A3900746059 /* ImpostorGameModel.m */,
+				D9B94A6E1AB349BB00117C39 /* TeaseViewController.h */,
+				D9B94A6F1AB349BB00117C39 /* TeaseViewController.m */,
 				D9AD710919E1E2E0007FC6D6 /* CachedPersistentJPEGImageStore.h */,
 				D9AD710A19E1E2E0007FC6D6 /* CachedPersistentJPEGImageStore.m */,
 				D98CA413185D338600746059 /* GameConfigurationViewController.h */,
@@ -308,6 +317,8 @@
 		D98CA402185D338600746059 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D99673031AB3441A0033780B /* teaseSpy.png */,
+				D99672FF1AB343050033780B /* teaseColors.png */,
 				D98CA403185D338600746059 /* Impostor-Info.plist */,
 				D98CA404185D338600746059 /* InfoPlist.strings */,
 				D98CA407185D338600746059 /* main.m */,
@@ -453,7 +464,9 @@
 				D9CDEBDE1879D97900AE4163 /* minus.png in Resources */,
 				D9A4F782185FDDA90060AA2D /* defaultHeadshot.png in Resources */,
 				D9D432F819AC0E4200E0A408 /* help4.png in Resources */,
+				D99673011AB343050033780B /* teaseColors.png in Resources */,
 				D9CDEBE31879DA2800AE4163 /* cogs.png in Resources */,
+				D99673041AB3441A0033780B /* teaseSpy.png in Resources */,
 				D9A4F779185E80040060AA2D /* peek.mp3 in Resources */,
 				D9CDEBF0187A4B6C00AE4163 /* gameWords.json in Resources */,
 				D98CA417185D338600746059 /* Images.xcassets in Resources */,
@@ -525,6 +538,7 @@
 				D98CA439185D3A3900746059 /* ImpostorGameModel.m in Sources */,
 				D98CA415185D338600746059 /* GameConfigurationViewController.m in Sources */,
 				D98CA442185D699E00746059 /* SecretWordViewController.m in Sources */,
+				D9B94A701AB349BB00117C39 /* TeaseViewController.m in Sources */,
 				D9AD710B19E1E2E0007FC6D6 /* CachedPersistentJPEGImageStore.m in Sources */,
 				D9A4F763185E310A0060AA2D /* ResultsViewController.m in Sources */,
 				D9A4F76E185E54480060AA2D /* KxIntroViewPage.m in Sources */,

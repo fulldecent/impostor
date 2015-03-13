@@ -118,7 +118,7 @@
     CGFloat dim = MIN(cellMaxSide, cellMaxSide);
     
     [(UICollectionViewFlowLayout *)self.playerPhotoCollectionView.collectionViewLayout setItemSize:CGSizeMake(dim,dim)];
-    [self.playerPhotoCollectionView reloadData];
+    //[self.playerPhotoCollectionView reloadData];
 }
 
 @end

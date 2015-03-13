@@ -60,7 +60,7 @@
 - (void)eliminatePlayer:(NSInteger)playerNumber
 {
     if ([(NSNumber *)self.playerEliminated[playerNumber] boolValue])
-        NSLog(@"WARNING eliminating player that is already eliminated");
+        NSLog(@"ERROR eliminating player that is already eliminated");
     self.playerEliminated[playerNumber] = @YES;
     
     int countOfRemainingImpostors = 0;

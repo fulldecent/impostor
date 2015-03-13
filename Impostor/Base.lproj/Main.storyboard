@@ -3,8 +3,49 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6246"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Tease View Controller-->
+        <scene sceneID="9s8-5b-X0T">
+            <objects>
+                <viewController id="cUI-6N-rgF" customClass="TeaseViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hBH-2a-fGT"/>
+                        <viewControllerLayoutGuide type="bottom" id="UUK-ts-Zr6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p8o-Am-Pxt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="teaseColors.png" translatesAutoresizingMaskIntoConstraints="NO" id="ysa-pw-a9M">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="teaseSpy.png" translatesAutoresizingMaskIntoConstraints="NO" id="zpd-QC-0ou">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ysa-pw-a9M" firstAttribute="bottom" secondItem="UUK-ts-Zr6" secondAttribute="top" id="6XU-ig-58R"/>
+                            <constraint firstAttribute="trailing" secondItem="ysa-pw-a9M" secondAttribute="trailing" id="7DZ-B2-Jnj"/>
+                            <constraint firstItem="zpd-QC-0ou" firstAttribute="trailing" secondItem="ysa-pw-a9M" secondAttribute="trailing" id="GSi-g9-qWH"/>
+                            <constraint firstItem="ysa-pw-a9M" firstAttribute="leading" secondItem="p8o-Am-Pxt" secondAttribute="leading" id="HBV-Qk-Rr2"/>
+                            <constraint firstItem="ysa-pw-a9M" firstAttribute="top" secondItem="p8o-Am-Pxt" secondAttribute="top" id="fWm-dl-muX"/>
+                            <constraint firstItem="zpd-QC-0ou" firstAttribute="bottom" secondItem="UUK-ts-Zr6" secondAttribute="top" id="iJu-HK-zD2"/>
+                            <constraint firstItem="zpd-QC-0ou" firstAttribute="leading" secondItem="ysa-pw-a9M" secondAttribute="leading" id="wkX-Wj-CXW"/>
+                            <constraint firstItem="zpd-QC-0ou" firstAttribute="top" secondItem="ysa-pw-a9M" secondAttribute="top" id="wsT-vO-3YM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="XdU-4o-hkN"/>
+                    <connections>
+                        <outlet property="spy" destination="zpd-QC-0ou" id="94N-Py-bCp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Frx-sR-Mmb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="641" y="-476"/>
+        </scene>
         <!--Game Configuration-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -20,7 +61,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="wRZ-KT-PDJ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OiZ-JI-Jir" userLabel="Less players button" customClass="QBFlatButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OiZ-JI-Jir" userLabel="Less players" customClass="QBFlatButton">
                                 <rect key="frame" x="20" y="40" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="VaT-ra-ghh"/>
@@ -35,7 +76,7 @@
                                     <action selector="decrementPlayerCount:" destination="vXZ-lx-hvc" eventType="touchDown" id="IWV-fR-t5m"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PXD-BG-rEc" userLabel="More players button" customClass="QBFlatButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PXD-BG-rEc" userLabel="More players" customClass="QBFlatButton">
                                 <rect key="frame" x="260" y="40" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="vmG-i5-WBe"/>
@@ -91,7 +132,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1c-LY-4ek" userLabel="Show tutorial button" customClass="QBFlatButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1c-LY-4ek" userLabel="Show tutorial" customClass="QBFlatButton">
                                 <rect key="frame" x="20" y="508" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="68S-XH-TrD"/>
@@ -106,7 +147,7 @@
                                     <action selector="showInstructions:" destination="vXZ-lx-hvc" eventType="touchDown" id="bSH-At-xha"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QM7-6p-WB8" userLabel="Game options button" customClass="QBFlatButton">
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QM7-6p-WB8" userLabel="Game options" customClass="QBFlatButton">
                                 <rect key="frame" x="260" y="508" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="346-0x-xHG"/>
@@ -121,7 +162,7 @@
                                     <action selector="showGameOptions:" destination="vXZ-lx-hvc" eventType="touchDown" id="cEU-dn-vOP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVR-0R-kXy" userLabel="Start game button" customClass="QBFlatButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVR-0R-kXy" customClass="QBFlatButton">
                                 <rect key="frame" x="68" y="508" width="184" height="40"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="6"/>
@@ -133,10 +174,23 @@
                                     <segue destination="ay1-QR-sKT" kind="push" id="IJJ-Ht-6T6"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5PI-5U-k2w" userLabel="Easter Egg">
+                                <rect key="frame" x="0.0" y="2" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="oqL-R5-Ty7"/>
+                                </constraints>
+                                <state key="normal" title="      ">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="cUI-6N-rgF" kind="push" id="9Qz-D1-VjZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Ka2-NZ-eUj" secondAttribute="trailing" constant="20" id="4bE-j9-hmE"/>
+                            <constraint firstItem="Ka2-NZ-eUj" firstAttribute="top" secondItem="5PI-5U-k2w" secondAttribute="bottom" constant="46" id="4hg-Ac-EYM"/>
                             <constraint firstItem="PXD-BG-rEc" firstAttribute="leading" secondItem="4Tt-BJ-vN0" secondAttribute="trailing" constant="8" id="A2f-UV-uJ2"/>
                             <constraint firstItem="wRZ-KT-PDJ" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="Bn9-En-VWc"/>
                             <constraint firstAttribute="trailing" secondItem="PXD-BG-rEc" secondAttribute="trailing" constant="20" id="CWL-bh-waf"/>
@@ -155,8 +209,10 @@
                             <constraint firstItem="IT4-jv-pXy" firstAttribute="top" secondItem="wRZ-KT-PDJ" secondAttribute="bottom" id="kWv-qb-doJ"/>
                             <constraint firstItem="4Tt-BJ-vN0" firstAttribute="leading" secondItem="OiZ-JI-Jir" secondAttribute="trailing" constant="8" id="mSc-OG-fcl"/>
                             <constraint firstItem="Ka2-NZ-eUj" firstAttribute="top" secondItem="4Tt-BJ-vN0" secondAttribute="bottom" constant="8" id="mlb-A9-jhb"/>
+                            <constraint firstItem="5PI-5U-k2w" firstAttribute="leading" secondItem="wRZ-KT-PDJ" secondAttribute="leading" id="o5z-dr-OmE"/>
                             <constraint firstItem="dVR-0R-kXy" firstAttribute="leading" secondItem="V1c-LY-4ek" secondAttribute="trailing" constant="8" id="sxX-29-vha"/>
                             <constraint firstItem="QM7-6p-WB8" firstAttribute="top" secondItem="Ka2-NZ-eUj" secondAttribute="bottom" constant="8" id="tmR-FQ-hpg"/>
+                            <constraint firstItem="5PI-5U-k2w" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="2" id="uNJ-Ua-SJw"/>
                             <constraint firstAttribute="trailing" secondItem="wRZ-KT-PDJ" secondAttribute="trailing" id="vKK-qe-mpx"/>
                             <constraint firstItem="4Tt-BJ-vN0" firstAttribute="top" secondItem="Uw0-zQ-7ja" secondAttribute="bottom" constant="20" id="yo0-hF-Tot"/>
                         </constraints>
@@ -629,14 +685,16 @@ For your eyes only</string>
         </scene>
     </scenes>
     <resources>
-        <image name="background.jpg" width="1257" height="1410"/>
+        <image name="background.jpg" width="1275" height="1275"/>
         <image name="cogs.png" width="128" height="128"/>
-        <image name="defaultHeadshot.png" width="400" height="400"/>
+        <image name="defaultHeadshot.png" width="512" height="512"/>
         <image name="minus.png" width="128" height="128"/>
         <image name="plus.png" width="128" height="128"/>
         <image name="question.png" width="128" height="128"/>
         <image name="remove.png" width="128" height="128"/>
         <image name="share-alt.png" width="128" height="128"/>
+        <image name="teaseColors.png" width="390" height="185"/>
+        <image name="teaseSpy.png" width="552" height="1500"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
