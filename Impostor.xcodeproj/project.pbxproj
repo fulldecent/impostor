@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		92BC469BDABE4ED8A01A790D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFB5E1997B743519AFE492A /* libPods.a */; };
+		D95EE4C01AB381930078E05E /* ImpostorGameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA438185D3A3900746059 /* ImpostorGameModel.m */; };
 		D9744FC418B5C1CA00697357 /* CollageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9744FC318B5C1CA00697357 /* CollageViewController.m */; };
 		D978345D1909CA01009C3024 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D978345C1909CA01009C3024 /* Twitter.framework */; };
 		D978345F1909CA08009C3024 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D978345E1909CA08009C3024 /* MessageUI.framework */; };
@@ -554,6 +555,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D95EE4C01AB381930078E05E /* ImpostorGameModel.m in Sources */,
 				D9917B2919E1DB7700E2F104 /* ImpostorGameModel_Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

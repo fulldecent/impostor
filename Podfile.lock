@@ -1,0 +1,24 @@
+PODS:
+  - Appirater (2.0.4)
+  - GoogleAnalytics-iOS-SDK (3.10):
+    - GoogleAnalytics-iOS-SDK/Core (= 3.10)
+  - GoogleAnalytics-iOS-SDK/Core (3.10)
+  - QBFlatButton (1.1)
+  - SCLAlertView-Objective-C (0.7.0)
+  - TOWebViewController (2.0.14)
+
+DEPENDENCIES:
+  - Appirater
+  - GoogleAnalytics-iOS-SDK
+  - QBFlatButton
+  - SCLAlertView-Objective-C
+  - TOWebViewController
+
+SPEC CHECKSUMS:
+  Appirater: 8783318c36414e8de3ea023443028df94c1b784b
+  GoogleAnalytics-iOS-SDK: 4f98a376c1d61e6ac4ca47951655820314856eef
+  QBFlatButton: 3cf272985cdbdd04d6bc8b7ae01e4dd62cb09c17
+  SCLAlertView-Objective-C: 0491ea966dba9b3713178e2ffbcd0a148dc5b271
+  TOWebViewController: 2cfd0032d781cabd88a0995fbca9692c11f0797e
+
+COCOAPODS: 0.36.1
