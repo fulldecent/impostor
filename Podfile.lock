@@ -1,24 +1,82 @@
 PODS:
-  - Appirater (2.0.4)
-  - GoogleAnalytics-iOS-SDK (3.10):
-    - GoogleAnalytics-iOS-SDK/Core (= 3.10)
-  - GoogleAnalytics-iOS-SDK/Core (3.10)
+  - AppInvites (1.0.2):
+    - GoogleInterchangeUtilities (~> 1.0)
+    - GooglePlusUtilities (~> 1.0)
+    - GPPCore (~> 1.8)
+  - Appirater (2.0.5)
+  - Google/Analytics (1.0.7):
+    - Google/Core
+    - GoogleAnalytics (~> 3.12)
+  - Google/AppInvite (1.0.7):
+    - AppInvites (~> 1.0)
+    - Google/Core
+    - Google/SignIn
+  - Google/Core (1.0.7):
+    - GoogleNetworkingUtilities (~> 1.0)
+    - GoogleSymbolUtilities (~> 1.0)
+    - GoogleUtilities (~> 1.0)
+  - Google/SignIn (1.0.7):
+    - Google/Core
+    - GoogleSignIn (~> 2.0)
+  - GoogleAnalytics (3.13.0)
+  - GoogleAppUtilities (1.0.0):
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleAuthUtilities (1.0.1):
+    - GoogleNetworkingUtilities (~> 1.0)
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleInterchangeUtilities (1.0.0):
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleNetworkingUtilities (1.0.0):
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleParsingUtilities (1.0.0):
+    - GoogleNetworkingUtilities (~> 1.0)
+    - GoogleSymbolUtilities (~> 1.0)
+  - GooglePlusUtilities (1.0.0):
+    - GoogleParsingUtilities (~> 1.0)
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleSignIn (2.2.0):
+    - GoogleAppUtilities (~> 1)
+    - GoogleAuthUtilities (~> 1)
+    - GoogleNetworkingUtilities (~> 1)
+    - GoogleUtilities (~> 1)
+  - GoogleSymbolUtilities (1.0.0)
+  - GoogleUtilities (1.0.1):
+    - GoogleSymbolUtilities (~> 1.0)
+  - GPPCore (1.8.1):
+    - GoogleAppUtilities (~> 1.0)
+    - GoogleAuthUtilities (~> 1.0)
+    - GoogleParsingUtilities (~> 1.0)
+    - GoogleSignIn (~> 2)
+    - GoogleUtilities (~> 1.0)
   - QBFlatButton (1.1)
-  - SCLAlertView-Objective-C (0.7.0)
-  - TOWebViewController (2.0.14)
+  - SCLAlertView-Objective-C (0.7.4)
+  - TOWebViewController (2.0.17)
 
 DEPENDENCIES:
   - Appirater
-  - GoogleAnalytics-iOS-SDK
+  - Google/Analytics
+  - Google/AppInvite
   - QBFlatButton
   - SCLAlertView-Objective-C
   - TOWebViewController
 
 SPEC CHECKSUMS:
-  Appirater: 8783318c36414e8de3ea023443028df94c1b784b
-  GoogleAnalytics-iOS-SDK: 4f98a376c1d61e6ac4ca47951655820314856eef
+  AppInvites: d2852d42e22714a67decc8e5809c8c63cc7b8b8f
+  Appirater: e7c0a47fb67ee5041ce8479e6ba960927fb40264
+  Google: 875f5a8ade86dd02e36586e4a54814843938c7f6
+  GoogleAnalytics: fcf1f1cad57ae1a9a53520018f0f680ceeeb8b49
+  GoogleAppUtilities: c01c6a5671e9da8b9d690fdaec5959d6c2aac699
+  GoogleAuthUtilities: 049ffd3a297cdffd271451b82fd4e75304f15ef3
+  GoogleInterchangeUtilities: fe088bea8c936218e52324a004d279c4491b9d65
+  GoogleNetworkingUtilities: 292992ab31b7b4ba32809a0e8b40e324cdfb2c0c
+  GoogleParsingUtilities: 9158b059542c2314294cda34fb0384d80456e030
+  GooglePlusUtilities: 380340708aa89c1743735273b293d11db5524f6a
+  GoogleSignIn: c45d8d1a873784a3283b4f47f331dc06d8a727b6
+  GoogleSymbolUtilities: a7b0feed1fe667c8d5e647177938d0ecd62d6948
+  GoogleUtilities: e3475cd4d45134221d2f3f3626095a1c49b62041
+  GPPCore: 228fdd19eba0e83cba6817004f0d6431d8396d64
   QBFlatButton: 3cf272985cdbdd04d6bc8b7ae01e4dd62cb09c17
-  SCLAlertView-Objective-C: 0491ea966dba9b3713178e2ffbcd0a148dc5b271
-  TOWebViewController: 2cfd0032d781cabd88a0995fbca9692c11f0797e
+  SCLAlertView-Objective-C: 15ebfdac06ca289ba1f29fe34b5a03da6bd3fe37
+  TOWebViewController: aada427e7eba199bbaee77ddee3243c8172f4053
 
-COCOAPODS: 0.36.1
+COCOAPODS: 0.38.2

@@ -66,7 +66,7 @@
     
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"ResultsViewController"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];    
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
     
     [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
                                                           action:@"Gameover"

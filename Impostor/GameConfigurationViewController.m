@@ -110,9 +110,9 @@
 }
 
 - (IBAction)showInstructions:(id)sender {
-    id tracker = [[GAI sharedInstance] defaultTracker];
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"IntroViewController"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 
     KxIntroViewController *vc;
     AudioServicesPlaySystemSound (self.buttonPress);
@@ -159,7 +159,7 @@
     
     id tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"Game Options"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 - (IBAction)startGame:(id)sender {
@@ -312,7 +312,7 @@
     // Go back to what it was
     id tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"GameConfigurationViewController"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 @end

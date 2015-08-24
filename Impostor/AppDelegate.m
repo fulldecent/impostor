@@ -7,9 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "GAI.h"
-#import "GAIDictionaryBuilder.h"
 #import <Appirater.h>
+#import <Google/Analytics.h>
 
 @interface AppDelegate() <AppiraterDelegate>
 @end
@@ -18,27 +17,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Optional: automatically send uncaught exceptions to Google Analytics.
-    [GAI sharedInstance].trackUncaughtExceptions = YES;
-    
-    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
-    [GAI sharedInstance].dispatchInterval = 20;
-    
-    // Optional: set Logger to VERBOSE for debug information.
-//    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
-    
-    // Initialize tracker.
-    [[GAI sharedInstance] trackerWithTrackingId:@"UA-52764-17"];
-    
+    // Configure tracker from GoogleService-Info.plist.
+    NSError *configureError;
+    [[GGLContext sharedInstance] configureWithError:&configureError];
+    NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
+
+    // Optional: configure GAI options.
+    GAI *gai = [GAI sharedInstance];
+    gai.trackUncaughtExceptions = YES;  // report uncaught exceptions
+
 #if TARGET_IPHONE_SIMULATOR
-    [[GAI sharedInstance] setDryRun:YES];
+    gai.dryRun = YES;
 #endif
         
     [Appirater setAppId:@"784258202"];
-    [Appirater setDaysUntilPrompt:21];
-    [Appirater setUsesUntilPrompt:14];
-    [Appirater setSignificantEventsUntilPrompt:14];
-    [Appirater setTimeBeforeReminding:4];
+    [Appirater setDaysUntilPrompt:5];
+    [Appirater setUsesUntilPrompt:5];
+    [Appirater setSignificantEventsUntilPrompt:5];
+    [Appirater setTimeBeforeReminding:5];
     [Appirater appLaunched:YES];
     [Appirater setDelegate:self];
     
