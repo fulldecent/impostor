@@ -1,0 +1,11 @@
+Ein Partyspiel
+Für 3 bis 12 Spieler
+
+Jeder sieht sein geheimes Wort
+aber das Wort des Schwindlers ist anders
+
+in jeder Runde beschreiben die Spieler ihr Wort
+und stimmen dann ab um einen Spieler zu eliminieren （es darf nicht das Wort benutzt werden um es selbst zu beschreiben und es dürfen keine anderen Spieler wiederholt werden. Wählt neu um ein Unentschieden aufzulösen）
+
+Um zu gewinnen
+muss der Schwindler mit einem anderen Spieler übrig bleiben

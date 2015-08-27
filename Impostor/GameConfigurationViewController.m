@@ -82,12 +82,14 @@
     self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     [self.audioPlayer play];
     
+#ifndef SNAPSHOT
     // Show instructions on first run
     if(![[NSUserDefaults standardUserDefaults] boolForKey:@"didShowInstructions"]) {
         [self showInstructions:self];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"didShowInstructions"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
+#endif
     
     /* TMPORARY TO GET LAUNCH IMAGES
     for (UIView *subview in self.view.subviews)

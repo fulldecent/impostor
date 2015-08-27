@@ -1,0 +1,11 @@
+Un juego para fiestas
+De 3 a 12 jugadores
+
+Todos miran su palabra secreta
+Pero la palabra del impostor es diferente
+
+En cada ronda, los jugadores describen su palabra
+y luego votan para eliminar un jugador (la palabra no puede usarse en la descripción, no se puede repetir a otro jugador y, para desempatar, volver a votar
+
+Para ganar
+el impostor debe sobrevivir con otro jugador

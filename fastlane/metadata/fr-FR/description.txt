@@ -1,0 +1,11 @@
+Un jeu de société
+De 3 à 12 joueurs
+
+Chacun voit son mot secret
+Mais le mot de l'imposteur est différent
+
+À chaque tour, les joueurs décrivent leur mot/expression
+et votent ensuite pour éliminer un joueur (ils ne doivent pas utiliser leur mot/expression ou dire la même chose que d'autres joueurs, les égalités se départagent en revotant)
+
+Pour gagner
+l'imposteur doit rester en jeu avec un autre joueur
