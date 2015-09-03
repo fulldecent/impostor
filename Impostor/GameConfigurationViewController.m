@@ -137,26 +137,36 @@
 
 - (IBAction)showGameOptions:(id)sender {
     AudioServicesPlaySystemSound (self.buttonPress);
-    self.actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self
-                                          cancelButtonTitle:NSLocalizedString(@"Cancel", @"Close the settings menu")
+    self.actionSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                   delegate:self
+                                          cancelButtonTitle:nil
                                      destructiveButtonTitle:nil
-                                          otherButtonTitles:NSLocalizedString(@"Reset player photos", @"In the settings menu"),
-                                                            NSLocalizedString(@"Recommend game words", @"In the settings menu"),
-                                                            NSLocalizedString(@"Share this app", @"In the settings menu"),
-                                                            nil];
-
-    NSString * language = [NSLocale preferredLanguages][0];
-    if ([language isEqualToString:@"zh-Hans"]) {
-        self.actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self
-                                              cancelButtonTitle:NSLocalizedString(@"Cancel", @"Close the settings menu")
-                                         destructiveButtonTitle:nil
-                                              otherButtonTitles:NSLocalizedString(@"Reset player photos", @"In the settings menu"),
-                                                                NSLocalizedString(@"Recommend game words", @"In the settings menu"),
-                                                                NSLocalizedString(@"Share this app", @"In the settings menu"),
-                                                                NSLocalizedString(@"看开发者的微信", @"In the settings menu"),
-                            nil];
+                                          otherButtonTitles:nil];
+    
+    NSMutableArray *buttons = [[NSMutableArray alloc] init];
+    [buttons addObject:NSLocalizedString(@"Reset player photos", @"In the settings menu")];
+    [buttons addObject:NSLocalizedString(@"Recommend game words", @"In the settings menu")];
+    [buttons addObject:NSLocalizedString(@"Share this app", @"In the settings menu")];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSNumber *didIAP = [defaults objectForKey:@"didIAP"];
+    if (didIAP && didIAP.integerValue) {
+        NSString *title = @"✅ ";
+        title = [title stringByAppendingString:NSLocalizedString(@"Unlock more words", @"On the configuration screen")];
+        [buttons addObject:title];
+    } else {
+        [buttons addObject:NSLocalizedString(@"Unlock more words", @"On the configuration screen")];
     }
     
+    NSString * language = [NSLocale preferredLanguages][0];
+    if ([language isEqualToString:@"zh-Hans"]) {
+        [buttons addObject:NSLocalizedString(@"看开发者的微信", @"In the settings menu")];
+    }
+    for (NSString *title in buttons) {
+        [self.actionSheet addButtonWithTitle:title];
+    }
+    [self.actionSheet addButtonWithTitle:NSLocalizedString(@"Cancel", @"Close the settings menu")];
+    self.actionSheet.cancelButtonIndex = buttons.count;
     [self.actionSheet showFromRect:[(UIView *)[self.view viewWithTag:9] frame]  inView:self.view animated:YES];
     
     id tracker = [[GAI sharedInstance] defaultTracker];
@@ -259,9 +269,9 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == self.actionSheet.cancelButtonIndex)
-        return;
-    else if (buttonIndex == 0) {
+    if (buttonIndex == self.actionSheet.cancelButtonIndex) {
+        // no-op
+    } else if (buttonIndex == 0) {
         [[CachedPersistentJPEGImageStore sharedStore] deleteAllImages];
         [self.playerPhotoCollectionView reloadData];
         id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
@@ -295,6 +305,25 @@
         };
         [self presentViewController:activityVC animated:YES completion:nil];
     } else if (buttonIndex == 3) {
+        // Handle IAP
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSNumber *didIAP = [defaults objectForKey:@"didIAP"];
+        if (!didIAP) {
+            didIAP = @(0);
+        }
+        
+        didIAP = @(1 - didIAP.integerValue);
+        [defaults setObject:didIAP forKey:@"didIAP"];
+        [defaults synchronize];
+        
+        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
+                                                              action:@"Unlock"
+                                                               label:@"IAP"
+                                                               value:@(1)] build]];
+        
+    } else if (buttonIndex == 4) {
         // See developer's Weixin
         NSURL *wxurl = [NSURL URLWithString:@"weixin://contacts/profile/fulldecent"];
         NSURL *backupurl = [NSURL URLWithString:@"http://user.qzone.qq.com/858772059"];
