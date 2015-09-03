@@ -11,9 +11,9 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "GAIDictionaryBuilder.h"
 #import "GAIFields.h"
-#import <Appirater.h>
 #import "CachedPersistentJPEGImageStore.h"
 #import <SCLAlertView.h>
+#import "SARate.h"
 
 @interface ResultsViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic) ImpostorGameModel *game;
@@ -117,8 +117,12 @@
             break;
         default:;
     }
-    
-    [Appirater userDidSignificantEvent:YES];
+
+    // https://github.com/andrei200287/SARate
+    [SARate sharedInstance].daysUntilPrompt = 5;
+    [SARate sharedInstance].usesUntilPrompt = 5;
+    [SARate sharedInstance].remindPeriod = 30;
+    [SARate sharedInstance].email = @"andrei@solovjev.com";
 }
 
 - (IBAction)playAgain:(id)sender {

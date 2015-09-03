@@ -63,6 +63,10 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "GPPCore/Resources/GPPACLPickerResources.bundle"
   install_resource "GPPCore/Frameworks/GPPCore.framework/Versions/A/Resources/GPPACLPickerResources.bundle"
   install_resource "GoogleSignIn/Resources/GoogleSignIn.bundle"
+  install_resource "SARate/SARate/star-gray.png"
+  install_resource "SARate/SARate/star-gray@2x.png"
+  install_resource "SARate/SARate/star.png"
+  install_resource "SARate/SARate/star@2x.png"
   install_resource "TOWebViewController/TOWebViewController/de.lproj"
   install_resource "TOWebViewController/TOWebViewController/en.lproj"
   install_resource "TOWebViewController/TOWebViewController/es.lproj"
@@ -72,7 +76,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "TOWebViewController/TOWebViewController/pl.lproj"
   install_resource "TOWebViewController/TOWebViewController/zh-Hans.lproj"
   install_resource "TOWebViewController/TOWebViewController/zh-Hant.lproj"
-  install_resource "${BUILT_PRODUCTS_DIR}/Appirater.bundle"
+  install_resource "iRate/iRate/iRate.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "AppInvites/Resources/GINInviteResources.bundle"
@@ -80,6 +84,10 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "GPPCore/Resources/GPPACLPickerResources.bundle"
   install_resource "GPPCore/Frameworks/GPPCore.framework/Versions/A/Resources/GPPACLPickerResources.bundle"
   install_resource "GoogleSignIn/Resources/GoogleSignIn.bundle"
+  install_resource "SARate/SARate/star-gray.png"
+  install_resource "SARate/SARate/star-gray@2x.png"
+  install_resource "SARate/SARate/star.png"
+  install_resource "SARate/SARate/star@2x.png"
   install_resource "TOWebViewController/TOWebViewController/de.lproj"
   install_resource "TOWebViewController/TOWebViewController/en.lproj"
   install_resource "TOWebViewController/TOWebViewController/es.lproj"
@@ -89,7 +97,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "TOWebViewController/TOWebViewController/pl.lproj"
   install_resource "TOWebViewController/TOWebViewController/zh-Hans.lproj"
   install_resource "TOWebViewController/TOWebViewController/zh-Hant.lproj"
-  install_resource "${BUILT_PRODUCTS_DIR}/Appirater.bundle"
+  install_resource "iRate/iRate/iRate.bundle"
 fi
 
 mkdir -p "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
