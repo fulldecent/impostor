@@ -61,6 +61,7 @@
 		D9D432F819AC0E4200E0A408 /* help4.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D432F419AC0E4200E0A408 /* help4.png */; };
 		D9D432F919AC0E4200E0A408 /* help2.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D432F519AC0E4200E0A408 /* help2.png */; };
 		D9D432FA19AC0E4200E0A408 /* help3.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D432F619AC0E4200E0A408 /* help3.png */; };
+		D9DD5CBC1B9A209B00CBDE5A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DD5CBB1B9A209B00CBDE5A /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +201,7 @@
 		D9DA621418A0061D0087706B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D9DA621518A0061D0087706B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D9DA621618A0061E0087706B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/gameWords.json; sourceTree = "<group>"; };
+		D9DD5CBB1B9A209B00CBDE5A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		FAFB5E1997B743519AFE492A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -219,6 +221,7 @@
 				D98CA3FE185D338600746059 /* CoreGraphics.framework in Frameworks */,
 				D98CA400185D338600746059 /* UIKit.framework in Frameworks */,
 				D98CA3FC185D338600746059 /* Foundation.framework in Frameworks */,
+				D9DD5CBC1B9A209B00CBDE5A /* StoreKit.framework in Frameworks */,
 				92BC469BDABE4ED8A01A790D /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,6 +268,7 @@
 		D98CA3FA185D338600746059 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D9DD5CBB1B9A209B00CBDE5A /* StoreKit.framework */,
 				D97834601909CA0F009C3024 /* QuartzCore.framework */,
 				D978345E1909CA08009C3024 /* MessageUI.framework */,
 				D978345C1909CA01009C3024 /* Twitter.framework */,
@@ -423,6 +427,11 @@
 				TargetAttributes = {
 					D98CA3F7185D338600746059 = {
 						DevelopmentTeam = 8Q693ZG5RN;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 					D9917B2319E1DB7700E2F104 = {
 						CreatedOnToolsVersion = 6.0;
@@ -737,7 +746,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Will Entriken (LZSQ9DS457)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Impostor/Impostor-Prefix.pch";
 				INFOPLIST_FILE = "Impostor/Impostor-Info.plist";
@@ -746,6 +756,7 @@
 					/Users/williamentriken/Developer/Impostor/Impostor,
 				);
 				PRODUCT_NAME = Impostor;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -756,7 +767,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Will Entriken (LZSQ9DS457)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Impostor/Impostor-Prefix.pch";
 				INFOPLIST_FILE = "Impostor/Impostor-Info.plist";
@@ -765,6 +777,7 @@
 					/Users/williamentriken/Developer/Impostor/Impostor,
 				);
 				PRODUCT_NAME = Impostor;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

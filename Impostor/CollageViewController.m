@@ -99,8 +99,8 @@
     
     [activityVC setCompletionHandler:^(NSString *activityType, BOOL completed) {
         id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
-                                                              action:@"Shared"
+        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Sharing"
+                                                              action:@"Did share"
                                                                label:activityType
                                                                value:@(completed)] build]];
     }];

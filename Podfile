@@ -6,3 +6,5 @@ pod 'SCLAlertView-Objective-C'
 pod 'Google/Analytics'
 pod 'Google/AppInvite'
 pod 'SARate'
+pod 'RMStore', '~> 0.7'
+
