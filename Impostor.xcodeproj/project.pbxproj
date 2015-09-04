@@ -62,6 +62,7 @@
 		D9D432F919AC0E4200E0A408 /* help2.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D432F519AC0E4200E0A408 /* help2.png */; };
 		D9D432FA19AC0E4200E0A408 /* help3.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D432F619AC0E4200E0A408 /* help3.png */; };
 		D9DD5CBC1B9A209B00CBDE5A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DD5CBB1B9A209B00CBDE5A /* StoreKit.framework */; };
+		D9DD5CBF1B9A400600CBDE5A /* gameWordsMore.json in Resources */ = {isa = PBXBuildFile; fileRef = D9DD5CBD1B9A400600CBDE5A /* gameWordsMore.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -202,6 +203,15 @@
 		D9DA621518A0061D0087706B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D9DA621618A0061E0087706B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/gameWords.json; sourceTree = "<group>"; };
 		D9DD5CBB1B9A209B00CBDE5A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		D9DD5CBE1B9A400600CBDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/gameWordsMore.json; sourceTree = "<group>"; };
+		D9DD5CC01B9A401A00CBDE5A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "zh-Hans"; path = "zh-Hans.lproj/gameWordsMore.json"; sourceTree = "<group>"; };
+		D9DD5CC11B9A401A00CBDE5A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = es; path = es.lproj/gameWordsMore.json; sourceTree = "<group>"; };
+		D9DD5CC21B9A401B00CBDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ru; path = ru.lproj/gameWordsMore.json; sourceTree = "<group>"; };
+		D9DD5CC31B9A401B00CBDE5A /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ko; path = ko.lproj/gameWordsMore.json; sourceTree = "<group>"; };
+		D9DD5CC41B9A401C00CBDE5A /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ja; path = ja.lproj/gameWordsMore.json; sourceTree = "<group>"; };
+		D9DD5CC51B9A401D00CBDE5A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/gameWordsMore.json; sourceTree = "<group>"; };
+		D9DD5CC61B9A401E00CBDE5A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/gameWordsMore.json; sourceTree = "<group>"; };
+		D9DD5CC71B9A401E00CBDE5A /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = nl; path = nl.lproj/gameWordsMore.json; sourceTree = "<group>"; };
 		FAFB5E1997B743519AFE492A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -346,6 +356,7 @@
 				D9A4F77C185E80D10060AA2D /* results.mp3 */,
 				D9A2405E18D50DF7005D4DCD /* camera.mp3 */,
 				D9CDEBF2187A4B6C00AE4163 /* gameWords.json */,
+				D9DD5CBD1B9A400600CBDE5A /* gameWordsMore.json */,
 				D9A4F766185E54480060AA2D /* KxIntroView.h */,
 				D9A4F767185E54480060AA2D /* KxIntroView.m */,
 				D9A4F768185E54480060AA2D /* KxIntroViewController.h */,
@@ -489,6 +500,7 @@
 				D9D432FA19AC0E4200E0A408 /* help3.png in Resources */,
 				D9CDEBDF1879D97900AE4163 /* question.png in Resources */,
 				D9A4F775185E7EDE0060AA2D /* buttonPress.mp3 in Resources */,
+				D9DD5CBF1B9A400600CBDE5A /* gameWordsMore.json in Resources */,
 				D9CDEBE11879D97900AE4163 /* remove.png in Resources */,
 				D9A2405F18D50DF7005D4DCD /* camera.mp3 in Resources */,
 				D9CDEBE01879D97900AE4163 /* plus.png in Resources */,
@@ -661,6 +673,22 @@
 				D9A2406318D510FF005D4DCD /* nl */,
 			);
 			name = gameWords.json;
+			sourceTree = "<group>";
+		};
+		D9DD5CBD1B9A400600CBDE5A /* gameWordsMore.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D9DD5CBE1B9A400600CBDE5A /* en */,
+				D9DD5CC01B9A401A00CBDE5A /* zh-Hans */,
+				D9DD5CC11B9A401A00CBDE5A /* es */,
+				D9DD5CC21B9A401B00CBDE5A /* ru */,
+				D9DD5CC31B9A401B00CBDE5A /* ko */,
+				D9DD5CC41B9A401C00CBDE5A /* ja */,
+				D9DD5CC51B9A401D00CBDE5A /* de */,
+				D9DD5CC61B9A401E00CBDE5A /* fr */,
+				D9DD5CC71B9A401E00CBDE5A /* nl */,
+			);
+			name = gameWordsMore.json;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
