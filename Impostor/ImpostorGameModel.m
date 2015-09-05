@@ -35,6 +35,16 @@
     NSURL *jsonURL = [[NSBundle mainBundle] URLForResource:@"gameWords" withExtension:@"json"];
     NSString *jsonString = [NSString stringWithContentsOfURL:jsonURL encoding:NSUTF8StringEncoding error:nil];
     NSArray *allWordSets = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:nil];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSNumber *unlock = [defaults objectForKey:@"didIAP"];
+    if (unlock && unlock.integerValue) {
+        NSURL *moreJsonURL = [[NSBundle mainBundle] URLForResource:@"gameWordsMore" withExtension:@"json"];
+        NSString *moreJsonString = [NSString stringWithContentsOfURL:moreJsonURL encoding:NSUTF8StringEncoding error:nil];
+        NSArray *moreAllWordSets = [NSJSONSerialization JSONObjectWithData:[moreJsonString dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:nil];
+        allWordSets = [allWordSets arrayByAddingObjectsFromArray:moreAllWordSets];
+    }    
+    
     int chosenWordSet = arc4random() % allWordSets.count;
     int chosenImpostorWord = arc4random() % 2;
     self.impostorWord = ((NSArray *)allWordSets[chosenWordSet])[chosenImpostorWord];

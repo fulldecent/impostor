@@ -307,14 +307,31 @@
         [self presentViewController:activityVC animated:YES completion:nil];
     } else if (buttonIndex == 3) {
         // Handle IAP
-        
+
         // Document the attempt before anything
         id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
         [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
                                                               action:@"Unlock"
                                                                label:@"IAP Try"
                                                                value:@(1)] build]];
-
+        
+        // Check if they already have it
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSNumber *unlock = [defaults objectForKey:@"didIAP"];
+        if (unlock && unlock.integerValue) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Your previous purchase was restored", @"In-app purchase")
+                                                            message:nil
+                                                           delegate:nil
+                                                  cancelButtonTitle:NSLocalizedString(@"OK", @"Dismiss the popup")
+                                                  otherButtonTitles:nil];
+            [alert show];
+            [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
+                                                                  action:@"Unlock"
+                                                                   label:@"IAP Already Had"
+                                                                   value:@(1)] build]];
+            return;
+        }
+        
         // Try to unlock past sale
         [[RMStore defaultStore] restoreTransactionsOnSuccess:^(NSArray *transactions){
             if (transactions.count) {
@@ -324,7 +341,7 @@
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Your previous purchase was restored", @"In-app purchase")
                                                                 message:nil
                                                                delegate:nil
-                                                      cancelButtonTitle:nil
+                                                      cancelButtonTitle:NSLocalizedString(@"OK", @"Dismiss the popup")
                                                       otherButtonTitles:nil];
                 [alert show];
                 [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
@@ -337,30 +354,46 @@
         }];
         
         // Try to make new sale
-        [[RMStore defaultStore] addPayment:@"words0001" success:^(SKPaymentTransaction *transaction) {
-            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-            [defaults setObject:@(1) forKey:@"didIAP"];
-            [defaults synchronize];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Thank you for your purchase!", @"In-app purchase")
-                                                            message:nil
-                                                           delegate:nil
-                                                  cancelButtonTitle:nil
-                                                  otherButtonTitles:nil];
-            [alert show];
-            [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
-                                                                  action:@"Unlock"
-                                                                   label:@"IAP Success"
-                                                                   value:@(1)] build]];
-        } failure:^(SKPaymentTransaction *transaction, NSError *error) {
+        NSSet *products = [NSSet setWithArray:@[@"words0001"]];
+        [[RMStore defaultStore] requestProducts:products success:^(NSArray *products, NSArray *invalidProductIdentifiers) {
+            NSLog(@"Products loaded");
+            [[RMStore defaultStore] addPayment:@"words0001" success:^(SKPaymentTransaction *transaction) {
+                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                [defaults setObject:@(1) forKey:@"didIAP"];
+                [defaults synchronize];
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Thank you for your purchase!", @"In-app purchase")
+                                                                message:nil
+                                                               delegate:nil
+                                                      cancelButtonTitle:NSLocalizedString(@"OK", @"Dismiss the popup")
+                                                      otherButtonTitles:nil];
+                [alert show];
+                [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
+                                                                      action:@"Unlock"
+                                                                       label:@"IAP Success"
+                                                                       value:@(1)] build]];
+            } failure:^(SKPaymentTransaction *transaction, NSError *error) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"There was a problem with your purchase!", @"In-app purchase")
+                                                                message:nil
+                                                               delegate:nil
+                                                      cancelButtonTitle:NSLocalizedString(@"OK", @"Dismiss the popup")
+                                                      otherButtonTitles:nil];
+                [alert show];
+                [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
+                                                                      action:@"Unlock"
+                                                                       label:@"IAP Error"
+                                                                       value:@(0)] build]];
+            }];
+        } failure:^(NSError *error) {
+            NSLog(@"Something went wrong");
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"There was a problem with your purchase!", @"In-app purchase")
                                                             message:nil
                                                            delegate:nil
-                                                  cancelButtonTitle:nil
+                                                  cancelButtonTitle:NSLocalizedString(@"OK", @"Dismiss the popup")
                                                   otherButtonTitles:nil];
             [alert show];
             [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
                                                                   action:@"Unlock"
-                                                                   label:@"IAP Success"
+                                                                   label:@"IAP Error"
                                                                    value:@(0)] build]];
         }];
     } else if (buttonIndex == 4) {
