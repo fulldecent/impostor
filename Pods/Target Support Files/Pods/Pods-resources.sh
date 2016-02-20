@@ -67,16 +67,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "SARate/SARate/star-gray@2x.png"
   install_resource "SARate/SARate/star.png"
   install_resource "SARate/SARate/star@2x.png"
-  install_resource "TOWebViewController/TOWebViewController/de.lproj"
-  install_resource "TOWebViewController/TOWebViewController/en.lproj"
-  install_resource "TOWebViewController/TOWebViewController/es.lproj"
-  install_resource "TOWebViewController/TOWebViewController/fr.lproj"
-  install_resource "TOWebViewController/TOWebViewController/ja.lproj"
-  install_resource "TOWebViewController/TOWebViewController/ko.lproj"
-  install_resource "TOWebViewController/TOWebViewController/pl.lproj"
-  install_resource "TOWebViewController/TOWebViewController/zh-Hans.lproj"
-  install_resource "TOWebViewController/TOWebViewController/zh-Hant.lproj"
   install_resource "iRate/iRate/iRate.bundle"
+  install_resource "${BUILT_PRODUCTS_DIR}/TOWebViewControllerLocalizable.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "AppInvites/Resources/GINInviteResources.bundle"
@@ -88,21 +80,13 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "SARate/SARate/star-gray@2x.png"
   install_resource "SARate/SARate/star.png"
   install_resource "SARate/SARate/star@2x.png"
-  install_resource "TOWebViewController/TOWebViewController/de.lproj"
-  install_resource "TOWebViewController/TOWebViewController/en.lproj"
-  install_resource "TOWebViewController/TOWebViewController/es.lproj"
-  install_resource "TOWebViewController/TOWebViewController/fr.lproj"
-  install_resource "TOWebViewController/TOWebViewController/ja.lproj"
-  install_resource "TOWebViewController/TOWebViewController/ko.lproj"
-  install_resource "TOWebViewController/TOWebViewController/pl.lproj"
-  install_resource "TOWebViewController/TOWebViewController/zh-Hans.lproj"
-  install_resource "TOWebViewController/TOWebViewController/zh-Hant.lproj"
   install_resource "iRate/iRate/iRate.bundle"
+  install_resource "${BUILT_PRODUCTS_DIR}/TOWebViewControllerLocalizable.bundle"
 fi
 
 mkdir -p "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
-if [[ "${ACTION}" == "install" ]]; then
+if [[ "${ACTION}" == "install" ]] && [[ "${SKIP_INSTALL}" == "NO" ]]; then
   mkdir -p "${INSTALL_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
   rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${INSTALL_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 fi

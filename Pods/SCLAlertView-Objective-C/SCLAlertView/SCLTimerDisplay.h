@@ -7,7 +7,11 @@
 //
 //  Taken from https://stackoverflow.com/questions/11783439/uibutton-with-timer
 
+#if defined(__has_feature) && __has_feature(modules)
+@import UIKit;
+#else
 #import <UIKit/UIKit.h>
+#endif
 #import "SCLButton.h"
 
 @interface SCLTimerDisplay : UIView{
@@ -21,8 +25,9 @@
 }
 
 @property CGFloat currentAngle;
-@property (nonatomic) UIColor *color;
 @property NSInteger buttonIndex;
+@property (nonatomic) UIColor *color;
+@property (nonatomic) BOOL reverse;
 
 - (instancetype)initWithOrigin:(CGPoint)origin radius:(CGFloat)r;
 - (instancetype)initWithOrigin:(CGPoint)origin radius:(CGFloat)r lineWidth:(CGFloat)width;

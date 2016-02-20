@@ -3,7 +3,7 @@
 //  SCLAlertView
 //
 //  Created by Diogo Autilio on 9/26/14.
-//  Copyright (c) 2014 AnyKey Entertainment. All rights reserved.
+//  Copyright (c) 2014-2016 AnyKey Entertainment. All rights reserved.
 //
 
 #if defined(__has_feature) && __has_feature(modules)
@@ -24,9 +24,9 @@ typedef NSDictionary* (^ButtonFormatBlock)(void);
 // Action Types
 typedef NS_ENUM(NSInteger, SCLActionType)
 {
-    None,
-    Selector,
-    Block
+    SCLNone,
+    SCLSelector,
+    SCLBlock
 };
 
 /** Set button action type.
@@ -92,5 +92,10 @@ typedef NS_ENUM(NSInteger, SCLActionType)
  * Holds the button timer, if present.
  */
 @property (nonatomic) SCLTimerDisplay *timer;
+
+/** Init method
+ *
+ */
+- (instancetype)initWithWindowWidth:(CGFloat)windowWidth;
 
 @end

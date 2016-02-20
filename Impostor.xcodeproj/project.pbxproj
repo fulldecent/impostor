@@ -396,6 +396,7 @@
 				D98CA3F5185D338600746059 /* Frameworks */,
 				D98CA3F6185D338600746059 /* Resources */,
 				ED1F966979FD4F28AE506B1F /* Copy Pods Resources */,
+				36788D5CB9F299D8A52D71F0 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -433,7 +434,7 @@
 		D98CA3F0185D338600746059 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "William Entriken";
 				TargetAttributes = {
 					D98CA3F7185D338600746059 = {
@@ -522,6 +523,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		36788D5CB9F299D8A52D71F0 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B3684E4B2DBC40C193E7F8DA /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -712,6 +728,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -783,6 +800,7 @@
 					"$(inherited)",
 					/Users/williamentriken/Developer/Impostor/Impostor,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "net.phor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Impostor;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -804,6 +822,7 @@
 					"$(inherited)",
 					/Users/williamentriken/Developer/Impostor/Impostor,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "net.phor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Impostor;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -829,6 +848,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.phor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Impostor.app/Impostor";
 			};
@@ -849,6 +869,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.phor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Impostor.app/Impostor";
 			};
