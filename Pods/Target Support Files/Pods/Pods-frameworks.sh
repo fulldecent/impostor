@@ -82,3 +82,20 @@ strip_invalid_archs() {
   fi
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods/QBFlatButton.framework"
+  install_framework "Pods/RMStore.framework"
+  install_framework "Pods/SARate.framework"
+  install_framework "Pods/SCLAlertView_Objective_C.framework"
+  install_framework "Pods/TOWebViewController.framework"
+  install_framework "Pods/iRate.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods/QBFlatButton.framework"
+  install_framework "Pods/RMStore.framework"
+  install_framework "Pods/SARate.framework"
+  install_framework "Pods/SCLAlertView_Objective_C.framework"
+  install_framework "Pods/TOWebViewController.framework"
+  install_framework "Pods/iRate.framework"
+fi

@@ -63,12 +63,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "GPPCore/Resources/GPPACLPickerResources.bundle"
   install_resource "GPPCore/Frameworks/GPPCore.framework/Versions/A/Resources/GPPACLPickerResources.bundle"
   install_resource "GoogleSignIn/Resources/GoogleSignIn.bundle"
-  install_resource "SARate/SARate/star-gray.png"
-  install_resource "SARate/SARate/star-gray@2x.png"
-  install_resource "SARate/SARate/star.png"
-  install_resource "SARate/SARate/star@2x.png"
-  install_resource "iRate/iRate/iRate.bundle"
-  install_resource "${BUILT_PRODUCTS_DIR}/TOWebViewControllerLocalizable.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "AppInvites/Resources/GINInviteResources.bundle"
@@ -76,12 +70,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "GPPCore/Resources/GPPACLPickerResources.bundle"
   install_resource "GPPCore/Frameworks/GPPCore.framework/Versions/A/Resources/GPPACLPickerResources.bundle"
   install_resource "GoogleSignIn/Resources/GoogleSignIn.bundle"
-  install_resource "SARate/SARate/star-gray.png"
-  install_resource "SARate/SARate/star-gray@2x.png"
-  install_resource "SARate/SARate/star.png"
-  install_resource "SARate/SARate/star@2x.png"
-  install_resource "iRate/iRate/iRate.bundle"
-  install_resource "${BUILT_PRODUCTS_DIR}/TOWebViewControllerLocalizable.bundle"
 fi
 
 mkdir -p "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

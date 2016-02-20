@@ -1,0 +1,6 @@
+framework module QBFlatButton {
+  umbrella header "QBFlatButton-umbrella.h"
+
+  export *
+  module * { export * }
+}

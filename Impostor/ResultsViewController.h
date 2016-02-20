@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "GAI.h"
-#import <QBFlatButton.h>
+#import "QBFlatButton.h"
 
 @interface ResultsViewController : GAITrackedViewController
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

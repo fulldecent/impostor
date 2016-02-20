@@ -10,7 +10,7 @@
 #import "ImpostorGameModel.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import "CachedPersistentJPEGImageStore.h"
-#import <SCLAlertView.h>
+#import "SCLAlertView.h"
 
 @interface SecretWordViewController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (nonatomic) ImpostorGameModel *game;

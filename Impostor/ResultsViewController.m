@@ -12,7 +12,7 @@
 #import "GAIDictionaryBuilder.h"
 #import "GAIFields.h"
 #import "CachedPersistentJPEGImageStore.h"
-#import <SCLAlertView.h>
+#import "SCLAlertView.h"
 #import "SARate.h"
 
 @interface ResultsViewController () <UITableViewDataSource, UITableViewDelegate>

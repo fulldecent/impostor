@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		92BC469BDABE4ED8A01A790D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFB5E1997B743519AFE492A /* libPods.a */; };
+		D9172ECF1C7916FB0018F8C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9172ECE1C7916FB0018F8C3 /* AppDelegate.swift */; };
 		D959822C1B8AA4400044CDC0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D959822B1B8AA4400044CDC0 /* GoogleService-Info.plist */; };
 		D95EE4C01AB381930078E05E /* ImpostorGameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA438185D3A3900746059 /* ImpostorGameModel.m */; };
 		D9744FC418B5C1CA00697357 /* CollageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9744FC318B5C1CA00697357 /* CollageViewController.m */; };
@@ -18,8 +18,6 @@
 		D98CA3FE185D338600746059 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98CA3FD185D338600746059 /* CoreGraphics.framework */; };
 		D98CA400185D338600746059 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98CA3FF185D338600746059 /* UIKit.framework */; };
 		D98CA406185D338600746059 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D98CA404185D338600746059 /* InfoPlist.strings */; };
-		D98CA408185D338600746059 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA407185D338600746059 /* main.m */; };
-		D98CA40C185D338600746059 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA40B185D338600746059 /* AppDelegate.m */; };
 		D98CA40F185D338600746059 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98CA40D185D338600746059 /* Main.storyboard */; };
 		D98CA415185D338600746059 /* GameConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA414185D338600746059 /* GameConfigurationViewController.m */; };
 		D98CA417185D338600746059 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98CA416185D338600746059 /* Images.xcassets */; };
@@ -64,6 +62,7 @@
 		D9D432FA19AC0E4200E0A408 /* help3.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D432F619AC0E4200E0A408 /* help3.png */; };
 		D9DD5CBC1B9A209B00CBDE5A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DD5CBB1B9A209B00CBDE5A /* StoreKit.framework */; };
 		D9DD5CBF1B9A400600CBDE5A /* gameWordsMore.json in Resources */ = {isa = PBXBuildFile; fileRef = D9DD5CBD1B9A400600CBDE5A /* gameWordsMore.json */; };
+		EDB76A86F2F42D92E72AD270 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24CD1AC7A707B6D48C2D14BD /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,12 +97,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24CD1AC7A707B6D48C2D14BD /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5538A3733554ACA5F9DAF605 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B5C1EB37CBFC01570DF0A5DA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D90C9E8F18A98C5000DEF541 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		D90C9E9018A98C5000DEF541 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D90C9E9118A98C5000DEF541 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D90C9E9218A98C5000DEF541 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/gameWords.json; sourceTree = "<group>"; };
+		D9172ECD1C7916FB0018F8C3 /* Impostor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Impostor-Bridging-Header.h"; sourceTree = "<group>"; };
+		D9172ECE1C7916FB0018F8C3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D93B5CEC189D679F00E90ACD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D93B5CED189D679F00E90ACD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D93B5CEE189D679F00E90ACD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ru; path = ru.lproj/gameWords.json; sourceTree = "<group>"; };
@@ -128,10 +130,7 @@
 		D98CA3FF185D338600746059 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D98CA403185D338600746059 /* Impostor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Impostor-Info.plist"; sourceTree = "<group>"; };
 		D98CA405185D338600746059 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D98CA407185D338600746059 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D98CA409185D338600746059 /* Impostor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Impostor-Prefix.pch"; sourceTree = "<group>"; };
-		D98CA40A185D338600746059 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		D98CA40B185D338600746059 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D98CA40E185D338600746059 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D98CA413185D338600746059 /* GameConfigurationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfigurationViewController.h; sourceTree = "<group>"; };
 		D98CA414185D338600746059 /* GameConfigurationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = GameConfigurationViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -214,7 +213,6 @@
 		D9DD5CC51B9A401D00CBDE5A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/gameWordsMore.json; sourceTree = "<group>"; };
 		D9DD5CC61B9A401E00CBDE5A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/gameWordsMore.json; sourceTree = "<group>"; };
 		D9DD5CC71B9A401E00CBDE5A /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = nl; path = nl.lproj/gameWordsMore.json; sourceTree = "<group>"; };
-		FAFB5E1997B743519AFE492A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,7 +232,7 @@
 				D98CA400185D338600746059 /* UIKit.framework in Frameworks */,
 				D98CA3FC185D338600746059 /* Foundation.framework in Frameworks */,
 				D9DD5CBC1B9A209B00CBDE5A /* StoreKit.framework in Frameworks */,
-				92BC469BDABE4ED8A01A790D /* libPods.a in Frameworks */,
+				EDB76A86F2F42D92E72AD270 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +291,7 @@
 				D98CA3FD185D338600746059 /* CoreGraphics.framework */,
 				D98CA3FF185D338600746059 /* UIKit.framework */,
 				D98CA41D185D338600746059 /* XCTest.framework */,
-				FAFB5E1997B743519AFE492A /* libPods.a */,
+				24CD1AC7A707B6D48C2D14BD /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -301,8 +299,7 @@
 		D98CA401185D338600746059 /* Impostor */ = {
 			isa = PBXGroup;
 			children = (
-				D98CA40A185D338600746059 /* AppDelegate.h */,
-				D98CA40B185D338600746059 /* AppDelegate.m */,
+				D9172ECE1C7916FB0018F8C3 /* AppDelegate.swift */,
 				D98CA40D185D338600746059 /* Main.storyboard */,
 				D9CDEBEC187A3B4A00AE4163 /* Localizable.strings */,
 				D98CA416185D338600746059 /* Images.xcassets */,
@@ -329,6 +326,7 @@
 				D9D432F519AC0E4200E0A408 /* help2.png */,
 				D9D432F619AC0E4200E0A408 /* help3.png */,
 				D98CA402185D338600746059 /* Supporting Files */,
+				D9172ECD1C7916FB0018F8C3 /* Impostor-Bridging-Header.h */,
 			);
 			path = Impostor;
 			sourceTree = "<group>";
@@ -341,7 +339,6 @@
 				D99672FF1AB343050033780B /* teaseColors.png */,
 				D98CA403185D338600746059 /* Impostor-Info.plist */,
 				D98CA404185D338600746059 /* InfoPlist.strings */,
-				D98CA407185D338600746059 /* main.m */,
 				D98CA409185D338600746059 /* Impostor-Prefix.pch */,
 				D9A4F783185FE0F50060AA2D /* background.jpg */,
 				D9A4F781185FDDA90060AA2D /* defaultHeadshot.png */,
@@ -582,6 +579,7 @@
 				D9744FC418B5C1CA00697357 /* CollageViewController.m in Sources */,
 				D9A4F76D185E54480060AA2D /* KxIntroViewController.m in Sources */,
 				D98CA439185D3A3900746059 /* ImpostorGameModel.m in Sources */,
+				D9172ECF1C7916FB0018F8C3 /* AppDelegate.swift in Sources */,
 				D98CA415185D338600746059 /* GameConfigurationViewController.m in Sources */,
 				D98CA442185D699E00746059 /* SecretWordViewController.m in Sources */,
 				D9B94A701AB349BB00117C39 /* TeaseViewController.m in Sources */,
@@ -589,10 +587,8 @@
 				D9A4F763185E310A0060AA2D /* ResultsViewController.m in Sources */,
 				D9A4F76E185E54480060AA2D /* KxIntroViewPage.m in Sources */,
 				D98CA445185E1C8C00746059 /* EliminationViewController.m in Sources */,
-				D98CA40C185D338600746059 /* AppDelegate.m in Sources */,
 				D9A4F76C185E54480060AA2D /* KxIntroView.m in Sources */,
 				D98CA43C185D67E800746059 /* MainGameViewController.m in Sources */,
-				D98CA408185D338600746059 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -795,11 +791,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Impostor/Impostor-Prefix.pch";
 				INFOPLIST_FILE = "Impostor/Impostor-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/williamentriken/Developer/Impostor/Impostor,
@@ -807,6 +805,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "net.phor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Impostor;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Impostor/Impostor-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -817,11 +817,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Impostor/Impostor-Prefix.pch";
 				INFOPLIST_FILE = "Impostor/Impostor-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/williamentriken/Developer/Impostor/Impostor,
@@ -829,6 +831,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "net.phor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Impostor;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Impostor/Impostor-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -11,7 +11,7 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "GameConfigurationViewController.h"
 #import "CachedPersistentJPEGImageStore.h"
-#import <SCLAlertView.h>
+#import "SCLAlertView.h"
 
 @interface EliminationViewController () <UICollectionViewDataSource>
 @property (nonatomic) ImpostorGameModel *game;
