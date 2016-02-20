@@ -64,7 +64,7 @@ DEPENDENCIES:
   - Google/Analytics
   - Google/AppInvite
   - QBFlatButton
-  - RMStore (~> 0.7)
+  - RMStore
   - SARate
   - SCLAlertView-Objective-C
   - TOWebViewController

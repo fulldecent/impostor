@@ -1,10 +1,10 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '7.0'
+platform :ios, '8.1'
 pod 'QBFlatButton'
 pod 'TOWebViewController'
 pod 'SCLAlertView-Objective-C'
 pod 'Google/Analytics'
 pod 'Google/AppInvite'
 pod 'SARate'
-pod 'RMStore', '~> 0.7'
+pod 'RMStore'
 
