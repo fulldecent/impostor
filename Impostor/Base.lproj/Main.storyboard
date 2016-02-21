@@ -9,7 +9,7 @@
         <!--Tease View Controller-->
         <scene sceneID="9s8-5b-X0T">
             <objects>
-                <viewController id="cUI-6N-rgF" customClass="TeaseViewController" sceneMemberID="viewController">
+                <viewController id="cUI-6N-rgF" customClass="TeaseViewController" customModule="Impostor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hBH-2a-fGT"/>
                         <viewControllerLayoutGuide type="bottom" id="UUK-ts-Zr6"/>

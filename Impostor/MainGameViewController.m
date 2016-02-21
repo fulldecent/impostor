@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 William Entriken. All rights reserved.
 //
 
+#import "Impostor-Swift.h"
 #import "MainGameViewController.h"
-#import "ImpostorGameModel.h"
 #import "SecretWordViewController.h"
 
 @interface MainGameViewController ()

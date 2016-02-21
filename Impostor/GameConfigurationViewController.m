@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 William Entriken. All rights reserved.
 //
 
+#import "Impostor-Swift.h"
 #import "GameConfigurationViewController.h"
-#import "ImpostorGameModel.h"
 #import "KxIntroViewController.h"
 #import "KxIntroViewPage.h"
 #import <MessageUI/MessageUI.h>
@@ -17,7 +17,6 @@
 #import "GAIDictionaryBuilder.h"
 #import "GAIFields.h"
 #import "TOWebViewController.h"
-#import "CachedPersistentJPEGImageStore.h"
 #import "RMStore.h"
 
 @interface GameConfigurationViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UIActionSheetDelegate>

@@ -6,12 +6,11 @@
 //  Copyright (c) 2013 William Entriken. All rights reserved.
 //
 
+#import "Impostor-Swift.h"
 #import "ResultsViewController.h"
-#import "ImpostorGameModel.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import "GAIDictionaryBuilder.h"
 #import "GAIFields.h"
-#import "CachedPersistentJPEGImageStore.h"
 #import "SCLAlertView.h"
 #import "SARate.h"
 

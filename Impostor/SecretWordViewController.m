@@ -6,10 +6,9 @@
 //  Copyright (c) 2013 William Entriken. All rights reserved.
 //
 
+#import "Impostor-Swift.h"
 #import "SecretWordViewController.h"
-#import "ImpostorGameModel.h"
 #import <AudioToolbox/AudioToolbox.h>
-#import "CachedPersistentJPEGImageStore.h"
 #import "SCLAlertView.h"
 
 @interface SecretWordViewController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate>

@@ -6,11 +6,10 @@
 //  Copyright (c) 2013 William Entriken. All rights reserved.
 //
 
+#import "Impostor-Swift.h"
 #import "EliminationViewController.h"
-#import "ImpostorGameModel.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import "GameConfigurationViewController.h"
-#import "CachedPersistentJPEGImageStore.h"
 #import "SCLAlertView.h"
 
 @interface EliminationViewController () <UICollectionViewDataSource>

@@ -6,14 +6,13 @@
 //  Copyright (c) 2014 William Entriken. All rights reserved.
 //
 
+#import "Impostor-Swift.h"
 #import "CollageViewController.h"
-#import "ImpostorGameModel.h"
 #import "GAIDictionaryBuilder.h"
 #import "GAIFields.h"
 #import <AVFoundation/AVAudioPlayer.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import "GameConfigurationViewController.h"
-#import "CachedPersistentJPEGImageStore.h"
 
 @interface CollageViewController () <UICollectionViewDataSource>
 @property (nonatomic) ImpostorGameModel *game;

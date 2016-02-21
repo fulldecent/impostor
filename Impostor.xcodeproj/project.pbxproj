@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5EA44C0CA4D515F2865D9500 /* Pods_Impostor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C2F938AABF02BA6FCCCE6A /* Pods_Impostor.framework */; };
+		9D4EB18C758ACE9A92689C72 /* Pods_Impostor_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8F59350E970CAB4FCFC0E3 /* Pods_Impostor_Tests.framework */; };
 		D9172ECF1C7916FB0018F8C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9172ECE1C7916FB0018F8C3 /* AppDelegate.swift */; };
+		D9172EFD1C7919180018F8C3 /* ImpostorGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9172EFC1C7919180018F8C3 /* ImpostorGameModel.swift */; };
+		D9172F051C7928C70018F8C3 /* ImpostorGameModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9172F041C7928C70018F8C3 /* ImpostorGameModel_Tests.swift */; };
 		D959822C1B8AA4400044CDC0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D959822B1B8AA4400044CDC0 /* GoogleService-Info.plist */; };
-		D95EE4C01AB381930078E05E /* ImpostorGameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA438185D3A3900746059 /* ImpostorGameModel.m */; };
+		D9645FE71C7937250067F18B /* TeaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9645FE61C7937250067F18B /* TeaseViewController.swift */; };
+		D9645FE91C7937C90067F18B /* CachedPersistentJPEGImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9645FE81C7937C90067F18B /* CachedPersistentJPEGImageStore.swift */; };
 		D9744FC418B5C1CA00697357 /* CollageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9744FC318B5C1CA00697357 /* CollageViewController.m */; };
 		D978345D1909CA01009C3024 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D978345C1909CA01009C3024 /* Twitter.framework */; };
 		D978345F1909CA08009C3024 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D978345E1909CA08009C3024 /* MessageUI.framework */; };
@@ -21,12 +26,10 @@
 		D98CA40F185D338600746059 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98CA40D185D338600746059 /* Main.storyboard */; };
 		D98CA415185D338600746059 /* GameConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA414185D338600746059 /* GameConfigurationViewController.m */; };
 		D98CA417185D338600746059 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98CA416185D338600746059 /* Images.xcassets */; };
-		D98CA439185D3A3900746059 /* ImpostorGameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA438185D3A3900746059 /* ImpostorGameModel.m */; };
 		D98CA43C185D67E800746059 /* MainGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA43B185D67E800746059 /* MainGameViewController.m */; };
 		D98CA442185D699E00746059 /* SecretWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA441185D699E00746059 /* SecretWordViewController.m */; };
 		D98CA445185E1C8C00746059 /* EliminationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA444185E1C8C00746059 /* EliminationViewController.m */; };
 		D98D977C1AB31F5300C0CA99 /* share-alt.png in Resources */ = {isa = PBXBuildFile; fileRef = D98D977B1AB31F5300C0CA99 /* share-alt.png */; };
-		D9917B2919E1DB7700E2F104 /* ImpostorGameModel_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D9917B2819E1DB7700E2F104 /* ImpostorGameModel_Tests.m */; };
 		D99673011AB343050033780B /* teaseColors.png in Resources */ = {isa = PBXBuildFile; fileRef = D99672FF1AB343050033780B /* teaseColors.png */; };
 		D99673041AB3441A0033780B /* teaseSpy.png in Resources */ = {isa = PBXBuildFile; fileRef = D99673031AB3441A0033780B /* teaseSpy.png */; };
 		D9A2405F18D50DF7005D4DCD /* camera.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A2405E18D50DF7005D4DCD /* camera.mp3 */; };
@@ -43,9 +46,7 @@
 		D9A4F77D185E80D10060AA2D /* results.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F77C185E80D10060AA2D /* results.mp3 */; };
 		D9A4F782185FDDA90060AA2D /* defaultHeadshot.png in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F781185FDDA90060AA2D /* defaultHeadshot.png */; };
 		D9A4F784185FE0F50060AA2D /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F783185FE0F50060AA2D /* background.jpg */; };
-		D9AD710B19E1E2E0007FC6D6 /* CachedPersistentJPEGImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D9AD710A19E1E2E0007FC6D6 /* CachedPersistentJPEGImageStore.m */; };
 		D9B6F8DA1C79014400631EAE /* gun.png in Resources */ = {isa = PBXBuildFile; fileRef = D9B6F8D91C79014400631EAE /* gun.png */; };
-		D9B94A701AB349BB00117C39 /* TeaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B94A6F1AB349BB00117C39 /* TeaseViewController.m */; };
 		D9CDEBDE1879D97900AE4163 /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CDEBDA1879D97900AE4163 /* minus.png */; };
 		D9CDEBDF1879D97900AE4163 /* question.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CDEBDB1879D97900AE4163 /* question.png */; };
 		D9CDEBE01879D97900AE4163 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CDEBDC1879D97900AE4163 /* plus.png */; };
@@ -62,7 +63,6 @@
 		D9D432FA19AC0E4200E0A408 /* help3.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D432F619AC0E4200E0A408 /* help3.png */; };
 		D9DD5CBC1B9A209B00CBDE5A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DD5CBB1B9A209B00CBDE5A /* StoreKit.framework */; };
 		D9DD5CBF1B9A400600CBDE5A /* gameWordsMore.json in Resources */ = {isa = PBXBuildFile; fileRef = D9DD5CBD1B9A400600CBDE5A /* gameWordsMore.json */; };
-		EDB76A86F2F42D92E72AD270 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24CD1AC7A707B6D48C2D14BD /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,15 +97,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2021EB242D63D06605DA155F /* Pods-Impostor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Impostor.release.xcconfig"; path = "Pods/Target Support Files/Pods-Impostor/Pods-Impostor.release.xcconfig"; sourceTree = "<group>"; };
 		24CD1AC7A707B6D48C2D14BD /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5538A3733554ACA5F9DAF605 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		B5C1EB37CBFC01570DF0A5DA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		2B8F59350E970CAB4FCFC0E3 /* Pods_Impostor_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Impostor_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45C2F938AABF02BA6FCCCE6A /* Pods_Impostor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Impostor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53FA8EF3857574DB5263E7DA /* Pods-Impostor Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Impostor Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Impostor Tests/Pods-Impostor Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		687C2D2FB468340744092D05 /* Pods-Impostor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Impostor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Impostor/Pods-Impostor.debug.xcconfig"; sourceTree = "<group>"; };
+		CB890763B72DDA2F60F92F19 /* Pods-Impostor Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Impostor Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Impostor Tests/Pods-Impostor Tests.release.xcconfig"; sourceTree = "<group>"; };
 		D90C9E8F18A98C5000DEF541 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		D90C9E9018A98C5000DEF541 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D90C9E9118A98C5000DEF541 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D90C9E9218A98C5000DEF541 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/gameWords.json; sourceTree = "<group>"; };
 		D9172ECD1C7916FB0018F8C3 /* Impostor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Impostor-Bridging-Header.h"; sourceTree = "<group>"; };
 		D9172ECE1C7916FB0018F8C3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D9172EFC1C7919180018F8C3 /* ImpostorGameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImpostorGameModel.swift; sourceTree = "<group>"; };
+		D9172F041C7928C70018F8C3 /* ImpostorGameModel_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImpostorGameModel_Tests.swift; sourceTree = "<group>"; };
 		D93B5CEC189D679F00E90ACD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D93B5CED189D679F00E90ACD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D93B5CEE189D679F00E90ACD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ru; path = ru.lproj/gameWords.json; sourceTree = "<group>"; };
@@ -119,6 +125,8 @@
 		D93B5CF6189EA8A900E90ACD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D93B5CF7189EA8A900E90ACD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ja; path = ja.lproj/gameWords.json; sourceTree = "<group>"; };
 		D959822B1B8AA4400044CDC0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D9645FE61C7937250067F18B /* TeaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeaseViewController.swift; sourceTree = "<group>"; };
+		D9645FE81C7937C90067F18B /* CachedPersistentJPEGImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachedPersistentJPEGImageStore.swift; sourceTree = "<group>"; };
 		D9744FC218B5C1CA00697357 /* CollageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollageViewController.h; sourceTree = "<group>"; };
 		D9744FC318B5C1CA00697357 /* CollageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollageViewController.m; sourceTree = "<group>"; };
 		D978345C1909CA01009C3024 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
@@ -136,8 +144,6 @@
 		D98CA414185D338600746059 /* GameConfigurationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = GameConfigurationViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D98CA416185D338600746059 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D98CA41D185D338600746059 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		D98CA437185D3A3900746059 /* ImpostorGameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImpostorGameModel.h; sourceTree = "<group>"; };
-		D98CA438185D3A3900746059 /* ImpostorGameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ImpostorGameModel.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D98CA43A185D67E800746059 /* MainGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainGameViewController.h; sourceTree = "<group>"; };
 		D98CA43B185D67E800746059 /* MainGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainGameViewController.m; sourceTree = "<group>"; };
 		D98CA440185D699E00746059 /* SecretWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecretWordViewController.h; sourceTree = "<group>"; };
@@ -147,7 +153,6 @@
 		D98D977B1AB31F5300C0CA99 /* share-alt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share-alt.png"; sourceTree = "<group>"; };
 		D9917B2419E1DB7700E2F104 /* Impostor Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Impostor Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9917B2719E1DB7700E2F104 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D9917B2819E1DB7700E2F104 /* ImpostorGameModel_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImpostorGameModel_Tests.m; sourceTree = "<group>"; };
 		D99672FF1AB343050033780B /* teaseColors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teaseColors.png; sourceTree = "<group>"; };
 		D99673031AB3441A0033780B /* teaseSpy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teaseSpy.png; sourceTree = "<group>"; };
 		D9A2405E18D50DF7005D4DCD /* camera.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = camera.mp3; sourceTree = "<group>"; };
@@ -172,11 +177,7 @@
 		D9A4F77C185E80D10060AA2D /* results.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = results.mp3; sourceTree = "<group>"; };
 		D9A4F781185FDDA90060AA2D /* defaultHeadshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultHeadshot.png; sourceTree = "<group>"; };
 		D9A4F783185FE0F50060AA2D /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
-		D9AD710919E1E2E0007FC6D6 /* CachedPersistentJPEGImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CachedPersistentJPEGImageStore.h; sourceTree = "<group>"; };
-		D9AD710A19E1E2E0007FC6D6 /* CachedPersistentJPEGImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CachedPersistentJPEGImageStore.m; sourceTree = "<group>"; };
 		D9B6F8D91C79014400631EAE /* gun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gun.png; sourceTree = "<group>"; };
-		D9B94A6E1AB349BB00117C39 /* TeaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TeaseViewController.h; path = ../TeaseViewController.h; sourceTree = "<group>"; };
-		D9B94A6F1AB349BB00117C39 /* TeaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TeaseViewController.m; path = ../TeaseViewController.m; sourceTree = "<group>"; };
 		D9CDEBDA1879D97900AE4163 /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minus.png; sourceTree = "<group>"; };
 		D9CDEBDB1879D97900AE4163 /* question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question.png; sourceTree = "<group>"; };
 		D9CDEBDC1879D97900AE4163 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
@@ -232,7 +233,7 @@
 				D98CA400185D338600746059 /* UIKit.framework in Frameworks */,
 				D98CA3FC185D338600746059 /* Foundation.framework in Frameworks */,
 				D9DD5CBC1B9A209B00CBDE5A /* StoreKit.framework in Frameworks */,
-				EDB76A86F2F42D92E72AD270 /* Pods.framework in Frameworks */,
+				5EA44C0CA4D515F2865D9500 /* Pods_Impostor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,17 +241,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D4EB18C758ACE9A92689C72 /* Pods_Impostor_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0DE6F65A4157BD137CCDFDA9 /* Pods */ = {
+		63DD38845C54112969C700B7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5538A3733554ACA5F9DAF605 /* Pods.debug.xcconfig */,
-				B5C1EB37CBFC01570DF0A5DA /* Pods.release.xcconfig */,
+				687C2D2FB468340744092D05 /* Pods-Impostor.debug.xcconfig */,
+				2021EB242D63D06605DA155F /* Pods-Impostor.release.xcconfig */,
+				53FA8EF3857574DB5263E7DA /* Pods-Impostor Tests.debug.xcconfig */,
+				CB890763B72DDA2F60F92F19 /* Pods-Impostor Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -262,7 +266,7 @@
 				D9917B2519E1DB7700E2F104 /* Impostor Tests */,
 				D98CA3FA185D338600746059 /* Frameworks */,
 				D98CA3F9185D338600746059 /* Products */,
-				0DE6F65A4157BD137CCDFDA9 /* Pods */,
+				63DD38845C54112969C700B7 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -292,6 +296,8 @@
 				D98CA3FF185D338600746059 /* UIKit.framework */,
 				D98CA41D185D338600746059 /* XCTest.framework */,
 				24CD1AC7A707B6D48C2D14BD /* Pods.framework */,
+				45C2F938AABF02BA6FCCCE6A /* Pods_Impostor.framework */,
+				2B8F59350E970CAB4FCFC0E3 /* Pods_Impostor_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -303,12 +309,9 @@
 				D98CA40D185D338600746059 /* Main.storyboard */,
 				D9CDEBEC187A3B4A00AE4163 /* Localizable.strings */,
 				D98CA416185D338600746059 /* Images.xcassets */,
-				D98CA437185D3A3900746059 /* ImpostorGameModel.h */,
-				D98CA438185D3A3900746059 /* ImpostorGameModel.m */,
-				D9B94A6E1AB349BB00117C39 /* TeaseViewController.h */,
-				D9B94A6F1AB349BB00117C39 /* TeaseViewController.m */,
-				D9AD710919E1E2E0007FC6D6 /* CachedPersistentJPEGImageStore.h */,
-				D9AD710A19E1E2E0007FC6D6 /* CachedPersistentJPEGImageStore.m */,
+				D9172EFC1C7919180018F8C3 /* ImpostorGameModel.swift */,
+				D9645FE81C7937C90067F18B /* CachedPersistentJPEGImageStore.swift */,
+				D9645FE61C7937250067F18B /* TeaseViewController.swift */,
 				D98CA413185D338600746059 /* GameConfigurationViewController.h */,
 				D98CA414185D338600746059 /* GameConfigurationViewController.m */,
 				D98CA43A185D67E800746059 /* MainGameViewController.h */,
@@ -370,18 +373,10 @@
 		D9917B2519E1DB7700E2F104 /* Impostor Tests */ = {
 			isa = PBXGroup;
 			children = (
-				D9917B2819E1DB7700E2F104 /* ImpostorGameModel_Tests.m */,
-				D9917B2619E1DB7700E2F104 /* Supporting Files */,
-			);
-			path = "Impostor Tests";
-			sourceTree = "<group>";
-		};
-		D9917B2619E1DB7700E2F104 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
+				D9172F041C7928C70018F8C3 /* ImpostorGameModel_Tests.swift */,
 				D9917B2719E1DB7700E2F104 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Impostor Tests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,12 +386,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D98CA42D185D338600746059 /* Build configuration list for PBXNativeTarget "Impostor" */;
 			buildPhases = (
-				B3684E4B2DBC40C193E7F8DA /* Check Pods Manifest.lock */,
+				8742BE088F0D3F3BA915CC4D /* Check Pods Manifest.lock */,
 				D98CA3F4185D338600746059 /* Sources */,
 				D98CA3F5185D338600746059 /* Frameworks */,
 				D98CA3F6185D338600746059 /* Resources */,
-				ED1F966979FD4F28AE506B1F /* Copy Pods Resources */,
-				36788D5CB9F299D8A52D71F0 /* Embed Pods Frameworks */,
+				12038D70212981768E239B70 /* Embed Pods Frameworks */,
+				346CB018E45128C5EDF4A897 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -411,9 +406,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9917B2C19E1DB7700E2F104 /* Build configuration list for PBXNativeTarget "Impostor Tests" */;
 			buildPhases = (
+				68C78115DAE69BB37C5763E9 /* Check Pods Manifest.lock */,
 				D9917B2019E1DB7700E2F104 /* Sources */,
 				D9917B2119E1DB7700E2F104 /* Frameworks */,
 				D9917B2219E1DB7700E2F104 /* Resources */,
+				1C4F5DBA8B3DE56E1E68F5B5 /* Embed Pods Frameworks */,
+				820EA91DD4ACF3CA3E1FE785 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -524,7 +522,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		36788D5CB9F299D8A52D71F0 /* Embed Pods Frameworks */ = {
+		12038D70212981768E239B70 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -536,10 +534,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Impostor/Pods-Impostor-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B3684E4B2DBC40C193E7F8DA /* Check Pods Manifest.lock */ = {
+		1C4F5DBA8B3DE56E1E68F5B5 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Impostor Tests/Pods-Impostor Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		346CB018E45128C5EDF4A897 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Impostor/Pods-Impostor-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68C78115DAE69BB37C5763E9 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -554,7 +582,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		ED1F966979FD4F28AE506B1F /* Copy Pods Resources */ = {
+		820EA91DD4ACF3CA3E1FE785 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -566,7 +594,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Impostor Tests/Pods-Impostor Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8742BE088F0D3F3BA915CC4D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -578,12 +621,12 @@
 			files = (
 				D9744FC418B5C1CA00697357 /* CollageViewController.m in Sources */,
 				D9A4F76D185E54480060AA2D /* KxIntroViewController.m in Sources */,
-				D98CA439185D3A3900746059 /* ImpostorGameModel.m in Sources */,
 				D9172ECF1C7916FB0018F8C3 /* AppDelegate.swift in Sources */,
 				D98CA415185D338600746059 /* GameConfigurationViewController.m in Sources */,
 				D98CA442185D699E00746059 /* SecretWordViewController.m in Sources */,
-				D9B94A701AB349BB00117C39 /* TeaseViewController.m in Sources */,
-				D9AD710B19E1E2E0007FC6D6 /* CachedPersistentJPEGImageStore.m in Sources */,
+				D9645FE91C7937C90067F18B /* CachedPersistentJPEGImageStore.swift in Sources */,
+				D9645FE71C7937250067F18B /* TeaseViewController.swift in Sources */,
+				D9172EFD1C7919180018F8C3 /* ImpostorGameModel.swift in Sources */,
 				D9A4F763185E310A0060AA2D /* ResultsViewController.m in Sources */,
 				D9A4F76E185E54480060AA2D /* KxIntroViewPage.m in Sources */,
 				D98CA445185E1C8C00746059 /* EliminationViewController.m in Sources */,
@@ -596,8 +639,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D95EE4C01AB381930078E05E /* ImpostorGameModel.m in Sources */,
-				D9917B2919E1DB7700E2F104 /* ImpostorGameModel_Tests.m in Sources */,
+				D9172F051C7928C70018F8C3 /* ImpostorGameModel_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -743,7 +785,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -777,7 +819,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -787,7 +829,7 @@
 		};
 		D98CA42E185D338600746059 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5538A3733554ACA5F9DAF605 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 687C2D2FB468340744092D05 /* Pods-Impostor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -813,7 +855,7 @@
 		};
 		D98CA42F185D338600746059 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5C1EB37CBFC01570DF0A5DA /* Pods.release.xcconfig */;
+			baseConfigurationReference = 2021EB242D63D06605DA155F /* Pods-Impostor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -838,8 +880,10 @@
 		};
 		D9917B2D19E1DB7700E2F104 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53FA8EF3857574DB5263E7DA /* Pods-Impostor Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -857,14 +901,17 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.phor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Impostor.app/Impostor";
 			};
 			name = Debug;
 		};
 		D9917B2E19E1DB7700E2F104 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB890763B72DDA2F60F92F19 /* Pods-Impostor Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
