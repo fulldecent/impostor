@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="JxD-3W-7Z8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="JxD-3W-7Z8">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -92,7 +92,7 @@
                                 </connections>
                             </button>
                             <collectionView opaque="NO" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ka2-NZ-eUj">
-                                <rect key="frame" x="20" y="88" width="280" height="412"/>
+                                <rect key="frame" x="20" y="88" width="280" height="364"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SGM-e0-owI">
                                     <size key="itemSize" width="100" height="100"/>
@@ -133,9 +133,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1c-LY-4ek" userLabel="Show tutorial" customClass="QBFlatButton">
-                                <rect key="frame" x="20" y="508" width="40" height="40"/>
+                                <rect key="frame" x="20" y="508" width="50" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="68S-XH-TrD"/>
                                     <constraint firstAttribute="height" constant="40" id="mua-Tp-4EB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
@@ -148,30 +147,17 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QM7-6p-WB8" userLabel="Game options" customClass="QBFlatButton">
-                                <rect key="frame" x="260" y="508" width="40" height="40"/>
+                                <rect key="frame" x="250" y="508" width="50" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="346-0x-xHG"/>
                                     <constraint firstAttribute="height" constant="40" id="8Eb-2I-2zr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
                                 <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
-                                <state key="normal" image="gun.png">
+                                <state key="normal" image="money.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showGameOptions:" destination="vXZ-lx-hvc" eventType="touchDown" id="cEU-dn-vOP"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVR-0R-kXy" customClass="QBFlatButton">
-                                <rect key="frame" x="68" y="508" width="184" height="40"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="6"/>
-                                <state key="normal" title="Start Game">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="startGame:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xVY-Cd-L4b"/>
-                                    <segue destination="ay1-QR-sKT" kind="push" id="IJJ-Ht-6T6"/>
+                                    <action selector="buyUpgrade:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="RG7-hd-ZYN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5PI-5U-k2w" userLabel="Easter Egg">
@@ -186,12 +172,70 @@
                                     <segue destination="cUI-6N-rgF" kind="push" id="9Qz-D1-VjZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YU1-1j-RCf" userLabel="Show tutorial" customClass="QBFlatButton">
+                                <rect key="frame" x="78" y="508" width="49" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="MGc-Av-fBk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                <state key="normal" image="eraser.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetPlayerPhotos:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="f4y-1g-G1H"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDb-Zf-h2K" userLabel="Show tutorial" customClass="QBFlatButton">
+                                <rect key="frame" x="135" y="508" width="50" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="zT5-EU-VcZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                <state key="normal" image="wechat.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="viewWeixin:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="8Kc-dv-jfC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWp-9g-qjc" userLabel="Show tutorial" customClass="QBFlatButton">
+                                <rect key="frame" x="193" y="508" width="49" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="GQx-4V-77w"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                <state key="normal" image="lightbulb.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="recommendWords:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bKj-kg-lse"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVR-0R-kXy" customClass="QBFlatButton">
+                                <rect key="frame" x="16" y="460" width="288" height="40"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="6"/>
+                                <state key="normal" title="Start Game">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startGame:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xVY-Cd-L4b"/>
+                                    <segue destination="ay1-QR-sKT" kind="push" id="IJJ-Ht-6T6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="dVR-0R-kXy" secondAttribute="leading" id="0PX-tJ-O89"/>
                             <constraint firstAttribute="trailing" secondItem="Ka2-NZ-eUj" secondAttribute="trailing" constant="20" id="4bE-j9-hmE"/>
                             <constraint firstItem="Ka2-NZ-eUj" firstAttribute="top" secondItem="5PI-5U-k2w" secondAttribute="bottom" constant="46" id="4hg-Ac-EYM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dVR-0R-kXy" secondAttribute="trailing" id="8c0-er-EhC"/>
+                            <constraint firstItem="IT4-jv-pXy" firstAttribute="top" secondItem="QM7-6p-WB8" secondAttribute="bottom" constant="20" id="9MX-fR-uh8"/>
                             <constraint firstItem="PXD-BG-rEc" firstAttribute="leading" secondItem="4Tt-BJ-vN0" secondAttribute="trailing" constant="8" id="A2f-UV-uJ2"/>
+                            <constraint firstItem="IT4-jv-pXy" firstAttribute="top" secondItem="jDb-Zf-h2K" secondAttribute="bottom" constant="20" id="BP5-3Y-ehV"/>
                             <constraint firstItem="wRZ-KT-PDJ" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="Bn9-En-VWc"/>
                             <constraint firstAttribute="trailing" secondItem="PXD-BG-rEc" secondAttribute="trailing" constant="20" id="CWL-bh-waf"/>
                             <constraint firstItem="Ka2-NZ-eUj" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="GEz-3g-tKA"/>
@@ -199,19 +243,27 @@
                             <constraint firstItem="OiZ-JI-Jir" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="IIv-5P-eul"/>
                             <constraint firstItem="PXD-BG-rEc" firstAttribute="top" secondItem="Uw0-zQ-7ja" secondAttribute="bottom" constant="20" id="IZM-mM-2Gr"/>
                             <constraint firstItem="IT4-jv-pXy" firstAttribute="top" secondItem="QM7-6p-WB8" secondAttribute="bottom" constant="20" id="Jpe-he-lVZ"/>
-                            <constraint firstItem="QM7-6p-WB8" firstAttribute="leading" secondItem="dVR-0R-kXy" secondAttribute="trailing" constant="8" id="Y2R-9G-oqY"/>
+                            <constraint firstItem="iWp-9g-qjc" firstAttribute="leading" secondItem="jDb-Zf-h2K" secondAttribute="trailing" constant="8" id="L4S-RP-9sB"/>
+                            <constraint firstItem="IT4-jv-pXy" firstAttribute="top" secondItem="iWp-9g-qjc" secondAttribute="bottom" constant="20" id="NIv-p7-Se6"/>
+                            <constraint firstItem="IT4-jv-pXy" firstAttribute="top" secondItem="YU1-1j-RCf" secondAttribute="bottom" constant="20" id="Uhn-Ke-Kip"/>
+                            <constraint firstItem="QM7-6p-WB8" firstAttribute="leading" secondItem="iWp-9g-qjc" secondAttribute="trailing" constant="8" id="YIy-1m-8qN"/>
+                            <constraint firstItem="jDb-Zf-h2K" firstAttribute="top" secondItem="dVR-0R-kXy" secondAttribute="bottom" constant="8" id="ZG7-ep-aJg"/>
+                            <constraint firstItem="jDb-Zf-h2K" firstAttribute="leading" secondItem="YU1-1j-RCf" secondAttribute="trailing" constant="8" id="bkz-ZF-W5T"/>
                             <constraint firstItem="IT4-jv-pXy" firstAttribute="top" secondItem="V1c-LY-4ek" secondAttribute="bottom" constant="20" id="egN-UN-yxL"/>
                             <constraint firstItem="OiZ-JI-Jir" firstAttribute="top" secondItem="Uw0-zQ-7ja" secondAttribute="bottom" constant="20" id="epN-Ar-cPW"/>
+                            <constraint firstItem="iWp-9g-qjc" firstAttribute="width" secondItem="QM7-6p-WB8" secondAttribute="width" id="g5Z-Yh-MrV"/>
+                            <constraint firstItem="V1c-LY-4ek" firstAttribute="width" secondItem="YU1-1j-RCf" secondAttribute="width" id="gIs-iP-JtQ"/>
+                            <constraint firstItem="YU1-1j-RCf" firstAttribute="leading" secondItem="V1c-LY-4ek" secondAttribute="trailing" constant="8" id="glN-3G-Nvd"/>
                             <constraint firstAttribute="trailing" secondItem="QM7-6p-WB8" secondAttribute="trailing" constant="20" id="hjX-Sj-blC"/>
                             <constraint firstItem="wRZ-KT-PDJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="hmu-2Q-yEM"/>
                             <constraint firstItem="dVR-0R-kXy" firstAttribute="top" secondItem="Ka2-NZ-eUj" secondAttribute="bottom" constant="8" id="i8h-Iy-cAo"/>
-                            <constraint firstItem="IT4-jv-pXy" firstAttribute="top" secondItem="dVR-0R-kXy" secondAttribute="bottom" constant="20" id="kLp-x8-a1J"/>
                             <constraint firstItem="IT4-jv-pXy" firstAttribute="top" secondItem="wRZ-KT-PDJ" secondAttribute="bottom" id="kWv-qb-doJ"/>
+                            <constraint firstItem="jDb-Zf-h2K" firstAttribute="width" secondItem="iWp-9g-qjc" secondAttribute="width" id="kbO-qk-4DN"/>
+                            <constraint firstItem="dVR-0R-kXy" firstAttribute="height" secondItem="jDb-Zf-h2K" secondAttribute="height" id="leY-wj-SiU"/>
                             <constraint firstItem="4Tt-BJ-vN0" firstAttribute="leading" secondItem="OiZ-JI-Jir" secondAttribute="trailing" constant="8" id="mSc-OG-fcl"/>
                             <constraint firstItem="Ka2-NZ-eUj" firstAttribute="top" secondItem="4Tt-BJ-vN0" secondAttribute="bottom" constant="8" id="mlb-A9-jhb"/>
                             <constraint firstItem="5PI-5U-k2w" firstAttribute="leading" secondItem="wRZ-KT-PDJ" secondAttribute="leading" id="o5z-dr-OmE"/>
-                            <constraint firstItem="dVR-0R-kXy" firstAttribute="leading" secondItem="V1c-LY-4ek" secondAttribute="trailing" constant="8" id="sxX-29-vha"/>
-                            <constraint firstItem="QM7-6p-WB8" firstAttribute="top" secondItem="Ka2-NZ-eUj" secondAttribute="bottom" constant="8" id="tmR-FQ-hpg"/>
+                            <constraint firstItem="YU1-1j-RCf" firstAttribute="width" secondItem="jDb-Zf-h2K" secondAttribute="width" id="qR3-h6-2wU"/>
                             <constraint firstItem="5PI-5U-k2w" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="2" id="uNJ-Ua-SJw"/>
                             <constraint firstAttribute="trailing" secondItem="wRZ-KT-PDJ" secondAttribute="trailing" id="vKK-qe-mpx"/>
                             <constraint firstItem="4Tt-BJ-vN0" firstAttribute="top" secondItem="Uw0-zQ-7ja" secondAttribute="bottom" constant="20" id="yo0-hF-Tot"/>
@@ -219,6 +271,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="HkJ-2E-QIJ"/>
                     <connections>
+                        <outlet property="buyButton" destination="QM7-6p-WB8" id="0yG-ze-eyX"/>
                         <outlet property="numberOfPlayersLabel" destination="4Tt-BJ-vN0" id="3OM-Io-tXm"/>
                         <outlet property="playerPhotoCollectionView" destination="Ka2-NZ-eUj" id="I4F-wk-bff"/>
                     </connections>
@@ -407,7 +460,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
                                 <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
-                                <state key="normal" image="remove.png">
+                                <state key="normal" image="close.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -422,7 +475,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
                                 <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
-                                <state key="normal" image="share-alt.png">
+                                <state key="normal" image="share.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -690,14 +743,18 @@ For your eyes only</string>
     </scenes>
     <resources>
         <image name="background.jpg" width="1275" height="1275"/>
+        <image name="close.png" width="128" height="128"/>
         <image name="defaultHeadshot.png" width="512" height="512"/>
-        <image name="gun.png" width="128" height="128"/>
+        <image name="eraser.png" width="128" height="128"/>
+        <image name="lightbulb.png" width="128" height="128"/>
         <image name="minus.png" width="128" height="128"/>
+        <image name="money.png" width="128" height="128"/>
         <image name="plus.png" width="128" height="128"/>
         <image name="question.png" width="128" height="128"/>
         <image name="remove.png" width="128" height="128"/>
-        <image name="share-alt.png" width="128" height="128"/>
+        <image name="share.png" width="128" height="128"/>
         <image name="teaseColors.png" width="390" height="185"/>
         <image name="teaseSpy.png" width="552" height="1500"/>
+        <image name="wechat.png" width="128" height="128"/>
     </resources>
 </document>

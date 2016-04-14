@@ -15,6 +15,59 @@ Animated Alert View written in Swift but ported to Objective-C, which can be use
 ![BackgroundImage](https://raw.githubusercontent.com/dogo/SCLAlertView/master/ScreenShots/ScreenShot6.png)
 ![BackgroundImage](https://raw.githubusercontent.com/dogo/SCLAlertView/master/ScreenShots/ScreenShot7.png)
 
+###Fluent style
+
+```Objective-C
+
+SCLAlertViewBuilder *builder = [SCLAlertViewBuilder new]
+.addButtonWithActionBlock(@"Send", ^{ /*work here*/ });
+SCLAlertViewShowBuilder *showBuilder = [SCLAlertViewShowBuilder new]
+.style(Warning)
+.title(@"Title")
+.subTitle(@"Subtitle")
+.duration(0);
+[showBuilder showAlertView:builder.alertView onViewController:self.window.rootViewController];
+// or even
+showBuilder.show(builder.alertView, self.window.rootViewController);
+```
+
+####Complex
+```Objective-C
+    NSString *title = @"Title";
+    NSString *message = @"Message";
+    NSString *cancel = @"Cancel";
+    NSString *done = @"Done";
+    
+    SCLALertViewTextFieldBuilder *textField = [SCLALertViewTextFieldBuilder new].title(@"Code");
+    SCLALertViewButtonBuilder *doneButton = [SCLALertViewButtonBuilder new].title(done)
+    .validationBlock(^BOOL{
+        NSString *code = [textField.textField.text copy];
+        return [code isVisible];
+    })
+    .actionBlock(^{
+        NSString *code = [textField.textField.text copy];
+        [self confirmPhoneNumberWithCode:code];
+    });
+    
+    SCLAlertViewBuilder *builder = [SCLAlertViewBuilder new]
+    .showAnimationType(FadeIn)
+    .hideAnimationType(FadeOut)
+    .shouldDismissOnTapOutside(NO)
+    .addTextFieldWithBuilder(textField)
+    .addButtonWithBuilder(doneButton);
+    
+    SCLAlertViewShowBuilder *showBuilder = [SCLAlertViewShowBuilder new]
+    .style(Custom)
+    .image([SCLAlertViewStyleKit imageOfInfo])
+    .color([UIColor blueColor])
+    .title(title)
+    .subTitle(message)
+    .closeButtonTitle(cancel)
+    .duration(0.0f);
+
+    [showBuilder showAlertView:builder.alertView onViewController:self];
+```
+
 ###Easy to use
 ```Objective-C
 // Get started
@@ -143,6 +196,7 @@ SCLAlertView *alert = [[SCLAlertView alloc] init];
     
 [alert showWaiting:self title:@"Waiting..." subTitle:@"Blah de blah de blah, blah. Blah de blah de" closeButtonTitle:nil duration:5.0f];
 ```
+
 ###Add a switch button
 ```Objective-C
 SCLAlertView *alert = [[SCLAlertView alloc] init];
@@ -155,6 +209,18 @@ switchView.tintColor = [UIColor brownColor];
 }];
     
 [alert showCustom:self image:[UIImage imageNamed:@"switch"] color:[UIColor brownColor] title:kInfoTitle subTitle:kSubtitle closeButtonTitle:nil duration:0.0f];
+```
+
+###Add custom view
+```Objective-C
+SCLAlertView *alert = [[SCLAlertView alloc] init];
+
+UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 215.0f, 80.0f)];
+customView.backgroundColor = [UIColor redColor];
+
+[alert addCustomView:customView];
+
+[alert showNotice:self title:@"Title" subTitle:@"This alert view shows a custom view" closeButtonTitle:@"Done" duration:0.0f];
 ```
 
 ###SCLAlertView properties

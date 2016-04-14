@@ -16,13 +16,12 @@
 #import "GAI.h"
 #import "GAIDictionaryBuilder.h"
 #import "GAIFields.h"
-#import "TOWebViewController.h"
 #import "RMStore.h"
+#import "OpenInChromeController.h"
 
-@interface GameConfigurationViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UIActionSheetDelegate>
+@interface GameConfigurationViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (nonatomic) NSInteger playerCount;
 @property (nonatomic) ImpostorGameModel *game;
-@property (nonatomic) UIActionSheet *actionSheet;
 @property (nonatomic) AVAudioPlayer *audioPlayer;
 @property (nonatomic) SystemSoundID buttonPress;
 @end
@@ -71,6 +70,24 @@
     SystemSoundID soundID;
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &soundID);
     self.buttonPress = soundID;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    // https://stackoverflow.com/questions/3460694/uibutton-wont-go-to-aspect-fit-in-iphone/3995820#3995820
+    for (UIView *view in self.view.subviews) {
+        if ([view isKindOfClass:UIButton.class]) {
+            UIButton *button = (UIButton *)view;
+            [button.imageView setContentMode:UIViewContentModeScaleAspectFit];
+        }
+    }
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSNumber *didIAP = [defaults objectForKey:@"didIAP"];
+    if (didIAP && didIAP.integerValue) {
+        self.buyButton.imageView.image = [UIImage imageNamed:@"money-paid"];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -135,44 +152,138 @@
     [vc presentInViewController:self fullScreenLayout:YES];
 }
 
-- (IBAction)showGameOptions:(id)sender {
+- (IBAction)resetPlayerPhotos:(id)sender {
     AudioServicesPlaySystemSound (self.buttonPress);
-    self.actionSheet = [[UIActionSheet alloc] initWithTitle:nil
-                                                   delegate:self
-                                          cancelButtonTitle:nil
-                                     destructiveButtonTitle:nil
-                                          otherButtonTitles:nil];
-    
-    NSMutableArray *buttons = [[NSMutableArray alloc] init];
-    [buttons addObject:NSLocalizedString(@"Reset player photos", @"In the settings menu")];
-    [buttons addObject:NSLocalizedString(@"Recommend game words", @"In the settings menu")];
-    [buttons addObject:NSLocalizedString(@"Share this app", @"In the settings menu")];
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSNumber *didIAP = [defaults objectForKey:@"didIAP"];
-    if (didIAP && didIAP.integerValue) {
-        NSString *title = @"✅ ";
-        title = [title stringByAppendingString:NSLocalizedString(@"Unlock more words", @"On the configuration screen")];
-        [buttons addObject:title];
-    } else {
-        [buttons addObject:NSLocalizedString(@"Unlock more words", @"On the configuration screen")];
-    }
-    
-    NSString * language = [NSLocale preferredLanguages][0];
-    if ([language isEqualToString:@"zh-Hans"]) {
-        [buttons addObject:NSLocalizedString(@"看开发者的微信", @"In the settings menu")];
-    }
-    for (NSString *title in buttons) {
-        [self.actionSheet addButtonWithTitle:title];
-    }
-    [self.actionSheet addButtonWithTitle:NSLocalizedString(@"Cancel", @"Close the settings menu")];
-    self.actionSheet.cancelButtonIndex = buttons.count;
-    [self.actionSheet showFromRect:[(UIView *)[self.view viewWithTag:9] frame]  inView:self.view animated:YES];
-    
-    id tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIScreenName value:@"Game Options"];
-    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    [[CachedPersistentJPEGImageStore sharedStore] deleteAllImages];
+    [self.playerPhotoCollectionView reloadData];
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
+                                                          action:@"Configuration"
+                                                           label:@"ResetPlayerPhotos"
+                                                           value:@(1)] build]];
 }
+
+- (IBAction)viewWeixin:(id)sender {
+    AudioServicesPlaySystemSound (self.buttonPress);
+    NSURL *wxurl = [NSURL URLWithString:@"weixin://contacts/profile/fulldecent"];
+    NSURL *backupurl = [NSURL URLWithString:@"http://user.qzone.qq.com/858772059"];
+    if ([[UIApplication sharedApplication] canOpenURL: wxurl]){
+        [[UIApplication sharedApplication] openURL:wxurl];
+    } else {
+        [[UIApplication sharedApplication] openURL:backupurl];
+    }
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"weixin://contacts/profile/fulldecent"]];
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Other"
+                                                          action:@"View Weixin"
+                                                           label:nil
+                                                           value:@([[UIApplication sharedApplication] canOpenURL: wxurl])] build]];
+}
+
+- (IBAction)recommendWords:(id)sender {
+    AudioServicesPlaySystemSound (self.buttonPress);
+    NSURL *url = [NSURL URLWithString:@"http://phor.net/apps/impostor/newWords.php"];
+    [[UIApplication sharedApplication] openURL:url];
+//    [[OpenInChromeController sharedInstance] openInChrome:url];
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
+                                                          action:@"Configuration"
+                                                           label:@"SuggestWords"
+                                                           value:@(1)] build]];
+}
+
+- (IBAction)buyUpgrade:(id)sender {
+    AudioServicesPlaySystemSound (self.buttonPress);
+    // Document the attempt before anything
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
+                                                          action:@"Unlock"
+                                                           label:@"IAP Try"
+                                                           value:@(1)] build]];
+    
+    // Check if they already have it
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSNumber *unlock = [defaults objectForKey:@"didIAP"];
+    if (unlock && unlock.integerValue) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Your previous purchase was restored", @"In-app purchase")
+                                                        message:nil
+                                                       delegate:nil
+                                              cancelButtonTitle:NSLocalizedString(@"OK", @"Dismiss the popup")
+                                              otherButtonTitles:nil];
+        [alert show];
+        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
+                                                              action:@"Unlock"
+                                                               label:@"IAP Already Had"
+                                                               value:@(1)] build]];
+        return;
+    }
+    
+    // Try to unlock past sale
+    [[RMStore defaultStore] restoreTransactionsOnSuccess:^(NSArray *transactions){
+        if (transactions.count) {
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:@(1) forKey:@"didIAP"];
+            [defaults synchronize];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Your previous purchase was restored", @"In-app purchase")
+                                                            message:nil
+                                                           delegate:nil
+                                                  cancelButtonTitle:NSLocalizedString(@"OK", @"Dismiss the popup")
+                                                  otherButtonTitles:nil];
+            [alert show];
+            [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
+                                                                  action:@"Unlock"
+                                                                   label:@"IAP Restore"
+                                                                   value:@(1)] build]];
+        }
+        return;
+    } failure:^(NSError *error) {
+    }];
+    
+    // Try to make new sale
+    NSSet *products = [NSSet setWithArray:@[@"words0001"]];
+    [[RMStore defaultStore] requestProducts:products success:^(NSArray *products, NSArray *invalidProductIdentifiers) {
+        NSLog(@"Products loaded");
+        [[RMStore defaultStore] addPayment:@"words0001" success:^(SKPaymentTransaction *transaction) {
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:@(1) forKey:@"didIAP"];
+            [defaults synchronize];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Thank you for your purchase!", @"In-app purchase")
+                                                            message:nil
+                                                           delegate:nil
+                                                  cancelButtonTitle:NSLocalizedString(@"OK", @"Dismiss the popup")
+                                                  otherButtonTitles:nil];
+            [alert show];
+            [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
+                                                                  action:@"Unlock"
+                                                                   label:@"IAP Success"
+                                                                   value:@(1)] build]];
+        } failure:^(SKPaymentTransaction *transaction, NSError *error) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"There was a problem with your purchase!", @"In-app purchase")
+                                                            message:nil
+                                                           delegate:nil
+                                                  cancelButtonTitle:NSLocalizedString(@"OK", @"Dismiss the popup")
+                                                  otherButtonTitles:nil];
+            [alert show];
+            [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
+                                                                  action:@"Unlock"
+                                                                   label:@"IAP Error"
+                                                                   value:@(0)] build]];
+        }];
+    } failure:^(NSError *error) {
+        NSLog(@"Something went wrong");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"There was a problem with your purchase!", @"In-app purchase")
+                                                        message:nil
+                                                       delegate:nil
+                                              cancelButtonTitle:NSLocalizedString(@"OK", @"Dismiss the popup")
+                                              otherButtonTitles:nil];
+        [alert show];
+        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
+                                                              action:@"Unlock"
+                                                               label:@"IAP Error"
+                                                               value:@(0)] build]];
+    }];
+}
+
 
 - (IBAction)startGame:(id)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -261,161 +372,6 @@
     bounceAnimation.autoreverses = YES;
     bounceAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
     [view.layer addAnimation:bounceAnimation forKey:@"bounce"];
-}
-
-
-
-#pragma mark - UIActionSheetDelegate
-
-- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == self.actionSheet.cancelButtonIndex) {
-        // no-op
-    } else if (buttonIndex == 0) {
-        [[CachedPersistentJPEGImageStore sharedStore] deleteAllImages];
-        [self.playerPhotoCollectionView reloadData];
-        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
-                                                              action:@"Configuration"
-                                                               label:@"ResetPlayerPhotos"
-                                                               value:@(1)] build]];
-    } else if (buttonIndex == 1) {
-        NSURL *url = [NSURL URLWithString:@"http://phor.net/apps/impostor/newWords.php"];
-        TOWebViewController *webViewController = [[TOWebViewController alloc] initWithURL:url];
-        [self presentViewController:[[UINavigationController alloc] initWithRootViewController:webViewController] animated:YES completion:nil];
-        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
-                                                              action:@"Configuration"
-                                                               label:@"SuggestWords"
-                                                               value:@(1)] build]];
-    } else if (buttonIndex == 2) {
-        // Create the item to share (in this example, a url)
-        NSString *appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
-        NSURL *url = [NSURL URLWithString:@"https://itunes.apple.com/us/app/whos-the-impostor/id784258202"];
-        NSString *title = [NSString stringWithFormat:NSLocalizedString(@"I am playing the party game %@", @"Text for sharing on social network"), appName];
-        NSArray *itemsToShare = @[url, title];
-        UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
-        activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll]; //or whichever you don't need
-        activityVC.completionHandler = ^(NSString *activityType, BOOL completed) {
-            id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-            [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
-                                                                  action:@"Share"
-                                                                   label:activityType
-                                                                   value:@(completed)] build]];
-        };
-        [self presentViewController:activityVC animated:YES completion:nil];
-    } else if (buttonIndex == 3) {
-        // Handle IAP
-
-        // Document the attempt before anything
-        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
-                                                              action:@"Unlock"
-                                                               label:@"IAP Try"
-                                                               value:@(1)] build]];
-        
-        // Check if they already have it
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        NSNumber *unlock = [defaults objectForKey:@"didIAP"];
-        if (unlock && unlock.integerValue) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Your previous purchase was restored", @"In-app purchase")
-                                                            message:nil
-                                                           delegate:nil
-                                                  cancelButtonTitle:NSLocalizedString(@"OK", @"Dismiss the popup")
-                                                  otherButtonTitles:nil];
-            [alert show];
-            [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
-                                                                  action:@"Unlock"
-                                                                   label:@"IAP Already Had"
-                                                                   value:@(1)] build]];
-            return;
-        }
-        
-        // Try to unlock past sale
-        [[RMStore defaultStore] restoreTransactionsOnSuccess:^(NSArray *transactions){
-            if (transactions.count) {
-                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-                [defaults setObject:@(1) forKey:@"didIAP"];
-                [defaults synchronize];
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Your previous purchase was restored", @"In-app purchase")
-                                                                message:nil
-                                                               delegate:nil
-                                                      cancelButtonTitle:NSLocalizedString(@"OK", @"Dismiss the popup")
-                                                      otherButtonTitles:nil];
-                [alert show];
-                [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
-                                                                      action:@"Unlock"
-                                                                       label:@"IAP Restore"
-                                                                       value:@(1)] build]];
-            }
-            return;
-        } failure:^(NSError *error) {
-        }];
-        
-        // Try to make new sale
-        NSSet *products = [NSSet setWithArray:@[@"words0001"]];
-        [[RMStore defaultStore] requestProducts:products success:^(NSArray *products, NSArray *invalidProductIdentifiers) {
-            NSLog(@"Products loaded");
-            [[RMStore defaultStore] addPayment:@"words0001" success:^(SKPaymentTransaction *transaction) {
-                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-                [defaults setObject:@(1) forKey:@"didIAP"];
-                [defaults synchronize];
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Thank you for your purchase!", @"In-app purchase")
-                                                                message:nil
-                                                               delegate:nil
-                                                      cancelButtonTitle:NSLocalizedString(@"OK", @"Dismiss the popup")
-                                                      otherButtonTitles:nil];
-                [alert show];
-                [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
-                                                                      action:@"Unlock"
-                                                                       label:@"IAP Success"
-                                                                       value:@(1)] build]];
-            } failure:^(SKPaymentTransaction *transaction, NSError *error) {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"There was a problem with your purchase!", @"In-app purchase")
-                                                                message:nil
-                                                               delegate:nil
-                                                      cancelButtonTitle:NSLocalizedString(@"OK", @"Dismiss the popup")
-                                                      otherButtonTitles:nil];
-                [alert show];
-                [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
-                                                                      action:@"Unlock"
-                                                                       label:@"IAP Error"
-                                                                       value:@(0)] build]];
-            }];
-        } failure:^(NSError *error) {
-            NSLog(@"Something went wrong");
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"There was a problem with your purchase!", @"In-app purchase")
-                                                            message:nil
-                                                           delegate:nil
-                                                  cancelButtonTitle:NSLocalizedString(@"OK", @"Dismiss the popup")
-                                                  otherButtonTitles:nil];
-            [alert show];
-            [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
-                                                                  action:@"Unlock"
-                                                                   label:@"IAP Error"
-                                                                   value:@(0)] build]];
-        }];
-    } else if (buttonIndex == 4) {
-        // See developer's Weixin
-        NSURL *wxurl = [NSURL URLWithString:@"weixin://contacts/profile/fulldecent"];
-        NSURL *backupurl = [NSURL URLWithString:@"http://user.qzone.qq.com/858772059"];
-        if ([[UIApplication sharedApplication] canOpenURL: wxurl]){
-            [[UIApplication sharedApplication] openURL:wxurl];
-        } else {
-            [[UIApplication sharedApplication] openURL:backupurl];
-        }
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"weixin://contacts/profile/fulldecent"]];
-        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Other"
-                                                              action:@"View Weixin"
-                                                               label:nil
-                                                               value:@([[UIApplication sharedApplication] canOpenURL: wxurl])] build]];
-    }
-    
-    // Go back to what it was
-    id tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIScreenName value:@"GameConfigurationViewController"];
-    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 @end

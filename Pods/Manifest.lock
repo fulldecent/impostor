@@ -3,50 +3,51 @@ PODS:
     - GoogleInterchangeUtilities (~> 1.0)
     - GooglePlusUtilities (~> 1.0)
     - GPPCore (~> 1.8)
-  - Google/Analytics (1.3.2):
+  - Google/Analytics (2.0.3):
     - Google/Core
     - GoogleAnalytics (~> 3.12)
-  - Google/AppInvite (1.3.2):
+  - Google/AppInvite (2.0.3):
     - AppInvites (~> 1.0)
     - Google/Core
     - Google/SignIn
-  - Google/Core (1.3.2):
+  - Google/Core (2.0.3):
     - GoogleInterchangeUtilities (~> 1.0)
     - GoogleNetworkingUtilities (~> 1.0)
     - GoogleSymbolUtilities (~> 1.0)
     - GoogleUtilities (~> 1.1)
-  - Google/SignIn (1.3.2):
+  - Google/SignIn (2.0.3):
     - Google/Core
-    - GoogleSignIn (~> 2.0)
+    - GoogleSignIn (~> 3.0)
   - GoogleAnalytics (3.14.0)
-  - GoogleAppUtilities (1.0.0):
+  - GoogleAppUtilities (1.1.0):
     - GoogleSymbolUtilities (~> 1.0)
-  - GoogleAuthUtilities (1.0.1):
+  - GoogleAuthUtilities (2.0.0):
     - GoogleNetworkingUtilities (~> 1.0)
     - GoogleSymbolUtilities (~> 1.0)
-  - GoogleInterchangeUtilities (1.1.0):
+  - GoogleInterchangeUtilities (1.2.0):
     - GoogleSymbolUtilities (~> 1.0)
-  - GoogleNetworkingUtilities (1.0.0):
+  - GoogleNetworkingUtilities (1.2.0):
     - GoogleSymbolUtilities (~> 1.0)
-  - GoogleParsingUtilities (1.0.0):
+  - GoogleParsingUtilities (1.1.0):
     - GoogleNetworkingUtilities (~> 1.0)
     - GoogleSymbolUtilities (~> 1.0)
-  - GooglePlusUtilities (1.0.0):
+  - GooglePlusUtilities (1.1.0):
     - GoogleParsingUtilities (~> 1.0)
     - GoogleSymbolUtilities (~> 1.0)
-  - GoogleSignIn (2.4.0):
+  - GoogleSignIn (3.0.0):
     - GoogleAppUtilities (~> 1.0)
-    - GoogleAuthUtilities (~> 1.0)
+    - GoogleAuthUtilities (~> 2.0)
     - GoogleNetworkingUtilities (~> 1.0)
     - GoogleUtilities (~> 1.0)
-  - GoogleSymbolUtilities (1.0.3)
-  - GoogleUtilities (1.1.0):
-    - GoogleSymbolUtilities (~> 1.0.0)
-  - GPPCore (1.8.1):
+  - GoogleSymbolUtilities (1.1.0)
+  - GoogleUtilities (1.2.0):
+    - GoogleSymbolUtilities (~> 1.0)
+  - GPPCore (1.8.2):
     - GoogleAppUtilities (~> 1.0)
-    - GoogleAuthUtilities (~> 1.0)
+    - GoogleAuthUtilities (~> 2.0)
     - GoogleParsingUtilities (~> 1.0)
-    - GoogleSignIn (~> 2)
+    - GooglePlusUtilities (~> 1.0)
+    - GoogleSignIn (~> 3.0)
     - GoogleUtilities (~> 1.0)
   - iRate (1.11.4)
   - QBFlatButton (1.1)
@@ -55,10 +56,7 @@ PODS:
   - RMStore/Core (0.7.1)
   - SARate (1.0.3):
     - iRate (~> 1.11.4)
-  - SCLAlertView-Objective-C (0.9.1)
-  - TOWebViewController (2.2.3):
-    - TOWebViewController/Core (= 2.2.3)
-  - TOWebViewController/Core (2.2.3)
+  - SCLAlertView-Objective-C (1.0.2)
 
 DEPENDENCIES:
   - Google/Analytics
@@ -67,29 +65,27 @@ DEPENDENCIES:
   - RMStore
   - SARate
   - SCLAlertView-Objective-C
-  - TOWebViewController
 
 SPEC CHECKSUMS:
   AppInvites: d2852d42e22714a67decc8e5809c8c63cc7b8b8f
-  Google: 97618e118111b998cce1d8dd1bd98b82301d72db
+  Google: 61379f0072bc561a7e174d23a6cbe41bd6d8599c
   GoogleAnalytics: 9be1afdb8deeac4bb5f13ca7f7d3b9db2a1f43dc
-  GoogleAppUtilities: c01c6a5671e9da8b9d690fdaec5959d6c2aac699
-  GoogleAuthUtilities: 049ffd3a297cdffd271451b82fd4e75304f15ef3
-  GoogleInterchangeUtilities: d7f7174176fbcf9710f696f1acebad4dbd98ac03
-  GoogleNetworkingUtilities: 292992ab31b7b4ba32809a0e8b40e324cdfb2c0c
-  GoogleParsingUtilities: 9158b059542c2314294cda34fb0384d80456e030
-  GooglePlusUtilities: 380340708aa89c1743735273b293d11db5524f6a
-  GoogleSignIn: 79929b51e6299c69f1197bbd9c7a1367d523ecd8
-  GoogleSymbolUtilities: 82ad9f93d3615244b3f4ce440f5ab2515e8b4f56
-  GoogleUtilities: 8ed9134debe11719097881711464752900668f10
-  GPPCore: 228fdd19eba0e83cba6817004f0d6431d8396d64
+  GoogleAppUtilities: 974598e8ed618c74ead33541d9caffbc3d144266
+  GoogleAuthUtilities: 79e4143c77a08081a480b08df27a066cc8944f43
+  GoogleInterchangeUtilities: 427382e42d8a340038bec37c6fdfd316e14b5fa2
+  GoogleNetworkingUtilities: ec1e9911aca811eb18b7144394fee6168b607785
+  GoogleParsingUtilities: db7ded00e831ba27d30c8c51ebc13668e1d33729
+  GooglePlusUtilities: b59634ae4c7e07df40284c83ccd0d04b943481db
+  GoogleSignIn: 3d571172b8603be39dcb1705d8217146bb76fe62
+  GoogleSymbolUtilities: eb3965ea12710569c7b80db198a39e39b18613f7
+  GoogleUtilities: 85f8ad6b251544286a97163133d042ec95f889c5
+  GPPCore: 0f69740d2bed2417bebfe221b7a3108dde3c1a16
   iRate: 599ed07c854e0695f3c605d1b2a64c67d912acb7
   QBFlatButton: 3cf272985cdbdd04d6bc8b7ae01e4dd62cb09c17
   RMStore: 64ba13a9c040e3b7572765d169f77175cd3243e5
   SARate: fdefa7a5d455041956b7a187103fd6e2bad85241
-  SCLAlertView-Objective-C: b99922177c20ff56305fe9c2987bcf0d38c9ebf7
-  TOWebViewController: ca47b9aeefe66acb3353d197dc8270338540b116
+  SCLAlertView-Objective-C: 25f7ea3a3526dde177d8b8056a0b88fe4187651e
 
-PODFILE CHECKSUM: 420b162d436f0ee3b61db288ff5861393dbc123f
+PODFILE CHECKSUM: c655b72582c64072058e5f07ff3edbe05aa717ef
 
-COCOAPODS: 1.0.0.beta.3
+COCOAPODS: 1.0.0.beta.6

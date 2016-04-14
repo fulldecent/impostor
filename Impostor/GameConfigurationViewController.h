@@ -15,8 +15,9 @@
 - (IBAction)decrementPlayerCount:(id)sender;
 - (IBAction)incrementPlayerCount:(id)sender;
 - (IBAction)showInstructions:(id)sender;
-- (IBAction)showGameOptions:(id)sender;
 - (IBAction)startGame:(id)sender;
 - (IBAction)fadeOutMusic;
+@property (weak, nonatomic) IBOutlet UIButton *buyButton;
+
 
 @end

@@ -4,7 +4,6 @@ use_frameworks!
 
 target 'Impostor' do
   pod 'QBFlatButton'
-  pod 'TOWebViewController'
   pod 'SCLAlertView-Objective-C'
   pod 'Google/Analytics'
   pod 'Google/AppInvite'
@@ -14,7 +13,6 @@ end
 
 target 'Impostor Tests' do
   pod 'QBFlatButton'
-  pod 'TOWebViewController'
   pod 'SCLAlertView-Objective-C'
   pod 'Google/Analytics'
   pod 'Google/AppInvite'

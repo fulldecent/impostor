@@ -16,7 +16,7 @@ install_framework()
     local source="$1"
   fi
 
-  local destination="${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
+  local destination="${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
 
   if [ -L "${source}" ]; then
       echo "Symlinked..."
@@ -84,18 +84,16 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-Impostor Tests/QBFlatButton.framework"
-  install_framework "Pods-Impostor Tests/RMStore.framework"
-  install_framework "Pods-Impostor Tests/SARate.framework"
-  install_framework "Pods-Impostor Tests/SCLAlertView_Objective_C.framework"
-  install_framework "Pods-Impostor Tests/TOWebViewController.framework"
-  install_framework "Pods-Impostor Tests/iRate.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/QBFlatButton/QBFlatButton.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/RMStore/RMStore.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SARate/SARate.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SCLAlertView-Objective-C/SCLAlertView_Objective_C.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/iRate/iRate.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-Impostor Tests/QBFlatButton.framework"
-  install_framework "Pods-Impostor Tests/RMStore.framework"
-  install_framework "Pods-Impostor Tests/SARate.framework"
-  install_framework "Pods-Impostor Tests/SCLAlertView_Objective_C.framework"
-  install_framework "Pods-Impostor Tests/TOWebViewController.framework"
-  install_framework "Pods-Impostor Tests/iRate.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/QBFlatButton/QBFlatButton.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/RMStore/RMStore.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SARate/SARate.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SCLAlertView-Objective-C/SCLAlertView_Objective_C.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/iRate/iRate.framework"
 fi

@@ -20,7 +20,7 @@ class TeaseViewController: UIViewController {
         bounceAnimation.repeatCount = 0
         bounceAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
         self.spy.layer.addAnimation(bounceAnimation, forKey: "spin")
-        self.performSelector("close", withObject: self, afterDelay: 5)
+        self.performSelector(#selector(TeaseViewController.close), withObject: self, afterDelay: 5)
     }
     
     func close() {
