@@ -1,8 +1,1 @@
-impostor
-mol
-woordspel
-gezelschapsspel
-game
-plezier
-rpg
-multiplayer
+impostor,mol,woordspel,gezelschapsspel,game,plezier,rpg,multiplayer

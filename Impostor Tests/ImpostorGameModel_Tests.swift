@@ -14,7 +14,7 @@ class ImpostorGameModel_Tests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        self.gameModel = ImpostorGameModel.game()
+        self.gameModel = ImpostorGameModel.game
     }
     
     override func tearDown() {
@@ -22,16 +22,16 @@ class ImpostorGameModel_Tests: XCTestCase {
     }
     
     func testStartGameWithSamePlayers() {
-        var numberOfPlayers: Int = 5
+        let numberOfPlayers = 5
         gameModel.startGameWithNumberOfPlayers(numberOfPlayers)
         XCTAssertEqual(gameModel.numberOfPlayers, numberOfPlayers)
     }
     
     func testGameStatusChangedWhenDoneShowingSecretWords() {
         gameModel.startGameWithNumberOfPlayers(10)
-        XCTAssertEqual(gameModel.gameStatus, .sShowSecretWords)
+        XCTAssertTrue(gameModel.gameStatus == .ShowSecretWords)
         gameModel.doneShowingSecretWords()
-        XCTAssertEqual(gameModel.gameStatus, .sTheImpostorRemains)
+        XCTAssertTrue(gameModel.gameStatus == .TheImpostorRemains)
     }
     
     func testElimanateAPlayer() {

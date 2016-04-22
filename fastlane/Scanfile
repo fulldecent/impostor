@@ -1,13 +1,13 @@
 # For more information about this configuration visit
-# https://github.com/fastlane/gym#gymfile
+# https://github.com/fastlane/scan#scanfile
 
 # In general, you can use the options available
-# gym --help
+# scan --help
 
 # Remove the # in front of the line to enable the option
 
 scheme "Impostor"
 
-# sdk "iphoneos9.0"
+# open_report true
 
-output_directory "./"
+# clean true

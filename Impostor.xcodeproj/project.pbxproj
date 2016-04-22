@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5EA44C0CA4D515F2865D9500 /* Pods_Impostor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C2F938AABF02BA6FCCCE6A /* Pods_Impostor.framework */; };
-		9D4EB18C758ACE9A92689C72 /* Pods_Impostor_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8F59350E970CAB4FCFC0E3 /* Pods_Impostor_Tests.framework */; };
+		57B4A011FA2FA8EE8833005F /* Pods_Impostor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3F0B98C003AC888D8CB1E4 /* Pods_Impostor.framework */; };
+		C047BB0EFC432FBB9EF923CC /* Pods_Impostor_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2C5C0036D6EBAE1BEB9144B /* Pods_Impostor_Tests.framework */; };
 		D9172ECF1C7916FB0018F8C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9172ECE1C7916FB0018F8C3 /* AppDelegate.swift */; };
 		D9172EFD1C7919180018F8C3 /* ImpostorGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9172EFC1C7919180018F8C3 /* ImpostorGameModel.swift */; };
 		D9172F051C7928C70018F8C3 /* ImpostorGameModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9172F041C7928C70018F8C3 /* ImpostorGameModel_Tests.swift */; };
@@ -30,6 +30,7 @@
 		D98CA43C185D67E800746059 /* MainGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA43B185D67E800746059 /* MainGameViewController.m */; };
 		D98CA442185D699E00746059 /* SecretWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA441185D699E00746059 /* SecretWordViewController.m */; };
 		D98CA445185E1C8C00746059 /* EliminationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA444185E1C8C00746059 /* EliminationViewController.m */; };
+		D98E26171CC0318F00D7D584 /* ImpostorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E26161CC0318F00D7D584 /* ImpostorUITests.swift */; };
 		D99673011AB343050033780B /* teaseColors.png in Resources */ = {isa = PBXBuildFile; fileRef = D99672FF1AB343050033780B /* teaseColors.png */; };
 		D99673041AB3441A0033780B /* teaseSpy.png in Resources */ = {isa = PBXBuildFile; fileRef = D99673031AB3441A0033780B /* teaseSpy.png */; };
 		D9A2405F18D50DF7005D4DCD /* camera.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A2405E18D50DF7005D4DCD /* camera.mp3 */; };
@@ -67,9 +68,17 @@
 		D9D62B2C1CBF49D900A0E522 /* money-paid.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D62B2B1CBF49D900A0E522 /* money-paid.png */; };
 		D9DD5CBC1B9A209B00CBDE5A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DD5CBB1B9A209B00CBDE5A /* StoreKit.framework */; };
 		D9DD5CBF1B9A400600CBDE5A /* gameWordsMore.json in Resources */ = {isa = PBXBuildFile; fileRef = D9DD5CBD1B9A400600CBDE5A /* gameWordsMore.json */; };
+		D9FFE8371CC031E400A66159 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FFE8361CC031E400A66159 /* SnapshotHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		D98E26191CC0318F00D7D584 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D98CA3F0185D338600746059 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D98CA3F7185D338600746059;
+			remoteInfo = Impostor;
+		};
 		D9917B2A19E1DB7700E2F104 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D98CA3F0185D338600746059 /* Project object */;
@@ -101,13 +110,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2021EB242D63D06605DA155F /* Pods-Impostor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Impostor.release.xcconfig"; path = "Pods/Target Support Files/Pods-Impostor/Pods-Impostor.release.xcconfig"; sourceTree = "<group>"; };
 		24CD1AC7A707B6D48C2D14BD /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B8F59350E970CAB4FCFC0E3 /* Pods_Impostor_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Impostor_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		45C2F938AABF02BA6FCCCE6A /* Pods_Impostor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Impostor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		53FA8EF3857574DB5263E7DA /* Pods-Impostor Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Impostor Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Impostor Tests/Pods-Impostor Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		687C2D2FB468340744092D05 /* Pods-Impostor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Impostor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Impostor/Pods-Impostor.debug.xcconfig"; sourceTree = "<group>"; };
-		CB890763B72DDA2F60F92F19 /* Pods-Impostor Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Impostor Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Impostor Tests/Pods-Impostor Tests.release.xcconfig"; sourceTree = "<group>"; };
+		353C003049CC82481010BA1F /* Pods-Impostor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Impostor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Impostor/Pods-Impostor.debug.xcconfig"; sourceTree = "<group>"; };
+		67697929B90F51CA6056B42D /* Pods-Impostor Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Impostor Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Impostor Tests/Pods-Impostor Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		9D6FAD2E5AEDD2ABAEE4B440 /* Pods-Impostor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Impostor.release.xcconfig"; path = "Pods/Target Support Files/Pods-Impostor/Pods-Impostor.release.xcconfig"; sourceTree = "<group>"; };
+		B226851C9187060ED11B0C63 /* Pods-Impostor Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Impostor Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Impostor Tests/Pods-Impostor Tests.release.xcconfig"; sourceTree = "<group>"; };
+		B2C5C0036D6EBAE1BEB9144B /* Pods_Impostor_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Impostor_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90C9E8F18A98C5000DEF541 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		D90C9E9018A98C5000DEF541 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D90C9E9118A98C5000DEF541 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -156,6 +164,9 @@
 		D98CA441185D699E00746059 /* SecretWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecretWordViewController.m; sourceTree = "<group>"; };
 		D98CA443185E1C8C00746059 /* EliminationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EliminationViewController.h; sourceTree = "<group>"; };
 		D98CA444185E1C8C00746059 /* EliminationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = EliminationViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		D98E26141CC0318E00D7D584 /* ImpostorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImpostorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D98E26161CC0318F00D7D584 /* ImpostorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorUITests.swift; sourceTree = "<group>"; };
+		D98E26181CC0318F00D7D584 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9917B2419E1DB7700E2F104 /* Impostor Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Impostor Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9917B2719E1DB7700E2F104 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D99672FF1AB343050033780B /* teaseColors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teaseColors.png; sourceTree = "<group>"; };
@@ -223,6 +234,8 @@
 		D9DD5CC51B9A401D00CBDE5A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/gameWordsMore.json; sourceTree = "<group>"; };
 		D9DD5CC61B9A401E00CBDE5A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/gameWordsMore.json; sourceTree = "<group>"; };
 		D9DD5CC71B9A401E00CBDE5A /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = nl; path = nl.lproj/gameWordsMore.json; sourceTree = "<group>"; };
+		D9FFE8361CC031E400A66159 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		DB3F0B98C003AC888D8CB1E4 /* Pods_Impostor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Impostor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,7 +255,14 @@
 				D98CA400185D338600746059 /* UIKit.framework in Frameworks */,
 				D98CA3FC185D338600746059 /* Foundation.framework in Frameworks */,
 				D9DD5CBC1B9A209B00CBDE5A /* StoreKit.framework in Frameworks */,
-				5EA44C0CA4D515F2865D9500 /* Pods_Impostor.framework in Frameworks */,
+				57B4A011FA2FA8EE8833005F /* Pods_Impostor.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D98E26111CC0318E00D7D584 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,20 +270,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D4EB18C758ACE9A92689C72 /* Pods_Impostor_Tests.framework in Frameworks */,
+				C047BB0EFC432FBB9EF923CC /* Pods_Impostor_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		63DD38845C54112969C700B7 /* Pods */ = {
+		BA82FAC0A962502B1FA2FD3A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				687C2D2FB468340744092D05 /* Pods-Impostor.debug.xcconfig */,
-				2021EB242D63D06605DA155F /* Pods-Impostor.release.xcconfig */,
-				53FA8EF3857574DB5263E7DA /* Pods-Impostor Tests.debug.xcconfig */,
-				CB890763B72DDA2F60F92F19 /* Pods-Impostor Tests.release.xcconfig */,
+				353C003049CC82481010BA1F /* Pods-Impostor.debug.xcconfig */,
+				9D6FAD2E5AEDD2ABAEE4B440 /* Pods-Impostor.release.xcconfig */,
+				67697929B90F51CA6056B42D /* Pods-Impostor Tests.debug.xcconfig */,
+				B226851C9187060ED11B0C63 /* Pods-Impostor Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -273,9 +293,10 @@
 			children = (
 				D98CA401185D338600746059 /* Impostor */,
 				D9917B2519E1DB7700E2F104 /* Impostor Tests */,
+				D98E26151CC0318E00D7D584 /* ImpostorUITests */,
 				D98CA3FA185D338600746059 /* Frameworks */,
 				D98CA3F9185D338600746059 /* Products */,
-				63DD38845C54112969C700B7 /* Pods */,
+				BA82FAC0A962502B1FA2FD3A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -284,6 +305,7 @@
 			children = (
 				D98CA3F8185D338600746059 /* Impostor.app */,
 				D9917B2419E1DB7700E2F104 /* Impostor Tests.xctest */,
+				D98E26141CC0318E00D7D584 /* ImpostorUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -305,8 +327,8 @@
 				D98CA3FF185D338600746059 /* UIKit.framework */,
 				D98CA41D185D338600746059 /* XCTest.framework */,
 				24CD1AC7A707B6D48C2D14BD /* Pods.framework */,
-				45C2F938AABF02BA6FCCCE6A /* Pods_Impostor.framework */,
-				2B8F59350E970CAB4FCFC0E3 /* Pods_Impostor_Tests.framework */,
+				DB3F0B98C003AC888D8CB1E4 /* Pods_Impostor.framework */,
+				B2C5C0036D6EBAE1BEB9144B /* Pods_Impostor_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -384,6 +406,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D98E26151CC0318E00D7D584 /* ImpostorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D98E26161CC0318F00D7D584 /* ImpostorUITests.swift */,
+				D98E26181CC0318F00D7D584 /* Info.plist */,
+				D9FFE8361CC031E400A66159 /* SnapshotHelper.swift */,
+			);
+			path = ImpostorUITests;
+			sourceTree = "<group>";
+		};
 		D9917B2519E1DB7700E2F104 /* Impostor Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -416,6 +448,24 @@
 			productReference = D98CA3F8185D338600746059 /* Impostor.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D98E26131CC0318E00D7D584 /* ImpostorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D98E261D1CC0318F00D7D584 /* Build configuration list for PBXNativeTarget "ImpostorUITests" */;
+			buildPhases = (
+				D98E26101CC0318E00D7D584 /* Sources */,
+				D98E26111CC0318E00D7D584 /* Frameworks */,
+				D98E26121CC0318E00D7D584 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D98E261A1CC0318F00D7D584 /* PBXTargetDependency */,
+			);
+			name = ImpostorUITests;
+			productName = ImpostorUITests;
+			productReference = D98E26141CC0318E00D7D584 /* ImpostorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		D9917B2319E1DB7700E2F104 /* Impostor Tests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9917B2C19E1DB7700E2F104 /* Build configuration list for PBXNativeTarget "Impostor Tests" */;
@@ -446,6 +496,7 @@
 		D98CA3F0185D338600746059 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "William Entriken";
 				TargetAttributes = {
@@ -456,6 +507,10 @@
 								enabled = 1;
 							};
 						};
+					};
+					D98E26131CC0318E00D7D584 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = D98CA3F7185D338600746059;
 					};
 					D9917B2319E1DB7700E2F104 = {
 						CreatedOnToolsVersion = 6.0;
@@ -486,6 +541,7 @@
 			targets = (
 				D98CA3F7185D338600746059 /* Impostor */,
 				D9917B2319E1DB7700E2F104 /* Impostor Tests */,
+				D98E26131CC0318E00D7D584 /* ImpostorUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -526,6 +582,13 @@
 				D98CA40F185D338600746059 /* Main.storyboard in Resources */,
 				D9D62B251CBF410000A0E522 /* minus.png in Resources */,
 				D98CA406185D338600746059 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D98E26121CC0318E00D7D584 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,6 +716,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D98E26101CC0318E00D7D584 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D98E26171CC0318F00D7D584 /* ImpostorUITests.swift in Sources */,
+				D9FFE8371CC031E400A66159 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D9917B2019E1DB7700E2F104 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -664,6 +736,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		D98E261A1CC0318F00D7D584 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D98CA3F7185D338600746059 /* Impostor */;
+			targetProxy = D98E26191CC0318F00D7D584 /* PBXContainerItemProxy */;
+		};
 		D9917B2B19E1DB7700E2F104 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D98CA3F7185D338600746059 /* Impostor */;
@@ -847,7 +924,7 @@
 		};
 		D98CA42E185D338600746059 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 687C2D2FB468340744092D05 /* Pods-Impostor.debug.xcconfig */;
+			baseConfigurationReference = 353C003049CC82481010BA1F /* Pods-Impostor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -874,7 +951,7 @@
 		};
 		D98CA42F185D338600746059 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2021EB242D63D06605DA155F /* Pods-Impostor.release.xcconfig */;
+			baseConfigurationReference = 9D6FAD2E5AEDD2ABAEE4B440 /* Pods-Impostor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -898,9 +975,49 @@
 			};
 			name = Release;
 		};
+		D98E261B1CC0318F00D7D584 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = ImpostorUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = net.phor.Impostor.ImpostorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_TARGET_NAME = Impostor;
+			};
+			name = Debug;
+		};
+		D98E261C1CC0318F00D7D584 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = ImpostorUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = net.phor.Impostor.ImpostorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Impostor;
+			};
+			name = Release;
+		};
 		D9917B2D19E1DB7700E2F104 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 53FA8EF3857574DB5263E7DA /* Pods-Impostor Tests.debug.xcconfig */;
+			baseConfigurationReference = 67697929B90F51CA6056B42D /* Pods-Impostor Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -928,7 +1045,7 @@
 		};
 		D9917B2E19E1DB7700E2F104 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CB890763B72DDA2F60F92F19 /* Pods-Impostor Tests.release.xcconfig */;
+			baseConfigurationReference = B226851C9187060ED11B0C63 /* Pods-Impostor Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -966,6 +1083,15 @@
 			buildConfigurations = (
 				D98CA42E185D338600746059 /* Debug */,
 				D98CA42F185D338600746059 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D98E261D1CC0318F00D7D584 /* Build configuration list for PBXNativeTarget "ImpostorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D98E261B1CC0318F00D7D584 /* Debug */,
+				D98E261C1CC0318F00D7D584 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

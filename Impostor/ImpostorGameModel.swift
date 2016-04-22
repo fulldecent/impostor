@@ -60,6 +60,7 @@ class ImpostorGameModel: NSObject {
             }
             playerEliminated.append(false)
         }
+        gameStatus = .ShowSecretWords
     }
 
     func doneShowingSecretWords() {
