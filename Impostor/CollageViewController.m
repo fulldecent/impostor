@@ -96,13 +96,14 @@
     UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
     activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact];
     
-    [activityVC setCompletionHandler:^(NSString *activityType, BOOL completed) {
+    activityVC.completionWithItemsHandler = ^(NSString *activityType, BOOL completed, NSArray *returnedItems, NSError *activityError) {
         id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
         [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Sharing"
                                                               action:@"Did share"
                                                                label:activityType
                                                                value:@(completed)] build]];
-    }];
+    };
+    
     [self presentViewController:activityVC animated:YES completion:nil];
 }
 
