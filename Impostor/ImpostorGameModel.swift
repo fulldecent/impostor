@@ -47,19 +47,13 @@ class ImpostorGameModel: NSObject {
         let reverse = arc4random_uniform(2) == 0
         normalWord = chosenWordSet[reverse ? 1 : 0]
         impostorWord = chosenWordSet[reverse ? 0 : 1]
-        
         numberOfPlayers = numPlayers
+        playerRoles = [PlayerRoles](count: numberOfPlayers, repeatedValue: .NormalPlayer)
+        playerWords = [String](count: numberOfPlayers, repeatedValue: self.normalWord)
+        playerEliminated = [Bool](count: numberOfPlayers, repeatedValue: false)
         let impostorIndex = Int(arc4random_uniform(UInt32(numberOfPlayers)))
-        for playerNumber in 0 ..< numberOfPlayers {
-            if impostorIndex == playerNumber {
-                playerRoles.append(.Impostor)
-                playerWords.append(self.impostorWord)
-            } else {
-                playerRoles.append(.NormalPlayer)
-                playerWords.append(self.normalWord)
-            }
-            playerEliminated.append(false)
-        }
+        playerRoles[impostorIndex] = .Impostor
+        playerWords[impostorIndex] = self.impostorWord
         gameStatus = .ShowSecretWords
     }
 

@@ -18,7 +18,7 @@ class CachedPersistentJPEGImageStore: NSObject {
         UIImageJPEGRepresentation(image, 0.9)?.writeToURL(urlForImageWithName(name), atomically: true)
     }
     
-    func imageWithName(name: String) -> UIImage {
+    func imageWithName(name: String) -> UIImage? {
         if TARGET_OS_SIMULATOR > 0 {
             if (name == "1") {
                 return UIImage(contentsOfFile: "/Users/fulldecent/Developer/Impostor media/1.jpg")!
@@ -42,8 +42,7 @@ class CachedPersistentJPEGImageStore: NSObject {
         if let data = NSData(contentsOfURL: self.urlForImageWithName(name)) {
             return UIImage(data: data)!
         }
-//FIXME: a hack until we can return NIL
-        return UIImage(named: "defaultHeadshot.png")!
+        return nil
     }
     
     func deleteImageWithName(name: String) {

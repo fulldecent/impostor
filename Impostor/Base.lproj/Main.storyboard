@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="JxD-3W-7Z8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="JxD-3W-7Z8">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -283,7 +283,7 @@
         <!--Main Game-->
         <scene sceneID="rPF-7i-Cej">
             <objects>
-                <viewController id="ay1-QR-sKT" userLabel="Main Game" customClass="MainGameViewController" sceneMemberID="viewController">
+                <viewController id="ay1-QR-sKT" userLabel="Main Game" customClass="MainGameViewController" customModule="Impostor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uAA-V8-zQt"/>
                         <viewControllerLayoutGuide type="bottom" id="oHz-PU-Xl8"/>
@@ -508,7 +508,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dMn-yX-CQw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2098" y="872"/>
+            <point key="canvasLocation" x="1632" y="838"/>
         </scene>
         <!--Results-->
         <scene sceneID="8WK-Rq-gcF">
@@ -613,12 +613,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Llt-Eo-Aa2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="875" y="760"/>
+            <point key="canvasLocation" x="1070" y="838"/>
         </scene>
         <!--Secret Word-->
         <scene sceneID="PW9-5o-MOI">
             <objects>
-                <viewController storyboardIdentifier="secretWord" id="UfS-zG-e6N" userLabel="Secret Word" customClass="SecretWordViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="secretWord" id="UfS-zG-e6N" userLabel="Secret Word" customClass="SecretWordViewController" customModule="Impostor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ehm-2p-QUA"/>
                         <viewControllerLayoutGuide type="bottom" id="AKT-Xd-ban"/>
@@ -672,7 +672,7 @@ For your eyes only</string>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
                                 <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
-                                <state key="normal" image="remove.png">
+                                <state key="normal" image="close.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -712,9 +712,9 @@ For your eyes only</string>
                     </view>
                     <navigationItem key="navigationItem" id="AFD-3f-jfB"/>
                     <connections>
-                        <outlet property="playerImage" destination="Cyq-QX-c2g" id="pzN-9s-eF5"/>
-                        <outlet property="playerLabel" destination="8dU-HJ-O6j" id="Usz-35-jAh"/>
-                        <outlet property="topSecretLabel" destination="blE-eR-isE" id="7hJ-li-YhS"/>
+                        <outlet property="playerImage" destination="Cyq-QX-c2g" id="OHw-mq-Mjx"/>
+                        <outlet property="playerLabel" destination="8dU-HJ-O6j" id="ft2-JG-eqy"/>
+                        <outlet property="topSecretLabel" destination="blE-eR-isE" id="v1w-hy-5il"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ocE-tV-72G" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -751,7 +751,6 @@ For your eyes only</string>
         <image name="money.png" width="128" height="128"/>
         <image name="plus.png" width="128" height="128"/>
         <image name="question.png" width="128" height="128"/>
-        <image name="remove.png" width="128" height="128"/>
         <image name="share.png" width="128" height="128"/>
         <image name="teaseColors.png" width="390" height="185"/>
         <image name="teaseSpy.png" width="552" height="1500"/>
