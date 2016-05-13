@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		57B4A011FA2FA8EE8833005F /* Pods_Impostor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3F0B98C003AC888D8CB1E4 /* Pods_Impostor.framework */; };
 		C047BB0EFC432FBB9EF923CC /* Pods_Impostor_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2C5C0036D6EBAE1BEB9144B /* Pods_Impostor_Tests.framework */; };
+		D9135CEF1CE67A8600B8DD3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9135CEE1CE67A8600B8DD3B /* GoogleService-Info.plist */; };
 		D9172ECF1C7916FB0018F8C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9172ECE1C7916FB0018F8C3 /* AppDelegate.swift */; };
 		D9172EFD1C7919180018F8C3 /* ImpostorGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9172EFC1C7919180018F8C3 /* ImpostorGameModel.swift */; };
 		D9172F051C7928C70018F8C3 /* ImpostorGameModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9172F041C7928C70018F8C3 /* ImpostorGameModel_Tests.swift */; };
-		D959822C1B8AA4400044CDC0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D959822B1B8AA4400044CDC0 /* GoogleService-Info.plist */; };
 		D9645FE71C7937250067F18B /* TeaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9645FE61C7937250067F18B /* TeaseViewController.swift */; };
 		D9645FE91C7937C90067F18B /* CachedPersistentJPEGImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9645FE81C7937C90067F18B /* CachedPersistentJPEGImageStore.swift */; };
 		D9744FC418B5C1CA00697357 /* CollageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9744FC318B5C1CA00697357 /* CollageViewController.m */; };
@@ -119,6 +119,7 @@
 		D90C9E9018A98C5000DEF541 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D90C9E9118A98C5000DEF541 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D90C9E9218A98C5000DEF541 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/gameWords.json; sourceTree = "<group>"; };
+		D9135CEE1CE67A8600B8DD3B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D9172ECD1C7916FB0018F8C3 /* Impostor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Impostor-Bridging-Header.h"; sourceTree = "<group>"; };
 		D9172ECE1C7916FB0018F8C3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9172EFC1C7919180018F8C3 /* ImpostorGameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImpostorGameModel.swift; sourceTree = "<group>"; };
@@ -135,7 +136,6 @@
 		D93B5CF5189EA8A900E90ACD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D93B5CF6189EA8A900E90ACD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D93B5CF7189EA8A900E90ACD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ja; path = ja.lproj/gameWords.json; sourceTree = "<group>"; };
-		D959822B1B8AA4400044CDC0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D9645FE61C7937250067F18B /* TeaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeaseViewController.swift; sourceTree = "<group>"; };
 		D9645FE81C7937C90067F18B /* CachedPersistentJPEGImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachedPersistentJPEGImageStore.swift; sourceTree = "<group>"; };
 		D9744FC218B5C1CA00697357 /* CollageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollageViewController.h; sourceTree = "<group>"; };
@@ -371,9 +371,9 @@
 				D9D62B201CBF410000A0E522 /* share.png */,
 				D9D62B211CBF410000A0E522 /* wechat.png */,
 				D9D62B2B1CBF49D900A0E522 /* money-paid.png */,
-				D959822B1B8AA4400044CDC0 /* GoogleService-Info.plist */,
 				D99673031AB3441A0033780B /* teaseSpy.png */,
 				D99672FF1AB343050033780B /* teaseColors.png */,
+				D9135CEE1CE67A8600B8DD3B /* GoogleService-Info.plist */,
 				D98CA403185D338600746059 /* Impostor-Info.plist */,
 				D98CA404185D338600746059 /* InfoPlist.strings */,
 				D98CA409185D338600746059 /* Impostor-Prefix.pch */,
@@ -557,9 +557,9 @@
 				D9A4F779185E80040060AA2D /* peek.mp3 in Resources */,
 				D9CDEBF0187A4B6C00AE4163 /* gameWords.json in Resources */,
 				D9D62B2A1CBF410000A0E522 /* wechat.png in Resources */,
+				D9135CEF1CE67A8600B8DD3B /* GoogleService-Info.plist in Resources */,
 				D98CA417185D338600746059 /* Images.xcassets in Resources */,
 				D9D432F919AC0E4200E0A408 /* help2.png in Resources */,
-				D959822C1B8AA4400044CDC0 /* GoogleService-Info.plist in Resources */,
 				D9D62B241CBF410000A0E522 /* lightbulb.png in Resources */,
 				D9A4F773185E7DEA0060AA2D /* intro.mp3 in Resources */,
 				D9D432FA19AC0E4200E0A408 /* help3.png in Resources */,
