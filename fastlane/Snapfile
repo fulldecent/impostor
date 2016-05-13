@@ -11,15 +11,15 @@
 # ])
 
 languages([
-  'en-US',
   'de-DE',
+  'en-US',
   'es-ES',
   'fr-FR',
   'ja-JP',
   'ko-KR',
   'nl-NL',
   'ru-RU',
-  'cmn-Hans'
+  'zh-Hans'
 ])
 
 # Arguments to pass to the app on launch. See https://github.com/fastlane/snapshot#launch-arguments

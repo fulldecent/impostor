@@ -17,7 +17,6 @@
 #import "GAIDictionaryBuilder.h"
 #import "GAIFields.h"
 #import "RMStore.h"
-#import "OpenInChromeController.h"
 
 @interface GameConfigurationViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (nonatomic) NSInteger playerCount;
@@ -184,7 +183,6 @@
     AudioServicesPlaySystemSound (self.buttonPress);
     NSURL *url = [NSURL URLWithString:@"http://phor.net/apps/impostor/newWords.php"];
     [[UIApplication sharedApplication] openURL:url];
-//    [[OpenInChromeController sharedInstance] openInChrome:url];
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Gameplay"
                                                           action:@"Configuration"

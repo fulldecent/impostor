@@ -15,7 +15,6 @@
 		D959822C1B8AA4400044CDC0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D959822B1B8AA4400044CDC0 /* GoogleService-Info.plist */; };
 		D9645FE71C7937250067F18B /* TeaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9645FE61C7937250067F18B /* TeaseViewController.swift */; };
 		D9645FE91C7937C90067F18B /* CachedPersistentJPEGImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9645FE81C7937C90067F18B /* CachedPersistentJPEGImageStore.swift */; };
-		D967A0F81CBEF91200F1D824 /* OpenInChromeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D967A0F71CBEF91200F1D824 /* OpenInChromeController.m */; };
 		D9744FC418B5C1CA00697357 /* CollageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9744FC318B5C1CA00697357 /* CollageViewController.m */; };
 		D978345D1909CA01009C3024 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D978345C1909CA01009C3024 /* Twitter.framework */; };
 		D978345F1909CA08009C3024 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D978345E1909CA08009C3024 /* MessageUI.framework */; };
@@ -139,8 +138,6 @@
 		D959822B1B8AA4400044CDC0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D9645FE61C7937250067F18B /* TeaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeaseViewController.swift; sourceTree = "<group>"; };
 		D9645FE81C7937C90067F18B /* CachedPersistentJPEGImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachedPersistentJPEGImageStore.swift; sourceTree = "<group>"; };
-		D967A0F61CBEF91200F1D824 /* OpenInChromeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenInChromeController.h; sourceTree = "<group>"; };
-		D967A0F71CBEF91200F1D824 /* OpenInChromeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenInChromeController.m; sourceTree = "<group>"; };
 		D9744FC218B5C1CA00697357 /* CollageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollageViewController.h; sourceTree = "<group>"; };
 		D9744FC318B5C1CA00697357 /* CollageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollageViewController.m; sourceTree = "<group>"; };
 		D978345C1909CA01009C3024 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
@@ -355,8 +352,6 @@
 				D9D432F419AC0E4200E0A408 /* help4.png */,
 				D9D432F519AC0E4200E0A408 /* help2.png */,
 				D9D432F619AC0E4200E0A408 /* help3.png */,
-				D967A0F61CBEF91200F1D824 /* OpenInChromeController.h */,
-				D967A0F71CBEF91200F1D824 /* OpenInChromeController.m */,
 				D98CA402185D338600746059 /* Supporting Files */,
 				D9172ECD1C7916FB0018F8C3 /* Impostor-Bridging-Header.h */,
 			);
@@ -702,7 +697,6 @@
 				D9172ECF1C7916FB0018F8C3 /* AppDelegate.swift in Sources */,
 				D98CA415185D338600746059 /* GameConfigurationViewController.m in Sources */,
 				D9645FE91C7937C90067F18B /* CachedPersistentJPEGImageStore.swift in Sources */,
-				D967A0F81CBEF91200F1D824 /* OpenInChromeController.m in Sources */,
 				D9645FE71C7937250067F18B /* TeaseViewController.swift in Sources */,
 				D9172EFD1C7919180018F8C3 /* ImpostorGameModel.swift in Sources */,
 				D9A4F763185E310A0060AA2D /* ResultsViewController.m in Sources */,
@@ -975,6 +969,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -995,6 +990,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";

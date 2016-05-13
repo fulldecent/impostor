@@ -216,6 +216,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVR-0R-kXy" customClass="QBFlatButton">
                                 <rect key="frame" x="16" y="460" width="288" height="40"/>
+                                <accessibility key="accessibilityConfiguration" identifier="startGame"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="6"/>
                                 <state key="normal" title="Start Game">
@@ -644,6 +645,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKr-a3-6GX" customClass="QBFlatButton">
                                 <rect key="frame" x="20" y="68" width="280" height="40"/>
+                                <accessibility key="accessibilityConfiguration" identifier="showSecretWord"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="JH1-g6-u27"/>
                                 </constraints>
