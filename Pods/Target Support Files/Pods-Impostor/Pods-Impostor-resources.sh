@@ -48,8 +48,8 @@ EOM
       ibtool --reference-external-strings-file --errors --warnings --notices --minimum-deployment-target ${!DEPLOYMENT_TARGET_SETTING_NAME} --output-format human-readable-text --compile "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename \"$RESOURCE_PATH\" .storyboard`.storyboardc" "$RESOURCE_PATH" --sdk "${SDKROOT}" ${TARGET_DEVICE_ARGS}
       ;;
     *.xib)
-      echo "ibtool --reference-external-strings-file --errors --warnings --notices --minimum-deployment-target ${!DEPLOYMENT_TARGET_SETTING_NAME} --output-format human-readable-text --compile ${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename \"$RESOURCE_PATH\" .xib`.nib $RESOURCE_PATH --sdk ${SDKROOT}"
-      ibtool --reference-external-strings-file --errors --warnings --notices --minimum-deployment-target ${!DEPLOYMENT_TARGET_SETTING_NAME} --output-format human-readable-text --compile "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename \"$RESOURCE_PATH\" .xib`.nib" "$RESOURCE_PATH" --sdk "${SDKROOT}"
+      echo "ibtool --reference-external-strings-file --errors --warnings --notices --minimum-deployment-target ${!DEPLOYMENT_TARGET_SETTING_NAME} --output-format human-readable-text --compile ${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename \"$RESOURCE_PATH\" .xib`.nib $RESOURCE_PATH --sdk ${SDKROOT} ${TARGET_DEVICE_ARGS}"
+      ibtool --reference-external-strings-file --errors --warnings --notices --minimum-deployment-target ${!DEPLOYMENT_TARGET_SETTING_NAME} --output-format human-readable-text --compile "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename \"$RESOURCE_PATH\" .xib`.nib" "$RESOURCE_PATH" --sdk "${SDKROOT}" ${TARGET_DEVICE_ARGS}
       ;;
     *.framework)
       echo "mkdir -p ${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
@@ -80,17 +80,13 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "AppInvites/Resources/GINInviteResources.bundle"
-  install_resource "AppInvites/Frameworks/GINInvite.framework/Versions/A/Resources/GINInviteResources.bundle"
-  install_resource "GPPCore/Resources/GPPACLPickerResources.bundle"
-  install_resource "GPPCore/Frameworks/GPPCore.framework/Versions/A/Resources/GPPACLPickerResources.bundle"
+  install_resource "FirebaseDynamicLinks/Frameworks/FirebaseDynamicLinks.framework/Resources/GINInviteResources.bundle"
+  install_resource "FirebaseDynamicLinks/Frameworks/FirebaseDynamicLinks.framework/Resources/GPPACLPickerResources.bundle"
   install_resource "GoogleSignIn/Resources/GoogleSignIn.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "AppInvites/Resources/GINInviteResources.bundle"
-  install_resource "AppInvites/Frameworks/GINInvite.framework/Versions/A/Resources/GINInviteResources.bundle"
-  install_resource "GPPCore/Resources/GPPACLPickerResources.bundle"
-  install_resource "GPPCore/Frameworks/GPPCore.framework/Versions/A/Resources/GPPACLPickerResources.bundle"
+  install_resource "FirebaseDynamicLinks/Frameworks/FirebaseDynamicLinks.framework/Resources/GINInviteResources.bundle"
+  install_resource "FirebaseDynamicLinks/Frameworks/FirebaseDynamicLinks.framework/Resources/GPPACLPickerResources.bundle"
   install_resource "GoogleSignIn/Resources/GoogleSignIn.bundle"
 fi
 

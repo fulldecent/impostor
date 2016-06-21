@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import Google
+import FirebaseAnalytics
+import SwiftyiRate
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,14 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        var configureError: NSError?
-        GGLContext.sharedInstance().configureWithError(&configureError)
-        assert(configureError == nil, "Error configuring Google services: \(configureError)")
-
-        // Optional: configure GAI options.
-        let gai = GAI.sharedInstance()
-        gai.trackUncaughtExceptions = true
-        gai.dryRun = true
+        FIRApp.configure()
+        SwiftyiRate.sharedInstance.daysUntilPrompt = 5
+        SwiftyiRate.sharedInstance.usesUntilPrompt = 15
         return true
     }
     

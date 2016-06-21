@@ -9,6 +9,7 @@
 import UIKit
 import AudioToolbox
 import SCLAlertView_Objective_C
+import FirebaseAnalytics
 
 class SecretWordViewController: UIViewController {
     @IBOutlet weak var playerLabel: UILabel!
@@ -68,14 +69,12 @@ class SecretWordViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-
-//FIXME: fck google
-///        let tracker = GAI.sharedInstance().defaultTracker
-///        tracker.set(kGAIScreenName, value: "SecretWordViewController")
-///        let builder = GAIDictionaryBuilder.createScreenView()
-///        tracker.send(builder.build() as [NSObject : AnyObject])
-        
         super.viewWillAppear(animated)
+        FIRAnalytics.logEventWithName(kFIREventViewItem, parameters: [
+            kFIRParameterContentType:"view",
+            kFIRParameterItemID:NSStringFromClass(self.dynamicType)
+            ])
+        
         self.playerLabel.text = String(format: NSLocalizedString("Player #%ld", comment: "Current player"), Int(self.playerNumber) + 1)
         
         let imageName = "\(Int(self.playerNumber))"

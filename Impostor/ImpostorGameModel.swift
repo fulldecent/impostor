@@ -62,6 +62,7 @@ class ImpostorGameModel: NSObject {
     }
     
     func eliminatePlayer(playerNumber: Int) {
+        
         assert(playerEliminated[playerNumber] == false)
         playerEliminated[playerNumber] = true
         let remainingPlayerRoles = zip(playerRoles, playerEliminated).flatMap {$1 ? nil : $0}

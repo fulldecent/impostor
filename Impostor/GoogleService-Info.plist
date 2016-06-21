@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>TRACKING_ID</key>
 	<string>UA-52764-17</string>
 	<key>CLIENT_ID</key>
@@ -10,23 +14,29 @@
 	<string>com.googleusercontent.apps.294748297808-elj3bogdktm6g4r6c5ognm7sjnnopp6c</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDUg0xmdIx__Fqqd-Tm-101D6OIkzkAJ0k</string>
+	<key>GCM_SENDER_ID</key>
+	<string>294748297808</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>net.phor.Impostor</string>
 	<key>PROJECT_ID</key>
 	<string>impostor-728b7</string>
+	<key>STORAGE_BUCKET</key>
+	<string>impostor-728b7.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false/>
+	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
 	<true/>
 	<key>IS_APPINVITE_ENABLED</key>
 	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<false/>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<false/>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:294748297808:ios:4613cadc4613ad97</string>
+	<key>DATABASE_URL</key>
+	<string>https://impostor-728b7.firebaseio.com</string>
 </dict>
 </plist>

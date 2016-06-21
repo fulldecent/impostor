@@ -1,0 +1,6 @@
+framework module SwiftyiRate {
+  umbrella header "SwiftyiRate-umbrella.h"
+
+  export *
+  module * { export * }
+}

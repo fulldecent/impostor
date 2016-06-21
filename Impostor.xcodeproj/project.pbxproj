@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		57B4A011FA2FA8EE8833005F /* Pods_Impostor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3F0B98C003AC888D8CB1E4 /* Pods_Impostor.framework */; };
 		C047BB0EFC432FBB9EF923CC /* Pods_Impostor_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2C5C0036D6EBAE1BEB9144B /* Pods_Impostor_Tests.framework */; };
-		D9135CEF1CE67A8600B8DD3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9135CEE1CE67A8600B8DD3B /* GoogleService-Info.plist */; };
+		D900BA101D187A7D0092EB78 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D900BA0F1D187A7D0092EB78 /* GoogleService-Info.plist */; };
+		D900BA121D187DE20092EB78 /* GameConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D900BA111D187DE20092EB78 /* GameConfigurationViewController.swift */; };
+		D900BA141D1899AD0092EB78 /* EliminationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D900BA131D1899AD0092EB78 /* EliminationViewController.swift */; };
+		D900BA161D18A0D50092EB78 /* CollageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D900BA151D18A0D50092EB78 /* CollageViewController.swift */; };
+		D900BA181D198F9C0092EB78 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D900BA171D198F9C0092EB78 /* ResultsViewController.swift */; };
 		D9172ECF1C7916FB0018F8C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9172ECE1C7916FB0018F8C3 /* AppDelegate.swift */; };
 		D9172EFD1C7919180018F8C3 /* ImpostorGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9172EFC1C7919180018F8C3 /* ImpostorGameModel.swift */; };
 		D9172F051C7928C70018F8C3 /* ImpostorGameModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9172F041C7928C70018F8C3 /* ImpostorGameModel_Tests.swift */; };
 		D9645FE71C7937250067F18B /* TeaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9645FE61C7937250067F18B /* TeaseViewController.swift */; };
 		D9645FE91C7937C90067F18B /* CachedPersistentJPEGImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9645FE81C7937C90067F18B /* CachedPersistentJPEGImageStore.swift */; };
-		D9744FC418B5C1CA00697357 /* CollageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9744FC318B5C1CA00697357 /* CollageViewController.m */; };
 		D978345D1909CA01009C3024 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D978345C1909CA01009C3024 /* Twitter.framework */; };
 		D978345F1909CA08009C3024 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D978345E1909CA08009C3024 /* MessageUI.framework */; };
 		D97834611909CA10009C3024 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D97834601909CA0F009C3024 /* QuartzCore.framework */; };
@@ -26,14 +29,11 @@
 		D98CA400185D338600746059 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98CA3FF185D338600746059 /* UIKit.framework */; };
 		D98CA406185D338600746059 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D98CA404185D338600746059 /* InfoPlist.strings */; };
 		D98CA40F185D338600746059 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98CA40D185D338600746059 /* Main.storyboard */; };
-		D98CA415185D338600746059 /* GameConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA414185D338600746059 /* GameConfigurationViewController.m */; };
 		D98CA417185D338600746059 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98CA416185D338600746059 /* Images.xcassets */; };
-		D98CA445185E1C8C00746059 /* EliminationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CA444185E1C8C00746059 /* EliminationViewController.m */; };
 		D98E26171CC0318F00D7D584 /* ImpostorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E26161CC0318F00D7D584 /* ImpostorUITests.swift */; };
 		D99673011AB343050033780B /* teaseColors.png in Resources */ = {isa = PBXBuildFile; fileRef = D99672FF1AB343050033780B /* teaseColors.png */; };
 		D99673041AB3441A0033780B /* teaseSpy.png in Resources */ = {isa = PBXBuildFile; fileRef = D99673031AB3441A0033780B /* teaseSpy.png */; };
 		D9A2405F18D50DF7005D4DCD /* camera.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A2405E18D50DF7005D4DCD /* camera.mp3 */; };
-		D9A4F763185E310A0060AA2D /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4F762185E310A0060AA2D /* ResultsViewController.m */; };
 		D9A4F76C185E54480060AA2D /* KxIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4F767185E54480060AA2D /* KxIntroView.m */; };
 		D9A4F76D185E54480060AA2D /* KxIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4F769185E54480060AA2D /* KxIntroViewController.m */; };
 		D9A4F76E185E54480060AA2D /* KxIntroViewPage.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4F76B185E54480060AA2D /* KxIntroViewPage.m */; };
@@ -115,11 +115,15 @@
 		9D6FAD2E5AEDD2ABAEE4B440 /* Pods-Impostor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Impostor.release.xcconfig"; path = "Pods/Target Support Files/Pods-Impostor/Pods-Impostor.release.xcconfig"; sourceTree = "<group>"; };
 		B226851C9187060ED11B0C63 /* Pods-Impostor Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Impostor Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Impostor Tests/Pods-Impostor Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B2C5C0036D6EBAE1BEB9144B /* Pods_Impostor_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Impostor_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D900BA0F1D187A7D0092EB78 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D900BA111D187DE20092EB78 /* GameConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameConfigurationViewController.swift; sourceTree = "<group>"; };
+		D900BA131D1899AD0092EB78 /* EliminationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EliminationViewController.swift; sourceTree = "<group>"; };
+		D900BA151D18A0D50092EB78 /* CollageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollageViewController.swift; sourceTree = "<group>"; };
+		D900BA171D198F9C0092EB78 /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		D90C9E8F18A98C5000DEF541 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		D90C9E9018A98C5000DEF541 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D90C9E9118A98C5000DEF541 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D90C9E9218A98C5000DEF541 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/gameWords.json; sourceTree = "<group>"; };
-		D9135CEE1CE67A8600B8DD3B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D9172ECD1C7916FB0018F8C3 /* Impostor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Impostor-Bridging-Header.h"; sourceTree = "<group>"; };
 		D9172ECE1C7916FB0018F8C3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9172EFC1C7919180018F8C3 /* ImpostorGameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImpostorGameModel.swift; sourceTree = "<group>"; };
@@ -138,8 +142,6 @@
 		D93B5CF7189EA8A900E90ACD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ja; path = ja.lproj/gameWords.json; sourceTree = "<group>"; };
 		D9645FE61C7937250067F18B /* TeaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeaseViewController.swift; sourceTree = "<group>"; };
 		D9645FE81C7937C90067F18B /* CachedPersistentJPEGImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachedPersistentJPEGImageStore.swift; sourceTree = "<group>"; };
-		D9744FC218B5C1CA00697357 /* CollageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollageViewController.h; sourceTree = "<group>"; };
-		D9744FC318B5C1CA00697357 /* CollageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollageViewController.m; sourceTree = "<group>"; };
 		D978345C1909CA01009C3024 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		D978345E1909CA08009C3024 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		D97834601909CA0F009C3024 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -153,12 +155,8 @@
 		D98CA405185D338600746059 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D98CA409185D338600746059 /* Impostor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Impostor-Prefix.pch"; sourceTree = "<group>"; };
 		D98CA40E185D338600746059 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D98CA413185D338600746059 /* GameConfigurationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfigurationViewController.h; sourceTree = "<group>"; };
-		D98CA414185D338600746059 /* GameConfigurationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = GameConfigurationViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D98CA416185D338600746059 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D98CA41D185D338600746059 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		D98CA443185E1C8C00746059 /* EliminationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EliminationViewController.h; sourceTree = "<group>"; };
-		D98CA444185E1C8C00746059 /* EliminationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = EliminationViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D98E26141CC0318E00D7D584 /* ImpostorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImpostorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98E26161CC0318F00D7D584 /* ImpostorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorUITests.swift; sourceTree = "<group>"; };
 		D98E26181CC0318F00D7D584 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -171,8 +169,6 @@
 		D9A2406118D510FF005D4DCD /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D9A2406218D510FF005D4DCD /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D9A2406318D510FF005D4DCD /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = nl; path = nl.lproj/gameWords.json; sourceTree = "<group>"; };
-		D9A4F761185E310A0060AA2D /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
-		D9A4F762185E310A0060AA2D /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ResultsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D9A4F766185E54480060AA2D /* KxIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxIntroView.h; sourceTree = "<group>"; };
 		D9A4F767185E54480060AA2D /* KxIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxIntroView.m; sourceTree = "<group>"; };
 		D9A4F768185E54480060AA2D /* KxIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxIntroViewController.h; sourceTree = "<group>"; };
@@ -339,15 +335,11 @@
 				D9645FE81C7937C90067F18B /* CachedPersistentJPEGImageStore.swift */,
 				D9645FE61C7937250067F18B /* TeaseViewController.swift */,
 				D97AAAA31CCDBDE400B922B6 /* MainGameViewController.swift */,
-				D98CA413185D338600746059 /* GameConfigurationViewController.h */,
-				D98CA414185D338600746059 /* GameConfigurationViewController.m */,
+				D900BA111D187DE20092EB78 /* GameConfigurationViewController.swift */,
 				D97AAAA51CCDC10200B922B6 /* SecretWordViewController.swift */,
-				D98CA443185E1C8C00746059 /* EliminationViewController.h */,
-				D98CA444185E1C8C00746059 /* EliminationViewController.m */,
-				D9A4F761185E310A0060AA2D /* ResultsViewController.h */,
-				D9A4F762185E310A0060AA2D /* ResultsViewController.m */,
-				D9744FC218B5C1CA00697357 /* CollageViewController.h */,
-				D9744FC318B5C1CA00697357 /* CollageViewController.m */,
+				D900BA131D1899AD0092EB78 /* EliminationViewController.swift */,
+				D900BA171D198F9C0092EB78 /* ResultsViewController.swift */,
+				D900BA151D18A0D50092EB78 /* CollageViewController.swift */,
 				D9D432F319AC0E4200E0A408 /* help1.png */,
 				D9D432F419AC0E4200E0A408 /* help4.png */,
 				D9D432F519AC0E4200E0A408 /* help2.png */,
@@ -373,7 +365,7 @@
 				D9D62B2B1CBF49D900A0E522 /* money-paid.png */,
 				D99673031AB3441A0033780B /* teaseSpy.png */,
 				D99672FF1AB343050033780B /* teaseColors.png */,
-				D9135CEE1CE67A8600B8DD3B /* GoogleService-Info.plist */,
+				D900BA0F1D187A7D0092EB78 /* GoogleService-Info.plist */,
 				D98CA403185D338600746059 /* Impostor-Info.plist */,
 				D98CA404185D338600746059 /* InfoPlist.strings */,
 				D98CA409185D338600746059 /* Impostor-Prefix.pch */,
@@ -423,12 +415,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D98CA42D185D338600746059 /* Build configuration list for PBXNativeTarget "Impostor" */;
 			buildPhases = (
-				8742BE088F0D3F3BA915CC4D /* 📦 Check Pods Manifest.lock */,
+				8742BE088F0D3F3BA915CC4D /* [CP] Check Pods Manifest.lock */,
 				D98CA3F4185D338600746059 /* Sources */,
 				D98CA3F5185D338600746059 /* Frameworks */,
 				D98CA3F6185D338600746059 /* Resources */,
-				12038D70212981768E239B70 /* 📦 Embed Pods Frameworks */,
-				346CB018E45128C5EDF4A897 /* 📦 Copy Pods Resources */,
+				12038D70212981768E239B70 /* [CP] Embed Pods Frameworks */,
+				346CB018E45128C5EDF4A897 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -461,12 +453,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9917B2C19E1DB7700E2F104 /* Build configuration list for PBXNativeTarget "Impostor Tests" */;
 			buildPhases = (
-				68C78115DAE69BB37C5763E9 /* 📦 Check Pods Manifest.lock */,
+				68C78115DAE69BB37C5763E9 /* [CP] Check Pods Manifest.lock */,
 				D9917B2019E1DB7700E2F104 /* Sources */,
 				D9917B2119E1DB7700E2F104 /* Frameworks */,
 				D9917B2219E1DB7700E2F104 /* Resources */,
-				1C4F5DBA8B3DE56E1E68F5B5 /* 📦 Embed Pods Frameworks */,
-				820EA91DD4ACF3CA3E1FE785 /* 📦 Copy Pods Resources */,
+				1C4F5DBA8B3DE56E1E68F5B5 /* [CP] Embed Pods Frameworks */,
+				820EA91DD4ACF3CA3E1FE785 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -557,7 +549,7 @@
 				D9A4F779185E80040060AA2D /* peek.mp3 in Resources */,
 				D9CDEBF0187A4B6C00AE4163 /* gameWords.json in Resources */,
 				D9D62B2A1CBF410000A0E522 /* wechat.png in Resources */,
-				D9135CEF1CE67A8600B8DD3B /* GoogleService-Info.plist in Resources */,
+				D900BA101D187A7D0092EB78 /* GoogleService-Info.plist in Resources */,
 				D98CA417185D338600746059 /* Images.xcassets in Resources */,
 				D9D432F919AC0E4200E0A408 /* help2.png in Resources */,
 				D9D62B241CBF410000A0E522 /* lightbulb.png in Resources */,
@@ -593,14 +585,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		12038D70212981768E239B70 /* 📦 Embed Pods Frameworks */ = {
+		12038D70212981768E239B70 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -608,14 +600,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Impostor/Pods-Impostor-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1C4F5DBA8B3DE56E1E68F5B5 /* 📦 Embed Pods Frameworks */ = {
+		1C4F5DBA8B3DE56E1E68F5B5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -623,14 +615,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Impostor Tests/Pods-Impostor Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		346CB018E45128C5EDF4A897 /* 📦 Copy Pods Resources */ = {
+		346CB018E45128C5EDF4A897 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -638,14 +630,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Impostor/Pods-Impostor-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		68C78115DAE69BB37C5763E9 /* 📦 Check Pods Manifest.lock */ = {
+		68C78115DAE69BB37C5763E9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -653,14 +645,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		820EA91DD4ACF3CA3E1FE785 /* 📦 Copy Pods Resources */ = {
+		820EA91DD4ACF3CA3E1FE785 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -668,14 +660,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Impostor Tests/Pods-Impostor Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8742BE088F0D3F3BA915CC4D /* 📦 Check Pods Manifest.lock */ = {
+		8742BE088F0D3F3BA915CC4D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -692,17 +684,17 @@
 			files = (
 				D97AAAA61CCDC10200B922B6 /* SecretWordViewController.swift in Sources */,
 				D97AAAA41CCDBDE400B922B6 /* MainGameViewController.swift in Sources */,
-				D9744FC418B5C1CA00697357 /* CollageViewController.m in Sources */,
 				D9A4F76D185E54480060AA2D /* KxIntroViewController.m in Sources */,
+				D900BA181D198F9C0092EB78 /* ResultsViewController.swift in Sources */,
+				D900BA141D1899AD0092EB78 /* EliminationViewController.swift in Sources */,
 				D9172ECF1C7916FB0018F8C3 /* AppDelegate.swift in Sources */,
-				D98CA415185D338600746059 /* GameConfigurationViewController.m in Sources */,
 				D9645FE91C7937C90067F18B /* CachedPersistentJPEGImageStore.swift in Sources */,
 				D9645FE71C7937250067F18B /* TeaseViewController.swift in Sources */,
 				D9172EFD1C7919180018F8C3 /* ImpostorGameModel.swift in Sources */,
-				D9A4F763185E310A0060AA2D /* ResultsViewController.m in Sources */,
 				D9A4F76E185E54480060AA2D /* KxIntroViewPage.m in Sources */,
-				D98CA445185E1C8C00746059 /* EliminationViewController.m in Sources */,
 				D9A4F76C185E54480060AA2D /* KxIntroView.m in Sources */,
+				D900BA161D18A0D50092EB78 /* CollageViewController.swift in Sources */,
+				D900BA121D187DE20092EB78 /* GameConfigurationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

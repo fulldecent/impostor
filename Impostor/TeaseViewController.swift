@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import FirebaseAnalytics
 
 class TeaseViewController: UIViewController {
     @IBOutlet weak var spy: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        FIRAnalytics.logEventWithName(kFIREventViewItem, parameters: [
+            kFIRParameterContentType:"view",
+            kFIRParameterItemID:NSStringFromClass(self.dynamicType)
+            ])
+        
         let bounceAnimation: CAKeyframeAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
         bounceAnimation.values = [0, M_PI * 8]
         bounceAnimation.duration = 3

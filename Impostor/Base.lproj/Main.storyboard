@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="JxD-3W-7Z8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="JxD-3W-7Z8">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -49,7 +49,7 @@
         <!--Game Configuration-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" userLabel="Game Configuration" customClass="GameConfigurationViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" userLabel="Game Configuration" customClass="GameConfigurationViewController" customModule="Impostor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Uw0-zQ-7ja"/>
                         <viewControllerLayoutGuide type="bottom" id="IT4-jv-pXy"/>
@@ -143,7 +143,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showInstructions:" destination="vXZ-lx-hvc" eventType="touchDown" id="bSH-At-xha"/>
+                                    <action selector="showInstructions" destination="vXZ-lx-hvc" eventType="touchDown" id="SpU-4B-Oz1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QM7-6p-WB8" userLabel="Game options" customClass="QBFlatButton">
@@ -157,7 +157,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buyUpgrade:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="RG7-hd-ZYN"/>
+                                    <action selector="buyUpgrade:" destination="vXZ-lx-hvc" eventType="touchDown" id="r8T-vr-YOx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5PI-5U-k2w" userLabel="Easter Egg">
@@ -183,7 +183,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="resetPlayerPhotos:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="f4y-1g-G1H"/>
+                                    <action selector="clearPhotos:" destination="vXZ-lx-hvc" eventType="touchDown" id="vgc-y8-l7z"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDb-Zf-h2K" userLabel="Show tutorial" customClass="QBFlatButton">
@@ -197,7 +197,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="viewWeixin:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="8Kc-dv-jfC"/>
+                                    <action selector="seeWeixin:" destination="vXZ-lx-hvc" eventType="touchDown" id="WbM-nF-xZd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWp-9g-qjc" userLabel="Show tutorial" customClass="QBFlatButton">
@@ -211,7 +211,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="recommendWords:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bKj-kg-lse"/>
+                                    <action selector="giveFeedback:" destination="vXZ-lx-hvc" eventType="touchDown" id="NEK-o8-lg5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVR-0R-kXy" customClass="QBFlatButton">
@@ -223,7 +223,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="startGame:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xVY-Cd-L4b"/>
+                                    <action selector="startGame:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7gE-18-Jd4"/>
                                     <segue destination="ay1-QR-sKT" kind="push" id="IJJ-Ht-6T6"/>
                                 </connections>
                             </button>
@@ -272,9 +272,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="HkJ-2E-QIJ"/>
                     <connections>
-                        <outlet property="buyButton" destination="QM7-6p-WB8" id="0yG-ze-eyX"/>
-                        <outlet property="numberOfPlayersLabel" destination="4Tt-BJ-vN0" id="3OM-Io-tXm"/>
-                        <outlet property="playerPhotoCollectionView" destination="Ka2-NZ-eUj" id="I4F-wk-bff"/>
+                        <outlet property="buyButton" destination="QM7-6p-WB8" id="8dP-yg-Y9o"/>
+                        <outlet property="numberOfPlayersLabel" destination="4Tt-BJ-vN0" id="DpB-PK-R2P"/>
+                        <outlet property="playerPhotoCollectionView" destination="Ka2-NZ-eUj" id="xlZ-j4-P5S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -308,7 +308,7 @@
         <!--Elimination-->
         <scene sceneID="oZz-yA-BHw">
             <objects>
-                <viewController id="EdG-fH-JzA" userLabel="Elimination" customClass="EliminationViewController" sceneMemberID="viewController">
+                <viewController id="EdG-fH-JzA" userLabel="Elimination" customClass="EliminationViewController" customModule="Impostor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tnh-EA-Hhm"/>
                         <viewControllerLayoutGuide type="bottom" id="dx4-4m-Eda"/>
@@ -352,6 +352,7 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
+                                                        <action selector="eliminatePlayer:" destination="EdG-fH-JzA" eventType="touchDown" id="KEh-xm-04Q"/>
                                                         <action selector="eliminatePlayer:" destination="EdG-fH-JzA" eventType="touchUpInside" id="u7Q-bb-3Ys"/>
                                                     </connections>
                                                 </button>
@@ -389,7 +390,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="2lY-zR-DJ7"/>
                     <connections>
-                        <outlet property="playerPhotoCollectionView" destination="45y-Au-Y38" id="lZT-v8-Uun"/>
+                        <outlet property="playerPhotoCollectionView" destination="45y-Au-Y38" id="SbC-Xq-nSU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c87-U6-qL1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -399,7 +400,7 @@
         <!--Collage View Controller-->
         <scene sceneID="178-GW-5Iu">
             <objects>
-                <viewController id="o0E-D0-JHW" customClass="CollageViewController" sceneMemberID="viewController">
+                <viewController id="o0E-D0-JHW" customClass="CollageViewController" customModule="Impostor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="frv-Rc-faA"/>
                         <viewControllerLayoutGuide type="bottom" id="Pag-SM-bTh"/>
@@ -504,7 +505,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="m3s-J1-Cug"/>
                     <connections>
-                        <outlet property="playerPhotoCollectionView" destination="j0h-g5-org" id="w9V-ps-jaV"/>
+                        <outlet property="playerPhotoCollectionView" destination="j0h-g5-org" id="Bv2-mm-EGJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dMn-yX-CQw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -514,7 +515,7 @@
         <!--Results-->
         <scene sceneID="8WK-Rq-gcF">
             <objects>
-                <viewController id="q9e-mc-e0I" userLabel="Results" customClass="ResultsViewController" sceneMemberID="viewController">
+                <viewController id="q9e-mc-e0I" userLabel="Results" customClass="ResultsViewController" customModule="Impostor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5W5-C0-Cdb"/>
                         <viewControllerLayoutGuide type="bottom" id="1pK-kP-fGD"/>

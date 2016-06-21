@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import FirebaseAnalytics
 
 class MainGameViewController: UIViewController {
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(animated: Bool) {        
         super.viewDidAppear(animated)
         switch ImpostorGameModel.game.gameStatus {
         case .ShowSecretWords:

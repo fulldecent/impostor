@@ -1,1 +1,1 @@
-New icon
+Fix Google Analytics requests
