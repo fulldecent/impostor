@@ -12,6 +12,7 @@ import AudioToolbox
 import MessageUI
 import FirebaseAnalytics
 import RMStore
+import SafariServices
 
 class GameConfigurationViewController: UIViewController {
     private var playerCount = 3
@@ -144,7 +145,13 @@ class GameConfigurationViewController: UIViewController {
         if UIApplication.sharedApplication().canOpenURL(wxUrl) {
             UIApplication.sharedApplication().openURL(wxUrl)
         } else {
-            UIApplication.sharedApplication().openURL(backupUrl)
+            if #available(iOS 9.0, *) {
+                let svc = SFSafariViewController(URL: backupUrl, entersReaderIfAvailable: true)
+                svc.delegate = self
+                self.presentViewController(svc, animated: true, completion: nil)
+            } else {
+                UIApplication.sharedApplication().openURL(backupUrl)
+            }
         }
     }
     
@@ -342,5 +349,13 @@ extension GameConfigurationViewController: UICollectionViewDelegate {
         bounceAnimation.autoreverses = true
         bounceAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
         view.layer.addAnimation(bounceAnimation, forKey: "bounce")
+    }
+}
+
+@available(iOS 9.0, *)
+extension GameConfigurationViewController: SFSafariViewControllerDelegate {
+    func safariViewControllerDidFinish(controller: SFSafariViewController)
+    {
+        controller.dismissViewControllerAnimated(true, completion: nil)
     }
 }
