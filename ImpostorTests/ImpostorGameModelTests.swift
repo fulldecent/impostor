@@ -9,9 +9,9 @@
 import XCTest
 @testable import Impostor
 
-class ImpostorGameModel_Tests: XCTestCase {
+class ImpostorGameModelTests: XCTestCase {
     var gameModel: ImpostorGameModel!
-
+    
     override func setUp() {
         super.setUp()
         self.gameModel = ImpostorGameModel.game

@@ -9,9 +9,14 @@ target 'Impostor' do
 	pod 'Firebase/Invites'
 	pod 'RMStore'
 	pod 'SwiftyiRate'
+end
 
-	target 'Impostor Tests' do
-		inherit! :search_paths
-	end
+target 'ImpostorTests' do
+	pod 'QBFlatButton'
+	pod 'SCLAlertView-Objective-C'
+	pod 'Google/Analytics'
+	pod 'Firebase/Invites'
+	pod 'RMStore'
+	pod 'SwiftyiRate'
 end
 

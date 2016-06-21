@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		57B4A011FA2FA8EE8833005F /* Pods_Impostor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3F0B98C003AC888D8CB1E4 /* Pods_Impostor.framework */; };
-		C047BB0EFC432FBB9EF923CC /* Pods_Impostor_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2C5C0036D6EBAE1BEB9144B /* Pods_Impostor_Tests.framework */; };
+		A6E9AF11F3C47FBE3F396B99 /* Pods_ImpostorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FF0E9FE2C8D2C7FB9DF19E /* Pods_ImpostorTests.framework */; };
 		D900BA101D187A7D0092EB78 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D900BA0F1D187A7D0092EB78 /* GoogleService-Info.plist */; };
 		D900BA121D187DE20092EB78 /* GameConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D900BA111D187DE20092EB78 /* GameConfigurationViewController.swift */; };
 		D900BA141D1899AD0092EB78 /* EliminationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D900BA131D1899AD0092EB78 /* EliminationViewController.swift */; };
@@ -16,7 +16,9 @@
 		D900BA181D198F9C0092EB78 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D900BA171D198F9C0092EB78 /* ResultsViewController.swift */; };
 		D9172ECF1C7916FB0018F8C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9172ECE1C7916FB0018F8C3 /* AppDelegate.swift */; };
 		D9172EFD1C7919180018F8C3 /* ImpostorGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9172EFC1C7919180018F8C3 /* ImpostorGameModel.swift */; };
-		D9172F051C7928C70018F8C3 /* ImpostorGameModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9172F041C7928C70018F8C3 /* ImpostorGameModel_Tests.swift */; };
+		D91E58A71D19B8A20068FFEF /* ImpostorGameModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91E58A61D19B8A20068FFEF /* ImpostorGameModelTests.swift */; };
+		D91E58C31D19B9C80068FFEF /* ImpostorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91E58C21D19B9C80068FFEF /* ImpostorUITests.swift */; };
+		D91E58CB1D19BA190068FFEF /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91E58CA1D19BA190068FFEF /* SnapshotHelper.swift */; };
 		D9645FE71C7937250067F18B /* TeaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9645FE61C7937250067F18B /* TeaseViewController.swift */; };
 		D9645FE91C7937C90067F18B /* CachedPersistentJPEGImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9645FE81C7937C90067F18B /* CachedPersistentJPEGImageStore.swift */; };
 		D978345D1909CA01009C3024 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D978345C1909CA01009C3024 /* Twitter.framework */; };
@@ -30,7 +32,6 @@
 		D98CA406185D338600746059 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D98CA404185D338600746059 /* InfoPlist.strings */; };
 		D98CA40F185D338600746059 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98CA40D185D338600746059 /* Main.storyboard */; };
 		D98CA417185D338600746059 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98CA416185D338600746059 /* Images.xcassets */; };
-		D98E26171CC0318F00D7D584 /* ImpostorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E26161CC0318F00D7D584 /* ImpostorUITests.swift */; };
 		D99673011AB343050033780B /* teaseColors.png in Resources */ = {isa = PBXBuildFile; fileRef = D99672FF1AB343050033780B /* teaseColors.png */; };
 		D99673041AB3441A0033780B /* teaseSpy.png in Resources */ = {isa = PBXBuildFile; fileRef = D99673031AB3441A0033780B /* teaseSpy.png */; };
 		D9A2405F18D50DF7005D4DCD /* camera.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A2405E18D50DF7005D4DCD /* camera.mp3 */; };
@@ -67,39 +68,17 @@
 		D9D62B2C1CBF49D900A0E522 /* money-paid.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D62B2B1CBF49D900A0E522 /* money-paid.png */; };
 		D9DD5CBC1B9A209B00CBDE5A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DD5CBB1B9A209B00CBDE5A /* StoreKit.framework */; };
 		D9DD5CBF1B9A400600CBDE5A /* gameWordsMore.json in Resources */ = {isa = PBXBuildFile; fileRef = D9DD5CBD1B9A400600CBDE5A /* gameWordsMore.json */; };
-		D9FFE8371CC031E400A66159 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FFE8361CC031E400A66159 /* SnapshotHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D98E26191CC0318F00D7D584 /* PBXContainerItemProxy */ = {
+		D91E58A91D19B8A20068FFEF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D98CA3F0185D338600746059 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = D98CA3F7185D338600746059;
 			remoteInfo = Impostor;
 		};
-		D9917B2A19E1DB7700E2F104 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D98CA3F0185D338600746059 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D98CA3F7185D338600746059;
-			remoteInfo = Impostor;
-		};
-		D9917B2F19E1DB7E00E2F104 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D98CA3F0185D338600746059 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D98CA3F7185D338600746059;
-			remoteInfo = Impostor;
-		};
-		D9917B3119E1DB7E00E2F104 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D98CA3F0185D338600746059 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D98CA3F7185D338600746059;
-			remoteInfo = Impostor;
-		};
-		D9917B3319E1DB9C00E2F104 /* PBXContainerItemProxy */ = {
+		D91E58C51D19B9C80068FFEF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D98CA3F0185D338600746059 /* Project object */;
 			proxyType = 1;
@@ -110,9 +89,12 @@
 
 /* Begin PBXFileReference section */
 		24CD1AC7A707B6D48C2D14BD /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24F7732D50893C79A38E3F30 /* Pods-ImpostorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImpostorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImpostorTests/Pods-ImpostorTests.release.xcconfig"; sourceTree = "<group>"; };
 		353C003049CC82481010BA1F /* Pods-Impostor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Impostor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Impostor/Pods-Impostor.debug.xcconfig"; sourceTree = "<group>"; };
+		56FF0E9FE2C8D2C7FB9DF19E /* Pods_ImpostorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImpostorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67697929B90F51CA6056B42D /* Pods-Impostor Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Impostor Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Impostor Tests/Pods-Impostor Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		9D6FAD2E5AEDD2ABAEE4B440 /* Pods-Impostor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Impostor.release.xcconfig"; path = "Pods/Target Support Files/Pods-Impostor/Pods-Impostor.release.xcconfig"; sourceTree = "<group>"; };
+		A6734FE85CB1AB295C5386A3 /* Pods-ImpostorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImpostorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImpostorTests/Pods-ImpostorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B226851C9187060ED11B0C63 /* Pods-Impostor Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Impostor Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Impostor Tests/Pods-Impostor Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B2C5C0036D6EBAE1BEB9144B /* Pods_Impostor_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Impostor_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D900BA0F1D187A7D0092EB78 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -127,7 +109,13 @@
 		D9172ECD1C7916FB0018F8C3 /* Impostor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Impostor-Bridging-Header.h"; sourceTree = "<group>"; };
 		D9172ECE1C7916FB0018F8C3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9172EFC1C7919180018F8C3 /* ImpostorGameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImpostorGameModel.swift; sourceTree = "<group>"; };
-		D9172F041C7928C70018F8C3 /* ImpostorGameModel_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImpostorGameModel_Tests.swift; sourceTree = "<group>"; };
+		D91E58A41D19B8A20068FFEF /* ImpostorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImpostorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D91E58A61D19B8A20068FFEF /* ImpostorGameModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorGameModelTests.swift; sourceTree = "<group>"; };
+		D91E58A81D19B8A20068FFEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D91E58C01D19B9C80068FFEF /* ImpostorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImpostorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D91E58C21D19B9C80068FFEF /* ImpostorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorUITests.swift; sourceTree = "<group>"; };
+		D91E58C41D19B9C80068FFEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D91E58CA1D19BA190068FFEF /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		D93B5CEC189D679F00E90ACD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D93B5CED189D679F00E90ACD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D93B5CEE189D679F00E90ACD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ru; path = ru.lproj/gameWords.json; sourceTree = "<group>"; };
@@ -157,11 +145,6 @@
 		D98CA40E185D338600746059 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D98CA416185D338600746059 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D98CA41D185D338600746059 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		D98E26141CC0318E00D7D584 /* ImpostorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImpostorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D98E26161CC0318F00D7D584 /* ImpostorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorUITests.swift; sourceTree = "<group>"; };
-		D98E26181CC0318F00D7D584 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D9917B2419E1DB7700E2F104 /* Impostor Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Impostor Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9917B2719E1DB7700E2F104 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D99672FF1AB343050033780B /* teaseColors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teaseColors.png; sourceTree = "<group>"; };
 		D99673031AB3441A0033780B /* teaseSpy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teaseSpy.png; sourceTree = "<group>"; };
 		D9A2405E18D50DF7005D4DCD /* camera.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = camera.mp3; sourceTree = "<group>"; };
@@ -225,11 +208,25 @@
 		D9DD5CC51B9A401D00CBDE5A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/gameWordsMore.json; sourceTree = "<group>"; };
 		D9DD5CC61B9A401E00CBDE5A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/gameWordsMore.json; sourceTree = "<group>"; };
 		D9DD5CC71B9A401E00CBDE5A /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = nl; path = nl.lproj/gameWordsMore.json; sourceTree = "<group>"; };
-		D9FFE8361CC031E400A66159 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		DB3F0B98C003AC888D8CB1E4 /* Pods_Impostor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Impostor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D91E58A11D19B8A20068FFEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6E9AF11F3C47FBE3F396B99 /* Pods_ImpostorTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D91E58BD1D19B9C80068FFEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D98CA3F5185D338600746059 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -250,21 +247,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D98E26111CC0318E00D7D584 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D9917B2119E1DB7700E2F104 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C047BB0EFC432FBB9EF923CC /* Pods_Impostor_Tests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -275,16 +257,37 @@
 				9D6FAD2E5AEDD2ABAEE4B440 /* Pods-Impostor.release.xcconfig */,
 				67697929B90F51CA6056B42D /* Pods-Impostor Tests.debug.xcconfig */,
 				B226851C9187060ED11B0C63 /* Pods-Impostor Tests.release.xcconfig */,
+				A6734FE85CB1AB295C5386A3 /* Pods-ImpostorTests.debug.xcconfig */,
+				24F7732D50893C79A38E3F30 /* Pods-ImpostorTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		D91E58A51D19B8A20068FFEF /* ImpostorTests */ = {
+			isa = PBXGroup;
+			children = (
+				D91E58A61D19B8A20068FFEF /* ImpostorGameModelTests.swift */,
+				D91E58A81D19B8A20068FFEF /* Info.plist */,
+			);
+			path = ImpostorTests;
+			sourceTree = "<group>";
+		};
+		D91E58C11D19B9C80068FFEF /* ImpostorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D91E58C21D19B9C80068FFEF /* ImpostorUITests.swift */,
+				D91E58CA1D19BA190068FFEF /* SnapshotHelper.swift */,
+				D91E58C41D19B9C80068FFEF /* Info.plist */,
+			);
+			path = ImpostorUITests;
 			sourceTree = "<group>";
 		};
 		D98CA3EF185D338600746059 = {
 			isa = PBXGroup;
 			children = (
 				D98CA401185D338600746059 /* Impostor */,
-				D9917B2519E1DB7700E2F104 /* Impostor Tests */,
-				D98E26151CC0318E00D7D584 /* ImpostorUITests */,
+				D91E58A51D19B8A20068FFEF /* ImpostorTests */,
+				D91E58C11D19B9C80068FFEF /* ImpostorUITests */,
 				D98CA3FA185D338600746059 /* Frameworks */,
 				D98CA3F9185D338600746059 /* Products */,
 				BA82FAC0A962502B1FA2FD3A /* Pods */,
@@ -295,8 +298,8 @@
 			isa = PBXGroup;
 			children = (
 				D98CA3F8185D338600746059 /* Impostor.app */,
-				D9917B2419E1DB7700E2F104 /* Impostor Tests.xctest */,
-				D98E26141CC0318E00D7D584 /* ImpostorUITests.xctest */,
+				D91E58A41D19B8A20068FFEF /* ImpostorTests.xctest */,
+				D91E58C01D19B9C80068FFEF /* ImpostorUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				24CD1AC7A707B6D48C2D14BD /* Pods.framework */,
 				DB3F0B98C003AC888D8CB1E4 /* Pods_Impostor.framework */,
 				B2C5C0036D6EBAE1BEB9144B /* Pods_Impostor_Tests.framework */,
+				56FF0E9FE2C8D2C7FB9DF19E /* Pods_ImpostorTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -340,10 +344,12 @@
 				D900BA131D1899AD0092EB78 /* EliminationViewController.swift */,
 				D900BA171D198F9C0092EB78 /* ResultsViewController.swift */,
 				D900BA151D18A0D50092EB78 /* CollageViewController.swift */,
-				D9D432F319AC0E4200E0A408 /* help1.png */,
-				D9D432F419AC0E4200E0A408 /* help4.png */,
-				D9D432F519AC0E4200E0A408 /* help2.png */,
-				D9D432F619AC0E4200E0A408 /* help3.png */,
+				D9A4F766185E54480060AA2D /* KxIntroView.h */,
+				D9A4F767185E54480060AA2D /* KxIntroView.m */,
+				D9A4F768185E54480060AA2D /* KxIntroViewController.h */,
+				D9A4F769185E54480060AA2D /* KxIntroViewController.m */,
+				D9A4F76A185E54480060AA2D /* KxIntroViewPage.h */,
+				D9A4F76B185E54480060AA2D /* KxIntroViewPage.m */,
 				D98CA402185D338600746059 /* Supporting Files */,
 				D9172ECD1C7916FB0018F8C3 /* Impostor-Bridging-Header.h */,
 			);
@@ -353,6 +359,10 @@
 		D98CA402185D338600746059 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D9D432F319AC0E4200E0A408 /* help1.png */,
+				D9D432F419AC0E4200E0A408 /* help4.png */,
+				D9D432F519AC0E4200E0A408 /* help2.png */,
+				D9D432F619AC0E4200E0A408 /* help3.png */,
 				D9D62B191CBF410000A0E522 /* close.png */,
 				D9D62B1A1CBF410000A0E522 /* eraser.png */,
 				D9D62B1B1CBF410000A0E522 /* lightbulb.png */,
@@ -379,38 +389,52 @@
 				D9A2405E18D50DF7005D4DCD /* camera.mp3 */,
 				D9CDEBF2187A4B6C00AE4163 /* gameWords.json */,
 				D9DD5CBD1B9A400600CBDE5A /* gameWordsMore.json */,
-				D9A4F766185E54480060AA2D /* KxIntroView.h */,
-				D9A4F767185E54480060AA2D /* KxIntroView.m */,
-				D9A4F768185E54480060AA2D /* KxIntroViewController.h */,
-				D9A4F769185E54480060AA2D /* KxIntroViewController.m */,
-				D9A4F76A185E54480060AA2D /* KxIntroViewPage.h */,
-				D9A4F76B185E54480060AA2D /* KxIntroViewPage.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		D98E26151CC0318E00D7D584 /* ImpostorUITests */ = {
-			isa = PBXGroup;
-			children = (
-				D98E26161CC0318F00D7D584 /* ImpostorUITests.swift */,
-				D98E26181CC0318F00D7D584 /* Info.plist */,
-				D9FFE8361CC031E400A66159 /* SnapshotHelper.swift */,
-			);
-			path = ImpostorUITests;
-			sourceTree = "<group>";
-		};
-		D9917B2519E1DB7700E2F104 /* Impostor Tests */ = {
-			isa = PBXGroup;
-			children = (
-				D9172F041C7928C70018F8C3 /* ImpostorGameModel_Tests.swift */,
-				D9917B2719E1DB7700E2F104 /* Info.plist */,
-			);
-			path = "Impostor Tests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D91E58A31D19B8A20068FFEF /* ImpostorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D91E58AB1D19B8A20068FFEF /* Build configuration list for PBXNativeTarget "ImpostorTests" */;
+			buildPhases = (
+				8C6AC9623DD296DCC090A414 /* [CP] Check Pods Manifest.lock */,
+				D91E58A01D19B8A20068FFEF /* Sources */,
+				D91E58A11D19B8A20068FFEF /* Frameworks */,
+				D91E58A21D19B8A20068FFEF /* Resources */,
+				9C257C66B9DA726D96105316 /* [CP] Embed Pods Frameworks */,
+				9F067E45177462AA57D53253 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D91E58AA1D19B8A20068FFEF /* PBXTargetDependency */,
+			);
+			name = ImpostorTests;
+			productName = ImpostorTests;
+			productReference = D91E58A41D19B8A20068FFEF /* ImpostorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D91E58BF1D19B9C80068FFEF /* ImpostorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D91E58C71D19B9C80068FFEF /* Build configuration list for PBXNativeTarget "ImpostorUITests" */;
+			buildPhases = (
+				D91E58BC1D19B9C80068FFEF /* Sources */,
+				D91E58BD1D19B9C80068FFEF /* Frameworks */,
+				D91E58BE1D19B9C80068FFEF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D91E58C61D19B9C80068FFEF /* PBXTargetDependency */,
+			);
+			name = ImpostorUITests;
+			productName = ImpostorUITests;
+			productReference = D91E58C01D19B9C80068FFEF /* ImpostorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		D98CA3F7185D338600746059 /* Impostor */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D98CA42D185D338600746059 /* Build configuration list for PBXNativeTarget "Impostor" */;
@@ -431,48 +455,6 @@
 			productReference = D98CA3F8185D338600746059 /* Impostor.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D98E26131CC0318E00D7D584 /* ImpostorUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D98E261D1CC0318F00D7D584 /* Build configuration list for PBXNativeTarget "ImpostorUITests" */;
-			buildPhases = (
-				D98E26101CC0318E00D7D584 /* Sources */,
-				D98E26111CC0318E00D7D584 /* Frameworks */,
-				D98E26121CC0318E00D7D584 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D98E261A1CC0318F00D7D584 /* PBXTargetDependency */,
-			);
-			name = ImpostorUITests;
-			productName = ImpostorUITests;
-			productReference = D98E26141CC0318E00D7D584 /* ImpostorUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-		D9917B2319E1DB7700E2F104 /* Impostor Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D9917B2C19E1DB7700E2F104 /* Build configuration list for PBXNativeTarget "Impostor Tests" */;
-			buildPhases = (
-				68C78115DAE69BB37C5763E9 /* [CP] Check Pods Manifest.lock */,
-				D9917B2019E1DB7700E2F104 /* Sources */,
-				D9917B2119E1DB7700E2F104 /* Frameworks */,
-				D9917B2219E1DB7700E2F104 /* Resources */,
-				1C4F5DBA8B3DE56E1E68F5B5 /* [CP] Embed Pods Frameworks */,
-				820EA91DD4ACF3CA3E1FE785 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D9917B2B19E1DB7700E2F104 /* PBXTargetDependency */,
-				D9917B3019E1DB7E00E2F104 /* PBXTargetDependency */,
-				D9917B3219E1DB7E00E2F104 /* PBXTargetDependency */,
-				D9917B3419E1DB9C00E2F104 /* PBXTargetDependency */,
-			);
-			name = "Impostor Tests";
-			productName = "Impostor Tests";
-			productReference = D9917B2419E1DB7700E2F104 /* Impostor Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -483,6 +465,14 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "William Entriken";
 				TargetAttributes = {
+					D91E58A31D19B8A20068FFEF = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = D98CA3F7185D338600746059;
+					};
+					D91E58BF1D19B9C80068FFEF = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = D98CA3F7185D338600746059;
+					};
 					D98CA3F7185D338600746059 = {
 						DevelopmentTeam = 8Q693ZG5RN;
 						SystemCapabilities = {
@@ -490,14 +480,6 @@
 								enabled = 1;
 							};
 						};
-					};
-					D98E26131CC0318E00D7D584 = {
-						CreatedOnToolsVersion = 7.3;
-						TestTargetID = D98CA3F7185D338600746059;
-					};
-					D9917B2319E1DB7700E2F104 = {
-						CreatedOnToolsVersion = 6.0;
-						TestTargetID = D98CA3F7185D338600746059;
 					};
 				};
 			};
@@ -523,13 +505,27 @@
 			projectRoot = "";
 			targets = (
 				D98CA3F7185D338600746059 /* Impostor */,
-				D9917B2319E1DB7700E2F104 /* Impostor Tests */,
-				D98E26131CC0318E00D7D584 /* ImpostorUITests */,
+				D91E58A31D19B8A20068FFEF /* ImpostorTests */,
+				D91E58BF1D19B9C80068FFEF /* ImpostorUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D91E58A21D19B8A20068FFEF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D91E58BE1D19B9C80068FFEF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D98CA3F6185D338600746059 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -568,20 +564,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D98E26121CC0318E00D7D584 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D9917B2219E1DB7700E2F104 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -600,21 +582,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Impostor/Pods-Impostor-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1C4F5DBA8B3DE56E1E68F5B5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Impostor Tests/Pods-Impostor Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		346CB018E45128C5EDF4A897 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -628,36 +595,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Impostor/Pods-Impostor-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		68C78115DAE69BB37C5763E9 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		820EA91DD4ACF3CA3E1FE785 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Impostor Tests/Pods-Impostor Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8742BE088F0D3F3BA915CC4D /* [CP] Check Pods Manifest.lock */ = {
@@ -675,9 +612,71 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		8C6AC9623DD296DCC090A414 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9C257C66B9DA726D96105316 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImpostorTests/Pods-ImpostorTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F067E45177462AA57D53253 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImpostorTests/Pods-ImpostorTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D91E58A01D19B8A20068FFEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D91E58A71D19B8A20068FFEF /* ImpostorGameModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D91E58BC1D19B9C80068FFEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D91E58C31D19B9C80068FFEF /* ImpostorUITests.swift in Sources */,
+				D91E58CB1D19BA190068FFEF /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D98CA3F4185D338600746059 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -698,50 +697,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D98E26101CC0318E00D7D584 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D98E26171CC0318F00D7D584 /* ImpostorUITests.swift in Sources */,
-				D9FFE8371CC031E400A66159 /* SnapshotHelper.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D9917B2019E1DB7700E2F104 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D9172F051C7928C70018F8C3 /* ImpostorGameModel_Tests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D98E261A1CC0318F00D7D584 /* PBXTargetDependency */ = {
+		D91E58AA1D19B8A20068FFEF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D98CA3F7185D338600746059 /* Impostor */;
-			targetProxy = D98E26191CC0318F00D7D584 /* PBXContainerItemProxy */;
+			targetProxy = D91E58A91D19B8A20068FFEF /* PBXContainerItemProxy */;
 		};
-		D9917B2B19E1DB7700E2F104 /* PBXTargetDependency */ = {
+		D91E58C61D19B9C80068FFEF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D98CA3F7185D338600746059 /* Impostor */;
-			targetProxy = D9917B2A19E1DB7700E2F104 /* PBXContainerItemProxy */;
-		};
-		D9917B3019E1DB7E00E2F104 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D98CA3F7185D338600746059 /* Impostor */;
-			targetProxy = D9917B2F19E1DB7E00E2F104 /* PBXContainerItemProxy */;
-		};
-		D9917B3219E1DB7E00E2F104 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D98CA3F7185D338600746059 /* Impostor */;
-			targetProxy = D9917B3119E1DB7E00E2F104 /* PBXContainerItemProxy */;
-		};
-		D9917B3419E1DB9C00E2F104 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D98CA3F7185D338600746059 /* Impostor */;
-			targetProxy = D9917B3319E1DB9C00E2F104 /* PBXContainerItemProxy */;
+			targetProxy = D91E58C51D19B9C80068FFEF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -829,6 +796,90 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D91E58AC1D19B8A20068FFEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6734FE85CB1AB295C5386A3 /* Pods-ImpostorTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = ImpostorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = net.phor.ImpostorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Impostor.app/Impostor";
+			};
+			name = Debug;
+		};
+		D91E58AD1D19B8A20068FFEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24F7732D50893C79A38E3F30 /* Pods-ImpostorTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = ImpostorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = net.phor.ImpostorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Impostor.app/Impostor";
+			};
+			name = Release;
+		};
+		D91E58C81D19B9C80068FFEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = ImpostorUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = net.phor.ImpostorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_TARGET_NAME = Impostor;
+			};
+			name = Debug;
+		};
+		D91E58C91D19B9C80068FFEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = ImpostorUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = net.phor.ImpostorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Impostor;
+			};
+			name = Release;
+		};
 		D98CA42B185D338600746059 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -913,7 +964,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Impostor/Impostor-Prefix.pch";
 				INFOPLIST_FILE = "Impostor/Impostor-Info.plist";
@@ -940,7 +991,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Impostor/Impostor-Prefix.pch";
 				INFOPLIST_FILE = "Impostor/Impostor-Info.plist";
@@ -957,102 +1008,26 @@
 			};
 			name = Release;
 		};
-		D98E261B1CC0318F00D7D584 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = ImpostorUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = net.phor.Impostor.ImpostorUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TEST_TARGET_NAME = Impostor;
-			};
-			name = Debug;
-		};
-		D98E261C1CC0318F00D7D584 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = ImpostorUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = net.phor.Impostor.ImpostorUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = Impostor;
-			};
-			name = Release;
-		};
-		D9917B2D19E1DB7700E2F104 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67697929B90F51CA6056B42D /* Pods-Impostor Tests.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "Impostor Tests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.phor.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Impostor.app/Impostor";
-			};
-			name = Debug;
-		};
-		D9917B2E19E1DB7700E2F104 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B226851C9187060ED11B0C63 /* Pods-Impostor Tests.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "Impostor Tests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.phor.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Impostor.app/Impostor";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D91E58AB1D19B8A20068FFEF /* Build configuration list for PBXNativeTarget "ImpostorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D91E58AC1D19B8A20068FFEF /* Debug */,
+				D91E58AD1D19B8A20068FFEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D91E58C71D19B9C80068FFEF /* Build configuration list for PBXNativeTarget "ImpostorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D91E58C81D19B9C80068FFEF /* Debug */,
+				D91E58C91D19B9C80068FFEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		D98CA3F3185D338600746059 /* Build configuration list for PBXProject "Impostor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1067,24 +1042,6 @@
 			buildConfigurations = (
 				D98CA42E185D338600746059 /* Debug */,
 				D98CA42F185D338600746059 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D98E261D1CC0318F00D7D584 /* Build configuration list for PBXNativeTarget "ImpostorUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D98E261B1CC0318F00D7D584 /* Debug */,
-				D98E261C1CC0318F00D7D584 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D9917B2C19E1DB7700E2F104 /* Build configuration list for PBXNativeTarget "Impostor Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D9917B2D19E1DB7700E2F104 /* Debug */,
-				D9917B2E19E1DB7700E2F104 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

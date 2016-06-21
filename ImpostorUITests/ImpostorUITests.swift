@@ -9,7 +9,7 @@
 import XCTest
 
 class ImpostorUITests: XCTestCase {
-        
+    
     override func setUp() {
         super.setUp()
         
@@ -34,14 +34,13 @@ class ImpostorUITests: XCTestCase {
         minusButton.tap()
         minusButton.tap()
         snapshot("01Configuration")
-
+        
         app.buttons["startGame"].tap()
         snapshot("02Player")
-
+        
         let showSecretWordButton = app.buttons["showSecretWord"]
         showSecretWordButton.tap()
         snapshot("03Secret")
-g    }
+    }
     
 }
-
