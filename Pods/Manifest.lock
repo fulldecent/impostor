@@ -56,7 +56,7 @@ PODS:
   - RMStore (0.7.1):
     - RMStore/Core (= 0.7.1)
   - RMStore/Core (0.7.1)
-  - SCLAlertView-Objective-C (1.0.4)
+  - SCLAlertView (0.5.9)
   - SwiftyiRate (1.0.1)
 
 DEPENDENCIES:
@@ -64,7 +64,7 @@ DEPENDENCIES:
   - Google/Analytics
   - QBFlatButton
   - RMStore
-  - SCLAlertView-Objective-C
+  - SCLAlertView
   - SwiftyiRate
 
 SPEC CHECKSUMS:
@@ -86,9 +86,9 @@ SPEC CHECKSUMS:
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
   QBFlatButton: 3cf272985cdbdd04d6bc8b7ae01e4dd62cb09c17
   RMStore: 64ba13a9c040e3b7572765d169f77175cd3243e5
-  SCLAlertView-Objective-C: dd8a12b4068b8bae1b25c1748d7413b5abcad05b
+  SCLAlertView: d7c6a48c7d340e60206d4ed0e8ebcbff3b9d2a44
   SwiftyiRate: 2fd7a2c5d2b16f27c72d1ddb87014f0492e4af05
 
-PODFILE CHECKSUM: 10c8b5b673eb4de0f6723f8112d0203db807ab97
+PODFILE CHECKSUM: 36525d6777521ac6694a53d5d7203c5459d2a90a
 
 COCOAPODS: 1.0.1

@@ -4,7 +4,7 @@ use_frameworks!
 
 target 'Impostor' do
 	pod 'QBFlatButton'
-	pod 'SCLAlertView-Objective-C'
+	pod 'SCLAlertView'
 	pod 'Google/Analytics'
 	pod 'Firebase/Invites'
 	pod 'RMStore'
@@ -13,7 +13,7 @@ end
 
 target 'ImpostorTests' do
 	pod 'QBFlatButton'
-	pod 'SCLAlertView-Objective-C'
+	pod 'SCLAlertView'
 	pod 'Google/Analytics'
 	pod 'Firebase/Invites'
 	pod 'RMStore'

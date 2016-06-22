@@ -8,20 +8,27 @@
 
 import Foundation
 import AudioToolbox
-import SCLAlertView_Objective_C
+import SCLAlertView
 import Firebase
 
 class EliminationViewController: UIViewController {
     private let game = ImpostorGameModel.game
-    private var sclAlertView: SCLAlertView? = nil
-    private var eliminationSoundId: SystemSoundID = {
+    private var accentSoundId: SystemSoundID = {
         let url = NSBundle.mainBundle().URLForResource("eliminate", withExtension: "mp3")!
         var soundID: SystemSoundID = 0
         AudioServicesCreateSystemSoundID(url, &soundID)
         return soundID
     }()
+    private let alertAppearance = SCLAlertView.SCLAppearance(
+        kTitleFont: UIFont(name: "Chalkboard SE", size: 20.0)!,
+        kTextFont: UIFont(name: "Chalkboard SE", size: 16.0)!,
+        kButtonFont: UIFont(name: "Chalkboard SE", size: 16.0)!,
+        hideWhenBackgroundViewIsTapped: true,
+        showCircularIcon: true,
+        contentViewColor: UIColor.blackColor(),
+        showCloseButton: false
+    )
 
-    
     @IBOutlet weak var playerPhotoCollectionView: UICollectionView!
     
     @IBAction func eliminatePlayer(sender: UIButton) {
@@ -31,26 +38,18 @@ class EliminationViewController: UIViewController {
         guard !game.playerEliminated[indexPath.row] else {
             return
         }
-        AudioServicesPlaySystemSound(eliminationSoundId)
+        AudioServicesPlaySystemSound(accentSoundId)
         game.eliminatePlayer(indexPath.row)
         playerPhotoCollectionView.reloadData()
         switch game.gameStatus {
         case .TheImpostorRemains:
-            let sclAlertView = SCLAlertView()
-            sclAlertView.shouldDismissOnTapOutside = true
-            sclAlertView.backgroundType = .Blur
-            sclAlertView.labelTitle.font = UIFont(name: "Chalkboard SE", size: 20.0)
-            sclAlertView.viewText.font = UIFont(name: "Chalkboard SE", size: 16.0)
-            let appIcon = UIImage(named: "AppIcon60x60")!
-            sclAlertView.showCustom(self,
-                                    image: appIcon,
-                                    color: UIColor.blackColor(),
-                                    title: NSLocalizedString("The impostor remains", comment: "After someone was killed"),
-                                    subTitle: String(format: NSLocalizedString("Player #%ld starts this round",
-                                        comment: "After someone killed"), game.playerNumberToStartRound+1),
-                                    closeButtonTitle: NSLocalizedString("OK", comment: "Dismiss the popup"),
-                                    duration: 0.0)
-            self.sclAlertView = sclAlertView
+            let alertView = SCLAlertView(appearance: alertAppearance)
+            alertView.addButton(NSLocalizedString("OK", comment: "Dismiss the popup"), action: {})
+            let alertViewIcon = UIImage(named: "AppIcon60x60")
+            alertView.showInfo(NSLocalizedString("The impostor remains", comment: "After someone was killed"),
+                                               subTitle: String(format: NSLocalizedString("Player #%ld starts this round",
+                                                comment: "After someone killed"), game.playerNumberToStartRound+1),
+                                               circleIconImage: alertViewIcon)
         case .TheImpostorWasDefeated:
             navigationController!.popViewControllerAnimated(true)
         case .TheImpostorWon:
@@ -58,7 +57,6 @@ class EliminationViewController: UIViewController {
         default:
             return
         }
-        
     }
     
     override func viewDidLoad() {
@@ -76,20 +74,13 @@ class EliminationViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        let sclAlertView = SCLAlertView()
-        sclAlertView.shouldDismissOnTapOutside = true
-        sclAlertView.backgroundType = .Blur
-        sclAlertView.labelTitle.font = UIFont(name: "Chalkboard SE", size: 20.0)
-        sclAlertView.viewText.font = UIFont(name: "Chalkboard SE", size: 16.0)
-        let appIcon = UIImage(named: "AppIcon60x60")!
-        sclAlertView.showCustom(self,
-                                image: appIcon,
-                                color: UIColor.blackColor(),
-                                title: nil,
-                                subTitle: String(format: NSLocalizedString("Player #%ld was randomly selected to start the first round", comment: "When the game starts"), game.playerNumberToStartRound+1),
-                                closeButtonTitle: NSLocalizedString("OK", comment: "Dismiss the popup"),
-                                duration: 0.0)
-        self.sclAlertView = sclAlertView
+        let alertView = SCLAlertView(appearance: alertAppearance)
+        alertView.addButton(NSLocalizedString("OK", comment: "Dismiss the popup"), action: {})
+        let alertViewIcon = UIImage(named: "AppIcon60x60")
+        alertView.showInfo("",
+                           subTitle: String(format: NSLocalizedString("Player #%ld was randomly selected to start the first round",
+                            comment: "When the game starts"), game.playerNumberToStartRound+1),
+                                           circleIconImage: alertViewIcon)
         let root = navigationController!.viewControllers.first as! GameConfigurationViewController
         root.fadeOutMusic()
     }

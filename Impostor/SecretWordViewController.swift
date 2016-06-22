@@ -8,7 +8,7 @@
 
 import UIKit
 import AudioToolbox
-import SCLAlertView_Objective_C
+import SCLAlertView
 import FirebaseAnalytics
 
 class SecretWordViewController: UIViewController {
@@ -18,11 +18,17 @@ class SecretWordViewController: UIViewController {
     var playerNumber: Int!
     
     private var game: ImpostorGameModel!
-    private var sclAlertView = SCLAlertView()
     private var imagePickerController: UIImagePickerController!
     private var imagePopoverController: UIPopoverController!
     private var wantsToTakePhoto: Bool!
     private var photoDenied: Bool!
+    private var accentSoundId: SystemSoundID = {
+        let url = NSBundle.mainBundle().URLForResource("peek", withExtension: "mp3")!
+        var soundID: SystemSoundID = 0
+        AudioServicesCreateSystemSoundID(url, &soundID)
+        return soundID
+    }()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,25 +38,19 @@ class SecretWordViewController: UIViewController {
     }
     
     @IBAction func showSecretWord(sender: AnyObject) {
-        let url = NSBundle.mainBundle().URLForResource("peek", withExtension: "mp3")!
-        var mySound: SystemSoundID = 0
-        AudioServicesCreateSystemSoundID(url, &mySound)
-        AudioServicesPlaySystemSound(mySound);
-
+        AudioServicesPlaySystemSound(accentSoundId);
         let theWord = game.playerWords[playerNumber]
-        sclAlertView.shouldDismissOnTapOutside = true
-        sclAlertView.backgroundType = .Blur
-        sclAlertView.labelTitle.font = UIFont(name: "Chalkboard SE", size: 20.0)
-        sclAlertView.viewText.font = UIFont(name: "Chalkboard SE", size: 16.0)
-        let appIcon = UIImage(named: "AppIcon60x60")
-        sclAlertView.showCustom(self,
-                                image: appIcon,
-                                color: UIColor.blackColor(),
-                                title: NSLocalizedString("Your secret word is", comment: "On the secret word screen"),
-                                subTitle: theWord,
-                                closeButtonTitle: NSLocalizedString("OK", comment: "Dismiss the popup"),
-                                duration: 0.0)
-        sclAlertView.alertIsDismissed {
+        let appearance = SCLAlertView.SCLAppearance(
+            kTitleFont: UIFont(name: "Chalkboard SE", size: 20.0)!,
+            kTextFont: UIFont(name: "Chalkboard SE", size: 16.0)!,
+            kButtonFont: UIFont(name: "Chalkboard SE", size: 16.0)!,
+            hideWhenBackgroundViewIsTapped: true,
+            showCircularIcon: true,
+            contentViewColor: UIColor.blackColor(),
+            showCloseButton: false
+        )
+        let alertView = SCLAlertView(appearance: appearance)
+        let dismissBlock = {
             if self.playerNumber == self.game.numberOfPlayers - 1 {
                 self.game.doneShowingSecretWords()
                 var viewControllers: [AnyObject] = self.navigationController!.viewControllers
@@ -62,6 +62,12 @@ class SecretWordViewController: UIViewController {
             newController.playerNumber = self.playerNumber + 1
             self.navigationController!.pushViewController(newController, animated: true)
         }
+        alertView.addButton(NSLocalizedString("OK", comment: "Dismiss the popup"), action: {})
+        let alertViewIcon = UIImage(named: "AppIcon60x60")
+        let responder = alertView.showInfo(NSLocalizedString("Your secret word is", comment: "On the secret word screen"),
+                                           subTitle: theWord,
+                                           circleIconImage: alertViewIcon)
+        responder.setDismissBlock(dismissBlock)
     }
     
     @IBAction func stopGame(sender: AnyObject) {

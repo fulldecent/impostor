@@ -9,13 +9,21 @@
 import AudioToolbox
 import Firebase
 import QBFlatButton
-import SCLAlertView_Objective_C
+import SCLAlertView
 import SwiftyiRate
 
 class ResultsViewController: UIViewController {
-    private let game = ImpostorGameModel.game
+    private let alertAppearance = SCLAlertView.SCLAppearance(
+        kTitleFont: UIFont(name: "Chalkboard SE", size: 20.0)!,
+        kTextFont: UIFont(name: "Chalkboard SE", size: 16.0)!,
+        kButtonFont: UIFont(name: "Chalkboard SE", size: 16.0)!,
+        hideWhenBackgroundViewIsTapped: true,
+        showCircularIcon: true,
+        contentViewColor: UIColor.blackColor(),
+        showCloseButton: false
+    )    
     
-    private var sclAlertView: SCLAlertView? = nil
+    private let game = ImpostorGameModel.game
     
     private var resultsSoundId: SystemSoundID = {
         let url = NSBundle.mainBundle().URLForResource("results", withExtension: "mp3")!
@@ -81,28 +89,22 @@ class ResultsViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         AudioServicesPlaySystemSound(resultsSoundId)
-        let appIcon = UIImage(named: "AppIcon60x60")
+        let alertView = SCLAlertView(appearance: alertAppearance)
+        alertView.addButton(NSLocalizedString("OK", comment: "Dismiss the popup"), action: {})
+        let alertViewIcon = UIImage(named: "AppIcon60x60")
         switch game.gameStatus {
         case .TheImpostorWasDefeated:
-            let sclAlertView = SCLAlertView()
-            sclAlertView.shouldDismissOnTapOutside = true
-            sclAlertView.backgroundType = .Blur
-            sclAlertView.labelTitle.font = UIFont(name: "Chalkboard SE", size: 20.0)
-            sclAlertView.viewText.font = UIFont(name: "Chalkboard SE", size: 16.0)
-            sclAlertView.showCustom(self, image: appIcon, color: UIColor.blackColor(), title: nil, subTitle: NSLocalizedString("The impostor was defeated", comment: "After the game is over"), closeButtonTitle: NSLocalizedString("OK", comment: "Dismiss the popup"), duration: 0.0)
-            self.sclAlertView = sclAlertView
+            alertView.showInfo("",
+                               subTitle: NSLocalizedString("The impostor was defeated", comment: "After the game is over"),
+                               circleIconImage: alertViewIcon)
         case .TheImpostorWon:
-            let sclAlertView = SCLAlertView()
-            sclAlertView.shouldDismissOnTapOutside = true
-            sclAlertView.backgroundType = .Blur
-            sclAlertView.labelTitle.font = UIFont(name: "Chalkboard SE", size: 20.0)
-            sclAlertView.viewText.font = UIFont(name: "Chalkboard SE", size: 16.0)
-            sclAlertView.showCustom(self, image: appIcon, color: UIColor.blackColor(), title: nil, subTitle: NSLocalizedString("The impostor won", comment: "After the game is over"), closeButtonTitle: NSLocalizedString("OK", comment: "Dismiss the popup"), duration: 0.0)
-            self.sclAlertView = sclAlertView
+            alertView.showInfo("",
+                               subTitle: NSLocalizedString("The impostor won", comment: "After the game is over"),
+                               circleIconImage: alertViewIcon)
         default:
             break
         }
-        
+      
         //TODO: upstream bug, this API should be public
         // SwiftyiRate.logEvent(deferPrompt: false)
     }
