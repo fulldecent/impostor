@@ -12,14 +12,14 @@ import SCLAlertView
 import Firebase
 
 class EliminationViewController: UIViewController {
-    private let game = ImpostorGameModel.game
-    private var accentSoundId: SystemSoundID = {
-        let url = NSBundle.mainBundle().URLForResource("eliminate", withExtension: "mp3")!
+    fileprivate let game = ImpostorGameModel.game
+    fileprivate var accentSoundId: SystemSoundID = {
+        let url = Bundle.main.url(forResource: "eliminate", withExtension: "mp3")!
         var soundID: SystemSoundID = 0
-        AudioServicesCreateSystemSoundID(url, &soundID)
+        AudioServicesCreateSystemSoundID(url as CFURL, &soundID)
         return soundID
     }()
-    private let alertAppearance = SCLAlertView.SCLAppearance(
+    fileprivate let alertAppearance = SCLAlertView.SCLAppearance(
         kTitleFont: UIFont(name: "Chalkboard SE", size: 20.0)!,
         kTextFont: UIFont(name: "Chalkboard SE", size: 16.0)!,
         kButtonFont: UIFont(name: "Chalkboard SE", size: 16.0)!,
@@ -31,18 +31,18 @@ class EliminationViewController: UIViewController {
 
     @IBOutlet weak var playerPhotoCollectionView: UICollectionView!
     
-    @IBAction func eliminatePlayer(sender: UIButton) {
+    @IBAction func eliminatePlayer(_ sender: UIButton) {
         let center = sender.center
-        let rootViewPoint = sender.superview!.convertPoint(center, toView: self.playerPhotoCollectionView)
-        let indexPath = playerPhotoCollectionView.indexPathForItemAtPoint(rootViewPoint)!
-        guard !game.playerEliminated[indexPath.row] else {
+        let rootViewPoint = sender.superview!.convert(center, to: self.playerPhotoCollectionView)
+        let indexPath = playerPhotoCollectionView.indexPathForItem(at: rootViewPoint)!
+        guard !game.playerEliminated[(indexPath as NSIndexPath).row] else {
             return
         }
         AudioServicesPlaySystemSound(accentSoundId)
-        game.eliminatePlayer(indexPath.row)
+        game.eliminatePlayer((indexPath as NSIndexPath).row)
         playerPhotoCollectionView.reloadData()
         switch game.gameStatus {
-        case .TheImpostorRemains:
+        case .theImpostorRemains:
             let alertView = SCLAlertView(appearance: alertAppearance)
             alertView.addButton(NSLocalizedString("OK", comment: "Dismiss the popup"), action: {})
             let alertViewIcon = UIImage(named: "AppIcon60x60")
@@ -50,10 +50,10 @@ class EliminationViewController: UIViewController {
                                                subTitle: String(format: NSLocalizedString("Player #%ld starts this round",
                                                 comment: "After someone killed"), game.playerNumberToStartRound+1),
                                                circleIconImage: alertViewIcon)
-        case .TheImpostorWasDefeated:
-            navigationController!.popViewControllerAnimated(true)
-        case .TheImpostorWon:
-            navigationController!.popViewControllerAnimated(true)
+        case .theImpostorWasDefeated:
+            navigationController!.popViewController(animated: true)
+        case .theImpostorWon:
+            navigationController!.popViewController(animated: true)
         default:
             return
         }
@@ -64,15 +64,15 @@ class EliminationViewController: UIViewController {
         self.playerPhotoCollectionView.dataSource = self
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        FIRAnalytics.logEventWithName(kFIREventViewItem, parameters: [
-            kFIRParameterContentType:"view",
-            kFIRParameterItemID:NSStringFromClass(self.dynamicType)
+        FIRAnalytics.logEvent(withName: kFIREventViewItem, parameters: [
+            kFIRParameterContentType:"view" as NSObject,
+            kFIRParameterItemID:NSStringFromClass(type(of: self)) as NSObject
             ])
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let alertView = SCLAlertView(appearance: alertAppearance)
         alertView.addButton(NSLocalizedString("OK", comment: "Dismiss the popup"), action: {})
@@ -88,23 +88,23 @@ class EliminationViewController: UIViewController {
 }
 
 extension EliminationViewController: UICollectionViewDataSource {
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return game.numberOfPlayers
     }
     
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
         view.setNeedsLayout()
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = playerPhotoCollectionView.dequeueReusableCellWithReuseIdentifier("playerCell", forIndexPath: indexPath)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = playerPhotoCollectionView.dequeueReusableCell(withReuseIdentifier: "playerCell", for: indexPath)
         let imageView = cell.viewWithTag(1) as! UIImageView
-        let imageName = "\(Int(indexPath.row))"
+        let imageName = "\(Int((indexPath as NSIndexPath).row))"
         if let photo = CachedPersistentJPEGImageStore.sharedStore.imageWithName(imageName) {
             imageView.image = photo
         } else {
@@ -128,7 +128,7 @@ extension EliminationViewController: UICollectionViewDataSource {
                 lowestNotWorking = currentTest
             }
         }
-        let size = CGSizeMake(CGFloat(highestWorking), CGFloat(highestWorking))
+        let size = CGSize(width: CGFloat(highestWorking), height: CGFloat(highestWorking))
         (self.playerPhotoCollectionView.collectionViewLayout as! UICollectionViewFlowLayout).itemSize = size
         super.viewDidLayoutSubviews()
     }

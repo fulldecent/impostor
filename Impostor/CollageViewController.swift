@@ -12,35 +12,35 @@ import AVFoundation
 import AudioToolbox
 
 class CollageViewController: UIViewController {
-    private var game = ImpostorGameModel.game
-    private var audioPlayer: AVAudioPlayer = {
-        let url = NSBundle.mainBundle().URLForResource("camera", withExtension: "mp3")!
-        return try! AVAudioPlayer(contentsOfURL: url)
+    fileprivate var game = ImpostorGameModel.game
+    fileprivate var audioPlayer: AVAudioPlayer = {
+        let url = Bundle.main.url(forResource: "camera", withExtension: "mp3")!
+        return try! AVAudioPlayer(contentsOf: url)
     }()
     
     @IBOutlet weak var playerPhotoCollectionView: UICollectionView!
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        FIRAnalytics.logEventWithName(kFIREventViewItem, parameters: [
-            kFIRParameterContentType:"view",
-            kFIRParameterItemID:NSStringFromClass(self.dynamicType)
+        FIRAnalytics.logEvent(withName: kFIREventViewItem, parameters: [
+            kFIRParameterContentType:"view" as NSObject,
+            kFIRParameterItemID:NSStringFromClass(type(of: self)) as NSObject
             ])
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let root = navigationController!.viewControllers.first as! GameConfigurationViewController
         root.fadeOutMusic()
     }
     
     func flashScreen() {
-        dispatch_async(dispatch_get_main_queue(), {
+        DispatchQueue.main.async(execute: {
             self.audioPlayer.play()
             let flashView = UIView(frame: self.view.frame)
-            flashView.backgroundColor = UIColor.whiteColor()
+            flashView.backgroundColor = UIColor.white
             self.view!.window!.addSubview(flashView)
-            UIView.animateWithDuration(0.7, animations: {
+            UIView.animate(withDuration: 0.7, animations: {
                 flashView.alpha = 0.0
                 }, completion: {
                     _ in
@@ -49,71 +49,71 @@ class CollageViewController: UIViewController {
         })
     }
     
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
         view!.setNeedsLayout()
     }
     
     @IBAction func wantToShare() {
-        self.performSelector(#selector(CollageViewController.flashScreen), withObject: nil, afterDelay: 0.1)
-        self.performSelector(#selector(CollageViewController.showShareBox), withObject: nil, afterDelay: 0.4)
+        self.perform(#selector(CollageViewController.flashScreen), with: nil, afterDelay: 0.1)
+        self.perform(#selector(CollageViewController.showShareBox), with: nil, afterDelay: 0.4)
     }
     
     func showShareBox() {
         // Create the item to share (in this example, a url)
         // http://stackoverflow.com/a/25837053/300224
-        let mainBundle = NSBundle.mainBundle()
-        let displayName = mainBundle.objectForInfoDictionaryKey("CFBundleDisplayName") as? String
-        let name = mainBundle.objectForInfoDictionaryKey(kCFBundleNameKey as String) as? String
+        let mainBundle = Bundle.main
+        let displayName = mainBundle.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String
+        let name = mainBundle.object(forInfoDictionaryKey: kCFBundleNameKey as String) as? String
         let appName = displayName ?? name ?? "Unknown"
-        let url = NSURL(string: "https://itunes.apple.com/us/app/whos-the-impostor/id784258202")!
+        let url = URL(string: "https://itunes.apple.com/us/app/whos-the-impostor/id784258202")!
         let title = String(format: NSLocalizedString("I am playing the party game %@", comment:"Number of players in the game"), appName)
         UIGraphicsBeginImageContext(self.view.frame.size)
         for subView in self.view.subviews {
             if subView is UIButton {
-                subView.hidden = true
+                subView.isHidden = true
             }
         }
-        view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
         for subView in self.view.subviews {
             if subView is UIButton {
-                subView.hidden = false
+                subView.isHidden = false
             }
         }
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        let itemsToShare: [AnyObject] = [image, title, url]
+        let itemsToShare: [AnyObject] = [image!, title as AnyObject, url as AnyObject]
         let activityVC: UIActivityViewController = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
-        activityVC.excludedActivityTypes = [UIActivityTypePrint, UIActivityTypeAssignToContact]
+        activityVC.excludedActivityTypes = [UIActivityType.print, UIActivityType.assignToContact]
         activityVC.completionWithItemsHandler = {
             activityType, completed, returnedItems, activityError in
-            FIRAnalytics.logEventWithName("action", parameters: [
-                "viewController":NSStringFromClass(self.dynamicType),
-                "function":#function,
-                "extra": "Success"
+            FIRAnalytics.logEvent(withName: "action", parameters: [
+                "viewController":NSStringFromClass(type(of: self)) as NSObject,
+                "function":#function as NSObject,
+                "extra": "Success" as NSObject
                 ])
         }
-        self.presentViewController(activityVC, animated: true, completion: { _ in })
+        self.present(activityVC, animated: true, completion: { _ in })
     }
 
     @IBAction func returnToMainScreen() {
-        self.navigationController!.popToRootViewControllerAnimated(true)
+        self.navigationController!.popToRootViewController(animated: true)
     }
 }
 
 extension CollageViewController: UICollectionViewDataSource {
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.game.numberOfPlayers
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = playerPhotoCollectionView.dequeueReusableCellWithReuseIdentifier("playerCell", forIndexPath: indexPath)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = playerPhotoCollectionView.dequeueReusableCell(withReuseIdentifier: "playerCell", for: indexPath)
         let imageView = cell.viewWithTag(1) as! UIImageView
-        let imageName = "\(Int(indexPath.row))"
+        let imageName = "\(Int((indexPath as NSIndexPath).row))"
         if let photo = CachedPersistentJPEGImageStore.sharedStore.imageWithName(imageName) {
             imageView.image = photo
         } else {
@@ -122,14 +122,14 @@ extension CollageViewController: UICollectionViewDataSource {
         
         let degrees = Double(Int(arc4random_uniform(31)) - 15)
         let radians = CGFloat(degrees * M_PI / 180)
-        imageView.transform = CGAffineTransformMakeRotation(radians)
+        imageView.transform = CGAffineTransform(rotationAngle: radians)
         let bounceAnimation: CAKeyframeAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
         bounceAnimation.values = [0, radians * 0.5, -radians * 2, radians]
         bounceAnimation.duration = Double(arc4random_uniform(10) / 10)
-        bounceAnimation.removedOnCompletion = true
+        bounceAnimation.isRemovedOnCompletion = true
         bounceAnimation.repeatCount = 0
         bounceAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-        imageView.layer.addAnimation(bounceAnimation, forKey: "spin")
+        imageView.layer.add(bounceAnimation, forKey: "spin")
         self.makeItBounce(imageView)
         
         return cell
@@ -148,19 +148,19 @@ extension CollageViewController: UICollectionViewDataSource {
                 lowestNotWorking = currentTest
             }
         }
-        let size = CGSizeMake(CGFloat(highestWorking), CGFloat(highestWorking))
+        let size = CGSize(width: CGFloat(highestWorking), height: CGFloat(highestWorking))
         (self.playerPhotoCollectionView.collectionViewLayout as! UICollectionViewFlowLayout).itemSize = size
         super.viewDidLayoutSubviews()
     }
     
-    func makeItBounce(view: UIView) {
+    func makeItBounce(_ view: UIView) {
         let bounceAnimation: CAKeyframeAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
         bounceAnimation.values = [1.0, 1.2]
         bounceAnimation.duration = 0.15
-        bounceAnimation.removedOnCompletion = false
+        bounceAnimation.isRemovedOnCompletion = false
         bounceAnimation.repeatCount = 2
         bounceAnimation.autoreverses = true
         bounceAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-        view.layer.addAnimation(bounceAnimation, forKey: "bounce")
+        view.layer.add(bounceAnimation, forKey: "bounce")
     }
 }

@@ -17,15 +17,15 @@ class SecretWordViewController: UIViewController {
     @IBOutlet weak var topSecretLabel: UILabel!
     var playerNumber: Int!
     
-    private var game: ImpostorGameModel!
-    private var imagePickerController: UIImagePickerController!
-    private var imagePopoverController: UIPopoverController!
-    private var wantsToTakePhoto: Bool!
-    private var photoDenied: Bool!
-    private var accentSoundId: SystemSoundID = {
-        let url = NSBundle.mainBundle().URLForResource("peek", withExtension: "mp3")!
+    fileprivate var game: ImpostorGameModel!
+    fileprivate var imagePickerController: UIImagePickerController!
+    fileprivate var imagePopoverController: UIPopoverController!
+    fileprivate var wantsToTakePhoto = true
+    fileprivate var photoDenied = false
+    fileprivate var accentSoundId: SystemSoundID = {
+        let url = Bundle.main.url(forResource: "peek", withExtension: "mp3")!
         var soundID: SystemSoundID = 0
-        AudioServicesCreateSystemSoundID(url, &soundID)
+        AudioServicesCreateSystemSoundID(url as CFURL, &soundID)
         return soundID
     }()
 
@@ -33,11 +33,11 @@ class SecretWordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         game = ImpostorGameModel.game
-        topSecretLabel.transform = CGAffineTransformMakeRotation(-10 * CGFloat(M_PI) / 180.0)
+        topSecretLabel.transform = CGAffineTransform(rotationAngle: -10 * CGFloat(M_PI) / 180.0)
         topSecretLabel.clipsToBounds = false
     }
     
-    @IBAction func showSecretWord(sender: AnyObject) {
+    @IBAction func showSecretWord(_ sender: AnyObject) {
         AudioServicesPlaySystemSound(accentSoundId);
         let theWord = game.playerWords[playerNumber]
         let appearance = SCLAlertView.SCLAppearance(
@@ -58,7 +58,7 @@ class SecretWordViewController: UIViewController {
                 return
             }
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let newController = storyboard.instantiateViewControllerWithIdentifier("secretWord") as! SecretWordViewController
+            let newController = storyboard.instantiateViewController(withIdentifier: "secretWord") as! SecretWordViewController
             newController.playerNumber = self.playerNumber + 1
             self.navigationController!.pushViewController(newController, animated: true)
         }
@@ -70,15 +70,15 @@ class SecretWordViewController: UIViewController {
         responder.setDismissBlock(dismissBlock)
     }
     
-    @IBAction func stopGame(sender: AnyObject) {
-        self.navigationController!.popToRootViewControllerAnimated(true)
+    @IBAction func stopGame(_ sender: AnyObject) {
+        self.navigationController!.popToRootViewController(animated: true)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        FIRAnalytics.logEventWithName(kFIREventViewItem, parameters: [
-            kFIRParameterContentType:"view",
-            kFIRParameterItemID:NSStringFromClass(self.dynamicType)
+        FIRAnalytics.logEvent(withName: kFIREventViewItem, parameters: [
+            kFIRParameterContentType:"view" as NSObject,
+            kFIRParameterItemID:NSStringFromClass(type(of: self)) as NSObject
             ])
         
         self.playerLabel.text = String(format: NSLocalizedString("Player #%ld", comment: "Current player"), Int(self.playerNumber) + 1)
@@ -93,52 +93,52 @@ class SecretWordViewController: UIViewController {
         }
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         guard self.wantsToTakePhoto && !self.photoDenied else {
             return
         }
-        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
             self.imagePickerController = UIImagePickerController()
             self.imagePickerController.delegate = self
-            self.imagePickerController.sourceType = .Camera
-            self.imagePickerController.mediaTypes = UIImagePickerController.availableMediaTypesForSourceType(.Camera) ?? []
-            if UIImagePickerController.isCameraDeviceAvailable(.Front) {
-                self.imagePickerController.cameraDevice = .Front
+            self.imagePickerController.sourceType = .camera
+            self.imagePickerController.mediaTypes = UIImagePickerController.availableMediaTypes(for: .camera) ?? []
+            if UIImagePickerController.isCameraDeviceAvailable(.front) {
+                self.imagePickerController.cameraDevice = .front
             }
-            self.presentViewController(self.imagePickerController, animated: true, completion: { _ in })
+            self.present(self.imagePickerController, animated: true, completion: { _ in })
         }
     }
     
 }
 
 extension SecretWordViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         var photo = info[UIImagePickerControllerOriginalImage] as! UIImage
         photo = photo.normalizedImage().cropBiggestCenteredSquareImage(withSide: 800)
         let imageName: String = "\(Int(self.playerNumber))"
         CachedPersistentJPEGImageStore.sharedStore.saveImage(photo, withName: imageName)
         self.playerImage.image = photo
-        picker.dismissViewControllerAnimated(true, completion: nil)
+        picker.dismiss(animated: true, completion: nil)
     }
     
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.photoDenied = true
-        picker.dismissViewControllerAnimated(true, completion: { _ in })
+        picker.dismiss(animated: true, completion: { _ in })
     }
 }
 
 private extension UIImage {
     func normalizedImage() -> UIImage {
-        if (self.imageOrientation == UIImageOrientation.Up) {
+        if (self.imageOrientation == UIImageOrientation.up) {
             return self;
         }
         
         UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale);
         let rect = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height)
-        self.drawInRect(rect)
+        self.draw(in: rect)
         
-        let normalizedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        let normalizedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext();
         return normalizedImage;
     }
@@ -147,30 +147,30 @@ private extension UIImage {
         if self.size.height == side && self.size.width == side {
             return self
         }
-        let newSize = CGSizeMake(side, side)
+        let newSize = CGSize(width: side, height: side)
         let ratio: CGFloat
         let delta: CGFloat
         let offset: CGPoint
         if self.size.width > self.size.height {
             ratio = newSize.height / self.size.height
             delta = ratio * (self.size.width - self.size.height)
-            offset = CGPointMake(delta / 2, 0)
+            offset = CGPoint(x: delta / 2, y: 0)
         }
         else {
             ratio = newSize.width / self.size.width
             delta = ratio * (self.size.height - self.size.width)
-            offset = CGPointMake(0, delta / 2)
+            offset = CGPoint(x: 0, y: delta / 2)
         }
-        let clipRect = CGRectMake(-offset.x, -offset.y, ratio * self.size.width, ratio * self.size.height)
-        if UIScreen.mainScreen().respondsToSelector(#selector(NSDecimalNumberBehaviors.scale)) {
+        let clipRect = CGRect(x: -offset.x, y: -offset.y, width: ratio * self.size.width, height: ratio * self.size.height)
+        if UIScreen.main.responds(to: #selector(NSDecimalNumberBehaviors.scale)) {
             UIGraphicsBeginImageContextWithOptions(newSize, true, 0.0)
         } else {
             UIGraphicsBeginImageContext(newSize);
         }
         UIRectClip(clipRect)
-        self.drawInRect(clipRect)
+        self.draw(in: clipRect)
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return newImage
+        return newImage!
     }
 }

@@ -15,16 +15,16 @@ import RMStore
 import SafariServices
 
 class GameConfigurationViewController: UIViewController {
-    private var playerCount = 3
-    private var game = ImpostorGameModel.game
-    private var audioPlayer: AVAudioPlayer = {
-        let url = NSBundle.mainBundle().URLForResource("intro", withExtension: "mp3")!
-        return try! AVAudioPlayer(contentsOfURL: url)
+    fileprivate var playerCount = 3
+    fileprivate var game = ImpostorGameModel.game
+    fileprivate var audioPlayer: AVAudioPlayer = {
+        let url = Bundle.main.url(forResource: "intro", withExtension: "mp3")!
+        return try! AVAudioPlayer(contentsOf: url)
     }()
-    private var buttonPress: SystemSoundID = {
-        let url = NSBundle.mainBundle().URLForResource("buttonPress", withExtension: "mp3")!
+    fileprivate var buttonPress: SystemSoundID = {
+        let url = Bundle.main.url(forResource: "buttonPress", withExtension: "mp3")!
         var soundID: SystemSoundID = 0
-        AudioServicesCreateSystemSoundID(url, &soundID)
+        AudioServicesCreateSystemSoundID(url as CFURL, &soundID)
         return soundID
     }()
 
@@ -33,8 +33,8 @@ class GameConfigurationViewController: UIViewController {
         playerPhotoCollectionView.dataSource = self
         playerPhotoCollectionView.delegate = self
         
-        let defaults = NSUserDefaults.standardUserDefaults()
-        let savedPlayerCount = defaults.integerForKey("playerCount")
+        let defaults = UserDefaults.standard
+        let savedPlayerCount = defaults.integer(forKey: "playerCount")
         if savedPlayerCount != 0 {
             setPlayerCount(savedPlayerCount)
         } else {
@@ -44,32 +44,32 @@ class GameConfigurationViewController: UIViewController {
         (self.playerPhotoCollectionView.collectionViewLayout as! UICollectionViewFlowLayout).minimumLineSpacing = 10
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        FIRAnalytics.logEventWithName(kFIREventViewItem, parameters: [
-            kFIRParameterContentType:"view",
-            kFIRParameterItemID:NSStringFromClass(self.dynamicType)
+        FIRAnalytics.logEvent(withName: kFIREventViewItem, parameters: [
+            kFIRParameterContentType:"view" as NSObject,
+            kFIRParameterItemID:NSStringFromClass(type(of: self)) as NSObject
             ])
         // https://stackoverflow.com/questions/3460694/uibutton-wont-go-to-aspect-fit-in-iphone/3995820#3995820
         for view in self.view.subviews {
             if let button = view as? UIButton {
-                button.imageView!.contentMode = .ScaleAspectFit
+                button.imageView!.contentMode = .scaleAspectFit
             }
         }
-        let defaults = NSUserDefaults.standardUserDefaults()
-        let didIAP = defaults.integerForKey("didIAP")
+        let defaults = UserDefaults.standard
+        let didIAP = defaults.integer(forKey: "didIAP")
         if didIAP != 0 {
             buyButton.imageView!.image = UIImage(named: "money-paid")
         }
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         audioPlayer.play()
-        if !NSUserDefaults.standardUserDefaults().boolForKey("didShowInstructions") {
+        if !UserDefaults.standard.bool(forKey: "didShowInstructions") {
             showInstructions()
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "didShowInstructions")
-            NSUserDefaults.standardUserDefaults().synchronize()
+            UserDefaults.standard.set(true, forKey: "didShowInstructions")
+            UserDefaults.standard.synchronize()
         }
     }
 
@@ -79,27 +79,27 @@ class GameConfigurationViewController: UIViewController {
     
     @IBOutlet weak var buyButton: UIButton!
     
-    @IBAction func decrementPlayerCount(sender: UIButton) {
+    @IBAction func decrementPlayerCount(_ sender: UIButton) {
         setPlayerCount(playerCount - 1)
         AudioServicesPlaySystemSound(self.buttonPress)
     }
     
-    @IBAction func incrementPlayerCount(sender: AnyObject) {
+    @IBAction func incrementPlayerCount(_ sender: AnyObject) {
         setPlayerCount(playerCount + 1)
         AudioServicesPlaySystemSound(self.buttonPress)
     }
     
-    @IBAction func startGame(sender: UIButton) {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setInteger(self.playerCount, forKey: "playerCount")
+    @IBAction func startGame(_ sender: UIButton) {
+        let defaults = UserDefaults.standard
+        defaults.set(self.playerCount, forKey: "playerCount")
         defaults.synchronize()
         game.startGameWithNumberOfPlayers(self.playerCount)
     }
     
     @IBAction func showInstructions() {
-        FIRAnalytics.logEventWithName(kFIREventViewItem, parameters: [
-            kFIRParameterContentType:"view",
-            kFIRParameterItemID:"Instructions"
+        FIRAnalytics.logEvent(withName: kFIREventViewItem, parameters: [
+            kFIRParameterContentType:"view" as NSObject,
+            kFIRParameterItemID:"Instructions" as NSObject
             ])
         AudioServicesPlaySystemSound(self.buttonPress)
         
@@ -107,83 +107,81 @@ class GameConfigurationViewController: UIViewController {
         introViewPages.append(KxIntroViewPage(
             title: NSLocalizedString("A party game", comment: "Intro screen 1 title"),
             withDetail: NSLocalizedString("For 3 to 12 players", comment: "Intro screen 1 detail"),
-            withImage: UIImage(named: "help1")))
+            with: UIImage(named: "help1")))
         introViewPages.append(KxIntroViewPage(
             title: NSLocalizedString("Everyone sees their secret word", comment: "Intro screen 2 title"),
             withDetail: NSLocalizedString("But the impostor's word is different", comment: "Intro screen 2 detail"),
-            withImage: UIImage(named: "help2")))
+            with: UIImage(named: "help2")))
         introViewPages.append(KxIntroViewPage(
             title: NSLocalizedString("Each round players describe their word", comment: "Intro screen 3 title"),
             withDetail: NSLocalizedString("then vote to eliminate one player (can't use word to describe itself or repeat other players, break ties with a revote)", comment: "Intro screen 3 detail"),
-            withImage: UIImage(named: "help3")))
+            with: UIImage(named: "help3")))
         introViewPages.append(KxIntroViewPage(
             title: NSLocalizedString("To win", comment: "Intro screen 4 title"),
             withDetail: NSLocalizedString("the impostor must survive with one other player", comment: "Intro screen 4 detail"),
-            withImage: UIImage(named: "help4")))
+            with: UIImage(named: "help4")))
         let introView = KxIntroViewController(pages: introViewPages)
-        introView.presentInViewController(self, fullScreenLayout: true)
+        introView?.present(in: self, fullScreenLayout: true)
     }
     
-    @IBAction func clearPhotos(sender: UIButton) {
-        FIRAnalytics.logEventWithName("action", parameters: [
-            "viewController":NSStringFromClass(self.dynamicType),
-            "function":#function
+    @IBAction func clearPhotos(_ sender: UIButton) {
+        FIRAnalytics.logEvent(withName: "action", parameters: [
+            "viewController":NSStringFromClass(type(of: self)) as NSObject,
+            "function":#function as NSObject
             ])
         AudioServicesPlaySystemSound(self.buttonPress)
         CachedPersistentJPEGImageStore.sharedStore.deleteAllImages()
         playerPhotoCollectionView.reloadData()
     }
     
-    @IBAction func seeWeixin(sender: UIButton) {
-        FIRAnalytics.logEventWithName("action", parameters: [
-            "viewController":NSStringFromClass(self.dynamicType),
-            "function":#function
+    @IBAction func seeWeixin(_ sender: UIButton) {
+        FIRAnalytics.logEvent(withName: "action", parameters: [
+            "viewController":NSStringFromClass(type(of: self)) as NSObject,
+            "function":#function as NSObject
             ])
         AudioServicesPlaySystemSound(self.buttonPress)
-        let wxUrl = NSURL(string: "weixin://contacts/profile/fulldecent")!
-        let backupUrl = NSURL(string: "http://user.qzone.qq.com/858772059")!
-        if UIApplication.sharedApplication().canOpenURL(wxUrl) {
-            UIApplication.sharedApplication().openURL(wxUrl)
+        let wxUrl = URL(string: "weixin://contacts/profile/fulldecent")!
+        let backupUrl = URL(string: "http://user.qzone.qq.com/858772059")!
+        if UIApplication.shared.canOpenURL(wxUrl) {
+            UIApplication.shared.openURL(wxUrl)
         } else {
             if #available(iOS 9.0, *) {
-                let svc = SFSafariViewController(URL: backupUrl, entersReaderIfAvailable: true)
+                let svc = SFSafariViewController(url: backupUrl, entersReaderIfAvailable: true)
                 svc.delegate = self
-                self.presentViewController(svc, animated: true, completion: nil)
+                self.present(svc, animated: true, completion: nil)
             } else {
-                UIApplication.sharedApplication().openURL(backupUrl)
+                UIApplication.shared.openURL(backupUrl)
             }
         }
     }
     
-    @IBAction func giveFeedback(sender: UIButton) {
-        FIRAnalytics.logEventWithName("action", parameters: [
-            "viewController": NSStringFromClass(self.dynamicType),
-            "function": #function
+    @IBAction func giveFeedback(_ sender: UIButton) {
+        FIRAnalytics.logEvent(withName: "action", parameters: [
+            "viewController": NSStringFromClass(type(of: self)) as NSObject,
+            "function": #function as NSObject
             ])
         AudioServicesPlaySystemSound(self.buttonPress)
-        let url = NSURL(string: "http://phor.net/apps/impostor/newWords.php")!
-        UIApplication.sharedApplication().openURL(url)
+        let url = URL(string: "http://phor.net/apps/impostor/newWords.php")!
+        UIApplication.shared.openURL(url)
     }
     
-    @IBAction func buyUpgrade(sender: UIButton) {
-        FIRAnalytics.logEventWithName("action", parameters: [
-            "viewController": NSStringFromClass(self.dynamicType),
-            "function": #function
+    @IBAction func buyUpgrade(_ sender: UIButton) {
+        FIRAnalytics.logEvent(withName: "action", parameters: [
+            "viewController": NSStringFromClass(type(of: self)) as NSObject,
+            "function": #function as NSObject
             ])
-        FIRAnalytics.logEventWithName(kFIREventBeginCheckout, parameters: [
-            kFIRParameterItemCategory: "In-App Purchase",
-            kFIRParameterItemName: "Unlock words"
+        FIRAnalytics.logEvent(withName: kFIREventBeginCheckout, parameters: [
+            kFIRParameterItemCategory: "In-App Purchase" as NSObject,
+            kFIRParameterItemName: "Unlock words" as NSObject
             ])
         AudioServicesPlaySystemSound(self.buttonPress)
-        let url = NSURL(string: "http://phor.net/apps/impostor/newWords.php")!
-        UIApplication.sharedApplication().openURL(url)
         
         // Check if they already have it
-        if NSUserDefaults.standardUserDefaults().integerForKey("didIAP") != 0 {
-            FIRAnalytics.logEventWithName("action", parameters: [
-                "viewController": NSStringFromClass(self.dynamicType),
-                "function": #function,
-                "extra": "Already had IAP"
+        if UserDefaults.standard.integer(forKey: "didIAP") != 0 {
+            FIRAnalytics.logEvent(withName: "action", parameters: [
+                "viewController": NSStringFromClass(type(of: self)) as NSObject,
+                "function": #function as NSObject,
+                "extra": "Already had IAP" as NSObject
                 ])
             let alert = UIAlertView(title: NSLocalizedString("Your previous purchase was restored", comment: "In-app purchase"), message: nil, delegate: nil, cancelButtonTitle: NSLocalizedString("OK", comment: "Dismiss the popup"))
             alert.show()
@@ -191,16 +189,16 @@ class GameConfigurationViewController: UIViewController {
         }
         
         // Try to unlock past sale
-        RMStore.defaultStore().restoreTransactionsOnSuccess({
+        RMStore.default().restoreTransactions(onSuccess: {
             transactions in
-            if transactions.count > 0 {
-                FIRAnalytics.logEventWithName("action", parameters: [
-                    "viewController": NSStringFromClass(self.dynamicType),
-                    "function": #function,
-                    "extra": "Restored IAP"
+            if (transactions?.count)! > 0 {
+                FIRAnalytics.logEvent(withName: "action", parameters: [
+                    "viewController": NSStringFromClass(type(of: self)) as NSObject,
+                    "function": #function as NSObject,
+                    "extra": "Restored IAP" as NSObject
                     ])
-                let defaults = NSUserDefaults.standardUserDefaults()
-                defaults.setInteger(1, forKey: "didIAP")
+                let defaults = UserDefaults.standard
+                defaults.set(1, forKey: "didIAP")
                 defaults.synchronize()
                 let alert = UIAlertView(title: NSLocalizedString("Your previous purchase was restored", comment: "In-app purchase"), message: nil, delegate: nil, cancelButtonTitle: NSLocalizedString("OK", comment: "Dismiss the popup"))
                 alert.show()
@@ -212,37 +210,37 @@ class GameConfigurationViewController: UIViewController {
         
         // Try to make new sale
         let products = Set<String>(["words0001"])
-        RMStore.defaultStore().requestProducts(products, success: {
+        RMStore.default().requestProducts(products, success: {
             products, invalidProductIdentifiers in
             NSLog("Products loaded")
-            RMStore.defaultStore().addPayment("words0001", success: {
+            RMStore.default().addPayment("words0001", success: {
                 transaction in
-                FIRAnalytics.logEventWithName("action", parameters: [
-                    "viewController": NSStringFromClass(self.dynamicType),
-                    "function": #function,
-                    "extra": "Successful IAP"
+                FIRAnalytics.logEvent(withName: "action", parameters: [
+                    "viewController": NSStringFromClass(type(of: self)) as NSObject,
+                    "function": #function as NSObject,
+                    "extra": "Successful IAP" as NSObject
                     ])
-                let defaults = NSUserDefaults.standardUserDefaults()
-                defaults.setInteger(1, forKey: "didIAP")
+                let defaults = UserDefaults.standard
+                defaults.set(1, forKey: "didIAP")
                 defaults.synchronize()
                 let alert = UIAlertView(title: NSLocalizedString("Thank you for your purchase!", comment: "In-app purchase"), message: nil, delegate: nil, cancelButtonTitle: NSLocalizedString("OK", comment: "Dismiss the popup"))
                 alert.show()
             }, failure: {
                 transaction, error in
-                FIRAnalytics.logEventWithName("action", parameters: [
-                    "viewController": NSStringFromClass(self.dynamicType),
-                    "function": #function,
-                    "extra": "Error with IAP"
+                FIRAnalytics.logEvent(withName: "action", parameters: [
+                    "viewController": NSStringFromClass(type(of: self)) as NSObject,
+                    "function": #function as NSObject,
+                    "extra": "Error with IAP" as NSObject
                     ])
                 let alert = UIAlertView(title: NSLocalizedString("There was a problem with your purchase!", comment: "In-app purchase"), message: nil, delegate: nil, cancelButtonTitle: NSLocalizedString("OK", comment: "Dismiss the popup"))
                 alert.show()
             })
         }, failure: {
             error in
-            FIRAnalytics.logEventWithName("action", parameters: [
-                "viewController": NSStringFromClass(self.dynamicType),
-                "function": #function,
-                "extra": "Error with IAP, requesting products"
+            FIRAnalytics.logEvent(withName: "action", parameters: [
+                "viewController": NSStringFromClass(type(of: self)) as NSObject,
+                "function": #function as NSObject,
+                "extra": "Error with IAP, requesting products" as NSObject
                 ])
             NSLog("Something went wrong")
             let alert = UIAlertView(title: NSLocalizedString("There was a problem with your purchase!", comment: "In-app purchase"), message: nil, delegate: nil, cancelButtonTitle: NSLocalizedString("OK", comment: "Dismiss the popup"))
@@ -250,7 +248,7 @@ class GameConfigurationViewController: UIViewController {
         })
     }
     
-    func setPlayerCount(count: Int) {
+    func setPlayerCount(_ count: Int) {
         if count < 3 {
             playerCount = 3
         } else if count > 12 {
@@ -261,13 +259,13 @@ class GameConfigurationViewController: UIViewController {
         
         numberOfPlayersLabel.text = String(format: NSLocalizedString("%ld players", comment:"Number of players in the game"), self.playerCount)
         
-        while playerPhotoCollectionView.numberOfItemsInSection(0) < playerCount {
-            let nextItem = playerPhotoCollectionView.numberOfItemsInSection(0)
-            playerPhotoCollectionView.insertItemsAtIndexPaths([NSIndexPath(forItem: nextItem, inSection: 0)])
+        while playerPhotoCollectionView.numberOfItems(inSection: 0) < playerCount {
+            let nextItem = playerPhotoCollectionView.numberOfItems(inSection: 0)
+            playerPhotoCollectionView.insertItems(at: [IndexPath(item: nextItem, section: 0)])
         }
-        while playerPhotoCollectionView.numberOfItemsInSection(0) > playerCount {
-            let lastItem = playerPhotoCollectionView.numberOfItemsInSection(0) - 1
-            playerPhotoCollectionView.deleteItemsAtIndexPaths([NSIndexPath(forItem: lastItem, inSection: 0)])
+        while playerPhotoCollectionView.numberOfItems(inSection: 0) > playerCount {
+            let lastItem = playerPhotoCollectionView.numberOfItems(inSection: 0) - 1
+            playerPhotoCollectionView.deleteItems(at: [IndexPath(item: lastItem, section: 0)])
         }
         view!.setNeedsLayout()
     }
@@ -276,7 +274,7 @@ class GameConfigurationViewController: UIViewController {
         // http://stackoverflow.com/questions/1216581/avaudioplayer-fade-volume-out
         if self.audioPlayer.volume > 0.1 {
             self.audioPlayer.volume -= 0.1
-            self.performSelector(#selector(GameConfigurationViewController.fadeOutMusic), withObject: nil, afterDelay: 0.1)
+            self.perform(#selector(GameConfigurationViewController.fadeOutMusic), with: nil, afterDelay: 0.1)
         }
         else {
             // Stop and get the sound ready for playing again
@@ -289,23 +287,23 @@ class GameConfigurationViewController: UIViewController {
 }
 
 extension GameConfigurationViewController: UICollectionViewDataSource {
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return playerCount
     }
     
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
         view.setNeedsLayout()
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = playerPhotoCollectionView.dequeueReusableCellWithReuseIdentifier("playerCell", forIndexPath: indexPath)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = playerPhotoCollectionView.dequeueReusableCell(withReuseIdentifier: "playerCell", for: indexPath)
         let imageView = cell.viewWithTag(1) as! UIImageView
-        let imageName = "\(Int(indexPath.row))"
+        let imageName = "\(Int((indexPath as NSIndexPath).row))"
         if let photo = CachedPersistentJPEGImageStore.sharedStore.imageWithName(imageName) {
             imageView.image = photo
         } else {
@@ -329,33 +327,33 @@ extension GameConfigurationViewController: UICollectionViewDataSource {
                 lowestNotWorking = currentTest
             }
         }
-        let size = CGSizeMake(CGFloat(highestWorking), CGFloat(highestWorking))
+        let size = CGSize(width: CGFloat(highestWorking), height: CGFloat(highestWorking))
         (self.playerPhotoCollectionView.collectionViewLayout as! UICollectionViewFlowLayout).itemSize = size
         super.viewDidLayoutSubviews()
     }
 }
 
 extension GameConfigurationViewController: UICollectionViewDelegate {
-    func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         self.makeItBounce(cell)
     }
     
-    func makeItBounce(view: UIView) {
+    func makeItBounce(_ view: UIView) {
         let bounceAnimation: CAKeyframeAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
         bounceAnimation.values = [1.0, 1.2]
         bounceAnimation.duration = 0.15
-        bounceAnimation.removedOnCompletion = false
+        bounceAnimation.isRemovedOnCompletion = false
         bounceAnimation.repeatCount = 2
         bounceAnimation.autoreverses = true
         bounceAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-        view.layer.addAnimation(bounceAnimation, forKey: "bounce")
+        view.layer.add(bounceAnimation, forKey: "bounce")
     }
 }
 
 @available(iOS 9.0, *)
 extension GameConfigurationViewController: SFSafariViewControllerDelegate {
-    func safariViewControllerDidFinish(controller: SFSafariViewController)
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController)
     {
-        controller.dismissViewControllerAnimated(true, completion: nil)
+        controller.dismiss(animated: true, completion: nil)
     }
 }

@@ -10,20 +10,20 @@ import UIKit
 import FirebaseAnalytics
 
 class MainGameViewController: UIViewController {
-    override func viewDidAppear(animated: Bool) {        
+    override func viewDidAppear(_ animated: Bool) {        
         super.viewDidAppear(animated)
         switch ImpostorGameModel.game.gameStatus {
-        case .ShowSecretWords:
-            self.performSegueWithIdentifier("secretWord", sender: self)
-        case .TheImpostorRemains:
-            self.performSegueWithIdentifier("elimination", sender: self)
-        case .TheImpostorWasDefeated, .TheImpostorWon:
-            self.performSegueWithIdentifier("results", sender: self)
+        case .showSecretWords:
+            self.performSegue(withIdentifier: "secretWord", sender: self)
+        case .theImpostorRemains:
+            self.performSegue(withIdentifier: "elimination", sender: self)
+        case .theImpostorWasDefeated, .theImpostorWon:
+            self.performSegue(withIdentifier: "results", sender: self)
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let secretWordViewController = segue.destinationViewController as? SecretWordViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let secretWordViewController = segue.destination as? SecretWordViewController {
             secretWordViewController.playerNumber = 0
         }
     }

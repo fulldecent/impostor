@@ -3,23 +3,27 @@ This application makes use of the following third party libraries:
 
 ## Firebase
 
-Copyright 2016 Google Inc.
+Copyright 2016 Google
 
 ## FirebaseAnalytics
 
-Copyright 2016 Google Inc.
+Copyright 2016 Google
+
+## FirebaseCore
+
+Copyright 2016 Google
 
 ## FirebaseDynamicLinks
 
-Copyright 2016 Google Inc.
+Copyright 2016 Google
 
 ## FirebaseInstanceID
 
-Copyright 2016 Google Inc.
+Copyright 2016 Google
 
 ## FirebaseInvites
 
-Copyright 2016 Google Inc.
+Copyright 2016 Google
 
 ## Google
 
@@ -27,31 +31,31 @@ Copyright 2016 Google Inc.
 
 ## GoogleAnalytics
 
-Copyright 2015 Google Inc.
+Copyright 2016 Google
 
 ## GoogleAppUtilities
 
-Copyright 2015 Google Inc.
+Copyright 2016 Google
 
 ## GoogleAuthUtilities
 
-Copyright 2015 Google Inc.
+Copyright 2016 Google
 
 ## GoogleInterchangeUtilities
 
-Copyright 2015 Google Inc.
+Copyright 2016 Google
 
 ## GoogleNetworkingUtilities
 
-Copyright 2015 Google Inc.
+Copyright 2016 Google
 
 ## GoogleParsingUtilities
 
-Copyright 2015 Google Inc.
+Copyright 2016 Google
 
 ## GooglePlusUtilities
 
-Copyright 2015 Google Inc.
+Copyright 2016 Google
 
 ## GoogleSignIn
 
@@ -59,11 +63,11 @@ Copyright 2015 Google Inc. All Rights Reserved.
 
 ## GoogleSymbolUtilities
 
-Copyright 2015 Google Inc.
+Copyright 2016 Google
 
 ## GoogleUtilities
 
-Copyright 2015 Google Inc.
+Copyright 2016 Google
 
 ## QBFlatButton
 

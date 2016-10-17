@@ -1,16 +1,24 @@
 PODS:
-  - Firebase/Analytics (3.2.1):
-    - FirebaseAnalytics (= 3.2.0)
-  - Firebase/Invites (3.2.1):
-    - Firebase/Analytics (= 3.2.1)
-    - FirebaseInvites (= 1.0.4)
-  - FirebaseAnalytics (3.2.0):
+  - Firebase/Core (3.7.1):
+    - FirebaseAnalytics (= 3.4.4)
+    - FirebaseCore (= 3.4.3)
+  - Firebase/Invites (3.7.1):
+    - Firebase/Core
+    - FirebaseInvites (= 1.2.1)
+  - FirebaseAnalytics (3.4.4):
+    - FirebaseCore (~> 3.4)
     - FirebaseInstanceID (~> 1.0)
     - GoogleInterchangeUtilities (~> 1.2)
     - GoogleSymbolUtilities (~> 1.1)
-    - GoogleUtilities (~> 1.3)
-  - FirebaseDynamicLinks (1.0.3):
-    - FirebaseAnalytics (~> 3.2)
+  - FirebaseCore (3.4.3):
+    - GoogleInterchangeUtilities (~> 1.2)
+    - GoogleUtilities (~> 1.2)
+  - FirebaseDynamicLinks (1.3.0):
+    - FirebaseAnalytics (~> 3.4)
+  - FirebaseInstanceID (1.0.8)
+  - FirebaseInvites (1.2.1):
+    - FirebaseAnalytics (~> 3.4)
+    - FirebaseDynamicLinks (~> 1.3)
     - GoogleAppUtilities (~> 1.1)
     - GoogleAuthUtilities (~> 2.0)
     - GoogleInterchangeUtilities (~> 1.2)
@@ -18,45 +26,41 @@ PODS:
     - GoogleParsingUtilities (~> 1.1)
     - GooglePlusUtilities (~> 1.1)
     - GoogleSignIn (~> 4.0)
-    - GoogleUtilities (~> 1.3)
-  - FirebaseInstanceID (1.0.6)
-  - FirebaseInvites (1.0.4):
-    - FirebaseAnalytics (~> 3.2)
-    - FirebaseDynamicLinks (~> 1.0)
+    - GoogleUtilities (~> 1.2)
   - Google/Analytics (3.0.3):
     - Google/Core
     - GoogleAnalytics (~> 3.12)
   - Google/Core (3.0.3):
     - FirebaseAnalytics (~> 3.2)
-  - GoogleAnalytics (3.14.0)
-  - GoogleAppUtilities (1.1.1):
-    - GoogleSymbolUtilities (~> 1.0)
-  - GoogleAuthUtilities (2.0.1):
-    - GoogleNetworkingUtilities (~> 1.0)
-    - GoogleSymbolUtilities (~> 1.0)
-  - GoogleInterchangeUtilities (1.2.1):
-    - GoogleSymbolUtilities (~> 1.0)
-  - GoogleNetworkingUtilities (1.2.1):
-    - GoogleSymbolUtilities (~> 1.0)
-  - GoogleParsingUtilities (1.1.1):
-    - GoogleNetworkingUtilities (~> 1.0)
-    - GoogleSymbolUtilities (~> 1.0)
-  - GooglePlusUtilities (1.1.1):
-    - GoogleParsingUtilities (~> 1.0)
-    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleAnalytics (3.17.0)
+  - GoogleAppUtilities (1.1.2):
+    - GoogleSymbolUtilities (~> 1.1)
+  - GoogleAuthUtilities (2.0.2):
+    - GoogleNetworkingUtilities (~> 1.2)
+    - GoogleSymbolUtilities (~> 1.1)
+  - GoogleInterchangeUtilities (1.2.2):
+    - GoogleSymbolUtilities (~> 1.1)
+  - GoogleNetworkingUtilities (1.2.2):
+    - GoogleSymbolUtilities (~> 1.1)
+  - GoogleParsingUtilities (1.1.2):
+    - GoogleNetworkingUtilities (~> 1.2)
+    - GoogleSymbolUtilities (~> 1.1)
+  - GooglePlusUtilities (1.1.2):
+    - GoogleParsingUtilities (~> 1.1)
+    - GoogleSymbolUtilities (~> 1.1)
   - GoogleSignIn (4.0.0):
     - GoogleAppUtilities (~> 1.1)
     - GoogleAuthUtilities (~> 2.0)
     - GoogleNetworkingUtilities (~> 1.2)
     - GoogleUtilities (~> 1.3)
-  - GoogleSymbolUtilities (1.1.1)
-  - GoogleUtilities (1.3.1):
-    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleSymbolUtilities (1.1.2)
+  - GoogleUtilities (1.3.2):
+    - GoogleSymbolUtilities (~> 1.1)
   - QBFlatButton (1.1)
   - RMStore (0.7.1):
     - RMStore/Core (= 0.7.1)
   - RMStore/Core (0.7.1)
-  - SCLAlertView (0.5.9)
+  - SCLAlertView (0.7.0)
   - SwiftyiRate (1.0.1)
 
 DEPENDENCIES:
@@ -68,27 +72,28 @@ DEPENDENCIES:
   - SwiftyiRate
 
 SPEC CHECKSUMS:
-  Firebase: 6c80ac28d59d06bfd9152a7b6ea17625ca93183d
-  FirebaseAnalytics: 6f75b04e6bfb8e0b6e9ef298e04c24eea3b13863
-  FirebaseDynamicLinks: e7ce861fd1cd501483f4b32861380cc494b79013
-  FirebaseInstanceID: d014d574053a2fe84478f12f7bae96979e7051bb
-  FirebaseInvites: 17f86fd33f45f789abb40ebf289865c1a5e2aa8c
+  Firebase: be473484f0d515e72ffd04acf22f981773c23e58
+  FirebaseAnalytics: 0533a00b681e08fd0b2cd0444b7ddf0ef9fd7a1a
+  FirebaseCore: 5a885548bbc5f0c410b04f8e9ac9d73ff1221907
+  FirebaseDynamicLinks: 860aa20fca5409c8278909de566c09720c51e572
+  FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
+  FirebaseInvites: fe03659c1ba03695453a9098439facf45e591fcd
   Google: 813c467362eabc11385f5a5cc9ad0cb651a58f4e
-  GoogleAnalytics: 9be1afdb8deeac4bb5f13ca7f7d3b9db2a1f43dc
-  GoogleAppUtilities: f1730f91f67767b453c289577040dd3f425ffdc7
-  GoogleAuthUtilities: d7a19615cd7627688afcf181737f1011ee8b5a23
-  GoogleInterchangeUtilities: def8415a862effc67d549d5b5b0b9c7a2f97d4de
-  GoogleNetworkingUtilities: 3e83269048cfb498dc7ec83ab36813360965c74f
-  GoogleParsingUtilities: 30b3896f9ee167dc78747f013d3de157ced1cadf
-  GooglePlusUtilities: 5f684c77780fab95ac0ab0c6fdf2bf4fddad94e1
+  GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
+  GoogleAppUtilities: a8a552aa74f6597f805e45b5a3962766c3134973
+  GoogleAuthUtilities: ccad2e0a9284699973ff57c0dd24c3893657fda4
+  GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
+  GoogleNetworkingUtilities: 3edd3a8161347494f2da60ea0deddc8a472d94cb
+  GoogleParsingUtilities: d265e86f84c1ab595f6ca5172b22a7a10ce99e1f
+  GooglePlusUtilities: d4e722b8f26650681eab3e53da8fd7bd4d1922b4
   GoogleSignIn: 09036ed61f8e75f1424100d63f7719480b2428c3
-  GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
-  GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
+  GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
+  GoogleUtilities: 8bbc733218aad26306f9d4a253823986110e3358
   QBFlatButton: 3cf272985cdbdd04d6bc8b7ae01e4dd62cb09c17
   RMStore: 64ba13a9c040e3b7572765d169f77175cd3243e5
-  SCLAlertView: d7c6a48c7d340e60206d4ed0e8ebcbff3b9d2a44
+  SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SwiftyiRate: 2fd7a2c5d2b16f27c72d1ddb87014f0492e4af05
 
 PODFILE CHECKSUM: 36525d6777521ac6694a53d5d7203c5459d2a90a
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0.rc.3

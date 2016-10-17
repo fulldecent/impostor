@@ -13,7 +13,7 @@ import SCLAlertView
 import SwiftyiRate
 
 class ResultsViewController: UIViewController {
-    private let alertAppearance = SCLAlertView.SCLAppearance(
+    fileprivate let alertAppearance = SCLAlertView.SCLAppearance(
         kTitleFont: UIFont(name: "Chalkboard SE", size: 20.0)!,
         kTextFont: UIFont(name: "Chalkboard SE", size: 16.0)!,
         kButtonFont: UIFont(name: "Chalkboard SE", size: 16.0)!,
@@ -23,12 +23,12 @@ class ResultsViewController: UIViewController {
         showCloseButton: false
     )    
     
-    private let game = ImpostorGameModel.game
+    fileprivate let game = ImpostorGameModel.game
     
-    private var resultsSoundId: SystemSoundID = {
-        let url = NSBundle.mainBundle().URLForResource("results", withExtension: "mp3")!
+    fileprivate var resultsSoundId: SystemSoundID = {
+        let url = Bundle.main.url(forResource: "results", withExtension: "mp3")!
         var soundID: SystemSoundID = 0
-        AudioServicesCreateSystemSoundID(url, &soundID)
+        AudioServicesCreateSystemSoundID(url as CFURL, &soundID)
         return soundID
     }()
 
@@ -38,8 +38,8 @@ class ResultsViewController: UIViewController {
     
     @IBOutlet weak var shim: NSLayoutConstraint!
     
-    @IBAction func playAgain(sender: AnyObject) {
-        navigationController!.popToRootViewControllerAnimated(true)
+    @IBAction func playAgain(_ sender: AnyObject) {
+        navigationController!.popToRootViewController(animated: true)
     }
     
     override func viewDidLoad() {
@@ -48,11 +48,11 @@ class ResultsViewController: UIViewController {
         self.tableView.delegate = self
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        FIRAnalytics.logEventWithName(kFIREventViewItem, parameters: [
-            kFIRParameterContentType:"view",
-            kFIRParameterItemID:NSStringFromClass(self.dynamicType)
+        FIRAnalytics.logEvent(withName: kFIREventViewItem, parameters: [
+            kFIRParameterContentType:"view" as NSObject,
+            kFIRParameterItemID:NSStringFromClass(type(of: self)) as NSObject
             ])
         var allPhotos = true
         for i in 0 ..< self.game.numberOfPlayers {
@@ -62,42 +62,42 @@ class ResultsViewController: UIViewController {
             }
         }
         if allPhotos {
-            self.collage.hidden = false
+            self.collage.isHidden = false
             self.shim.constant = 8
         } else {
-            self.collage.hidden = true
+            self.collage.isHidden = true
             self.shim.constant = -self.collage.frame.size.height
         }
-        FIRAnalytics.logEventWithName("gameStats", parameters: [
-            kFIRParameterContentType: "All Photos",
-            kFIRParameterValue: "\(allPhotos)"
+        FIRAnalytics.logEvent(withName: "gameStats", parameters: [
+            kFIRParameterContentType: "All Photos" as NSObject,
+            kFIRParameterValue: "\(allPhotos)" as NSObject
             ])
-        FIRAnalytics.logEventWithName("gameStats", parameters: [
-            kFIRParameterContentType: "Number of Players",
-            kFIRParameterValue: "\(game.numberOfPlayers)"
+        FIRAnalytics.logEvent(withName: "gameStats", parameters: [
+            kFIRParameterContentType: "Number of Players" as NSObject,
+            kFIRParameterValue: "\(game.numberOfPlayers)" as NSObject
             ])
-        FIRAnalytics.logEventWithName("gameStats", parameters: [
-            kFIRParameterContentType: "Impostor Won",
-            kFIRParameterValue: "\(game.gameStatus == .TheImpostorWon)"
+        FIRAnalytics.logEvent(withName: "gameStats", parameters: [
+            kFIRParameterContentType: "Impostor Won" as NSObject,
+            kFIRParameterValue: "\(game.gameStatus == .theImpostorWon)"
             ])
-        FIRAnalytics.logEventWithName("gameStats", parameters: [
-            kFIRParameterContentType: "Words",
-            kFIRParameterValue: "\(self.game.normalWord) - \(self.game.impostorWord)"
+        FIRAnalytics.logEvent(withName: "gameStats", parameters: [
+            kFIRParameterContentType: "Words" as NSObject,
+            kFIRParameterValue: "\(self.game.normalWord) - \(self.game.impostorWord)" as NSObject
             ])
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         AudioServicesPlaySystemSound(resultsSoundId)
         let alertView = SCLAlertView(appearance: alertAppearance)
         alertView.addButton(NSLocalizedString("OK", comment: "Dismiss the popup"), action: {})
         let alertViewIcon = UIImage(named: "AppIcon60x60")
         switch game.gameStatus {
-        case .TheImpostorWasDefeated:
+        case .theImpostorWasDefeated:
             alertView.showInfo("",
                                subTitle: NSLocalizedString("The impostor was defeated", comment: "After the game is over"),
                                circleIconImage: alertViewIcon)
-        case .TheImpostorWon:
+        case .theImpostorWon:
             alertView.showInfo("",
                                subTitle: NSLocalizedString("The impostor won", comment: "After the game is over"),
                                circleIconImage: alertViewIcon)
@@ -111,20 +111,20 @@ class ResultsViewController: UIViewController {
 }
 
 extension ResultsViewController: UITableViewDataSource {
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.game.numberOfPlayers
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("resultCell")!
-        cell.textLabel!.text = String(format: NSLocalizedString("Player #%ld", comment: "Current player"), indexPath.row + 1)
-        cell.detailTextLabel!.text = self.game.playerWords[indexPath.row]
-        cell.imageView!.alpha = game.playerEliminated[indexPath.row] ? 0.4 : 1.0
-        let imageName = "\(Int(indexPath.row))"
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "resultCell")!
+        cell.textLabel!.text = String(format: NSLocalizedString("Player #%ld", comment: "Current player"), (indexPath as NSIndexPath).row + 1)
+        cell.detailTextLabel!.text = self.game.playerWords[(indexPath as NSIndexPath).row]
+        cell.imageView!.alpha = game.playerEliminated[(indexPath as NSIndexPath).row] ? 0.4 : 1.0
+        let imageName = "\(Int((indexPath as NSIndexPath).row))"
         if let photo = CachedPersistentJPEGImageStore.sharedStore.imageWithName(imageName) {
             cell.imageView!.image = photo
         } else {

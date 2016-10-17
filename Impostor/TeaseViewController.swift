@@ -14,22 +14,22 @@ class TeaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        FIRAnalytics.logEventWithName(kFIREventViewItem, parameters: [
-            kFIRParameterContentType:"view",
-            kFIRParameterItemID:NSStringFromClass(self.dynamicType)
+        FIRAnalytics.logEvent(withName: kFIREventViewItem, parameters: [
+            kFIRParameterContentType:"view" as NSObject,
+            kFIRParameterItemID:NSStringFromClass(type(of: self)) as NSObject
             ])
         
         let bounceAnimation: CAKeyframeAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
         bounceAnimation.values = [0, M_PI * 8]
         bounceAnimation.duration = 3
-        bounceAnimation.removedOnCompletion = true
+        bounceAnimation.isRemovedOnCompletion = true
         bounceAnimation.repeatCount = 0
         bounceAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-        self.spy.layer.addAnimation(bounceAnimation, forKey: "spin")
-        self.performSelector(#selector(TeaseViewController.close), withObject: self, afterDelay: 5)
+        self.spy.layer.add(bounceAnimation, forKey: "spin")
+        self.perform(#selector(TeaseViewController.close), with: self, afterDelay: 5)
     }
     
     func close() {
-        self.navigationController!.popToRootViewControllerAnimated(true)
+        self.navigationController!.popToRootViewController(animated: true)
     }
 }

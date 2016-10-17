@@ -9,69 +9,69 @@
 import Foundation
 
 @objc enum PlayerRoles : Int {
-    case NormalPlayer
-    case Impostor
+    case normalPlayer
+    case impostor
 }
 
 @objc enum GameStatus : Int {
-    case ShowSecretWords
-    case TheImpostorRemains
-    case TheImpostorWasDefeated
-    case TheImpostorWon
+    case showSecretWords
+    case theImpostorRemains
+    case theImpostorWasDefeated
+    case theImpostorWon
 }
 
 class ImpostorGameModel: NSObject {
     static var game = ImpostorGameModel()
     
-    private(set) var numberOfPlayers = 0
-    private(set) var playerRoles = [PlayerRoles]()
-    private(set) var playerEliminated = [Bool]()
-    private(set) var gameStatus = GameStatus.ShowSecretWords
-    private(set) var playerNumberToStartRound = 0
-    private(set) var normalWord = ""
-    private(set) var impostorWord = ""
-    private(set) var playerWords = [String]()
+    fileprivate(set) var numberOfPlayers = 0
+    fileprivate(set) var playerRoles = [PlayerRoles]()
+    fileprivate(set) var playerEliminated = [Bool]()
+    fileprivate(set) var gameStatus = GameStatus.showSecretWords
+    fileprivate(set) var playerNumberToStartRound = 0
+    fileprivate(set) var normalWord = ""
+    fileprivate(set) var impostorWord = ""
+    fileprivate(set) var playerWords = [String]()
     
-    func startGameWithNumberOfPlayers(numPlayers: Int) {
+    func startGameWithNumberOfPlayers(_ numPlayers: Int) {
         var allWordSets = [[String]]()
-        let jsonURL = NSBundle.mainBundle().URLForResource("gameWords", withExtension: "json")!
-        let jsonData = NSData(contentsOfURL: jsonURL)!
-        allWordSets = try! NSJSONSerialization.JSONObjectWithData(jsonData, options: []) as! [[String]]
-        if NSUserDefaults.standardUserDefaults().integerForKey("didIAP") > 0 {
-            let moreJsonURL = NSBundle.mainBundle().URLForResource("gameWordsMore", withExtension: "json")!
-            let moreJsonData = NSData(contentsOfURL: moreJsonURL)!
-            let moreWordSets = try! NSJSONSerialization.JSONObjectWithData(moreJsonData, options: []) as! [[String]]
-            allWordSets.appendContentsOf(moreWordSets)
+        let jsonURL = Bundle.main.url(forResource: "gameWords", withExtension: "json")!
+        let jsonData = try! Data(contentsOf: jsonURL)
+        allWordSets = try! JSONSerialization.jsonObject(with: jsonData, options: []) as! [[String]]
+        if UserDefaults.standard.integer(forKey: "didIAP") > 0 {
+            let moreJsonURL = Bundle.main.url(forResource: "gameWordsMore", withExtension: "json")!
+            let moreJsonData = try! Data(contentsOf: moreJsonURL)
+            let moreWordSets = try! JSONSerialization.jsonObject(with: moreJsonData, options: []) as! [[String]]
+            allWordSets.append(contentsOf: moreWordSets)
         }
         let chosenWordSet = allWordSets[Int(arc4random_uniform(UInt32(allWordSets.count)))]
         let reverse = arc4random_uniform(2) == 0
         normalWord = chosenWordSet[reverse ? 1 : 0]
         impostorWord = chosenWordSet[reverse ? 0 : 1]
         numberOfPlayers = numPlayers
-        playerRoles = [PlayerRoles](count: numberOfPlayers, repeatedValue: .NormalPlayer)
-        playerWords = [String](count: numberOfPlayers, repeatedValue: self.normalWord)
-        playerEliminated = [Bool](count: numberOfPlayers, repeatedValue: false)
+        playerRoles = [PlayerRoles](repeating: .normalPlayer, count: numberOfPlayers)
+        playerWords = [String](repeating: self.normalWord, count: numberOfPlayers)
+        playerEliminated = [Bool](repeating: false, count: numberOfPlayers)
         let impostorIndex = Int(arc4random_uniform(UInt32(numberOfPlayers)))
-        playerRoles[impostorIndex] = .Impostor
+        playerRoles[impostorIndex] = .impostor
         playerWords[impostorIndex] = self.impostorWord
-        gameStatus = .ShowSecretWords
+        gameStatus = .showSecretWords
     }
 
     func doneShowingSecretWords() {
-        gameStatus = .TheImpostorRemains
+        gameStatus = .theImpostorRemains
     }
     
-    func eliminatePlayer(playerNumber: Int) {
+    func eliminatePlayer(_ playerNumber: Int) {
         
         assert(playerEliminated[playerNumber] == false)
         playerEliminated[playerNumber] = true
         let remainingPlayerRoles = zip(playerRoles, playerEliminated).flatMap {$1 ? nil : $0}
-        let countOfRemainingImpostors = remainingPlayerRoles.reduce(0) {$1 == .Impostor ? $0 + 1 : $0}
-        let countOfRemainingNormalPlayers = remainingPlayerRoles.reduce(0) {$1 == .NormalPlayer ? $0 + 1 : $0}
+        let countOfRemainingImpostors = remainingPlayerRoles.reduce(0) {$1 == .impostor ? $0 + 1 : $0}
+        let countOfRemainingNormalPlayers = remainingPlayerRoles.reduce(0) {$1 == .normalPlayer ? $0 + 1 : $0}
         if countOfRemainingImpostors == 0 {
-            gameStatus = .TheImpostorWasDefeated
+            gameStatus = .theImpostorWasDefeated
         } else if countOfRemainingNormalPlayers == 1 {
-            gameStatus = .TheImpostorWon
+            gameStatus = .theImpostorWon
         }
         playerNumberToStartRound = playerNumber
         while playerEliminated[playerNumberToStartRound] {
