@@ -8,7 +8,6 @@ target 'Impostor' do
 	pod 'Google/Analytics'
 	pod 'Firebase/Invites'
 	pod 'RMStore'
-	pod 'SwiftyiRate'
 end
 
 target 'ImpostorTests' do
@@ -17,6 +16,5 @@ target 'ImpostorTests' do
 	pod 'Google/Analytics'
 	pod 'Firebase/Invites'
 	pod 'RMStore'
-	pod 'SwiftyiRate'
 end
 
