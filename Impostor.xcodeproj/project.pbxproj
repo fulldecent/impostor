@@ -66,6 +66,7 @@
 		D9D62B291CBF410000A0E522 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D62B201CBF410000A0E522 /* share.png */; };
 		D9D62B2A1CBF410000A0E522 /* wechat.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D62B211CBF410000A0E522 /* wechat.png */; };
 		D9D62B2C1CBF49D900A0E522 /* money-paid.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D62B2B1CBF49D900A0E522 /* money-paid.png */; };
+		D9D898B11DB54F6F009C4FC9 /* SCLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D898B01DB54F6F009C4FC9 /* SCLHelper.swift */; };
 		D9DD5CBC1B9A209B00CBDE5A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DD5CBB1B9A209B00CBDE5A /* StoreKit.framework */; };
 		D9DD5CBF1B9A400600CBDE5A /* gameWordsMore.json in Resources */ = {isa = PBXBuildFile; fileRef = D9DD5CBD1B9A400600CBDE5A /* gameWordsMore.json */; };
 /* End PBXBuildFile section */
@@ -194,6 +195,7 @@
 		D9D62B201CBF410000A0E522 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
 		D9D62B211CBF410000A0E522 /* wechat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wechat.png; sourceTree = "<group>"; };
 		D9D62B2B1CBF49D900A0E522 /* money-paid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "money-paid.png"; sourceTree = "<group>"; };
+		D9D898B01DB54F6F009C4FC9 /* SCLHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLHelper.swift; sourceTree = "<group>"; };
 		D9DA621318A0061D0087706B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		D9DA621418A0061D0087706B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D9DA621518A0061D0087706B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 		D98CA401185D338600746059 /* Impostor */ = {
 			isa = PBXGroup;
 			children = (
+				D9D898B01DB54F6F009C4FC9 /* SCLHelper.swift */,
 				D9172ECE1C7916FB0018F8C3 /* AppDelegate.swift */,
 				D98CA40D185D338600746059 /* Main.storyboard */,
 				D9CDEBEC187A3B4A00AE4163 /* Localizable.strings */,
@@ -462,7 +465,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "William Entriken";
 				TargetAttributes = {
 					D91E58A31D19B8A20068FFEF = {
@@ -696,6 +699,7 @@
 				D9A4F76E185E54480060AA2D /* KxIntroViewPage.m in Sources */,
 				D9A4F76C185E54480060AA2D /* KxIntroView.m in Sources */,
 				D900BA161D18A0D50092EB78 /* CollageViewController.swift in Sources */,
+				D9D898B11DB54F6F009C4FC9 /* SCLHelper.swift in Sources */,
 				D900BA121D187DE20092EB78 /* GameConfigurationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

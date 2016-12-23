@@ -8,7 +8,7 @@
 
 import UIKit
 import FirebaseAnalytics
-import SwiftyiRate
+//import SwiftyiRate
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

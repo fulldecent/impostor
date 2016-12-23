@@ -19,15 +19,6 @@ class EliminationViewController: UIViewController {
         AudioServicesCreateSystemSoundID(url as CFURL, &soundID)
         return soundID
     }()
-    fileprivate let alertAppearance = SCLAlertView.SCLAppearance(
-        kTitleFont: UIFont(name: "Chalkboard SE", size: 20.0)!,
-        kTextFont: UIFont(name: "Chalkboard SE", size: 16.0)!,
-        kButtonFont: UIFont(name: "Chalkboard SE", size: 16.0)!,
-        hideWhenBackgroundViewIsTapped: true,
-        showCircularIcon: true,
-        contentViewColor: UIColor.blackColor(),
-        showCloseButton: false
-    )
 
     @IBOutlet weak var playerPhotoCollectionView: UICollectionView!
     
@@ -43,7 +34,7 @@ class EliminationViewController: UIViewController {
         playerPhotoCollectionView.reloadData()
         switch game.gameStatus {
         case .theImpostorRemains:
-            let alertView = SCLAlertView(appearance: alertAppearance)
+            let alertView = SCLAlertView(appearance: impostorAppearance)
             alertView.addButton(NSLocalizedString("OK", comment: "Dismiss the popup"), action: {})
             let alertViewIcon = UIImage(named: "AppIcon60x60")
             alertView.showInfo(NSLocalizedString("The impostor remains", comment: "After someone was killed"),
@@ -74,7 +65,7 @@ class EliminationViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let alertView = SCLAlertView(appearance: alertAppearance)
+        let alertView = SCLAlertView(appearance: impostorAppearance)
         alertView.addButton(NSLocalizedString("OK", comment: "Dismiss the popup"), action: {})
         let alertViewIcon = UIImage(named: "AppIcon60x60")
         alertView.showInfo("",

@@ -40,16 +40,8 @@ class SecretWordViewController: UIViewController {
     @IBAction func showSecretWord(_ sender: AnyObject) {
         AudioServicesPlaySystemSound(accentSoundId);
         let theWord = game.playerWords[playerNumber]
-        let appearance = SCLAlertView.SCLAppearance(
-            kTitleFont: UIFont(name: "Chalkboard SE", size: 20.0)!,
-            kTextFont: UIFont(name: "Chalkboard SE", size: 16.0)!,
-            kButtonFont: UIFont(name: "Chalkboard SE", size: 16.0)!,
-            hideWhenBackgroundViewIsTapped: true,
-            showCircularIcon: true,
-            contentViewColor: UIColor.blackColor(),
-            showCloseButton: false
-        )
-        let alertView = SCLAlertView(appearance: appearance)
+
+        let alertView = SCLAlertView(appearance: impostorAppearance)
         let dismissBlock = {
             if self.playerNumber == self.game.numberOfPlayers - 1 {
                 self.game.doneShowingSecretWords()

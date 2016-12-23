@@ -9,7 +9,6 @@ framework module FirebaseDynamicLinks {
   header "FIRDynamicLinksCommon.h"
 
   link framework "AssetsLibrary"
-  link framework "CoreMotion"
   link framework "MessageUI"
   link framework "QuartzCore"
   link framework "WebKit"

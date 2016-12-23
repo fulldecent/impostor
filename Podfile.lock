@@ -1,61 +1,84 @@
 PODS:
-  - Firebase/Core (3.7.1):
-    - FirebaseAnalytics (= 3.4.4)
-    - FirebaseCore (= 3.4.3)
-  - Firebase/Invites (3.7.1):
+  - Firebase/Core (3.11.0):
+    - FirebaseAnalytics (= 3.6.0)
+    - FirebaseCore (= 3.4.6)
+  - Firebase/Invites (3.11.0):
     - Firebase/Core
-    - FirebaseInvites (= 1.2.1)
-  - FirebaseAnalytics (3.4.4):
+    - FirebaseInvites (= 1.2.3)
+  - FirebaseAnalytics (3.6.0):
     - FirebaseCore (~> 3.4)
     - FirebaseInstanceID (~> 1.0)
     - GoogleInterchangeUtilities (~> 1.2)
     - GoogleSymbolUtilities (~> 1.1)
-  - FirebaseCore (3.4.3):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseCore (3.4.6):
     - GoogleInterchangeUtilities (~> 1.2)
-    - GoogleUtilities (~> 1.2)
-  - FirebaseDynamicLinks (1.3.0):
-    - FirebaseAnalytics (~> 3.4)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseDynamicLinks (1.3.2):
+    - FirebaseAnalytics (~> 3.6)
   - FirebaseInstanceID (1.0.8)
-  - FirebaseInvites (1.2.1):
-    - FirebaseAnalytics (~> 3.4)
+  - FirebaseInvites (1.2.3):
+    - FirebaseAnalytics (~> 3.6)
     - FirebaseDynamicLinks (~> 1.3)
-    - GoogleAppUtilities (~> 1.1)
-    - GoogleAuthUtilities (~> 2.0)
+    - GoogleAPIClientForREST (~> 1.0)
     - GoogleInterchangeUtilities (~> 1.2)
-    - GoogleNetworkingUtilities (~> 1.2)
-    - GoogleParsingUtilities (~> 1.1)
-    - GooglePlusUtilities (~> 1.1)
     - GoogleSignIn (~> 4.0)
-    - GoogleUtilities (~> 1.2)
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
+    - GoogleToolboxForMac/NSString+URLArguments (~> 2.1)
+    - GoogleToolboxForMac/StringEncoding (~> 2.1)
+    - GoogleToolboxForMac/URLBuilder (~> 2.1)
+    - GTMOAuth2 (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
   - Google/Analytics (3.0.3):
     - Google/Core
     - GoogleAnalytics (~> 3.12)
   - Google/Core (3.0.3):
     - FirebaseAnalytics (~> 3.2)
   - GoogleAnalytics (3.17.0)
+  - GoogleAPIClientForREST (1.1.1):
+    - GoogleAPIClientForREST/Core (= 1.1.1)
+    - GTMSessionFetcher (>= 1.1.7)
+  - GoogleAPIClientForREST/Core (1.1.1):
+    - GTMSessionFetcher (>= 1.1.7)
   - GoogleAppUtilities (1.1.2):
-    - GoogleSymbolUtilities (~> 1.1)
-  - GoogleAuthUtilities (2.0.2):
-    - GoogleNetworkingUtilities (~> 1.2)
     - GoogleSymbolUtilities (~> 1.1)
   - GoogleInterchangeUtilities (1.2.2):
     - GoogleSymbolUtilities (~> 1.1)
-  - GoogleNetworkingUtilities (1.2.2):
-    - GoogleSymbolUtilities (~> 1.1)
-  - GoogleParsingUtilities (1.1.2):
-    - GoogleNetworkingUtilities (~> 1.2)
-    - GoogleSymbolUtilities (~> 1.1)
-  - GooglePlusUtilities (1.1.2):
-    - GoogleParsingUtilities (~> 1.1)
-    - GoogleSymbolUtilities (~> 1.1)
-  - GoogleSignIn (4.0.0):
+  - GoogleSignIn (4.0.1):
     - GoogleAppUtilities (~> 1.1)
-    - GoogleAuthUtilities (~> 2.0)
-    - GoogleNetworkingUtilities (~> 1.2)
-    - GoogleUtilities (~> 1.3)
+    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
+    - GTMOAuth2 (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
   - GoogleSymbolUtilities (1.1.2)
-  - GoogleUtilities (1.3.2):
-    - GoogleSymbolUtilities (~> 1.1)
+  - GoogleToolboxForMac/Core (2.1.0):
+    - GoogleToolboxForMac/Defines (= 2.1.0)
+  - GoogleToolboxForMac/DebugUtils (2.1.0):
+    - GoogleToolboxForMac/Defines (= 2.1.0)
+  - GoogleToolboxForMac/Defines (2.1.0)
+  - GoogleToolboxForMac/Logger (2.1.0):
+    - GoogleToolboxForMac/Defines (= 2.1.0)
+  - GoogleToolboxForMac/NSData+zlib (2.1.0):
+    - GoogleToolboxForMac/Defines (= 2.1.0)
+  - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.0):
+    - GoogleToolboxForMac/DebugUtils (= 2.1.0)
+    - GoogleToolboxForMac/Defines (= 2.1.0)
+    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.0)
+  - GoogleToolboxForMac/NSString+URLArguments (2.1.0)
+  - GoogleToolboxForMac/StringEncoding (2.1.0):
+    - GoogleToolboxForMac/Defines (= 2.1.0)
+  - GoogleToolboxForMac/URLBuilder (2.1.0):
+    - GoogleToolboxForMac/Core (= 2.1.0)
+    - GoogleToolboxForMac/Defines (= 2.1.0)
+    - GoogleToolboxForMac/NSDictionary+URLArguments (= 2.1.0)
+    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.0)
+  - GTMOAuth2 (1.1.4):
+    - GTMSessionFetcher (~> 1.1)
+  - GTMSessionFetcher (1.1.7):
+    - GTMSessionFetcher/Full (= 1.1.7)
+  - GTMSessionFetcher/Core (1.1.7)
+  - GTMSessionFetcher/Full (1.1.7):
+    - GTMSessionFetcher/Core (= 1.1.7)
   - QBFlatButton (1.1)
   - RMStore (0.7.1):
     - RMStore/Core (= 0.7.1)
@@ -70,27 +93,26 @@ DEPENDENCIES:
   - SCLAlertView
 
 SPEC CHECKSUMS:
-  Firebase: be473484f0d515e72ffd04acf22f981773c23e58
-  FirebaseAnalytics: 0533a00b681e08fd0b2cd0444b7ddf0ef9fd7a1a
-  FirebaseCore: 5a885548bbc5f0c410b04f8e9ac9d73ff1221907
-  FirebaseDynamicLinks: 860aa20fca5409c8278909de566c09720c51e572
+  Firebase: b8134e285eb33201115bc688bc5d7f112923bc1f
+  FirebaseAnalytics: 9c67af0ebeb8d2146c9b4ea2616439affa947b58
+  FirebaseCore: 03da1cb32615569bbc2830a22f9ad753d9a02ef5
+  FirebaseDynamicLinks: c135f328a320316f0095f24aa599ff832fdebcec
   FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
-  FirebaseInvites: fe03659c1ba03695453a9098439facf45e591fcd
+  FirebaseInvites: 4317eb941658fc601b8504d5d5b5caddba9aa262
   Google: 813c467362eabc11385f5a5cc9ad0cb651a58f4e
   GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
+  GoogleAPIClientForREST: f272e35f7fe9f80ab232756c798adc32245ece8c
   GoogleAppUtilities: a8a552aa74f6597f805e45b5a3962766c3134973
-  GoogleAuthUtilities: ccad2e0a9284699973ff57c0dd24c3893657fda4
   GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
-  GoogleNetworkingUtilities: 3edd3a8161347494f2da60ea0deddc8a472d94cb
-  GoogleParsingUtilities: d265e86f84c1ab595f6ca5172b22a7a10ce99e1f
-  GooglePlusUtilities: d4e722b8f26650681eab3e53da8fd7bd4d1922b4
-  GoogleSignIn: 09036ed61f8e75f1424100d63f7719480b2428c3
+  GoogleSignIn: a8694c0a8e6d1b0ec77c58014de5bfd4ba2fa766
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
-  GoogleUtilities: 8bbc733218aad26306f9d4a253823986110e3358
+  GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
+  GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
+  GTMSessionFetcher: a1f8ed39e4fe21c68957daed472c7afbcdf29166
   QBFlatButton: 3cf272985cdbdd04d6bc8b7ae01e4dd62cb09c17
   RMStore: 64ba13a9c040e3b7572765d169f77175cd3243e5
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
 
 PODFILE CHECKSUM: d4f07a43abc62a96e54844caa19fe691de9be9fc
 
-COCOAPODS: 1.1.0.rc.3
+COCOAPODS: 1.1.1

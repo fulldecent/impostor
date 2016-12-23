@@ -10,19 +10,9 @@ import AudioToolbox
 import Firebase
 import QBFlatButton
 import SCLAlertView
-import SwiftyiRate
+//import SwiftyiRate
 
 class ResultsViewController: UIViewController {
-    fileprivate let alertAppearance = SCLAlertView.SCLAppearance(
-        kTitleFont: UIFont(name: "Chalkboard SE", size: 20.0)!,
-        kTextFont: UIFont(name: "Chalkboard SE", size: 16.0)!,
-        kButtonFont: UIFont(name: "Chalkboard SE", size: 16.0)!,
-        hideWhenBackgroundViewIsTapped: true,
-        showCircularIcon: true,
-        contentViewColor: UIColor.blackColor(),
-        showCloseButton: false
-    )    
-    
     fileprivate let game = ImpostorGameModel.game
     
     fileprivate var resultsSoundId: SystemSoundID = {
@@ -78,7 +68,7 @@ class ResultsViewController: UIViewController {
             ])
         FIRAnalytics.logEvent(withName: "gameStats", parameters: [
             kFIRParameterContentType: "Impostor Won" as NSObject,
-            kFIRParameterValue: "\(game.gameStatus == .theImpostorWon)"
+            kFIRParameterValue: "\(game.gameStatus == .theImpostorWon)" as NSObject
             ])
         FIRAnalytics.logEvent(withName: "gameStats", parameters: [
             kFIRParameterContentType: "Words" as NSObject,
@@ -89,7 +79,7 @@ class ResultsViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         AudioServicesPlaySystemSound(resultsSoundId)
-        let alertView = SCLAlertView(appearance: alertAppearance)
+        let alertView = SCLAlertView(appearance: impostorAppearance)
         alertView.addButton(NSLocalizedString("OK", comment: "Dismiss the popup"), action: {})
         let alertViewIcon = UIImage(named: "AppIcon60x60")
         switch game.gameStatus {
