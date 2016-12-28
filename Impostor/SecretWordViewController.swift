@@ -8,7 +8,7 @@
 
 import UIKit
 import AudioToolbox
-import SCLAlertView
+import CDAlertView
 import FirebaseAnalytics
 
 class SecretWordViewController: UIViewController {
@@ -40,9 +40,17 @@ class SecretWordViewController: UIViewController {
     @IBAction func showSecretWord(_ sender: AnyObject) {
         AudioServicesPlaySystemSound(accentSoundId);
         let theWord = game.playerWords[playerNumber]
-
-        let alertView = SCLAlertView(appearance: impostorAppearance)
-        let dismissBlock = {
+        
+        let alertView = CDAlertView(title: NSLocalizedString("Your secret word is", comment: "On the secret word screen"),
+                                    message: theWord,
+                                    type: .custom(image: UIImage(named:"AppIcon60x60")!))
+        alertView.alertBackgroundColor = UIColor.black
+        alertView.titleTextColor = UIColor.white
+        alertView.messageTextColor = UIColor.white
+        alertView.titleFont = UIFont(name: "AmericanTypewriter", size: 20.0)!
+        alertView.messageFont = UIFont(name: "AmericanTypewriter-Bold", size: 20.0)!
+        
+        let dismissBlock: (CDAlertViewAction) -> Void = {_ in
             if self.playerNumber == self.game.numberOfPlayers - 1 {
                 self.game.doneShowingSecretWords()
                 var viewControllers: [AnyObject] = self.navigationController!.viewControllers
@@ -54,12 +62,12 @@ class SecretWordViewController: UIViewController {
             newController.playerNumber = self.playerNumber + 1
             self.navigationController!.pushViewController(newController, animated: true)
         }
-        alertView.addButton(NSLocalizedString("OK", comment: "Dismiss the popup"), action: {})
-        let alertViewIcon = UIImage(named: "AppIcon60x60")
-        let responder = alertView.showInfo(NSLocalizedString("Your secret word is", comment: "On the secret word screen"),
-                                           subTitle: theWord,
-                                           circleIconImage: alertViewIcon)
-        responder.setDismissBlock(dismissBlock)
+        let action = CDAlertViewAction(title: NSLocalizedString("OK", comment: "Dismiss the popup"),
+                                       font: UIFont(name: "AmericanTypewriter-Bold", size: 20.0)!,
+                                       textColor: UIColor.white,
+                                       backgroundColor: nil, handler: dismissBlock)
+        alertView.add(action: action)
+        alertView.show()
     }
     
     @IBAction func stopGame(_ sender: AnyObject) {

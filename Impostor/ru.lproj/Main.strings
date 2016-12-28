@@ -14,8 +14,8 @@
 /* Class = "IBUIButton"; normalTitle = "Show secret word"; ObjectID = "kKr-a3-6GX"; */
 "kKr-a3-6GX.normalTitle" = "Показать секретное слово";
 
-/* Class = "IBUIButton"; normalTitle = "Play Again"; ObjectID = "mOo-md-1fi"; */
+/* Class = "IBUIButton"; normalTitle = "Play again"; ObjectID = "mOo-md-1fi"; */
 "mOo-md-1fi.normalTitle" = "Игать заново";
 
-/* Class = "IBUIButton"; normalTitle = "View Selfies"; ObjectID = "aQS-ki-vZO"; */
+/* Class = "IBUIButton"; normalTitle = "View selfies"; ObjectID = "aQS-ki-vZO"; */
 "aQS-ki-vZO.normalTitle" = "Посмотреть автопортретов";

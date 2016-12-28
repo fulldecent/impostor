@@ -9,7 +9,7 @@
 import AudioToolbox
 import Firebase
 import QBFlatButton
-import SCLAlertView
+import CDAlertView
 //import SwiftyiRate
 
 class ResultsViewController: UIViewController {
@@ -79,21 +79,28 @@ class ResultsViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         AudioServicesPlaySystemSound(resultsSoundId)
-        let alertView = SCLAlertView(appearance: impostorAppearance)
-        alertView.addButton(NSLocalizedString("OK", comment: "Dismiss the popup"), action: {})
-        let alertViewIcon = UIImage(named: "AppIcon60x60")
+        let message: String
         switch game.gameStatus {
         case .theImpostorWasDefeated:
-            alertView.showInfo("",
-                               subTitle: NSLocalizedString("The impostor was defeated", comment: "After the game is over"),
-                               circleIconImage: alertViewIcon)
+            message = NSLocalizedString("The impostor was defeated", comment: "After the game is over")
         case .theImpostorWon:
-            alertView.showInfo("",
-                               subTitle: NSLocalizedString("The impostor won", comment: "After the game is over"),
-                               circleIconImage: alertViewIcon)
+            message = NSLocalizedString("The impostor won", comment: "After the game is over")
         default:
-            break
+            return
         }
+        
+        let alertView = CDAlertView(title: nil,
+                                    message: message,
+                                    type: .custom(image: UIImage(named:"AppIcon60x60")!))
+        alertView.alertBackgroundColor = UIColor.black
+        alertView.titleTextColor = UIColor.white
+        alertView.messageTextColor = UIColor.white
+        alertView.titleFont = UIFont(name: "AmericanTypewriter", size: 20.0)!
+        alertView.messageFont = UIFont(name: "AmericanTypewriter-Bold", size: 20.0)!
+        
+        let action = CDAlertViewAction(title: NSLocalizedString("OK", comment: "Dismiss the popup"))
+        alertView.add(action: action)
+        alertView.show()
       
         //TODO: upstream bug, this API should be public
         // SwiftyiRate.logEvent(deferPrompt: false)

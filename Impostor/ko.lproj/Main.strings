@@ -14,8 +14,8 @@
 /* Class = "IBUIButton"; normalTitle = "Show secret word"; ObjectID = "kKr-a3-6GX"; */
 "kKr-a3-6GX.normalTitle" = "비밀 세계 보기";
 
-/* Class = "IBUIButton"; normalTitle = "Play Again"; ObjectID = "mOo-md-1fi"; */
+/* Class = "IBUIButton"; normalTitle = "Play again"; ObjectID = "mOo-md-1fi"; */
 "mOo-md-1fi.normalTitle" = "다시 플레이하기";
 
-/* Class = "IBUIButton"; normalTitle = "View Selfies"; ObjectID = "aQS-ki-vZO"; */
+/* Class = "IBUIButton"; normalTitle = "View selfies"; ObjectID = "aQS-ki-vZO"; */
 "aQS-ki-vZO.normalTitle" = "자기 초상화를 보기";

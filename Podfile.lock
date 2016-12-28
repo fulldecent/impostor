@@ -1,4 +1,5 @@
 PODS:
+  - CDAlertView (0.3.1)
   - Firebase/Core (3.11.0):
     - FirebaseAnalytics (= 3.6.0)
     - FirebaseCore (= 3.4.6)
@@ -83,16 +84,16 @@ PODS:
   - RMStore (0.7.1):
     - RMStore/Core (= 0.7.1)
   - RMStore/Core (0.7.1)
-  - SCLAlertView (0.7.0)
 
 DEPENDENCIES:
+  - CDAlertView
   - Firebase/Invites
   - Google/Analytics
   - QBFlatButton
   - RMStore
-  - SCLAlertView
 
 SPEC CHECKSUMS:
+  CDAlertView: eef7e1d14a3922c079f83e0c6adc6416d9f6940b
   Firebase: b8134e285eb33201115bc688bc5d7f112923bc1f
   FirebaseAnalytics: 9c67af0ebeb8d2146c9b4ea2616439affa947b58
   FirebaseCore: 03da1cb32615569bbc2830a22f9ad753d9a02ef5
@@ -111,8 +112,7 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: a1f8ed39e4fe21c68957daed472c7afbcdf29166
   QBFlatButton: 3cf272985cdbdd04d6bc8b7ae01e4dd62cb09c17
   RMStore: 64ba13a9c040e3b7572765d169f77175cd3243e5
-  SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
 
-PODFILE CHECKSUM: d4f07a43abc62a96e54844caa19fe691de9be9fc
+PODFILE CHECKSUM: 277cf7059e43c2458adc9991bead16c10d0be05b
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0.beta.3

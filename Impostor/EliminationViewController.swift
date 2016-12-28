@@ -8,7 +8,7 @@
 
 import Foundation
 import AudioToolbox
-import SCLAlertView
+import CDAlertView
 import Firebase
 
 class EliminationViewController: UIViewController {
@@ -32,15 +32,24 @@ class EliminationViewController: UIViewController {
         AudioServicesPlaySystemSound(accentSoundId)
         game.eliminatePlayer((indexPath as NSIndexPath).row)
         playerPhotoCollectionView.reloadData()
+        
         switch game.gameStatus {
         case .theImpostorRemains:
-            let alertView = SCLAlertView(appearance: impostorAppearance)
-            alertView.addButton(NSLocalizedString("OK", comment: "Dismiss the popup"), action: {})
-            let alertViewIcon = UIImage(named: "AppIcon60x60")
-            alertView.showInfo(NSLocalizedString("The impostor remains", comment: "After someone was killed"),
-                                               subTitle: String(format: NSLocalizedString("Player #%ld starts this round",
-                                                comment: "After someone killed"), game.playerNumberToStartRound+1),
-                                               circleIconImage: alertViewIcon)
+            let title = NSLocalizedString("The impostor remains", comment: "After someone was killed")
+            let message = String(format: NSLocalizedString("Player #%ld starts this round",
+                                                           comment: "After someone killed"))
+            let alertView = CDAlertView(title: title,
+                                        message: message,
+                                        type: .custom(image: UIImage(named:"AppIcon60x60")!))
+            alertView.alertBackgroundColor = UIColor.black
+            alertView.titleTextColor = UIColor.white
+            alertView.messageTextColor = UIColor.white
+            alertView.titleFont = UIFont(name: "AmericanTypewriter", size: 20.0)!
+            alertView.messageFont = UIFont(name: "AmericanTypewriter-Bold", size: 20.0)!
+            
+            let action = CDAlertViewAction(title: NSLocalizedString("OK", comment: "Dismiss the popup"))
+            alertView.add(action: action)
+            alertView.show()
         case .theImpostorWasDefeated:
             navigationController!.popViewController(animated: true)
         case .theImpostorWon:
@@ -65,13 +74,22 @@ class EliminationViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let alertView = SCLAlertView(appearance: impostorAppearance)
-        alertView.addButton(NSLocalizedString("OK", comment: "Dismiss the popup"), action: {})
-        let alertViewIcon = UIImage(named: "AppIcon60x60")
-        alertView.showInfo("",
-                           subTitle: String(format: NSLocalizedString("Player #%ld was randomly selected to start the first round",
-                            comment: "When the game starts"), game.playerNumberToStartRound+1),
-                                           circleIconImage: alertViewIcon)
+        
+        let title: String? = nil
+        let message = String(format: NSLocalizedString("Player #%ld was randomly selected to start the first round",
+                                                       comment: "When the game starts"), game.playerNumberToStartRound+1)
+        let alertView = CDAlertView(title: title,
+                                    message: message,
+                                    type: .custom(image: UIImage(named:"AppIcon60x60")!))
+        alertView.alertBackgroundColor = UIColor.black
+        alertView.titleTextColor = UIColor.white
+        alertView.messageTextColor = UIColor.white
+        alertView.titleFont = UIFont(name: "AmericanTypewriter", size: 20.0)!
+        alertView.messageFont = UIFont(name: "AmericanTypewriter-Bold", size: 20.0)!
+        
+        let action = CDAlertViewAction(title: NSLocalizedString("OK", comment: "Dismiss the popup"))
+        alertView.add(action: action)
+        alertView.show()
         let root = navigationController!.viewControllers.first as! GameConfigurationViewController
         root.fadeOutMusic()
     }
