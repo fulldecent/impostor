@@ -42,9 +42,11 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1.5.0.1</string>
+	<string>1.5.0.4</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We use your photo to identify each player in the game</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIMainStoryboardFile~ipad</key>
