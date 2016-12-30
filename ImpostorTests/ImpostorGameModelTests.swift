@@ -29,9 +29,9 @@ class ImpostorGameModelTests: XCTestCase {
     
     func testGameStatusChangedWhenDoneShowingSecretWords() {
         gameModel.startGameWithNumberOfPlayers(10)
-        XCTAssertTrue(gameModel.gameStatus == .ShowSecretWords)
+        XCTAssertTrue(gameModel.gameStatus == .showSecretWords)
         gameModel.doneShowingSecretWords()
-        XCTAssertTrue(gameModel.gameStatus == .TheImpostorRemains)
+        XCTAssertTrue(gameModel.gameStatus == .theImpostorRemains)
     }
     
     func testElimanateAPlayer() {
