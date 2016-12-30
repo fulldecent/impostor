@@ -26,10 +26,11 @@ class ImpostorUITests: XCTestCase {
         super.tearDown()
     }
     
+    
     func testScreenshots() {
         let app = XCUIApplication()
         
-        let minusButton = app.buttons["minus"]
+        let minusButton = XCUIApplication().buttons["minus"]
         minusButton.tap()
         minusButton.tap()
         minusButton.tap()
