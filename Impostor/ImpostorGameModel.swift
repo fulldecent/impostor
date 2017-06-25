@@ -54,6 +54,7 @@ class ImpostorGameModel: NSObject {
         let impostorIndex = Int(arc4random_uniform(UInt32(numberOfPlayers)))
         playerRoles[impostorIndex] = .impostor
         playerWords[impostorIndex] = self.impostorWord
+        playerNumberToStartRound = Int(arc4random_uniform(UInt32(numberOfPlayers)))
         gameStatus = .showSecretWords
     }
 
@@ -62,12 +63,12 @@ class ImpostorGameModel: NSObject {
     }
     
     func eliminatePlayer(_ playerNumber: Int) {
-        
         assert(playerEliminated[playerNumber] == false)
         playerEliminated[playerNumber] = true
+        
         let remainingPlayerRoles = zip(playerRoles, playerEliminated).flatMap {$1 ? nil : $0}
-        let countOfRemainingImpostors = remainingPlayerRoles.reduce(0) {$1 == .impostor ? $0 + 1 : $0}
-        let countOfRemainingNormalPlayers = remainingPlayerRoles.reduce(0) {$1 == .normalPlayer ? $0 + 1 : $0}
+        let countOfRemainingImpostors = remainingPlayerRoles.filter({$0 == .impostor}).count
+        let countOfRemainingNormalPlayers = remainingPlayerRoles.filter({$0 == .normalPlayer}).count
         if countOfRemainingImpostors == 0 {
             gameStatus = .theImpostorWasDefeated
         } else if countOfRemainingNormalPlayers == 1 {

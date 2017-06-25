@@ -1,11 +1,11 @@
 ![CDAlertView: Highly customizable alert popup](https://cloud.githubusercontent.com/assets/1971963/20237496/34d3081c-a8d4-11e6-8907-80b4c248dce0.png)
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-<a href="https://cocoapods.org/pods/CDAlertView"><img src="https://img.shields.io/badge/pod-0.3.1-blue.svg" alt="CocoaPods compatible" /></a>
+[![Cocoapod](http://img.shields.io/cocoapods/v/CDAlertView.svg?style=flat)](http://cocoadocs.org/docsets/CDAlertView/)
 [![CI Status](http://img.shields.io/travis/candostdagdeviren/CDAlertView.svg?style=flat)](https://travis-ci.org/candostdagdeviren/CDAlertView/)
-<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/swift3-compatible-4BC51D.svg?style=flat" alt="Swift 3 compatible" /></a>
-<img src="https://img.shields.io/badge/platform-iOS-blue.svg?style=flat" alt="Platform iOS" />
-<a href="https://raw.githubusercontent.com/candostdagdeviren/CDAlertView/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="License: MIT" /></a>
+[![Language](https://img.shields.io/badge/swift-3.0-orange.svg)](https://developer.apple.com/swift)
+[![Platform](http://img.shields.io/badge/platform-ios-lightgrey.svg?style=flat)](https://developer.apple.com/resources/)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://raw.githubusercontent.com/candostdagdeviren/CDAlertView/master/LICENSE)
 
 CDAlertView is highly customizable alert popup written in Swift 3. Usage is similar to `UIAlertController`.
 
@@ -38,6 +38,18 @@ alert.add(action: nevermindAction)
 alert.show()
 ```
 
+To enable text field in popup:
+```swift
+alert.isTextFieldHidden = false
+```
+
+Custom view is also supported. If you want to use custom view, you are responsible for the height of custom view. Custom view is used in `UIStackView`.
+```swift
+let myCustomView = UIVIew(frame: myFrame)
+// Don't forget to handle height of `myCustomView`
+alert.customView = myCustomView
+```
+
 CDAlertView types:
 
 ```swift
@@ -54,6 +66,17 @@ To use it with your custom icon, initialize without type (or with .empty) and se
 ```swift
 let alert = CDAlertView(title: "Awesome Title", message: "Well explained message!", type: .custom(image: UIImage(named:"YourAwesomeImage")))
 alert.circleFillColor = UIColor.yourAmazingColor
+```
+
+### Hide Alert with your animation
+```swift
+let alert = CDAlertView(title: "Awesome Title", message: "Well explained message!", type: .success)
+alert.hideAnimations = { (center, transform, alpha) in
+    transform = CGAffineTransform(scaleX: 3, y: 3)
+    alpha = 0
+}
+alert.hideAnimationDuration = 0.88
+alert.show()
 ```
 
 ### List of Available CDAlertView Options
@@ -78,6 +101,34 @@ alert.circleFillColor = UIColor.yourAmazingColor
 
 `isActionButtonsVertical: Bool` -> Alignes action buttons vertical. Default is `false`. Maximum number of horizontal buttons is 3.
 
+`hideAnimationDuration: TimeInterval` -> Sets the animation duration of hide animation
+
+`hideAnimations: CDAlertAnimationBlock` -> Sets the hiding animations depending on the `center`, `transform` and `alpha` values. You can create your animations by changing these values for alert popup.
+
+If you enabled text field with setting `isTextFieldHidden` property to `false`, following properties will be available also:
+
+`textFieldFont: UIFont` -> Font of textField's text
+
+`textFieldIsSecureTextEntry: Bool` -> Sets the `isSecureTextEntry` property of `UITextField`
+
+`textFieldReturnKeyType: UIReturnKeyType` -> Sets the `returnKeyType` property of `UITextField`
+
+`textFieldTextAlignment: NSTextAlignment` -> Sets the `textAlignment` property of `UITextField`. Default is `.left`.
+
+`textFieldPlaceholderText: String?` -> Sets the placeholder text for `UITextField`.
+
+`textFieldAutocapitalizationType: UITextAutocapitalizationType` -> Sets the `autocapitalizationType` property of `UITextField`. Default is `.none`.
+
+`textFieldBackgroundColor: UIColor` -> Sets `UITextField`'s background color.
+
+`textFieldTintColor: UIColor` -> Sets `UITextField`'s tint color.
+
+`textFieldText: String?` -> Sets & gets `UITextField`'s text.
+
+`textFieldHeight: CGFloat` -> Sets the height of `UITextField`.
+
+`textFieldDelegate: UITextViewDelegate?` -> Sets the delegate of `UITextField`. Default delegate is `CDAlertView`. If you overwrite this, you're responsible for resigning the `UITextField`.
+
 ### Advanced action initialization:
 
 `font`, `textColor`, `backgroundColor`, `handler` are all optional and has default parameter values. You can initilize with them or set them after initialization.
@@ -87,7 +138,7 @@ let action = CDAlertViewAction(title: "Action Title", font: UIFont.yourCustomFon
 alertView.addAction(action)
 ```
 
-**NOTE:** Aligning buttons vertical and horizontal is possible. But using more than 3 buttons in horizontal placement is not possible. 
+**NOTE:** Aligning buttons vertical and horizontal is possible. But using more than 3 buttons in horizontal placement is not possible.
 
 ### List of CDAlertViewAction Options
 
@@ -98,6 +149,12 @@ alertView.addAction(action)
 `buttonFont: UIFont` -> Sets the action button title font. Default value is `UIFont.systemFont(ofSize: 17)`.
 
 `buttonBackgroundColor: UIColor` -> Sets the background color of action button. If not set, it uses `alertBackgroundColor` of CDAlertView.
+
+### List of available methods
+
+`textFieldBecomeFirstResponder()` -> Calls the `becomeFirstResponder()` method of `textField` if  `alert.isTextFieldHidden` set to `true`. Otherwise, does nothing.
+
+`textFieldResignFirstResponder()` -> Calls the `resignFirstResponder()` method of `textField` if  `alert.isTextFieldHidden` set to `true`. Otherwise, does nothing.
 
 ## Example
 

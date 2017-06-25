@@ -50,30 +50,117 @@ open class CDAlertViewAction: NSObject {
 open class CDAlertView: UIView {
 
     public var actionSeparatorColor: UIColor = UIColor(red: 50/255,
-                                                        green: 51/255,
-                                                        blue: 53/255,
-                                                        alpha: 0.12)
+                                                       green: 51/255,
+                                                       blue: 53/255,
+                                                       alpha: 0.12)
     public var titleTextColor: UIColor = UIColor(red: 50/255,
                                                  green: 51/255,
                                                  blue: 53/255,
                                                  alpha: 1)
 
     public var messageTextColor: UIColor = UIColor(red: 50/255,
-                                                 green: 51/255,
-                                                 blue: 53/255,
-                                                 alpha: 1)
+                                                   green: 51/255,
+                                                   blue: 53/255,
+                                                   alpha: 1)
+
+    public var textFieldTextColor: UIColor = UIColor(red: 50/255,
+                                                     green: 51/255,
+                                                     blue: 53/255,
+                                                     alpha: 1)
 
     public var titleFont: UIFont = UIFont.boldSystemFont(ofSize: 17) {
         didSet {
             titleLabel.font = titleFont
         }
     }
-    
+
     public var messageFont: UIFont = UIFont.systemFont(ofSize: 13) {
         didSet {
             messageLabel.font = messageFont
         }
     }
+
+    public var textFieldFont: UIFont = UIFont.systemFont(ofSize: 15) {
+        didSet {
+            textField.font = textFieldFont
+        }
+    }
+
+    public var textFieldReturnKeyType: UIReturnKeyType = .default {
+        didSet {
+            textField.returnKeyType = textFieldReturnKeyType
+        }
+    }
+
+    public var textFieldIsSecureTextEntry: Bool = false {
+        didSet {
+            textField.isSecureTextEntry = textFieldIsSecureTextEntry
+        }
+    }
+
+    public var textFieldTextAlignment: NSTextAlignment = .left {
+        didSet {
+            textField.textAlignment = textFieldTextAlignment
+        }
+    }
+
+    public var textFieldPlaceholderText: String? = nil {
+        didSet {
+            textField.placeholder = textFieldPlaceholderText
+        }
+    }
+
+    public var isTextFieldHidden: Bool = true {
+        didSet {
+            textField.isHidden = isTextFieldHidden
+
+            if !isTextFieldHidden {
+                NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+                NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+            }
+        }
+    }
+
+    public var textFieldAutocapitalizationType: UITextAutocapitalizationType = .none {
+        didSet {
+            textField.autocapitalizationType = textFieldAutocapitalizationType
+        }
+    }
+
+    public var textFieldBackgroundColor: UIColor = UIColor.white.withAlphaComponent(0.9) {
+        didSet {
+            textField.backgroundColor = textFieldBackgroundColor
+        }
+    }
+
+    public var textFieldTintColor: UIColor = UIColor.white.withAlphaComponent(0.9) {
+        didSet {
+            textField.tintColor = textFieldTintColor
+        }
+    }
+
+    public var textFieldText: String? {
+        get {
+            return textField.text
+        }
+        set {
+            textField.text = newValue
+        }
+    }
+
+    public weak var textFieldDelegate: UITextFieldDelegate? {
+        didSet {
+            textField.delegate = textFieldDelegate
+        }
+    }
+
+    public var customView: UIView?
+
+    public var hideAnimations: CDAlertAnimationBlock?
+
+    public var hideAnimationDuration: TimeInterval = 0.5
+
+    public var textFieldHeight: CGFloat = 35.0
 
     public var isActionButtonsVertical: Bool = false
 
@@ -86,6 +173,39 @@ open class CDAlertView: UIView {
     public var circleFillColor: UIColor? = nil
 
     public var popupWidth: CGFloat = 255.0
+
+    public typealias CDAlertAnimationBlock = ((_ center: inout CGPoint, _ transform: inout CGAffineTransform, _ alpha: inout CGFloat) -> Void)?
+
+    fileprivate var popupCenterYPositionBeforeKeyboard: CGFloat?
+
+    fileprivate var popupView: UIView = UIView(frame: .zero)
+
+    fileprivate var popupCenter: CGPoint {
+        get {
+            return popupView.center
+        }
+        set {
+            popupView.center = newValue
+        }
+    }
+
+    fileprivate var popupTransform: CGAffineTransform {
+        get {
+            return popupView.transform
+        }
+        set {
+            popupView.transform = newValue
+        }
+    }
+
+    fileprivate var popupAlpha: CGFloat {
+        get {
+            return popupView.alpha
+        }
+        set {
+            popupView.alpha = newValue
+        }
+    }
 
     private struct CDAlertViewConstants {
         let headerHeight: CGFloat = 56
@@ -103,7 +223,6 @@ open class CDAlertView: UIView {
     private var popupViewInitialFrame: CGRect!
     private let constants = CDAlertViewConstants()
     private var backgroundView: UIView = UIView(frame: .zero)
-    private var popupView: UIView = UIView(frame: .zero)
     private var coverView: UIView = UIView(frame: .zero)
     private var completionBlock: ((CDAlertView) -> Swift.Void)?
     private var contentStackView: UIStackView = UIStackView(frame: .zero)
@@ -112,6 +231,7 @@ open class CDAlertView: UIView {
     private var buttonView: UIView = UIView(frame: .zero)
     private var titleLabel: UILabel = UILabel(frame: .zero)
     private var messageLabel: UILabel = UILabel(frame: .zero)
+    private var textField: UITextField = UITextField(frame: .zero)
     private var type: CDAlertViewType!
     private lazy var actions: [CDAlertViewAction] = [CDAlertViewAction]()
 
@@ -153,7 +273,8 @@ open class CDAlertView: UIView {
         }
     }
 
-    public func show(_ completion:((CDAlertView) -> Swift.Void)? = nil) {
+    public func show(_ completion:((CDAlertView) -> Void)? = nil) {
+
         UIApplication.shared.keyWindow?.addSubview(self)
         alignToParent(with: 0)
         addSubview(backgroundView)
@@ -165,39 +286,86 @@ open class CDAlertView: UIView {
         createViews()
         loadActionButtons()
         popupViewInitialFrame = popupView.frame
+
         completionBlock = completion
     }
 
-    public func hide(isPopupAnimated: Bool) {
-        UIView.animate(withDuration: 0.5, animations: { [unowned self] in
-            if isPopupAnimated {
-                var offScreenCenter = self.popupView.center
-                offScreenCenter.y += self.constants.minVelocity * 3
-                self.popupView.center = offScreenCenter
-            }
-            self.transform = CGAffineTransform(translationX: 0.5, y: 0.5)
-            self.alpha = 0
-            }, completion: { (finished) in
-                if finished {
-                    self.removeFromSuperview()
-                    if let completion = self.completionBlock {
-                        completion(self)
-                    }
-                }
+    public func hide(animations: CDAlertAnimationBlock? = nil,
+                     isPopupAnimated: Bool) {
+        if !isTextFieldHidden {
+            textField.resignFirstResponder()
+            NotificationCenter.default.removeObserver(self)
+        }
+
+        UIView.animate(withDuration: hideAnimationDuration,
+                       animations: { [unowned self] in
+                        if isPopupAnimated {
+                            if let animations = animations {
+                                animations?(&self.popupCenter, &self.popupTransform, &self.popupAlpha)
+                            } else {
+                                var offScreenCenter = self.popupView.center
+                                offScreenCenter.y += self.constants.minVelocity * 3
+                                self.popupView.center = offScreenCenter
+                                self.alpha = 0
+                            }
+                        }
+            },
+                       completion: { (finished) in
+                        self.removeFromSuperview()
+                        if let completion = self.completionBlock {
+                            completion(self)
+                        }
         })
+
     }
 
     public func add(action: CDAlertViewAction) {
         actions.append(action)
     }
+    
+    public func textFieldBecomeFirstResponder() {
+        if !isTextFieldHidden {
+            textField.becomeFirstResponder()
+        }
+    }
+    
+    public func textFieldResignFirstResponder() {
+        if !isTextFieldHidden {
+            textField.resignFirstResponder()
+        }
+    }
 
-    open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    open override func touchesEnded(_ touches: Set<UITouch>,
+                                    with event: UIEvent?) {
         if actions.count == 0 {
             touches.forEach { (touch) in
                 if touch.view == self.backgroundView {
-                    self.hide(isPopupAnimated: true)
+                    self.hide(animations: self.hideAnimations, isPopupAnimated: true)
                 }
             }
+        }
+    }
+
+    func keyboardWillShow(_ notification: Notification) {
+        if let userInfo = notification.userInfo {
+            if let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+                if let coverViewWindowCoordinates = coverView.superview?.convert(CGPoint(x: 0, y: coverView.frame.maxY), to: nil) {
+                    if coverViewWindowCoordinates.y > (keyboardSize.minY - keyboardSize.height) {
+                        popupCenterYPositionBeforeKeyboard = popupView.center.y
+                        let difference = coverViewWindowCoordinates.y - (keyboardSize.minY - keyboardSize.height)
+                        popupView.center.y -= difference
+                    }
+                }
+            }
+        }
+    }
+
+    func keyboardWillHide(_ notification: Notification) {
+        if let initialY = self.popupCenterYPositionBeforeKeyboard {
+            UIView.animate(withDuration: 0.5, delay: 0.2, options: .allowAnimatedContent, animations: { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.popupView.center.y = initialY
+            })
         }
     }
 
@@ -212,11 +380,12 @@ open class CDAlertView: UIView {
             let origin = CGPoint(x: backgroundView.center.x - popupViewInitialFrame.size.width/2,
                                  y: backgroundView.center.y - popupViewInitialFrame.size.height/2)
             let velocity = recognizer.velocity(in: backgroundView)
-            if !CGRect(origin: origin, size: popupViewInitialFrame.size).contains(location) ||
+            if !CGRect(origin: origin,
+                       size: popupViewInitialFrame.size).contains(location) ||
                 (velocity.x > constants.activeVelocity || velocity.y > constants.activeVelocity) {
                 UIView.animate(withDuration: 1, animations: {
                     self.popupView.center = self.calculatePopupViewOffScreenCenter(from: velocity)
-                    self.hide(isPopupAnimated: false)
+                    self.hide(animations: self.hideAnimations, isPopupAnimated: false)
                 })
             } else {
                 UIView.animate(withDuration: 0.5, animations: {
@@ -274,6 +443,14 @@ open class CDAlertView: UIView {
         createStackView()
         createTitleLabel()
         createMessageLabel()
+
+        if let customView = customView {
+            createCustomView(customView)
+        }
+        
+        if !isTextFieldHidden {
+            createTextField()
+        }
 
         popupView.translatesAutoresizingMaskIntoConstraints = false
         popupView.centerHorizontally()
@@ -388,6 +565,30 @@ open class CDAlertView: UIView {
         contentStackView.addArrangedSubview(messageLabel)
     }
 
+    private func createCustomView(_ custom: UIView) {
+        custom.clipsToBounds = true
+        contentStackView.addArrangedSubview(custom)
+    }
+
+    private func createTextField() {
+        if textFieldDelegate == nil {
+            textField.delegate = self
+        }
+
+        textField.font = textFieldFont
+        textField.textColor = textFieldTextColor
+        textField.clearButtonMode = .whileEditing
+        textField.isSecureTextEntry = textFieldIsSecureTextEntry
+        textField.returnKeyType = textFieldReturnKeyType
+        textField.textAlignment = textFieldTextAlignment
+        textField.borderStyle = .roundedRect
+        textField.isHidden = isTextFieldHidden
+        textField.placeholder = textFieldPlaceholderText
+        textField.autocapitalizationType = textFieldAutocapitalizationType
+        textField.setHeight(textFieldHeight)
+        contentStackView.addArrangedSubview(textField)
+    }
+
     private func loadActionButtons() {
         guard actions.count != 0 else { return }
         for action in buttonContainer.arrangedSubviews {
@@ -425,6 +626,13 @@ open class CDAlertView: UIView {
 
 extension CDAlertView: CDAlertViewActionDelegate {
     internal func didTap(action: CDAlertViewAction) {
-        self.hide(isPopupAnimated: true)
+        self.hide(animations: self.hideAnimations, isPopupAnimated: true)
+    }
+}
+
+extension CDAlertView: UITextFieldDelegate {
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
