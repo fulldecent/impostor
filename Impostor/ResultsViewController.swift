@@ -7,10 +7,9 @@
 //
 
 import AudioToolbox
-import Firebase
 import QBFlatButton
 import CDAlertView
-//import SwiftyiRate
+import Firebase
 
 class ResultsViewController: UIViewController {
     fileprivate let game = ImpostorGameModel.game
@@ -40,9 +39,9 @@ class ResultsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        FIRAnalytics.logEvent(withName: kFIREventViewItem, parameters: [
-            kFIRParameterContentType:"view" as NSObject,
-            kFIRParameterItemID:NSStringFromClass(type(of: self)) as NSObject
+        Analytics.logEvent(AnalyticsEventViewItem, parameters: [
+            AnalyticsParameterContentType:"view" as NSObject,
+            AnalyticsParameterItemID:NSStringFromClass(type(of: self)) as NSObject
             ])
         var allPhotos = true
         for i in 0 ..< self.game.numberOfPlayers {
@@ -58,21 +57,21 @@ class ResultsViewController: UIViewController {
             self.collage.isHidden = true
             self.shim.constant = -self.collage.frame.size.height
         }
-        FIRAnalytics.logEvent(withName: "gameStats", parameters: [
-            kFIRParameterContentType: "All Photos" as NSObject,
-            kFIRParameterValue: "\(allPhotos)" as NSObject
+        Analytics.logEvent("gameStats", parameters: [
+            AnalyticsParameterContentType: "All Photos" as NSObject,
+            AnalyticsParameterValue: "\(allPhotos)" as NSObject
             ])
-        FIRAnalytics.logEvent(withName: "gameStats", parameters: [
-            kFIRParameterContentType: "Number of Players" as NSObject,
-            kFIRParameterValue: "\(game.numberOfPlayers)" as NSObject
+        Analytics.logEvent("gameStats", parameters: [
+            AnalyticsParameterContentType: "Number of Players" as NSObject,
+            AnalyticsParameterValue: "\(game.numberOfPlayers)" as NSObject
             ])
-        FIRAnalytics.logEvent(withName: "gameStats", parameters: [
-            kFIRParameterContentType: "Impostor Won" as NSObject,
-            kFIRParameterValue: "\(game.gameStatus == .theImpostorWon)" as NSObject
+        Analytics.logEvent("gameStats", parameters: [
+            AnalyticsParameterContentType: "Impostor Won" as NSObject,
+            AnalyticsParameterValue: "\(game.gameStatus == .theImpostorWon)" as NSObject
             ])
-        FIRAnalytics.logEvent(withName: "gameStats", parameters: [
-            kFIRParameterContentType: "Words" as NSObject,
-            kFIRParameterValue: "\(self.game.normalWord) - \(self.game.impostorWord)" as NSObject
+        Analytics.logEvent("gameStats", parameters: [
+            AnalyticsParameterContentType: "Words" as NSObject,
+            AnalyticsParameterValue: "\(self.game.normalWord) - \(self.game.impostorWord)" as NSObject
             ])
     }
     

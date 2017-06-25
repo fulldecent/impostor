@@ -66,9 +66,9 @@ class EliminationViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        FIRAnalytics.logEvent(withName: kFIREventViewItem, parameters: [
-            kFIRParameterContentType:"view" as NSObject,
-            kFIRParameterItemID:NSStringFromClass(type(of: self)) as NSObject
+        Analytics.logEvent(AnalyticsEventViewItem, parameters: [
+            AnalyticsParameterContentType:"view" as NSObject,
+            AnalyticsParameterItemID:NSStringFromClass(type(of: self)) as NSObject
             ])
     }
     

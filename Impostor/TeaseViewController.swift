@@ -7,20 +7,20 @@
 //
 
 import UIKit
-import FirebaseAnalytics
+import Firebase
 
 class TeaseViewController: UIViewController {
     @IBOutlet weak var spy: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        FIRAnalytics.logEvent(withName: kFIREventViewItem, parameters: [
-            kFIRParameterContentType:"view" as NSObject,
-            kFIRParameterItemID:NSStringFromClass(type(of: self)) as NSObject
+        Analytics.logEvent(AnalyticsEventViewItem, parameters: [
+            AnalyticsParameterContentType:"view" as NSObject,
+            AnalyticsParameterItemID:NSStringFromClass(type(of: self)) as NSObject
             ])
         
         let bounceAnimation: CAKeyframeAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
-        bounceAnimation.values = [0, M_PI * 8]
+        bounceAnimation.values = [0, Double.pi * 8]
         bounceAnimation.duration = 3
         bounceAnimation.isRemovedOnCompletion = true
         bounceAnimation.repeatCount = 0

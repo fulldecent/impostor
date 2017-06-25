@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import FirebaseAnalytics
-//import SwiftyiRate
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,9 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        FIRApp.configure()
-//        SwiftyiRate.sharedInstance.daysUntilPrompt = 5
-//        SwiftyiRate.sharedInstance.usesUntilPrompt = 15
+        FirebaseApp.configure()
         return true
     }
     

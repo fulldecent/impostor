@@ -5,14 +5,14 @@ use_frameworks!
 target 'Impostor' do
 	pod 'QBFlatButton'
 	pod 'CDAlertView'
-	pod 'GoogleAnalytics'
+	pod 'Firebase/Core'
 	pod 'RMStore'
 end
 
 target 'ImpostorTests' do
 	pod 'QBFlatButton'
 	pod 'CDAlertView'
-	pod 'GoogleAnalytics'
+	pod 'Firebase/Core'
 	pod 'RMStore'
 end
 

@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import Firebase
 import AVFoundation
 import AudioToolbox
+import Firebase
 
 class CollageViewController: UIViewController {
     fileprivate var game = ImpostorGameModel.game
@@ -22,9 +22,9 @@ class CollageViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        FIRAnalytics.logEvent(withName: kFIREventViewItem, parameters: [
-            kFIRParameterContentType:"view" as NSObject,
-            kFIRParameterItemID:NSStringFromClass(type(of: self)) as NSObject
+        Analytics.logEvent(AnalyticsEventViewItem, parameters: [
+            AnalyticsParameterContentType:"view" as NSObject,
+            AnalyticsParameterItemID:NSStringFromClass(type(of: self)) as NSObject
             ])
     }
     
@@ -87,7 +87,7 @@ class CollageViewController: UIViewController {
         activityVC.excludedActivityTypes = [UIActivityType.print, UIActivityType.assignToContact]
         activityVC.completionWithItemsHandler = {
             activityType, completed, returnedItems, activityError in
-            FIRAnalytics.logEvent(withName: "action", parameters: [
+            Analytics.logEvent("action", parameters: [
                 "viewController":NSStringFromClass(type(of: self)) as NSObject,
                 "function":#function as NSObject,
                 "extra": "Success" as NSObject
@@ -121,7 +121,7 @@ extension CollageViewController: UICollectionViewDataSource {
         }
         
         let degrees = Double(Int(arc4random_uniform(31)) - 15)
-        let radians = CGFloat(degrees * M_PI / 180)
+        let radians = CGFloat(degrees * Double.pi / 180)
         imageView.transform = CGAffineTransform(rotationAngle: radians)
         let bounceAnimation: CAKeyframeAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
         bounceAnimation.values = [0, radians * 0.5, -radians * 2, radians]

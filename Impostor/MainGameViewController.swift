@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FirebaseAnalytics
 
 class MainGameViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {        

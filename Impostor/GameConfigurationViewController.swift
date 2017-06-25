@@ -10,9 +10,9 @@ import Foundation
 import AVFoundation
 import AudioToolbox
 import MessageUI
-import FirebaseAnalytics
 import RMStore
 import SafariServices
+import Firebase
 
 class GameConfigurationViewController: UIViewController {
     fileprivate var playerCount = 3
@@ -46,9 +46,9 @@ class GameConfigurationViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        FIRAnalytics.logEvent(withName: kFIREventViewItem, parameters: [
-            kFIRParameterContentType:"view" as NSObject,
-            kFIRParameterItemID:NSStringFromClass(type(of: self)) as NSObject
+        Analytics.logEvent(AnalyticsEventViewItem, parameters: [
+            AnalyticsParameterContentType:"view" as NSObject,
+            AnalyticsParameterItemID:NSStringFromClass(type(of: self)) as NSObject
             ])
         // https://stackoverflow.com/questions/3460694/uibutton-wont-go-to-aspect-fit-in-iphone/3995820#3995820
         for view in self.view.subviews {
@@ -97,9 +97,9 @@ class GameConfigurationViewController: UIViewController {
     }
     
     @IBAction func showInstructions() {
-        FIRAnalytics.logEvent(withName: kFIREventViewItem, parameters: [
-            kFIRParameterContentType:"view" as NSObject,
-            kFIRParameterItemID:"Instructions" as NSObject
+        Analytics.logEvent(AnalyticsEventViewItem, parameters: [
+            AnalyticsParameterContentType:"view" as NSObject,
+            AnalyticsParameterItemID:"Instructions" as NSObject
             ])
         AudioServicesPlaySystemSound(self.buttonPress)
         
@@ -125,7 +125,7 @@ class GameConfigurationViewController: UIViewController {
     }
     
     @IBAction func clearPhotos(_ sender: UIButton) {
-        FIRAnalytics.logEvent(withName: "action", parameters: [
+        Analytics.logEvent("action", parameters: [
             "viewController":NSStringFromClass(type(of: self)) as NSObject,
             "function":#function as NSObject
             ])
@@ -135,7 +135,7 @@ class GameConfigurationViewController: UIViewController {
     }
     
     @IBAction func seeWeixin(_ sender: UIButton) {
-        FIRAnalytics.logEvent(withName: "action", parameters: [
+        Analytics.logEvent("action", parameters: [
             "viewController":NSStringFromClass(type(of: self)) as NSObject,
             "function":#function as NSObject
             ])
@@ -156,7 +156,7 @@ class GameConfigurationViewController: UIViewController {
     }
     
     @IBAction func giveFeedback(_ sender: UIButton) {
-        FIRAnalytics.logEvent(withName: "action", parameters: [
+        Analytics.logEvent("action", parameters: [
             "viewController": NSStringFromClass(type(of: self)) as NSObject,
             "function": #function as NSObject
             ])
@@ -166,25 +166,28 @@ class GameConfigurationViewController: UIViewController {
     }
     
     @IBAction func buyUpgrade(_ sender: UIButton) {
-        FIRAnalytics.logEvent(withName: "action", parameters: [
+        Analytics.logEvent("action", parameters: [
             "viewController": NSStringFromClass(type(of: self)) as NSObject,
             "function": #function as NSObject
             ])
-        FIRAnalytics.logEvent(withName: kFIREventBeginCheckout, parameters: [
-            kFIRParameterItemCategory: "In-App Purchase" as NSObject,
-            kFIRParameterItemName: "Unlock words" as NSObject
+        Analytics.logEvent(AnalyticsEventBeginCheckout, parameters: [
+            AnalyticsParameterItemCategory: "In-App Purchase" as NSObject,
+            AnalyticsParameterItemName: "Unlock words" as NSObject
             ])
         AudioServicesPlaySystemSound(self.buttonPress)
         
         // Check if they already have it
         if UserDefaults.standard.integer(forKey: "didIAP") != 0 {
-            FIRAnalytics.logEvent(withName: "action", parameters: [
+            Analytics.logEvent("action", parameters: [
                 "viewController": NSStringFromClass(type(of: self)) as NSObject,
                 "function": #function as NSObject,
                 "extra": "Already had IAP" as NSObject
                 ])
-            let alert = UIAlertView(title: NSLocalizedString("Your previous purchase was restored", comment: "In-app purchase"), message: nil, delegate: nil, cancelButtonTitle: NSLocalizedString("OK", comment: "Dismiss the popup"))
-            alert.show()
+            
+            let alert = UIAlertController(title: NSLocalizedString("Your previous purchase was restored", comment: "In-app purchase"), message: nil, preferredStyle: .alert)
+            let action = UIAlertAction(title: NSLocalizedString("OK", comment: "Dismiss the popup"), style: .cancel)
+            alert.addAction(action)
+            present(alert, animated: true)
             return
         }
         
@@ -192,7 +195,7 @@ class GameConfigurationViewController: UIViewController {
         RMStore.default().restoreTransactions(onSuccess: {
             transactions in
             if (transactions?.count)! > 0 {
-                FIRAnalytics.logEvent(withName: "action", parameters: [
+                Analytics.logEvent("action", parameters: [
                     "viewController": NSStringFromClass(type(of: self)) as NSObject,
                     "function": #function as NSObject,
                     "extra": "Restored IAP" as NSObject
@@ -200,8 +203,11 @@ class GameConfigurationViewController: UIViewController {
                 let defaults = UserDefaults.standard
                 defaults.set(1, forKey: "didIAP")
                 defaults.synchronize()
-                let alert = UIAlertView(title: NSLocalizedString("Your previous purchase was restored", comment: "In-app purchase"), message: nil, delegate: nil, cancelButtonTitle: NSLocalizedString("OK", comment: "Dismiss the popup"))
-                alert.show()
+                
+                let alert = UIAlertController(title: NSLocalizedString("Your previous purchase was restored", comment: "In-app purchase"), message: nil, preferredStyle: .alert)
+                let action = UIAlertAction(title: NSLocalizedString("OK", comment: "Dismiss the popup"), style: .cancel)
+                alert.addAction(action)
+                self.present(alert, animated: true)
             }
             return
         }, failure: {
@@ -215,7 +221,7 @@ class GameConfigurationViewController: UIViewController {
             NSLog("Products loaded")
             RMStore.default().addPayment("words0001", success: {
                 transaction in
-                FIRAnalytics.logEvent(withName: "action", parameters: [
+                Analytics.logEvent("action", parameters: [
                     "viewController": NSStringFromClass(type(of: self)) as NSObject,
                     "function": #function as NSObject,
                     "extra": "Successful IAP" as NSObject
@@ -223,28 +229,37 @@ class GameConfigurationViewController: UIViewController {
                 let defaults = UserDefaults.standard
                 defaults.set(1, forKey: "didIAP")
                 defaults.synchronize()
-                let alert = UIAlertView(title: NSLocalizedString("Thank you for your purchase!", comment: "In-app purchase"), message: nil, delegate: nil, cancelButtonTitle: NSLocalizedString("OK", comment: "Dismiss the popup"))
-                alert.show()
+                
+                let alert = UIAlertController(title: NSLocalizedString("Thank you for your purchase!", comment: "In-app purchase"), message: nil, preferredStyle: .alert)
+                let action = UIAlertAction(title: NSLocalizedString("OK", comment: "Dismiss the popup"), style: .cancel)
+                alert.addAction(action)
+                self.present(alert, animated: true)
             }, failure: {
                 transaction, error in
-                FIRAnalytics.logEvent(withName: "action", parameters: [
+                Analytics.logEvent("action", parameters: [
                     "viewController": NSStringFromClass(type(of: self)) as NSObject,
                     "function": #function as NSObject,
                     "extra": "Error with IAP" as NSObject
                     ])
-                let alert = UIAlertView(title: NSLocalizedString("There was a problem with your purchase!", comment: "In-app purchase"), message: nil, delegate: nil, cancelButtonTitle: NSLocalizedString("OK", comment: "Dismiss the popup"))
-                alert.show()
+                
+                let alert = UIAlertController(title: NSLocalizedString("There was a problem with your purchase!", comment: "In-app purchase"), message: nil, preferredStyle: .alert)
+                let action = UIAlertAction(title: NSLocalizedString("OK", comment: "Dismiss the popup"), style: .cancel)
+                alert.addAction(action)
+                self.present(alert, animated: true)
             })
         }, failure: {
             error in
-            FIRAnalytics.logEvent(withName: "action", parameters: [
+            Analytics.logEvent("action", parameters: [
                 "viewController": NSStringFromClass(type(of: self)) as NSObject,
                 "function": #function as NSObject,
                 "extra": "Error with IAP, requesting products" as NSObject
                 ])
             NSLog("Something went wrong")
-            let alert = UIAlertView(title: NSLocalizedString("There was a problem with your purchase!", comment: "In-app purchase"), message: nil, delegate: nil, cancelButtonTitle: NSLocalizedString("OK", comment: "Dismiss the popup"))
-            alert.show()
+            
+            let alert = UIAlertController(title: NSLocalizedString("There was a problem with your purchase!", comment: "In-app purchase"), message: nil, preferredStyle: .alert)
+            let action = UIAlertAction(title: NSLocalizedString("OK", comment: "Dismiss the popup"), style: .cancel)
+            alert.addAction(action)
+            self.present(alert, animated: true)
         })
     }
     

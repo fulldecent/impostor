@@ -9,7 +9,7 @@
 import UIKit
 import AudioToolbox
 import CDAlertView
-import FirebaseAnalytics
+import Firebase
 
 class SecretWordViewController: UIViewController {
     @IBOutlet weak var playerLabel: UILabel!
@@ -19,7 +19,6 @@ class SecretWordViewController: UIViewController {
     
     fileprivate var game: ImpostorGameModel!
     fileprivate var imagePickerController: UIImagePickerController!
-    fileprivate var imagePopoverController: UIPopoverController!
     fileprivate var wantsToTakePhoto = true
     fileprivate var photoDenied = false
     fileprivate var accentSoundId: SystemSoundID = {
@@ -33,7 +32,7 @@ class SecretWordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         game = ImpostorGameModel.game
-        topSecretLabel.transform = CGAffineTransform(rotationAngle: -10 * CGFloat(M_PI) / 180.0)
+        topSecretLabel.transform = CGAffineTransform(rotationAngle: -10 * CGFloat(Double.pi) / 180.0)
         topSecretLabel.clipsToBounds = false
     }
     
@@ -76,9 +75,9 @@ class SecretWordViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        FIRAnalytics.logEvent(withName: kFIREventViewItem, parameters: [
-            kFIRParameterContentType:"view" as NSObject,
-            kFIRParameterItemID:NSStringFromClass(type(of: self)) as NSObject
+        Analytics.logEvent(AnalyticsEventViewItem, parameters: [
+            AnalyticsParameterContentType:"view" as NSObject,
+            AnalyticsParameterItemID:NSStringFromClass(type(of: self)) as NSObject
             ])
         
         self.playerLabel.text = String(format: NSLocalizedString("Player #%ld", comment: "Current player"), Int(self.playerNumber) + 1)
@@ -99,14 +98,15 @@ class SecretWordViewController: UIViewController {
             return
         }
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            self.imagePickerController = UIImagePickerController()
-            self.imagePickerController.delegate = self
-            self.imagePickerController.sourceType = .camera
-            self.imagePickerController.mediaTypes = UIImagePickerController.availableMediaTypes(for: .camera) ?? []
+            imagePickerController = UIImagePickerController()
+            imagePickerController.delegate = self
+            imagePickerController.sourceType = .camera
+            imagePickerController.mediaTypes = UIImagePickerController.availableMediaTypes(for: .camera) ?? []
             if UIImagePickerController.isCameraDeviceAvailable(.front) {
-                self.imagePickerController.cameraDevice = .front
+                imagePickerController.cameraDevice = .front
             }
-            self.present(self.imagePickerController, animated: true, completion: { _ in })
+            imagePickerController.modalPresentationStyle = .popover
+            present(imagePickerController, animated: true, completion: nil)
         }
     }
     

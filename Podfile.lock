@@ -1,6 +1,19 @@
 PODS:
   - CDAlertView (0.6.0)
-  - GoogleAnalytics (3.17.0)
+  - Firebase/Core (4.0.2):
+    - FirebaseAnalytics (= 4.0.1)
+    - FirebaseCore (= 4.0.2)
+  - FirebaseAnalytics (4.0.1):
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseCore (4.0.2):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseInstanceID (2.0.0):
+    - FirebaseCore (~> 4.0)
+  - GoogleToolboxForMac/Defines (2.1.1)
+  - GoogleToolboxForMac/NSData+zlib (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
   - QBFlatButton (1.1)
   - RMStore (0.7.1):
     - RMStore/Core (= 0.7.1)
@@ -8,16 +21,20 @@ PODS:
 
 DEPENDENCIES:
   - CDAlertView
-  - GoogleAnalytics
+  - Firebase/Core
   - QBFlatButton
   - RMStore
 
 SPEC CHECKSUMS:
   CDAlertView: e6f365fa0fac7349197e7ea4bd7810c069215cf4
-  GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
+  Firebase: c7ad0731eab26d18a3fc547dd048b0f7cd9c63ae
+  FirebaseAnalytics: 4d7040fefc3cd8b291cde35f12cf063d7963f15d
+  FirebaseCore: 1a8bf6c795ad07d2918278657954ffd2552e9c17
+  FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
+  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   QBFlatButton: 3cf272985cdbdd04d6bc8b7ae01e4dd62cb09c17
   RMStore: 64ba13a9c040e3b7572765d169f77175cd3243e5
 
-PODFILE CHECKSUM: 33881060a2b6ed7970651060b3b0022e92a00a7a
+PODFILE CHECKSUM: 58d73b45c5199255b9d90ab7f135dd571c231cbf
 
 COCOAPODS: 1.2.1
