@@ -134,27 +134,6 @@ class GameConfigurationViewController: UIViewController {
         playerPhotoCollectionView.reloadData()
     }
     
-    @IBAction func seeWeixin(_ sender: UIButton) {
-        Analytics.logEvent("action", parameters: [
-            "viewController":NSStringFromClass(type(of: self)) as NSObject,
-            "function":#function as NSObject
-            ])
-        AudioServicesPlaySystemSound(self.buttonPress)
-        let wxUrl = URL(string: "weixin://contacts/profile/fulldecent")!
-        let backupUrl = URL(string: "http://user.qzone.qq.com/858772059")!
-        if UIApplication.shared.canOpenURL(wxUrl) {
-            UIApplication.shared.openURL(wxUrl)
-        } else {
-            if #available(iOS 9.0, *) {
-                let svc = SFSafariViewController(url: backupUrl, entersReaderIfAvailable: true)
-                svc.delegate = self
-                self.present(svc, animated: true, completion: nil)
-            } else {
-                UIApplication.shared.openURL(backupUrl)
-            }
-        }
-    }
-    
     @IBAction func giveFeedback(_ sender: UIButton) {
         Analytics.logEvent("action", parameters: [
             "viewController": NSStringFromClass(type(of: self)) as NSObject,

@@ -113,12 +113,13 @@ extension EliminationViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = playerPhotoCollectionView.dequeueReusableCell(withReuseIdentifier: "playerCell", for: indexPath)
         let imageView = cell.viewWithTag(1) as! UIImageView
-        let imageName = "\(Int((indexPath as NSIndexPath).row))"
+        let imageName = "\(indexPath.row)"
         if let photo = CachedPersistentJPEGImageStore.sharedStore.imageWithName(imageName) {
             imageView.image = photo
         } else {
             imageView.image = UIImage(named: "defaultHeadshot.png")!
         }
+        imageView.alpha = game.playerEliminated[indexPath.row] ? 0.3 : 1
         return cell
     }
     

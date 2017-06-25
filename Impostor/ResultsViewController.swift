@@ -117,10 +117,9 @@ extension ResultsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "resultCell")!
-        cell.textLabel!.text = String(format: NSLocalizedString("Player #%ld", comment: "Current player"), (indexPath as NSIndexPath).row + 1)
-        cell.detailTextLabel!.text = self.game.playerWords[(indexPath as NSIndexPath).row]
+        cell.textLabel!.text = game.playerWords[(indexPath as NSIndexPath).row]
         cell.imageView!.alpha = game.playerEliminated[(indexPath as NSIndexPath).row] ? 0.4 : 1.0
-        let imageName = "\(Int((indexPath as NSIndexPath).row))"
+        let imageName = "\(indexPath.row)"
         if let photo = CachedPersistentJPEGImageStore.sharedStore.imageWithName(imageName) {
             cell.imageView!.image = photo
         } else {

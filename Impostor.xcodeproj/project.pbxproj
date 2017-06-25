@@ -19,6 +19,7 @@
 		D91E58C31D19B9C80068FFEF /* ImpostorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91E58C21D19B9C80068FFEF /* ImpostorUITests.swift */; };
 		D91E58CB1D19BA190068FFEF /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91E58CA1D19BA190068FFEF /* SnapshotHelper.swift */; };
 		D94EE3831F0067D500F43674 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94EE3821F0067D500F43674 /* AdSupport.framework */; };
+		D94EE3851F00755800F43674 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94EE3841F00755800F43674 /* iAd.framework */; };
 		D9645FE71C7937250067F18B /* TeaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9645FE61C7937250067F18B /* TeaseViewController.swift */; };
 		D9645FE91C7937C90067F18B /* CachedPersistentJPEGImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9645FE81C7937C90067F18B /* CachedPersistentJPEGImageStore.swift */; };
 		D97AAAA41CCDBDE400B922B6 /* MainGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97AAAA31CCDBDE400B922B6 /* MainGameViewController.swift */; };
@@ -119,6 +120,7 @@
 		D93B5CF6189EA8A900E90ACD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D93B5CF7189EA8A900E90ACD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ja; path = ja.lproj/gameWords.json; sourceTree = "<group>"; };
 		D94EE3821F0067D500F43674 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		D94EE3841F00755800F43674 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		D9645FE61C7937250067F18B /* TeaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeaseViewController.swift; sourceTree = "<group>"; };
 		D9645FE81C7937C90067F18B /* CachedPersistentJPEGImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachedPersistentJPEGImageStore.swift; sourceTree = "<group>"; };
 		D978345C1909CA01009C3024 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
@@ -222,6 +224,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D94EE3851F00755800F43674 /* iAd.framework in Frameworks */,
 				D94EE3831F0067D500F43674 /* AdSupport.framework in Frameworks */,
 				D98CA3FC185D338600746059 /* Foundation.framework in Frameworks */,
 				D9DD5CBC1B9A209B00CBDE5A /* StoreKit.framework in Frameworks */,
@@ -287,6 +290,7 @@
 		D98CA3FA185D338600746059 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D94EE3841F00755800F43674 /* iAd.framework */,
 				D94EE3821F0067D500F43674 /* AdSupport.framework */,
 				D9DD5CBB1B9A209B00CBDE5A /* StoreKit.framework */,
 				D97834601909CA0F009C3024 /* QuartzCore.framework */,
