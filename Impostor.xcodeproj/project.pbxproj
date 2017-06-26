@@ -20,6 +20,7 @@
 		D91E58CB1D19BA190068FFEF /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91E58CA1D19BA190068FFEF /* SnapshotHelper.swift */; };
 		D94EE3831F0067D500F43674 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94EE3821F0067D500F43674 /* AdSupport.framework */; };
 		D94EE3851F00755800F43674 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94EE3841F00755800F43674 /* iAd.framework */; };
+		D94EE3871F00B16900F43674 /* results-impostor-won.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D94EE3861F00B16900F43674 /* results-impostor-won.mp3 */; };
 		D9645FE71C7937250067F18B /* TeaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9645FE61C7937250067F18B /* TeaseViewController.swift */; };
 		D9645FE91C7937C90067F18B /* CachedPersistentJPEGImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9645FE81C7937C90067F18B /* CachedPersistentJPEGImageStore.swift */; };
 		D97AAAA41CCDBDE400B922B6 /* MainGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97AAAA31CCDBDE400B922B6 /* MainGameViewController.swift */; };
@@ -121,6 +122,7 @@
 		D93B5CF7189EA8A900E90ACD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ja; path = ja.lproj/gameWords.json; sourceTree = "<group>"; };
 		D94EE3821F0067D500F43674 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		D94EE3841F00755800F43674 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		D94EE3861F00B16900F43674 /* results-impostor-won.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "results-impostor-won.mp3"; sourceTree = "<group>"; };
 		D9645FE61C7937250067F18B /* TeaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeaseViewController.swift; sourceTree = "<group>"; };
 		D9645FE81C7937C90067F18B /* CachedPersistentJPEGImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachedPersistentJPEGImageStore.swift; sourceTree = "<group>"; };
 		D978345C1909CA01009C3024 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
@@ -371,6 +373,7 @@
 				D9A4F778185E80040060AA2D /* peek.mp3 */,
 				D9A4F77A185E80650060AA2D /* eliminate.mp3 */,
 				D9A4F77C185E80D10060AA2D /* results.mp3 */,
+				D94EE3861F00B16900F43674 /* results-impostor-won.mp3 */,
 				D9A2405E18D50DF7005D4DCD /* camera.mp3 */,
 				D9CDEBF2187A4B6C00AE4163 /* gameWords.json */,
 				D9DD5CBD1B9A400600CBDE5A /* gameWordsMore.json */,
@@ -551,6 +554,7 @@
 				D98CA40F185D338600746059 /* Main.storyboard in Resources */,
 				D9D62B251CBF410000A0E522 /* minus.png in Resources */,
 				D98CA406185D338600746059 /* InfoPlist.strings in Resources */,
+				D94EE3871F00B16900F43674 /* results-impostor-won.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

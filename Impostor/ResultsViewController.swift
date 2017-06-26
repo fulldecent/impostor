@@ -14,13 +14,6 @@ import Firebase
 class ResultsViewController: UIViewController {
     fileprivate let game = ImpostorGameModel.game
     
-    fileprivate var resultsSoundId: SystemSoundID = {
-        let url = Bundle.main.url(forResource: "results", withExtension: "mp3")!
-        var soundID: SystemSoundID = 0
-        AudioServicesCreateSystemSoundID(url as CFURL, &soundID)
-        return soundID
-    }()
-
     @IBOutlet weak var tableView: UITableView!
 
     @IBOutlet weak var collage: QBFlatButton!
@@ -77,16 +70,24 @@ class ResultsViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        AudioServicesPlaySystemSound(resultsSoundId)
+
         let message: String
+        let url: URL
+        
         switch game.gameStatus {
         case .theImpostorWasDefeated:
             message = NSLocalizedString("The impostor was defeated", comment: "After the game is over")
+            url = Bundle.main.url(forResource: "results", withExtension: "mp3")!
         case .theImpostorWon:
             message = NSLocalizedString("The impostor won", comment: "After the game is over")
+            url = Bundle.main.url(forResource: "results-impostor-won", withExtension: "mp3")!
         default:
             return
         }
+        
+        var soundID: SystemSoundID = 0
+        AudioServicesCreateSystemSoundID(url as CFURL, &soundID)
+        AudioServicesPlaySystemSound(soundID)
         
         let alertView = CDAlertView(title: nil,
                                     message: message,

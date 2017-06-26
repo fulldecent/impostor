@@ -22,22 +22,20 @@ class EliminationViewController: UIViewController {
 
     @IBOutlet weak var playerPhotoCollectionView: UICollectionView!
     
-    @IBAction func eliminatePlayer(_ sender: UIButton) {
-        let center = sender.center
-        let rootViewPoint = sender.superview!.convert(center, to: self.playerPhotoCollectionView)
-        let indexPath = playerPhotoCollectionView.indexPathForItem(at: rootViewPoint)!
-        guard !game.playerEliminated[(indexPath as NSIndexPath).row] else {
+    func eliminatePlayer(player: Int) {
+        guard !game.playerEliminated[player] else {
             return
         }
         AudioServicesPlaySystemSound(accentSoundId)
-        game.eliminatePlayer((indexPath as NSIndexPath).row)
+        game.eliminatePlayer(player)
         playerPhotoCollectionView.reloadData()
         
         switch game.gameStatus {
         case .theImpostorRemains:
             let title = NSLocalizedString("The impostor remains", comment: "After someone was killed")
             let message = String(format: NSLocalizedString("Player #%ld starts this round",
-                                                           comment: "After someone killed"))
+                                                           comment: "After someone killed"), game.playerNumberToStartRound)
+            
             let alertView = CDAlertView(title: title,
                                         message: message,
                                         type: .custom(image: UIImage(named:"AppIcon60x60")!))
@@ -62,6 +60,7 @@ class EliminationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.playerPhotoCollectionView.dataSource = self
+        self.playerPhotoCollectionView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -96,7 +95,7 @@ class EliminationViewController: UIViewController {
     
 }
 
-extension EliminationViewController: UICollectionViewDataSource {
+extension EliminationViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -113,7 +112,7 @@ extension EliminationViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = playerPhotoCollectionView.dequeueReusableCell(withReuseIdentifier: "playerCell", for: indexPath)
         let imageView = cell.viewWithTag(1) as! UIImageView
-        let imageName = "\(indexPath.row)"
+        let imageName = "\(indexPath.item)"
         if let photo = CachedPersistentJPEGImageStore.sharedStore.imageWithName(imageName) {
             imageView.image = photo
         } else {
@@ -121,6 +120,11 @@ extension EliminationViewController: UICollectionViewDataSource {
         }
         imageView.alpha = game.playerEliminated[indexPath.row] ? 0.3 : 1
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let playerNumber = indexPath.item
+        eliminatePlayer(player: playerNumber)
     }
     
     // Make the cells fit

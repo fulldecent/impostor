@@ -44,9 +44,11 @@ class ImpostorGameModel: NSObject {
             allWordSets.append(contentsOf: moreWordSets)
         }
         let chosenWordSet = allWordSets[Int(arc4random_uniform(UInt32(allWordSets.count)))]
-        let reverse = arc4random_uniform(2) == 0
-        normalWord = chosenWordSet[reverse ? 1 : 0]
-        impostorWord = chosenWordSet[reverse ? 0 : 1]
+        normalWord = chosenWordSet[0]
+        impostorWord = chosenWordSet[1]
+        if arc4random_uniform(2) == 0 {
+            swap(&normalWord, &impostorWord)
+        }
         numberOfPlayers = numPlayers
         playerRoles = [PlayerRoles](repeating: .normalPlayer, count: numberOfPlayers)
         playerWords = [String](repeating: self.normalWord, count: numberOfPlayers)
