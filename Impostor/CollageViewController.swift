@@ -23,12 +23,12 @@ class CollageViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         Analytics.logEvent(AnalyticsEventViewItem, parameters: [
-            AnalyticsParameterContentType:"view" as NSObject,
-            AnalyticsParameterItemID:NSStringFromClass(type(of: self)) as NSObject
+            AnalyticsParameterItemCategory: "Screen",
+            AnalyticsParameterItemID:NSStringFromClass(type(of: self))
             ])
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let root = navigationController!.viewControllers.first as! GameConfigurationViewController
         root.fadeOutMusic()
@@ -87,10 +87,8 @@ class CollageViewController: UIViewController {
         activityVC.excludedActivityTypes = [UIActivityType.print, UIActivityType.assignToContact]
         activityVC.completionWithItemsHandler = {
             activityType, completed, returnedItems, activityError in
-            Analytics.logEvent("action", parameters: [
-                "viewController":NSStringFromClass(type(of: self)) as NSObject,
-                "function":#function as NSObject,
-                "extra": "Success" as NSObject
+            Analytics.logEvent(AnalyticsEventShare, parameters: [
+                AnalyticsParameterContentType: "Selfie photo"
                 ])
         }
         self.present(activityVC, animated: true, completion: { _ in })

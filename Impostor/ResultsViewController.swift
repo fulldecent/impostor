@@ -33,8 +33,8 @@ class ResultsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         Analytics.logEvent(AnalyticsEventViewItem, parameters: [
-            AnalyticsParameterContentType:"view" as NSObject,
-            AnalyticsParameterItemID:NSStringFromClass(type(of: self)) as NSObject
+            AnalyticsParameterItemCategory: "Screen",
+            AnalyticsParameterItemID: NSStringFromClass(type(of: self))
             ])
         var allPhotos = true
         for i in 0 ..< self.game.numberOfPlayers {
@@ -51,20 +51,20 @@ class ResultsViewController: UIViewController {
             self.shim.constant = -self.collage.frame.size.height
         }
         Analytics.logEvent("gameStats", parameters: [
-            AnalyticsParameterContentType: "All Photos" as NSObject,
-            AnalyticsParameterValue: "\(allPhotos)" as NSObject
+            AnalyticsParameterContentType: "All Photos",
+            AnalyticsParameterValue: "\(allPhotos)"
             ])
         Analytics.logEvent("gameStats", parameters: [
-            AnalyticsParameterContentType: "Number of Players" as NSObject,
-            AnalyticsParameterValue: "\(game.numberOfPlayers)" as NSObject
+            AnalyticsParameterContentType: "Number of Players",
+            AnalyticsParameterValue: "\(game.numberOfPlayers)"
             ])
         Analytics.logEvent("gameStats", parameters: [
-            AnalyticsParameterContentType: "Impostor Won" as NSObject,
-            AnalyticsParameterValue: "\(game.gameStatus == .theImpostorWon)" as NSObject
+            AnalyticsParameterContentType: "Impostor Won",
+            AnalyticsParameterValue: "\(game.gameStatus == .theImpostorWon)"
             ])
         Analytics.logEvent("gameStats", parameters: [
-            AnalyticsParameterContentType: "Words" as NSObject,
-            AnalyticsParameterValue: "\(self.game.normalWord) - \(self.game.impostorWord)" as NSObject
+            AnalyticsParameterContentType: "Words",
+            AnalyticsParameterValue: "\(self.game.normalWord) - \(self.game.impostorWord)"
             ])
     }
     

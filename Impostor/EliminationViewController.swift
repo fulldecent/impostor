@@ -66,8 +66,8 @@ class EliminationViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         Analytics.logEvent(AnalyticsEventViewItem, parameters: [
-            AnalyticsParameterContentType:"view" as NSObject,
-            AnalyticsParameterItemID:NSStringFromClass(type(of: self)) as NSObject
+            AnalyticsParameterItemCategory: "Screen",
+            AnalyticsParameterItemID:NSStringFromClass(type(of: self))
             ])
     }
     

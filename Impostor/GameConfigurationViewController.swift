@@ -47,8 +47,8 @@ class GameConfigurationViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         Analytics.logEvent(AnalyticsEventViewItem, parameters: [
-            AnalyticsParameterContentType:"view" as NSObject,
-            AnalyticsParameterItemID:NSStringFromClass(type(of: self)) as NSObject
+            AnalyticsParameterItemCategory: "Screen",
+            AnalyticsParameterItemID:NSStringFromClass(type(of: self))
             ])
         // https://stackoverflow.com/questions/3460694/uibutton-wont-go-to-aspect-fit-in-iphone/3995820#3995820
         for view in self.view.subviews {
@@ -97,10 +97,7 @@ class GameConfigurationViewController: UIViewController {
     }
     
     @IBAction func showInstructions() {
-        Analytics.logEvent(AnalyticsEventViewItem, parameters: [
-            AnalyticsParameterContentType:"view" as NSObject,
-            AnalyticsParameterItemID:"Instructions" as NSObject
-            ])
+        Analytics.logEvent(kFIREventTutorialBegin, parameters: [])
         AudioServicesPlaySystemSound(self.buttonPress)
         
         var introViewPages = [KxIntroViewPage]()
@@ -200,10 +197,9 @@ class GameConfigurationViewController: UIViewController {
             NSLog("Products loaded")
             RMStore.default().addPayment("words0001", success: {
                 transaction in
-                Analytics.logEvent("action", parameters: [
-                    "viewController": NSStringFromClass(type(of: self)) as NSObject,
-                    "function": #function as NSObject,
-                    "extra": "Successful IAP" as NSObject
+                Analytics.logEvent(AnalyticsEventEcommercePurchase, parameters: [
+                    AnalyticsParameterCurrency: "USD",
+                    AnalyticsParameterValue: 1
                     ])
                 let defaults = UserDefaults.standard
                 defaults.set(1, forKey: "didIAP")
