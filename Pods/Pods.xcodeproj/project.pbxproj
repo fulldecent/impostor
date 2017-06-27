@@ -7,76 +7,87 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05977C13548751EE97C4342CE991526E /* QBFlatButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 33F7D7FBAF10C22C7D339D4F03681F06 /* QBFlatButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1368BCA50242C134CDA6ED5F0330A156 /* RMStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9BA385A5E47983AE5E82DD4557E312 /* RMStore.m */; };
-		177A46EA487255FEF53454F1E3DE2723 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B58F8A3AF5374C2DD051F05E7BB7863 /* ImageHelper.swift */; };
-		1F2613C6B8B4EF96762C4FB7A46CC2A6 /* QBFlatButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6363830625C0C8D617A9A9409BE3E930 /* QBFlatButton-dummy.m */; };
-		2C4CCC6D82B2D1DB41EA94D89F98D60A /* Pods-Impostor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6896E9A47035AA199DC439F34AFB486C /* Pods-Impostor-dummy.m */; };
-		4610DCA56F36E0A362D74E5AC9206A3D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33BEBDC1CC1313A4528E6E2ECC3EAEF1 /* Foundation.framework */; };
-		47754A8B71625307F93AB04DAE5C4100 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33BEBDC1CC1313A4528E6E2ECC3EAEF1 /* Foundation.framework */; };
-		49512C5E482B94F34654AB784EFE0611 /* CDAlertView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 284E8993C7AAAD038F2E741D756086AB /* CDAlertView.bundle */; };
-		541C5362289CC44D4F067D097F231250 /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = CB9ED5986304478EEB2378B067570337 /* GTMDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		622EDB80387FB63DA480F7E06AC9D2EB /* RMStore-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1FA4CAEDAA262004D4C43F9E589BC6 /* RMStore-dummy.m */; };
-		6636BEC2F32CD0D5BF9AD6C3854148BE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7A311B9399A2914B2348BF5D0F1A585 /* StoreKit.framework */; };
-		702DFEF8235A265816BC8F2C5E45347D /* QBFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4995637255AAED105259F9C39FC1A085 /* QBFlatButton.m */; };
-		785D8DA08BB47D25289C1ACED7F270EB /* CDAlertView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BE3FE9EDCBA4A0D219F89C2EA2ABAC /* CDAlertView-dummy.m */; };
-		81E4B6988FF26F9249B79C6C8CC667B4 /* GoogleToolboxForMac-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BB4C0033D7E34118BC1D799267502E9 /* GoogleToolboxForMac-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		85D793A244F6E144AC81BE59B147E1A2 /* CDAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D18851705D4F8EB83666A238427CD2E /* CDAlertView.swift */; };
-		8950EEE8A8A71C8C69E6E732BF3682DD /* QBFlatButton.h in Headers */ = {isa = PBXBuildFile; fileRef = EFCF9A0E290425F434A589AA032DC9C0 /* QBFlatButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8C9260CF9F400B1A0786B18FCCC60127 /* Pods-ImpostorTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1589551E92ECD8899F8DB821C2B0664C /* Pods-ImpostorTests-dummy.m */; };
-		93D51748565CFEB9490FBA7DA993C5C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33BEBDC1CC1313A4528E6E2ECC3EAEF1 /* Foundation.framework */; };
-		9FD7DDE53F9EF82FEC5515E6D42F7475 /* CDAlertHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA192988A8A60172DB17970358540729 /* CDAlertHeaderView.swift */; };
-		A2F1AE49B40FA19878D08BFB9AEEDBE9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE81B90AFA3D29077DE5616B5BC8693 /* UIKit.framework */; };
-		AD6887C269CE8AC60F69AEBB9F9AF5EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33BEBDC1CC1313A4528E6E2ECC3EAEF1 /* Foundation.framework */; };
-		B54B05B3D97FF749D99DA4556BD0695B /* Pods-Impostor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B2A8739D5412FD59E1647E3249D0E3C6 /* Pods-Impostor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B5B4B4360749E1D13CF2C52D04F56064 /* CDAlertView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D7906362ABF3BDE35EF8D2EDBC142E02 /* CDAlertView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B7D7C81AD022E37F39027243A314C132 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33BEBDC1CC1313A4528E6E2ECC3EAEF1 /* Foundation.framework */; };
-		B9606FAFFA9B9CA93A5D205B82F742CE /* RMStore.h in Headers */ = {isa = PBXBuildFile; fileRef = A25D705952AA82BAC741982D9EE74CF8 /* RMStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C2F5C6DC0C733DB2AF90B38058E18C01 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33BEBDC1CC1313A4528E6E2ECC3EAEF1 /* Foundation.framework */; };
-		C62371368D9F6000D213998A91DF5474 /* RMStore-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F95430A150E3A8A92913B33F7EC38E7 /* RMStore-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D4BE24D3884D2DDE0FE2B8043DEB1F68 /* Pods-ImpostorTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A48F26EDCE2A365E56DDFE5A60D7BC2 /* Pods-ImpostorTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DBFECCB0BBE3F11CC41A3C1A8C4879D3 /* GTMNSData+zlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 10E9745F05B3201B253666A99D60F9A5 /* GTMNSData+zlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DDA5FEC2649A4CC2E74661569A161B6F /* LayoutConstraintsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B443A9CEA127026F6449DB0B422B83A4 /* LayoutConstraintsExtension.swift */; };
-		F408FDBFC38CCA098969881D1C681B36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A03D5E4A25A50C42D9FF3D04873A80CD /* Assets.xcassets */; };
-		F7D889906DECB078EAAECB9D4A320E9C /* GTMNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F1BAD58B553286B8875C1596555EA2 /* GTMNSData+zlib.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		FAC3F3CAABA60EF76069431C5BB5032A /* GoogleToolboxForMac-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5396F7D8F957C05A7A936FEC577C5CB1 /* GoogleToolboxForMac-dummy.m */; };
+		124531D1B411B4B2329A087A9DA08C79 /* PaymentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F895DB4882742032088F73A29F1447B6 /* PaymentsController.swift */; };
+		177A46EA487255FEF53454F1E3DE2723 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A12EDB6F85581B81478B7FF37F543DD /* ImageHelper.swift */; };
+		1C8DCF1C73F42CC714368288C93C23F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		2DFEDB0D30A8367C81E7F32F45164ADD /* PaymentQueueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A57381CB8CE8A2468E737F647F11C8 /* PaymentQueueController.swift */; };
+		426A0008D96F20735604A78CDE71B07D /* InAppReceiptVerificator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E443DFB9F0E9394A36B0B6222596A2C7 /* InAppReceiptVerificator.swift */; };
+		469A81A6B19EC70FAFA93E41B5D7B9A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		49512C5E482B94F34654AB784EFE0611 /* CDAlertView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1E835FD20C82BEBB07B05490A3BD0A34 /* CDAlertView.bundle */; };
+		4C2EE0F10AF54F72BDD40D9CBB0C07E7 /* InAppReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028C40BA60391267F649613042DD095F /* InAppReceipt.swift */; };
+		4F648C10F0FA86D713B6CFC8CC822E38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		51C3BBFB7ACBA7E84B664C1EEAEBE1D3 /* SwiftyStoreKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 431E0FC58D74D7E00D443F7F61F72CAB /* SwiftyStoreKit-dummy.m */; };
+		541C5362289CC44D4F067D097F231250 /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 906BD75A82AC13FEA31FA0EC75B3B3C9 /* GTMDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5C0618DA4F535A40393D60338F79D272 /* SwiftyStoreKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 162CF56927564C383080D6B59E607C6B /* SwiftyStoreKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		635242E59762C863000DC852DCFFB33E /* Pods-ImpostorTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1589551E92ECD8899F8DB821C2B0664C /* Pods-ImpostorTests-dummy.m */; };
+		6485AA6BCC06CF0754B7CD6F9B3C87F9 /* ProductsInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA65283F964F57CE495F5A5770A20A5 /* ProductsInfoController.swift */; };
+		65B2FA5D18D38F0DF1510D6C2E7D12A7 /* AppleReceiptValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA5D02994A92AA462A55BC521CE903 /* AppleReceiptValidator.swift */; };
+		785D8DA08BB47D25289C1ACED7F270EB /* CDAlertView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE44DA6F8166CDD6F4E2043451E92CA /* CDAlertView-dummy.m */; };
+		7DD4D53402F8B922D1C719CF29624581 /* QBFlatButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D6C3BC170AFF762CBAA2E6A691DC61 /* QBFlatButton-dummy.m */; };
+		7EA3CFEDFFCD5FDC3AF6FDE82D957BD3 /* SwiftyStoreKit+Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF92AEA01A0DF3D6F11F5460D8689875 /* SwiftyStoreKit+Types.swift */; };
+		81E4B6988FF26F9249B79C6C8CC667B4 /* GoogleToolboxForMac-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D2C854680D5588C5E1E790476FF81F33 /* GoogleToolboxForMac-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8465A3FD079107218B16AD9691F9AE71 /* InAppReceiptRefreshRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C679A453EEBC34A82883394AA47ACA87 /* InAppReceiptRefreshRequest.swift */; };
+		85D793A244F6E144AC81BE59B147E1A2 /* CDAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3DFBEA87AE5E6EA56368E05E3759B1 /* CDAlertView.swift */; };
+		86CD758D4DEB32EDF0C99ACD9CB544DA /* OS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7880E38C3F4E4E933DBF92FBFD3BC083 /* OS.swift */; };
+		93D51748565CFEB9490FBA7DA993C5C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		976A4DF8E6D6D50D7E0B9AEC1AE3779A /* SwiftyStoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2073D5E11D13C7817DC6087E7D0E6 /* SwiftyStoreKit.swift */; };
+		999F4EC985F5C60E0C5012FF0284FE89 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		9FD7DDE53F9EF82FEC5515E6D42F7475 /* CDAlertHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AB38EC96FFCBB7587AB0E0AFCE156 /* CDAlertHeaderView.swift */; };
+		A2F1AE49B40FA19878D08BFB9AEEDBE9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
+		A72779B4FF667AE3A53DBE6DA1DCEE5E /* Pods-Impostor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B2A8739D5412FD59E1647E3249D0E3C6 /* Pods-Impostor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B28CB420340D859B3AE423EE274B7E34 /* RestorePurchasesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09764E9183F51004706B09FDB546FBEC /* RestorePurchasesController.swift */; };
+		B5B4B4360749E1D13CF2C52D04F56064 /* CDAlertView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AFC211CEEF37474BC5CE059295B8A21 /* CDAlertView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B7D7C81AD022E37F39027243A314C132 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		BC174EA8DF1EBA4694624C319D1CB329 /* InAppProductQueryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9399AD2CF065283C42C64329B5B719C8 /* InAppProductQueryRequest.swift */; };
+		C4EDCDF8475BED46C4A4A6FC48B2F192 /* SKProduct+LocalizedPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AA00D0C57DE1A31582411EF088F18A /* SKProduct+LocalizedPrice.swift */; };
+		CC48C504899BA91867BD704DD0695D1D /* QBFlatButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 34AF6DA4EB5B676115EC1A49B3108931 /* QBFlatButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DBFECCB0BBE3F11CC41A3C1A8C4879D3 /* GTMNSData+zlib.h in Headers */ = {isa = PBXBuildFile; fileRef = E75993AC5416AC1C98A9EB33D129597F /* GTMNSData+zlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DDA5FEC2649A4CC2E74661569A161B6F /* LayoutConstraintsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6467BFD10D8627E652173998BC10E339 /* LayoutConstraintsExtension.swift */; };
+		E0F37637D47431B0942DEFF9205837CF /* CompleteTransactionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5949377AD96BEE112A9C4842D4928F9A /* CompleteTransactionsController.swift */; };
+		F408FDBFC38CCA098969881D1C681B36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7895976AC78C6AA5CACA1AB802C24A93 /* Assets.xcassets */; };
+		F506E3247DE0E1AD00F5D7E73A8EB534 /* Pods-Impostor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6896E9A47035AA199DC439F34AFB486C /* Pods-Impostor-dummy.m */; };
+		F769FEA75B69E7F472928B2E533C965B /* QBFlatButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 494D3E35C5E88969D2AFCFF9A58664F4 /* QBFlatButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7D889906DECB078EAAECB9D4A320E9C /* GTMNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A407C95D09A3B6CF1712B168896811C /* GTMNSData+zlib.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F9083D28150595FCDB79D32A2554F0CA /* Pods-ImpostorTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A48F26EDCE2A365E56DDFE5A60D7BC2 /* Pods-ImpostorTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAC3F3CAABA60EF76069431C5BB5032A /* GoogleToolboxForMac-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B845326F559C3829913C5F1DED26969D /* GoogleToolboxForMac-dummy.m */; };
+		FC6AC41F856B23E7A8D365BDB336EB06 /* QBFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FC5F3381D6817AC884D523431C14F9 /* QBFlatButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		029EA220A08542247688E287137FE62C /* PBXContainerItemProxy */ = {
+		08D28C5FEDAD6D565256671FB50612B5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 369C26E0019831DFC30E7122499AB269;
 			remoteInfo = CDAlertView;
 		};
-		3095E19714E6CAF9096259BA6ACCEE47 /* PBXContainerItemProxy */ = {
+		2640DCF869B136D62FF82505A91B631A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4833885F11B8A6C74E7634040A4DAEB1;
-			remoteInfo = RMStore;
+			remoteGlobalIDString = ACA79652E69091C743741330D5D32204;
+			remoteInfo = SwiftyStoreKit;
 		};
-		4A84C4170F961DB698A86C62E416C1B5 /* PBXContainerItemProxy */ = {
+		34D2648FBB1EE244F12D5BBB31626ED2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 369C26E0019831DFC30E7122499AB269;
-			remoteInfo = CDAlertView;
+			remoteGlobalIDString = ACA79652E69091C743741330D5D32204;
+			remoteInfo = SwiftyStoreKit;
 		};
-		4D02A9719CDC7F917AAC3D66FC3D626B /* PBXContainerItemProxy */ = {
+		8A6A40E40A1DA1827716157A9D226CAD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 00103D6C821BE85971C563025527BA5D;
 			remoteInfo = GoogleToolboxForMac;
 		};
-		8CA76CFB961883ED403AD46FABDFD16E /* PBXContainerItemProxy */ = {
+		9D21D3492A8FFFA6B138C00744EFEBD7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4833885F11B8A6C74E7634040A4DAEB1;
-			remoteInfo = RMStore;
+			remoteGlobalIDString = 54EB4EC20071962C96015483B56B3ED2;
+			remoteInfo = QBFlatButton;
 		};
 		9E022DE6025B80186394648B956C2EE7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -85,129 +96,147 @@
 			remoteGlobalIDString = C4BDF1191BBE4F429F08A241D8B53E2A;
 			remoteInfo = "CDAlertView-CDAlertView";
 		};
-		B3827B2A7BC906A7AA7209E32FF5D8C8 /* PBXContainerItemProxy */ = {
+		B6FAD24E81543736507AE7954F311CC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 369C26E0019831DFC30E7122499AB269;
+			remoteInfo = CDAlertView;
+		};
+		EE1B5E275B392DCA57B92E795297DA42 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 00103D6C821BE85971C563025527BA5D;
 			remoteInfo = GoogleToolboxForMac;
 		};
-		C07D35AF60A62228B963DA80CE1E84FA /* PBXContainerItemProxy */ = {
+		FB37FB3AFC4D5397DC213D87F04D49A2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3169FBB85B97947880063BCF7CD6C623;
-			remoteInfo = QBFlatButton;
-		};
-		CAF3A379F8F18575A30D5C4E34EEA915 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3169FBB85B97947880063BCF7CD6C623;
+			remoteGlobalIDString = 54EB4EC20071962C96015483B56B3ED2;
 			remoteInfo = QBFlatButton;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		028C40BA60391267F649613042DD095F /* InAppReceipt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InAppReceipt.swift; path = SwiftyStoreKit/InAppReceipt.swift; sourceTree = "<group>"; };
 		079DE5B38224A96459169C6CB7CDAE38 /* Pods-ImpostorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ImpostorTests.debug.xcconfig"; sourceTree = "<group>"; };
-		08C691F0FC916A055A5CE0FC7D09E59D /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
-		10E9745F05B3201B253666A99D60F9A5 /* GTMNSData+zlib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GTMNSData+zlib.h"; path = "Foundation/GTMNSData+zlib.h"; sourceTree = "<group>"; };
+		09764E9183F51004706B09FDB546FBEC /* RestorePurchasesController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RestorePurchasesController.swift; path = SwiftyStoreKit/RestorePurchasesController.swift; sourceTree = "<group>"; };
 		1589551E92ECD8899F8DB821C2B0664C /* Pods-ImpostorTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ImpostorTests-dummy.m"; sourceTree = "<group>"; };
-		1A94D60A9A3DDDB8DDF170B3C1851618 /* GoogleToolboxForMac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleToolboxForMac.xcconfig; sourceTree = "<group>"; };
-		1F3214F31F4983511E4C19B3817CC475 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2073EA0557EB434823237ABE723E139E /* CDAlertView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CDAlertView.framework; path = CDAlertView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2616F01E6B771578DDA04B0057F7CBF2 /* RMStore-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RMStore-prefix.pch"; sourceTree = "<group>"; };
+		162CF56927564C383080D6B59E607C6B /* SwiftyStoreKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyStoreKit-umbrella.h"; sourceTree = "<group>"; };
+		1E835FD20C82BEBB07B05490A3BD0A34 /* CDAlertView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = CDAlertView.bundle; path = CDAlertView.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EB577F432BD851755A1E75DE6772246 /* Pods_Impostor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Impostor.framework; path = "Pods-Impostor.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F95E1831DCFFCD8DCCE2B31F653F3B3 /* GoogleToolboxForMac-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-prefix.pch"; sourceTree = "<group>"; };
+		22BC505E981676F7640E46EEE94B803A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23FEA24118ED525A75D1F64EB48BF6D6 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
 		2628386D6195F442A9DE6F9ECCE3EF07 /* Pods-ImpostorTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ImpostorTests.modulemap"; sourceTree = "<group>"; };
-		269DD8ACA93C8E644E967A41FC6AE170 /* RMStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RMStore.framework; path = RMStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		284E8993C7AAAD038F2E741D756086AB /* CDAlertView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = CDAlertView.bundle; path = CDAlertView.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		26A2073D5E11D13C7817DC6087E7D0E6 /* SwiftyStoreKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyStoreKit.swift; path = SwiftyStoreKit/SwiftyStoreKit.swift; sourceTree = "<group>"; };
+		28FC5F3381D6817AC884D523431C14F9 /* QBFlatButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QBFlatButton.m; path = Pod/Classes/QBFlatButton.m; sourceTree = "<group>"; };
 		2A48F26EDCE2A365E56DDFE5A60D7BC2 /* Pods-ImpostorTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ImpostorTests-umbrella.h"; sourceTree = "<group>"; };
-		2F25B4674E09B62791BF9F815FCD59A1 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCoreDiagnostics.framework; path = Frameworks/FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
-		30EF1AE4AFF3F9FB7B20EE33ADCB9C5B /* ResourceBundle-CDAlertView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-CDAlertView-Info.plist"; sourceTree = "<group>"; };
-		31B206F823E725ADB7A1350B75733C6B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EBA5D02994A92AA462A55BC521CE903 /* AppleReceiptValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppleReceiptValidator.swift; path = SwiftyStoreKit/AppleReceiptValidator.swift; sourceTree = "<group>"; };
 		333DAF996E23D20D82E0125DBFDBAA74 /* Pods-ImpostorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ImpostorTests.release.xcconfig"; sourceTree = "<group>"; };
-		33BEBDC1CC1313A4528E6E2ECC3EAEF1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		33F7D7FBAF10C22C7D339D4F03681F06 /* QBFlatButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QBFlatButton-umbrella.h"; sourceTree = "<group>"; };
-		3B09DED3F9B2509085A911714AC24EC1 /* CDAlertView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CDAlertView.xcconfig; sourceTree = "<group>"; };
-		3B52F635C6AF40234D8752AAC37A8366 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3B58F8A3AF5374C2DD051F05E7BB7863 /* ImageHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageHelper.swift; path = CDAlertView/Classes/ImageHelper.swift; sourceTree = "<group>"; };
-		3D484DC2CE604DCC59A5DEE10EDA5342 /* RMStore.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = RMStore.modulemap; sourceTree = "<group>"; };
-		3D9BA385A5E47983AE5E82DD4557E312 /* RMStore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RMStore.m; path = RMStore/RMStore.m; sourceTree = "<group>"; };
+		34AF6DA4EB5B676115EC1A49B3108931 /* QBFlatButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QBFlatButton.h; path = Pod/Classes/QBFlatButton.h; sourceTree = "<group>"; };
+		3C1B24EC40B6676888BCF7E51B6E389F /* CDAlertView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CDAlertView.framework; path = CDAlertView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F27C7CA247ABADF103D31F57EEEF8ED /* Pods-Impostor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Impostor.modulemap"; sourceTree = "<group>"; };
-		3FE81B90AFA3D29077DE5616B5BC8693 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		431E0FC58D74D7E00D443F7F61F72CAB /* SwiftyStoreKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyStoreKit-dummy.m"; sourceTree = "<group>"; };
 		490B9396D4D232CBF7DF6C9C76C70899 /* Pods-Impostor-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Impostor-frameworks.sh"; sourceTree = "<group>"; };
-		4995637255AAED105259F9C39FC1A085 /* QBFlatButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QBFlatButton.m; path = Pod/Classes/QBFlatButton.m; sourceTree = "<group>"; };
-		5396F7D8F957C05A7A936FEC577C5CB1 /* GoogleToolboxForMac-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GoogleToolboxForMac-dummy.m"; sourceTree = "<group>"; };
-		54270A09BBA7408D220D4CCE56875D78 /* QBFlatButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = QBFlatButton.xcconfig; sourceTree = "<group>"; };
+		494D3E35C5E88969D2AFCFF9A58664F4 /* QBFlatButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QBFlatButton-umbrella.h"; sourceTree = "<group>"; };
+		4A403E2D00538F33691A409DBE9BA220 /* SwiftyStoreKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftyStoreKit.modulemap; sourceTree = "<group>"; };
+		4A407C95D09A3B6CF1712B168896811C /* GTMNSData+zlib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSData+zlib.m"; path = "Foundation/GTMNSData+zlib.m"; sourceTree = "<group>"; };
+		5949377AD96BEE112A9C4842D4928F9A /* CompleteTransactionsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompleteTransactionsController.swift; path = SwiftyStoreKit/CompleteTransactionsController.swift; sourceTree = "<group>"; };
 		5A78A33F892DBEDFD69C83AA82580D71 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6020D0EE8AF5ABF5CEDFC00B7E8F30DC /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GoogleToolboxForMac.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6363830625C0C8D617A9A9409BE3E930 /* QBFlatButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "QBFlatButton-dummy.m"; sourceTree = "<group>"; };
-		650B8085668CBB122B9247E0C3DD81D9 /* GoogleToolboxForMac.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = GoogleToolboxForMac.modulemap; sourceTree = "<group>"; };
-		6520D0879AD2808D89921C6D1644CA43 /* CDAlertView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = CDAlertView.modulemap; sourceTree = "<group>"; };
+		622E8891AE5AEFDA04E41F80A697C912 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		6467BFD10D8627E652173998BC10E339 /* LayoutConstraintsExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintsExtension.swift; path = CDAlertView/Classes/LayoutConstraintsExtension.swift; sourceTree = "<group>"; };
 		658B27B1D87F93A2E4ACB0EC6227661F /* Pods-Impostor-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Impostor-resources.sh"; sourceTree = "<group>"; };
 		6896E9A47035AA199DC439F34AFB486C /* Pods-Impostor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Impostor-dummy.m"; sourceTree = "<group>"; };
+		696CFFA4CB36DFFDE79763B696D41751 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
 		6A48B228A10015CFF268C02406384564 /* Pods-Impostor-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Impostor-acknowledgements.plist"; sourceTree = "<group>"; };
-		6BB4C0033D7E34118BC1D799267502E9 /* GoogleToolboxForMac-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-umbrella.h"; sourceTree = "<group>"; };
-		77493DA369AF95190EE64F82B12B2CB5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7F95430A150E3A8A92913B33F7EC38E7 /* RMStore-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RMStore-umbrella.h"; sourceTree = "<group>"; };
+		6AFC211CEEF37474BC5CE059295B8A21 /* CDAlertView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CDAlertView-umbrella.h"; sourceTree = "<group>"; };
+		7366C7FFEF96D093AE51CD7A7B98A01C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77AA00D0C57DE1A31582411EF088F18A /* SKProduct+LocalizedPrice.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SKProduct+LocalizedPrice.swift"; path = "SwiftyStoreKit/SKProduct+LocalizedPrice.swift"; sourceTree = "<group>"; };
+		784C9FF6BDEF22AA7C0066895BEBB39C /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GoogleToolboxForMac.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7880E38C3F4E4E933DBF92FBFD3BC083 /* OS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OS.swift; path = SwiftyStoreKit/OS.swift; sourceTree = "<group>"; };
+		7895976AC78C6AA5CACA1AB802C24A93 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = CDAlertView/Assets/Assets.xcassets; sourceTree = "<group>"; };
+		7942DC4B7ACA26C3D3C5AB8259C4D231 /* CDAlertView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = CDAlertView.modulemap; sourceTree = "<group>"; };
+		7A12EDB6F85581B81478B7FF37F543DD /* ImageHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageHelper.swift; path = CDAlertView/Classes/ImageHelper.swift; sourceTree = "<group>"; };
+		7FA94E1CECB4D04ECA451278B0580634 /* ResourceBundle-CDAlertView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-CDAlertView-Info.plist"; sourceTree = "<group>"; };
+		853DA9034374568FB3A6E02A125C6316 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		874573635E3DCEEE95983E4A86F686D2 /* Pods-ImpostorTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ImpostorTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		8D68D980F18DB0A42C30444B3F2AB150 /* RMStore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RMStore.xcconfig; sourceTree = "<group>"; };
+		906BD75A82AC13FEA31FA0EC75B3B3C9 /* GTMDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		9273E5BA6D8E88F19898333D2C7A414E /* Pods_ImpostorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ImpostorTests.framework; path = "Pods-ImpostorTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9399AD2CF065283C42C64329B5B719C8 /* InAppProductQueryRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InAppProductQueryRequest.swift; path = SwiftyStoreKit/InAppProductQueryRequest.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		96E4B560D8045A5BAF09735697765388 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCoreDiagnostics.framework; path = Frameworks/FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
+		98379002ADCC43CF94AE853D92BB3C56 /* FirebaseNanoPB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseNanoPB.framework; path = Frameworks/FirebaseNanoPB.framework; sourceTree = "<group>"; };
 		99EE39C047F809F04083605DA7552712 /* Pods-Impostor-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Impostor-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9A0096BF822CACDBDA2652D5651E8820 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A17CBF16277C922E0AB4F1C3A487AE1 /* Pods-ImpostorTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ImpostorTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9D18851705D4F8EB83666A238427CD2E /* CDAlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CDAlertView.swift; path = CDAlertView/Classes/CDAlertView.swift; sourceTree = "<group>"; };
-		9F1FA4CAEDAA262004D4C43F9E589BC6 /* RMStore-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RMStore-dummy.m"; sourceTree = "<group>"; };
-		A03D5E4A25A50C42D9FF3D04873A80CD /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = CDAlertView/Assets/Assets.xcassets; sourceTree = "<group>"; };
-		A1BE3FE9EDCBA4A0D219F89C2EA2ABAC /* CDAlertView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CDAlertView-dummy.m"; sourceTree = "<group>"; };
-		A1DA872D05B6D47E51AFAD3E1196656C /* Pods_Impostor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Impostor.framework; path = "Pods-Impostor.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A25D705952AA82BAC741982D9EE74CF8 /* RMStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RMStore.h; path = RMStore/RMStore.h; sourceTree = "<group>"; };
-		ABE0A56BEA677642FF1DC9CDEF176F42 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		ADE44DA6F8166CDD6F4E2043451E92CA /* CDAlertView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CDAlertView-dummy.m"; sourceTree = "<group>"; };
 		AF0737E757E8C3D36FBDC9582DE052E5 /* Pods-ImpostorTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ImpostorTests-frameworks.sh"; sourceTree = "<group>"; };
-		AFFDCDE04296B2532CE3C769D3D13C8E /* Pods_ImpostorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ImpostorTests.framework; path = "Pods-ImpostorTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B29FB5832A4D564D7A2C09B0BCAEDFF9 /* CDAlertView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CDAlertView.xcconfig; sourceTree = "<group>"; };
 		B2A8739D5412FD59E1647E3249D0E3C6 /* Pods-Impostor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Impostor-umbrella.h"; sourceTree = "<group>"; };
-		B443A9CEA127026F6449DB0B422B83A4 /* LayoutConstraintsExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintsExtension.swift; path = CDAlertView/Classes/LayoutConstraintsExtension.swift; sourceTree = "<group>"; };
-		B67A9A97CB0078071E9EE9022EE925D0 /* QBFlatButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QBFlatButton-prefix.pch"; sourceTree = "<group>"; };
-		B6819347BAEDC390E3E760BA094CDCBA /* QBFlatButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = QBFlatButton.modulemap; sourceTree = "<group>"; };
-		B9403880EEDB08D72CE18A8DDE147F8F /* CDAlertView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CDAlertView-prefix.pch"; sourceTree = "<group>"; };
-		BA192988A8A60172DB17970358540729 /* CDAlertHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CDAlertHeaderView.swift; path = CDAlertView/Classes/CDAlertHeaderView.swift; sourceTree = "<group>"; };
+		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		B7F89C865E786596DE1D30A98FF25CD1 /* GoogleToolboxForMac.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = GoogleToolboxForMac.modulemap; sourceTree = "<group>"; };
+		B845326F559C3829913C5F1DED26969D /* GoogleToolboxForMac-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GoogleToolboxForMac-dummy.m"; sourceTree = "<group>"; };
+		B9A57381CB8CE8A2468E737F647F11C8 /* PaymentQueueController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PaymentQueueController.swift; path = SwiftyStoreKit/PaymentQueueController.swift; sourceTree = "<group>"; };
 		BF4CB8220425F7525C854BC173421A2D /* Pods-Impostor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Impostor.debug.xcconfig"; sourceTree = "<group>"; };
-		C7FD354370ABA1DD14D8FB167C54EFF0 /* QBFlatButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = QBFlatButton.framework; path = QBFlatButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA690C99C1E797C894B0122F96E3CB81 /* FirebaseNanoPB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseNanoPB.framework; path = Frameworks/FirebaseNanoPB.framework; sourceTree = "<group>"; };
-		CB9ED5986304478EEB2378B067570337 /* GTMDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		C679A453EEBC34A82883394AA47ACA87 /* InAppReceiptRefreshRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InAppReceiptRefreshRequest.swift; path = SwiftyStoreKit/InAppReceiptRefreshRequest.swift; sourceTree = "<group>"; };
+		C9CF4CC7F695BAEC2105E881A42B5BC8 /* CDAlertView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CDAlertView-prefix.pch"; sourceTree = "<group>"; };
 		CD0D12A846B63E312A61B53C547E31F4 /* Pods-Impostor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Impostor.release.xcconfig"; sourceTree = "<group>"; };
-		D4F1BAD58B553286B8875C1596555EA2 /* GTMNSData+zlib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSData+zlib.m"; path = "Foundation/GTMNSData+zlib.m"; sourceTree = "<group>"; };
-		D71E6EA25E8660C816968BB28CECABBB /* GoogleToolboxForMac-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-prefix.pch"; sourceTree = "<group>"; };
-		D7906362ABF3BDE35EF8D2EDBC142E02 /* CDAlertView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CDAlertView-umbrella.h"; sourceTree = "<group>"; };
-		DBB04091D67143DB445BEA3FE29994FB /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Core/Sources/Firebase.h; sourceTree = "<group>"; };
+		CE8AB38EC96FFCBB7587AB0E0AFCE156 /* CDAlertHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CDAlertHeaderView.swift; path = CDAlertView/Classes/CDAlertHeaderView.swift; sourceTree = "<group>"; };
+		CE9064E84F02DD9003044F9B47F1F1A0 /* SwiftyStoreKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyStoreKit-prefix.pch"; sourceTree = "<group>"; };
+		D2C854680D5588C5E1E790476FF81F33 /* GoogleToolboxForMac-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-umbrella.h"; sourceTree = "<group>"; };
+		D6B95B0D0C0D2B7C834D1CFFF0EAB004 /* GoogleToolboxForMac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleToolboxForMac.xcconfig; sourceTree = "<group>"; };
+		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		DF7D6A7DD7484934694DB7036B0FF4A3 /* Pods-ImpostorTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ImpostorTests-resources.sh"; sourceTree = "<group>"; };
-		E7E3F333EDF3B0E491EE0E5F5BF38CFE /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
-		EFCF9A0E290425F434A589AA032DC9C0 /* QBFlatButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QBFlatButton.h; path = Pod/Classes/QBFlatButton.h; sourceTree = "<group>"; };
-		F7A311B9399A2914B2348BF5D0F1A585 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
+		E333F65CDF4BE160A8C7A509FA2F0053 /* SwiftyStoreKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyStoreKit.xcconfig; sourceTree = "<group>"; };
+		E3D6C3BC170AFF762CBAA2E6A691DC61 /* QBFlatButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "QBFlatButton-dummy.m"; sourceTree = "<group>"; };
+		E443DFB9F0E9394A36B0B6222596A2C7 /* InAppReceiptVerificator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InAppReceiptVerificator.swift; path = SwiftyStoreKit/InAppReceiptVerificator.swift; sourceTree = "<group>"; };
+		E75993AC5416AC1C98A9EB33D129597F /* GTMNSData+zlib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GTMNSData+zlib.h"; path = "Foundation/GTMNSData+zlib.h"; sourceTree = "<group>"; };
+		E95D86B5D7CDFC8D424017D73241A772 /* QBFlatButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = QBFlatButton.framework; path = QBFlatButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED16F5F23CB75FD4B1EFFBCFE5156192 /* SwiftyStoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyStoreKit.framework; path = SwiftyStoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF92AEA01A0DF3D6F11F5460D8689875 /* SwiftyStoreKit+Types.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwiftyStoreKit+Types.swift"; path = "SwiftyStoreKit/SwiftyStoreKit+Types.swift"; sourceTree = "<group>"; };
+		EFD79F79578973572A69EE17C001EBC4 /* QBFlatButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QBFlatButton-prefix.pch"; sourceTree = "<group>"; };
+		F4415754E83A8E710E4CC34EABABCE7E /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Core/Sources/Firebase.h; sourceTree = "<group>"; };
+		F719FD26F3BA9C69B33A4FD990B7FE9C /* QBFlatButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = QBFlatButton.modulemap; sourceTree = "<group>"; };
+		F895DB4882742032088F73A29F1447B6 /* PaymentsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PaymentsController.swift; path = SwiftyStoreKit/PaymentsController.swift; sourceTree = "<group>"; };
 		F8DA027EEEDEB7D17822E906BEBF02C4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBA65283F964F57CE495F5A5770A20A5 /* ProductsInfoController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProductsInfoController.swift; path = SwiftyStoreKit/ProductsInfoController.swift; sourceTree = "<group>"; };
+		FDC1EE7A52273D3EA59C3A1DB09603E2 /* QBFlatButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = QBFlatButton.xcconfig; sourceTree = "<group>"; };
+		FF3DFBEA87AE5E6EA56368E05E3759B1 /* CDAlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CDAlertView.swift; path = CDAlertView/Classes/CDAlertView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4D6805AE054F2074B5CB99335470F9AC /* Frameworks */ = {
+		0678A2A1D23EE5222935270AE33D149C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4610DCA56F36E0A362D74E5AC9206A3D /* Foundation.framework in Frameworks */,
+				469A81A6B19EC70FAFA93E41B5D7B9A6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A2AF63852BB0806BE22ED01B685ABA95 /* Frameworks */ = {
+		5AFEEA37588F03FBD2A867388A2020B1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47754A8B71625307F93AB04DAE5C4100 /* Foundation.framework in Frameworks */,
+				1C8DCF1C73F42CC714368288C93C23F3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B5CB1F873E601340395160F5F13AF518 /* Frameworks */ = {
+		7F9256F9138069DC3B1CFE447CC03344 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2F5C6DC0C733DB2AF90B38058E18C01 /* Foundation.framework in Frameworks */,
-				6636BEC2F32CD0D5BF9AD6C3854148BE /* StoreKit.framework in Frameworks */,
+				4F648C10F0FA86D713B6CFC8CC822E38 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A1C8D14D54AF4DEB537175A7F23A359 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				999F4EC985F5C60E0C5012FF0284FE89 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,14 +246,6 @@
 			files = (
 				B7D7C81AD022E37F39027243A314C132 /* Foundation.framework in Frameworks */,
 				A2F1AE49B40FA19878D08BFB9AEEDBE9 /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CB6716D88383796FF7B77C9E80093AA5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AD6887C269CE8AC60F69AEBB9F9AF5EF /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,62 +267,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
+		072F418502CCA96E1ED73FFA2DE75A24 /* FirebaseCore */ = {
 			isa = PBXGroup;
 			children = (
-				6D114975774DFB0EDBBD2546092612FE /* iOS */,
+				F719469F9B818F2DA9B140FC607ECFF8 /* Frameworks */,
 			);
-			name = Frameworks;
+			name = FirebaseCore;
+			path = FirebaseCore;
 			sourceTree = "<group>";
 		};
-		27875A7A739B512A5A3CF63388E35DE5 /* Frameworks */ = {
+		0ACA9A7308969E6D09EA40D12BB7CA8F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E7E3F333EDF3B0E491EE0E5F5BF38CFE /* FirebaseInstanceID.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		384AA9EEF596B628FA3BC37A12418CFD /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				632B6684C691AEC31062BFF21ED9B919 /* CDAlertView */,
-				81405F738D88095D7B4ED298013CB65A /* Firebase */,
-				E19A8B57E430413BABD7B723C2E1A156 /* FirebaseAnalytics */,
-				5E3D92FC3AA2741EBB5AECEED13722C4 /* FirebaseCore */,
-				D9145CE0558CEE404EB2100805172225 /* FirebaseInstanceID */,
-				45E51E3ED35A606F99D3AF79E385FAAA /* GoogleToolboxForMac */,
-				D64E7E5E59ADDB57D6280880E7D08DA4 /* QBFlatButton */,
-				9B3E2C9C9C754616E64A3F1E8CE58D00 /* RMStore */,
+				88B02FDB0F9C0DC79CD3BF2FF0E99401 /* CDAlertView */,
+				93075370D2F7072ACA11B68F67B15FC3 /* Firebase */,
+				9A9B585E2D2A95D8AB0BB9925BA38161 /* FirebaseAnalytics */,
+				072F418502CCA96E1ED73FFA2DE75A24 /* FirebaseCore */,
+				D554B6CA2FAFDE27C45C2DBDD6E43444 /* FirebaseInstanceID */,
+				A9C221EC5235E6EB71ECF18D9E022BF0 /* GoogleToolboxForMac */,
+				E3C258A67731BCDBD173B6A891E48110 /* QBFlatButton */,
+				985D12D1053ED4A3E938A9E0007DD6EF /* SwiftyStoreKit */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		3A2660A4B910B3C7DD4D866FEFDC7119 /* Defines */ = {
+		1C3557A6FEB4321ADA440110FFCF0E24 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				CB9ED5986304478EEB2378B067570337 /* GTMDefines.h */,
+				F4415754E83A8E710E4CC34EABABCE7E /* Firebase.h */,
 			);
-			name = Defines;
+			name = Core;
 			sourceTree = "<group>";
 		};
-		45E51E3ED35A606F99D3AF79E385FAAA /* GoogleToolboxForMac */ = {
+		2DDDEB3102AEB1FEAF63A98B9685AD23 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				3A2660A4B910B3C7DD4D866FEFDC7119 /* Defines */,
-				72EB26DFE16639071FE3AF1A04B71544 /* NSData+zlib */,
-				5F2BA7CB31C8C9F478404CFF22B6B98E /* Support Files */,
+				9A0096BF822CACDBDA2652D5651E8820 /* Info.plist */,
+				F719FD26F3BA9C69B33A4FD990B7FE9C /* QBFlatButton.modulemap */,
+				FDC1EE7A52273D3EA59C3A1DB09603E2 /* QBFlatButton.xcconfig */,
+				E3D6C3BC170AFF762CBAA2E6A691DC61 /* QBFlatButton-dummy.m */,
+				EFD79F79578973572A69EE17C001EBC4 /* QBFlatButton-prefix.pch */,
+				494D3E35C5E88969D2AFCFF9A58664F4 /* QBFlatButton-umbrella.h */,
 			);
-			name = GoogleToolboxForMac;
-			path = GoogleToolboxForMac;
+			name = "Support Files";
+			path = "../Target Support Files/QBFlatButton";
 			sourceTree = "<group>";
 		};
-		49748E64A80B069D57432D864FB8BF9F /* Resources */ = {
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A03D5E4A25A50C42D9FF3D04873A80CD /* Assets.xcassets */,
+				438B396F6B4147076630CAEFE34282C1 /* iOS */,
 			);
-			name = Resources;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		438B396F6B4147076630CAEFE34282C1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */,
+				B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		4CD5E279B7ACD9F81828C775CE9D8C07 /* Pods-Impostor */ = {
@@ -322,13 +348,12 @@
 			path = "Target Support Files/Pods-Impostor";
 			sourceTree = "<group>";
 		};
-		54AB39728449E7F06B7938674DBCD81D /* Core */ = {
+		5562CBD52293AEC7584619660B419D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A25D705952AA82BAC741982D9EE74CF8 /* RMStore.h */,
-				3D9BA385A5E47983AE5E82DD4557E312 /* RMStore.m */,
+				7895976AC78C6AA5CACA1AB802C24A93 /* Assets.xcassets */,
 			);
-			name = Core;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		56364D9E9DE031ECD8B62614093D252E /* Targets Support Files */ = {
@@ -340,202 +365,191 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		5E3D92FC3AA2741EBB5AECEED13722C4 /* FirebaseCore */ = {
+		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
-				CC1C8ABC42F10A008E25E02CE85C7F46 /* Frameworks */,
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				0ACA9A7308969E6D09EA40D12BB7CA8F /* Pods */,
+				D3C0600939B23F638D484B88502F48EB /* Products */,
+				56364D9E9DE031ECD8B62614093D252E /* Targets Support Files */,
 			);
-			name = FirebaseCore;
-			path = FirebaseCore;
 			sourceTree = "<group>";
 		};
-		5F2BA7CB31C8C9F478404CFF22B6B98E /* Support Files */ = {
+		88B02FDB0F9C0DC79CD3BF2FF0E99401 /* CDAlertView */ = {
 			isa = PBXGroup;
 			children = (
-				650B8085668CBB122B9247E0C3DD81D9 /* GoogleToolboxForMac.modulemap */,
-				1A94D60A9A3DDDB8DDF170B3C1851618 /* GoogleToolboxForMac.xcconfig */,
-				5396F7D8F957C05A7A936FEC577C5CB1 /* GoogleToolboxForMac-dummy.m */,
-				D71E6EA25E8660C816968BB28CECABBB /* GoogleToolboxForMac-prefix.pch */,
-				6BB4C0033D7E34118BC1D799267502E9 /* GoogleToolboxForMac-umbrella.h */,
-				3B52F635C6AF40234D8752AAC37A8366 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/GoogleToolboxForMac";
-			sourceTree = "<group>";
-		};
-		632B6684C691AEC31062BFF21ED9B919 /* CDAlertView */ = {
-			isa = PBXGroup;
-			children = (
-				BA192988A8A60172DB17970358540729 /* CDAlertHeaderView.swift */,
-				9D18851705D4F8EB83666A238427CD2E /* CDAlertView.swift */,
-				3B58F8A3AF5374C2DD051F05E7BB7863 /* ImageHelper.swift */,
-				B443A9CEA127026F6449DB0B422B83A4 /* LayoutConstraintsExtension.swift */,
-				49748E64A80B069D57432D864FB8BF9F /* Resources */,
-				69B646C71269C2B5E82B79366D2CAF8B /* Support Files */,
+				CE8AB38EC96FFCBB7587AB0E0AFCE156 /* CDAlertHeaderView.swift */,
+				FF3DFBEA87AE5E6EA56368E05E3759B1 /* CDAlertView.swift */,
+				7A12EDB6F85581B81478B7FF37F543DD /* ImageHelper.swift */,
+				6467BFD10D8627E652173998BC10E339 /* LayoutConstraintsExtension.swift */,
+				5562CBD52293AEC7584619660B419D5E /* Resources */,
+				AEBC2969A9843DF1E648C2FE7BF4EAE0 /* Support Files */,
 			);
 			name = CDAlertView;
 			path = CDAlertView;
 			sourceTree = "<group>";
 		};
-		69B646C71269C2B5E82B79366D2CAF8B /* Support Files */ = {
+		8C719E4EE57485EED524D90A5AD34673 /* NSData+zlib */ = {
 			isa = PBXGroup;
 			children = (
-				6520D0879AD2808D89921C6D1644CA43 /* CDAlertView.modulemap */,
-				3B09DED3F9B2509085A911714AC24EC1 /* CDAlertView.xcconfig */,
-				A1BE3FE9EDCBA4A0D219F89C2EA2ABAC /* CDAlertView-dummy.m */,
-				B9403880EEDB08D72CE18A8DDE147F8F /* CDAlertView-prefix.pch */,
-				D7906362ABF3BDE35EF8D2EDBC142E02 /* CDAlertView-umbrella.h */,
-				77493DA369AF95190EE64F82B12B2CB5 /* Info.plist */,
-				30EF1AE4AFF3F9FB7B20EE33ADCB9C5B /* ResourceBundle-CDAlertView-Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/CDAlertView";
-			sourceTree = "<group>";
-		};
-		6D114975774DFB0EDBBD2546092612FE /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				33BEBDC1CC1313A4528E6E2ECC3EAEF1 /* Foundation.framework */,
-				F7A311B9399A2914B2348BF5D0F1A585 /* StoreKit.framework */,
-				3FE81B90AFA3D29077DE5616B5BC8693 /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		72EB26DFE16639071FE3AF1A04B71544 /* NSData+zlib */ = {
-			isa = PBXGroup;
-			children = (
-				10E9745F05B3201B253666A99D60F9A5 /* GTMNSData+zlib.h */,
-				D4F1BAD58B553286B8875C1596555EA2 /* GTMNSData+zlib.m */,
+				E75993AC5416AC1C98A9EB33D129597F /* GTMNSData+zlib.h */,
+				4A407C95D09A3B6CF1712B168896811C /* GTMNSData+zlib.m */,
 			);
 			name = "NSData+zlib";
 			sourceTree = "<group>";
 		};
-		78A68E40545642EFFAE6F6D3B64781BD /* Frameworks */ = {
+		93075370D2F7072ACA11B68F67B15FC3 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				ABE0A56BEA677642FF1DC9CDEF176F42 /* FirebaseAnalytics.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7DB346D0F39D3F0E887471402A8071AB = {
-			isa = PBXGroup;
-			children = (
-				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
-				384AA9EEF596B628FA3BC37A12418CFD /* Pods */,
-				DF43E873294F8E19101DCBA2D4866C07 /* Products */,
-				56364D9E9DE031ECD8B62614093D252E /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		81405F738D88095D7B4ED298013CB65A /* Firebase */ = {
-			isa = PBXGroup;
-			children = (
-				D2D8AC45057B4BE92907ED4749EDB17C /* Core */,
+				1C3557A6FEB4321ADA440110FFCF0E24 /* Core */,
 			);
 			name = Firebase;
 			path = Firebase;
 			sourceTree = "<group>";
 		};
-		94AF00CA723BA9623EAC9FD663790F51 /* Support Files */ = {
+		985D12D1053ED4A3E938A9E0007DD6EF /* SwiftyStoreKit */ = {
 			isa = PBXGroup;
 			children = (
-				1F3214F31F4983511E4C19B3817CC475 /* Info.plist */,
-				3D484DC2CE604DCC59A5DEE10EDA5342 /* RMStore.modulemap */,
-				8D68D980F18DB0A42C30444B3F2AB150 /* RMStore.xcconfig */,
-				9F1FA4CAEDAA262004D4C43F9E589BC6 /* RMStore-dummy.m */,
-				2616F01E6B771578DDA04B0057F7CBF2 /* RMStore-prefix.pch */,
-				7F95430A150E3A8A92913B33F7EC38E7 /* RMStore-umbrella.h */,
+				2EBA5D02994A92AA462A55BC521CE903 /* AppleReceiptValidator.swift */,
+				5949377AD96BEE112A9C4842D4928F9A /* CompleteTransactionsController.swift */,
+				9399AD2CF065283C42C64329B5B719C8 /* InAppProductQueryRequest.swift */,
+				028C40BA60391267F649613042DD095F /* InAppReceipt.swift */,
+				C679A453EEBC34A82883394AA47ACA87 /* InAppReceiptRefreshRequest.swift */,
+				E443DFB9F0E9394A36B0B6222596A2C7 /* InAppReceiptVerificator.swift */,
+				7880E38C3F4E4E933DBF92FBFD3BC083 /* OS.swift */,
+				B9A57381CB8CE8A2468E737F647F11C8 /* PaymentQueueController.swift */,
+				F895DB4882742032088F73A29F1447B6 /* PaymentsController.swift */,
+				FBA65283F964F57CE495F5A5770A20A5 /* ProductsInfoController.swift */,
+				09764E9183F51004706B09FDB546FBEC /* RestorePurchasesController.swift */,
+				77AA00D0C57DE1A31582411EF088F18A /* SKProduct+LocalizedPrice.swift */,
+				26A2073D5E11D13C7817DC6087E7D0E6 /* SwiftyStoreKit.swift */,
+				EF92AEA01A0DF3D6F11F5460D8689875 /* SwiftyStoreKit+Types.swift */,
+				EA9C1C3446E3EEBE9C384A2C23D30720 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/RMStore";
+			name = SwiftyStoreKit;
+			path = SwiftyStoreKit;
 			sourceTree = "<group>";
 		};
-		9B3E2C9C9C754616E64A3F1E8CE58D00 /* RMStore */ = {
+		9A9B585E2D2A95D8AB0BB9925BA38161 /* FirebaseAnalytics */ = {
 			isa = PBXGroup;
 			children = (
-				54AB39728449E7F06B7938674DBCD81D /* Core */,
-				94AF00CA723BA9623EAC9FD663790F51 /* Support Files */,
+				DB121001CB15EA2EC7AF53E1535DA4D0 /* Frameworks */,
 			);
-			name = RMStore;
-			path = RMStore;
+			name = FirebaseAnalytics;
+			path = FirebaseAnalytics;
 			sourceTree = "<group>";
 		};
-		BD14D5F63E3F13B480688FA23FA16CF9 /* Support Files */ = {
+		9E130803E9FC93B8F80F963BDA6E801C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				31B206F823E725ADB7A1350B75733C6B /* Info.plist */,
-				B6819347BAEDC390E3E760BA094CDCBA /* QBFlatButton.modulemap */,
-				54270A09BBA7408D220D4CCE56875D78 /* QBFlatButton.xcconfig */,
-				6363830625C0C8D617A9A9409BE3E930 /* QBFlatButton-dummy.m */,
-				B67A9A97CB0078071E9EE9022EE925D0 /* QBFlatButton-prefix.pch */,
-				33F7D7FBAF10C22C7D339D4F03681F06 /* QBFlatButton-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/QBFlatButton";
-			sourceTree = "<group>";
-		};
-		CC1C8ABC42F10A008E25E02CE85C7F46 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				08C691F0FC916A055A5CE0FC7D09E59D /* FirebaseCore.framework */,
-				2F25B4674E09B62791BF9F815FCD59A1 /* FirebaseCoreDiagnostics.framework */,
-				CA690C99C1E797C894B0122F96E3CB81 /* FirebaseNanoPB.framework */,
+				622E8891AE5AEFDA04E41F80A697C912 /* FirebaseInstanceID.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D2D8AC45057B4BE92907ED4749EDB17C /* Core */ = {
+		A9C221EC5235E6EB71ECF18D9E022BF0 /* GoogleToolboxForMac */ = {
 			isa = PBXGroup;
 			children = (
-				DBB04091D67143DB445BEA3FE29994FB /* Firebase.h */,
+				DAE07C55E0100911B38B6AD4C96594D4 /* Defines */,
+				8C719E4EE57485EED524D90A5AD34673 /* NSData+zlib */,
+				D1455E0D530FA9F300CC227FDBC931A0 /* Support Files */,
 			);
-			name = Core;
+			name = GoogleToolboxForMac;
+			path = GoogleToolboxForMac;
 			sourceTree = "<group>";
 		};
-		D64E7E5E59ADDB57D6280880E7D08DA4 /* QBFlatButton */ = {
+		AEBC2969A9843DF1E648C2FE7BF4EAE0 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				EFCF9A0E290425F434A589AA032DC9C0 /* QBFlatButton.h */,
-				4995637255AAED105259F9C39FC1A085 /* QBFlatButton.m */,
-				BD14D5F63E3F13B480688FA23FA16CF9 /* Support Files */,
+				7942DC4B7ACA26C3D3C5AB8259C4D231 /* CDAlertView.modulemap */,
+				B29FB5832A4D564D7A2C09B0BCAEDFF9 /* CDAlertView.xcconfig */,
+				ADE44DA6F8166CDD6F4E2043451E92CA /* CDAlertView-dummy.m */,
+				C9CF4CC7F695BAEC2105E881A42B5BC8 /* CDAlertView-prefix.pch */,
+				6AFC211CEEF37474BC5CE059295B8A21 /* CDAlertView-umbrella.h */,
+				22BC505E981676F7640E46EEE94B803A /* Info.plist */,
+				7FA94E1CECB4D04ECA451278B0580634 /* ResourceBundle-CDAlertView-Info.plist */,
 			);
-			name = QBFlatButton;
-			path = QBFlatButton;
+			name = "Support Files";
+			path = "../Target Support Files/CDAlertView";
 			sourceTree = "<group>";
 		};
-		D9145CE0558CEE404EB2100805172225 /* FirebaseInstanceID */ = {
+		D1455E0D530FA9F300CC227FDBC931A0 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				27875A7A739B512A5A3CF63388E35DE5 /* Frameworks */,
+				B7F89C865E786596DE1D30A98FF25CD1 /* GoogleToolboxForMac.modulemap */,
+				D6B95B0D0C0D2B7C834D1CFFF0EAB004 /* GoogleToolboxForMac.xcconfig */,
+				B845326F559C3829913C5F1DED26969D /* GoogleToolboxForMac-dummy.m */,
+				1F95E1831DCFFCD8DCCE2B31F653F3B3 /* GoogleToolboxForMac-prefix.pch */,
+				D2C854680D5588C5E1E790476FF81F33 /* GoogleToolboxForMac-umbrella.h */,
+				853DA9034374568FB3A6E02A125C6316 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GoogleToolboxForMac";
+			sourceTree = "<group>";
+		};
+		D3C0600939B23F638D484B88502F48EB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1E835FD20C82BEBB07B05490A3BD0A34 /* CDAlertView.bundle */,
+				3C1B24EC40B6676888BCF7E51B6E389F /* CDAlertView.framework */,
+				784C9FF6BDEF22AA7C0066895BEBB39C /* GoogleToolboxForMac.framework */,
+				1EB577F432BD851755A1E75DE6772246 /* Pods_Impostor.framework */,
+				9273E5BA6D8E88F19898333D2C7A414E /* Pods_ImpostorTests.framework */,
+				E95D86B5D7CDFC8D424017D73241A772 /* QBFlatButton.framework */,
+				ED16F5F23CB75FD4B1EFFBCFE5156192 /* SwiftyStoreKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D554B6CA2FAFDE27C45C2DBDD6E43444 /* FirebaseInstanceID */ = {
+			isa = PBXGroup;
+			children = (
+				9E130803E9FC93B8F80F963BDA6E801C /* Frameworks */,
 			);
 			name = FirebaseInstanceID;
 			path = FirebaseInstanceID;
 			sourceTree = "<group>";
 		};
-		DF43E873294F8E19101DCBA2D4866C07 /* Products */ = {
+		DAE07C55E0100911B38B6AD4C96594D4 /* Defines */ = {
 			isa = PBXGroup;
 			children = (
-				284E8993C7AAAD038F2E741D756086AB /* CDAlertView.bundle */,
-				2073EA0557EB434823237ABE723E139E /* CDAlertView.framework */,
-				6020D0EE8AF5ABF5CEDFC00B7E8F30DC /* GoogleToolboxForMac.framework */,
-				A1DA872D05B6D47E51AFAD3E1196656C /* Pods_Impostor.framework */,
-				AFFDCDE04296B2532CE3C769D3D13C8E /* Pods_ImpostorTests.framework */,
-				C7FD354370ABA1DD14D8FB167C54EFF0 /* QBFlatButton.framework */,
-				269DD8ACA93C8E644E967A41FC6AE170 /* RMStore.framework */,
+				906BD75A82AC13FEA31FA0EC75B3B3C9 /* GTMDefines.h */,
 			);
-			name = Products;
+			name = Defines;
 			sourceTree = "<group>";
 		};
-		E19A8B57E430413BABD7B723C2E1A156 /* FirebaseAnalytics */ = {
+		DB121001CB15EA2EC7AF53E1535DA4D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				78A68E40545642EFFAE6F6D3B64781BD /* Frameworks */,
+				23FEA24118ED525A75D1F64EB48BF6D6 /* FirebaseAnalytics.framework */,
 			);
-			name = FirebaseAnalytics;
-			path = FirebaseAnalytics;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E3C258A67731BCDBD173B6A891E48110 /* QBFlatButton */ = {
+			isa = PBXGroup;
+			children = (
+				34AF6DA4EB5B676115EC1A49B3108931 /* QBFlatButton.h */,
+				28FC5F3381D6817AC884D523431C14F9 /* QBFlatButton.m */,
+				2DDDEB3102AEB1FEAF63A98B9685AD23 /* Support Files */,
+			);
+			name = QBFlatButton;
+			path = QBFlatButton;
+			sourceTree = "<group>";
+		};
+		EA9C1C3446E3EEBE9C384A2C23D30720 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7366C7FFEF96D093AE51CD7A7B98A01C /* Info.plist */,
+				4A403E2D00538F33691A409DBE9BA220 /* SwiftyStoreKit.modulemap */,
+				E333F65CDF4BE160A8C7A509FA2F0053 /* SwiftyStoreKit.xcconfig */,
+				431E0FC58D74D7E00D443F7F61F72CAB /* SwiftyStoreKit-dummy.m */,
+				CE9064E84F02DD9003044F9B47F1F1A0 /* SwiftyStoreKit-prefix.pch */,
+				162CF56927564C383080D6B59E607C6B /* SwiftyStoreKit-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyStoreKit";
 			sourceTree = "<group>";
 		};
 		F40205B881B9B7CBB3A5DDDB8CD2CD3B /* Pods-ImpostorTests */ = {
@@ -556,17 +570,19 @@
 			path = "Target Support Files/Pods-ImpostorTests";
 			sourceTree = "<group>";
 		};
+		F719469F9B818F2DA9B140FC607ECFF8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				696CFFA4CB36DFFDE79763B696D41751 /* FirebaseCore.framework */,
+				96E4B560D8045A5BAF09735697765388 /* FirebaseCoreDiagnostics.framework */,
+				98379002ADCC43CF94AE853D92BB3C56 /* FirebaseNanoPB.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		03A7728F1DD254EFC78F0961A78A1717 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D4BE24D3884D2DDE0FE2B8043DEB1F68 /* Pods-ImpostorTests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1DC09B3474FCADD5ADF737E95EE9BE04 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -575,29 +591,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1F13F46DF6068E921667640C07ADA1FB /* Headers */ = {
+		1EDA4D8838B14235300A925F1005C03A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05977C13548751EE97C4342CE991526E /* QBFlatButton-umbrella.h in Headers */,
-				8950EEE8A8A71C8C69E6E732BF3682DD /* QBFlatButton.h in Headers */,
+				F769FEA75B69E7F472928B2E533C965B /* QBFlatButton-umbrella.h in Headers */,
+				CC48C504899BA91867BD704DD0695D1D /* QBFlatButton.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8F00CAF357BE17CA177CA94556A31DF7 /* Headers */ = {
+		77D0798704BA0F8C43071CDC86A28F36 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C62371368D9F6000D213998A91DF5474 /* RMStore-umbrella.h in Headers */,
-				B9606FAFFA9B9CA93A5D205B82F742CE /* RMStore.h in Headers */,
+				5C0618DA4F535A40393D60338F79D272 /* SwiftyStoreKit-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D99B616B7AA8601F229C4D4785ED57DB /* Headers */ = {
+		78F11A976EBD62CB62BAAEBB61FA3DE7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B54B05B3D97FF749D99DA4556BD0695B /* Pods-Impostor-umbrella.h in Headers */,
+				F9083D28150595FCDB79D32A2554F0CA /* Pods-ImpostorTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EBE747FC758C5AB70A9E6101A0732F2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A72779B4FF667AE3A53DBE6DA1DCEE5E /* Pods-Impostor-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -628,24 +651,7 @@
 			);
 			name = GoogleToolboxForMac;
 			productName = GoogleToolboxForMac;
-			productReference = 6020D0EE8AF5ABF5CEDFC00B7E8F30DC /* GoogleToolboxForMac.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		3169FBB85B97947880063BCF7CD6C623 /* QBFlatButton */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 72A91A08AA83C9DF835F51CF41B84B97 /* Build configuration list for PBXNativeTarget "QBFlatButton" */;
-			buildPhases = (
-				63187D57F8A4D752E80EB7FA450EFBBB /* Sources */,
-				4D6805AE054F2074B5CB99335470F9AC /* Frameworks */,
-				1F13F46DF6068E921667640C07ADA1FB /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = QBFlatButton;
-			productName = QBFlatButton;
-			productReference = C7FD354370ABA1DD14D8FB167C54EFF0 /* QBFlatButton.framework */;
+			productReference = 784C9FF6BDEF22AA7C0066895BEBB39C /* GoogleToolboxForMac.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		369C26E0019831DFC30E7122499AB269 /* CDAlertView */ = {
@@ -664,66 +670,62 @@
 			);
 			name = CDAlertView;
 			productName = CDAlertView;
-			productReference = 2073EA0557EB434823237ABE723E139E /* CDAlertView.framework */;
+			productReference = 3C1B24EC40B6676888BCF7E51B6E389F /* CDAlertView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		4833885F11B8A6C74E7634040A4DAEB1 /* RMStore */ = {
+		54EB4EC20071962C96015483B56B3ED2 /* QBFlatButton */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 11B9836A9BBAB10B84CA8F85947C9E96 /* Build configuration list for PBXNativeTarget "RMStore" */;
+			buildConfigurationList = 22D2597E926AAE88E83C9C3A3868451B /* Build configuration list for PBXNativeTarget "QBFlatButton" */;
 			buildPhases = (
-				FA204C0F8EFB904ABD4B5D4FFB0A3AC7 /* Sources */,
-				B5CB1F873E601340395160F5F13AF518 /* Frameworks */,
-				8F00CAF357BE17CA177CA94556A31DF7 /* Headers */,
+				FC7B527295C1684D1B6368CDC60D78CE /* Sources */,
+				7F9256F9138069DC3B1CFE447CC03344 /* Frameworks */,
+				1EDA4D8838B14235300A925F1005C03A /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = RMStore;
-			productName = RMStore;
-			productReference = 269DD8ACA93C8E644E967A41FC6AE170 /* RMStore.framework */;
+			name = QBFlatButton;
+			productName = QBFlatButton;
+			productReference = E95D86B5D7CDFC8D424017D73241A772 /* QBFlatButton.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		4B716390C1E147FF5F24FB75461A0556 /* Pods-Impostor */ = {
+		9A60C053C1DBE48018BF5AC160180F67 /* Pods-Impostor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4B248A697E3948278F0E8319453F81D1 /* Build configuration list for PBXNativeTarget "Pods-Impostor" */;
+			buildConfigurationList = F4C03A6CACE195C93D0D2D32408EB8F0 /* Build configuration list for PBXNativeTarget "Pods-Impostor" */;
 			buildPhases = (
-				DC99C697583CFFA2FDCFB315AB520552 /* Sources */,
-				CB6716D88383796FF7B77C9E80093AA5 /* Frameworks */,
-				D99B616B7AA8601F229C4D4785ED57DB /* Headers */,
+				3D5A2624CE3679EBC9ABFAD3D6203D10 /* Sources */,
+				0678A2A1D23EE5222935270AE33D149C /* Frameworks */,
+				7EBE747FC758C5AB70A9E6101A0732F2 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A102B2A5912E2F069D97B3CD531D0008 /* PBXTargetDependency */,
-				48811A9A7D61767D08D9F7D6C97DC897 /* PBXTargetDependency */,
-				F917088AECFF3B9C0671835985D50EE8 /* PBXTargetDependency */,
-				A50EF66B51F451042CEBA69020DB5018 /* PBXTargetDependency */,
+				06BC8844D972E384761E66155E17E692 /* PBXTargetDependency */,
+				B7AA1F08DD933CD59F95922B2EAEEA09 /* PBXTargetDependency */,
+				3F2B37E95A8132B0559C7F467632AB55 /* PBXTargetDependency */,
+				AFEEA1D74F21DA4EA0E3EE4DCBFEE557 /* PBXTargetDependency */,
 			);
 			name = "Pods-Impostor";
 			productName = "Pods-Impostor";
-			productReference = A1DA872D05B6D47E51AFAD3E1196656C /* Pods_Impostor.framework */;
+			productReference = 1EB577F432BD851755A1E75DE6772246 /* Pods_Impostor.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		858F9ED680EFFBE427D7D207F6ABCAEE /* Pods-ImpostorTests */ = {
+		ACA79652E69091C743741330D5D32204 /* SwiftyStoreKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1DF9D7E148E622FF933FF826B4350EC4 /* Build configuration list for PBXNativeTarget "Pods-ImpostorTests" */;
+			buildConfigurationList = B9B05CAFC06511DEACCB619D699B012B /* Build configuration list for PBXNativeTarget "SwiftyStoreKit" */;
 			buildPhases = (
-				E577677D102007A78658EC42834B91CE /* Sources */,
-				A2AF63852BB0806BE22ED01B685ABA95 /* Frameworks */,
-				03A7728F1DD254EFC78F0961A78A1717 /* Headers */,
+				5FF4C7643378D149FD0AF9123C812B88 /* Sources */,
+				5AFEEA37588F03FBD2A867388A2020B1 /* Frameworks */,
+				77D0798704BA0F8C43071CDC86A28F36 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1804072678649DDDAD01B1BACEAEFEA3 /* PBXTargetDependency */,
-				47B585487F1D5590F2A5DDCA7872F4A2 /* PBXTargetDependency */,
-				B64B860CB6F5B0823F761E63C8A7EBA7 /* PBXTargetDependency */,
-				8E2E823DF2E86755E364431C0F3582BD /* PBXTargetDependency */,
 			);
-			name = "Pods-ImpostorTests";
-			productName = "Pods-ImpostorTests";
-			productReference = AFFDCDE04296B2532CE3C769D3D13C8E /* Pods_ImpostorTests.framework */;
+			name = SwiftyStoreKit;
+			productName = SwiftyStoreKit;
+			productReference = ED16F5F23CB75FD4B1EFFBCFE5156192 /* SwiftyStoreKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		C4BDF1191BBE4F429F08A241D8B53E2A /* CDAlertView-CDAlertView */ = {
@@ -740,8 +742,29 @@
 			);
 			name = "CDAlertView-CDAlertView";
 			productName = "CDAlertView-CDAlertView";
-			productReference = 284E8993C7AAAD038F2E741D756086AB /* CDAlertView.bundle */;
+			productReference = 1E835FD20C82BEBB07B05490A3BD0A34 /* CDAlertView.bundle */;
 			productType = "com.apple.product-type.bundle";
+		};
+		CBC8937861FC3B12A52D49DE3B8384AF /* Pods-ImpostorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63CBD8E19A47324C34591ABD09061311 /* Build configuration list for PBXNativeTarget "Pods-ImpostorTests" */;
+			buildPhases = (
+				863069BF370378F42002B34F0D3A0D6E /* Sources */,
+				9A1C8D14D54AF4DEB537175A7F23A359 /* Frameworks */,
+				78F11A976EBD62CB62BAAEBB61FA3DE7 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4AC30646BFBCEE7DC9FB2C44A880C076 /* PBXTargetDependency */,
+				4DC5C87385960BD863F478F4FBFCA2DF /* PBXTargetDependency */,
+				640E3C4D0F1419261AD694EEEFB9208D /* PBXTargetDependency */,
+				A13AA0EBA9D4B896CDDEAF4707B9AFFE /* PBXTargetDependency */,
+			);
+			name = "Pods-ImpostorTests";
+			productName = "Pods-ImpostorTests";
+			productReference = 9273E5BA6D8E88F19898333D2C7A414E /* Pods_ImpostorTests.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -760,17 +783,17 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = DF43E873294F8E19101DCBA2D4866C07 /* Products */;
+			productRefGroup = D3C0600939B23F638D484B88502F48EB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				369C26E0019831DFC30E7122499AB269 /* CDAlertView */,
 				C4BDF1191BBE4F429F08A241D8B53E2A /* CDAlertView-CDAlertView */,
 				00103D6C821BE85971C563025527BA5D /* GoogleToolboxForMac */,
-				4B716390C1E147FF5F24FB75461A0556 /* Pods-Impostor */,
-				858F9ED680EFFBE427D7D207F6ABCAEE /* Pods-ImpostorTests */,
-				3169FBB85B97947880063BCF7CD6C623 /* QBFlatButton */,
-				4833885F11B8A6C74E7634040A4DAEB1 /* RMStore */,
+				9A60C053C1DBE48018BF5AC160180F67 /* Pods-Impostor */,
+				CBC8937861FC3B12A52D49DE3B8384AF /* Pods-ImpostorTests */,
+				54EB4EC20071962C96015483B56B3ED2 /* QBFlatButton */,
+				ACA79652E69091C743741330D5D32204 /* SwiftyStoreKit */,
 			);
 		};
 /* End PBXProject section */
@@ -795,12 +818,33 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		63187D57F8A4D752E80EB7FA450EFBBB /* Sources */ = {
+		3D5A2624CE3679EBC9ABFAD3D6203D10 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F2613C6B8B4EF96762C4FB7A46CC2A6 /* QBFlatButton-dummy.m in Sources */,
-				702DFEF8235A265816BC8F2C5E45347D /* QBFlatButton.m in Sources */,
+				F506E3247DE0E1AD00F5D7E73A8EB534 /* Pods-Impostor-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FF4C7643378D149FD0AF9123C812B88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65B2FA5D18D38F0DF1510D6C2E7D12A7 /* AppleReceiptValidator.swift in Sources */,
+				E0F37637D47431B0942DEFF9205837CF /* CompleteTransactionsController.swift in Sources */,
+				BC174EA8DF1EBA4694624C319D1CB329 /* InAppProductQueryRequest.swift in Sources */,
+				4C2EE0F10AF54F72BDD40D9CBB0C07E7 /* InAppReceipt.swift in Sources */,
+				8465A3FD079107218B16AD9691F9AE71 /* InAppReceiptRefreshRequest.swift in Sources */,
+				426A0008D96F20735604A78CDE71B07D /* InAppReceiptVerificator.swift in Sources */,
+				86CD758D4DEB32EDF0C99ACD9CB544DA /* OS.swift in Sources */,
+				2DFEDB0D30A8367C81E7F32F45164ADD /* PaymentQueueController.swift in Sources */,
+				124531D1B411B4B2329A087A9DA08C79 /* PaymentsController.swift in Sources */,
+				6485AA6BCC06CF0754B7CD6F9B3C87F9 /* ProductsInfoController.swift in Sources */,
+				B28CB420340D859B3AE423EE274B7E34 /* RestorePurchasesController.swift in Sources */,
+				C4EDCDF8475BED46C4A4A6FC48B2F192 /* SKProduct+LocalizedPrice.swift in Sources */,
+				7EA3CFEDFFCD5FDC3AF6FDE82D957BD3 /* SwiftyStoreKit+Types.swift in Sources */,
+				51C3BBFB7ACBA7E84B664C1EEAEBE1D3 /* SwiftyStoreKit-dummy.m in Sources */,
+				976A4DF8E6D6D50D7E0B9AEC1AE3779A /* SwiftyStoreKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -813,18 +857,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		863069BF370378F42002B34F0D3A0D6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				635242E59762C863000DC852DCFFB33E /* Pods-ImpostorTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A4DE70E8AF00CFBCA3AA8D712980DD0D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC99C697583CFFA2FDCFB315AB520552 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2C4CCC6D82B2D1DB41EA94D89F98D60A /* Pods-Impostor-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -840,67 +884,65 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E577677D102007A78658EC42834B91CE /* Sources */ = {
+		FC7B527295C1684D1B6368CDC60D78CE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C9260CF9F400B1A0786B18FCCC60127 /* Pods-ImpostorTests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FA204C0F8EFB904ABD4B5D4FFB0A3AC7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				622EDB80387FB63DA480F7E06AC9D2EB /* RMStore-dummy.m in Sources */,
-				1368BCA50242C134CDA6ED5F0330A156 /* RMStore.m in Sources */,
+				7DD4D53402F8B922D1C719CF29624581 /* QBFlatButton-dummy.m in Sources */,
+				FC6AC41F856B23E7A8D365BDB336EB06 /* QBFlatButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1804072678649DDDAD01B1BACEAEFEA3 /* PBXTargetDependency */ = {
+		06BC8844D972E384761E66155E17E692 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CDAlertView;
 			target = 369C26E0019831DFC30E7122499AB269 /* CDAlertView */;
-			targetProxy = 4A84C4170F961DB698A86C62E416C1B5 /* PBXContainerItemProxy */;
+			targetProxy = B6FAD24E81543736507AE7954F311CC4 /* PBXContainerItemProxy */;
 		};
-		47B585487F1D5590F2A5DDCA7872F4A2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = GoogleToolboxForMac;
-			target = 00103D6C821BE85971C563025527BA5D /* GoogleToolboxForMac */;
-			targetProxy = B3827B2A7BC906A7AA7209E32FF5D8C8 /* PBXContainerItemProxy */;
-		};
-		48811A9A7D61767D08D9F7D6C97DC897 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = GoogleToolboxForMac;
-			target = 00103D6C821BE85971C563025527BA5D /* GoogleToolboxForMac */;
-			targetProxy = 4D02A9719CDC7F917AAC3D66FC3D626B /* PBXContainerItemProxy */;
-		};
-		8E2E823DF2E86755E364431C0F3582BD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RMStore;
-			target = 4833885F11B8A6C74E7634040A4DAEB1 /* RMStore */;
-			targetProxy = 8CA76CFB961883ED403AD46FABDFD16E /* PBXContainerItemProxy */;
-		};
-		A102B2A5912E2F069D97B3CD531D0008 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CDAlertView;
-			target = 369C26E0019831DFC30E7122499AB269 /* CDAlertView */;
-			targetProxy = 029EA220A08542247688E287137FE62C /* PBXContainerItemProxy */;
-		};
-		A50EF66B51F451042CEBA69020DB5018 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RMStore;
-			target = 4833885F11B8A6C74E7634040A4DAEB1 /* RMStore */;
-			targetProxy = 3095E19714E6CAF9096259BA6ACCEE47 /* PBXContainerItemProxy */;
-		};
-		B64B860CB6F5B0823F761E63C8A7EBA7 /* PBXTargetDependency */ = {
+		3F2B37E95A8132B0559C7F467632AB55 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = QBFlatButton;
-			target = 3169FBB85B97947880063BCF7CD6C623 /* QBFlatButton */;
-			targetProxy = C07D35AF60A62228B963DA80CE1E84FA /* PBXContainerItemProxy */;
+			target = 54EB4EC20071962C96015483B56B3ED2 /* QBFlatButton */;
+			targetProxy = 9D21D3492A8FFFA6B138C00744EFEBD7 /* PBXContainerItemProxy */;
+		};
+		4AC30646BFBCEE7DC9FB2C44A880C076 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CDAlertView;
+			target = 369C26E0019831DFC30E7122499AB269 /* CDAlertView */;
+			targetProxy = 08D28C5FEDAD6D565256671FB50612B5 /* PBXContainerItemProxy */;
+		};
+		4DC5C87385960BD863F478F4FBFCA2DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GoogleToolboxForMac;
+			target = 00103D6C821BE85971C563025527BA5D /* GoogleToolboxForMac */;
+			targetProxy = 8A6A40E40A1DA1827716157A9D226CAD /* PBXContainerItemProxy */;
+		};
+		640E3C4D0F1419261AD694EEEFB9208D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = QBFlatButton;
+			target = 54EB4EC20071962C96015483B56B3ED2 /* QBFlatButton */;
+			targetProxy = FB37FB3AFC4D5397DC213D87F04D49A2 /* PBXContainerItemProxy */;
+		};
+		A13AA0EBA9D4B896CDDEAF4707B9AFFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyStoreKit;
+			target = ACA79652E69091C743741330D5D32204 /* SwiftyStoreKit */;
+			targetProxy = 34D2648FBB1EE244F12D5BBB31626ED2 /* PBXContainerItemProxy */;
+		};
+		AFEEA1D74F21DA4EA0E3EE4DCBFEE557 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyStoreKit;
+			target = ACA79652E69091C743741330D5D32204 /* SwiftyStoreKit */;
+			targetProxy = 2640DCF869B136D62FF82505A91B631A /* PBXContainerItemProxy */;
+		};
+		B7AA1F08DD933CD59F95922B2EAEEA09 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GoogleToolboxForMac;
+			target = 00103D6C821BE85971C563025527BA5D /* GoogleToolboxForMac */;
+			targetProxy = EE1B5E275B392DCA57B92E795297DA42 /* PBXContainerItemProxy */;
 		};
 		BF1460637310CBFB3BB7F13CEEDCA24E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -908,18 +950,127 @@
 			target = C4BDF1191BBE4F429F08A241D8B53E2A /* CDAlertView-CDAlertView */;
 			targetProxy = 9E022DE6025B80186394648B956C2EE7 /* PBXContainerItemProxy */;
 		};
-		F917088AECFF3B9C0671835985D50EE8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = QBFlatButton;
-			target = 3169FBB85B97947880063BCF7CD6C623 /* QBFlatButton */;
-			targetProxy = CAF3A379F8F18575A30D5C4E34EEA915 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		02F0AF258411D8EE52D1982EEBC60F1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD0D12A846B63E312A61B53C547E31F4 /* Pods-Impostor.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Impostor/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Impostor/Pods-Impostor.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Impostor;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		10A338E7A8F0BA78C785BCFD52146960 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 333DAF996E23D20D82E0125DBFDBAA74 /* Pods-ImpostorTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ImpostorTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ImpostorTests/Pods-ImpostorTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ImpostorTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		13FC3E2ECF20EFA403997F05EA011B83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 079DE5B38224A96459169C6CB7CDAE38 /* Pods-ImpostorTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ImpostorTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ImpostorTests/Pods-ImpostorTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ImpostorTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		1569B57FF4F92C4BF4066D62D7D43341 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B09DED3F9B2509085A911714AC24EC1 /* CDAlertView.xcconfig */;
+			baseConfigurationReference = B29FB5832A4D564D7A2C09B0BCAEDFF9 /* CDAlertView.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/CDAlertView";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -936,7 +1087,7 @@
 		};
 		3C344933AF74E6E5E13524F608E3F426 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B09DED3F9B2509085A911714AC24EC1 /* CDAlertView.xcconfig */;
+			baseConfigurationReference = B29FB5832A4D564D7A2C09B0BCAEDFF9 /* CDAlertView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -970,7 +1121,7 @@
 		};
 		411C1460FFC199C73435526BB836B68B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B09DED3F9B2509085A911714AC24EC1 /* CDAlertView.xcconfig */;
+			baseConfigurationReference = B29FB5832A4D564D7A2C09B0BCAEDFF9 /* CDAlertView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1005,7 +1156,7 @@
 		};
 		4E3BB37312E5D4518EDFAD78B7C89440 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A94D60A9A3DDDB8DDF170B3C1851618 /* GoogleToolboxForMac.xcconfig */;
+			baseConfigurationReference = D6B95B0D0C0D2B7C834D1CFFF0EAB004 /* GoogleToolboxForMac.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1084,42 +1235,9 @@
 			};
 			name = Debug;
 		};
-		5E5F4A2535AD79ED548F52AE849BE80E /* Release */ = {
+		86C7EBE2B433DD42D9F527ACF825E45B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D68D980F18DB0A42C30444B3F2AB150 /* RMStore.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/RMStore/RMStore-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RMStore/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/RMStore/RMStore.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = RMStore;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		62BE1992520F856C7DA383B6D30C9819 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 54270A09BBA7408D220D4CCE56875D78 /* QBFlatButton.xcconfig */;
+			baseConfigurationReference = E333F65CDF4BE160A8C7A509FA2F0053 /* SwiftyStoreKit.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1133,193 +1251,14 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/QBFlatButton/QBFlatButton-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/QBFlatButton/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyStoreKit/SwiftyStoreKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyStoreKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/QBFlatButton/QBFlatButton.modulemap";
+				MODULEMAP_FILE = "Target Support Files/SwiftyStoreKit/SwiftyStoreKit.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = QBFlatButton;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		685CFAA5BBA316B51B85FE8D2B4545C4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D68D980F18DB0A42C30444B3F2AB150 /* RMStore.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/RMStore/RMStore-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RMStore/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/RMStore/RMStore.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = RMStore;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		88719A9786BB92AEB6F8D8F258DE4670 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 54270A09BBA7408D220D4CCE56875D78 /* QBFlatButton.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/QBFlatButton/QBFlatButton-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/QBFlatButton/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/QBFlatButton/QBFlatButton.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = QBFlatButton;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		99A5DBFB6A80EF837D7A4790BD5E0839 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CD0D12A846B63E312A61B53C547E31F4 /* Pods-Impostor.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Impostor/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Impostor/Pods-Impostor.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Impostor;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		AB03B7780D2143ED4AA7843431EA748A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 333DAF996E23D20D82E0125DBFDBAA74 /* Pods-ImpostorTests.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-ImpostorTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ImpostorTests/Pods-ImpostorTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_ImpostorTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		B352531947DC4C00429F011A33180155 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 079DE5B38224A96459169C6CB7CDAE38 /* Pods-ImpostorTests.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-ImpostorTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ImpostorTests/Pods-ImpostorTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_ImpostorTests;
+				PRODUCT_NAME = SwiftyStoreKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -1331,9 +1270,42 @@
 			};
 			name = Debug;
 		};
+		A2A08F3500FC7810671D02D9E72A48FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDC1EE7A52273D3EA59C3A1DB09603E2 /* QBFlatButton.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/QBFlatButton/QBFlatButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/QBFlatButton/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/QBFlatButton/QBFlatButton.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = QBFlatButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		B3ECA1D8FEF74D763FF7764F5BA7221A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B09DED3F9B2509085A911714AC24EC1 /* CDAlertView.xcconfig */;
+			baseConfigurationReference = B29FB5832A4D564D7A2C09B0BCAEDFF9 /* CDAlertView.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/CDAlertView";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1394,7 +1366,7 @@
 		};
 		BE9B55DCDA299EAE202F6DB76CAA485A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A94D60A9A3DDDB8DDF170B3C1851618 /* GoogleToolboxForMac.xcconfig */;
+			baseConfigurationReference = D6B95B0D0C0D2B7C834D1CFFF0EAB004 /* GoogleToolboxForMac.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1425,7 +1397,74 @@
 			};
 			name = Debug;
 		};
-		D9BF2869298633FF5EF544C9377E2C22 /* Debug */ = {
+		DFC624C5288D2DA55CCD07FCF0C25000 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDC1EE7A52273D3EA59C3A1DB09603E2 /* QBFlatButton.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/QBFlatButton/QBFlatButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/QBFlatButton/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/QBFlatButton/QBFlatButton.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = QBFlatButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E792698178755173169962F3C5C6F119 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E333F65CDF4BE160A8C7A509FA2F0053 /* SwiftyStoreKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyStoreKit/SwiftyStoreKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyStoreKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftyStoreKit/SwiftyStoreKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SwiftyStoreKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F96C055AFE1399977D94A5DDE80127FD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BF4CB8220425F7525C854BC173421A2D /* Pods-Impostor.debug.xcconfig */;
 			buildSettings = {
@@ -1467,20 +1506,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		11B9836A9BBAB10B84CA8F85947C9E96 /* Build configuration list for PBXNativeTarget "RMStore" */ = {
+		22D2597E926AAE88E83C9C3A3868451B /* Build configuration list for PBXNativeTarget "QBFlatButton" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				685CFAA5BBA316B51B85FE8D2B4545C4 /* Debug */,
-				5E5F4A2535AD79ED548F52AE849BE80E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1DF9D7E148E622FF933FF826B4350EC4 /* Build configuration list for PBXNativeTarget "Pods-ImpostorTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B352531947DC4C00429F011A33180155 /* Debug */,
-				AB03B7780D2143ED4AA7843431EA748A /* Release */,
+				A2A08F3500FC7810671D02D9E72A48FD /* Debug */,
+				DFC624C5288D2DA55CCD07FCF0C25000 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1494,20 +1524,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4B248A697E3948278F0E8319453F81D1 /* Build configuration list for PBXNativeTarget "Pods-Impostor" */ = {
+		63CBD8E19A47324C34591ABD09061311 /* Build configuration list for PBXNativeTarget "Pods-ImpostorTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D9BF2869298633FF5EF544C9377E2C22 /* Debug */,
-				99A5DBFB6A80EF837D7A4790BD5E0839 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		72A91A08AA83C9DF835F51CF41B84B97 /* Build configuration list for PBXNativeTarget "QBFlatButton" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				62BE1992520F856C7DA383B6D30C9819 /* Debug */,
-				88719A9786BB92AEB6F8D8F258DE4670 /* Release */,
+				13FC3E2ECF20EFA403997F05EA011B83 /* Debug */,
+				10A338E7A8F0BA78C785BCFD52146960 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1517,6 +1538,15 @@
 			buildConfigurations = (
 				411C1460FFC199C73435526BB836B68B /* Debug */,
 				3C344933AF74E6E5E13524F608E3F426 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B9B05CAFC06511DEACCB619D699B012B /* Build configuration list for PBXNativeTarget "SwiftyStoreKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86C7EBE2B433DD42D9F527ACF825E45B /* Debug */,
+				E792698178755173169962F3C5C6F119 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1535,6 +1565,15 @@
 			buildConfigurations = (
 				BE9B55DCDA299EAE202F6DB76CAA485A /* Debug */,
 				4E3BB37312E5D4518EDFAD78B7C89440 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4C03A6CACE195C93D0D2D32408EB8F0 /* Build configuration list for PBXNativeTarget "Pods-Impostor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F96C055AFE1399977D94A5DDE80127FD /* Debug */,
+				02F0AF258411D8EE52D1982EEBC60F1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

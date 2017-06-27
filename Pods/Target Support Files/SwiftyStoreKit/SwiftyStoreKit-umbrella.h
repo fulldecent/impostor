@@ -10,8 +10,7 @@
 #endif
 #endif
 
-#import "RMStore.h"
 
-FOUNDATION_EXPORT double RMStoreVersionNumber;
-FOUNDATION_EXPORT const unsigned char RMStoreVersionString[];
+FOUNDATION_EXPORT double SwiftyStoreKitVersionNumber;
+FOUNDATION_EXPORT const unsigned char SwiftyStoreKitVersionString[];
 

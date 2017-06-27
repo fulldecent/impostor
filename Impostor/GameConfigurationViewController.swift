@@ -10,9 +10,9 @@ import Foundation
 import AVFoundation
 import AudioToolbox
 import MessageUI
-import RMStore
 import SafariServices
 import Firebase
+import SwiftyStoreKit
 
 class GameConfigurationViewController: UIViewController {
     fileprivate var playerCount = 3
@@ -97,7 +97,7 @@ class GameConfigurationViewController: UIViewController {
     }
     
     @IBAction func showInstructions() {
-        Analytics.logEvent(kFIREventTutorialBegin, parameters: [])
+        Analytics.logEvent(AnalyticsEventTutorialBegin, parameters: [:])
         AudioServicesPlaySystemSound(self.buttonPress)
         
         var introViewPages = [KxIntroViewPage]()
@@ -152,51 +152,9 @@ class GameConfigurationViewController: UIViewController {
             ])
         AudioServicesPlaySystemSound(self.buttonPress)
         
-        // Check if they already have it
-        if UserDefaults.standard.integer(forKey: "didIAP") != 0 {
-            Analytics.logEvent("action", parameters: [
-                "viewController": NSStringFromClass(type(of: self)) as NSObject,
-                "function": #function as NSObject,
-                "extra": "Already had IAP" as NSObject
-                ])
-            
-            let alert = UIAlertController(title: NSLocalizedString("Your previous purchase was restored", comment: "In-app purchase"), message: nil, preferredStyle: .alert)
-            let action = UIAlertAction(title: NSLocalizedString("OK", comment: "Dismiss the popup"), style: .cancel)
-            alert.addAction(action)
-            present(alert, animated: true)
-            return
-        }
-        
-        // Try to unlock past sale
-        RMStore.default().restoreTransactions(onSuccess: {
-            transactions in
-            if (transactions?.count)! > 0 {
-                Analytics.logEvent("action", parameters: [
-                    "viewController": NSStringFromClass(type(of: self)) as NSObject,
-                    "function": #function as NSObject,
-                    "extra": "Restored IAP" as NSObject
-                    ])
-                let defaults = UserDefaults.standard
-                defaults.set(1, forKey: "didIAP")
-                defaults.synchronize()
-                
-                let alert = UIAlertController(title: NSLocalizedString("Your previous purchase was restored", comment: "In-app purchase"), message: nil, preferredStyle: .alert)
-                let action = UIAlertAction(title: NSLocalizedString("OK", comment: "Dismiss the popup"), style: .cancel)
-                alert.addAction(action)
-                self.present(alert, animated: true)
-            }
-            return
-        }, failure: {
-                error in
-        })
-        
-        // Try to make new sale
-        let products = Set<String>(["words0001"])
-        RMStore.default().requestProducts(products, success: {
-            products, invalidProductIdentifiers in
-            NSLog("Products loaded")
-            RMStore.default().addPayment("words0001", success: {
-                transaction in
+        SwiftyStoreKit.purchaseProduct("words0001", quantity: 1, atomically: true) { result in
+            switch result {
+            case .success(let purchase):
                 Analytics.logEvent(AnalyticsEventEcommercePurchase, parameters: [
                     AnalyticsParameterCurrency: "USD",
                     AnalyticsParameterValue: 1
@@ -209,33 +167,31 @@ class GameConfigurationViewController: UIViewController {
                 let action = UIAlertAction(title: NSLocalizedString("OK", comment: "Dismiss the popup"), style: .cancel)
                 alert.addAction(action)
                 self.present(alert, animated: true)
-            }, failure: {
-                transaction, error in
-                Analytics.logEvent("action", parameters: [
-                    "viewController": NSStringFromClass(type(of: self)) as NSObject,
-                    "function": #function as NSObject,
-                    "extra": "Error with IAP" as NSObject
+                print("Purchase Success: \(purchase.productId)")
+            case .error(let error):
+                Analytics.logEvent(AnalyticsEventEcommercePurchase, parameters: [
+                    AnalyticsParameterCurrency: "USD",
+                    AnalyticsParameterValue: 1
                     ])
                 
                 let alert = UIAlertController(title: NSLocalizedString("There was a problem with your purchase!", comment: "In-app purchase"), message: nil, preferredStyle: .alert)
                 let action = UIAlertAction(title: NSLocalizedString("OK", comment: "Dismiss the popup"), style: .cancel)
                 alert.addAction(action)
                 self.present(alert, animated: true)
-            })
-        }, failure: {
-            error in
-            Analytics.logEvent("action", parameters: [
-                "viewController": NSStringFromClass(type(of: self)) as NSObject,
-                "function": #function as NSObject,
-                "extra": "Error with IAP, requesting products" as NSObject
-                ])
-            NSLog("Something went wrong")
-            
-            let alert = UIAlertController(title: NSLocalizedString("There was a problem with your purchase!", comment: "In-app purchase"), message: nil, preferredStyle: .alert)
-            let action = UIAlertAction(title: NSLocalizedString("OK", comment: "Dismiss the popup"), style: .cancel)
-            alert.addAction(action)
-            self.present(alert, animated: true)
-        })
+                
+                switch error.code {
+                case .unknown: print("Unknown error. Please contact support")
+                case .clientInvalid: print("Not allowed to make the payment")
+                case .paymentCancelled: break
+                case .paymentInvalid: print("The purchase identifier was invalid")
+                case .paymentNotAllowed: print("The device is not allowed to make the payment")
+                case .storeProductNotAvailable: print("The product is not available in the current storefront")
+                case .cloudServicePermissionDenied: print("Access to cloud service information is not allowed")
+                case .cloudServiceNetworkConnectionFailed: print("Could not connect to the network")
+                case .cloudServiceRevoked: print("User has revoked permission to use this cloud service")
+                }
+            }
+        }
     }
     
     func setPlayerCount(_ count: Int) {

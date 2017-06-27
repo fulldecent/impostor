@@ -15,15 +15,13 @@ PODS:
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - QBFlatButton (1.1)
-  - RMStore (0.7.1):
-    - RMStore/Core (= 0.7.1)
-  - RMStore/Core (0.7.1)
+  - SwiftyStoreKit (0.10.3)
 
 DEPENDENCIES:
   - CDAlertView
   - Firebase/Core
   - QBFlatButton
-  - RMStore
+  - SwiftyStoreKit
 
 SPEC CHECKSUMS:
   CDAlertView: e6f365fa0fac7349197e7ea4bd7810c069215cf4
@@ -33,8 +31,8 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   QBFlatButton: 3cf272985cdbdd04d6bc8b7ae01e4dd62cb09c17
-  RMStore: 64ba13a9c040e3b7572765d169f77175cd3243e5
+  SwiftyStoreKit: 91c41fb7c09b2937078936054db7b4eb908ed02a
 
-PODFILE CHECKSUM: 58d73b45c5199255b9d90ab7f135dd571c231cbf
+PODFILE CHECKSUM: 31bd6d8c5de076c340f28ec8a69734001094f4e1
 
 COCOAPODS: 1.2.1
