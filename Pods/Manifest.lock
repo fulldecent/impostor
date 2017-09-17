@@ -1,21 +1,28 @@
 PODS:
-  - CDAlertView (0.6.0)
-  - Firebase/Core (4.0.2):
-    - FirebaseAnalytics (= 4.0.1)
-    - FirebaseCore (= 4.0.2)
-  - FirebaseAnalytics (4.0.1):
+  - CDAlertView (0.6.1)
+  - Firebase/Core (4.1.1):
+    - FirebaseAnalytics (= 4.0.3)
+    - FirebaseCore (= 4.0.6)
+  - FirebaseAnalytics (4.0.3):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseCore (4.0.2):
+    - nanopb (~> 0.3)
+  - FirebaseCore (4.0.6):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseInstanceID (2.0.0):
+    - nanopb (~> 0.3)
+  - FirebaseInstanceID (2.0.2):
     - FirebaseCore (~> 4.0)
   - GoogleToolboxForMac/Defines (2.1.1)
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
+  - nanopb (0.3.8):
+    - nanopb/decode (= 0.3.8)
+    - nanopb/encode (= 0.3.8)
+  - nanopb/decode (0.3.8)
+  - nanopb/encode (0.3.8)
   - QBFlatButton (1.1)
-  - SwiftyStoreKit (0.10.3)
+  - SwiftyStoreKit (0.10.7)
 
 DEPENDENCIES:
   - CDAlertView
@@ -24,15 +31,16 @@ DEPENDENCIES:
   - SwiftyStoreKit
 
 SPEC CHECKSUMS:
-  CDAlertView: e6f365fa0fac7349197e7ea4bd7810c069215cf4
-  Firebase: c7ad0731eab26d18a3fc547dd048b0f7cd9c63ae
-  FirebaseAnalytics: 4d7040fefc3cd8b291cde35f12cf063d7963f15d
-  FirebaseCore: 1a8bf6c795ad07d2918278657954ffd2552e9c17
-  FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
+  CDAlertView: cbb016e839ea49cddba06a78eebc2ac7978fba06
+  Firebase: 052c0de688fc87b414996eea13e223dd9fee3fa2
+  FirebaseAnalytics: 76f754d37ca5b04f36856729b6af3ca0152d1069
+  FirebaseCore: 28def3c643989c97ea5a69ea5000f5fa9902b9fd
+  FirebaseInstanceID: c4c7fca62c7b7330caee5da04f19a37ea37bb1c1
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   QBFlatButton: 3cf272985cdbdd04d6bc8b7ae01e4dd62cb09c17
-  SwiftyStoreKit: 91c41fb7c09b2937078936054db7b4eb908ed02a
+  SwiftyStoreKit: b13badd58fe138e258d04dec7bc1c9b092351af6
 
 PODFILE CHECKSUM: 31bd6d8c5de076c340f28ec8a69734001094f4e1
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.3.1

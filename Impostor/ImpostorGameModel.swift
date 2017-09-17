@@ -8,12 +8,12 @@
 
 import Foundation
 
-@objc enum PlayerRoles : Int {
+enum PlayerRoles : Int {
     case normalPlayer
     case impostor
 }
 
-@objc enum GameStatus : Int {
+enum GameStatus : Int {
     case showSecretWords
     case theImpostorRemains
     case theImpostorWasDefeated

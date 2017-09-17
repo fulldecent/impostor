@@ -91,7 +91,7 @@ class CollageViewController: UIViewController {
                 AnalyticsParameterContentType: "Selfie photo"
                 ])
         }
-        self.present(activityVC, animated: true, completion: { _ in })
+        self.present(activityVC, animated: true, completion: nil)
     }
 
     @IBAction func returnToMainScreen() {

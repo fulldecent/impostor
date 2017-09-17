@@ -124,7 +124,7 @@ extension SecretWordViewController: UIImagePickerControllerDelegate, UINavigatio
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.photoDenied = true
-        picker.dismiss(animated: true, completion: { _ in })
+        picker.dismiss(animated: true, completion: nil)
     }
 }
 

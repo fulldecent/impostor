@@ -16,9 +16,20 @@ SwiftyStoreKit is a lightweight In App Purchases framework for iOS 8.0+, tvOS 9.
 <img src="https://github.com/bizz84/SwiftyStoreKit/raw/master/Screenshots/Preview.png" width="320">
 <img src="https://github.com/bizz84/SwiftyStoreKit/raw/master/Screenshots/Preview2.png" width="320">
 
+### Note from the Author
+
+I'm building **Eco Buddy**, an iOS app to help you **reduce your carbon footprint**, and **take control of your impact on the environment**. **[＞ Get it Here ＜](http://ecobuddyapp.com/)**
+
 ## Contributing
 
 #### Got issues / pull requests / want to contribute? [Read here](CONTRIBUTING.md).
+
+## About Xcode 9 / Swift 4
+
+#### SwiftyStoreKit is compatible with Xcode 8.x (Swift 3.x) and Xcode 9 beta 3 or later (Swift 4).
+
+**NOTE**: Apple had removed [`SKError`](https://developer.apple.com/documentation/storekit/skerror) from the iOS 11 public API on Xcode 9 betas 1 and 2. This was a bug that has been fixed on Xcode 9 beta 3.
+
 
 ## App startup
 
@@ -31,22 +42,18 @@ SwiftyStoreKit supports this by calling `completeTransactions()` when the app st
 
 ```swift
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-
-	SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
-	
-	    for purchase in purchases {
-	
-	        if purchase.transaction.transactionState == .purchased || purchase.transaction.transactionState == .restored {
-	
-               if purchase.needsFinishTransaction {
-                   // Deliver content from server, then:
-                   SwiftyStoreKit.finishTransaction(purchase.transaction)
-               }
-               print("purchased: \(purchase)")
-	        }
-	    }
-	}
- 	return true
+    SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
+        for purchase in purchases {
+            if purchase.transaction.transactionState == .purchased || purchase.transaction.transactionState == .restored {
+                if purchase.needsFinishTransaction {
+                    // Deliver content from server, then:
+                    SwiftyStoreKit.finishTransaction(purchase.transaction)
+                }
+                print("purchased: \(purchase)")
+            }
+        }
+    }
+    return true
 }
 ```
 
@@ -152,7 +159,7 @@ According to [Apple - Restoring Purchased Products](https://developer.apple.com/
 
 See the **Receipt Verification** section below for how to restore previous purchases using the receipt.
 
-This section shows how to restore completed transactions with the `restorePurchases` method instead.
+This section shows how to restore completed transactions with the `restorePurchases` method instead. When successful, the method returns all non-consumable purchases, as well as all auto-renewable subscription purchases, **regardless of whether they are expired or not**.
 
 * **Atomic**: to be used when the content is delivered immediately.
 
@@ -162,7 +169,7 @@ SwiftyStoreKit.restorePurchases(atomically: true) { results in
         print("Restore Failed: \(results.restoreFailedPurchases)")
     }
     else if results.restoredPurchases.count > 0 {
-        print("Restore Success: \(results.restoredPurchases")
+        print("Restore Success: \(results.restoredPurchases)")
     }
     else {
         print("Nothing to Restore")
@@ -438,11 +445,12 @@ github "bizz84/SwiftyStoreKit"
 
 **NOTE**: Please ensure that you have the [latest](https://github.com/Carthage/Carthage/releases) Carthage installed.
 
-## Swift 2.2 / 2.3 / 3.0
+## Swift 2.x / 3.x / 4.x
 
 | Language  | Branch | Pod version | Xcode version |
 | --------- | ------ | ----------- | ------------- |
-| Swift 3.0 | [master](https://github.com/bizz84/SwiftyStoreKit/tree/master) | >= 0.5.x | Xcode 8 or greater|
+| Swift 4.x | [swift-4.0](https://github.com/bizz84/SwiftyStoreKit/tree/swift-4.0) | TBA | Xcode 9 or greater|
+| Swift 3.x | [master](https://github.com/bizz84/SwiftyStoreKit/tree/master) | >= 0.5.x | Xcode 8.x |
 | Swift 2.3 | [swift-2.3](https://github.com/bizz84/SwiftyStoreKit/tree/swift-2.3) | 0.4.x | Xcode 8, Xcode 7.3.x |
 | Swift 2.2 | [swift-2.2](https://github.com/bizz84/SwiftyStoreKit/tree/swift-2.2) | 0.3.x | Xcode 7.3.x |
 
@@ -465,6 +473,7 @@ Note that the pre-registered in app purchases in the demo apps are for illustrat
 ## Essential Reading
 * [Apple - WWDC16, Session 702: Using Store Kit for In-app Purchases with Swift 3](https://developer.apple.com/videos/play/wwdc2016/702/)
 * [Apple - TN2387: In-App Purchase Best Practices](https://developer.apple.com/library/content/technotes/tn2387/_index.html)
+* [Apple - TN2413: In-App Purchase FAQ](https://developer.apple.com/library/content/technotes/tn2413/_index.html)
 * [Apple - About Receipt Validation](https://developer.apple.com/library/content/releasenotes/General/ValidateAppStoreReceipt/Introduction.html)
 * [Apple - Receipt Validation Programming Guide](https://developer.apple.com/library/content/releasenotes/General/ValidateAppStoreReceipt/Chapters/ReceiptFields.html#//apple_ref/doc/uid/TP40010573-CH106-SW1)
 * [Apple - Validating Receipts Locally](https://developer.apple.com/library/content/releasenotes/General/ValidateAppStoreReceipt/Chapters/ValidateLocally.html)
@@ -532,6 +541,7 @@ It would be great to showcase apps using SwiftyStoreKit here. Pull requests welc
 * [Drops](https://itunes.apple.com/app/id939540371) - Language learning app
 * [Fresh Snow](https://itunes.apple.com/app/id1063000470) - Colorado Ski Report
 * [Zmeu Grand Canyon](http://grandcanyon.zmeu.guide/) - Interactive hiking map & planner
+* [OB Monitor](https://itunes.apple.com/app/id1073398446) - The app for Texas Longhorns athletics fans
 
 
 ## License
