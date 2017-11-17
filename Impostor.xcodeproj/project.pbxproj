@@ -23,6 +23,7 @@
 		D94EE3871F00B16900F43674 /* results-impostor-won.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D94EE3861F00B16900F43674 /* results-impostor-won.mp3 */; };
 		D9645FE71C7937250067F18B /* TeaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9645FE61C7937250067F18B /* TeaseViewController.swift */; };
 		D9645FE91C7937C90067F18B /* CachedPersistentJPEGImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9645FE81C7937C90067F18B /* CachedPersistentJPEGImageStore.swift */; };
+		D970EFE91FBE640D0059F364 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D970EFE81FBE640D0059F364 /* LaunchScreen.storyboard */; };
 		D97AAAA41CCDBDE400B922B6 /* MainGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97AAAA31CCDBDE400B922B6 /* MainGameViewController.swift */; };
 		D97AAAA61CCDC10200B922B6 /* SecretWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97AAAA51CCDC10200B922B6 /* SecretWordViewController.swift */; };
 		D98CA3FC185D338600746059 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98CA3FB185D338600746059 /* Foundation.framework */; };
@@ -32,9 +33,6 @@
 		D99673011AB343050033780B /* teaseColors.png in Resources */ = {isa = PBXBuildFile; fileRef = D99672FF1AB343050033780B /* teaseColors.png */; };
 		D99673041AB3441A0033780B /* teaseSpy.png in Resources */ = {isa = PBXBuildFile; fileRef = D99673031AB3441A0033780B /* teaseSpy.png */; };
 		D9A2405F18D50DF7005D4DCD /* camera.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A2405E18D50DF7005D4DCD /* camera.mp3 */; };
-		D9A4F76C185E54480060AA2D /* KxIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4F767185E54480060AA2D /* KxIntroView.m */; };
-		D9A4F76D185E54480060AA2D /* KxIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4F769185E54480060AA2D /* KxIntroViewController.m */; };
-		D9A4F76E185E54480060AA2D /* KxIntroViewPage.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A4F76B185E54480060AA2D /* KxIntroViewPage.m */; };
 		D9A4F773185E7DEA0060AA2D /* intro.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F772185E7DEA0060AA2D /* intro.mp3 */; };
 		D9A4F775185E7EDE0060AA2D /* buttonPress.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F774185E7EDE0060AA2D /* buttonPress.mp3 */; };
 		D9A4F779185E80040060AA2D /* peek.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F778185E80040060AA2D /* peek.mp3 */; };
@@ -125,6 +123,7 @@
 		D94EE3861F00B16900F43674 /* results-impostor-won.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "results-impostor-won.mp3"; sourceTree = "<group>"; };
 		D9645FE61C7937250067F18B /* TeaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeaseViewController.swift; sourceTree = "<group>"; };
 		D9645FE81C7937C90067F18B /* CachedPersistentJPEGImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachedPersistentJPEGImageStore.swift; sourceTree = "<group>"; };
+		D970EFE81FBE640D0059F364 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D978345C1909CA01009C3024 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		D978345E1909CA08009C3024 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		D97834601909CA0F009C3024 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -147,12 +146,6 @@
 		D9A2406118D510FF005D4DCD /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D9A2406218D510FF005D4DCD /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D9A2406318D510FF005D4DCD /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = nl; path = nl.lproj/gameWords.json; sourceTree = "<group>"; };
-		D9A4F766185E54480060AA2D /* KxIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxIntroView.h; sourceTree = "<group>"; };
-		D9A4F767185E54480060AA2D /* KxIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxIntroView.m; sourceTree = "<group>"; };
-		D9A4F768185E54480060AA2D /* KxIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxIntroViewController.h; sourceTree = "<group>"; };
-		D9A4F769185E54480060AA2D /* KxIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxIntroViewController.m; sourceTree = "<group>"; };
-		D9A4F76A185E54480060AA2D /* KxIntroViewPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxIntroViewPage.h; sourceTree = "<group>"; };
-		D9A4F76B185E54480060AA2D /* KxIntroViewPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxIntroViewPage.m; sourceTree = "<group>"; };
 		D9A4F770185E7D9F0060AA2D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D9A4F772185E7DEA0060AA2D /* intro.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = intro.mp3; sourceTree = "<group>"; };
 		D9A4F774185E7EDE0060AA2D /* buttonPress.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = buttonPress.mp3; sourceTree = "<group>"; };
@@ -319,6 +312,7 @@
 			children = (
 				D9172ECE1C7916FB0018F8C3 /* AppDelegate.swift */,
 				D98CA40D185D338600746059 /* Main.storyboard */,
+				D970EFE81FBE640D0059F364 /* LaunchScreen.storyboard */,
 				D9CDEBEC187A3B4A00AE4163 /* Localizable.strings */,
 				D98CA416185D338600746059 /* Images.xcassets */,
 				D9172EFC1C7919180018F8C3 /* ImpostorGameModel.swift */,
@@ -330,12 +324,6 @@
 				D900BA131D1899AD0092EB78 /* EliminationViewController.swift */,
 				D900BA171D198F9C0092EB78 /* ResultsViewController.swift */,
 				D900BA151D18A0D50092EB78 /* CollageViewController.swift */,
-				D9A4F766185E54480060AA2D /* KxIntroView.h */,
-				D9A4F767185E54480060AA2D /* KxIntroView.m */,
-				D9A4F768185E54480060AA2D /* KxIntroViewController.h */,
-				D9A4F769185E54480060AA2D /* KxIntroViewController.m */,
-				D9A4F76A185E54480060AA2D /* KxIntroViewPage.h */,
-				D9A4F76B185E54480060AA2D /* KxIntroViewPage.m */,
 				D98CA402185D338600746059 /* Supporting Files */,
 				D9172ECD1C7916FB0018F8C3 /* Impostor-Bridging-Header.h */,
 			);
@@ -529,6 +517,7 @@
 				D9D62B271CBF410000A0E522 /* plus.png in Resources */,
 				D9D62B261CBF410000A0E522 /* money.png in Resources */,
 				D9A4F782185FDDA90060AA2D /* defaultHeadshot.png in Resources */,
+				D970EFE91FBE640D0059F364 /* LaunchScreen.storyboard in Resources */,
 				D9D62B231CBF410000A0E522 /* eraser.png in Resources */,
 				D9D432F819AC0E4200E0A408 /* help4.png in Resources */,
 				D99673011AB343050033780B /* teaseColors.png in Resources */,
@@ -625,6 +614,8 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Impostor/Pods-Impostor-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CDAlertView/CDAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/EAIntroView/EAIntroView.framework",
+				"${BUILT_PRODUCTS_DIR}/EARestrictedScrollView/EARestrictedScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/QBFlatButton/QBFlatButton.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework",
@@ -633,6 +624,8 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CDAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EAIntroView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EARestrictedScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QBFlatButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyStoreKit.framework",
@@ -705,15 +698,12 @@
 			files = (
 				D97AAAA61CCDC10200B922B6 /* SecretWordViewController.swift in Sources */,
 				D97AAAA41CCDBDE400B922B6 /* MainGameViewController.swift in Sources */,
-				D9A4F76D185E54480060AA2D /* KxIntroViewController.m in Sources */,
 				D900BA181D198F9C0092EB78 /* ResultsViewController.swift in Sources */,
 				D900BA141D1899AD0092EB78 /* EliminationViewController.swift in Sources */,
 				D9172ECF1C7916FB0018F8C3 /* AppDelegate.swift in Sources */,
 				D9645FE91C7937C90067F18B /* CachedPersistentJPEGImageStore.swift in Sources */,
 				D9645FE71C7937250067F18B /* TeaseViewController.swift in Sources */,
 				D9172EFD1C7919180018F8C3 /* ImpostorGameModel.swift in Sources */,
-				D9A4F76E185E54480060AA2D /* KxIntroViewPage.m in Sources */,
-				D9A4F76C185E54480060AA2D /* KxIntroView.m in Sources */,
 				D900BA161D18A0D50092EB78 /* CollageViewController.swift in Sources */,
 				D900BA121D187DE20092EB78 /* GameConfigurationViewController.swift in Sources */,
 			);
@@ -1001,7 +991,6 @@
 			baseConfigurationReference = 62E182AAB0AEF92DC575B3CB /* Pods-Impostor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 8Q693ZG5RN;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Impostor/Impostor-Prefix.pch";
@@ -1014,7 +1003,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "net.phor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Impostor;
 				SWIFT_OBJC_BRIDGING_HEADER = "Impostor/Impostor-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1025,7 +1013,6 @@
 			baseConfigurationReference = D3586AB3DF0FA68FECE8D12A /* Pods-Impostor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 8Q693ZG5RN;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Impostor/Impostor-Prefix.pch";
@@ -1038,7 +1025,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "net.phor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Impostor;
 				SWIFT_OBJC_BRIDGING_HEADER = "Impostor/Impostor-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
 			};

@@ -13,6 +13,7 @@ import MessageUI
 import SafariServices
 import Firebase
 import SwiftyStoreKit
+import EAIntroView
 
 class GameConfigurationViewController: UIViewController {
     fileprivate var playerCount = 3
@@ -100,25 +101,29 @@ class GameConfigurationViewController: UIViewController {
         Analytics.logEvent(AnalyticsEventTutorialBegin, parameters: [:])
         AudioServicesPlaySystemSound(self.buttonPress)
         
-        var introViewPages = [KxIntroViewPage]()
-        introViewPages.append(KxIntroViewPage(
-            title: NSLocalizedString("A party game", comment: "Intro screen 1 title"),
-            withDetail: NSLocalizedString("For 3 to 12 players", comment: "Intro screen 1 detail"),
-            with: UIImage(named: "help1")))
-        introViewPages.append(KxIntroViewPage(
-            title: NSLocalizedString("Everyone sees their secret word", comment: "Intro screen 2 title"),
-            withDetail: NSLocalizedString("But the impostor's word is different", comment: "Intro screen 2 detail"),
-            with: UIImage(named: "help2")))
-        introViewPages.append(KxIntroViewPage(
-            title: NSLocalizedString("Each round players describe their word", comment: "Intro screen 3 title"),
-            withDetail: NSLocalizedString("then vote to eliminate one player (can't use word to describe itself or repeat other players, break ties with a revote)", comment: "Intro screen 3 detail"),
-            with: UIImage(named: "help3")))
-        introViewPages.append(KxIntroViewPage(
-            title: NSLocalizedString("To win", comment: "Intro screen 4 title"),
-            withDetail: NSLocalizedString("the impostor must survive with one other player", comment: "Intro screen 4 detail"),
-            with: UIImage(named: "help4")))
-        let introView = KxIntroViewController(pages: introViewPages)
-        introView?.present(in: self, fullScreenLayout: true)
+        let page1 = EAIntroPage()
+        page1.title = NSLocalizedString("A party game", comment: "Intro screen 1 title")
+        page1.desc = NSLocalizedString("For 3 to 12 players", comment: "Intro screen 1 detail")
+        page1.titleIconView = UIImageView(image: UIImage(named: "help1"))
+        page1.bgColor = UIColor.gray
+        let page2 = EAIntroPage()
+        page2.title = NSLocalizedString("Everyone sees their secret word", comment: "Intro screen 2 title")
+        page2.desc = NSLocalizedString("But the impostor's word is different", comment: "Intro screen 2 detail")
+        page2.titleIconView = UIImageView(image: UIImage(named: "help2"))
+        page2.bgColor = UIColor.gray
+        let page3 = EAIntroPage()
+        page3.title = NSLocalizedString("Each round players describe their word", comment: "Intro screen 3 title")
+        page3.desc = NSLocalizedString("then vote to eliminate one player (can't use word to describe itself or repeat other players, break ties with a revote)", comment: "Intro screen 3 detail")
+        page3.titleIconView = UIImageView(image: UIImage(named: "help3"))
+        page3.bgColor = UIColor.gray
+        let page4 = EAIntroPage()
+        page4.title = NSLocalizedString("To win", comment: "Intro screen 4 title")
+        page4.desc = NSLocalizedString("the impostor must survive with one other player", comment: "Intro screen 4 detail")
+        page4.titleIconView = UIImageView(image: UIImage(named: "help4"))
+        page4.bgColor = UIColor.gray
+
+        let introView = EAIntroView(frame: view.bounds, andPages: [page1, page2, page3, page4])
+        introView?.show(in: self.view, animateDuration: 0.6)
     }
     
     @IBAction func clearPhotos(_ sender: UIButton) {
@@ -216,7 +221,7 @@ class GameConfigurationViewController: UIViewController {
         view!.setNeedsLayout()
     }
 
-    func fadeOutMusic() {
+    @objc func fadeOutMusic() {
         // http://stackoverflow.com/questions/1216581/avaudioplayer-fade-volume-out
         if self.audioPlayer.volume > 0.1 {
             self.audioPlayer.volume -= 0.1

@@ -3,7 +3,7 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Cocoapod](http://img.shields.io/cocoapods/v/CDAlertView.svg?style=flat)](http://cocoadocs.org/docsets/CDAlertView/)
 [![CI Status](http://img.shields.io/travis/candostdagdeviren/CDAlertView.svg?style=flat)](https://travis-ci.org/candostdagdeviren/CDAlertView/)
-[![Language](https://img.shields.io/badge/swift-3.0-orange.svg)](https://developer.apple.com/swift)
+[![Language](https://img.shields.io/badge/swift-4.0-orange.svg)](https://developer.apple.com/swift)
 [![Platform](http://img.shields.io/badge/platform-ios-lightgrey.svg?style=flat)](https://developer.apple.com/resources/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://raw.githubusercontent.com/candostdagdeviren/CDAlertView/master/LICENSE)
 
@@ -162,6 +162,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
+**This library supports Swift 4. Use `0.6.1` or older versions for Swift 3.1 support.**
+
 ### Using [CocoaPods](http://cocoapods.org)
 
 CDAlertView is available through CocoaPods. To install it, simply add the following line to your `Podfile`:
@@ -180,12 +182,13 @@ github "candostdagdeviren/CDAlertView"
 
 ## Requirements
 
-* Xcode 8
+* Xcode 9
+* Swift 4
 * iOS 9.0+
 
 ## Author
 
-Candost Dagdeviren, candostdagdeviren@gmail.com
+[Candost Dagdeviren](http://bit.ly/2oWdga9)
 
 ### Icons
 

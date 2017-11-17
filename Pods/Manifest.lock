@@ -1,46 +1,50 @@
 PODS:
-  - CDAlertView (0.6.1)
-  - Firebase/Core (4.1.1):
-    - FirebaseAnalytics (= 4.0.3)
-    - FirebaseCore (= 4.0.6)
-  - FirebaseAnalytics (4.0.3):
+  - CDAlertView (0.7.0)
+  - EAIntroView (2.12.0):
+    - EARestrictedScrollView (~> 1.1.0)
+  - EARestrictedScrollView (1.1.0)
+  - Firebase/Core (4.6.0):
+    - FirebaseAnalytics (= 4.0.5)
+    - FirebaseCore (= 4.0.11)
+  - FirebaseAnalytics (4.0.5):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - nanopb (~> 0.3)
-  - FirebaseCore (4.0.6):
+  - FirebaseCore (4.0.11):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-    - nanopb (~> 0.3)
-  - FirebaseInstanceID (2.0.2):
-    - FirebaseCore (~> 4.0)
-  - GoogleToolboxForMac/Defines (2.1.1)
-  - GoogleToolboxForMac/NSData+zlib (2.1.1):
-    - GoogleToolboxForMac/Defines (= 2.1.1)
+  - FirebaseInstanceID (2.0.6)
+  - GoogleToolboxForMac/Defines (2.1.3)
+  - GoogleToolboxForMac/NSData+zlib (2.1.3):
+    - GoogleToolboxForMac/Defines (= 2.1.3)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - QBFlatButton (1.1)
-  - SwiftyStoreKit (0.10.7)
+  - SwiftyStoreKit (0.11.0)
 
 DEPENDENCIES:
   - CDAlertView
+  - EAIntroView
   - Firebase/Core
   - QBFlatButton
   - SwiftyStoreKit
 
 SPEC CHECKSUMS:
-  CDAlertView: cbb016e839ea49cddba06a78eebc2ac7978fba06
-  Firebase: 052c0de688fc87b414996eea13e223dd9fee3fa2
-  FirebaseAnalytics: 76f754d37ca5b04f36856729b6af3ca0152d1069
-  FirebaseCore: 28def3c643989c97ea5a69ea5000f5fa9902b9fd
-  FirebaseInstanceID: c4c7fca62c7b7330caee5da04f19a37ea37bb1c1
-  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
+  CDAlertView: fdef4dbbdafd1481c18f5db64dac2d321f3b8cbb
+  EAIntroView: 249559079ddfdbe80e5bcb755c04c3b964b2ac27
+  EARestrictedScrollView: b0c2a3f92fb2610bb44d71c5e4893777c89e45ef
+  Firebase: 27321a925aa85520618255a7c630859e0502ccbd
+  FirebaseAnalytics: 5b02a63ead2c3f0259cfc7f15e053e440587ecf8
+  FirebaseCore: 2a946ece8fbe3ce1fdeeb55324f273caade22df9
+  FirebaseInstanceID: 24958382a1011bba5aaff37e334e7a650b9118f5
+  GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   QBFlatButton: 3cf272985cdbdd04d6bc8b7ae01e4dd62cb09c17
-  SwiftyStoreKit: b13badd58fe138e258d04dec7bc1c9b092351af6
+  SwiftyStoreKit: c5cb38110cb01b55b9c5f25d7f69d0083650b2a4
 
-PODFILE CHECKSUM: 31bd6d8c5de076c340f28ec8a69734001094f4e1
+PODFILE CHECKSUM: 7b51fb8ab3cc2234f5264b8cfd41f11a8b8887f4
 
 COCOAPODS: 1.3.1

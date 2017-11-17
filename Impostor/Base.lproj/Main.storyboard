@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="JxD-3W-7Z8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="JxD-3W-7Z8">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AmericanTypewriter.ttc">
+            <string>AmericanTypewriter</string>
+            <string>AmericanTypewriter-Bold</string>
+        </array>
+        <array key="ChalkboardSE.ttc">
+            <string>ChalkboardSE-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Tease View Controller-->
         <scene sceneID="9s8-5b-X0T">
@@ -272,9 +282,9 @@
                             <constraint firstItem="wRZ-KT-PDJ" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="Bn9-En-VWc"/>
                             <constraint firstItem="5PI-5U-k2w" firstAttribute="top" secondItem="Uw0-zQ-7ja" secondAttribute="bottom" constant="-20" id="DWq-X2-jDD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="E8V-XJ-sO7" secondAttribute="trailing" id="Fdh-0h-oWt"/>
+                            <constraint firstAttribute="bottom" secondItem="wRZ-KT-PDJ" secondAttribute="bottom" id="UPz-AJ-wGv"/>
                             <constraint firstItem="IT4-jv-pXy" firstAttribute="top" secondItem="E8V-XJ-sO7" secondAttribute="bottom" constant="20" id="biO-oj-ecO"/>
                             <constraint firstItem="wRZ-KT-PDJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="hmu-2Q-yEM"/>
-                            <constraint firstItem="IT4-jv-pXy" firstAttribute="top" secondItem="wRZ-KT-PDJ" secondAttribute="bottom" id="kWv-qb-doJ"/>
                             <constraint firstItem="5PI-5U-k2w" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-20" id="qZR-ts-X10"/>
                             <constraint firstAttribute="trailing" secondItem="wRZ-KT-PDJ" secondAttribute="trailing" id="vKK-qe-mpx"/>
                             <constraint firstItem="E8V-XJ-sO7" firstAttribute="top" secondItem="Uw0-zQ-7ja" secondAttribute="bottom" id="vaw-av-dWe"/>
@@ -376,7 +386,7 @@
                         <constraints>
                             <constraint firstItem="0ht-Ce-gHe" firstAttribute="top" secondItem="Tnh-EA-Hhm" secondAttribute="bottom" id="3wb-NN-SdY"/>
                             <constraint firstAttribute="trailing" secondItem="45y-Au-Y38" secondAttribute="trailing" constant="20" id="9WU-Dj-8tI"/>
-                            <constraint firstItem="dx4-4m-Eda" firstAttribute="top" secondItem="tW8-DC-ied" secondAttribute="bottom" id="A67-kr-Zyy"/>
+                            <constraint firstAttribute="bottom" secondItem="tW8-DC-ied" secondAttribute="bottom" id="A67-kr-Zyy"/>
                             <constraint firstAttribute="trailing" secondItem="0ht-Ce-gHe" secondAttribute="trailing" constant="20" id="YEH-5Q-goU"/>
                             <constraint firstItem="45y-Au-Y38" firstAttribute="top" secondItem="0ht-Ce-gHe" secondAttribute="bottom" constant="8" id="dQ6-L8-gvw"/>
                             <constraint firstItem="45y-Au-Y38" firstAttribute="leading" secondItem="QMf-vS-rya" secondAttribute="leading" constant="20" id="fUL-hb-urI"/>
@@ -579,7 +589,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ck2-rq-tQg" firstAttribute="top" secondItem="f0e-Jd-6ve" secondAttribute="bottom" constant="8" id="1e7-tI-ld3"/>
-                            <constraint firstItem="1pK-kP-fGD" firstAttribute="top" secondItem="JrX-Qx-Kf4" secondAttribute="bottom" id="5mJ-Vy-8Xl"/>
+                            <constraint firstAttribute="bottom" secondItem="JrX-Qx-Kf4" secondAttribute="bottom" id="5mJ-Vy-8Xl"/>
                             <constraint firstItem="ck2-rq-tQg" firstAttribute="leading" secondItem="bOt-sE-23B" secondAttribute="leading" constant="20" id="6rk-3D-VCH"/>
                             <constraint firstItem="aQS-ki-vZO" firstAttribute="leading" secondItem="bOt-sE-23B" secondAttribute="leading" constant="20" id="FKs-gu-Z3y"/>
                             <constraint firstItem="mOo-md-1fi" firstAttribute="top" secondItem="aQS-ki-vZO" secondAttribute="bottom" constant="8" id="FSH-2R-Tqp"/>
@@ -670,7 +680,7 @@ For your eyes only</string>
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="surfaceColor">
+                                    <userDefinedRuntimeAttribute type="color" keyPath="faceColor">
                                         <color key="value" red="0.44897959183673475" green="0.44897959183673475" blue="0.44897959183673475" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="sideColor">
@@ -697,7 +707,7 @@ For your eyes only</string>
                             <constraint firstItem="kKr-a3-6GX" firstAttribute="leading" secondItem="X0u-CR-Mae" secondAttribute="leading" constant="20" id="aFP-Pl-f9t"/>
                             <constraint firstItem="AKT-Xd-ban" firstAttribute="top" secondItem="blE-eR-isE" secondAttribute="bottom" id="gCI-h0-ip1"/>
                             <constraint firstAttribute="trailing" secondItem="xnT-8p-v0z" secondAttribute="trailing" constant="20" id="gpL-ZE-mAe"/>
-                            <constraint firstItem="AKT-Xd-ban" firstAttribute="top" secondItem="wWs-zT-FPh" secondAttribute="bottom" id="kGX-5T-T4H"/>
+                            <constraint firstAttribute="bottom" secondItem="wWs-zT-FPh" secondAttribute="bottom" id="kGX-5T-T4H"/>
                             <constraint firstAttribute="trailing" secondItem="Cyq-QX-c2g" secondAttribute="trailing" id="nk5-oN-xjB"/>
                             <constraint firstItem="AKT-Xd-ban" firstAttribute="top" secondItem="xnT-8p-v0z" secondAttribute="bottom" constant="20" id="qI4-kq-BWt"/>
                             <constraint firstItem="8dU-HJ-O6j" firstAttribute="leading" secondItem="X0u-CR-Mae" secondAttribute="leading" constant="20" id="qhx-wE-nTW"/>
@@ -722,7 +732,6 @@ For your eyes only</string>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="ros-lZ-ZDP"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YUC-67-eXz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -750,9 +759,4 @@ For your eyes only</string>
         <image name="teaseColors.png" width="390" height="185"/>
         <image name="teaseSpy.png" width="552" height="1500"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
-    </simulatedMetricsContainer>
 </document>

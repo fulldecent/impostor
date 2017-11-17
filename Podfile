@@ -7,6 +7,7 @@ target 'Impostor' do
 	pod 'CDAlertView'
 	pod 'Firebase/Core'
 	pod 'SwiftyStoreKit'
+        pod 'EAIntroView'
 end
 
 target 'ImpostorTests' do

@@ -29,7 +29,7 @@ class TeaseViewController: UIViewController {
         self.perform(#selector(TeaseViewController.close), with: self, afterDelay: 5)
     }
     
-    func close() {
+    @objc func close() {
         self.navigationController!.popToRootViewController(animated: true)
     }
 }

@@ -34,7 +34,7 @@ class CollageViewController: UIViewController {
         root.fadeOutMusic()
     }
     
-    func flashScreen() {
+    @objc func flashScreen() {
         DispatchQueue.main.async(execute: {
             self.audioPlayer.play()
             let flashView = UIView(frame: self.view.frame)
@@ -59,7 +59,7 @@ class CollageViewController: UIViewController {
         self.perform(#selector(CollageViewController.showShareBox), with: nil, afterDelay: 0.4)
     }
     
-    func showShareBox() {
+    @objc func showShareBox() {
         // Create the item to share (in this example, a url)
         // http://stackoverflow.com/a/25837053/300224
         let mainBundle = Bundle.main
