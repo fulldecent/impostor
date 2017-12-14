@@ -10,6 +10,7 @@ import UIKit
 import AudioToolbox
 import CDAlertView
 import Firebase
+import MobileCoreServices
 
 class SecretWordViewController: UIViewController {
     @IBOutlet weak var playerLabel: UILabel!
@@ -97,17 +98,18 @@ class SecretWordViewController: UIViewController {
         guard self.wantsToTakePhoto && !self.photoDenied else {
             return
         }
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            imagePickerController = UIImagePickerController()
-            imagePickerController.delegate = self
-            imagePickerController.sourceType = .camera
-            imagePickerController.mediaTypes = UIImagePickerController.availableMediaTypes(for: .camera) ?? []
-            if UIImagePickerController.isCameraDeviceAvailable(.front) {
-                imagePickerController.cameraDevice = .front
-            }
-            imagePickerController.modalPresentationStyle = .popover
-            present(imagePickerController, animated: true, completion: nil)
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+            return
         }
+        imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .camera
+        imagePickerController.mediaTypes = [kUTTypeImage as String]
+        if UIImagePickerController.isCameraDeviceAvailable(.front) {
+            imagePickerController.cameraDevice = .front
+        }
+        imagePickerController.modalPresentationStyle = .fullScreen
+        present(imagePickerController, animated: true, completion: nil)
     }
     
 }
