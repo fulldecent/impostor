@@ -12,7 +12,7 @@ class MainGameViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {        
         super.viewDidAppear(animated)
         switch ImpostorGameModel.game.gameStatus {
-        case .showSecretWords:
+        case .showSecretWord:
             self.performSegue(withIdentifier: "secretWord", sender: self)
         case .theImpostorRemains:
             self.performSegue(withIdentifier: "elimination", sender: self)
@@ -22,8 +22,12 @@ class MainGameViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let secretWordViewController = segue.destination as? SecretWordViewController {
-            secretWordViewController.playerNumber = 0
+        switch ImpostorGameModel.game.gameStatus {
+        case .showSecretWord(let playerNumber):
+            let secretWordViewController = segue.destination as! SecretWordViewController
+            secretWordViewController.playerNumber = playerNumber
+        default:
+            break
         }
     }
 }

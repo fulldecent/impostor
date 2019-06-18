@@ -8,13 +8,13 @@
 
 import Foundation
 
-enum PlayerRoles : Int {
+enum PlayerRoles {
     case normalPlayer
     case impostor
 }
 
-enum GameStatus : Int {
-    case showSecretWords
+enum GameStatus: Equatable {
+    case showSecretWord(Int)
     case theImpostorRemains
     case theImpostorWasDefeated
     case theImpostorWon
@@ -23,14 +23,14 @@ enum GameStatus : Int {
 class ImpostorGameModel: NSObject {
     static var game = ImpostorGameModel()
     
-    fileprivate(set) var numberOfPlayers = 0
-    fileprivate(set) var playerRoles = [PlayerRoles]()
-    fileprivate(set) var playerEliminated = [Bool]()
-    fileprivate(set) var gameStatus = GameStatus.showSecretWords
-    fileprivate(set) var playerNumberToStartRound = 0
-    fileprivate(set) var normalWord = ""
-    fileprivate(set) var impostorWord = ""
-    fileprivate(set) var playerWords = [String]()
+    private(set) var gameStatus = GameStatus.showSecretWord(0)
+    private(set) var numberOfPlayers = 0
+    private(set) var playerRoles = [PlayerRoles]()
+    private(set) var playerEliminated = [Bool]()
+    private(set) var playerWords = [String]()
+    private(set) var playerNumberToStartRound = 0
+    private(set) var normalWord = ""
+    private(set) var impostorWord = ""
     
     func startGameWithNumberOfPlayers(_ numPlayers: Int) {
         var allWordSets = [[String]]()
@@ -57,11 +57,15 @@ class ImpostorGameModel: NSObject {
         playerRoles[impostorIndex] = .impostor
         playerWords[impostorIndex] = self.impostorWord
         playerNumberToStartRound = Int.random(in: 0..<numberOfPlayers)
-        gameStatus = .showSecretWords
+        gameStatus = .showSecretWord(0)
     }
 
-    func doneShowingSecretWords() {
-        gameStatus = .theImpostorRemains
+    func doneShowingSecretWord(_ playerNumber: Int) {
+        if playerNumber == numberOfPlayers - 1 {
+            gameStatus = .theImpostorRemains
+        } else {
+            gameStatus = .showSecretWord(playerNumber + 1)
+        }
     }
     
     func eliminatePlayer(_ playerNumber: Int) {

@@ -28,12 +28,6 @@ class CollageViewController: UIViewController {
             ])
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        let root = navigationController!.viewControllers.first as! GameConfigurationViewController
-        root.fadeOutMusic()
-    }
-    
     @objc func flashScreen() {
         DispatchQueue.main.async(execute: {
             self.audioPlayer.play()

@@ -29,14 +29,18 @@ class ImpostorGameModelTests: XCTestCase {
     
     func testGameStatusChangedWhenDoneShowingSecretWords() {
         gameModel.startGameWithNumberOfPlayers(10)
-        XCTAssertTrue(gameModel.gameStatus == .showSecretWords)
-        gameModel.doneShowingSecretWords()
+        XCTAssertTrue(gameModel.gameStatus == .showSecretWord(0))
+        for playerNumber in 0..<10 {
+            gameModel.doneShowingSecretWord(playerNumber)
+        }
         XCTAssertTrue(gameModel.gameStatus == .theImpostorRemains)
     }
     
     func testElimanateAPlayer() {
         gameModel.startGameWithNumberOfPlayers(10)
-        gameModel.doneShowingSecretWords()
+        for playerNumber in 0..<10 {
+            gameModel.doneShowingSecretWord(playerNumber)
+        }
         gameModel.eliminatePlayer(0)
         XCTAssertTrue(gameModel.playerEliminated[0])
         for playerNumber in 1 ..< 10 {

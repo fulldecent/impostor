@@ -5,7 +5,7 @@ use_frameworks!
 target 'Impostor' do
 	pod 'QBFlatButton'
 	pod 'CDAlertView'
-	pod 'Firebase/Core'
+	pod 'Firebase/Analytics'
 	pod 'SwiftyStoreKit'
         pod 'EAIntroView'
 end
@@ -13,7 +13,7 @@ end
 target 'ImpostorTests' do
 	pod 'QBFlatButton'
 	pod 'CDAlertView'
-	pod 'Firebase/Core'
+	pod 'Firebase/Analytics'
 	pod 'SwiftyStoreKit'
 end
 

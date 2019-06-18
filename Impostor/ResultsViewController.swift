@@ -27,7 +27,6 @@ class ResultsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
-        self.tableView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,7 +59,7 @@ class ResultsViewController: UIViewController {
             ])
         Analytics.logEvent("gameStats", parameters: [
             AnalyticsParameterContentType: "Impostor Won",
-            AnalyticsParameterValue: "\(game.gameStatus == .theImpostorWon)"
+            AnalyticsParameterValue: "\(game.gameStatus == GameStatus.theImpostorWon)"
             ])
         Analytics.logEvent("gameStats", parameters: [
             AnalyticsParameterContentType: "Words",
@@ -101,9 +100,6 @@ class ResultsViewController: UIViewController {
         let action = CDAlertViewAction(title: NSLocalizedString("OK", comment: "Dismiss the popup"))
         alertView.add(action: action)
         alertView.show()
-      
-        //TODO: upstream bug, this API should be public
-        // SwiftyiRate.logEvent(deferPrompt: false)
     }
 }
 
@@ -128,8 +124,4 @@ extension ResultsViewController: UITableViewDataSource {
         }
         return cell
     }
-}
-
-extension ResultsViewController: UITableViewDelegate {
-    
 }
