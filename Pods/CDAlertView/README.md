@@ -3,11 +3,11 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Cocoapod](http://img.shields.io/cocoapods/v/CDAlertView.svg?style=flat)](http://cocoadocs.org/docsets/CDAlertView/)
 [![CI Status](http://img.shields.io/travis/candostdagdeviren/CDAlertView.svg?style=flat)](https://travis-ci.org/candostdagdeviren/CDAlertView/)
-[![Language](https://img.shields.io/badge/swift-4.0-orange.svg)](https://developer.apple.com/swift)
+[![Language](https://img.shields.io/badge/swift-4.2-orange.svg)](https://developer.apple.com/swift)
 [![Platform](http://img.shields.io/badge/platform-ios-lightgrey.svg?style=flat)](https://developer.apple.com/resources/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://raw.githubusercontent.com/candostdagdeviren/CDAlertView/master/LICENSE)
 
-CDAlertView is highly customizable alert popup written in Swift 3. Usage is similar to `UIAlertController`.
+CDAlertView is highly customizable alert popup written in Swift. Usage is similar to `UIAlertController`.
 
 ### Screenshots
 
@@ -54,7 +54,7 @@ CDAlertView types:
 
 ```swift
 public enum CDAlertViewType {
-    case error, warning, success, notification, alarm, custom(image:UIImage)
+    case error, warning, success, notification, alarm, noImage, custom(image:UIImage)
 }
 ```
 
@@ -79,6 +79,12 @@ alert.hideAnimationDuration = 0.88
 alert.show()
 ```
 
+### Hide Alert with timer
+```swift
+let alert = CDAlertView(title: "Awesome Title", message: "Well explained message!", type: .success)
+alert.autoHideTime = 4.5 // This will hide alert box after 4.5 seconds
+```
+
 ### List of Available CDAlertView Options
 
 `titleTextColor: UIColor` -> Sets title's text color
@@ -94,6 +100,8 @@ alert.show()
 `alertBackgroundColor: UIColor` -> Sets popup's background color.
 
 `popupWidth: CGFloat` -> Width of the popup view
+
+`hasRoundedCorners: Bool` -> Apply rounded corners to alert view. Default is `true`.
 
 `hasShadow: Bool` -> Apply shadows around the popup. Defualt is `true`.
 
@@ -128,6 +136,8 @@ If you enabled text field with setting `isTextFieldHidden` property to `false`, 
 `textFieldHeight: CGFloat` -> Sets the height of `UITextField`.
 
 `textFieldDelegate: UITextViewDelegate?` -> Sets the delegate of `UITextField`. Default delegate is `CDAlertView`. If you overwrite this, you're responsible for resigning the `UITextField`.
+
+`autoHideTime: TimeInterval?` -> Sets the time interval for dismiss time. Default is `nil`.
 
 ### Advanced action initialization:
 
@@ -185,10 +195,6 @@ github "candostdagdeviren/CDAlertView"
 * Xcode 9
 * Swift 4
 * iOS 9.0+
-
-## Author
-
-[Candost Dagdeviren](http://bit.ly/2oWdga9)
 
 ### Icons
 

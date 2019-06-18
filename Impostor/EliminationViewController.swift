@@ -34,7 +34,7 @@ class EliminationViewController: UIViewController {
         case .theImpostorRemains:
             let title = NSLocalizedString("The impostor remains", comment: "After someone was killed")
             let message = String(format: NSLocalizedString("Player #%ld starts this round",
-                                                           comment: "After someone killed"), game.playerNumberToStartRound)
+                                                           comment: "After someone killed"), game.playerNumberToStartRound + 1)
             
             let alertView = CDAlertView(title: title,
                                         message: message,
@@ -76,7 +76,7 @@ class EliminationViewController: UIViewController {
         
         let title: String? = nil
         let message = String(format: NSLocalizedString("Player #%ld was randomly selected to start the first round",
-                                                       comment: "When the game starts"), game.playerNumberToStartRound+1)
+                                                       comment: "When the game starts"), game.playerNumberToStartRound + 1)
         let alertView = CDAlertView(title: title,
                                     message: message,
                                     type: .custom(image: UIImage(named:"AppIcon60x60")!))
@@ -92,7 +92,6 @@ class EliminationViewController: UIViewController {
         let root = navigationController!.viewControllers.first as! GameConfigurationViewController
         root.fadeOutMusic()
     }
-    
 }
 
 extension EliminationViewController: UICollectionViewDataSource, UICollectionViewDelegate {

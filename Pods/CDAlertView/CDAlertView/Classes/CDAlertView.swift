@@ -9,7 +9,18 @@
 import Foundation
 
 public enum CDAlertViewType {
-    case error, warning, success, notification, alarm, custom(image: UIImage)
+    case error, warning, success, notification, alarm, noImage, custom(image: UIImage)
+    
+    // This is needed because we can't do a comparison of enums
+    // if it has an associated value.
+    func hasImage() -> Bool {
+        switch self {
+            case .noImage:
+                return false
+            default:
+                return true
+        }
+    }
 }
 
 fileprivate protocol CDAlertViewActionDelegate: class {
@@ -24,13 +35,13 @@ open class CDAlertViewAction: NSObject {
 
     fileprivate weak var delegate: CDAlertViewActionDelegate?
 
-    private var handlerBlock: ((CDAlertViewAction) -> Swift.Void)?
+    private var handlerBlock: ((CDAlertViewAction) -> Swift.Bool)?
 
     public convenience init(title: String?,
                             font: UIFont? = UIFont.systemFont(ofSize: 17),
                             textColor: UIColor? = UIColor(red: 27 / 255, green: 169 / 255, blue: 225 / 255, alpha: 1),
                             backgroundColor: UIColor? = nil,
-                            handler: ((CDAlertViewAction) -> Swift.Void)? = nil) {
+                            handler: ((CDAlertViewAction) -> Swift.Bool)? = nil) {
         self.init()
         buttonTitle = title
         buttonTextColor = textColor
@@ -44,7 +55,9 @@ open class CDAlertViewAction: NSObject {
             self.delegate?.didTap(action: self)
             return
         }
-        handler(self)
+        if handler(self) == false {
+            return
+        }
         self.delegate?.didTap(action: self)
     }
 }
@@ -117,15 +130,27 @@ open class CDAlertView: UIView {
             textField.isHidden = isTextFieldHidden
 
             if !isTextFieldHidden {
-                NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
-                NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+                NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+                NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)    
             }
+        }
+    }
+
+    public var textFieldKeyboardType: UIKeyboardType = .`default` {
+        didSet {
+            textField.keyboardType = textFieldKeyboardType
         }
     }
 
     public var textFieldAutocapitalizationType: UITextAutocapitalizationType = .none {
         didSet {
             textField.autocapitalizationType = textFieldAutocapitalizationType
+        }
+    }
+
+    public var textFieldAutocorrectionType: UITextAutocorrectionType = .default {
+        didSet {
+            textField.autocorrectionType = textFieldAutocorrectionType
         }
     }
 
@@ -156,12 +181,16 @@ open class CDAlertView: UIView {
         }
     }
 
+    public var hasRoundCorners = true
+
     public var customView: UIView?
 
     public var hideAnimations: CDAlertAnimationBlock?
 
     public var hideAnimationDuration: TimeInterval = 0.5
 
+    public var autoHideTime: TimeInterval? = nil
+    
     public var textFieldHeight: CGFloat = 35.0
 
     public var isActionButtonsVertical: Bool = false
@@ -211,6 +240,7 @@ open class CDAlertView: UIView {
 
     private struct CDAlertViewConstants {
         let headerHeight: CGFloat = 56
+        let headerHeightWithoutCircle: CGFloat = 30
         let activeVelocity: CGFloat = 150
         let minVelocity: CGFloat = 300
         let separatorThickness: CGFloat = 1.0 / UIScreen.main.scale
@@ -235,6 +265,10 @@ open class CDAlertView: UIView {
     private var messageLabel: UILabel = UILabel(frame: .zero)
     private var textField: UITextField = UITextField(frame: .zero)
     private var type: CDAlertViewType!
+    private var isKeyboardVisible: Bool = false
+    weak private var hideTimer: Timer!
+    public var headerHeight: CGFloat = CDAlertViewConstants().headerHeight
+    
     private lazy var actions: [CDAlertViewAction] = [CDAlertViewAction]()
 
     public convenience init(title: String?,
@@ -265,9 +299,9 @@ open class CDAlertView: UIView {
             popupView.layer.masksToBounds = false
             let path = UIBezierPath()
             path.move(to: CGPoint(x: 0.0, y: popupView.bounds.size.height))
-            path.addLine(to: CGPoint(x: 0, y: constants.headerHeight))
+            path.addLine(to: CGPoint(x: 0, y: headerHeight))
             path.addLine(to: CGPoint(x: popupView.bounds.size.width,
-                                     y: CGFloat(constants.headerHeight - 5)))
+                                     y: CGFloat(headerHeight - 5)))
             path.addLine(to: CGPoint(x: popupView.bounds.size.width,
                                      y: popupView.bounds.size.height))
             path.close()
@@ -290,8 +324,17 @@ open class CDAlertView: UIView {
         popupViewInitialFrame = popupView.frame
 
         completionBlock = completion
+        
+        if let autoHideTime = self.autoHideTime {
+            hideTimer = Timer.scheduledTimer(timeInterval: autoHideTime, target: self, selector: #selector(self.hideTimeOut(_:)), userInfo: nil, repeats: false)
+        }
     }
 
+    @objc func hideTimeOut(_ timer:Timer) {
+        
+        self.hide(animations: self.hideAnimations, isPopupAnimated: true)
+    }
+    
     // Instead of defining default `nil` parameter for `hide(animations: CDAlertAnimationBlock?, isPopupAnimated:Bool)` method
     // we define this method for Objective-C compatibility.
     // CDAlertAnimationBlock is not supported in Objective-C
@@ -301,6 +344,10 @@ open class CDAlertView: UIView {
 
     public func hide(animations: CDAlertAnimationBlock?,
                      isPopupAnimated: Bool) {
+        
+        self.hideTimer?.invalidate()
+        self.hideTimer = nil
+        
         if !isTextFieldHidden {
             textField.resignFirstResponder()
             NotificationCenter.default.removeObserver(self)
@@ -356,10 +403,14 @@ open class CDAlertView: UIView {
     }
 
     @objc func keyboardWillShow(_ notification: Notification) {
+        if isKeyboardVisible {
+            return
+        }
+        isKeyboardVisible = true
         guard let userInfo = notification.userInfo else {
             return
         }
-        guard let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else {
+        guard let keyboardSize = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else {
             return
         }
         guard let coverViewWindowCoordinates = coverView.superview?.convert(CGPoint(x: 0, y: coverView.frame.maxY), to: nil) else {
@@ -368,12 +419,14 @@ open class CDAlertView: UIView {
         if coverViewWindowCoordinates.y <= (keyboardSize.minY - keyboardSize.height) {
             return
         }
+
         popupCenterYPositionBeforeKeyboard = popupView.center.y
         let difference = coverViewWindowCoordinates.y - (keyboardSize.minY - keyboardSize.height)
         popupView.center.y -= difference
     }
 
     @objc func keyboardWillHide(_ notification: Notification) {
+        self.isKeyboardVisible = false
         guard let initialY = self.popupCenterYPositionBeforeKeyboard else {
             return
         }
@@ -441,6 +494,7 @@ open class CDAlertView: UIView {
 
 
     private func roundBottomOfCoverView() {
+        guard hasRoundCorners == true else {return}
         let roundCornersPath = UIBezierPath(roundedRect: CGRect(x: 0.0,
                                                                 y: 0.0,
                                                                 width: popupWidth,
@@ -489,15 +543,23 @@ open class CDAlertView: UIView {
     private func createHeaderView() {
         headerView = CDAlertHeaderView(type: type, isIconFilled: isHeaderIconFilled)
         headerView.backgroundColor = UIColor.clear
-        headerView.hasShadow = hasShadow
+        headerView.hasRoundCorners = hasRoundCorners
         headerView.alertBackgroundColor = alertBackgroundColor
-        headerView.circleFillColor = circleFillColor
+        if type.hasImage() == true {
+            headerView.circleFillColor = circleFillColor
+            headerView.hasShadow = hasShadow
+        }
+        else {
+            headerView.hasShadow = false
+            headerView.circleFillColor = .clear
+            headerHeight = constants.headerHeightWithoutCircle
+        }
         popupView.addSubview(headerView)
         headerView.translatesAutoresizingMaskIntoConstraints = false
         headerView.cd_alignTopToParent(with: 0)
         headerView.cd_alignLeftToParent(with: 0)
         headerView.cd_alignRightToParent(with: 0)
-        headerView.cd_setHeight(constants.headerHeight)
+        headerView.cd_setHeight(headerHeight)
     }
 
     private func createButtonContainer() {
@@ -513,9 +575,11 @@ open class CDAlertView: UIView {
                                                                 height: height),
                                             byRoundingCorners: [.bottomLeft, .bottomRight],
                                             cornerRadii: CGSize(width: 8.0, height: 8.0))
-        let roundLayer = CAShapeLayer()
-        roundLayer.path = roundCornersPath.cgPath
-        buttonView.layer.mask = roundLayer
+        if hasRoundCorners == true {
+            let roundLayer = CAShapeLayer()
+            roundLayer.path = roundCornersPath.cgPath
+            buttonView.layer.mask = roundLayer
+        }
         popupView.addSubview(buttonView)
         buttonView.translatesAutoresizingMaskIntoConstraints = false
         buttonView.cd_alignBottomToParent(with: 0)

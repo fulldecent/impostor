@@ -84,7 +84,7 @@ class CollageViewController: UIViewController {
         UIGraphicsEndImageContext()
         let itemsToShare: [AnyObject] = [image!, title as AnyObject, url as AnyObject]
         let activityVC: UIActivityViewController = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
-        activityVC.excludedActivityTypes = [UIActivityType.print, UIActivityType.assignToContact]
+        activityVC.excludedActivityTypes = [UIActivity.ActivityType.print, UIActivity.ActivityType.assignToContact]
         activityVC.completionWithItemsHandler = {
             activityType, completed, returnedItems, activityError in
             Analytics.logEvent(AnalyticsEventShare, parameters: [
@@ -118,15 +118,15 @@ extension CollageViewController: UICollectionViewDataSource {
             imageView.image = UIImage(named: "defaultHeadshot.png")!
         }
         
-        let degrees = Double(Int(arc4random_uniform(31)) - 15)
+        let degrees = Double.random(in: 15...15)
         let radians = CGFloat(degrees * Double.pi / 180)
         imageView.transform = CGAffineTransform(rotationAngle: radians)
         let bounceAnimation: CAKeyframeAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
         bounceAnimation.values = [0, radians * 0.5, -radians * 2, radians]
-        bounceAnimation.duration = Double(arc4random_uniform(10) / 10)
+        bounceAnimation.duration = Double.random(in: 0...1)
         bounceAnimation.isRemovedOnCompletion = true
         bounceAnimation.repeatCount = 0
-        bounceAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        bounceAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
         imageView.layer.add(bounceAnimation, forKey: "spin")
         self.makeItBounce(imageView)
         
@@ -158,7 +158,7 @@ extension CollageViewController: UICollectionViewDataSource {
         bounceAnimation.isRemovedOnCompletion = false
         bounceAnimation.repeatCount = 2
         bounceAnimation.autoreverses = true
-        bounceAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        bounceAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
         view.layer.add(bounceAnimation, forKey: "bounce")
     }
 }

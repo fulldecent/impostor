@@ -29,7 +29,7 @@ class GameConfigurationViewController: UIViewController {
         return soundID
     }()
 
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         playerPhotoCollectionView.dataSource = self
         playerPhotoCollectionView.delegate = self
@@ -142,8 +142,8 @@ class GameConfigurationViewController: UIViewController {
             "function": #function as NSObject
             ])
         AudioServicesPlaySystemSound(self.buttonPress)
-        let url = URL(string: "http://phor.net/apps/impostor/newWords.php")!
-        UIApplication.shared.openURL(url)
+        let url = URL(string: "https://phor.net/apps/impostor/newWords.php")!
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
     @IBAction func buyUpgrade(_ sender: UIButton) {
@@ -194,6 +194,14 @@ class GameConfigurationViewController: UIViewController {
                 case .cloudServicePermissionDenied: print("Access to cloud service information is not allowed")
                 case .cloudServiceNetworkConnectionFailed: print("Could not connect to the network")
                 case .cloudServiceRevoked: print("User has revoked permission to use this cloud service")
+                case .privacyAcknowledgementRequired: print("Privacy acknowledgement required")
+                case .unauthorizedRequestData: print("Privacy acknowledgement required")
+                case .invalidOfferIdentifier: print("Invalid offer identifier")
+                case .invalidSignature: print("Invalid signature")
+                case .missingOfferParams: print("Missing offer paramaters")
+                case .invalidOfferPrice: print("Invalid offer price")
+//                @unknown default:
+//                    fatalError()
                 }
             }
         }
@@ -221,18 +229,19 @@ class GameConfigurationViewController: UIViewController {
         view!.setNeedsLayout()
     }
 
-    @objc func fadeOutMusic() {
+    func fadeOutMusic() {
         // http://stackoverflow.com/questions/1216581/avaudioplayer-fade-volume-out
-        if self.audioPlayer.volume > 0.1 {
-            self.audioPlayer.volume -= 0.1
-            self.perform(#selector(GameConfigurationViewController.fadeOutMusic), with: nil, afterDelay: 0.1)
-        }
-        else {
-            // Stop and get the sound ready for playing again
-            self.audioPlayer.stop()
-            self.audioPlayer.currentTime = 0
-            self.audioPlayer.prepareToPlay()
-            self.audioPlayer.volume = 1.0
+        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (timer) in
+            if self.audioPlayer.volume > 0.1 {
+                self.audioPlayer.volume -= 0.1
+            } else {
+                // Stop and get the sound ready for playing again
+                self.audioPlayer.stop()
+                self.audioPlayer.currentTime = 0
+                self.audioPlayer.prepareToPlay()
+                self.audioPlayer.volume = 1.0
+                timer.invalidate();
+            }
         }
     }
 }
@@ -296,15 +305,13 @@ extension GameConfigurationViewController: UICollectionViewDelegate {
         bounceAnimation.isRemovedOnCompletion = false
         bounceAnimation.repeatCount = 2
         bounceAnimation.autoreverses = true
-        bounceAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        bounceAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
         view.layer.add(bounceAnimation, forKey: "bounce")
     }
 }
 
-@available(iOS 9.0, *)
 extension GameConfigurationViewController: SFSafariViewControllerDelegate {
-    func safariViewControllerDidFinish(_ controller: SFSafariViewController)
-    {
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
         controller.dismiss(animated: true, completion: nil)
     }
 }

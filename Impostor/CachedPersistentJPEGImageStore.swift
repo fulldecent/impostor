@@ -15,7 +15,7 @@ class CachedPersistentJPEGImageStore: NSObject {
     
     func saveImage(_ image: UIImage, withName name: String) {
         cachedImages[name] = image
-        try? UIImageJPEGRepresentation(image, 0.9)?.write(to: urlForImageWithName(name), options: [.atomic])
+        ((try? image.jpegData(compressionQuality: 0.9)?.write(to: urlForImageWithName(name), options: [.atomic])) as ()??)
     }
     
     func imageWithName(_ name: String) -> UIImage? {

@@ -43,20 +43,20 @@ class ImpostorGameModel: NSObject {
             let moreWordSets = try! JSONSerialization.jsonObject(with: moreJsonData, options: []) as! [[String]]
             allWordSets.append(contentsOf: moreWordSets)
         }
-        let chosenWordSet = allWordSets[Int(arc4random_uniform(UInt32(allWordSets.count)))]
+        let chosenWordSet = allWordSets.randomElement()!
         normalWord = chosenWordSet[0]
         impostorWord = chosenWordSet[1]
-        if arc4random_uniform(2) == 0 {
+        if Bool.random() == true {
             swap(&normalWord, &impostorWord)
         }
         numberOfPlayers = numPlayers
         playerRoles = [PlayerRoles](repeating: .normalPlayer, count: numberOfPlayers)
         playerWords = [String](repeating: self.normalWord, count: numberOfPlayers)
         playerEliminated = [Bool](repeating: false, count: numberOfPlayers)
-        let impostorIndex = Int(arc4random_uniform(UInt32(numberOfPlayers)))
+        let impostorIndex = Int.random(in: 0..<numberOfPlayers)
         playerRoles[impostorIndex] = .impostor
         playerWords[impostorIndex] = self.impostorWord
-        playerNumberToStartRound = Int(arc4random_uniform(UInt32(numberOfPlayers)))
+        playerNumberToStartRound = Int.random(in: 0..<numberOfPlayers)
         gameStatus = .showSecretWords
     }
 
@@ -68,7 +68,7 @@ class ImpostorGameModel: NSObject {
         assert(playerEliminated[playerNumber] == false)
         playerEliminated[playerNumber] = true
         
-        let remainingPlayerRoles = zip(playerRoles, playerEliminated).flatMap {$1 ? nil : $0}
+        let remainingPlayerRoles = zip(playerRoles, playerEliminated).compactMap {$1 ? nil : $0}
         let countOfRemainingImpostors = remainingPlayerRoles.filter({$0 == .impostor}).count
         let countOfRemainingNormalPlayers = remainingPlayerRoles.filter({$0 == .normalPlayer}).count
         if countOfRemainingImpostors == 0 {

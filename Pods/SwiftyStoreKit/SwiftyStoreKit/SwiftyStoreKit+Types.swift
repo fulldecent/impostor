@@ -26,7 +26,7 @@ import StoreKit
 
 // MARK: Purchases
 
-// Purchased or restored product
+// Restored product
 public struct Purchase {
     public let productId: String
     public let quantity: Int
@@ -35,11 +35,13 @@ public struct Purchase {
     public let needsFinishTransaction: Bool
 }
 
+// Purchased product
 public struct PurchaseDetails {
     public let productId: String
     public let quantity: Int
     public let product: SKProduct
     public let transaction: PaymentTransaction
+    public let originalTransaction: PaymentTransaction?
     public let needsFinishTransaction: Bool
 }
 
@@ -50,12 +52,14 @@ public protocol ReceiptValidator {
 
 // Payment transaction
 public protocol PaymentTransaction {
+    var transactionDate: Date? { get }
     var transactionState: SKPaymentTransactionState { get }
     var transactionIdentifier: String? { get }
+    var downloads: [SKDownload] { get }
 }
 
 // Add PaymentTransaction conformance to SKPaymentTransaction
-extension SKPaymentTransaction : PaymentTransaction { }
+extension SKPaymentTransaction: PaymentTransaction { }
 
 // Products information
 public struct RetrieveResults {
@@ -77,6 +81,7 @@ public struct RestoreResults {
 }
 
 public typealias ShouldAddStorePaymentHandler = (_ payment: SKPayment, _ product: SKProduct) -> Bool
+public typealias UpdatedDownloadsHandler = (_ downloads: [SKDownload]) -> Void
 
 // MARK: Receipt verification
 
@@ -134,6 +139,8 @@ public struct ReceiptItem {
     public let cancellationDate: Date?
 
     public let isTrialPeriod: Bool
+    
+    public let isInIntroOfferPeriod: Bool
 }
 
 // Error when managing receipt

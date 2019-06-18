@@ -24,7 +24,7 @@ class TeaseViewController: UIViewController {
         bounceAnimation.duration = 3
         bounceAnimation.isRemovedOnCompletion = true
         bounceAnimation.repeatCount = 0
-        bounceAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        bounceAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
         self.spy.layer.add(bounceAnimation, forKey: "spin")
         self.perform(#selector(TeaseViewController.close), with: self, afterDelay: 5)
     }

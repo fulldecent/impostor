@@ -50,17 +50,18 @@ class SecretWordViewController: UIViewController {
         alertView.titleFont = UIFont(name: "AmericanTypewriter", size: 20.0)!
         alertView.messageFont = UIFont(name: "AmericanTypewriter-Bold", size: 20.0)!
         
-        let dismissBlock: (CDAlertViewAction) -> Void = {_ in
+        let dismissBlock: (CDAlertViewAction) -> Bool = {_ in
             if self.playerNumber == self.game.numberOfPlayers - 1 {
                 self.game.doneShowingSecretWords()
                 var viewControllers: [AnyObject] = self.navigationController!.viewControllers
                 self.navigationController!.popToViewController(viewControllers[1] as! UIViewController, animated: true)
-                return
+                return true
             }
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let newController = storyboard.instantiateViewController(withIdentifier: "secretWord") as! SecretWordViewController
             newController.playerNumber = self.playerNumber + 1
             self.navigationController!.pushViewController(newController, animated: true)
+            return true
         }
         let action = CDAlertViewAction(title: NSLocalizedString("OK", comment: "Dismiss the popup"),
                                        font: UIFont(name: "AmericanTypewriter-Bold", size: 20.0)!,
@@ -81,7 +82,7 @@ class SecretWordViewController: UIViewController {
             AnalyticsParameterItemID:NSStringFromClass(type(of: self)) as NSObject
             ])
         
-        self.playerLabel.text = String(format: NSLocalizedString("Player #%ld", comment: "Current player"), Int(self.playerNumber) + 1)
+        self.playerLabel.text = String(format: NSLocalizedString("Player #%ld", comment: "Current player"), self.playerNumber + 1)
         
         let imageName = "\(Int(self.playerNumber))"
         if let photo = CachedPersistentJPEGImageStore.sharedStore.imageWithName(imageName) {
@@ -115,8 +116,8 @@ class SecretWordViewController: UIViewController {
 }
 
 extension SecretWordViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        var photo = info[UIImagePickerControllerOriginalImage] as! UIImage
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        var photo = info[.originalImage] as! UIImage
         photo = photo.normalizedImage().cropBiggestCenteredSquareImage(withSide: 800)
         let imageName: String = "\(Int(self.playerNumber))"
         CachedPersistentJPEGImageStore.sharedStore.saveImage(photo, withName: imageName)
@@ -132,7 +133,7 @@ extension SecretWordViewController: UIImagePickerControllerDelegate, UINavigatio
 
 private extension UIImage {
     func normalizedImage() -> UIImage {
-        if (self.imageOrientation == UIImageOrientation.up) {
+        if (self.imageOrientation == UIImage.Orientation.up) {
             return self;
         }
         
