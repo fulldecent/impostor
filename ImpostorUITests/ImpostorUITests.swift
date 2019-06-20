@@ -30,6 +30,11 @@ class ImpostorUITests: XCTestCase {
     func testScreenshots() {
         let app = XCUIApplication()
         
+        let button = app.buttons["      "]
+        button.tap()
+        snapshot("04Teaser", timeWaitingForIdle: 5)
+        snapshot("04Teaser")
+        
         let minusButton = XCUIApplication().buttons["minus"]
         minusButton.tap()
         minusButton.tap()
@@ -43,5 +48,4 @@ class ImpostorUITests: XCTestCase {
         showSecretWordButton.tap()
         snapshot("03Secret")
     }
-    
 }
