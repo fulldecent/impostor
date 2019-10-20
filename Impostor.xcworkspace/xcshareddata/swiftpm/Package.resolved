@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SwiftyStoreKit",
+        "repositoryURL": "https://github.com/bizz84/SwiftyStoreKit",
+        "state": {
+          "branch": null,
+          "revision": "d830aaac6822a70245aa62ea1c51548e4fc90bad",
+          "version": "0.15.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

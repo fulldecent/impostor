@@ -142,7 +142,7 @@ class GameConfigurationViewController: UIViewController {
             "function": #function as NSObject
             ])
         AudioServicesPlaySystemSound(self.buttonPress)
-        let url = URL(string: "https://phor.net/apps/impostor/newWords.php")!
+        let url = URL(string: "https://apps.phor.net/imposter-new-words/")!
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     

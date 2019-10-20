@@ -6,14 +6,12 @@ target 'Impostor' do
 	pod 'QBFlatButton'
 	pod 'CDAlertView'
 	pod 'Firebase/Analytics'
-	pod 'SwiftyStoreKit'
-        pod 'EAIntroView'
+	pod 'EAIntroView'
 end
 
 target 'ImpostorTests' do
 	pod 'QBFlatButton'
 	pod 'CDAlertView'
 	pod 'Firebase/Analytics'
-	pod 'SwiftyStoreKit'
 end
 
