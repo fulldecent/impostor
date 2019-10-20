@@ -21,4 +21,9 @@ platform :ios do
     capture_screenshots(workspace: "Impostor.xcworkspace", scheme: "ImpostorUITests")
     upload_to_app_store(skip_binary_upload: true, skip_metadata: true)
   end
+
+  desc "Uplaod screenshots"
+  lane :fd_uploadscreenshots do
+    upload_to_app_store
+  end
 end

@@ -463,10 +463,9 @@
 			};
 			buildConfigurationList = D98CA3F3185D338600746059 /* Build configuration list for PBXProject "Impostor" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 				"zh-Hans",
