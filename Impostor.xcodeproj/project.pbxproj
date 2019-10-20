@@ -59,7 +59,7 @@
 		D9DA09FF1E0DD10700410A37 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D9DA09FE1E0DD10700410A37 /* background.jpg */; };
 		D9DD5CBC1B9A209B00CBDE5A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DD5CBB1B9A209B00CBDE5A /* StoreKit.framework */; };
 		D9DD5CBF1B9A400600CBDE5A /* gameWordsMore.json in Resources */ = {isa = PBXBuildFile; fileRef = D9DD5CBD1B9A400600CBDE5A /* gameWordsMore.json */; };
-		D9FAE94D235BFF9700C7B82E /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = D9FAE94C235BFF9700C7B82E /* SwiftPackageProductDependency */; };
+		D9FAE94D235BFF9700C7B82E /* SwiftyStoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = D9FAE94C235BFF9700C7B82E /* SwiftyStoreKit */; };
 		F7B7589F4F4E6C71A6867F81 /* Pods_ImpostorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E62A52C27807431F3CC8FBA /* Pods_ImpostorTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -223,7 +223,7 @@
 				D94EE3851F00755800F43674 /* iAd.framework in Frameworks */,
 				D94EE3831F0067D500F43674 /* AdSupport.framework in Frameworks */,
 				D98CA3FC185D338600746059 /* Foundation.framework in Frameworks */,
-				D9FAE94D235BFF9700C7B82E /* BuildFile in Frameworks */,
+				D9FAE94D235BFF9700C7B82E /* SwiftyStoreKit in Frameworks */,
 				D9DD5CBC1B9A209B00CBDE5A /* StoreKit.framework in Frameworks */,
 				6420B7D707B63317299084BB /* Pods_Impostor.framework in Frameworks */,
 			);
@@ -428,7 +428,7 @@
 			);
 			name = Impostor;
 			packageProductDependencies = (
-				D9FAE94C235BFF9700C7B82E /* SwiftPackageProductDependency */,
+				D9FAE94C235BFF9700C7B82E /* SwiftyStoreKit */,
 			);
 			productName = Impostor;
 			productReference = D98CA3F8185D338600746059 /* Impostor.app */;
@@ -484,7 +484,7 @@
 			);
 			mainGroup = D98CA3EF185D338600746059;
 			packageReferences = (
-				D9FAE94B235BFF9700C7B82E /* RemoteSwiftPackageReference */,
+				D9FAE94B235BFF9700C7B82E /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */,
 			);
 			productRefGroup = D98CA3F9185D338600746059 /* Products */;
 			projectDirPath = "";
@@ -956,6 +956,7 @@
 			baseConfigurationReference = 62E182AAB0AEF92DC575B3CB /* Pods-Impostor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 1.5.5.2;
 				DEVELOPMENT_TEAM = 8Q693ZG5RN;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Impostor/Impostor-Prefix.pch";
@@ -968,6 +969,7 @@
 					"$(inherited)",
 					/Users/fulldecent/Developer/Impostor/Impostor,
 				);
+				MARKETING_VERSION = 1.5.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.phor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Impostor;
 				SWIFT_OBJC_BRIDGING_HEADER = "Impostor/Impostor-Bridging-Header.h";
@@ -982,6 +984,7 @@
 			baseConfigurationReference = D3586AB3DF0FA68FECE8D12A /* Pods-Impostor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 1.5.5.2;
 				DEVELOPMENT_TEAM = 8Q693ZG5RN;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Impostor/Impostor-Prefix.pch";
@@ -994,6 +997,7 @@
 					"$(inherited)",
 					/Users/fulldecent/Developer/Impostor/Impostor,
 				);
+				MARKETING_VERSION = 1.5.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.phor.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Impostor;
 				SWIFT_OBJC_BRIDGING_HEADER = "Impostor/Impostor-Bridging-Header.h";
@@ -1045,7 +1049,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D9FAE94B235BFF9700C7B82E /* RemoteSwiftPackageReference */ = {
+		D9FAE94B235BFF9700C7B82E /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/bizz84/SwiftyStoreKit";
 			requirement = {
@@ -1056,9 +1060,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D9FAE94C235BFF9700C7B82E /* SwiftPackageProductDependency */ = {
+		D9FAE94C235BFF9700C7B82E /* SwiftyStoreKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D9FAE94B235BFF9700C7B82E /* RemoteSwiftPackageReference */;
+			package = D9FAE94B235BFF9700C7B82E /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */;
 			productName = SwiftyStoreKit;
 		};
 /* End XCSwiftPackageProductDependency section */

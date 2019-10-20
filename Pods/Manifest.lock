@@ -1,5 +1,5 @@
 PODS:
-  - CDAlertView (0.9.0)
+  - CDAlertView (0.10.0)
   - EAIntroView (2.12.0):
     - EARestrictedScrollView (~> 1.1.0)
   - EARestrictedScrollView (1.1.0)
@@ -69,14 +69,12 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - QBFlatButton (1.1)
-  - SwiftyStoreKit (0.15.0)
 
 DEPENDENCIES:
   - CDAlertView
   - EAIntroView
   - Firebase/Analytics
   - QBFlatButton
-  - SwiftyStoreKit
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -95,10 +93,9 @@ SPEC REPOS:
     - GoogleUtilities
     - nanopb
     - QBFlatButton
-    - SwiftyStoreKit
 
 SPEC CHECKSUMS:
-  CDAlertView: 422a3b49b6b015558d84f1cd7c55f409810b8b22
+  CDAlertView: ee6a87c90c4283c8d316d55633db1a6981f1cc51
   EAIntroView: 249559079ddfdbe80e5bcb755c04c3b964b2ac27
   EARestrictedScrollView: b0c2a3f92fb2610bb44d71c5e4893777c89e45ef
   Firebase: 5e6b7b12bf9adb90986688edc06b156c37e109cd
@@ -113,8 +110,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: f895fde57977df4e0233edda0dbeac490e3703b6
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   QBFlatButton: 3cf272985cdbdd04d6bc8b7ae01e4dd62cb09c17
-  SwiftyStoreKit: 033d06b6f87955405d3f844a18a7687c2438592a
 
-PODFILE CHECKSUM: e4e440188894fe72a4029cb603e86b5a86ece908
+PODFILE CHECKSUM: 5abef4faadc72fad61897073432d7e9fbdf55327
 
 COCOAPODS: 1.8.3
