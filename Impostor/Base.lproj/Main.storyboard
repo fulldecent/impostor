@@ -680,9 +680,11 @@ For your eyes only</string>
                                     <constraint firstAttribute="width" constant="40" id="zIH-26-nT5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
-                                <state key="normal" image="close.png">
+                                <state key="normal" image="xmark" catalog="system">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="black"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="faceColor">
@@ -752,7 +754,6 @@ For your eyes only</string>
     <resources>
         <image name="background.jpg" width="1262" height="1404"/>
         <image name="cart" catalog="system" width="64" height="50"/>
-        <image name="close.png" width="128" height="128"/>
         <image name="defaultHeadshot.png" width="512" height="512"/>
         <image name="lightbulb" catalog="system" width="56" height="64"/>
         <image name="minus" catalog="system" width="64" height="12"/>
