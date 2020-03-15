@@ -60,7 +60,11 @@ class GameConfigurationViewController: UIViewController {
         let defaults = UserDefaults.standard
         let didIAP = defaults.integer(forKey: "didIAP")
         if didIAP != 0 {
-            buyButton.imageView!.image = UIImage(named: "money-paid")
+            if #available(iOS 13.0, *) {
+                buyButton.imageView!.image = UIImage(systemName: "checkmark.seal.fill")
+            } else {
+                // Fallback on earlier versions
+            }
         }
     }
     
