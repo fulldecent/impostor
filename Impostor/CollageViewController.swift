@@ -9,7 +9,6 @@
 import UIKit
 import AVFoundation
 import AudioToolbox
-import Firebase
 
 class CollageViewController: UIViewController {
     fileprivate var game = ImpostorGameModel.game
@@ -22,10 +21,6 @@ class CollageViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        Analytics.logEvent(AnalyticsEventViewItem, parameters: [
-            AnalyticsParameterItemCategory: "Screen",
-            AnalyticsParameterItemID:NSStringFromClass(type(of: self))
-            ])
     }
     
     @objc func flashScreen() {
@@ -81,9 +76,6 @@ class CollageViewController: UIViewController {
         activityVC.excludedActivityTypes = [UIActivity.ActivityType.print, UIActivity.ActivityType.assignToContact]
         activityVC.completionWithItemsHandler = {
             activityType, completed, returnedItems, activityError in
-            Analytics.logEvent(AnalyticsEventShare, parameters: [
-                AnalyticsParameterContentType: "Selfie photo"
-                ])
         }
         self.present(activityVC, animated: true, completion: nil)
     }

@@ -1,0 +1,58 @@
+{
+  "pins" : [
+    {
+      "identity" : "cdalertview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/c0909h1179/CDAlertView",
+      "state" : {
+        "revision" : "a2fe4f012d96573453b3ecc53c821317c0d21cf9"
+      }
+    },
+    {
+      "identity" : "centeredcollectionview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/BenEmdon/CenteredCollectionView",
+      "state" : {
+        "revision" : "f2bf371dae314b46f1bc03c222861c9fc40fff32",
+        "version" : "2.2.2"
+      }
+    },
+    {
+      "identity" : "framelayoutkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kennic/FrameLayoutKit.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "8e84f8864f2b323af0bf96f1c4f2fbaf2680ce78"
+      }
+    },
+    {
+      "identity" : "nkbutton",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kennic/NKButton",
+      "state" : {
+        "branch" : "master",
+        "revision" : "8f1d51e40c4f0f7a3efc42efc7e53a75486dce31"
+      }
+    },
+    {
+      "identity" : "nvactivityindicatorview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ninjaprox/NVActivityIndicatorView.git",
+      "state" : {
+        "revision" : "4a4726d15367d82bd3e9e1f01625bd76dbbb0c98",
+        "version" : "4.8.0"
+      }
+    },
+    {
+      "identity" : "swiftystorekit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/bizz84/SwiftyStoreKit",
+      "state" : {
+        "revision" : "9ce911639680113dac9b554d6243e406a9758ebe",
+        "version" : "0.16.4"
+      }
+    }
+  ],
+  "version" : 2
+}

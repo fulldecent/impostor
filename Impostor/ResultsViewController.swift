@@ -6,17 +6,17 @@
 //  Copyright © 2016 William Entriken. All rights reserved.
 //
 
+import UIKit
 import AudioToolbox
-import QBFlatButton
+import NKButton
 import CDAlertView
-import Firebase
 
 class ResultsViewController: UIViewController {
     fileprivate let game = ImpostorGameModel.game
     
     @IBOutlet weak var tableView: UITableView!
 
-    @IBOutlet weak var collage: QBFlatButton!
+    @IBOutlet weak var collage: NKButton!
     
     @IBOutlet weak var shim: NSLayoutConstraint!
     
@@ -31,10 +31,6 @@ class ResultsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        Analytics.logEvent(AnalyticsEventViewItem, parameters: [
-            AnalyticsParameterItemCategory: "Screen",
-            AnalyticsParameterItemID: NSStringFromClass(type(of: self))
-            ])
         var allPhotos = true
         for i in 0 ..< self.game.numberOfPlayers {
             let imageName = "\(Int(i))"
@@ -49,22 +45,6 @@ class ResultsViewController: UIViewController {
             self.collage.isHidden = true
             self.shim.constant = -self.collage.frame.size.height
         }
-        Analytics.logEvent("gameStats", parameters: [
-            AnalyticsParameterContentType: "All Photos",
-            AnalyticsParameterValue: "\(allPhotos)"
-            ])
-        Analytics.logEvent("gameStats", parameters: [
-            AnalyticsParameterContentType: "Number of Players",
-            AnalyticsParameterValue: "\(game.numberOfPlayers)"
-            ])
-        Analytics.logEvent("gameStats", parameters: [
-            AnalyticsParameterContentType: "Impostor Won",
-            AnalyticsParameterValue: "\(game.gameStatus == GameStatus.theImpostorWon)"
-            ])
-        Analytics.logEvent("gameStats", parameters: [
-            AnalyticsParameterContentType: "Words",
-            AnalyticsParameterValue: "\(self.game.normalWord) - \(self.game.impostorWord)"
-            ])
     }
     
     override func viewDidAppear(_ animated: Bool) {

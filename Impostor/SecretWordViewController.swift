@@ -9,7 +9,6 @@
 import UIKit
 import AudioToolbox
 import CDAlertView
-import Firebase
 import MobileCoreServices
 
 class SecretWordViewController: UIViewController {
@@ -69,10 +68,6 @@ class SecretWordViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        Analytics.logEvent(AnalyticsEventViewItem, parameters: [
-            AnalyticsParameterContentType:"view" as NSObject,
-            AnalyticsParameterItemID:NSStringFromClass(type(of: self)) as NSObject
-            ])
         
         self.playerLabel.text = String(format: NSLocalizedString("Player #%ld", comment: "Current player"), self.playerNumber + 1)
         

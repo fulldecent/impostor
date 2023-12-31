@@ -19,6 +19,7 @@ class CachedPersistentJPEGImageStore: NSObject {
     }
     
     func imageWithName(_ name: String) -> UIImage? {
+        /* FD TODO
         if TARGET_OS_SIMULATOR > 0 {
             if (name == "1") {
                 return UIImage(contentsOfFile: "/Users/williamentriken/Developer/Impostor media/1.jpg")!
@@ -36,6 +37,7 @@ class CachedPersistentJPEGImageStore: NSObject {
                 return UIImage(contentsOfFile: "/Users/williamentriken/Developer/Impostor media/5.jpg")!
             }
         }
+        */
         if let image = cachedImages[name] {
             return image
         }

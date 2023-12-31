@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 import SwiftyStoreKit
 
 @UIApplicationMain
@@ -15,9 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        FirebaseApp.configure()
-        
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {        
         SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
             for purchase in purchases {
                 if purchase.transaction.transactionState == .purchased || purchase.transaction.transactionState == .restored {

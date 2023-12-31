@@ -6,10 +6,9 @@
 //  Copyright © 2016 William Entriken. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import AudioToolbox
 import CDAlertView
-import Firebase
 
 class EliminationViewController: UIViewController {
     fileprivate let game = ImpostorGameModel.game
@@ -65,10 +64,6 @@ class EliminationViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        Analytics.logEvent(AnalyticsEventViewItem, parameters: [
-            AnalyticsParameterItemCategory: "Screen",
-            AnalyticsParameterItemID:NSStringFromClass(type(of: self))
-            ])
     }
     
     override func viewDidAppear(_ animated: Bool) {

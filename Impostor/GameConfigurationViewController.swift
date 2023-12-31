@@ -11,9 +11,7 @@ import AVFoundation
 import AudioToolbox
 import MessageUI
 import SafariServices
-import Firebase
 import SwiftyStoreKit
-import EAIntroView
 
 class GameConfigurationViewController: UIViewController {
     fileprivate var playerCount = 3
@@ -47,10 +45,6 @@ class GameConfigurationViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        Analytics.logEvent(AnalyticsEventViewItem, parameters: [
-            AnalyticsParameterItemCategory: "Screen",
-            AnalyticsParameterItemID:NSStringFromClass(type(of: self))
-            ])
         // https://stackoverflow.com/questions/3460694/uibutton-wont-go-to-aspect-fit-in-iphone/3995820#3995820
         for view in self.view.subviews {
             if let button = view as? UIButton {
@@ -102,9 +96,12 @@ class GameConfigurationViewController: UIViewController {
     }
     
     @IBAction func showInstructions() {
-        Analytics.logEvent(AnalyticsEventTutorialBegin, parameters: [:])
         AudioServicesPlaySystemSound(self.buttonPress)
         
+        let introView2 = IntroViewController()
+        self.present(introView2, animated: true)
+        
+        /*
         let page1 = EAIntroPage()
         page1.title = NSLocalizedString("A party game", comment: "Intro screen 1 title")
         page1.desc = NSLocalizedString("For 3 to 12 players", comment: "Intro screen 1 detail")
@@ -126,48 +123,29 @@ class GameConfigurationViewController: UIViewController {
         page4.titleIconView = UIImageView(image: UIImage(named: "help4"))
         page4.bgColor = UIColor.gray
 
-        let introView = EAIntroView(frame: view.bounds, andPages: [page1, page2, page3, page4])
-        introView?.show(in: self.view, animateDuration: 0.6)
+        let introView = EAIntroView(frame: view.bounds, pages: [page1, page2, page3, page4])
+        introView.showInView(self.view, animateDuration: 0.6)
+         */
     }
     
     @IBAction func clearPhotos(_ sender: UIButton) {
-        Analytics.logEvent("action", parameters: [
-            "viewController":NSStringFromClass(type(of: self)) as NSObject,
-            "function":#function as NSObject
-            ])
         AudioServicesPlaySystemSound(self.buttonPress)
         CachedPersistentJPEGImageStore.sharedStore.deleteAllImages()
         playerPhotoCollectionView.reloadData()
     }
     
     @IBAction func giveFeedback(_ sender: UIButton) {
-        Analytics.logEvent("action", parameters: [
-            "viewController": NSStringFromClass(type(of: self)) as NSObject,
-            "function": #function as NSObject
-            ])
         AudioServicesPlaySystemSound(self.buttonPress)
         let url = URL(string: "https://apps.phor.net/imposter-new-words/")!
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
     @IBAction func buyUpgrade(_ sender: UIButton) {
-        Analytics.logEvent("action", parameters: [
-            "viewController": NSStringFromClass(type(of: self)) as NSObject,
-            "function": #function as NSObject
-            ])
-        Analytics.logEvent(AnalyticsEventBeginCheckout, parameters: [
-            AnalyticsParameterItemCategory: "In-App Purchase" as NSObject,
-            AnalyticsParameterItemName: "Unlock words" as NSObject
-            ])
         AudioServicesPlaySystemSound(self.buttonPress)
         
         SwiftyStoreKit.purchaseProduct("words0001", quantity: 1, atomically: true) { result in
             switch result {
             case .success(let purchase):
-                Analytics.logEvent(AnalyticsEventEcommercePurchase, parameters: [
-                    AnalyticsParameterCurrency: "USD",
-                    AnalyticsParameterValue: 1
-                    ])
                 let defaults = UserDefaults.standard
                 defaults.set(1, forKey: "didIAP")
                 defaults.synchronize()
@@ -178,11 +156,6 @@ class GameConfigurationViewController: UIViewController {
                 self.present(alert, animated: true)
                 print("Purchase Success: \(purchase.productId)")
             case .error(let error):
-                Analytics.logEvent(AnalyticsEventEcommercePurchase, parameters: [
-                    AnalyticsParameterCurrency: "USD",
-                    AnalyticsParameterValue: 1
-                    ])
-                
                 let alert = UIAlertController(title: NSLocalizedString("There was a problem with your purchase!", comment: "In-app purchase"), message: nil, preferredStyle: .alert)
                 let action = UIAlertAction(title: NSLocalizedString("OK", comment: "Dismiss the popup"), style: .cancel)
                 alert.addAction(action)
@@ -204,9 +177,17 @@ class GameConfigurationViewController: UIViewController {
                 case .invalidSignature: print("Invalid signature")
                 case .missingOfferParams: print("Missing offer paramaters")
                 case .invalidOfferPrice: print("Invalid offer price")
-//                @unknown default:
-//                    fatalError()
+                case .overlayCancelled: print("12")
+                case .overlayInvalidConfiguration: print("13")
+                case .overlayTimeout: print("14")
+                case .ineligibleForOffer: print("15")
+                case .unsupportedPlatform: print("16")
+                case .overlayPresentedInBackgroundScene: print("17")
+                @unknown default:
+                    print("22")
                 }
+            case .deferred(purchase: let purchase):
+                print("Deferred: \(purchase.productId)")
             }
         }
     }
