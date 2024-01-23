@@ -3,400 +3,329 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D900BA121D187DE20092EB78 /* GameConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D900BA111D187DE20092EB78 /* GameConfigurationViewController.swift */; };
-		D900BA141D1899AD0092EB78 /* EliminationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D900BA131D1899AD0092EB78 /* EliminationViewController.swift */; };
-		D900BA161D18A0D50092EB78 /* CollageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D900BA151D18A0D50092EB78 /* CollageViewController.swift */; };
-		D900BA181D198F9C0092EB78 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D900BA171D198F9C0092EB78 /* ResultsViewController.swift */; };
-		D9171ED12B41453800AF4391 /* CenteredCollectionView in Frameworks */ = {isa = PBXBuildFile; productRef = D9171ED02B41453800AF4391 /* CenteredCollectionView */; };
-		D9171ED32B41478800AF4391 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9171ED22B41478800AF4391 /* IntroViewController.swift */; };
-		D9171ED52B414BFD00AF4391 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D9171ED42B414BFD00AF4391 /* InfoPlist.xcstrings */; };
-		D9171ED82B414BFD00AF4391 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D9171ED72B414BFD00AF4391 /* Localizable.xcstrings */; };
-		D9172ECF1C7916FB0018F8C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9172ECE1C7916FB0018F8C3 /* AppDelegate.swift */; };
-		D9172EFD1C7919180018F8C3 /* ImpostorGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9172EFC1C7919180018F8C3 /* ImpostorGameModel.swift */; };
-		D91AB7C22B411A22005F8EED /* CDAlertView in Frameworks */ = {isa = PBXBuildFile; productRef = D91AB7C12B411A22005F8EED /* CDAlertView */; };
-		D91E58A71D19B8A20068FFEF /* ImpostorGameModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91E58A61D19B8A20068FFEF /* ImpostorGameModelTests.swift */; };
-		D91E58C31D19B9C80068FFEF /* ImpostorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91E58C21D19B9C80068FFEF /* ImpostorUITests.swift */; };
-		D91E58CB1D19BA190068FFEF /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91E58CA1D19BA190068FFEF /* SnapshotHelper.swift */; };
-		D94EE3831F0067D500F43674 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94EE3821F0067D500F43674 /* AdSupport.framework */; };
-		D94EE3851F00755800F43674 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94EE3841F00755800F43674 /* iAd.framework */; };
-		D94EE3871F00B16900F43674 /* results-impostor-won.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D94EE3861F00B16900F43674 /* results-impostor-won.mp3 */; };
-		D9645FE71C7937250067F18B /* TeaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9645FE61C7937250067F18B /* TeaseViewController.swift */; };
-		D9645FE91C7937C90067F18B /* CachedPersistentJPEGImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9645FE81C7937C90067F18B /* CachedPersistentJPEGImageStore.swift */; };
-		D96D8D0E2B411FE0008F0F83 /* NKButton in Frameworks */ = {isa = PBXBuildFile; productRef = D96D8D0D2B411FE0008F0F83 /* NKButton */; };
-		D970EFE91FBE640D0059F364 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D970EFE81FBE640D0059F364 /* LaunchScreen.storyboard */; };
-		D97AAAA41CCDBDE400B922B6 /* MainGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97AAAA31CCDBDE400B922B6 /* MainGameViewController.swift */; };
-		D97AAAA61CCDC10200B922B6 /* SecretWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97AAAA51CCDC10200B922B6 /* SecretWordViewController.swift */; };
-		D98CA3FC185D338600746059 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98CA3FB185D338600746059 /* Foundation.framework */; };
-		D98CA40F185D338600746059 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98CA40D185D338600746059 /* Main.storyboard */; };
-		D98CA417185D338600746059 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98CA416185D338600746059 /* Images.xcassets */; };
-		D99673011AB343050033780B /* teaseColors.png in Resources */ = {isa = PBXBuildFile; fileRef = D99672FF1AB343050033780B /* teaseColors.png */; };
-		D99673041AB3441A0033780B /* teaseSpy.png in Resources */ = {isa = PBXBuildFile; fileRef = D99673031AB3441A0033780B /* teaseSpy.png */; };
-		D9A2405F18D50DF7005D4DCD /* camera.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A2405E18D50DF7005D4DCD /* camera.mp3 */; };
-		D9A4F773185E7DEA0060AA2D /* intro.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F772185E7DEA0060AA2D /* intro.mp3 */; };
-		D9A4F775185E7EDE0060AA2D /* buttonPress.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F774185E7EDE0060AA2D /* buttonPress.mp3 */; };
-		D9A4F779185E80040060AA2D /* peek.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F778185E80040060AA2D /* peek.mp3 */; };
-		D9A4F77B185E80650060AA2D /* eliminate.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F77A185E80650060AA2D /* eliminate.mp3 */; };
-		D9A4F77D185E80D10060AA2D /* results.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F77C185E80D10060AA2D /* results.mp3 */; };
-		D9A4F782185FDDA90060AA2D /* defaultHeadshot.png in Resources */ = {isa = PBXBuildFile; fileRef = D9A4F781185FDDA90060AA2D /* defaultHeadshot.png */; };
-		D9CDEBF0187A4B6C00AE4163 /* gameWords.json in Resources */ = {isa = PBXBuildFile; fileRef = D9CDEBF2187A4B6C00AE4163 /* gameWords.json */; };
-		D9D432F719AC0E4200E0A408 /* help1.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D432F319AC0E4200E0A408 /* help1.png */; };
-		D9D432F819AC0E4200E0A408 /* help4.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D432F419AC0E4200E0A408 /* help4.png */; };
-		D9D432F919AC0E4200E0A408 /* help2.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D432F519AC0E4200E0A408 /* help2.png */; };
-		D9D432FA19AC0E4200E0A408 /* help3.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D432F619AC0E4200E0A408 /* help3.png */; };
-		D9DA09FF1E0DD10700410A37 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D9DA09FE1E0DD10700410A37 /* background.jpg */; };
-		D9DD5CBC1B9A209B00CBDE5A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DD5CBB1B9A209B00CBDE5A /* StoreKit.framework */; };
-		D9DD5CBF1B9A400600CBDE5A /* gameWordsMore.json in Resources */ = {isa = PBXBuildFile; fileRef = D9DD5CBD1B9A400600CBDE5A /* gameWordsMore.json */; };
-		D9FAE94D235BFF9700C7B82E /* SwiftyStoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = D9FAE94C235BFF9700C7B82E /* SwiftyStoreKit */; };
+		D95B5BE02B51F114006EFE01 /* ImpostorGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95B5BDF2B51F114006EFE01 /* ImpostorGame.swift */; };
+		D95B5BE62B5322A3006EFE01 /* CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95B5BE52B5322A3006EFE01 /* CameraPicker.swift */; };
+		D95B5BE82B53270C006EFE01 /* HelpScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95B5BE72B53270C006EFE01 /* HelpScene.swift */; };
+		D95B5BEA2B532FD5006EFE01 /* ResultsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95B5BE92B532FD5006EFE01 /* ResultsScene.swift */; };
+		D95B5BEC2B533050006EFE01 /* ImpostorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95B5BEB2B533050006EFE01 /* ImpostorButton.swift */; };
+		D96817B82B4A009C00E05B99 /* ShowSecretWordScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96817B72B4A009C00E05B99 /* ShowSecretWordScene.swift */; };
+		D99E129A2B5C5B450061FD02 /* tmp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E12992B5C5B450061FD02 /* tmp.swift */; };
+		D9A1091F2B49DBF900264D54 /* ConfigurationScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A1091E2B49DBF900264D54 /* ConfigurationScene.swift */; };
+		D9A109212B49E0E800264D54 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D9A109202B49E0E800264D54 /* Localizable.xcstrings */; };
+		D9A109232B49E3D000264D54 /* buttonPress.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A109222B49E3D000264D54 /* buttonPress.mp3 */; };
+		D9A109252B49E3DE00264D54 /* camera.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A109242B49E3DE00264D54 /* camera.mp3 */; };
+		D9A109272B49E3EB00264D54 /* eliminate.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A109262B49E3EB00264D54 /* eliminate.mp3 */; };
+		D9A109292B49E3F500264D54 /* intro.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A109282B49E3F500264D54 /* intro.mp3 */; };
+		D9A1092B2B49E3F900264D54 /* peek.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A1092A2B49E3F900264D54 /* peek.mp3 */; };
+		D9A1092D2B49E3FF00264D54 /* results-impostor-won.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A1092C2B49E3FF00264D54 /* results-impostor-won.mp3 */; };
+		D9A1092F2B49E40400264D54 /* results-impostor-defeated.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9A1092E2B49E40400264D54 /* results-impostor-defeated.mp3 */; };
+		D9A109312B49E98E00264D54 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A109302B49E98E00264D54 /* AudioManager.swift */; };
+		D9A16D792B5E0FE0000D974C /* SharePhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A16D782B5E0FE0000D974C /* SharePhotoView.swift */; };
+		D9B910CA2B46606500E117DF /* gameWords.json in Resources */ = {isa = PBXBuildFile; fileRef = D9B910CC2B46606500E117DF /* gameWords.json */; };
+		D9B910D82B4660E300E117DF /* gameWordsMore.json in Resources */ = {isa = PBXBuildFile; fileRef = D9B910DA2B4660E300E117DF /* gameWordsMore.json */; };
+		D9B910E52B4661FC00E117DF /* GameModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B910E42B4661FC00E117DF /* GameModelTests.swift */; };
+		D9B910E82B46698D00E117DF /* defaultHeadshot.png in Resources */ = {isa = PBXBuildFile; fileRef = D9B910E72B46698D00E117DF /* defaultHeadshot.png */; };
+		D9B910EA2B46725A00E117DF /* PlayerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B910E92B46725A00E117DF /* PlayerCard.swift */; };
+		D9CCC46E2B47A1FE0061E15D /* FitGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CCC46D2B47A1FE0061E15D /* FitGrid.swift */; };
+		D9F4BFBD2B41BDB800E500DA /* ImpostorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4BFBC2B41BDB800E500DA /* ImpostorApp.swift */; };
+		D9F4BFC12B41BDB900E500DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F4BFC02B41BDB900E500DA /* Assets.xcassets */; };
+		D9F4BFC42B41BDB900E500DA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F4BFC32B41BDB900E500DA /* Preview Assets.xcassets */; };
+		D9F4BFCE2B41BDB900E500DA /* ImpostorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4BFCD2B41BDB900E500DA /* ImpostorTests.swift */; };
+		D9F4BFD82B41BDB900E500DA /* ImpostorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4BFD72B41BDB900E500DA /* ImpostorUITests.swift */; };
+		D9F4BFDA2B41BDB900E500DA /* ImpostorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4BFD92B41BDB900E500DA /* ImpostorUITestsLaunchTests.swift */; };
+		D9F4BFEC2B4233B300E500DA /* PlayerImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4BFEB2B4233B300E500DA /* PlayerImages.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D91E58A91D19B8A20068FFEF /* PBXContainerItemProxy */ = {
+		D9F4BFCA2B41BDB900E500DA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D98CA3F0185D338600746059 /* Project object */;
+			containerPortal = D9F4BFB12B41BDB800E500DA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D98CA3F7185D338600746059;
+			remoteGlobalIDString = D9F4BFB82B41BDB800E500DA;
 			remoteInfo = Impostor;
 		};
-		D91E58C51D19B9C80068FFEF /* PBXContainerItemProxy */ = {
+		D9F4BFD42B41BDB900E500DA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D98CA3F0185D338600746059 /* Project object */;
+			containerPortal = D9F4BFB12B41BDB800E500DA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D98CA3F7185D338600746059;
+			remoteGlobalIDString = D9F4BFB82B41BDB800E500DA;
 			remoteInfo = Impostor;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D900BA111D187DE20092EB78 /* GameConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameConfigurationViewController.swift; sourceTree = "<group>"; };
-		D900BA131D1899AD0092EB78 /* EliminationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EliminationViewController.swift; sourceTree = "<group>"; };
-		D900BA151D18A0D50092EB78 /* CollageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollageViewController.swift; sourceTree = "<group>"; };
-		D900BA171D198F9C0092EB78 /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
-		D90C9E9218A98C5000DEF541 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/gameWords.json; sourceTree = "<group>"; };
-		D9171ED22B41478800AF4391 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
-		D9171ED42B414BFD00AF4391 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
-		D9171ED62B414BFD00AF4391 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/Main.xcstrings; sourceTree = "<group>"; };
-		D9171ED72B414BFD00AF4391 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
-		D9172ECD1C7916FB0018F8C3 /* Impostor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Impostor-Bridging-Header.h"; sourceTree = "<group>"; };
-		D9172ECE1C7916FB0018F8C3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D9172EFC1C7919180018F8C3 /* ImpostorGameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImpostorGameModel.swift; sourceTree = "<group>"; };
-		D91E58A41D19B8A20068FFEF /* ImpostorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImpostorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D91E58A61D19B8A20068FFEF /* ImpostorGameModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorGameModelTests.swift; sourceTree = "<group>"; };
-		D91E58A81D19B8A20068FFEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D91E58C01D19B9C80068FFEF /* ImpostorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImpostorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D91E58C21D19B9C80068FFEF /* ImpostorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorUITests.swift; sourceTree = "<group>"; };
-		D91E58C41D19B9C80068FFEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D91E58CA1D19BA190068FFEF /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
-		D93B5CEE189D679F00E90ACD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ru; path = ru.lproj/gameWords.json; sourceTree = "<group>"; };
-		D93B5CF3189D696B00E90ACD /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ko; path = ko.lproj/gameWords.json; sourceTree = "<group>"; };
-		D93B5CF7189EA8A900E90ACD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ja; path = ja.lproj/gameWords.json; sourceTree = "<group>"; };
-		D94EE3821F0067D500F43674 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		D94EE3841F00755800F43674 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
-		D94EE3861F00B16900F43674 /* results-impostor-won.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "results-impostor-won.mp3"; sourceTree = "<group>"; };
-		D9593A39241DCBD30066E1B2 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "pt-BR"; path = "pt-BR.lproj/gameWords.json"; sourceTree = "<group>"; };
-		D9593A3A241DCBD30066E1B2 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "pt-BR"; path = "pt-BR.lproj/gameWordsMore.json"; sourceTree = "<group>"; };
-		D9645FE61C7937250067F18B /* TeaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeaseViewController.swift; sourceTree = "<group>"; };
-		D9645FE81C7937C90067F18B /* CachedPersistentJPEGImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachedPersistentJPEGImageStore.swift; sourceTree = "<group>"; };
-		D970EFE81FBE640D0059F364 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D978345C1909CA01009C3024 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
-		D978345E1909CA08009C3024 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		D97834601909CA0F009C3024 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		D97AAAA31CCDBDE400B922B6 /* MainGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainGameViewController.swift; sourceTree = "<group>"; };
-		D97AAAA51CCDC10200B922B6 /* SecretWordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecretWordViewController.swift; sourceTree = "<group>"; };
-		D98CA3F8185D338600746059 /* Impostor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Impostor.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D98CA3FB185D338600746059 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		D98CA3FD185D338600746059 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		D98CA3FF185D338600746059 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		D98CA403185D338600746059 /* Impostor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Impostor-Info.plist"; sourceTree = "<group>"; };
-		D98CA409185D338600746059 /* Impostor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Impostor-Prefix.pch"; sourceTree = "<group>"; };
-		D98CA40E185D338600746059 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D98CA416185D338600746059 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D99672FF1AB343050033780B /* teaseColors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teaseColors.png; sourceTree = "<group>"; };
-		D99673031AB3441A0033780B /* teaseSpy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teaseSpy.png; sourceTree = "<group>"; };
-		D9A2405E18D50DF7005D4DCD /* camera.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = camera.mp3; sourceTree = "<group>"; };
-		D9A2406318D510FF005D4DCD /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = nl; path = nl.lproj/gameWords.json; sourceTree = "<group>"; };
-		D9A4F770185E7D9F0060AA2D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		D9A4F772185E7DEA0060AA2D /* intro.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = intro.mp3; sourceTree = "<group>"; };
-		D9A4F774185E7EDE0060AA2D /* buttonPress.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = buttonPress.mp3; sourceTree = "<group>"; };
-		D9A4F776185E7EFA0060AA2D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		D9A4F778185E80040060AA2D /* peek.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = peek.mp3; sourceTree = "<group>"; };
-		D9A4F77A185E80650060AA2D /* eliminate.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = eliminate.mp3; sourceTree = "<group>"; };
-		D9A4F77C185E80D10060AA2D /* results.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = results.mp3; sourceTree = "<group>"; };
-		D9A4F781185FDDA90060AA2D /* defaultHeadshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultHeadshot.png; sourceTree = "<group>"; };
-		D9CDEBF1187A4B6C00AE4163 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/gameWords.json; sourceTree = "<group>"; };
-		D9CDEBF3187A4B8200AE4163 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "zh-Hans"; path = "zh-Hans.lproj/gameWords.json"; sourceTree = "<group>"; };
-		D9CDEBFC187B8A2800AE4163 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		D9CDEBFE187B8A2F00AE4163 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		D9D29A40189C66F60054BEFF /* es */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = es; path = es.lproj/gameWords.json; sourceTree = "<group>"; };
-		D9D432F319AC0E4200E0A408 /* help1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help1.png; sourceTree = "<group>"; };
-		D9D432F419AC0E4200E0A408 /* help4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help4.png; sourceTree = "<group>"; };
-		D9D432F519AC0E4200E0A408 /* help2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help2.png; sourceTree = "<group>"; };
-		D9D432F619AC0E4200E0A408 /* help3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help3.png; sourceTree = "<group>"; };
-		D9DA09FE1E0DD10700410A37 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
-		D9DA621618A0061E0087706B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/gameWords.json; sourceTree = "<group>"; };
-		D9DD5CBB1B9A209B00CBDE5A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		D9DD5CBE1B9A400600CBDE5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/gameWordsMore.json; sourceTree = "<group>"; };
-		D9DD5CC01B9A401A00CBDE5A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "zh-Hans"; path = "zh-Hans.lproj/gameWordsMore.json"; sourceTree = "<group>"; };
-		D9DD5CC11B9A401A00CBDE5A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = es; path = es.lproj/gameWordsMore.json; sourceTree = "<group>"; };
-		D9DD5CC21B9A401B00CBDE5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ru; path = ru.lproj/gameWordsMore.json; sourceTree = "<group>"; };
-		D9DD5CC31B9A401B00CBDE5A /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ko; path = ko.lproj/gameWordsMore.json; sourceTree = "<group>"; };
-		D9DD5CC41B9A401C00CBDE5A /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ja; path = ja.lproj/gameWordsMore.json; sourceTree = "<group>"; };
-		D9DD5CC51B9A401D00CBDE5A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/gameWordsMore.json; sourceTree = "<group>"; };
-		D9DD5CC61B9A401E00CBDE5A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/gameWordsMore.json; sourceTree = "<group>"; };
-		D9DD5CC71B9A401E00CBDE5A /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = nl; path = nl.lproj/gameWordsMore.json; sourceTree = "<group>"; };
+		D95B5BDF2B51F114006EFE01 /* ImpostorGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorGame.swift; sourceTree = "<group>"; };
+		D95B5BE52B5322A3006EFE01 /* CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPicker.swift; sourceTree = "<group>"; };
+		D95B5BE72B53270C006EFE01 /* HelpScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpScene.swift; sourceTree = "<group>"; };
+		D95B5BE92B532FD5006EFE01 /* ResultsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsScene.swift; sourceTree = "<group>"; };
+		D95B5BEB2B533050006EFE01 /* ImpostorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorButton.swift; sourceTree = "<group>"; };
+		D96817B72B4A009C00E05B99 /* ShowSecretWordScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSecretWordScene.swift; sourceTree = "<group>"; };
+		D99E12992B5C5B450061FD02 /* tmp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmp.swift; sourceTree = "<group>"; };
+		D9A1091E2B49DBF900264D54 /* ConfigurationScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationScene.swift; sourceTree = "<group>"; };
+		D9A109202B49E0E800264D54 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		D9A109222B49E3D000264D54 /* buttonPress.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = buttonPress.mp3; sourceTree = "<group>"; };
+		D9A109242B49E3DE00264D54 /* camera.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = camera.mp3; sourceTree = "<group>"; };
+		D9A109262B49E3EB00264D54 /* eliminate.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = eliminate.mp3; sourceTree = "<group>"; };
+		D9A109282B49E3F500264D54 /* intro.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = intro.mp3; sourceTree = "<group>"; };
+		D9A1092A2B49E3F900264D54 /* peek.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = peek.mp3; sourceTree = "<group>"; };
+		D9A1092C2B49E3FF00264D54 /* results-impostor-won.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "results-impostor-won.mp3"; sourceTree = "<group>"; };
+		D9A1092E2B49E40400264D54 /* results-impostor-defeated.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "results-impostor-defeated.mp3"; sourceTree = "<group>"; };
+		D9A109302B49E98E00264D54 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		D9A16D782B5E0FE0000D974C /* SharePhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePhotoView.swift; sourceTree = "<group>"; };
+		D9B910CB2B46606500E117DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/gameWords.json; sourceTree = "<group>"; };
+		D9B910CD2B46606900E117DF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "zh-Hans"; path = "zh-Hans.lproj/gameWords.json"; sourceTree = "<group>"; };
+		D9B910CE2B46606A00E117DF /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = nl; path = nl.lproj/gameWords.json; sourceTree = "<group>"; };
+		D9B910CF2B46606A00E117DF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/gameWords.json; sourceTree = "<group>"; };
+		D9B910D02B46606B00E117DF /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/gameWords.json; sourceTree = "<group>"; };
+		D9B910D12B46606C00E117DF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ja; path = ja.lproj/gameWords.json; sourceTree = "<group>"; };
+		D9B910D22B46606C00E117DF /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ko; path = ko.lproj/gameWords.json; sourceTree = "<group>"; };
+		D9B910D32B46606D00E117DF /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "pt-BR"; path = "pt-BR.lproj/gameWords.json"; sourceTree = "<group>"; };
+		D9B910D42B46606D00E117DF /* es */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = es; path = es.lproj/gameWords.json; sourceTree = "<group>"; };
+		D9B910D52B46606E00E117DF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ru; path = ru.lproj/gameWords.json; sourceTree = "<group>"; };
+		D9B910D92B4660E300E117DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/gameWordsMore.json; sourceTree = "<group>"; };
+		D9B910DB2B4660E500E117DF /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = nl; path = nl.lproj/gameWordsMore.json; sourceTree = "<group>"; };
+		D9B910DC2B4660E600E117DF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "zh-Hans"; path = "zh-Hans.lproj/gameWordsMore.json"; sourceTree = "<group>"; };
+		D9B910DD2B4660E700E117DF /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/gameWordsMore.json; sourceTree = "<group>"; };
+		D9B910DE2B4660E700E117DF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ja; path = ja.lproj/gameWordsMore.json; sourceTree = "<group>"; };
+		D9B910DF2B4660E800E117DF /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ko; path = ko.lproj/gameWordsMore.json; sourceTree = "<group>"; };
+		D9B910E02B4660E800E117DF /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "pt-BR"; path = "pt-BR.lproj/gameWordsMore.json"; sourceTree = "<group>"; };
+		D9B910E12B4660E900E117DF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ru; path = ru.lproj/gameWordsMore.json; sourceTree = "<group>"; };
+		D9B910E22B4660EA00E117DF /* es */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = es; path = es.lproj/gameWordsMore.json; sourceTree = "<group>"; };
+		D9B910E32B4660EA00E117DF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/gameWordsMore.json; sourceTree = "<group>"; };
+		D9B910E42B4661FC00E117DF /* GameModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModelTests.swift; sourceTree = "<group>"; };
+		D9B910E72B46698D00E117DF /* defaultHeadshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultHeadshot.png; sourceTree = "<group>"; };
+		D9B910E92B46725A00E117DF /* PlayerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCard.swift; sourceTree = "<group>"; };
+		D9CCC46D2B47A1FE0061E15D /* FitGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitGrid.swift; sourceTree = "<group>"; };
+		D9F4BFB92B41BDB800E500DA /* Impostor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Impostor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9F4BFBC2B41BDB800E500DA /* ImpostorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorApp.swift; sourceTree = "<group>"; };
+		D9F4BFC02B41BDB900E500DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D9F4BFC32B41BDB900E500DA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D9F4BFC92B41BDB900E500DA /* ImpostorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImpostorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9F4BFCD2B41BDB900E500DA /* ImpostorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorTests.swift; sourceTree = "<group>"; };
+		D9F4BFD32B41BDB900E500DA /* ImpostorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImpostorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9F4BFD72B41BDB900E500DA /* ImpostorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorUITests.swift; sourceTree = "<group>"; };
+		D9F4BFD92B41BDB900E500DA /* ImpostorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D9F4BFEB2B4233B300E500DA /* PlayerImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerImages.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D91E58A11D19B8A20068FFEF /* Frameworks */ = {
+		D9F4BFB62B41BDB800E500DA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D91E58BD1D19B9C80068FFEF /* Frameworks */ = {
+		D9F4BFC62B41BDB900E500DA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D98CA3F5185D338600746059 /* Frameworks */ = {
+		D9F4BFD02B41BDB900E500DA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D94EE3851F00755800F43674 /* iAd.framework in Frameworks */,
-				D94EE3831F0067D500F43674 /* AdSupport.framework in Frameworks */,
-				D98CA3FC185D338600746059 /* Foundation.framework in Frameworks */,
-				D96D8D0E2B411FE0008F0F83 /* NKButton in Frameworks */,
-				D91AB7C22B411A22005F8EED /* CDAlertView in Frameworks */,
-				D9FAE94D235BFF9700C7B82E /* SwiftyStoreKit in Frameworks */,
-				D9DD5CBC1B9A209B00CBDE5A /* StoreKit.framework in Frameworks */,
-				D9171ED12B41453800AF4391 /* CenteredCollectionView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D91E58A51D19B8A20068FFEF /* ImpostorTests */ = {
+		D92617FB2B465C1D00E1569B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D91E58A61D19B8A20068FFEF /* ImpostorGameModelTests.swift */,
-				D91E58A81D19B8A20068FFEF /* Info.plist */,
+				D95B5BEB2B533050006EFE01 /* ImpostorButton.swift */,
+				D9A16D782B5E0FE0000D974C /* SharePhotoView.swift */,
+				D9A1091E2B49DBF900264D54 /* ConfigurationScene.swift */,
+				D99E12992B5C5B450061FD02 /* tmp.swift */,
+				D95B5BE72B53270C006EFE01 /* HelpScene.swift */,
+				D96817B72B4A009C00E05B99 /* ShowSecretWordScene.swift */,
+				D95B5BE92B532FD5006EFE01 /* ResultsScene.swift */,
+				D9B910E92B46725A00E117DF /* PlayerCard.swift */,
+				D9CCC46D2B47A1FE0061E15D /* FitGrid.swift */,
+				D95B5BE52B5322A3006EFE01 /* CameraPicker.swift */,
 			);
-			path = ImpostorTests;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		D91E58C11D19B9C80068FFEF /* ImpostorUITests */ = {
+		D92617FC2B465DE500E1569B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D91E58C21D19B9C80068FFEF /* ImpostorUITests.swift */,
-				D91E58CA1D19BA190068FFEF /* SnapshotHelper.swift */,
-				D91E58C41D19B9C80068FFEF /* Info.plist */,
+				D9A109242B49E3DE00264D54 /* camera.mp3 */,
+				D9A109222B49E3D000264D54 /* buttonPress.mp3 */,
+				D9A109262B49E3EB00264D54 /* eliminate.mp3 */,
+				D9A109282B49E3F500264D54 /* intro.mp3 */,
+				D9A1092A2B49E3F900264D54 /* peek.mp3 */,
+				D9A1092C2B49E3FF00264D54 /* results-impostor-won.mp3 */,
+				D9A1092E2B49E40400264D54 /* results-impostor-defeated.mp3 */,
+				D9A109202B49E0E800264D54 /* Localizable.xcstrings */,
+				D9B910E72B46698D00E117DF /* defaultHeadshot.png */,
+				D9B910DA2B4660E300E117DF /* gameWordsMore.json */,
+				D9B910CC2B46606500E117DF /* gameWords.json */,
 			);
-			path = ImpostorUITests;
+			path = Resources;
 			sourceTree = "<group>";
 		};
-		D98CA3EF185D338600746059 = {
+		D9F4BFB02B41BDB800E500DA = {
 			isa = PBXGroup;
 			children = (
-				D98CA401185D338600746059 /* Impostor */,
-				D91E58A51D19B8A20068FFEF /* ImpostorTests */,
-				D91E58C11D19B9C80068FFEF /* ImpostorUITests */,
-				D98CA3FA185D338600746059 /* Frameworks */,
-				D98CA3F9185D338600746059 /* Products */,
+				D9F4BFBB2B41BDB800E500DA /* Impostor */,
+				D9F4BFCC2B41BDB900E500DA /* ImpostorTests */,
+				D9F4BFD62B41BDB900E500DA /* ImpostorUITests */,
+				D9F4BFBA2B41BDB800E500DA /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		D98CA3F9185D338600746059 /* Products */ = {
+		D9F4BFBA2B41BDB800E500DA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D98CA3F8185D338600746059 /* Impostor.app */,
-				D91E58A41D19B8A20068FFEF /* ImpostorTests.xctest */,
-				D91E58C01D19B9C80068FFEF /* ImpostorUITests.xctest */,
+				D9F4BFB92B41BDB800E500DA /* Impostor.app */,
+				D9F4BFC92B41BDB900E500DA /* ImpostorTests.xctest */,
+				D9F4BFD32B41BDB900E500DA /* ImpostorUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D98CA3FA185D338600746059 /* Frameworks */ = {
+		D9F4BFBB2B41BDB800E500DA /* Impostor */ = {
 			isa = PBXGroup;
 			children = (
-				D94EE3841F00755800F43674 /* iAd.framework */,
-				D94EE3821F0067D500F43674 /* AdSupport.framework */,
-				D9DD5CBB1B9A209B00CBDE5A /* StoreKit.framework */,
-				D97834601909CA0F009C3024 /* QuartzCore.framework */,
-				D978345E1909CA08009C3024 /* MessageUI.framework */,
-				D978345C1909CA01009C3024 /* Twitter.framework */,
-				D9CDEBFE187B8A2F00AE4163 /* SystemConfiguration.framework */,
-				D9CDEBFC187B8A2800AE4163 /* CoreData.framework */,
-				D9A4F776185E7EFA0060AA2D /* AudioToolbox.framework */,
-				D9A4F770185E7D9F0060AA2D /* AVFoundation.framework */,
-				D98CA3FB185D338600746059 /* Foundation.framework */,
-				D98CA3FD185D338600746059 /* CoreGraphics.framework */,
-				D98CA3FF185D338600746059 /* UIKit.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D98CA401185D338600746059 /* Impostor */ = {
-			isa = PBXGroup;
-			children = (
-				D9172ECE1C7916FB0018F8C3 /* AppDelegate.swift */,
-				D98CA40D185D338600746059 /* Main.storyboard */,
-				D970EFE81FBE640D0059F364 /* LaunchScreen.storyboard */,
-				D9171ED72B414BFD00AF4391 /* Localizable.xcstrings */,
-				D98CA416185D338600746059 /* Images.xcassets */,
-				D9172EFC1C7919180018F8C3 /* ImpostorGameModel.swift */,
-				D9645FE81C7937C90067F18B /* CachedPersistentJPEGImageStore.swift */,
-				D9645FE61C7937250067F18B /* TeaseViewController.swift */,
-				D97AAAA31CCDBDE400B922B6 /* MainGameViewController.swift */,
-				D900BA111D187DE20092EB78 /* GameConfigurationViewController.swift */,
-				D9171ED22B41478800AF4391 /* IntroViewController.swift */,
-				D97AAAA51CCDC10200B922B6 /* SecretWordViewController.swift */,
-				D900BA131D1899AD0092EB78 /* EliminationViewController.swift */,
-				D900BA171D198F9C0092EB78 /* ResultsViewController.swift */,
-				D900BA151D18A0D50092EB78 /* CollageViewController.swift */,
-				D98CA402185D338600746059 /* Supporting Files */,
-				D9172ECD1C7916FB0018F8C3 /* Impostor-Bridging-Header.h */,
+				D9F4BFBC2B41BDB800E500DA /* ImpostorApp.swift */,
+				D92617FB2B465C1D00E1569B /* Views */,
+				D9F4BFEA2B42338800E500DA /* Model */,
+				D92617FC2B465DE500E1569B /* Resources */,
+				D9F4BFC02B41BDB900E500DA /* Assets.xcassets */,
+				D9F4BFC22B41BDB900E500DA /* Preview Content */,
 			);
 			path = Impostor;
 			sourceTree = "<group>";
 		};
-		D98CA402185D338600746059 /* Supporting Files */ = {
+		D9F4BFC22B41BDB900E500DA /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				D9D432F319AC0E4200E0A408 /* help1.png */,
-				D9D432F419AC0E4200E0A408 /* help4.png */,
-				D9D432F519AC0E4200E0A408 /* help2.png */,
-				D9D432F619AC0E4200E0A408 /* help3.png */,
-				D99673031AB3441A0033780B /* teaseSpy.png */,
-				D99672FF1AB343050033780B /* teaseColors.png */,
-				D98CA403185D338600746059 /* Impostor-Info.plist */,
-				D9DA09FE1E0DD10700410A37 /* background.jpg */,
-				D9171ED42B414BFD00AF4391 /* InfoPlist.xcstrings */,
-				D98CA409185D338600746059 /* Impostor-Prefix.pch */,
-				D9A4F781185FDDA90060AA2D /* defaultHeadshot.png */,
-				D9A4F772185E7DEA0060AA2D /* intro.mp3 */,
-				D9A4F774185E7EDE0060AA2D /* buttonPress.mp3 */,
-				D9A4F778185E80040060AA2D /* peek.mp3 */,
-				D9A4F77A185E80650060AA2D /* eliminate.mp3 */,
-				D9A4F77C185E80D10060AA2D /* results.mp3 */,
-				D94EE3861F00B16900F43674 /* results-impostor-won.mp3 */,
-				D9A2405E18D50DF7005D4DCD /* camera.mp3 */,
-				D9CDEBF2187A4B6C00AE4163 /* gameWords.json */,
-				D9DD5CBD1B9A400600CBDE5A /* gameWordsMore.json */,
+				D9F4BFC32B41BDB900E500DA /* Preview Assets.xcassets */,
 			);
-			name = "Supporting Files";
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D9F4BFCC2B41BDB900E500DA /* ImpostorTests */ = {
+			isa = PBXGroup;
+			children = (
+				D9F4BFCD2B41BDB900E500DA /* ImpostorTests.swift */,
+				D9B910E42B4661FC00E117DF /* GameModelTests.swift */,
+			);
+			path = ImpostorTests;
+			sourceTree = "<group>";
+		};
+		D9F4BFD62B41BDB900E500DA /* ImpostorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D9F4BFD72B41BDB900E500DA /* ImpostorUITests.swift */,
+				D9F4BFD92B41BDB900E500DA /* ImpostorUITestsLaunchTests.swift */,
+			);
+			path = ImpostorUITests;
+			sourceTree = "<group>";
+		};
+		D9F4BFEA2B42338800E500DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D95B5BDF2B51F114006EFE01 /* ImpostorGame.swift */,
+				D9F4BFEB2B4233B300E500DA /* PlayerImages.swift */,
+				D9A109302B49E98E00264D54 /* AudioManager.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D91E58A31D19B8A20068FFEF /* ImpostorTests */ = {
+		D9F4BFB82B41BDB800E500DA /* Impostor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D91E58AB1D19B8A20068FFEF /* Build configuration list for PBXNativeTarget "ImpostorTests" */;
+			buildConfigurationList = D9F4BFDD2B41BDB900E500DA /* Build configuration list for PBXNativeTarget "Impostor" */;
 			buildPhases = (
-				F9670E8303031C95BC793E15 /* [CP] Check Pods Manifest.lock */,
-				D91E58A01D19B8A20068FFEF /* Sources */,
-				D91E58A11D19B8A20068FFEF /* Frameworks */,
-				D91E58A21D19B8A20068FFEF /* Resources */,
-				87C0FA0956205D71997067EF /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D91E58AA1D19B8A20068FFEF /* PBXTargetDependency */,
-			);
-			name = ImpostorTests;
-			productName = ImpostorTests;
-			productReference = D91E58A41D19B8A20068FFEF /* ImpostorTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		D91E58BF1D19B9C80068FFEF /* ImpostorUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D91E58C71D19B9C80068FFEF /* Build configuration list for PBXNativeTarget "ImpostorUITests" */;
-			buildPhases = (
-				D91E58BC1D19B9C80068FFEF /* Sources */,
-				D91E58BD1D19B9C80068FFEF /* Frameworks */,
-				D91E58BE1D19B9C80068FFEF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D91E58C61D19B9C80068FFEF /* PBXTargetDependency */,
-			);
-			name = ImpostorUITests;
-			productName = ImpostorUITests;
-			productReference = D91E58C01D19B9C80068FFEF /* ImpostorUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-		D98CA3F7185D338600746059 /* Impostor */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D98CA42D185D338600746059 /* Build configuration list for PBXNativeTarget "Impostor" */;
-			buildPhases = (
-				D98CA3F4185D338600746059 /* Sources */,
-				D98CA3F5185D338600746059 /* Frameworks */,
-				D98CA3F6185D338600746059 /* Resources */,
+				D9F4BFB52B41BDB800E500DA /* Sources */,
+				D9F4BFB62B41BDB800E500DA /* Frameworks */,
+				D9F4BFB72B41BDB800E500DA /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Impostor;
-			packageProductDependencies = (
-				D9FAE94C235BFF9700C7B82E /* SwiftyStoreKit */,
-				D91AB7C12B411A22005F8EED /* CDAlertView */,
-				D96D8D0D2B411FE0008F0F83 /* NKButton */,
-				D9171ED02B41453800AF4391 /* CenteredCollectionView */,
-			);
 			productName = Impostor;
-			productReference = D98CA3F8185D338600746059 /* Impostor.app */;
+			productReference = D9F4BFB92B41BDB800E500DA /* Impostor.app */;
 			productType = "com.apple.product-type.application";
+		};
+		D9F4BFC82B41BDB900E500DA /* ImpostorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9F4BFE02B41BDB900E500DA /* Build configuration list for PBXNativeTarget "ImpostorTests" */;
+			buildPhases = (
+				D9F4BFC52B41BDB900E500DA /* Sources */,
+				D9F4BFC62B41BDB900E500DA /* Frameworks */,
+				D9F4BFC72B41BDB900E500DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D9F4BFCB2B41BDB900E500DA /* PBXTargetDependency */,
+			);
+			name = ImpostorTests;
+			productName = ImpostorTests;
+			productReference = D9F4BFC92B41BDB900E500DA /* ImpostorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D9F4BFD22B41BDB900E500DA /* ImpostorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9F4BFE32B41BDB900E500DA /* Build configuration list for PBXNativeTarget "ImpostorUITests" */;
+			buildPhases = (
+				D9F4BFCF2B41BDB900E500DA /* Sources */,
+				D9F4BFD02B41BDB900E500DA /* Frameworks */,
+				D9F4BFD12B41BDB900E500DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D9F4BFD52B41BDB900E500DA /* PBXTargetDependency */,
+			);
+			name = ImpostorUITests;
+			productName = ImpostorUITests;
+			productReference = D9F4BFD32B41BDB900E500DA /* ImpostorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D98CA3F0185D338600746059 /* Project object */ = {
+		D9F4BFB12B41BDB800E500DA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 1510;
-				ORGANIZATIONNAME = "William Entriken";
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1510;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
-					D91E58A31D19B8A20068FFEF = {
-						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 1020;
-						TestTargetID = D98CA3F7185D338600746059;
+					D9F4BFB82B41BDB800E500DA = {
+						CreatedOnToolsVersion = 15.1;
 					};
-					D91E58BF1D19B9C80068FFEF = {
-						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 1020;
-						TestTargetID = D98CA3F7185D338600746059;
+					D9F4BFC82B41BDB900E500DA = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = D9F4BFB82B41BDB800E500DA;
 					};
-					D98CA3F7185D338600746059 = {
-						DevelopmentTeam = 8Q693ZG5RN;
-						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
-						SystemCapabilities = {
-							com.apple.InAppPurchase = {
-								enabled = 1;
-							};
-						};
+					D9F4BFD22B41BDB900E500DA = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = D9F4BFB82B41BDB800E500DA;
 					};
 				};
 			};
-			buildConfigurationList = D98CA3F3185D338600746059 /* Build configuration list for PBXProject "Impostor" */;
-			compatibilityVersion = "Xcode 3.2";
+			buildConfigurationList = D9F4BFB42B41BDB800E500DA /* Build configuration list for PBXProject "Impostor" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 				"zh-Hans",
 				es,
 				ru,
@@ -406,200 +335,143 @@
 				fr,
 				nl,
 				"pt-BR",
+				Base,
 			);
-			mainGroup = D98CA3EF185D338600746059;
-			packageReferences = (
-				D9FAE94B235BFF9700C7B82E /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */,
-				D91AB7C02B411A22005F8EED /* XCRemoteSwiftPackageReference "CDAlertView" */,
-				D96D8D0C2B411FE0008F0F83 /* XCRemoteSwiftPackageReference "NKButton" */,
-				D9171ECF2B41453800AF4391 /* XCRemoteSwiftPackageReference "CenteredCollectionView" */,
-			);
-			productRefGroup = D98CA3F9185D338600746059 /* Products */;
+			mainGroup = D9F4BFB02B41BDB800E500DA;
+			productRefGroup = D9F4BFBA2B41BDB800E500DA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D98CA3F7185D338600746059 /* Impostor */,
-				D91E58A31D19B8A20068FFEF /* ImpostorTests */,
-				D91E58BF1D19B9C80068FFEF /* ImpostorUITests */,
+				D9F4BFB82B41BDB800E500DA /* Impostor */,
+				D9F4BFC82B41BDB900E500DA /* ImpostorTests */,
+				D9F4BFD22B41BDB900E500DA /* ImpostorUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D91E58A21D19B8A20068FFEF /* Resources */ = {
+		D9F4BFB72B41BDB800E500DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9F4BFC42B41BDB900E500DA /* Preview Assets.xcassets in Resources */,
+				D9A109252B49E3DE00264D54 /* camera.mp3 in Resources */,
+				D9A1092B2B49E3F900264D54 /* peek.mp3 in Resources */,
+				D9B910CA2B46606500E117DF /* gameWords.json in Resources */,
+				D9A109272B49E3EB00264D54 /* eliminate.mp3 in Resources */,
+				D9A109232B49E3D000264D54 /* buttonPress.mp3 in Resources */,
+				D9A109212B49E0E800264D54 /* Localizable.xcstrings in Resources */,
+				D9A1092F2B49E40400264D54 /* results-impostor-defeated.mp3 in Resources */,
+				D9B910D82B4660E300E117DF /* gameWordsMore.json in Resources */,
+				D9B910E82B46698D00E117DF /* defaultHeadshot.png in Resources */,
+				D9F4BFC12B41BDB900E500DA /* Assets.xcassets in Resources */,
+				D9A109292B49E3F500264D54 /* intro.mp3 in Resources */,
+				D9A1092D2B49E3FF00264D54 /* results-impostor-won.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9F4BFC72B41BDB900E500DA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D91E58BE1D19B9C80068FFEF /* Resources */ = {
+		D9F4BFD12B41BDB900E500DA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D98CA3F6185D338600746059 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D9A4F77B185E80650060AA2D /* eliminate.mp3 in Resources */,
-				D9171ED82B414BFD00AF4391 /* Localizable.xcstrings in Resources */,
-				D9A4F782185FDDA90060AA2D /* defaultHeadshot.png in Resources */,
-				D970EFE91FBE640D0059F364 /* LaunchScreen.storyboard in Resources */,
-				D9D432F819AC0E4200E0A408 /* help4.png in Resources */,
-				D99673011AB343050033780B /* teaseColors.png in Resources */,
-				D99673041AB3441A0033780B /* teaseSpy.png in Resources */,
-				D9A4F779185E80040060AA2D /* peek.mp3 in Resources */,
-				D9CDEBF0187A4B6C00AE4163 /* gameWords.json in Resources */,
-				D98CA417185D338600746059 /* Images.xcassets in Resources */,
-				D9DA09FF1E0DD10700410A37 /* background.jpg in Resources */,
-				D9D432F919AC0E4200E0A408 /* help2.png in Resources */,
-				D9A4F773185E7DEA0060AA2D /* intro.mp3 in Resources */,
-				D9D432FA19AC0E4200E0A408 /* help3.png in Resources */,
-				D9A4F775185E7EDE0060AA2D /* buttonPress.mp3 in Resources */,
-				D9DD5CBF1B9A400600CBDE5A /* gameWordsMore.json in Resources */,
-				D9A2405F18D50DF7005D4DCD /* camera.mp3 in Resources */,
-				D9A4F77D185E80D10060AA2D /* results.mp3 in Resources */,
-				D9D432F719AC0E4200E0A408 /* help1.png in Resources */,
-				D9171ED52B414BFD00AF4391 /* InfoPlist.xcstrings in Resources */,
-				D98CA40F185D338600746059 /* Main.storyboard in Resources */,
-				D94EE3871F00B16900F43674 /* results-impostor-won.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		87C0FA0956205D71997067EF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ImpostorTests/Pods-ImpostorTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ImpostorTests/Pods-ImpostorTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ImpostorTests/Pods-ImpostorTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F9670E8303031C95BC793E15 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ImpostorTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		D91E58A01D19B8A20068FFEF /* Sources */ = {
+		D9F4BFB52B41BDB800E500DA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D91E58A71D19B8A20068FFEF /* ImpostorGameModelTests.swift in Sources */,
+				D9F4BFEC2B4233B300E500DA /* PlayerImages.swift in Sources */,
+				D9A1091F2B49DBF900264D54 /* ConfigurationScene.swift in Sources */,
+				D9A109312B49E98E00264D54 /* AudioManager.swift in Sources */,
+				D95B5BEA2B532FD5006EFE01 /* ResultsScene.swift in Sources */,
+				D95B5BE82B53270C006EFE01 /* HelpScene.swift in Sources */,
+				D9B910EA2B46725A00E117DF /* PlayerCard.swift in Sources */,
+				D95B5BE62B5322A3006EFE01 /* CameraPicker.swift in Sources */,
+				D9A16D792B5E0FE0000D974C /* SharePhotoView.swift in Sources */,
+				D99E129A2B5C5B450061FD02 /* tmp.swift in Sources */,
+				D9CCC46E2B47A1FE0061E15D /* FitGrid.swift in Sources */,
+				D95B5BEC2B533050006EFE01 /* ImpostorButton.swift in Sources */,
+				D9F4BFBD2B41BDB800E500DA /* ImpostorApp.swift in Sources */,
+				D95B5BE02B51F114006EFE01 /* ImpostorGame.swift in Sources */,
+				D96817B82B4A009C00E05B99 /* ShowSecretWordScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D91E58BC1D19B9C80068FFEF /* Sources */ = {
+		D9F4BFC52B41BDB900E500DA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D91E58C31D19B9C80068FFEF /* ImpostorUITests.swift in Sources */,
-				D91E58CB1D19BA190068FFEF /* SnapshotHelper.swift in Sources */,
+				D9F4BFCE2B41BDB900E500DA /* ImpostorTests.swift in Sources */,
+				D9B910E52B4661FC00E117DF /* GameModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D98CA3F4185D338600746059 /* Sources */ = {
+		D9F4BFCF2B41BDB900E500DA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D97AAAA61CCDC10200B922B6 /* SecretWordViewController.swift in Sources */,
-				D97AAAA41CCDBDE400B922B6 /* MainGameViewController.swift in Sources */,
-				D900BA181D198F9C0092EB78 /* ResultsViewController.swift in Sources */,
-				D900BA141D1899AD0092EB78 /* EliminationViewController.swift in Sources */,
-				D9172ECF1C7916FB0018F8C3 /* AppDelegate.swift in Sources */,
-				D9645FE91C7937C90067F18B /* CachedPersistentJPEGImageStore.swift in Sources */,
-				D9645FE71C7937250067F18B /* TeaseViewController.swift in Sources */,
-				D9171ED32B41478800AF4391 /* IntroViewController.swift in Sources */,
-				D9172EFD1C7919180018F8C3 /* ImpostorGameModel.swift in Sources */,
-				D900BA161D18A0D50092EB78 /* CollageViewController.swift in Sources */,
-				D900BA121D187DE20092EB78 /* GameConfigurationViewController.swift in Sources */,
+				D9F4BFDA2B41BDB900E500DA /* ImpostorUITestsLaunchTests.swift in Sources */,
+				D9F4BFD82B41BDB900E500DA /* ImpostorUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D91E58AA1D19B8A20068FFEF /* PBXTargetDependency */ = {
+		D9F4BFCB2B41BDB900E500DA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D98CA3F7185D338600746059 /* Impostor */;
-			targetProxy = D91E58A91D19B8A20068FFEF /* PBXContainerItemProxy */;
+			target = D9F4BFB82B41BDB800E500DA /* Impostor */;
+			targetProxy = D9F4BFCA2B41BDB900E500DA /* PBXContainerItemProxy */;
 		};
-		D91E58C61D19B9C80068FFEF /* PBXTargetDependency */ = {
+		D9F4BFD52B41BDB900E500DA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D98CA3F7185D338600746059 /* Impostor */;
-			targetProxy = D91E58C51D19B9C80068FFEF /* PBXContainerItemProxy */;
+			target = D9F4BFB82B41BDB800E500DA /* Impostor */;
+			targetProxy = D9F4BFD42B41BDB900E500DA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D98CA40D185D338600746059 /* Main.storyboard */ = {
+		D9B910CC2B46606500E117DF /* gameWords.json */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D98CA40E185D338600746059 /* Base */,
-				D9171ED62B414BFD00AF4391 /* mul */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		D9CDEBF2187A4B6C00AE4163 /* gameWords.json */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D9CDEBF1187A4B6C00AE4163 /* en */,
-				D9CDEBF3187A4B8200AE4163 /* zh-Hans */,
-				D9D29A40189C66F60054BEFF /* es */,
-				D93B5CEE189D679F00E90ACD /* ru */,
-				D93B5CF3189D696B00E90ACD /* ko */,
-				D93B5CF7189EA8A900E90ACD /* ja */,
-				D9DA621618A0061E0087706B /* de */,
-				D90C9E9218A98C5000DEF541 /* fr */,
-				D9A2406318D510FF005D4DCD /* nl */,
-				D9593A39241DCBD30066E1B2 /* pt-BR */,
+				D9B910CB2B46606500E117DF /* en */,
+				D9B910CD2B46606900E117DF /* zh-Hans */,
+				D9B910CE2B46606A00E117DF /* nl */,
+				D9B910CF2B46606A00E117DF /* de */,
+				D9B910D02B46606B00E117DF /* fr */,
+				D9B910D12B46606C00E117DF /* ja */,
+				D9B910D22B46606C00E117DF /* ko */,
+				D9B910D32B46606D00E117DF /* pt-BR */,
+				D9B910D42B46606D00E117DF /* es */,
+				D9B910D52B46606E00E117DF /* ru */,
 			);
 			name = gameWords.json;
 			sourceTree = "<group>";
 		};
-		D9DD5CBD1B9A400600CBDE5A /* gameWordsMore.json */ = {
+		D9B910DA2B4660E300E117DF /* gameWordsMore.json */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D9DD5CBE1B9A400600CBDE5A /* en */,
-				D9DD5CC01B9A401A00CBDE5A /* zh-Hans */,
-				D9DD5CC11B9A401A00CBDE5A /* es */,
-				D9DD5CC21B9A401B00CBDE5A /* ru */,
-				D9DD5CC31B9A401B00CBDE5A /* ko */,
-				D9DD5CC41B9A401C00CBDE5A /* ja */,
-				D9DD5CC51B9A401D00CBDE5A /* de */,
-				D9DD5CC61B9A401E00CBDE5A /* fr */,
-				D9DD5CC71B9A401E00CBDE5A /* nl */,
-				D9593A3A241DCBD30066E1B2 /* pt-BR */,
+				D9B910D92B4660E300E117DF /* en */,
+				D9B910DB2B4660E500E117DF /* nl */,
+				D9B910DC2B4660E600E117DF /* zh-Hans */,
+				D9B910DD2B4660E700E117DF /* fr */,
+				D9B910DE2B4660E700E117DF /* ja */,
+				D9B910DF2B4660E800E117DF /* ko */,
+				D9B910E02B4660E800E117DF /* pt-BR */,
+				D9B910E12B4660E900E117DF /* ru */,
+				D9B910E22B4660EA00E117DF /* es */,
+				D9B910E32B4660EA00E117DF /* de */,
 			);
 			name = gameWordsMore.json;
 			sourceTree = "<group>";
@@ -607,106 +479,25 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		D91E58AC1D19B8A20068FFEF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = ImpostorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = net.phor.ImpostorTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Impostor.app/Impostor";
-			};
-			name = Debug;
-		};
-		D91E58AD1D19B8A20068FFEF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = ImpostorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = net.phor.ImpostorTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Impostor.app/Impostor";
-			};
-			name = Release;
-		};
-		D91E58C81D19B9C80068FFEF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = ImpostorUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = net.phor.ImpostorUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = Impostor;
-			};
-			name = Debug;
-		};
-		D91E58C91D19B9C80068FFEF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = ImpostorUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = net.phor.ImpostorUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = Impostor;
-			};
-			name = Release;
-		};
-		D98CA42B185D338600746059 /* Debug */ = {
+		D9F4BFDB2B41BDB900E500DA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
@@ -719,14 +510,15 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -734,37 +526,42 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		D98CA42C185D338600746059 /* Release */ = {
+		D9F4BFDC2B41BDB900E500DA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
@@ -777,183 +574,206 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		D98CA42E185D338600746059 /* Debug */ = {
+		D9F4BFDE2B41BDB900E500DA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 1.5.5.2;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Impostor/Preview Content\"";
 				DEVELOPMENT_TEAM = 8Q693ZG5RN;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Impostor/Impostor-Prefix.pch";
-				INFOPLIST_FILE = "Impostor/Impostor-Info.plist";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/fulldecent/Developer/Impostor/Impostor,
-				);
-				MARKETING_VERSION = 1.5.5;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.phor.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = Impostor;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.phor.Impostor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Impostor/Impostor-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				WRAPPER_EXTENSION = app;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		D98CA42F185D338600746059 /* Release */ = {
+		D9F4BFDF2B41BDB900E500DA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 1.5.5.2;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Impostor/Preview Content\"";
 				DEVELOPMENT_TEAM = 8Q693ZG5RN;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Impostor/Impostor-Prefix.pch";
-				INFOPLIST_FILE = "Impostor/Impostor-Info.plist";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/fulldecent/Developer/Impostor/Impostor,
-				);
-				MARKETING_VERSION = 1.5.5;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.phor.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = Impostor;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.phor.Impostor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Impostor/Impostor-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				WRAPPER_EXTENSION = app;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D9F4BFE12B41BDB900E500DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8Q693ZG5RN;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.phor.ImpostorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Impostor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Impostor";
+			};
+			name = Debug;
+		};
+		D9F4BFE22B41BDB900E500DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8Q693ZG5RN;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.phor.ImpostorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Impostor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Impostor";
+			};
+			name = Release;
+		};
+		D9F4BFE42B41BDB900E500DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8Q693ZG5RN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.phor.ImpostorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Impostor;
+			};
+			name = Debug;
+		};
+		D9F4BFE52B41BDB900E500DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8Q693ZG5RN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.phor.ImpostorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Impostor;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D91E58AB1D19B8A20068FFEF /* Build configuration list for PBXNativeTarget "ImpostorTests" */ = {
+		D9F4BFB42B41BDB800E500DA /* Build configuration list for PBXProject "Impostor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D91E58AC1D19B8A20068FFEF /* Debug */,
-				D91E58AD1D19B8A20068FFEF /* Release */,
+				D9F4BFDB2B41BDB900E500DA /* Debug */,
+				D9F4BFDC2B41BDB900E500DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D91E58C71D19B9C80068FFEF /* Build configuration list for PBXNativeTarget "ImpostorUITests" */ = {
+		D9F4BFDD2B41BDB900E500DA /* Build configuration list for PBXNativeTarget "Impostor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D91E58C81D19B9C80068FFEF /* Debug */,
-				D91E58C91D19B9C80068FFEF /* Release */,
+				D9F4BFDE2B41BDB900E500DA /* Debug */,
+				D9F4BFDF2B41BDB900E500DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D98CA3F3185D338600746059 /* Build configuration list for PBXProject "Impostor" */ = {
+		D9F4BFE02B41BDB900E500DA /* Build configuration list for PBXNativeTarget "ImpostorTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D98CA42B185D338600746059 /* Debug */,
-				D98CA42C185D338600746059 /* Release */,
+				D9F4BFE12B41BDB900E500DA /* Debug */,
+				D9F4BFE22B41BDB900E500DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D98CA42D185D338600746059 /* Build configuration list for PBXNativeTarget "Impostor" */ = {
+		D9F4BFE32B41BDB900E500DA /* Build configuration list for PBXNativeTarget "ImpostorUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D98CA42E185D338600746059 /* Debug */,
-				D98CA42F185D338600746059 /* Release */,
+				D9F4BFE42B41BDB900E500DA /* Debug */,
+				D9F4BFE52B41BDB900E500DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		D9171ECF2B41453800AF4391 /* XCRemoteSwiftPackageReference "CenteredCollectionView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/BenEmdon/CenteredCollectionView";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.2.2;
-			};
-		};
-		D91AB7C02B411A22005F8EED /* XCRemoteSwiftPackageReference "CDAlertView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/c0909h1179/CDAlertView";
-			requirement = {
-				kind = revision;
-				revision = a2fe4f012d96573453b3ecc53c821317c0d21cf9;
-			};
-		};
-		D96D8D0C2B411FE0008F0F83 /* XCRemoteSwiftPackageReference "NKButton" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kennic/NKButton";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		D9FAE94B235BFF9700C7B82E /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/bizz84/SwiftyStoreKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.15.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		D9171ED02B41453800AF4391 /* CenteredCollectionView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D9171ECF2B41453800AF4391 /* XCRemoteSwiftPackageReference "CenteredCollectionView" */;
-			productName = CenteredCollectionView;
-		};
-		D91AB7C12B411A22005F8EED /* CDAlertView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D91AB7C02B411A22005F8EED /* XCRemoteSwiftPackageReference "CDAlertView" */;
-			productName = CDAlertView;
-		};
-		D96D8D0D2B411FE0008F0F83 /* NKButton */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D96D8D0C2B411FE0008F0F83 /* XCRemoteSwiftPackageReference "NKButton" */;
-			productName = NKButton;
-		};
-		D9FAE94C235BFF9700C7B82E /* SwiftyStoreKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D9FAE94B235BFF9700C7B82E /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */;
-			productName = SwiftyStoreKit;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = D98CA3F0185D338600746059 /* Project object */;
+	rootObject = D9F4BFB12B41BDB800E500DA /* Project object */;
 }

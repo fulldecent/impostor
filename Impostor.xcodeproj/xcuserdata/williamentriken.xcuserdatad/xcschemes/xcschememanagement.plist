@@ -4,48 +4,10 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Imposter.xcscheme</key>
+		<key>Impostor.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
-		</dict>
-		<key>Impostor.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>0</integer>
-		</dict>
-		<key>ImpostorUITests.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
-	</dict>
-	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>D91E58A31D19B8A20068FFEF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D91E58BF1D19B9C80068FFEF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D98CA3F7185D338600746059</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D98CA41B185D338600746059</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D9917B2319E1DB7700E2F104</key>
-		<dict>
-			<key>primary</key>
-			<true/>
 		</dict>
 	</dict>
 </dict>

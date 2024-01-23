@@ -1,0 +1,64 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%lld PLAYERS" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld player"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld players"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Button" : {
+
+    },
+    "caption" : {
+
+    },
+    "hi" : {
+
+    },
+    "hi there" : {
+
+    },
+    "Impostor was defeated" : {
+
+    },
+    "Impostor won" : {
+
+    },
+    "Less" : {
+
+    },
+    "More" : {
+
+    },
+    "Show Help" : {
+
+    },
+    "Toggle Eliminated" : {
+
+    },
+    "TOP SECRET\nFor your eyes only" : {
+
+    },
+    "Your secret word is" : {
+
+    }
+  },
+  "version" : "1.0"
+}
