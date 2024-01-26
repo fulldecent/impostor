@@ -19,7 +19,6 @@ struct HelpPageView: View {
     var body: some View {
         VStack {
             Text(page.topText)
-                //.font(.title)
                 .padding()
                 .font(.custom("American Typewriter", size: 30))
                 .fontWeight(.bold)
@@ -29,7 +28,6 @@ struct HelpPageView: View {
                 .scaledToFit()
 
             Text(page.bottomText)
-                //.font(.body)
                 .padding()
                 .font(.custom("American Typewriter", size: 30))
         }
@@ -71,8 +69,6 @@ fileprivate struct PreviewView: View {
         }
     }
 }
-
-
 
 #Preview {
     PreviewView()

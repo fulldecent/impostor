@@ -20,19 +20,16 @@ struct ResultsScene: View {
             Text(status == .impostorWon
                  ? "Impostor won"
                  : "Impostor was defeated")
-                .font(.custom("American Typewriter", size: 30))
-                .fontWeight(.bold)
-                .foregroundStyle(Color.white)
-                .frame(maxWidth: .infinity) // Allows the text to take as much space as possible
+                .impostorTextStyle()
 
             FitGrid(players.indices.map { IdentifiableInt(id: $0) },
                     aspectRatio: 1, horizontalPadding: 12, verticalPadding: 12) { playerIndex in
                 VStack {
                     PlayerCard(
-                        player: .constant(players[playerIndex.id]),
-                        status: status,
                         image: PlayerImages.shared.image(forPlayerIndex: playerIndex.id),
-                        ignoreEliminated: false
+                        eliminated: .constant(players[playerIndex.id].eliminated),
+                        won: players[playerIndex.id].role == .impostor && status == .impostorWon,
+                        lost: players[playerIndex.id].role == .impostor && status == .impostorDefeated
                     )
                     .scaledToFit()
                     Text(players[playerIndex.id].word)

@@ -40,15 +40,13 @@ struct ConfigurationScene: View {
             FitGrid(players,
                     aspectRatio: 1, horizontalPadding: 12, verticalPadding: 12) { player in
                 PlayerCard(
-                    player: .constant(ImpostorGame.Player(
-                        role: .impostor, word: "")),
-                    status: .showingSecretWordToPlayerWithIndex(0),
-                    image: PlayerImages.shared.image(forPlayerIndex: player.index),
-                    ignoreEliminated: true)
+                    image: PlayerImages.shared.image(forPlayerIndex: player.index)
+                )
                 .bounceAppeared()
             }
             
             ImpostorButton(systemImageName: "play.fill") {
+                print("PLAY GAME")
                 // TODO PLAY GAME
             }
             .frame(maxWidth: .infinity)
@@ -76,10 +74,8 @@ struct ConfigurationScene: View {
             Spacer()
             
             Text("\(players.count) PLAYERS")
-                .font(.custom("American Typewriter", size: 30))
-                .fontWeight(.bold)
-                .foregroundStyle(Color.white)
-                .frame(maxWidth: .infinity) // Allows the text to take as much space as possible
+                .impostorTextStyle()
+                //.frame(maxWidth: .infinity) // Allows the text to take as much space as possible
 
             Spacer()
             
@@ -117,6 +113,7 @@ struct ConfigurationScene: View {
             ImpostorButton(systemImageName: "cart") {
                 AudioManager.shared.playSoundEffect(named: "buttonPress")
                 // TODO: buy
+                print("BUY")
             }
         }
     }

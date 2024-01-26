@@ -16,19 +16,15 @@ struct SharePhotoView: View {
             Text(status == .impostorWon
                  ? "Impostor won"
                  : "Impostor was defeated")
-                .font(.custom("American Typewriter", size: 30))
-                .fontWeight(.bold)
-                .foregroundStyle(Color.white)
-                .frame(maxWidth: .infinity) // Allows the text to take as much space as possible
+                .impostorTextStyle()
 
             FitGrid(players.indices.map { IdentifiableInt(id: $0) },
                     aspectRatio: 1, horizontalPadding: 12, verticalPadding: 12) { playerIndex in
                 VStack {
                     PlayerCard(
-                        player: .constant(players[playerIndex.id]),
-                        status: status,
                         image: PlayerImages.shared.image(forPlayerIndex: playerIndex.id),
-                        ignoreEliminated: false
+                        won: players[playerIndex.id].role == .impostor && status == .impostorWon,
+                        lost: players[playerIndex.id].role == .impostor && status == .impostorDefeated
                     )
                     .scaledToFit()
                     Text(players[playerIndex.id].word)
@@ -121,7 +117,7 @@ fileprivate struct WackyRotatedModifier: ViewModifier {
     .padding()
 }
 
-#Preview("Painting into 800x800") {
+#Preview("Painting into 800x1000") {
     let players: [ImpostorGame.Player] = [
         .init(role: .normal, word: "Normal word"),
         .init(role: .normal, word: "Normal word"),
@@ -138,11 +134,13 @@ fileprivate struct WackyRotatedModifier: ViewModifier {
     let status: ImpostorGame.Status = .impostorDefeated
     let renderer = ImageRenderer(
         content: SharePhotoView(players: players, status: status)
-            .frame(width: 400, height: 500)
+            .frame(width: 800, height: 1000)
     )
     let uiImage = renderer.uiImage!
     
-    return Image(uiImage: uiImage)
-        .scaledToFit()
-        .padding()
+    return VStack{Image(uiImage: uiImage)
+            .resizable()
+            .scaledToFit()
+    }
+    .scenePadding()
 }

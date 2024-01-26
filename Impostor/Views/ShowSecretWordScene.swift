@@ -15,15 +15,10 @@ struct SecretWordModal: View {
     var body: some View {
         VStack {
             Text("Your secret word is")
-                .padding()
-                .font(.custom("American Typewriter", size: 30))
-                .foregroundColor(Color.white)
+                .impostorTextStyle()
 
             Text(secretWord)
-                .padding()
-                .font(.custom("American Typewriter", size: 30))
-                .fontWeight(.bold)
-                .foregroundColor(Color.white)
+                .impostorTextStyle()
 
             ImpostorButton(systemImageName: "forward") {
                 isPresented = false
@@ -54,9 +49,7 @@ struct ShowSecretWordScene: View {
     var body: some View {
         VStack {
             Text(playerName)
-                .font(.custom("American Typewriter", size: 30))
-                .fontWeight(.bold)
-                .foregroundStyle(Color.white)
+                .impostorTextStyle()
 
             ImpostorButton("Show secret word") {
                 showingSecretWord = true
@@ -69,9 +62,7 @@ struct ShowSecretWordScene: View {
                 .aspectRatio(1, contentMode: .fit)
 
             Text("TOP SECRET\nFor your eyes only")
-                .font(.custom("American Typewriter", size: 30))
-                .fontWeight(.bold)
-                .foregroundStyle(Color.white)
+                .impostorTextStyle()
                 .background(.black)
                 .rotationEffect(.degrees(-10))
 

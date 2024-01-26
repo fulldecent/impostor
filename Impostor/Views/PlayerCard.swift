@@ -5,28 +5,23 @@
 //  Created by William Entriken on 2024-01-03.
 //
 
-//
-//  SwiftUIView.swift
-//  Impostor
-//
-//  Created by William Entriken on 2024-01-03.
-//
-
 import SwiftUI
 
 struct PlayerCard: View {
-    @Binding var player: ImpostorGame.Player
-    let status: ImpostorGame.Status
     let image: Image
-    let ignoreEliminated: Bool
-    var action: (() -> Void)? = nil
-
-    private var eliminated: Bool { player.eliminated && !ignoreEliminated }
-    private var won: Bool { player.role == .impostor && status == .impostorWon}
-    private var lost: Bool { player.role == .impostor && status == .impostorDefeated}
+    @Binding var eliminated: Bool
+    var won: Bool = false
+    var lost: Bool = false
 
     @State private var puffOpacity: Double = 0
     @State private var puffScale: CGFloat = 1.0
+
+    init(image: Image, eliminated: Binding<Bool> = .constant(false), won: Bool = false, lost: Bool = false) {
+        self.image = image
+        _eliminated = eliminated
+        self.won = won
+        self.lost = lost
+    }
 
     var body: some View {
         ZStack {
@@ -70,62 +65,44 @@ struct PlayerCard: View {
                     }
                 }
         }
-        .onTapGesture {
-            self.action?()
-        }
-    }
-}
-
-fileprivate struct PreviewHelper: View {
-    @State private var player = ImpostorGame.Player(
-        role: .normal,
-        word: "A word",
-        eliminated: false)
-
-    var body: some View {
-        VStack {
-            Spacer()
-
-            PlayerCard(
-                player: $player,
-                status: .showingSecretWordToPlayerWithIndex(0),
-                image: PlayerImages.shared.image(forPlayerIndex: 0),
-                ignoreEliminated: false,
-                action: {
-                    player.eliminated.toggle()
-                    print("Toggled eliminated, now ", player.eliminated)
-                }
-            )
-            .frame(width: 100, height: 100)
-
-            Button("Toggle Eliminated") {
-                player.eliminated.toggle()
-            }
-            
-            Spacer()
-            
-            PlayerCard(
-                player: .constant(ImpostorGame.Player(role: .impostor, word: "A word")),
-                status: .impostorWon,
-                image: Image("1"),
-                ignoreEliminated: false
-            )
-            .frame(width: 100, height: 100)
-            Spacer()
-            
-            PlayerCard(
-                player: .constant(ImpostorGame.Player(role: .impostor, word: "A word")),
-                status: .impostorDefeated,
-                image: Image("2"),
-                ignoreEliminated: false
-            )
-            .frame(width: 100, height: 100)
-
-            Spacer()
-        }
     }
 }
 
 #Preview {
-    PreviewHelper()
+    struct PreviewContainer: View {
+        @State var eliminated: Bool = false
+
+        var body: some View {
+            VStack {
+                Button("Toggle Eliminated") {
+                    self.eliminated.toggle()
+                }
+
+                PlayerCard(
+                    image: Image("1"),
+                    eliminated: $eliminated
+                )
+                .frame(width: 100, height: 100)
+                .onTapGesture {
+                    self.eliminated.toggle()
+                }
+            }
+        }
+    }
+
+    return VStack(spacing: 20) {
+        PreviewContainer()
+
+        PlayerCard(
+            image: Image("2"),
+            won: true
+        )
+        .frame(width: 100, height: 100)
+
+        PlayerCard(
+            image: Image("3"),
+            lost: true
+        )
+        .frame(width: 100, height: 100)
+    }
 }
