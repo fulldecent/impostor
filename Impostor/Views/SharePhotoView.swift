@@ -114,7 +114,6 @@ fileprivate struct WackyRotatedModifier: ViewModifier {
             .init(role: .normal, word: "Normal word"),
             .init(role: .normal, word: "Normal word"),
             .init(role: .normal, word: "Normal word"),
-            .init(role: .normal, word: "Normal word"),
             .init(role: .impostor, word: "Really long impostor word")
         ],
         status: .impostorDefeated
@@ -124,7 +123,6 @@ fileprivate struct WackyRotatedModifier: ViewModifier {
 
 #Preview("Painting into 800x800") {
     let players: [ImpostorGame.Player] = [
-        .init(role: .normal, word: "Normal word"),
         .init(role: .normal, word: "Normal word"),
         .init(role: .normal, word: "Normal word"),
         .init(role: .normal, word: "Normal word"),

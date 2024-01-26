@@ -70,12 +70,12 @@ struct ResultsScene: View {
     var bottomBar: some View {
         // Bottom actions
         HStack(spacing: 12) {
-            impostorButton(systemImageName: "play") {
+            ImpostorButton(systemImageName: "play") {
                 AudioManager.shared.playSoundEffect(named: "buttonPress")
                 // start new game
             }
             
-            impostorButton(systemImageName: "square.and.arrow.up") {
+            ImpostorButton(systemImageName: "square.and.arrow.up") {
                 AudioManager.shared.playSoundEffect(named: "buttonPress")
                 showShareSheet = true
             }

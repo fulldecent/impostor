@@ -48,7 +48,7 @@ struct ConfigurationScene: View {
                 .bounceAppeared()
             }
             
-            impostorButton(systemImageName: "play.fill") {
+            ImpostorButton(systemImageName: "play.fill") {
                 // TODO PLAY GAME
             }
             .frame(maxWidth: .infinity)
@@ -67,7 +67,7 @@ struct ConfigurationScene: View {
     
     var topBar: some View {
         HStack {
-            impostorButton(systemImageName: "minus") {
+            ImpostorButton(systemImageName: "minus") {
                 AudioManager.shared.playSoundEffect(named: "buttonPress")
                 decreaseNumberOfPlayers()
             }
@@ -83,7 +83,7 @@ struct ConfigurationScene: View {
 
             Spacer()
             
-            impostorButton(systemImageName: "plus") {
+            ImpostorButton(systemImageName: "plus") {
                 AudioManager.shared.playSoundEffect(named: "buttonPress")
                 increaseNumberOfPlayers()
             }
@@ -95,17 +95,17 @@ struct ConfigurationScene: View {
     var bottomBar: some View {
         // Bottom actions
         HStack(spacing: 12) {
-            impostorButton(systemImageName: "questionmark") {
+            ImpostorButton(systemImageName: "questionmark") {
                 AudioManager.shared.playSoundEffect(named: "buttonPress")
                 showHelpScene = true
             }
             
-            impostorButton(systemImageName: "trash") {
+            ImpostorButton(systemImageName: "trash") {
                 AudioManager.shared.playSoundEffect(named: "buttonPress")
                 PlayerImages.shared.deleteAll()
             }
 
-            impostorButton(systemImageName: "lightbulb") {
+            ImpostorButton(systemImageName: "lightbulb") {
                 AudioManager.shared.playSoundEffect(named: "buttonPress")
                 let handle = "@fulldecent"
                 let tweetText = "I have an idea for the Impostor game"
@@ -114,7 +114,7 @@ struct ConfigurationScene: View {
                 UIApplication.shared.open(url)
             }
 
-            impostorButton(systemImageName: "cart") {
+            ImpostorButton(systemImageName: "cart") {
                 AudioManager.shared.playSoundEffect(named: "buttonPress")
                 // TODO: buy
             }

@@ -7,40 +7,35 @@
 
 import SwiftUI
 
-//TODO there's got to be a more Swifty way to customize Button and make custom initializers
+struct ImpostorButton<Label: View>: View {
+    let action: () -> Void
+    let label: Label
 
-func impostorButton(systemImageName: String, action: @escaping () -> Void) -> some View {
-    return Button(
-        action: action,
-        label: {
-            Image(systemName: systemImageName)
-                .font(.system(size: 30, weight: .black))
-        }
-    )
-    .buttonStyle(ImpostorButtonStyle())
+    init(action: @escaping () -> Void, @ViewBuilder label: () -> Label) {
+        self.action = action
+        self.label = label()
+    }
+
+    var body: some View {
+        Button(action: action, label: { label })
+            .buttonStyle(ImpostorButtonStyle())
+    }
 }
 
-func impostorButton(text: String, action: @escaping () -> Void) -> some View {
-    return Button(
-        action: action,
-        label: {
+extension ImpostorButton where Label == Text {
+    init(_ text: String, action: @escaping () -> Void) {
+        self.init(action: action) {
             Text(text)
-                .font(.custom("American Typewriter", size: 30))
-                .fontWeight(.bold)
-                .foregroundStyle(Color.white)
         }
-    )
-    .buttonStyle(ImpostorButtonStyle())
+    }
 }
 
-func impostorButton<L: View>(label: L, action: @escaping () -> Void) -> some View {
-    return Button(
-        action: action,
-        label: {
-            label
+extension ImpostorButton where Label == Image {
+    init(systemImageName: String, action: @escaping () -> Void) {
+        self.init(action: action) {
+            Image(systemName: systemImageName)
         }
-    )
-    .buttonStyle(ImpostorButtonStyle())
+    }
 }
 
 fileprivate struct ImpostorButtonStyle: ButtonStyle {
@@ -53,6 +48,7 @@ fileprivate struct ImpostorButtonStyle: ButtonStyle {
             .padding(2)
             .frame(minWidth: 50, minHeight: 50)
             .font(.custom("American Typewriter", size: 30))
+            .fontWeight(.bold)
             .foregroundColor(configuration.isPressed ? .gray : .white)
             .padding(.vertical, shadowDepth)
             .background(backgroundColor)
@@ -64,13 +60,6 @@ fileprivate struct ImpostorButtonStyle: ButtonStyle {
 
 #Preview {
     VStack {
-        Button(action: {
-            print("tap")
-        }, label: {
-            Text("Button")
-        })
-        .buttonStyle(ImpostorButtonStyle())
-        
         HStack {
             Button(action: {
                 print("tap")
@@ -79,7 +68,7 @@ fileprivate struct ImpostorButtonStyle: ButtonStyle {
             })
             .buttonStyle(ImpostorButtonStyle())
 
-            impostorButton(systemImageName: "heart", action: {})
+            ImpostorButton(systemImageName: "heart", action: {})
             
             Button(action: {
                 print("tap")
@@ -87,6 +76,8 @@ fileprivate struct ImpostorButtonStyle: ButtonStyle {
                 Text("Button")
             })
             .buttonStyle(ImpostorButtonStyle())
+            .font(.system(size: 30, weight: .black))
+
         }
         
         HStack {
@@ -105,7 +96,7 @@ fileprivate struct ImpostorButtonStyle: ButtonStyle {
             .buttonStyle(ImpostorButtonStyle())
         }
         
-        impostorButton(text: "HI", action: {})
+        ImpostorButton("HI", action: {})
     }
     .padding()
 }

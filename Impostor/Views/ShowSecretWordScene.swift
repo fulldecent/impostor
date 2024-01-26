@@ -25,7 +25,7 @@ struct SecretWordModal: View {
                 .fontWeight(.bold)
                 .foregroundColor(Color.white)
 
-            impostorButton(systemImageName: "forward") {
+            ImpostorButton(systemImageName: "forward") {
                 isPresented = false
             }
         }
@@ -58,7 +58,7 @@ struct ShowSecretWordScene: View {
                 .fontWeight(.bold)
                 .foregroundStyle(Color.white)
 
-            impostorButton(text: "Show secret word") {
+            ImpostorButton("Show secret word") {
                 showingSecretWord = true
             }
             
@@ -79,7 +79,7 @@ struct ShowSecretWordScene: View {
 
             HStack {
                 Spacer()
-                impostorButton(systemImageName: "xmark") {
+                ImpostorButton(systemImageName: "xmark") {
                     onAbortGame()
                 }
                 .frame(width: 50)
