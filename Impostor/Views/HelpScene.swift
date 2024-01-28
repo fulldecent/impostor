@@ -36,7 +36,29 @@ struct HelpPageView: View {
 
 struct HelpScene: View {
     @State private var selectedIndex = 0
-    let pages: [HelpPage]
+
+    let pages = [
+        HelpPage(
+            image: Image("help1"),
+            topText: "A party game",
+            bottomText: "for 3–12 people"
+        ),
+        HelpPage(
+            image: Image("help2"),
+            topText: "Everyone sees their secret word",
+            bottomText: "but the impostor's word is different"
+        ),
+        HelpPage(
+            image: Image("help3"),
+            topText: "Each round players describe their word",
+            bottomText: "then vote to eliminate one player (can't use word to describe itself or repeat other players, break ties with a revote)"
+        ),
+        HelpPage(
+            image: Image("help4"),
+            topText: "To win",
+            bottomText: "the impostor must survive with one other player"
+        )
+    ]
 
     var body: some View {
         TabView(selection: $selectedIndex) {
@@ -59,12 +81,7 @@ fileprivate struct PreviewView: View {
                 showHelpScene = true
             }
             .sheet(isPresented: $showHelpScene) {
-                HelpScene(pages: [
-                    HelpPage(image: Image(systemName: "1.circle"), topText: "Page 1 Top", bottomText: "Page 1 Bottom"),
-                    HelpPage(image: Image(systemName: "2.circle"), topText: "Page 2 Top", bottomText: "Page 2 Bottom"),
-                    HelpPage(image: Image(systemName: "3.circle"), topText: "Page 3 Top", bottomText: "Page 3 Bottom"),
-                    HelpPage(image: Image(systemName: "4.circle"), topText: "Page 4 Top", bottomText: "Page 4 Bottom")
-                ])
+                HelpScene()
             }
         }
     }

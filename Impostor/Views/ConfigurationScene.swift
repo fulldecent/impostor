@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ConfigurationScene: View {
-    struct Player: Identifiable, Equatable {
+    let startGameWithPlayerCount: (Int) -> ()
+    
+    private struct Player: Identifiable, Equatable {
         let id = UUID()
         let index: Int
     }
@@ -18,20 +20,6 @@ struct ConfigurationScene: View {
     }
 
     @State private var showHelpScene = false
-
-    private func increaseNumberOfPlayers() {
-        if players.count < 12 {
-            players.append(Player(index: players.count))
-        }
-    }
-
-    private func decreaseNumberOfPlayers() {
-        if players.count > 3 {
-            withAnimation {
-                _ = players.popLast()
-            }
-        }
-    }
 
     var body: some View {
         VStack(spacing: 20) {
@@ -46,8 +34,7 @@ struct ConfigurationScene: View {
             }
             
             ImpostorButton(systemImageName: "play.fill") {
-                print("PLAY GAME")
-                // TODO PLAY GAME
+                startGameWithPlayerCount(players.count)
             }
             .frame(maxWidth: .infinity)
 
@@ -59,7 +46,7 @@ struct ConfigurationScene: View {
             AudioManager.shared.playBackgroundSound(named: "intro")
         }
         .sheet(isPresented: $showHelpScene) {
-            helpScene
+            HelpScene()
         }
     }
     
@@ -103,11 +90,7 @@ struct ConfigurationScene: View {
 
             ImpostorButton(systemImageName: "lightbulb") {
                 AudioManager.shared.playSoundEffect(named: "buttonPress")
-                let handle = "@fulldecent"
-                let tweetText = "I have an idea for the Impostor game"
-                // make it URL encoded
-                let url = URL(string: "https://twitter.com/intent/tweet?text=\(handle) \(tweetText)")!
-                UIApplication.shared.open(url)
+                doFeedback()
             }
 
             ImpostorButton(systemImageName: "cart") {
@@ -118,29 +101,26 @@ struct ConfigurationScene: View {
         }
     }
     
-    var helpScene: some View {
-        HelpScene(pages: [
-            HelpPage(
-                image: Image("help1"),
-                topText: "A party game",
-                bottomText: "For 3–12 people"
-            ),
-            HelpPage(
-                image: Image("help2"),
-                topText: "Everyone sees their secret word",
-                bottomText: "But the impostor's word is different"
-            ),
-            HelpPage(
-                image: Image("help3"),
-                topText: "Each round players describe their word",
-                bottomText: "then vote to eliminate one player (can't use word to describe itself or repeat other players, break ties with a revote)"
-            ),
-            HelpPage(
-                image: Image("help4"),
-                topText: "To win",
-                bottomText: "the impostor must survive with one other player"
-            )
-        ])
+    private func increaseNumberOfPlayers() {
+        if players.count < 12 {
+            players.append(Player(index: players.count))
+        }
+    }
+
+    private func decreaseNumberOfPlayers() {
+        if players.count > 3 {
+            withAnimation {
+                _ = players.popLast()
+            }
+        }
+    }
+
+    func doFeedback() {
+        let handle = "@fulldecent"
+        let tweetText = "I have an idea for the Impostor game"
+        // make it URL encoded
+        let url = URL(string: "https://twitter.com/intent/tweet?text=\(handle) \(tweetText)")!
+        UIApplication.shared.open(url)
     }
 }
 
@@ -166,5 +146,7 @@ fileprivate struct BounceAppearedModifier: ViewModifier {
 }
 
 #Preview {
-    ConfigurationScene()
+    ConfigurationScene { count in
+        print("Ready to start game with player count: ", count)
+    }
 }

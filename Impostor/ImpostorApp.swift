@@ -48,34 +48,53 @@ class StoreManager: NSObject, SKPaymentTransactionObserver {
 
 @main
 struct ImpostorApp: App {
-    var storeManager = StoreManager()
-
+    enum AppState {
+        case configuring
+        case playing
+    }
+    
+    @State var appState: AppState = .configuring
+    
+    let storeManager = StoreManager()
+    var game: ImpostorGame?
+    
     var body: some Scene {
         WindowGroup {
-            TmpView()
-            /*
-            ResultsScene(
-                players: [
-                    .init(role: .normal, word: "Normal word"),
-                    .init(role: .normal, word: "Normal word"),
-                    .init(role: .normal, word: "Normal word"),
-                    .init(role: .normal, word: "Normal word"),
-                    .init(role: .normal, word: "Normal word"),
-                    .init(role: .normal, word: "Normal word"),
-                    .init(role: .normal, word: "Normal word"),
-                    .init(role: .normal, word: "Normal word"),
-                    .init(role: .normal, word: "Normal word"),
-                    .init(role: .normal, word: "Normal word"),
-                    .init(role: .normal, word: "Normal word"),
-                    .init(role: .impostor, word: "Really long impostor word")
-                ],
-                status: .impostorDefeated
-            )
-             */
+            GeometryReader { geometryProxy in
+                ConfigurationScene(startGameWithPlayerCount: startGameWithPlayerCount)
+                    .offset(x: appState == .configuring ? 0 : geometryProxy.size.width * 2)
+                    .animation(.default, value: appState) // Animate on appState change
 
-//            ConfigurationScene()
-//            ContentView()
-//                .onAppear(perform: storeManager.checkPurchases)
+                secretWordScene
+                    .offset(x: appState != .configuring ? 0 : geometryProxy.size.width * 2)
+                    .animation(.default, value: appState) // Animate on appState change
+            }
+        }
+    }
+    
+    var configurationScene: some View {
+        ConfigurationScene(startGameWithPlayerCount: startGameWithPlayerCount)
+    }
+    
+    var secretWordScene: some View {
+        switch game?.status {
+        case .showingSecretWordToPlayerWithIndex(_):
+            return Rectangle()
+                .background(Color.green)
+        default:
+            return Rectangle()
+                .background(Color.purple)
+        }
+    }
+    
+    var stack: some View {
+        ConfigurationScene(startGameWithPlayerCount: startGameWithPlayerCount)
+    }
+    
+    func startGameWithPlayerCount(_ count: Int) {
+        print("Actually starting game with count!", count)
+        withAnimation {
+            appState = .playing
         }
     }
 }
