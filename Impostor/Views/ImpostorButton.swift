@@ -59,44 +59,71 @@ fileprivate struct ImpostorButtonStyle: ButtonStyle {
 }
 
 #Preview {
-    VStack {
-        HStack {
-            Button(action: {
-                print("tap")
-            }, label: {
-                Text("Button")
-            })
-            .buttonStyle(ImpostorButtonStyle())
-
-            ImpostorButton(systemImageName: "heart", action: {})
-            
-            Button(action: {
-                print("tap")
-            }, label: {
-                Text("Button")
-            })
-            .buttonStyle(ImpostorButtonStyle())
-            .font(.system(size: 30, weight: .black))
-
-        }
+    struct PreviewWrapper: View {
+        @State var moveButton = false
         
-        HStack {
-            Button(action: {
-                print("tap")
-            }, label: {
-                Text("Button")
-            })
-            .buttonStyle(ImpostorButtonStyle())
-            Text("hi there")
-            Button(action: {
-                print("tap")
-            }, label: {
-                Text("Button")
-            })
-            .buttonStyle(ImpostorButtonStyle())
+        var body: some View {
+            VStack {
+                HStack {
+                    Button(action: {
+                        print("tap")
+                    }, label: {
+                        Text("Button2222")
+                    })
+                    .buttonStyle(ImpostorButtonStyle())
+                    
+                    ImpostorButton(systemImageName: "heart", action: {})
+                    
+                    Button(action: {
+                        print("tap")
+                    }, label: {
+                        Text("Button")
+                    })
+                    .buttonStyle(ImpostorButtonStyle())
+                    .font(.system(size: 30, weight: .black))
+                    
+                }
+                
+                HStack {
+                    Button(action: {
+                        print("tap")
+                    }, label: {
+                        Text("Button")
+                    })
+                    .buttonStyle(ImpostorButtonStyle())
+                    Text("hi there")
+                    Button(action: {
+                        print("tap")
+                    }, label: {
+                        Text("Button")
+                    })
+                    .buttonStyle(ImpostorButtonStyle())
+                }
+                
+                ImpostorButton("HI", action: {})
+                
+                // Animated button row
+                HStack {
+                    Spacer()
+                    ImpostorButton("Bouncy", action: {})
+                        .frame(width: UIScreen.main.bounds.width * 0.6)
+                        .offset(x: UIScreen.main.bounds.width * (moveButton ? -0.2 : 0.2))
+                        .animation(
+                            Animation.easeInOut(duration: 1.0)
+                            .repeatForever(autoreverses: true),
+                            value: moveButton
+                            
+                        )
+                    Spacer()
+                }
+                .onAppear {
+                    moveButton.toggle()
+                    print(moveButton)
+                }
+                
+            }
+            .padding()
         }
-        
-        ImpostorButton("HI", action: {})
     }
-    .padding()
+    return PreviewWrapper()
 }

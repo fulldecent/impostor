@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ImpostorGame {
+struct ImpostorGame: Equatable, Hashable {
     private(set) var players: [Player]
     private(set) var status: Status
     
@@ -68,7 +68,7 @@ struct ImpostorGame {
         status = .votingStartingWithPlayerWithIndex(nextPlayerIndex)
     }
 
-    struct Player: Equatable {
+    struct Player: Equatable, Hashable {
         enum Role {
             case normal
             case impostor
@@ -79,7 +79,7 @@ struct ImpostorGame {
         var eliminated: Bool = false
     }
     
-    enum Status: Equatable {
+    enum Status: Equatable, Hashable {
         case showingSecretWordToPlayerWithIndex(_: Int)
         case votingStartingWithPlayerWithIndex(_: Int)
         case impostorWon

@@ -45,6 +45,9 @@ struct ConfigurationScene: View {
         .onAppear {
             AudioManager.shared.playBackgroundSound(named: "intro")
         }
+        .onDisappear {
+            AudioManager.shared.stopBackgroundSound()
+        }
         .sheet(isPresented: $showHelpScene) {
             HelpScene()
         }

@@ -58,12 +58,4 @@ class AudioManager {
             AudioServicesPlaySystemSound(soundID)
         }
     }
-
-    // Clean up sound effects
-    func unloadSoundEffects() {
-        for soundID in soundEffectIDs.values {
-            AudioServicesDisposeSystemSoundID(soundID)
-        }
-        soundEffectIDs.removeAll()
-    }
 }

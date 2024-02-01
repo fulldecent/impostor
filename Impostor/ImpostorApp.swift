@@ -5,8 +5,60 @@
 //  Created by William Entriken on 2023-12-31.
 //
 
+// FIXME: go through all api ta make stuff private when needed
+
 import SwiftUI
 import StoreKit
+
+@main
+struct ImpostorApp: App {
+    @State private var game: ImpostorGame?
+    let storeManager = StoreManager()
+    
+    var body: some Scene {
+        WindowGroup {
+            ZStack {
+                if game != nil {
+                    switch game!.status {
+                    case .showingSecretWordToPlayerWithIndex(let index):
+                        ShowSecretWordScene(
+                            playerName: "Player \(index+1)",
+                            secretWord: game!.players[index].word,
+                            image: .constant(Image("4")),     // ??$PlayerImages.shared.image(forPlayerIndex: index),
+                            shouldAttemptTakePhoto: false,
+                            onDoneViewingSecretWord: { game!.finishedShowingSecretWordToPlayer() },
+                            onAbortGame: { game = nil }
+                        )
+                        .id(index)
+                        .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .trailing)))
+                    case .votingStartingWithPlayerWithIndex(let index):
+                        Text("hi")
+                    case .impostorWon:
+                        Text("hi")
+                    case .impostorDefeated:
+                        Text("hi")
+                    }
+                } else {
+                    ConfigurationScene(startGameWithPlayerCount: startGameWithPlayerCount)
+                        .transition(.asymmetric(insertion: .move(edge: .leading), removal: .move(edge: .leading)))
+                }
+            }
+            .animation(.easeInOut, value: game)
+        }
+    }
+    
+    func startGameWithPlayerCount(_ count: Int) {
+        game = .init(numberOfPlayers: count)
+    }
+}
+
+fileprivate extension AnyTransition {
+    static var slide: AnyTransition {
+        let insertion = AnyTransition.move(edge: .trailing)
+        let removal = AnyTransition.move(edge: .leading)
+        return .asymmetric(insertion: insertion, removal: removal)
+    }
+}
 
 class StoreManager: NSObject, SKPaymentTransactionObserver {
     override init() {
@@ -42,59 +94,6 @@ class StoreManager: NSObject, SKPaymentTransactionObserver {
             default:
                 break
             }
-        }
-    }
-}
-
-@main
-struct ImpostorApp: App {
-    enum AppState {
-        case configuring
-        case playing
-    }
-    
-    @State var appState: AppState = .configuring
-    
-    let storeManager = StoreManager()
-    var game: ImpostorGame?
-    
-    var body: some Scene {
-        WindowGroup {
-            GeometryReader { geometryProxy in
-                ConfigurationScene(startGameWithPlayerCount: startGameWithPlayerCount)
-                    .offset(x: appState == .configuring ? 0 : geometryProxy.size.width * 2)
-                    .animation(.default, value: appState) // Animate on appState change
-
-                secretWordScene
-                    .offset(x: appState != .configuring ? 0 : geometryProxy.size.width * 2)
-                    .animation(.default, value: appState) // Animate on appState change
-            }
-        }
-    }
-    
-    var configurationScene: some View {
-        ConfigurationScene(startGameWithPlayerCount: startGameWithPlayerCount)
-    }
-    
-    var secretWordScene: some View {
-        switch game?.status {
-        case .showingSecretWordToPlayerWithIndex(_):
-            return Rectangle()
-                .background(Color.green)
-        default:
-            return Rectangle()
-                .background(Color.purple)
-        }
-    }
-    
-    var stack: some View {
-        ConfigurationScene(startGameWithPlayerCount: startGameWithPlayerCount)
-    }
-    
-    func startGameWithPlayerCount(_ count: Int) {
-        print("Actually starting game with count!", count)
-        withAnimation {
-            appState = .playing
         }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  CachedPersistentJPEGImageStore.swift
+//  PlayerImages.swift
 //  Impostor
 //
 //  Created by William Entriken on 2023-12-31.
@@ -8,11 +8,9 @@
 import SwiftUI
 
 class PlayerImages {
-    var cachedImages = [Int: Image]()
-
     static let shared = PlayerImages()
-    
-    private static let defaultImage = Image(uiImage: UIImage(named: "defaultHeadshot.png")!)
+    static let defaultImage = Image(uiImage: UIImage(named: "defaultHeadshot.png")!)
+    private var cachedImages = [Int: Image]()
     
     func image(forPlayerIndex index: Int) -> Image {
         if let image = cachedImages[index] {
