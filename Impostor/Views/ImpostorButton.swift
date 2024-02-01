@@ -38,7 +38,7 @@ extension ImpostorButton where Label == Image {
     }
 }
 
-fileprivate struct ImpostorButtonStyle: ButtonStyle {
+ struct ImpostorButtonStyle: ButtonStyle {
     private let backgroundColor: Color = Color(hue: 0.6, saturation: 0.5, brightness: 1)
     private let shadowDepth: CGFloat = 6
 

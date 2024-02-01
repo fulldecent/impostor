@@ -6,37 +6,39 @@
 //
 
 import SwiftUI
+import Combine
 
-class PlayerImages {
+class PlayerImages: ObservableObject {
     static let shared = PlayerImages()
     static let defaultImage = Image(uiImage: UIImage(named: "defaultHeadshot.png")!)
-    private var cachedImages = [Int: Image]()
-    
+    private static let maxPlayerCount = 12
+
+    @Published private(set) var images = [Image?](repeating: nil, count: maxPlayerCount)
+
+    init() {
+        for index in 0..<PlayerImages.maxPlayerCount {
+            let fileURL = url(forPlayerIndex: index)
+            if let data = try? Data(contentsOf: url(forPlayerIndex: index)),
+               let uiImage = UIImage(data: data) {
+                images[index] = Image(uiImage: uiImage)
+            }
+        }
+    }
+
+    @available(*, deprecated, message: "Use the images array directly")
     func image(forPlayerIndex index: Int) -> Image {
-        if let image = cachedImages[index] {
-            return image
-        }
-        if let data = try? Data(contentsOf: url(forPlayerIndex: index)),
-           let uiImage = UIImage(data: data) {
-            let image = Image(uiImage: uiImage)
-            cachedImages[index] = image
-            return image
-        }
-        return Self.defaultImage
+        return images[index] ?? Self.defaultImage
     }
     
     func save(_ uiImage: UIImage, forPlayerIndex index: Int) {
-        // Convert UIImage to SwiftUI Image and update the cache
         let swiftUIImage = Image(uiImage: uiImage)
-        cachedImages[index] = swiftUIImage
+        images[index] = swiftUIImage
 
-        // Convert UIImage to JPEG data
         guard let imageData = uiImage.jpegData(compressionQuality: 0.9) else {
             print("Error: Could not get JPEG representation of UIImage")
             return
         }
 
-        // Write the JPEG data to disk
         do {
             let fileURL = url(forPlayerIndex: index)
             try imageData.write(to: fileURL, options: [.atomic])
@@ -47,18 +49,16 @@ class PlayerImages {
     
     func deleteAll() {
         let fileManager = FileManager.default
-        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
-        for url in try! fileManager.contentsOfDirectory(at: documentsURL, includingPropertiesForKeys: nil, options: []) {
-            if url.lastPathComponent.hasPrefix("imagecache-") {
-                _ = try? fileManager.removeItem(at: url)
-            }
+        for index in 0..<PlayerImages.maxPlayerCount {
+            let fileURL = url(forPlayerIndex: index)
+            _ = try? fileManager.removeItem(at: fileURL)
         }
-        cachedImages.removeAll()
+        images = [Image?](repeating: nil, count: PlayerImages.maxPlayerCount)
     }
 
     private func url(forPlayerIndex index: Int) -> URL {
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
-        let fileName = "imagecache-\(index).jpg"
+        let fileName = "playerimage-\(index).jpg"
         return documentsURL.appendingPathComponent(fileName)
     }
 }

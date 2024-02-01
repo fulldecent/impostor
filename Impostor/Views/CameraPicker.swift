@@ -8,6 +8,8 @@
 import SwiftUI
 import UIKit
 
+// FIXME: do this as swiftUI?
+
 struct CameraPicker: UIViewControllerRepresentable {
     @Binding var image: Image
     @Environment(\.presentationMode) var presentationMode

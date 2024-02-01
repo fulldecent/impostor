@@ -7,11 +7,14 @@
 
 import SwiftUI
 
+// FIXME: use the photo sharing from tmp.swift
+
 struct ResultsScene: View {
     let players: [ImpostorGame.Player]
     let status: ImpostorGame.Status
+    @State private var screenshot: UIImage?
+
     @State private var showShareSheet = false
-    @State private var screenshot = UIImage(named: "defaultHeadshot.png")!
 
     var aView = Text("hi")
     
@@ -54,132 +57,48 @@ struct ResultsScene: View {
             default:
                 break
             }
-        }
-        .sheet(isPresented: $showShareSheet) {
-            // Add your items to share here
-            ActivityViewController(activityItems: [
-                screenshot
-            ])
+            
+            // Slow screenshot render
+            DispatchQueue.main.async {
+                screenshot = makeScreenshot()
+            }
         }
     }
     
-    
     var bottomBar: some View {
         // Bottom actions
-        HStack(spacing: 12) {
+        return HStack(spacing: 12) {
             ImpostorButton(systemImageName: "play") {
                 AudioManager.shared.playSoundEffect(named: "buttonPress")
                 // start new game
             }
             
-            ImpostorButton(systemImageName: "square.and.arrow.up") {
-                AudioManager.shared.playSoundEffect(named: "buttonPress")
-                showShareSheet = true
-            }
-            
-            /*
+            if let screenshot {
+                let image = Image(uiImage: screenshot)
 
-            Button(action: {}, label: {
-                ShareLink(item: URL(string: "https://developer.apple.com/xcode/swiftui/")!) {
-                    Label("Share", image: "MyCustomShareIcon")
-                }
-            })
-
-            ShareLink(item: URL(string: "https://developer.apple.com/xcode/swiftui/")!) {
-                impostorButton(systemImageName: "square.and.arrow.up", action: {})
+                // TODO: style this like a button
+                ShareLink(
+                    item: image,
+                    preview: SharePreview(
+                        "Group selfie",
+                        image: image
+                    )
+                )
             }
-             */
         }
     }
-    
-    /*
-    @MainActor private func screenshot() -> UIImage {
-        let renderer = ImageRenderer(content: body)
-        let image = renderer.uiImage!
 
-        print(image.size)
-        print(image)
-        return image
-    }
-    
-    @MainActor private func share() {
-        let screenshot = screenshot()
-        let appName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String
-        let url = URL(string: "https://itunes.apple.com/us/app/whos-the-impostor/id784258202")!
-
-        let activityItems: [Any] = [
-            //screenshot
-            UIImage(named: "defaultHeadshot.png")!
-        ]
-        
-        let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
-        
-        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
-        let window = windowScene?.windows.first
-        window?.rootViewController?.present(activityVC, animated: true)
-    }
-    
-    private func getShareLink() -> some View {
-        print("making share link")
-        
-        let appName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String
-
-        let url = URL(string: "https://itunes.apple.com/us/app/whos-the-impostor/id784258202")!
-
-        
-        return ShareLink(
-            item: Screenshot(body: body),
-            preview: .init("a key", image: Image(systemName: "stop"))
+    @MainActor func makeScreenshot() -> UIImage? {
+        let renderer = ImageRenderer(
+            content: SharePhotoView(
+                players: players,
+                status: status,
+                imageForPlayerIndex: { PlayerImages.shared.images[$0] ?? PlayerImages.defaultImage }
+            )
+                .frame(width: 800, height: 1000)
         )
+        return renderer.uiImage
     }
-    
-    /*
-    struct Screenshot2<Content: View>: Transferable {
-        var body: Content
-
-        // Mock asynchronous method to return an Image
-        func generateImage() async -> Image {
-            // Simulate asynchronous operation
-            await Task.sleep(1_000_000_000)  // Waits for 1 second
-
-            // Mock result - replace this with actual image generation logic
-            let uiImage = UIImage(systemName: "photo") ?? UIImage()
-            return Image(uiImage: uiImage)
-        }
-
-        static var transferRepresentation: some TransferRepresentation {
-            ProxyRepresentation { screenshot in
-                await screenshot.generateImage()
-            }
-        }
-    }
-     */
-
-    struct Screenshot<Content: View>: Transferable {
-        var body: Content
-
-        @MainActor
-        func generate() async -> Image {
-            let renderer = ImageRenderer(content: body)
-            let uiImage = renderer.uiImage!
-            print(uiImage)
-            return Image(uiImage: uiImage)
-        }
-        
-        static var transferRepresentation: some TransferRepresentation {
-            ProxyRepresentation { screenshot in
-                Image(systemName: "play")
-            }
-
-            /*
-            ProxyRepresentation { screenshot in
-                await screenshot.generate()
-            }
-             */
-        }
-    }
-     */
-
 }
 
 fileprivate  struct IdentifiableInt: Identifiable {
@@ -241,8 +160,6 @@ fileprivate struct WackyAppearedModifier: ViewModifier {
         status: .impostorDefeated
     )
 }
-
-
 
 struct ActivityViewController: UIViewControllerRepresentable {
     var activityItems: [Any]

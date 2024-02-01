@@ -10,6 +10,7 @@ import SwiftUI
 struct SharePhotoView: View {
     let players: [ImpostorGame.Player]
     let status: ImpostorGame.Status
+    let imageForPlayerIndex: (Int) -> (Image)
     
     var body: some View {
         VStack(spacing: 20) {
@@ -22,7 +23,7 @@ struct SharePhotoView: View {
                     aspectRatio: 1, horizontalPadding: 12, verticalPadding: 12) { playerIndex in
                 VStack {
                     PlayerCard(
-                        image: PlayerImages.shared.image(forPlayerIndex: playerIndex.id),
+                        image: imageForPlayerIndex(playerIndex.id),
                         won: players[playerIndex.id].role == .impostor && status == .impostorWon,
                         lost: players[playerIndex.id].role == .impostor && status == .impostorDefeated
                     )
@@ -92,7 +93,8 @@ fileprivate struct WackyRotatedModifier: ViewModifier {
             .init(role: .normal, word: "Normal word"),
             .init(role: .impostor, word: "Impostor word")
         ],
-        status: .impostorWon
+        status: .impostorWon,
+        imageForPlayerIndex: { PlayerImages.shared.images[$0] ?? PlayerImages.defaultImage }
     )
     .padding()
 }
@@ -112,7 +114,8 @@ fileprivate struct WackyRotatedModifier: ViewModifier {
             .init(role: .normal, word: "Normal word"),
             .init(role: .impostor, word: "Really long impostor word")
         ],
-        status: .impostorDefeated
+        status: .impostorDefeated,
+        imageForPlayerIndex: { PlayerImages.shared.images[$0] ?? PlayerImages.defaultImage }
     )
     .padding()
 }
@@ -133,7 +136,11 @@ fileprivate struct WackyRotatedModifier: ViewModifier {
     ]
     let status: ImpostorGame.Status = .impostorDefeated
     let renderer = ImageRenderer(
-        content: SharePhotoView(players: players, status: status)
+        content: SharePhotoView(
+            players: players,
+            status: status,
+            imageForPlayerIndex: { PlayerImages.shared.images[$0] ?? PlayerImages.defaultImage }
+        )
             .frame(width: 800, height: 1000)
     )
     let uiImage = renderer.uiImage!

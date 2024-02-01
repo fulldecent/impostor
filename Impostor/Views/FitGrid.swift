@@ -66,30 +66,6 @@ struct FitGrid<Item: Identifiable, ItemView: View>: View {
 
         return bestSize
     }
-
-    /*
-    var body: some View {
-        GeometryReader { geometry in
-            let (itemSize, rowCount, columnCount) = itemViewSizeThatFits(
-                count: items.count,
-                size: geometry.size,
-                atAspectRatio: aspectRatio
-            )
-
-            ForEach(0..<items.count, id: \.self) { index in
-                let rowIndex = index / columnCount
-                let columnIndex = index % columnCount
-                
-                content(items[index])
-                    .frame(width: itemSize.width, height: itemSize.height)
-                    .position(
-                        x: (itemSize.width + horizontalPadding) * CGFloat(columnIndex) + itemSize.width / 2,
-                        y: (itemSize.height + verticalPadding) * CGFloat(rowIndex) + itemSize.height / 2
-                    )
-            }
-        }
-    }
-    */
 }
 
 //MARK: Previews
