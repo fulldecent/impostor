@@ -12,6 +12,7 @@ import SwiftUI
 struct ResultsScene: View {
     let players: [ImpostorGame.Player]
     let status: ImpostorGame.Status
+    let imageForPlayerIndex: (Int) -> (Image)
     @State private var screenshot: UIImage?
 
     @State private var showShareSheet = false
@@ -29,8 +30,7 @@ struct ResultsScene: View {
                     aspectRatio: 1, horizontalPadding: 12, verticalPadding: 12) { playerIndex in
                 VStack {
                     PlayerCard(
-                        image: PlayerImages.shared.image(forPlayerIndex: playerIndex.id),
-                        eliminated: .constant(players[playerIndex.id].eliminated),
+                        image: imageForPlayerIndex(playerIndex.id),
                         won: players[playerIndex.id].role == .impostor && status == .impostorWon,
                         lost: players[playerIndex.id].role == .impostor && status == .impostorDefeated
                     )
@@ -137,7 +137,8 @@ fileprivate struct WackyAppearedModifier: ViewModifier {
             .init(role: .normal, word: "Normal word"),
             .init(role: .impostor, word: "Impostor word")
         ],
-        status: .impostorWon
+        status: .impostorWon,
+        imageForPlayerIndex: { PlayerImages.shared.images[$0] ?? PlayerImages.defaultImage }
     )
 }
 
@@ -157,16 +158,7 @@ fileprivate struct WackyAppearedModifier: ViewModifier {
             .init(role: .normal, word: "Normal word"),
             .init(role: .impostor, word: "Really long impostor word")
         ],
-        status: .impostorDefeated
+        status: .impostorDefeated,
+        imageForPlayerIndex: { PlayerImages.shared.images[$0] ?? PlayerImages.defaultImage }
     )
-}
-
-struct ActivityViewController: UIViewControllerRepresentable {
-    var activityItems: [Any]
-
-    func makeUIViewController(context: Context) -> UIActivityViewController {
-        return UIActivityViewController(activityItems: ["hi"], applicationActivities: nil)
-    }
-
-    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
 }

@@ -15,20 +15,23 @@ struct ConfigurationScene: View {
         let index: Int
     }
     
-    @State private var players: [Player] = (1...3).map { index in
+    @State private var players: [Player] = (0..<3).map { index in
         Player(index: index)
     }
 
     @State private var showHelpScene = false
 
     var body: some View {
-        VStack(spacing: 20) {
+        let playerImages = PlayerImages.shared
+        
+        return VStack(spacing: 20) {
             topBar
             
             FitGrid(players,
                     aspectRatio: 1, horizontalPadding: 12, verticalPadding: 12) { player in
                 PlayerCard(
-                    image: PlayerImages.shared.image(forPlayerIndex: player.index)
+                    image: playerImages.images[player.index]
+                    ?? PlayerImages.defaultImage
                 )
                 .bounceAppeared()
             }
@@ -89,6 +92,10 @@ struct ConfigurationScene: View {
             ImpostorButton(systemImageName: "trash") {
                 AudioManager.shared.playSoundEffect(named: "buttonPress")
                 PlayerImages.shared.deleteAll()
+                // Hack to redraw
+                for index in players.indices {
+                    players[index] = Player(index: index)
+                }
             }
 
             ImpostorButton(systemImageName: "lightbulb") {

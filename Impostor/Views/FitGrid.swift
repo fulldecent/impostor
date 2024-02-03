@@ -9,11 +9,11 @@ import SwiftUI
 
 struct FitGrid<Item: Identifiable, ItemView: View>: View {
     let items: [Item]
-    var aspectRatio: CGFloat = 1
+    let content: (Item) -> ItemView
     var horizontalPadding: CGFloat
     var verticalPadding: CGFloat
-    let content: (Item) -> ItemView
-    
+    var aspectRatio: CGFloat = 1
+
     init(_ items: [Item], aspectRatio: CGFloat, horizontalPadding: CGFloat = 0, verticalPadding: CGFloat = 0, @ViewBuilder content: @escaping (Item) -> ItemView) {
         self.items = items
         self.aspectRatio = aspectRatio

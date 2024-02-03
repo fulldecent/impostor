@@ -12,51 +12,49 @@ import StoreKit
 
 @main
 struct ImpostorApp: App {
-    @State private var game: ImpostorGame?
     let storeManager = StoreManager()
     
     var body: some Scene {
         WindowGroup {
-            ZStack {
-                if game != nil {
-                    switch game!.status {
-                    case .showingSecretWordToPlayerWithIndex(let index):
-                        ShowSecretWordScene(
-                            playerName: "Player \(index+1)",
-                            secretWord: game!.players[index].word,
-                            image: .constant(Image("4")),     // ??$PlayerImages.shared.image(forPlayerIndex: index),
-                            shouldAttemptTakePhoto: false,
-                            onDoneViewingSecretWord: { game!.finishedShowingSecretWordToPlayer() },
-                            onAbortGame: { game = nil }
-                        )
-                        .id(index)
-                        .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .trailing)))
-                    case .votingStartingWithPlayerWithIndex(let index):
-                        Text("hi")
-                    case .impostorWon:
-                        Text("hi")
-                    case .impostorDefeated:
-                        Text("hi")
-                    }
-                } else {
-                    ConfigurationScene(startGameWithPlayerCount: startGameWithPlayerCount)
-                        .transition(.asymmetric(insertion: .move(edge: .leading), removal: .move(edge: .leading)))
-                }
-            }
-            .animation(.easeInOut, value: game)
+            ImpostorAppView()
         }
+    }
+    
+}
+
+fileprivate struct ImpostorAppView: View {
+    @State private var game: ImpostorGame?
+    @State private var dummyVariableToUpdatePlayerPhotos = 0
+    
+    var body: some View {
+        ZStack {
+            if let activeGame = game {
+                switch activeGame.status {
+                case .showingSecretWordToPlayerWithIndex(let index):
+                    SecretWordScene(
+                        playerIndex: index,
+                        secretWord: activeGame.players[index].word,
+                        close: { game!.finishedShowingSecretWordToPlayer() },
+                        abortGame: { game = nil }
+                    )
+                    .id("\(index)")
+                case .votingStartingWithPlayerWithIndex(let index):
+                    Text("hi")
+                case .impostorWon:
+                    Text("hi")
+                case .impostorDefeated:
+                    Text("hi")
+                }
+            } else {
+                ConfigurationScene(startGameWithPlayerCount: startGameWithPlayerCount)
+                    .transition(.asymmetric(insertion: .move(edge: .leading), removal: .move(edge: .leading)))
+            }
+        }
+        .animation(.easeInOut, value: game)
     }
     
     func startGameWithPlayerCount(_ count: Int) {
         game = .init(numberOfPlayers: count)
-    }
-}
-
-fileprivate extension AnyTransition {
-    static var slide: AnyTransition {
-        let insertion = AnyTransition.move(edge: .trailing)
-        let removal = AnyTransition.move(edge: .leading)
-        return .asymmetric(insertion: insertion, removal: removal)
     }
 }
 
@@ -96,4 +94,8 @@ class StoreManager: NSObject, SKPaymentTransactionObserver {
             }
         }
     }
+}
+
+#Preview {
+    ImpostorAppView()
 }

@@ -8,38 +8,48 @@
 import SwiftUI
 import UIKit
 
-// FIXME: do this as swiftUI?
+// TODO: this is a workaround until SwiftUI can control the camera
 
 struct CameraPicker: UIViewControllerRepresentable {
-    @Binding var image: Image
+    let onImagePicked: (UIImage) -> Void
     @Environment(\.presentationMode) var presentationMode
 
+    // Required method to create the UIViewController instance
     func makeUIViewController(context: Context) -> UIImagePickerController {
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
         picker.sourceType = .camera
+        picker.cameraDevice = .front
         return picker
     }
-
+    
+    // Required method, but no updates happen
     func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
-
+    
+    // Method to make a coordinator which will act as the UIImagePickerControllerDelegate
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
-
-    class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    
+    // Coordinator class
+    class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         var parent: CameraPicker
-
+        
         init(_ parent: CameraPicker) {
             self.parent = parent
         }
-
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        
+        // UIImagePickerControllerDelegate method
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             if let image = info[.originalImage] as? UIImage {
-                parent.image = Image(uiImage: image)
+                parent.onImagePicked(image) // Call the callback with the selected image
             }
-
-            parent.presentationMode.wrappedValue.dismiss()
+            
+            parent.presentationMode.wrappedValue.dismiss() // Dismiss the UIImagePickerController
+        }
+        
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            parent.presentationMode.wrappedValue.dismiss() // Dismiss if the user cancels
         }
     }
 }
