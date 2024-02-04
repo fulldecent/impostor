@@ -9,10 +9,11 @@ import SwiftUI
 
 struct VotingScene: View {
     let players: [ImpostorGame.Player]
+    let currentPlayerIndex: Int
     let imageForPlayerIndex: (Int) -> (Image)
+    let votedPlayer: (Int) -> Void
     @State private var screenshot: UIImage?
-
-    @State private var showShareSheet = false
+    @State private var isAlertPresented = false
 
     var aView = Text("hi")
     
@@ -28,14 +29,40 @@ struct VotingScene: View {
                     aspectRatio: 1, horizontalPadding: 12, verticalPadding: 12) { playerIndex in
                 VStack {
                     PlayerCard(
-                        image: playerImages.images[playerIndex.id] ?? PlayerImages.defaultImage
+                        image: playerImages.images[playerIndex.id] ?? PlayerImages.defaultImage,
+                        
+                        // FIXME:
+                        eliminated: .constant(players[playerIndex.id].eliminated)
                     )
                     .scaledToFit()
+                    .onTapGesture {
+                        if !players[playerIndex.id].eliminated {
+                            votedPlayer(playerIndex.id)
+                        }
+                    }
                 }
             }
         }
         .scenePadding()
         .background(Image("background"))
+        .onAppear {
+            isAlertPresented = true
+        }
+        .alert("Voting begins with", isPresented: $isAlertPresented, actions: {
+            Button("OK", action: { isAlertPresented = false })
+        }, message: {
+            Text("Player \(currentPlayerIndex + 1)")
+        })
+        
+        .sheet(isPresented: $isAlertPresented, content: {
+            VStack {
+                Text("This is the alert content!")
+                Button("Dismiss") {
+                    isAlertPresented = false
+                }
+            }
+            .padding()
+        })
     }
 }
 
@@ -44,32 +71,21 @@ fileprivate  struct IdentifiableInt: Identifiable {
 }
 
 #Preview("Impostor won") {
-    VotingScene(
-        players: [
+    struct PreviewWrapper: View {
+        @State var players: [ImpostorGame.Player] = [
             .init(role: .normal, word: "Normal word"),
             .init(role: .normal, word: "Normal word"),
             .init(role: .impostor, word: "Impostor word")
-        ],
-        imageForPlayerIndex: { PlayerImages.shared.images[$0] ?? PlayerImages.defaultImage }
-    )
-}
-
-#Preview("Impostor defeated") {
-    VotingScene(
-        players: [
-            .init(role: .normal, word: "Normal word"),
-            .init(role: .normal, word: "Normal word"),
-            .init(role: .normal, word: "Normal word"),
-            .init(role: .normal, word: "Normal word"),
-            .init(role: .normal, word: "Normal word"),
-            .init(role: .normal, word: "Normal word"),
-            .init(role: .normal, word: "Normal word"),
-            .init(role: .normal, word: "Normal word"),
-            .init(role: .normal, word: "Normal word"),
-            .init(role: .normal, word: "Normal word"),
-            .init(role: .normal, word: "Normal word"),
-            .init(role: .impostor, word: "Really long impostor word")
-        ],
-        imageForPlayerIndex: { PlayerImages.shared.images[$0] ?? PlayerImages.defaultImage }
-    )
+        ]
+        
+        var body: some View {
+            VotingScene(
+                players: players,
+                currentPlayerIndex: 4,
+                imageForPlayerIndex: { PlayerImages.shared.images[$0] ?? PlayerImages.defaultImage },
+                votedPlayer: { index in players[index].eliminated = true }
+            )
+        }
+    }
+    return PreviewWrapper()
 }

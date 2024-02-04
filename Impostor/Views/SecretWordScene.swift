@@ -32,6 +32,7 @@ struct SecretWordScene: View {
                 .impostorTextStyle()
 
             ImpostorButton("Show secret word") {
+                AudioManager.shared.playSoundEffect(named: "peek")
                 showingSecretWord = true
             }
             
@@ -50,19 +51,15 @@ struct SecretWordScene: View {
 
             HStack {
                 Spacer()
-                ImpostorButton(systemImageName: "xmark", action: close)
+                ImpostorButton(systemImageName: "xmark", action: abortGame)
                 .frame(width: 50)
             }
         }
-        .sheet(isPresented: $showingSecretWord) {
-            SecretWordModal(
-                secretWord: secretWord,
-                close: { showingSecretWord = false }
-            )
-            .onDisappear {
-                close()
-            }
-        }
+        .alert("Your secret word is", isPresented: $showingSecretWord, actions: {
+            Button(action: close, label: { Text("Ok") })
+        }, message: {
+            Text(secretWord)
+        })
         .sheet(isPresented: $isCameraPresented) {
             CameraPicker(onImagePicked: playerTookSelfiePhoto)
         }
@@ -77,28 +74,6 @@ struct SecretWordScene: View {
         PlayerImages.shared.save(photo, forPlayerIndex: playerIndex)
         self.image = PlayerImages.shared.images[playerIndex] ?? PlayerImages.defaultImage
         isCameraPresented = false
-    }
-}
-
-fileprivate struct SecretWordModal: View {
-    let secretWord: String
-    let close: () -> Void
-
-    var body: some View {
-        VStack {
-            Text("Your secret word is")
-                .impostorTextStyle()
-
-            Text(secretWord)
-                .impostorTextStyle()
-
-            ImpostorButton(systemImageName: "forward", action: close)
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity) // Expand to fill the modal
-        .background(Color.black)
-        .onAppear {
-            AudioManager.shared.playSoundEffect(named: "peek")
-        }
     }
 }
 

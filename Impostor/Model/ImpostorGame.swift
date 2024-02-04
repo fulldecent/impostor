@@ -10,6 +10,7 @@ import Foundation
 struct ImpostorGame: Equatable, Hashable {
     private(set) var players: [Player]
     private(set) var status: Status
+    private(set) var currentPlayerIndex: Int
     
     init(numberOfPlayers: Int) {
         let numberOfPlayers = numberOfPlayers.clamped(to: 3...12)
@@ -26,20 +27,18 @@ struct ImpostorGame: Equatable, Hashable {
             )
         })
         
-        status = .showingSecretWordToPlayerWithIndex(0)
+        status = .showingSecretWordToCurrentPlayer
+        currentPlayerIndex = 0
     }
     
     mutating func finishedShowingSecretWordToPlayer() {
-        switch status {
-        case .showingSecretWordToPlayerWithIndex(let playerIndex):
-            if players.indices.contains(playerIndex + 1) {
-                status = .showingSecretWordToPlayerWithIndex(playerIndex + 1)
-            } else {
-                let randomPlayerIndex = players.indices.randomElement()!
-                status = .votingStartingWithPlayerWithIndex(randomPlayerIndex)
-            }
-        default:
-            break
+        guard status == .showingSecretWordToCurrentPlayer else { return }
+
+        if players.indices.contains(currentPlayerIndex + 1) {
+            currentPlayerIndex += 1
+        } else {
+            currentPlayerIndex = players.indices.randomElement()!
+            status = .votingStartingWithCurrentPlayer
         }
     }
     
@@ -65,7 +64,7 @@ struct ImpostorGame: Equatable, Hashable {
         while players[nextPlayerIndex].eliminated {
             nextPlayerIndex = (nextPlayerIndex + 1) % players.count
         }
-        status = .votingStartingWithPlayerWithIndex(nextPlayerIndex)
+        currentPlayerIndex = nextPlayerIndex
     }
 
     struct Player: Equatable, Hashable {
@@ -80,8 +79,8 @@ struct ImpostorGame: Equatable, Hashable {
     }
     
     enum Status: Equatable, Hashable {
-        case showingSecretWordToPlayerWithIndex(_: Int)
-        case votingStartingWithPlayerWithIndex(_: Int)
+        case showingSecretWordToCurrentPlayer
+        case votingStartingWithCurrentPlayer
         case impostorWon
         case impostorDefeated
     }

@@ -29,10 +29,10 @@
     "Button2222" : {
 
     },
-    "Go to View 1" : {
+    "defeated" : {
 
     },
-    "Go to View 2" : {
+    "Dismiss" : {
 
     },
     "Group selfie" : {
@@ -56,10 +56,19 @@
     "More" : {
 
     },
+    "Ok" : {
+
+    },
+    "OK" : {
+
+    },
     "Player %lld" : {
 
     },
     "Show Help" : {
+
+    },
+    "This is the alert content!" : {
 
     },
     "Toggle Eliminated" : {
@@ -68,7 +77,13 @@
     "TOP SECRET\nFor your eyes only" : {
 
     },
+    "Voting begins with" : {
+
+    },
     "Which player was eliminated?" : {
+
+    },
+    "won" : {
 
     },
     "Your secret word is" : {

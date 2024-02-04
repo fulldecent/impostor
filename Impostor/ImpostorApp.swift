@@ -28,26 +28,46 @@ fileprivate struct ImpostorAppView: View {
     
     var body: some View {
         ZStack {
-            if let activeGame = game {
-                switch activeGame.status {
-                case .showingSecretWordToPlayerWithIndex(let index):
-                    SecretWordScene(
-                        playerIndex: index,
-                        secretWord: activeGame.players[index].word,
-                        close: { game!.finishedShowingSecretWordToPlayer() },
-                        abortGame: { game = nil }
-                    )
-                    .id("\(index)")
-                case .votingStartingWithPlayerWithIndex(let index):
-                    Text("hi")
-                case .impostorWon:
-                    Text("hi")
-                case .impostorDefeated:
-                    Text("hi")
-                }
-            } else {
+            switch game?.status {
+            case nil:
                 ConfigurationScene(startGameWithPlayerCount: startGameWithPlayerCount)
                     .transition(.asymmetric(insertion: .move(edge: .leading), removal: .move(edge: .leading)))
+            case .showingSecretWordToCurrentPlayer:
+                SecretWordScene(
+                    playerIndex: game!.currentPlayerIndex,
+                    secretWord: game!.players[game!.currentPlayerIndex].word,
+                    close: { game!.finishedShowingSecretWordToPlayer() },
+                    abortGame: { self.game = nil }
+                )
+                .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .trailing)))
+                .id(game!.currentPlayerIndex)
+            case .votingStartingWithCurrentPlayer:
+                VotingScene(
+                    players: game!.players,
+                    currentPlayerIndex: game!.currentPlayerIndex,
+                    imageForPlayerIndex: {
+                        PlayerImages.shared.images[$0] ?? PlayerImages.defaultImage
+                    },
+                    votedPlayer: {
+                        AudioManager.shared.playSoundEffect(named: "eliminate")
+                        game!.eliminatePlayerWithIndex($0)
+                    }
+                )
+                .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .trailing)))
+                .id(game!.currentPlayerIndex)
+
+                //                     VotingScene(
+            //players: game?.players, imageForPlayerIndex: <#T##(Int) -> (Image)#>)
+            case .impostorWon:
+                Text("won")
+                    .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .trailing)))
+                    .id(77)
+                // ResultsScene(players: <#T##[ImpostorGame.Player]#>, status: <#T##ImpostorGame.Status#>, imageForPlayerIndex: <#T##(Int) -> (Image)#>, aView: <#T##Text#>)
+            case .impostorDefeated:
+                Text("defeated")
+                    .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .trailing)))
+                    .id(88)
+                // ResultsScene
             }
         }
         .animation(.easeInOut, value: game)
