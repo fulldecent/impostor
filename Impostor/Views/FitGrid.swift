@@ -7,21 +7,34 @@
 
 import SwiftUI
 
-struct FitGrid<Item: Identifiable, ItemView: View>: View {
+struct FitGrid<Item, ItemView: View, ID: Hashable>: View {
     let items: [Item]
     let content: (Item) -> ItemView
-    var horizontalPadding: CGFloat
-    var verticalPadding: CGFloat
-    var aspectRatio: CGFloat = 1
+    let horizontalPadding: CGFloat
+    let verticalPadding: CGFloat
+    let aspectRatio: CGFloat
+    let id: KeyPath<Item, ID>
 
-    init(_ items: [Item], aspectRatio: CGFloat, horizontalPadding: CGFloat = 0, verticalPadding: CGFloat = 0, @ViewBuilder content: @escaping (Item) -> ItemView) {
+    // For non-Identifiable items
+    init(_ items: [Item], id: KeyPath<Item, ID>, aspectRatio: CGFloat = 1, horizontalPadding: CGFloat = 0, verticalPadding: CGFloat = 0, @ViewBuilder content: @escaping (Item) -> ItemView) {
         self.items = items
         self.aspectRatio = aspectRatio
         self.horizontalPadding = horizontalPadding
         self.verticalPadding = verticalPadding
         self.content = content
+        self.id = id
     }
-    
+
+    // For Identifiable items
+    init(_ items: [Item], aspectRatio: CGFloat = 1, horizontalPadding: CGFloat = 0, verticalPadding: CGFloat = 0, @ViewBuilder content: @escaping (Item) -> ItemView) where Item: Identifiable, ID == Item.ID {
+        self.items = items
+        self.aspectRatio = aspectRatio
+        self.horizontalPadding = horizontalPadding
+        self.verticalPadding = verticalPadding
+        self.content = content
+        self.id = \Item.id
+    }
+
     var body: some View {
         GeometryReader { geometry in
             let itemSize = itemViewSizeThatFits(
@@ -30,7 +43,7 @@ struct FitGrid<Item: Identifiable, ItemView: View>: View {
                 atAspectRatio: aspectRatio
             )
             LazyVGrid(columns: [GridItem(.adaptive(minimum: itemSize.width), spacing: horizontalPadding)], spacing: verticalPadding) {
-                ForEach(items) { item in
+                ForEach(items, id: id) { item in
                     content(item)
                         .frame(width: itemSize.width, height: itemSize.height)
                 }
@@ -69,109 +82,6 @@ struct FitGrid<Item: Identifiable, ItemView: View>: View {
 }
 
 //MARK: Previews
-
-// A simple identifiable data model for the grid items
-fileprivate struct GridItemModel: Identifiable, Equatable {
-    let id: UUID
-    let color: Color
-
-    static func == (lhs: Self, rhs: Self) -> Bool {
-        return lhs.id == rhs.id
-    }
-}
-
-// A simple view to represent each item in the grid
-fileprivate struct ColorView: View {
-    let color: Color
-
-    var body: some View {
-        Rectangle()
-            .fill(color)
-    }
-}
-
-// The preview provider
-struct AspectVGrid_Previews: PreviewProvider {
-    static var previews: some View {
-        ShufflingGridPreview()
-    }
-
-    struct ShufflingGridPreview: View {
-        @State private var items = (1...8).map { index in
-            GridItemModel(id: UUID(), color: Color.random())
-        }
-
-        // FYI: leaking, okay for preview
-        let timer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
-
-        var body: some View {
-            FitGrid(items, aspectRatio: 1, horizontalPadding: 10, verticalPadding: 10) { item in
-                ColorView(color: item.color)
-            }
-            .onReceive(timer) { _ in
-                withAnimation {
-                    items.shuffle()
-                }
-            }
-        }
-    }
-}
-
-// Add/remove
-struct AspectVGrid2_Previews: PreviewProvider {
-    static var previews: some View {
-        ShufflingGridPreview()
-    }
-    
-    struct ShufflingGridPreview: View {
-        @State private var items = (1...7).map { index in
-            GridItemModel(id: UUID(), color: Color.random())
-        }
-
-        func more() {
-            withAnimation {
-                items.append(GridItemModel(
-                    id: UUID(),
-                    color: Color.random()
-                ))
-            }
-        }
-        
-        func less() {
-            if items.count > 1 {
-                withAnimation {
-                    _ = items.popLast()
-                }
-            }
-        }
-
-        var body: some View {
-            VStack {
-                HStack {
-                    Button(action: self.less, label: { Text("Less") })
-                    Button(action: self.more, label: { Text("More") })
-                }
-                FitGrid(items, aspectRatio: 1, horizontalPadding: 10, verticalPadding: 10) { item in
-                    ColorView(color: item.color)
-                        //.bounceAppeared()
-                        .wackyAppeared()
-                }
-                
-//                .animation(.bouncy(duration: 0.5, extraBounce: 1.2), value: items)
-            }
-        }
-    }
-}
-
-fileprivate extension Color {
-    static func random() -> Color {
-        Color(
-            hue: Double.random(in: 0...1),
-            saturation: Double.random(in: 0.2...0.8),
-            brightness: Double.random(in: 0...0.95)
-        )
-    }
-}
 
 fileprivate extension View {
     func bounceAppeared() -> some View {
@@ -214,4 +124,62 @@ fileprivate struct WackyAppearedModifier: ViewModifier {
                 }
             }
     }
+}
+
+fileprivate struct Paint: Identifiable {
+    let color: Color
+    let id: UUID
+    
+    static func random() -> Paint {
+        Paint(
+            color: .init(
+                hue: Double.random(in: 0...1),
+                saturation: Double.random(in: 0.2...0.8),
+                brightness: Double.random(in: 0...0.95)
+            ),
+            id: UUID()
+        )
+    }
+}
+
+#Preview("Shuffling") {
+    struct ShufflingGridPreview: View {
+        @State var items: [Paint] = (1...8).map { _ in
+            Paint.random()
+        }
+        let timer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
+
+        func more() {
+            withAnimation {
+                items.append(Paint.random())
+            }
+        }
+
+        func less() {
+            guard items.count > 1 else {return}
+            withAnimation {
+                _ = items.popLast()
+            }
+        }
+
+        var body: some View {
+            VStack {
+                HStack {
+                    Button(action: self.less, label: { Text("Less") })
+                    Button(action: self.more, label: { Text("More") })
+                }
+                FitGrid(items, aspectRatio: 1, horizontalPadding: 10, verticalPadding: 10) { item in
+                    Rectangle().fill(item.color)
+                        .wackyAppeared()
+                }
+                .onReceive(timer) { _ in
+                    withAnimation {
+                        items.shuffle()
+                    }
+                }
+            }
+            .scenePadding()
+        }
+    }
+    return ShufflingGridPreview()
 }

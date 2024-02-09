@@ -7,17 +7,13 @@
 
 import SwiftUI
 
-// FIXME: use the photo sharing from tmp.swift
-
 struct ResultsScene: View {
     let players: [ImpostorGame.Player]
     let status: ImpostorGame.Status
     let imageForPlayerIndex: (Int) -> (Image)
+    let startNewGame: () -> Void
     @State private var screenshot: UIImage?
-
     @State private var showShareSheet = false
-
-    var aView = Text("hi")
     
     var body: some View {
         VStack(spacing: 20) {
@@ -66,17 +62,16 @@ struct ResultsScene: View {
     }
     
     var bottomBar: some View {
-        // Bottom actions
-        return HStack(spacing: 12) {
-            ImpostorButton(systemImageName: "play") {
+        HStack(spacing: 12) {
+            ImpostorButton(systemImageName: "repeat") {
                 AudioManager.shared.playSoundEffect(named: "buttonPress")
-                // start new game
+                startNewGame()
             }
             
             if let screenshot {
                 let image = Image(uiImage: screenshot)
 
-                // TODO: style this like a button
+                // TODO: style this like a button, waiting on SwiftUI to support this
                 ShareLink(
                     item: image,
                     preview: SharePreview(
@@ -101,7 +96,7 @@ struct ResultsScene: View {
     }
 }
 
-fileprivate  struct IdentifiableInt: Identifiable {
+fileprivate struct IdentifiableInt: Identifiable {
     let id: Int
 }
 
@@ -138,7 +133,8 @@ fileprivate struct WackyAppearedModifier: ViewModifier {
             .init(role: .impostor, word: "Impostor word")
         ],
         status: .impostorWon,
-        imageForPlayerIndex: { PlayerImages.shared.images[$0] ?? PlayerImages.defaultImage }
+        imageForPlayerIndex: { PlayerImages.shared.images[$0] ?? PlayerImages.defaultImage },
+        startNewGame: { print("Start new game") }
     )
 }
 
@@ -159,6 +155,7 @@ fileprivate struct WackyAppearedModifier: ViewModifier {
             .init(role: .impostor, word: "Really long impostor word")
         ],
         status: .impostorDefeated,
-        imageForPlayerIndex: { PlayerImages.shared.images[$0] ?? PlayerImages.defaultImage }
+        imageForPlayerIndex: { PlayerImages.shared.images[$0] ?? PlayerImages.defaultImage },
+        startNewGame: { print("Start new game") }
     )
 }

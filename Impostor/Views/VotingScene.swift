@@ -7,13 +7,16 @@
 
 import SwiftUI
 
+// TODO: fix binding so that the poofed = true will animate as this view slides out
+
 struct VotingScene: View {
     let players: [ImpostorGame.Player]
-    let currentPlayerIndex: Int
+    let beginVotingPlayerIndex: Int
     let imageForPlayerIndex: (Int) -> (Image)
     let votedPlayer: (Int) -> Void
     @State private var screenshot: UIImage?
-    @State private var isAlertPresented = false
+    @State private var isSecretPresented = false
+    @State private var votedPlayerIndex: Int? = nil
 
     var aView = Text("hi")
     
@@ -30,9 +33,10 @@ struct VotingScene: View {
                 VStack {
                     PlayerCard(
                         image: playerImages.images[playerIndex.id] ?? PlayerImages.defaultImage,
-                        
-                        // FIXME:
-                        eliminated: .constant(players[playerIndex.id].eliminated)
+                        poofed: Binding(
+                            get: { players[playerIndex.id].eliminated },
+                            set: { _ in }
+                        )
                     )
                     .scaledToFit()
                     .onTapGesture {
@@ -46,27 +50,17 @@ struct VotingScene: View {
         .scenePadding()
         .background(Image("background"))
         .onAppear {
-            isAlertPresented = true
+            isSecretPresented = true
         }
-        .alert("Voting begins with", isPresented: $isAlertPresented, actions: {
-            Button("OK", action: { isAlertPresented = false })
+        .alert("Begin voting with", isPresented: $isSecretPresented, actions: {
+            Button("OK", action: { isSecretPresented = false })
         }, message: {
-            Text("Player \(currentPlayerIndex + 1)")
-        })
-        
-        .sheet(isPresented: $isAlertPresented, content: {
-            VStack {
-                Text("This is the alert content!")
-                Button("Dismiss") {
-                    isAlertPresented = false
-                }
-            }
-            .padding()
+            Text("Player \(beginVotingPlayerIndex + 1)")
         })
     }
 }
 
-fileprivate  struct IdentifiableInt: Identifiable {
+fileprivate struct IdentifiableInt: Identifiable {
     let id: Int
 }
 
@@ -80,10 +74,13 @@ fileprivate  struct IdentifiableInt: Identifiable {
         
         var body: some View {
             VotingScene(
-                players: players,
-                currentPlayerIndex: 4,
+                players: players, 
+                beginVotingPlayerIndex: 0,
                 imageForPlayerIndex: { PlayerImages.shared.images[$0] ?? PlayerImages.defaultImage },
-                votedPlayer: { index in players[index].eliminated = true }
+                votedPlayer: {
+                    index in players[index].eliminated = true
+                    print("Voted player \(index + 1)")
+                }
             )
         }
     }

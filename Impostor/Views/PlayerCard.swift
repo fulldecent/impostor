@@ -9,16 +9,16 @@ import SwiftUI
 
 struct PlayerCard: View {
     let image: Image
-    @Binding var eliminated: Bool
-    var won: Bool = false
-    var lost: Bool = false
+    @Binding var poofed: Bool
+    let won: Bool
+    let lost: Bool
 
     @State private var puffOpacity: Double = 0
     @State private var puffScale: CGFloat = 1.0
 
-    init(image: Image, eliminated: Binding<Bool> = .constant(false), won: Bool = false, lost: Bool = false) {
+    init(image: Image, poofed: Binding<Bool> = .constant(false), won: Bool = false, lost: Bool = false) {
         self.image = image
-        _eliminated = eliminated
+        _poofed = poofed
         self.won = won
         self.lost = lost
     }
@@ -28,8 +28,8 @@ struct PlayerCard: View {
             image
                 .resizable()
                 .aspectRatio(1, contentMode: .fit) // square
-                .opacity(eliminated ? 0.30 : 1.0)
-                .saturation(eliminated ? 0.7 : 1.0)
+                .opacity(poofed ? 0.30 : 1.0)
+                .saturation(poofed ? 0.7 : 1.0)
 
             if won {
                 Image("crown")
@@ -49,7 +49,7 @@ struct PlayerCard: View {
                 .aspectRatio(contentMode: .fill)
                 .scaleEffect(puffScale)
                 .opacity(puffOpacity)
-                .onChange(of: eliminated, initial: false) { oldValue, newValue in
+                .onChange(of: poofed, initial: false) { oldValue, newValue in
                     if newValue {
                         // When eliminated becomes true
                         puffOpacity = 1.0
@@ -74,13 +74,13 @@ struct PlayerCard: View {
 
         var body: some View {
             VStack {
-                Button("Toggle Eliminated") {
+                Button("Toggle Poofed") {
                     self.eliminated.toggle()
                 }
 
                 PlayerCard(
                     image: Image("1"),
-                    eliminated: $eliminated
+                    poofed: $eliminated
                 )
                 .frame(width: 100, height: 100)
                 .onTapGesture {

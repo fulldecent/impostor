@@ -44,13 +44,15 @@ fileprivate struct ImpostorAppView: View {
             case .votingStartingWithCurrentPlayer:
                 VotingScene(
                     players: game!.players,
-                    currentPlayerIndex: game!.currentPlayerIndex,
+                    beginVotingPlayerIndex: game!.currentPlayerIndex,
                     imageForPlayerIndex: {
                         PlayerImages.shared.images[$0] ?? PlayerImages.defaultImage
                     },
-                    votedPlayer: {
+                    votedPlayer: { index in
                         AudioManager.shared.playSoundEffect(named: "eliminate")
-                        game!.eliminatePlayerWithIndex($0)
+                        withAnimation {
+                            game!.eliminatePlayerWithIndex(index)
+                        }
                     }
                 )
                 .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .trailing)))

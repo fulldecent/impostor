@@ -39,6 +39,7 @@
 		D9F4BFD82B41BDB900E500DA /* ImpostorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4BFD72B41BDB900E500DA /* ImpostorUITests.swift */; };
 		D9F4BFDA2B41BDB900E500DA /* ImpostorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4BFD92B41BDB900E500DA /* ImpostorUITestsLaunchTests.swift */; };
 		D9F4BFEC2B4233B300E500DA /* PlayerImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4BFEB2B4233B300E500DA /* PlayerImages.swift */; };
+		D9FBFD0C2B75C34C00AE2017 /* ImpostorAppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FBFD0B2B75C34C00AE2017 /* ImpostorAppModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		D9F4BFD72B41BDB900E500DA /* ImpostorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorUITests.swift; sourceTree = "<group>"; };
 		D9F4BFD92B41BDB900E500DA /* ImpostorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D9F4BFEB2B4233B300E500DA /* PlayerImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerImages.swift; sourceTree = "<group>"; };
+		D9FBFD0B2B75C34C00AE2017 /* ImpostorAppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorAppModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				D9F4BFBC2B41BDB800E500DA /* ImpostorApp.swift */,
+				D9FBFD0B2B75C34C00AE2017 /* ImpostorAppModel.swift */,
 				D92617FB2B465C1D00E1569B /* Views */,
 				D9F4BFEA2B42338800E500DA /* Model */,
 				D92617FC2B465DE500E1569B /* Resources */,
@@ -396,6 +399,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9FBFD0C2B75C34C00AE2017 /* ImpostorAppModel.swift in Sources */,
 				D9F4BFEC2B4233B300E500DA /* PlayerImages.swift in Sources */,
 				D95A75D72B6B53D4001FBF33 /* VotingScene.swift in Sources */,
 				D9A1091F2B49DBF900264D54 /* ConfigurationScene.swift in Sources */,

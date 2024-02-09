@@ -23,6 +23,9 @@
         }
       }
     },
+    "Begin voting with" : {
+
+    },
     "Button" : {
 
     },
@@ -30,9 +33,6 @@
 
     },
     "defeated" : {
-
-    },
-    "Dismiss" : {
 
     },
     "Group selfie" : {
@@ -68,16 +68,10 @@
     "Show Help" : {
 
     },
-    "This is the alert content!" : {
-
-    },
-    "Toggle Eliminated" : {
+    "Toggle Poofed" : {
 
     },
     "TOP SECRET\nFor your eyes only" : {
-
-    },
-    "Voting begins with" : {
 
     },
     "Which player was eliminated?" : {
