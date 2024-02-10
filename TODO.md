@@ -1,11 +1,9 @@
-todos in code
+1. Localize strings
+2. Integrate Fastlane for screenshots and publish to App Store
+3. Publish to App Store
 
-Use all SVG images / IDIOMATIC svg
+---
 
-translate all strings
+NO do v2
 
-use fastlane and UI testing
-
-testing the purchases
-
-test: Attempt To Take PHoto
+1. Redraw all images to SVG // NO DO V2

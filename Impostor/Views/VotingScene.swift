@@ -18,8 +18,6 @@ struct VotingScene: View {
     @State private var isSecretPresented = false
     @State private var votedPlayerIndex: Int? = nil
 
-    var aView = Text("hi")
-    
     var body: some View {
         let playerImages = PlayerImages.shared
 

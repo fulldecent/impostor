@@ -83,7 +83,7 @@ struct PlayerSquare: View {
         @State var eliminated: Bool = false
 
         var body: some View {
-            VStack {
+            VStack(spacing: 20) {
                 Button("Toggle Poofed") {
                     self.eliminated.toggle()
                 }
@@ -96,23 +96,27 @@ struct PlayerSquare: View {
                 .onTapGesture {
                     self.eliminated.toggle()
                 }
+                
+                PlayerSquare(
+                    image: Image(systemName: "cart"),
+                    won: true
+                )
+                .frame(width: 100, height: 100)
+
+                PlayerSquare(
+                    image: Image("wide"),
+                    lost: true
+                )
+                .frame(width: 100, height: 100)
+
+                PlayerSquare(
+                    image: Image("defaultHeadshot"),
+                    lost: true
+                )
+                .frame(width: 100, height: 100)
             }
         }
     }
 
-    return VStack(spacing: 20) {
-        PreviewContainer()
-
-        PlayerSquare(
-            image: Image(systemName: "cart"),
-            won: true
-        )
-        .frame(width: 100, height: 100)
-
-        PlayerSquare(
-            image: Image("wide"),
-            lost: true
-        )
-        .frame(width: 100, height: 100)
-    }
+    return PreviewContainer()
 }

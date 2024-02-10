@@ -28,19 +28,16 @@
 		D9B910CA2B46606500E117DF /* gameWords.json in Resources */ = {isa = PBXBuildFile; fileRef = D9B910CC2B46606500E117DF /* gameWords.json */; };
 		D9B910D82B4660E300E117DF /* gameWordsMore.json in Resources */ = {isa = PBXBuildFile; fileRef = D9B910DA2B4660E300E117DF /* gameWordsMore.json */; };
 		D9B910E52B4661FC00E117DF /* GameModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B910E42B4661FC00E117DF /* GameModelTests.swift */; };
-		D9B910E82B46698D00E117DF /* defaultHeadshot.png in Resources */ = {isa = PBXBuildFile; fileRef = D9B910E72B46698D00E117DF /* defaultHeadshot.png */; };
 		D9B910EA2B46725A00E117DF /* PlayerSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B910E92B46725A00E117DF /* PlayerSquare.swift */; };
 		D9C8E5352B76BB84004F97BE /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C8E5342B76BB84004F97BE /* StoreManager.swift */; };
 		D9CCC46E2B47A1FE0061E15D /* FitGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CCC46D2B47A1FE0061E15D /* FitGrid.swift */; };
 		D9CE60D42B63638C00E0FF5A /* ImpostorTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CE60D32B63638C00E0FF5A /* ImpostorTextStyle.swift */; };
 		D9F4BFBD2B41BDB800E500DA /* ImpostorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4BFBC2B41BDB800E500DA /* ImpostorApp.swift */; };
 		D9F4BFC12B41BDB900E500DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F4BFC02B41BDB900E500DA /* Assets.xcassets */; };
-		D9F4BFC42B41BDB900E500DA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F4BFC32B41BDB900E500DA /* Preview Assets.xcassets */; };
 		D9F4BFCE2B41BDB900E500DA /* ImpostorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4BFCD2B41BDB900E500DA /* ImpostorTests.swift */; };
 		D9F4BFD82B41BDB900E500DA /* ImpostorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4BFD72B41BDB900E500DA /* ImpostorUITests.swift */; };
 		D9F4BFDA2B41BDB900E500DA /* ImpostorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4BFD92B41BDB900E500DA /* ImpostorUITestsLaunchTests.swift */; };
 		D9F4BFEC2B4233B300E500DA /* PlayerImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4BFEB2B4233B300E500DA /* PlayerImages.swift */; };
-		D9FBFD0C2B75C34C00AE2017 /* ImpostorAppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FBFD0B2B75C34C00AE2017 /* ImpostorAppModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,7 +98,6 @@
 		D9B910E22B4660EA00E117DF /* es */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = es; path = es.lproj/gameWordsMore.json; sourceTree = "<group>"; };
 		D9B910E32B4660EA00E117DF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/gameWordsMore.json; sourceTree = "<group>"; };
 		D9B910E42B4661FC00E117DF /* GameModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModelTests.swift; sourceTree = "<group>"; };
-		D9B910E72B46698D00E117DF /* defaultHeadshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultHeadshot.png; sourceTree = "<group>"; };
 		D9B910E92B46725A00E117DF /* PlayerSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSquare.swift; sourceTree = "<group>"; };
 		D9C8E5342B76BB84004F97BE /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		D9CCC46D2B47A1FE0061E15D /* FitGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitGrid.swift; sourceTree = "<group>"; };
@@ -109,14 +105,12 @@
 		D9F4BFB92B41BDB800E500DA /* Impostor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Impostor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F4BFBC2B41BDB800E500DA /* ImpostorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorApp.swift; sourceTree = "<group>"; };
 		D9F4BFC02B41BDB900E500DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D9F4BFC32B41BDB900E500DA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D9F4BFC92B41BDB900E500DA /* ImpostorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImpostorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F4BFCD2B41BDB900E500DA /* ImpostorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorTests.swift; sourceTree = "<group>"; };
 		D9F4BFD32B41BDB900E500DA /* ImpostorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImpostorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F4BFD72B41BDB900E500DA /* ImpostorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorUITests.swift; sourceTree = "<group>"; };
 		D9F4BFD92B41BDB900E500DA /* ImpostorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D9F4BFEB2B4233B300E500DA /* PlayerImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerImages.swift; sourceTree = "<group>"; };
-		D9FBFD0B2B75C34C00AE2017 /* ImpostorAppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorAppModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,7 +167,6 @@
 				D9A1092C2B49E3FF00264D54 /* results-impostor-won.mp3 */,
 				D9A1092E2B49E40400264D54 /* results-impostor-defeated.mp3 */,
 				D9A109202B49E0E800264D54 /* Localizable.xcstrings */,
-				D9B910E72B46698D00E117DF /* defaultHeadshot.png */,
 				D9B910DA2B4660E300E117DF /* gameWordsMore.json */,
 				D9B910CC2B46606500E117DF /* gameWords.json */,
 			);
@@ -204,23 +197,13 @@
 			isa = PBXGroup;
 			children = (
 				D9F4BFBC2B41BDB800E500DA /* ImpostorApp.swift */,
-				D9FBFD0B2B75C34C00AE2017 /* ImpostorAppModel.swift */,
 				D92617FB2B465C1D00E1569B /* Views */,
 				D9F4BFEA2B42338800E500DA /* Model */,
 				D92617FC2B465DE500E1569B /* Resources */,
-				D9F4BFC22B41BDB900E500DA /* Preview Content */,
 				D9F4BFC02B41BDB900E500DA /* Assets.xcassets */,
 				D99D7A532B6E9E6C00CDBC24 /* Impostor.entitlements */,
 			);
 			path = Impostor;
-			sourceTree = "<group>";
-		};
-		D9F4BFC22B41BDB900E500DA /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				D9F4BFC32B41BDB900E500DA /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		D9F4BFCC2B41BDB900E500DA /* ImpostorTests */ = {
@@ -365,7 +348,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9F4BFC42B41BDB900E500DA /* Preview Assets.xcassets in Resources */,
 				D9A109252B49E3DE00264D54 /* camera.mp3 in Resources */,
 				D9A1092B2B49E3F900264D54 /* peek.mp3 in Resources */,
 				D9B910CA2B46606500E117DF /* gameWords.json in Resources */,
@@ -374,7 +356,6 @@
 				D9A109212B49E0E800264D54 /* Localizable.xcstrings in Resources */,
 				D9A1092F2B49E40400264D54 /* results-impostor-defeated.mp3 in Resources */,
 				D9B910D82B4660E300E117DF /* gameWordsMore.json in Resources */,
-				D9B910E82B46698D00E117DF /* defaultHeadshot.png in Resources */,
 				D9F4BFC12B41BDB900E500DA /* Assets.xcassets in Resources */,
 				D9A109292B49E3F500264D54 /* intro.mp3 in Resources */,
 				D9A1092D2B49E3FF00264D54 /* results-impostor-won.mp3 in Resources */,
@@ -402,7 +383,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9FBFD0C2B75C34C00AE2017 /* ImpostorAppModel.swift in Sources */,
 				D9F4BFEC2B4233B300E500DA /* PlayerImages.swift in Sources */,
 				D95A75D72B6B53D4001FBF33 /* VotingScene.swift in Sources */,
 				D9A1091F2B49DBF900264D54 /* ConfigurationScene.swift in Sources */,
@@ -623,7 +603,6 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Impostor/Preview Content\"";
 				DEVELOPMENT_TEAM = 8Q693ZG5RN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -658,7 +637,6 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Impostor/Preview Content\"";
 				DEVELOPMENT_TEAM = 8Q693ZG5RN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

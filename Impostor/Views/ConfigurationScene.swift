@@ -136,7 +136,7 @@ struct ConfigurationScene: View {
         }
     }
 
-    func doFeedback() {
+    private func doFeedback() {
         let handle = "@fulldecent"
         let tweetText = "I have an idea for the Impostor game"
         // make it URL encoded

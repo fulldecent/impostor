@@ -13,27 +13,6 @@ struct HelpPage {
     let bottomText: String
 }
 
-struct HelpPageView: View {
-    let page: HelpPage
-
-    var body: some View {
-        VStack {
-            Text(page.topText)
-                .padding()
-                .font(.custom("American Typewriter", size: 30))
-                .fontWeight(.bold)
-
-            page.image
-                .resizable()
-                .scaledToFit()
-
-            Text(page.bottomText)
-                .padding()
-                .font(.custom("American Typewriter", size: 30))
-        }
-    }
-}
-
 struct HelpScene: View {
     @State private var selectedIndex = 0
 
@@ -72,21 +51,42 @@ struct HelpScene: View {
     }
 }
 
-fileprivate struct PreviewView: View {
-    @State private var showHelpScene = false
+fileprivate struct HelpPageView: View {
+    let page: HelpPage
 
     var body: some View {
         VStack {
-            Button("Show Help") {
-                showHelpScene = true
-            }
-            .sheet(isPresented: $showHelpScene) {
-                HelpScene()
-            }
+            Text(page.topText)
+                .padding()
+                .font(.custom("American Typewriter", size: 30))
+                .fontWeight(.bold)
+
+            page.image
+                .resizable()
+                .scaledToFit()
+
+            Text(page.bottomText)
+                .padding()
+                .font(.custom("American Typewriter", size: 30))
         }
     }
 }
 
 #Preview {
-    PreviewView()
+    struct HelpScenePreview: View {
+        @State private var showHelpScene = false
+
+        var body: some View {
+            VStack {
+                Button("Show Help") {
+                    showHelpScene = true
+                }
+                .sheet(isPresented: $showHelpScene) {
+                    HelpScene()
+                }
+            }
+        }
+    }
+    
+    return HelpScenePreview()
 }

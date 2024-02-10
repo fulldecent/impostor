@@ -5,8 +5,6 @@
 //  Created by William Entriken on 2023-12-31.
 //
 
-// FIXME: go through all api ta make stuff private when needed
-
 import SwiftUI
 
 @main
@@ -20,7 +18,6 @@ struct ImpostorApp: App {
 
 fileprivate struct ImpostorAppView: View {
     @State private var game: ImpostorGame?
-    @State private var dummyVariableToUpdatePlayerPhotos = 0
     
     var body: some View {
         ZStack {
@@ -68,7 +65,7 @@ fileprivate struct ImpostorAppView: View {
         .animation(.easeInOut, value: game)
     }
     
-    func startGameWithPlayerCount(_ count: Int) {
+    private func startGameWithPlayerCount(_ count: Int) {
         game = .init(numberOfPlayers: count)
     }
 }
