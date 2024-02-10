@@ -22,7 +22,7 @@ struct SharePhotoView: View {
             FitGrid(players.indices.map { IdentifiableInt(id: $0) },
                     aspectRatio: 1, horizontalPadding: 12, verticalPadding: 12) { playerIndex in
                 VStack {
-                    PlayerCard(
+                    PlayerSquare(
                         image: imageForPlayerIndex(playerIndex.id),
                         won: players[playerIndex.id].role == .impostor && status == .impostorWon,
                         lost: players[playerIndex.id].role == .impostor && status == .impostorDefeated

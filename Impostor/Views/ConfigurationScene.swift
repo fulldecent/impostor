@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct ConfigurationScene: View {
     let startGameWithPlayerCount: (Int) -> ()
-    
+    let storeManager = StoreManager.shared
+
     private struct Player: Identifiable, Equatable {
         let id = UUID()
         let index: Int
@@ -20,6 +22,7 @@ struct ConfigurationScene: View {
     }
 
     @State private var showHelpScene = false
+    @State private var showThankYouAlert = false
 
     var body: some View {
         let playerImages = PlayerImages.shared
@@ -29,7 +32,7 @@ struct ConfigurationScene: View {
             
             FitGrid(players,
                     aspectRatio: 1, horizontalPadding: 12, verticalPadding: 12) { player in
-                PlayerCard(
+                PlayerSquare(
                     image: playerImages.images[player.index]
                     ?? PlayerImages.defaultImage
                 )
@@ -53,6 +56,11 @@ struct ConfigurationScene: View {
         }
         .sheet(isPresented: $showHelpScene) {
             HelpScene()
+        }
+        .alert(isPresented: $showThankYouAlert) {
+            Alert(title: Text("Thank you!"),
+                  message: Text("Already purchased expanded word list"),
+                  dismissButton: .default(Text("OK")))
         }
     }
     
@@ -103,10 +111,13 @@ struct ConfigurationScene: View {
                 doFeedback()
             }
 
-            ImpostorButton(systemImageName: "cart") {
+            ImpostorButton(systemImageName: storeManager.isPurchased ? "checkmark" : "cart") {
                 AudioManager.shared.playSoundEffect(named: "buttonPress")
-                // TODO: buy
-                print("BUY")
+                if storeManager.isPurchased {
+                    showThankYouAlert = true
+                } else {
+                    storeManager.purchase()
+                }
             }
         }
     }

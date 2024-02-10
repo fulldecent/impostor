@@ -23,16 +23,19 @@
         }
       }
     },
+    "Already purchased expanded word list" : {
+
+    },
     "Begin voting with" : {
 
     },
     "Button" : {
 
     },
-    "Button2222" : {
+    "Button auto" : {
 
     },
-    "defeated" : {
+    "Button2222" : {
 
     },
     "Group selfie" : {
@@ -68,6 +71,9 @@
     "Show Help" : {
 
     },
+    "Thank you!" : {
+
+    },
     "Toggle Poofed" : {
 
     },
@@ -75,9 +81,6 @@
 
     },
     "Which player was eliminated?" : {
-
-    },
-    "won" : {
 
     },
     "Your secret word is" : {

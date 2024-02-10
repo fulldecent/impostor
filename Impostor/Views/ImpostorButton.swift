@@ -38,7 +38,7 @@ extension ImpostorButton where Label == Image {
     }
 }
 
- struct ImpostorButtonStyle: ButtonStyle {
+struct ImpostorButtonStyle: ButtonStyle {
     private let backgroundColor: Color = Color(hue: 0.6, saturation: 0.5, brightness: 1)
     private let shadowDepth: CGFloat = 6
 
@@ -77,10 +77,10 @@ extension ImpostorButton where Label == Image {
                     Button(action: {
                         print("tap")
                     }, label: {
-                        Text("Button")
+                        Text("Button auto")
+                            .font(.system(size: 16, weight: .black))
                     })
                     .buttonStyle(ImpostorButtonStyle())
-                    .font(.system(size: 30, weight: .black))
                     
                 }
                 

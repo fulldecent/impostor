@@ -29,7 +29,8 @@
 		D9B910D82B4660E300E117DF /* gameWordsMore.json in Resources */ = {isa = PBXBuildFile; fileRef = D9B910DA2B4660E300E117DF /* gameWordsMore.json */; };
 		D9B910E52B4661FC00E117DF /* GameModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B910E42B4661FC00E117DF /* GameModelTests.swift */; };
 		D9B910E82B46698D00E117DF /* defaultHeadshot.png in Resources */ = {isa = PBXBuildFile; fileRef = D9B910E72B46698D00E117DF /* defaultHeadshot.png */; };
-		D9B910EA2B46725A00E117DF /* PlayerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B910E92B46725A00E117DF /* PlayerCard.swift */; };
+		D9B910EA2B46725A00E117DF /* PlayerSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B910E92B46725A00E117DF /* PlayerSquare.swift */; };
+		D9C8E5352B76BB84004F97BE /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C8E5342B76BB84004F97BE /* StoreManager.swift */; };
 		D9CCC46E2B47A1FE0061E15D /* FitGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CCC46D2B47A1FE0061E15D /* FitGrid.swift */; };
 		D9CE60D42B63638C00E0FF5A /* ImpostorTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CE60D32B63638C00E0FF5A /* ImpostorTextStyle.swift */; };
 		D9F4BFBD2B41BDB800E500DA /* ImpostorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4BFBC2B41BDB800E500DA /* ImpostorApp.swift */; };
@@ -101,7 +102,8 @@
 		D9B910E32B4660EA00E117DF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/gameWordsMore.json; sourceTree = "<group>"; };
 		D9B910E42B4661FC00E117DF /* GameModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModelTests.swift; sourceTree = "<group>"; };
 		D9B910E72B46698D00E117DF /* defaultHeadshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultHeadshot.png; sourceTree = "<group>"; };
-		D9B910E92B46725A00E117DF /* PlayerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCard.swift; sourceTree = "<group>"; };
+		D9B910E92B46725A00E117DF /* PlayerSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSquare.swift; sourceTree = "<group>"; };
+		D9C8E5342B76BB84004F97BE /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		D9CCC46D2B47A1FE0061E15D /* FitGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitGrid.swift; sourceTree = "<group>"; };
 		D9CE60D32B63638C00E0FF5A /* ImpostorTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorTextStyle.swift; sourceTree = "<group>"; };
 		D9F4BFB92B41BDB800E500DA /* Impostor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Impostor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,7 +157,7 @@
 				D95B5BE52B5322A3006EFE01 /* CameraPicker.swift */,
 				D95B5BEB2B533050006EFE01 /* ImpostorButton.swift */,
 				D9CE60D32B63638C00E0FF5A /* ImpostorTextStyle.swift */,
-				D9B910E92B46725A00E117DF /* PlayerCard.swift */,
+				D9B910E92B46725A00E117DF /* PlayerSquare.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -243,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				D95B5BDF2B51F114006EFE01 /* ImpostorGame.swift */,
+				D9C8E5342B76BB84004F97BE /* StoreManager.swift */,
 				D9F4BFEB2B4233B300E500DA /* PlayerImages.swift */,
 				D9A109302B49E98E00264D54 /* AudioManager.swift */,
 			);
@@ -406,9 +409,10 @@
 				D9A109312B49E98E00264D54 /* AudioManager.swift in Sources */,
 				D95B5BEA2B532FD5006EFE01 /* ResultsScene.swift in Sources */,
 				D95B5BE82B53270C006EFE01 /* HelpScene.swift in Sources */,
-				D9B910EA2B46725A00E117DF /* PlayerCard.swift in Sources */,
+				D9B910EA2B46725A00E117DF /* PlayerSquare.swift in Sources */,
 				D95B5BE62B5322A3006EFE01 /* CameraPicker.swift in Sources */,
 				D9A16D792B5E0FE0000D974C /* SharePhotoView.swift in Sources */,
+				D9C8E5352B76BB84004F97BE /* StoreManager.swift in Sources */,
 				D99D7A552B6EA54700CDBC24 /* SecretWordScene.swift in Sources */,
 				D9CCC46E2B47A1FE0061E15D /* FitGrid.swift in Sources */,
 				D95B5BEC2B533050006EFE01 /* ImpostorButton.swift in Sources */,

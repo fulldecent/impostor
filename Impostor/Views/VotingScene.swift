@@ -11,7 +11,7 @@ import SwiftUI
 
 struct VotingScene: View {
     let players: [ImpostorGame.Player]
-    let beginVotingPlayerIndex: Int
+    let startingPlayerIndex: Int
     let imageForPlayerIndex: (Int) -> (Image)
     let votedPlayer: (Int) -> Void
     @State private var screenshot: UIImage?
@@ -31,7 +31,7 @@ struct VotingScene: View {
             FitGrid(players.indices.map { IdentifiableInt(id: $0) },
                     aspectRatio: 1, horizontalPadding: 12, verticalPadding: 12) { playerIndex in
                 VStack {
-                    PlayerCard(
+                    PlayerSquare(
                         image: playerImages.images[playerIndex.id] ?? PlayerImages.defaultImage,
                         poofed: Binding(
                             get: { players[playerIndex.id].eliminated },
@@ -55,7 +55,7 @@ struct VotingScene: View {
         .alert("Begin voting with", isPresented: $isSecretPresented, actions: {
             Button("OK", action: { isSecretPresented = false })
         }, message: {
-            Text("Player \(beginVotingPlayerIndex + 1)")
+            Text("Player \(startingPlayerIndex + 1)")
         })
     }
 }
@@ -75,7 +75,7 @@ fileprivate struct IdentifiableInt: Identifiable {
         var body: some View {
             VotingScene(
                 players: players, 
-                beginVotingPlayerIndex: 0,
+                startingPlayerIndex: 0,
                 imageForPlayerIndex: { PlayerImages.shared.images[$0] ?? PlayerImages.defaultImage },
                 votedPlayer: {
                     index in players[index].eliminated = true

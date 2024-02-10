@@ -10,7 +10,6 @@ import Foundation
 struct ImpostorGame: Equatable, Hashable {
     private(set) var players: [Player]
     private(set) var status: Status
-    private(set) var currentPlayerIndex: Int
     
     init(numberOfPlayers: Int) {
         let numberOfPlayers = numberOfPlayers.clamped(to: 3...12)
@@ -27,23 +26,22 @@ struct ImpostorGame: Equatable, Hashable {
             )
         })
         
-        status = .showingSecretWordToCurrentPlayer
-        currentPlayerIndex = 0
+        status = .showingSecretWord(playerIndex: 0)
     }
     
-    mutating func finishedShowingSecretWordToPlayer() {
-        guard status == .showingSecretWordToCurrentPlayer else { return }
-
-        if players.indices.contains(currentPlayerIndex + 1) {
-            currentPlayerIndex += 1
+    mutating func finishedShowingSecretWord(withPlayerIndex playerIndex: Int) {
+        guard status == .showingSecretWord(playerIndex: playerIndex) else { return }
+        
+        if players.indices.contains(playerIndex + 1) {
+            status = .showingSecretWord(playerIndex: playerIndex + 1)
         } else {
-            currentPlayerIndex = players.indices.randomElement()!
-            status = .votingStartingWithCurrentPlayer
+            status = .voting(round: 1, startingPlayerIndex: players.indices.randomElement()!)
         }
     }
     
     mutating func eliminatePlayerWithIndex(_ playerIndex: Int) {
-        assert(!players[playerIndex].eliminated)
+        guard case .voting(let votingRound, _) = status else { return }
+        guard !players[playerIndex].eliminated else { return }
         
         players[playerIndex].eliminated = true
         let remaining = players.filter{ !$0.eliminated }
@@ -64,10 +62,11 @@ struct ImpostorGame: Equatable, Hashable {
         while players[nextPlayerIndex].eliminated {
             nextPlayerIndex = (nextPlayerIndex + 1) % players.count
         }
-        currentPlayerIndex = nextPlayerIndex
+        
+        status = .voting(round: votingRound + 1, startingPlayerIndex: nextPlayerIndex)
     }
 
-    struct Player: Equatable, Hashable {
+    struct Player: Equatable, Hashable, Identifiable {
         enum Role {
             case normal
             case impostor
@@ -75,12 +74,13 @@ struct ImpostorGame: Equatable, Hashable {
         
         let role: Role
         let word: String
+        let id = UUID()
         var eliminated: Bool = false
     }
     
     enum Status: Equatable, Hashable {
-        case showingSecretWordToCurrentPlayer
-        case votingStartingWithCurrentPlayer
+        case showingSecretWord(playerIndex: Int)
+        case voting(round: Int, startingPlayerIndex: Int)
         case impostorWon
         case impostorDefeated
     }

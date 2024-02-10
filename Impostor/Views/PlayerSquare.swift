@@ -7,7 +7,10 @@
 
 import SwiftUI
 
-struct PlayerCard: View {
+
+struct PlayerSquare: View {
+    
+    /// If not square, the only a square part of this is shown
     let image: Image
     @Binding var poofed: Bool
     let won: Bool
@@ -25,11 +28,18 @@ struct PlayerCard: View {
 
     var body: some View {
         ZStack {
-            image
-                .resizable()
-                .aspectRatio(1, contentMode: .fit) // square
-                .opacity(poofed ? 0.30 : 1.0)
-                .saturation(poofed ? 0.7 : 1.0)
+            ZStack {
+                Color.clear // This acts as a placeholder to help enforce the aspect ratio
+                    .aspectRatio(1.0, contentMode: .fit) // Enforce 1:1 aspect ratio
+                
+                image
+                    .resizable()
+                    .scaledToFill()
+                    .opacity(poofed ? 0.30 : 1.0)
+                    .saturation(poofed ? 0.7 : 1.0)
+                    .layoutPriority(-1) // Ensure this view tries to fill the space without affecting the aspect ratio
+            }
+            .clipped() // Ensure the image does not overflow the bounds of the ZStack
 
             if won {
                 Image("crown")
@@ -78,7 +88,7 @@ struct PlayerCard: View {
                     self.eliminated.toggle()
                 }
 
-                PlayerCard(
+                PlayerSquare(
                     image: Image("1"),
                     poofed: $eliminated
                 )
@@ -93,14 +103,14 @@ struct PlayerCard: View {
     return VStack(spacing: 20) {
         PreviewContainer()
 
-        PlayerCard(
-            image: Image("2"),
+        PlayerSquare(
+            image: Image(systemName: "cart"),
             won: true
         )
         .frame(width: 100, height: 100)
 
-        PlayerCard(
-            image: Image("3"),
+        PlayerSquare(
+            image: Image("wide"),
             lost: true
         )
         .frame(width: 100, height: 100)
