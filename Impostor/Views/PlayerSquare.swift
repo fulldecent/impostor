@@ -84,9 +84,9 @@ struct PlayerSquare: View {
 
         var body: some View {
             VStack(spacing: 20) {
-                Button("Toggle Poofed") {
-                    self.eliminated.toggle()
-                }
+                Button(action: {eliminated.toggle()}, label: {
+                    Image(systemName: "hammer.fill")
+                })
 
                 PlayerSquare(
                     image: Image("1"),

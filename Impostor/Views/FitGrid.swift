@@ -165,8 +165,8 @@ fileprivate struct Paint: Identifiable {
         var body: some View {
             VStack {
                 HStack {
-                    Button(action: self.less, label: { Text("Less") })
-                    Button(action: self.more, label: { Text("More") })
+                    Button(action: less, label: { Image(systemName: "minus") } )
+                    Button(action: more, label: { Image(systemName: "plus") } )
                 }
                 FitGrid(items, aspectRatio: 1, horizontalPadding: 10, verticalPadding: 10) { item in
                     Rectangle().fill(item.color)

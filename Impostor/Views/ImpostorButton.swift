@@ -23,7 +23,7 @@ struct ImpostorButton<Label: View>: View {
 }
 
 extension ImpostorButton where Label == Text {
-    init(_ text: String, action: @escaping () -> Void) {
+    init(_ text: LocalizedStringKey, action: @escaping () -> Void) {
         self.init(action: action) {
             Text(text)
         }
@@ -68,7 +68,7 @@ struct ImpostorButtonStyle: ButtonStyle {
                     Button(action: {
                         print("tap")
                     }, label: {
-                        Text("Button2222")
+                        Text("A party game")
                     })
                     .buttonStyle(ImpostorButtonStyle())
                     
@@ -77,35 +77,19 @@ struct ImpostorButtonStyle: ButtonStyle {
                     Button(action: {
                         print("tap")
                     }, label: {
-                        Text("Button auto")
+                        Text("A party game")
                             .font(.system(size: 16, weight: .black))
                     })
                     .buttonStyle(ImpostorButtonStyle())
                     
                 }
                 
-                HStack {
-                    Button(action: {
-                        print("tap")
-                    }, label: {
-                        Text("Button")
-                    })
-                    .buttonStyle(ImpostorButtonStyle())
-                    Text("hi there")
-                    Button(action: {
-                        print("tap")
-                    }, label: {
-                        Text("Button")
-                    })
-                    .buttonStyle(ImpostorButtonStyle())
-                }
-                
-                ImpostorButton("HI", action: {})
+                ImpostorButton("A party game", action: {})
                 
                 // Animated button row
                 HStack {
                     Spacer()
-                    ImpostorButton("Bouncy", action: {})
+                    ImpostorButton("A party game", action: {})
                         .frame(width: UIScreen.main.bounds.width * 0.6)
                         .offset(x: UIScreen.main.bounds.width * (moveButton ? -0.2 : 0.2))
                         .animation(

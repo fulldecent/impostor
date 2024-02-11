@@ -1,27 +1,18 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%lld PLAYERS" : {
+    "%lld players" : {
       "localizations" : {
-        "en" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld player"
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld players"
-                }
-              }
-            }
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld个玩家"
           }
         }
       }
+    },
+    "A party game" : {
+      "comment" : "For game instructions page 1"
     },
     "Already purchased expanded word list" : {
 
@@ -29,22 +20,19 @@
     "Begin voting with" : {
 
     },
-    "Button" : {
-
+    "but the impostor's word is different" : {
+      "comment" : "Explains the impostor mechanic in the game"
     },
-    "Button auto" : {
-
+    "Each round players describe their word" : {
+      "comment" : "For game instructions page 3"
     },
-    "Button2222" : {
-
+    "Everyone sees their secret word" : {
+      "comment" : "For game instructions page 2"
+    },
+    "for 3–12 people" : {
+      "comment" : "Describes the player count for the game"
     },
     "Group selfie" : {
-
-    },
-    "hi" : {
-
-    },
-    "hi there" : {
 
     },
     "Impostor was defeated" : {
@@ -53,29 +41,23 @@
     "Impostor won" : {
 
     },
-    "Less" : {
-
-    },
-    "More" : {
-
-    },
-    "Ok" : {
-
-    },
     "OK" : {
 
     },
     "Player %lld" : {
 
     },
-    "Show Help" : {
-
-    },
     "Thank you!" : {
 
     },
-    "Toggle Poofed" : {
-
+    "the impostor must survive with one other player" : {
+      "comment" : "Win condition for the impostor"
+    },
+    "then vote to eliminate one player" : {
+      "comment" : "Details on the voting process to eliminate players"
+    },
+    "To win" : {
+      "comment" : "For game instructions page 4"
     },
     "TOP SECRET\nFor your eyes only" : {
 

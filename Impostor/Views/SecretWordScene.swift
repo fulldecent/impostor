@@ -31,7 +31,7 @@ struct SecretWordScene: View {
             Text("Player \(playerIndex + 1)")
                 .impostorTextStyle()
 
-            ImpostorButton("Show secret word") {
+            ImpostorButton(systemImageName: "eye") {
                 AudioManager.shared.playSoundEffect(named: "peek")
                 showingSecretWord = true
             }
@@ -55,11 +55,15 @@ struct SecretWordScene: View {
                 .frame(width: 50)
             }
         }
-        .alert("Your secret word is", isPresented: $showingSecretWord, actions: {
-            Button(action: close, label: { Text("Ok") })
-        }, message: {
-            Text(secretWord)
-        })
+        .alert(isPresented: $showingSecretWord) {
+            Alert(
+                title: Text("Your secret word is"),
+                message: Text(secretWord),
+                dismissButton: .default(Text("OK")) {
+                    close()
+                }
+            )
+        }
         .sheet(isPresented: $isCameraPresented) {
             CameraPicker(onImagePicked: playerTookSelfiePhoto)
         }

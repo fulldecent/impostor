@@ -19,23 +19,23 @@ struct HelpScene: View {
     let pages = [
         HelpPage(
             image: Image("help1"),
-            topText: "A party game",
-            bottomText: "for 3–12 people"
+            topText: String(localized: "A party game", comment: "For game instructions page 1"),
+            bottomText: String(localized: "for 3–12 people", comment: "Describes the player count for the game")
         ),
         HelpPage(
             image: Image("help2"),
-            topText: "Everyone sees their secret word",
-            bottomText: "but the impostor's word is different"
+            topText: String(localized: "Everyone sees their secret word", comment: "For game instructions page 2"),
+            bottomText: String(localized: "but the impostor's word is different", comment: "Explains the impostor mechanic in the game")
         ),
         HelpPage(
             image: Image("help3"),
-            topText: "Each round players describe their word",
-            bottomText: "then vote to eliminate one player (can't use word to describe itself or repeat other players, break ties with a revote)"
+            topText: String(localized: "Each round players describe their word", comment: "For game instructions page 3"),
+            bottomText: String(localized: "then vote to eliminate one player", comment: "Details on the voting process to eliminate players")
         ),
         HelpPage(
             image: Image("help4"),
-            topText: "To win",
-            bottomText: "the impostor must survive with one other player"
+            topText: String(localized: "To win", comment: "For game instructions page 4"),
+            bottomText: String(localized: "the impostor must survive with one other player", comment: "Win condition for the impostor")
         )
     ]
 
@@ -78,9 +78,9 @@ fileprivate struct HelpPageView: View {
 
         var body: some View {
             VStack {
-                Button("Show Help") {
-                    showHelpScene = true
-                }
+                Button(action: {showHelpScene = true}, label: {
+                    Image(systemName: "questionmark")
+                })
                 .sheet(isPresented: $showHelpScene) {
                     HelpScene()
                 }

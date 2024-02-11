@@ -100,6 +100,7 @@
 		D9B910E42B4661FC00E117DF /* GameModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModelTests.swift; sourceTree = "<group>"; };
 		D9B910E92B46725A00E117DF /* PlayerSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSquare.swift; sourceTree = "<group>"; };
 		D9C8E5342B76BB84004F97BE /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		D9C8E5382B79608D004F97BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D9CCC46D2B47A1FE0061E15D /* FitGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitGrid.swift; sourceTree = "<group>"; };
 		D9CE60D32B63638C00E0FF5A /* ImpostorTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorTextStyle.swift; sourceTree = "<group>"; };
 		D9F4BFB92B41BDB800E500DA /* Impostor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Impostor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +197,7 @@
 		D9F4BFBB2B41BDB800E500DA /* Impostor */ = {
 			isa = PBXGroup;
 			children = (
+				D9C8E5382B79608D004F97BE /* Info.plist */,
 				D9F4BFBC2B41BDB800E500DA /* ImpostorApp.swift */,
 				D92617FB2B465C1D00E1569B /* Views */,
 				D9F4BFEA2B42338800E500DA /* Model */,
@@ -330,6 +332,36 @@
 				nl,
 				"pt-BR",
 				Base,
+				it,
+				sv,
+				"zh-Hant",
+				ar,
+				ca,
+				hr,
+				cs,
+				da,
+				"zh-HK",
+				"en-AU",
+				"en-IN",
+				"en-GB",
+				fi,
+				"fr-CA",
+				el,
+				he,
+				hi,
+				hu,
+				id,
+				ms,
+				nb,
+				pl,
+				"pt-PT",
+				sk,
+				ro,
+				"es-419",
+				th,
+				tr,
+				uk,
+				vi,
 			);
 			mainGroup = D9F4BFB02B41BDB800E500DA;
 			productRefGroup = D9F4BFBA2B41BDB800E500DA /* Products */;
@@ -606,8 +638,11 @@
 				DEVELOPMENT_TEAM = 8Q693ZG5RN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Impostor/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Player selfies";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Player selfies";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -640,8 +675,11 @@
 				DEVELOPMENT_TEAM = 8Q693ZG5RN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Impostor/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Player selfies";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Player selfies";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

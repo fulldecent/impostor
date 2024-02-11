@@ -26,7 +26,7 @@ fileprivate struct ImpostorTextStyle: ViewModifier {
 
 #Preview {
     HStack {
-        Text("hi")
+        Text("A party game")
             .impostorTextStyle()
             .padding(20)
     }

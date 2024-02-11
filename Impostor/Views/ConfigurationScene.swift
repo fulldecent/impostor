@@ -42,7 +42,6 @@ struct ConfigurationScene: View {
             ImpostorButton(systemImageName: "play.fill") {
                 startGameWithPlayerCount(players.count)
             }
-            .frame(maxWidth: .infinity)
 
             bottomBar
         }
@@ -58,9 +57,10 @@ struct ConfigurationScene: View {
             HelpScene()
         }
         .alert(isPresented: $showThankYouAlert) {
-            Alert(title: Text("Thank you!"),
-                  message: Text("Already purchased expanded word list"),
-                  dismissButton: .default(Text("OK")))
+            Alert(
+                title: Text("Thank you!"),
+                message: Text("Already purchased expanded word list")
+            )
         }
     }
     
@@ -74,7 +74,7 @@ struct ConfigurationScene: View {
             
             Spacer()
             
-            Text("\(players.count) PLAYERS")
+            Text("\(players.count) players")
                 .impostorTextStyle()
                 //.frame(maxWidth: .infinity) // Allows the text to take as much space as possible
 

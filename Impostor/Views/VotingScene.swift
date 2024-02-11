@@ -50,11 +50,12 @@ struct VotingScene: View {
         .onAppear {
             isSecretPresented = true
         }
-        .alert("Begin voting with", isPresented: $isSecretPresented, actions: {
-            Button("OK", action: { isSecretPresented = false })
-        }, message: {
-            Text("Player \(startingPlayerIndex + 1)")
-        })
+        .alert(isPresented: $isSecretPresented) {
+            Alert(
+                title: Text("Begin voting with"),
+                message: Text("Player \(startingPlayerIndex + 1)")
+            )
+        }
     }
 }
 
