@@ -20,22 +20,22 @@ struct HelpScene: View {
         HelpPage(
             image: Image("help1"),
             topText: String(localized: "A party game", comment: "For game instructions page 1"),
-            bottomText: String(localized: "for 3–12 people", comment: "Describes the player count for the game")
+            bottomText: String(localized: "for 3–12 people", comment: "For game instructions page 1")
         ),
         HelpPage(
             image: Image("help2"),
             topText: String(localized: "Everyone sees their secret word", comment: "For game instructions page 2"),
-            bottomText: String(localized: "but the impostor's word is different", comment: "Explains the impostor mechanic in the game")
+            bottomText: String(localized: "but the impostor's word is different", comment: "For game instructions page 2")
         ),
         HelpPage(
             image: Image("help3"),
             topText: String(localized: "Each round players describe their word", comment: "For game instructions page 3"),
-            bottomText: String(localized: "then vote to eliminate one player", comment: "Details on the voting process to eliminate players")
+            bottomText: String(localized: "then vote to eliminate one player", comment: "For game instructions page 3")
         ),
         HelpPage(
             image: Image("help4"),
             topText: String(localized: "To win", comment: "For game instructions page 4"),
-            bottomText: String(localized: "the impostor must survive with one other player", comment: "Win condition for the impostor")
+            bottomText: String(localized: "the impostor must survive with one other player", comment: "For game instructions page 4")
         )
     ]
 

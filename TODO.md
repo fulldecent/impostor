@@ -1,3 +1,7 @@
+Change the game strings to have one file and only pull in the first 80 if not paid
+
+
+
 1. Localize strings
 2. Integrate Fastlane for screenshots and publish to App Store
 3. Publish to App Store

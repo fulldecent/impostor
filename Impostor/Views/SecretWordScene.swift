@@ -55,15 +55,12 @@ struct SecretWordScene: View {
                 .frame(width: 50)
             }
         }
-        .alert(isPresented: $showingSecretWord) {
-            Alert(
-                title: Text("Your secret word is"),
-                message: Text(secretWord),
-                dismissButton: .default(Text("OK")) {
-                    close()
-                }
-            )
-        }
+        .alert(secretWord, isPresented: $showingSecretWord, actions: {})
+        .onChange(of: showingSecretWord, initial: false, { _, new in
+            if !new {
+                close()
+            }    
+        })
         .sheet(isPresented: $isCameraPresented) {
             CameraPicker(onImagePicked: playerTookSelfiePhoto)
         }

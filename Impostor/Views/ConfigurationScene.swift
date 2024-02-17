@@ -56,12 +56,11 @@ struct ConfigurationScene: View {
         .sheet(isPresented: $showHelpScene) {
             HelpScene()
         }
-        .alert(isPresented: $showThankYouAlert) {
-            Alert(
-                title: Text("Thank you!"),
-                message: Text("Already purchased expanded word list")
-            )
-        }
+        .alert(
+            "Expanded word list already purchased",
+            isPresented: $showThankYouAlert,
+            actions: {}
+        )
     }
     
     var topBar: some View {
