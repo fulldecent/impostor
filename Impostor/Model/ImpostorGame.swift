@@ -14,10 +14,7 @@ struct ImpostorGame: Equatable, Hashable {
     init(numberOfPlayers: Int) {
         let numberOfPlayers = numberOfPlayers.clamped(to: 3...12)
         let impostorIndex = Int.random(in: 0..<numberOfPlayers)
-        let wordPair = Self.allWordPairs().randomElement()!
-        let (normalWord, impostorWord) = Bool.random()
-        ? wordPair
-        : (wordPair.1, wordPair.0)
+        let (normalWord, impostorWord) = Self.randomWordPair()
         
         players = (0..<numberOfPlayers).map({ playerIndex in
             Player(
@@ -86,23 +83,22 @@ struct ImpostorGame: Equatable, Hashable {
     }
 
     //MARK: word lists
-    private static let freeWordPairs: [(String, String)] = {
+    
+    // Data file is a JSON array of sets of similar words
+    
+    private static let allWordSets: [[String]] = {
         let jsonURL = Bundle.main.url(forResource: "gameWords", withExtension: "json")!
         let jsonData = try! Data(contentsOf: jsonURL)
-        let jsonArray = try! JSONSerialization.jsonObject(with: jsonData, options: []) as! [[String]]
-        return jsonArray.map { ($0[0], $0[1]) }
+        return try! JSONSerialization.jsonObject(with: jsonData, options: []) as! [[String]]
     }()
     
-    private static let paidWordPairs: [(String, String)] = {
-        let jsonURL = Bundle.main.url(forResource: "gameWordsMore", withExtension: "json")!
-        let jsonData = try! Data(contentsOf: jsonURL)
-        let jsonArray = try! JSONSerialization.jsonObject(with: jsonData, options: []) as! [[String]]
-        return jsonArray.map { ($0[0], $0[1]) }
-    }()
-
-    private static func allWordPairs() -> [(String, String)] {
+    private static func randomWordPair() -> (String, String) {
         let didIAP = UserDefaults.standard.integer(forKey: "didIAP") > 0
-        return didIAP ? Self.freeWordPairs + Self.paidWordPairs : Self.freeWordPairs
+        let wordSet = didIAP
+        ? allWordSets.randomElement()!
+        : allWordSets[0..<45].randomElement()!
+        let shuffledSet = wordSet.shuffled()
+        return (shuffledSet[0], shuffledSet[1])
     }
 }
 

@@ -26,15 +26,13 @@
 		D9A109312B49E98E00264D54 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A109302B49E98E00264D54 /* AudioManager.swift */; };
 		D9A16D792B5E0FE0000D974C /* SharePhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A16D782B5E0FE0000D974C /* SharePhotoView.swift */; };
 		D9B910CA2B46606500E117DF /* gameWords.json in Resources */ = {isa = PBXBuildFile; fileRef = D9B910CC2B46606500E117DF /* gameWords.json */; };
-		D9B910D82B4660E300E117DF /* gameWordsMore.json in Resources */ = {isa = PBXBuildFile; fileRef = D9B910DA2B4660E300E117DF /* gameWordsMore.json */; };
-		D9B910E52B4661FC00E117DF /* GameModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B910E42B4661FC00E117DF /* GameModelTests.swift */; };
 		D9B910EA2B46725A00E117DF /* PlayerSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B910E92B46725A00E117DF /* PlayerSquare.swift */; };
 		D9C8E5352B76BB84004F97BE /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C8E5342B76BB84004F97BE /* StoreManager.swift */; };
 		D9CCC46E2B47A1FE0061E15D /* FitGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CCC46D2B47A1FE0061E15D /* FitGrid.swift */; };
 		D9CE60D42B63638C00E0FF5A /* ImpostorTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CE60D32B63638C00E0FF5A /* ImpostorTextStyle.swift */; };
 		D9F4BFBD2B41BDB800E500DA /* ImpostorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4BFBC2B41BDB800E500DA /* ImpostorApp.swift */; };
 		D9F4BFC12B41BDB900E500DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F4BFC02B41BDB900E500DA /* Assets.xcassets */; };
-		D9F4BFCE2B41BDB900E500DA /* ImpostorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4BFCD2B41BDB900E500DA /* ImpostorTests.swift */; };
+		D9F4BFCE2B41BDB900E500DA /* ImpostorGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4BFCD2B41BDB900E500DA /* ImpostorGameTests.swift */; };
 		D9F4BFD82B41BDB900E500DA /* ImpostorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4BFD72B41BDB900E500DA /* ImpostorUITests.swift */; };
 		D9F4BFDA2B41BDB900E500DA /* ImpostorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4BFD92B41BDB900E500DA /* ImpostorUITestsLaunchTests.swift */; };
 		D9F4BFEC2B4233B300E500DA /* PlayerImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4BFEB2B4233B300E500DA /* PlayerImages.swift */; };
@@ -87,17 +85,6 @@
 		D9B910D32B46606D00E117DF /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "pt-BR"; path = "pt-BR.lproj/gameWords.json"; sourceTree = "<group>"; };
 		D9B910D42B46606D00E117DF /* es */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = es; path = es.lproj/gameWords.json; sourceTree = "<group>"; };
 		D9B910D52B46606E00E117DF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ru; path = ru.lproj/gameWords.json; sourceTree = "<group>"; };
-		D9B910D92B4660E300E117DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/gameWordsMore.json; sourceTree = "<group>"; };
-		D9B910DB2B4660E500E117DF /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = nl; path = nl.lproj/gameWordsMore.json; sourceTree = "<group>"; };
-		D9B910DC2B4660E600E117DF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "zh-Hans"; path = "zh-Hans.lproj/gameWordsMore.json"; sourceTree = "<group>"; };
-		D9B910DD2B4660E700E117DF /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/gameWordsMore.json; sourceTree = "<group>"; };
-		D9B910DE2B4660E700E117DF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ja; path = ja.lproj/gameWordsMore.json; sourceTree = "<group>"; };
-		D9B910DF2B4660E800E117DF /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ko; path = ko.lproj/gameWordsMore.json; sourceTree = "<group>"; };
-		D9B910E02B4660E800E117DF /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "pt-BR"; path = "pt-BR.lproj/gameWordsMore.json"; sourceTree = "<group>"; };
-		D9B910E12B4660E900E117DF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ru; path = ru.lproj/gameWordsMore.json; sourceTree = "<group>"; };
-		D9B910E22B4660EA00E117DF /* es */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = es; path = es.lproj/gameWordsMore.json; sourceTree = "<group>"; };
-		D9B910E32B4660EA00E117DF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/gameWordsMore.json; sourceTree = "<group>"; };
-		D9B910E42B4661FC00E117DF /* GameModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModelTests.swift; sourceTree = "<group>"; };
 		D9B910E92B46725A00E117DF /* PlayerSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSquare.swift; sourceTree = "<group>"; };
 		D9C8E5342B76BB84004F97BE /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		D9C8E5382B79608D004F97BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -107,7 +94,7 @@
 		D9F4BFBC2B41BDB800E500DA /* ImpostorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorApp.swift; sourceTree = "<group>"; };
 		D9F4BFC02B41BDB900E500DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9F4BFC92B41BDB900E500DA /* ImpostorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImpostorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9F4BFCD2B41BDB900E500DA /* ImpostorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorTests.swift; sourceTree = "<group>"; };
+		D9F4BFCD2B41BDB900E500DA /* ImpostorGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorGameTests.swift; sourceTree = "<group>"; };
 		D9F4BFD32B41BDB900E500DA /* ImpostorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImpostorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F4BFD72B41BDB900E500DA /* ImpostorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorUITests.swift; sourceTree = "<group>"; };
 		D9F4BFD92B41BDB900E500DA /* ImpostorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -168,7 +155,6 @@
 				D9A1092C2B49E3FF00264D54 /* results-impostor-won.mp3 */,
 				D9A1092E2B49E40400264D54 /* results-impostor-defeated.mp3 */,
 				D9A109202B49E0E800264D54 /* Localizable.xcstrings */,
-				D9B910DA2B4660E300E117DF /* gameWordsMore.json */,
 				D9B910CC2B46606500E117DF /* gameWords.json */,
 			);
 			path = Resources;
@@ -211,8 +197,7 @@
 		D9F4BFCC2B41BDB900E500DA /* ImpostorTests */ = {
 			isa = PBXGroup;
 			children = (
-				D9F4BFCD2B41BDB900E500DA /* ImpostorTests.swift */,
-				D9B910E42B4661FC00E117DF /* GameModelTests.swift */,
+				D9F4BFCD2B41BDB900E500DA /* ImpostorGameTests.swift */,
 			);
 			path = ImpostorTests;
 			sourceTree = "<group>";
@@ -387,7 +372,6 @@
 				D9A109232B49E3D000264D54 /* buttonPress.mp3 in Resources */,
 				D9A109212B49E0E800264D54 /* Localizable.xcstrings in Resources */,
 				D9A1092F2B49E40400264D54 /* results-impostor-defeated.mp3 in Resources */,
-				D9B910D82B4660E300E117DF /* gameWordsMore.json in Resources */,
 				D9F4BFC12B41BDB900E500DA /* Assets.xcassets in Resources */,
 				D9A109292B49E3F500264D54 /* intro.mp3 in Resources */,
 				D9A1092D2B49E3FF00264D54 /* results-impostor-won.mp3 in Resources */,
@@ -438,8 +422,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9F4BFCE2B41BDB900E500DA /* ImpostorTests.swift in Sources */,
-				D9B910E52B4661FC00E117DF /* GameModelTests.swift in Sources */,
+				D9F4BFCE2B41BDB900E500DA /* ImpostorGameTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,23 +466,6 @@
 				D9B910D52B46606E00E117DF /* ru */,
 			);
 			name = gameWords.json;
-			sourceTree = "<group>";
-		};
-		D9B910DA2B4660E300E117DF /* gameWordsMore.json */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D9B910D92B4660E300E117DF /* en */,
-				D9B910DB2B4660E500E117DF /* nl */,
-				D9B910DC2B4660E600E117DF /* zh-Hans */,
-				D9B910DD2B4660E700E117DF /* fr */,
-				D9B910DE2B4660E700E117DF /* ja */,
-				D9B910DF2B4660E800E117DF /* ko */,
-				D9B910E02B4660E800E117DF /* pt-BR */,
-				D9B910E12B4660E900E117DF /* ru */,
-				D9B910E22B4660EA00E117DF /* es */,
-				D9B910E32B4660EA00E117DF /* de */,
-			);
-			name = gameWordsMore.json;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
