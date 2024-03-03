@@ -2,7 +2,7 @@
 
 - [x] Localize all UI strings
 - [x] Change the game strings to have one file and only pull in the first 80 if not paid
-- [ ] Localize game strings
+- [x] Localize game strings
 - [ ] Integrate Fastlane for screenshots and publish to App Store
 - [ ] Publish to App Store
 
@@ -18,16 +18,47 @@ NO do v2
 
 ---
 
+## How to localize game strings
+
 Intern
 
-> I am writing a game based on pairs of words. some words need clarification because they are provided without any context. Also fix case to only use upper case for proper nouns. For example ` ["Spring","Summer"],` needs to change to ` ["spring (season)","summer"],` because Spring could also be interpreted as "a spring" which is a mechanical device. Provide the complete updated version.
+> I am building a game based on pairs of words. Players will privately see one word or the other and talk with the other players to determine if their word is the same as the others.
+>
+> Therefore if the word has multiple meanings like "Apple" which means a fruit and also the name of a company, then it is necessary to show this as "apple (fruit)" or "Apple (company)". Notice how the proper noun is in upper case and the normal noun is in lower case.
+>
+> This game is fun if most people know the words in the game. For example, a reference to the singer Garth Brooks or Dolly Parton is dated, most people will not know them, and it is a poor choice for this game. For players in the United States Taylor Swift and Britney Spears are a better choice because of their popularity across different demographics.
+>
+> Additionally, the game is fun only if the pairs of words are similar—a description for one of the items may inadvertantly also describe the other item. For example "spring (season)" and "summer" is a good pair because the weather for these seasons are similar, when describing one, people may think you are describing the other. Whereas "apple (fruit)" and "Apple (company)" is a bad pair because the way you would describe an apple ("it can rot", "has a core and seeds") are nothing close to the Apple company that makes iPhones.
+>
+> The words are saved in a JSON file. Usually each line is a pair. But if more than two words really are similar, like "McDonald's", "Wendy's (restaurant)" and "Burger King" they can all be on the same line. The game engine will randomly pick two items from the line.
+>
+> Instructions: please review the below game words list which is intended for a English-United States audience then make any necessary changes, add an additional 15 lines at end, and output the complete updated file.
+>
+> [PASTE LIST]
+
+And then
+
+> Great job!
+>
+> Instructions: please review the below game words list which is intended for a China-Simplified Chinese audience then make any necessary changes, steal any ideas from the prior list(s), add an additional 15 lines at end, and output the complete updated file.
+>
+> [PASTE LIST]
+
+Or
+
+> Great job!
+>
+> Instructions: please continue this theme, understanding our game, and produce word pairs that are relevant for an audience in Arabic
+>
+> 
+
+Or
+
+> do the same thing with 100 word pairs localized for Thailand/Thai. make sure any context notes are also localized for this language
 
 
 
-> I am writing a game based on pairs of words that are similar. A player will see one of the words, and other players will see the other word. You can see I provided context when reading that word by itself is not clean. This example is for a US American audience.
-> Do the same thing localized for a Chinese/simplified audience with 100 rows using words/phrases that will be familiar to them. Output using a valid JSON file compatible with the format above.
 
----
 
 Localize
 

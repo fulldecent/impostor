@@ -14,7 +14,7 @@ struct ImpostorGame: Equatable, Hashable {
     init(numberOfPlayers: Int) {
         let numberOfPlayers = numberOfPlayers.clamped(to: 3...12)
         let impostorIndex = Int.random(in: 0..<numberOfPlayers)
-        let (normalWord, impostorWord) = Self.randomWordPair()
+        let (normalWord, impostorWord) = Self.randomGameWords()
         
         players = (0..<numberOfPlayers).map({ playerIndex in
             Player(
@@ -92,7 +92,7 @@ struct ImpostorGame: Equatable, Hashable {
         return try! JSONSerialization.jsonObject(with: jsonData, options: []) as! [[String]]
     }()
     
-    private static func randomWordPair() -> (String, String) {
+    private static func randomGameWords() -> (String, String) {
         let didIAP = UserDefaults.standard.integer(forKey: "didIAP") > 0
         let wordSet = didIAP
         ? allWordSets.randomElement()!
