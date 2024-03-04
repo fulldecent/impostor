@@ -9,6 +9,29 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>ImpostorUITests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>D9F4BFB82B41BDB800E500DA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D9F4BFC82B41BDB900E500DA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D9F4BFD22B41BDB900E500DA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>

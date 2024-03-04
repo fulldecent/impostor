@@ -14,7 +14,19 @@ NO do v2
 
 1. Redraw all images to SVG // NO DO V2
 
+2. Set up auto version increment
 
+   > [01:50:00]: To enable fastlane to handle automatic version incrementing for you, please follow this guide:
+   >
+   > [01:50:00]: https://developer.apple.com/library/content/qa/qa1827/_index.html
+   >
+   > [01:50:00]: Afterwards check out the fastlane docs on how to set up automatic build increments
+   >
+   > [01:50:00]: https://docs.fastlane.tools/getting-started/ios/beta-deployment/#best-practices
+
+---
+
+Set up auto version increment
 
 ---
 

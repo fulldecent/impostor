@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D91C5DA42B965E21006BC052 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C5DA32B965E21006BC052 /* SnapshotHelper.swift */; };
 		D95A75D72B6B53D4001FBF33 /* VotingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95A75D62B6B53D4001FBF33 /* VotingScene.swift */; };
 		D95B5BE02B51F114006EFE01 /* ImpostorGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95B5BDF2B51F114006EFE01 /* ImpostorGame.swift */; };
 		D95B5BE62B5322A3006EFE01 /* CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95B5BE52B5322A3006EFE01 /* CameraPicker.swift */; };
@@ -34,7 +35,6 @@
 		D9F4BFC12B41BDB900E500DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F4BFC02B41BDB900E500DA /* Assets.xcassets */; };
 		D9F4BFCE2B41BDB900E500DA /* ImpostorGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4BFCD2B41BDB900E500DA /* ImpostorGameTests.swift */; };
 		D9F4BFD82B41BDB900E500DA /* ImpostorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4BFD72B41BDB900E500DA /* ImpostorUITests.swift */; };
-		D9F4BFDA2B41BDB900E500DA /* ImpostorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4BFD92B41BDB900E500DA /* ImpostorUITestsLaunchTests.swift */; };
 		D9F4BFEC2B4233B300E500DA /* PlayerImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F4BFEB2B4233B300E500DA /* PlayerImages.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D91C5DA32B965E21006BC052 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		D95A75D62B6B53D4001FBF33 /* VotingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingScene.swift; sourceTree = "<group>"; };
 		D95B5BDF2B51F114006EFE01 /* ImpostorGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorGame.swift; sourceTree = "<group>"; };
 		D95B5BE52B5322A3006EFE01 /* CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPicker.swift; sourceTree = "<group>"; };
@@ -127,7 +128,6 @@
 		D9F4BFCD2B41BDB900E500DA /* ImpostorGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorGameTests.swift; sourceTree = "<group>"; };
 		D9F4BFD32B41BDB900E500DA /* ImpostorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImpostorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F4BFD72B41BDB900E500DA /* ImpostorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorUITests.swift; sourceTree = "<group>"; };
-		D9F4BFD92B41BDB900E500DA /* ImpostorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D9F4BFEB2B4233B300E500DA /* PlayerImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerImages.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -235,8 +235,8 @@
 		D9F4BFD62B41BDB900E500DA /* ImpostorUITests */ = {
 			isa = PBXGroup;
 			children = (
+				D91C5DA32B965E21006BC052 /* SnapshotHelper.swift */,
 				D9F4BFD72B41BDB900E500DA /* ImpostorUITests.swift */,
-				D9F4BFD92B41BDB900E500DA /* ImpostorUITestsLaunchTests.swift */,
 			);
 			path = ImpostorUITests;
 			sourceTree = "<group>";
@@ -460,8 +460,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9F4BFDA2B41BDB900E500DA /* ImpostorUITestsLaunchTests.swift in Sources */,
 				D9F4BFD82B41BDB900E500DA /* ImpostorUITests.swift in Sources */,
+				D91C5DA42B965E21006BC052 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
