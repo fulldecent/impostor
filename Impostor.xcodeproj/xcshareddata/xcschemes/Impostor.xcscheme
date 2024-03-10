@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1520"
-   version = "2.2">
+   LastUpgradeVersion = "1530"
+   version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
-      buildImplicitDependencies = "YES">
+      buildImplicitDependencies = "YES"
+      buildArchitectures = "Automatic">
       <BuildActionEntries>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <AutocreatedTestPlanReference>
-            </AutocreatedTestPlanReference>
-         </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
@@ -23,7 +15,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D9F4BFB82B41BDB800E500DA"
+               BlueprintIdentifier = "D91222A02B9E2BE2008A2547"
                BuildableName = "Impostor.app"
                BlueprintName = "Impostor"
                ReferencedContainer = "container:Impostor.xcodeproj">
@@ -43,7 +35,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D9F4BFC82B41BDB900E500DA"
+               BlueprintIdentifier = "D91222B02B9E2BE6008A2547"
                BuildableName = "ImpostorTests.xctest"
                BlueprintName = "ImpostorTests"
                ReferencedContainer = "container:Impostor.xcodeproj">
@@ -54,7 +46,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D9F4BFD22B41BDB900E500DA"
+               BlueprintIdentifier = "D91222BA2B9E2BE6008A2547"
                BuildableName = "ImpostorUITests.xctest"
                BlueprintName = "ImpostorUITests"
                ReferencedContainer = "container:Impostor.xcodeproj">
@@ -76,7 +68,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D9F4BFB82B41BDB800E500DA"
+            BlueprintIdentifier = "D91222A02B9E2BE2008A2547"
             BuildableName = "Impostor.app"
             BlueprintName = "Impostor"
             ReferencedContainer = "container:Impostor.xcodeproj">
@@ -93,7 +85,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D9F4BFB82B41BDB800E500DA"
+            BlueprintIdentifier = "D91222A02B9E2BE2008A2547"
             BuildableName = "Impostor.app"
             BlueprintName = "Impostor"
             ReferencedContainer = "container:Impostor.xcodeproj">

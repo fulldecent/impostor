@@ -13,12 +13,12 @@ final class ImpostorUITests: XCTestCase {
     @MainActor
     override func setUp() async throws {
         app = XCUIApplication()
-        setupSnapshot(app)
+//        setupSnapshot(app)
         app.launch()
     }
 
     @MainActor
     func testScreenshotLibrary() throws {
-      snapshot("Library")
+//      snapshot("Library")
     }
 }

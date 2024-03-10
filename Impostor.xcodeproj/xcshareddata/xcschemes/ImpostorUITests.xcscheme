@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1520"
-   version = "1.7">
+   LastUpgradeVersion = "1530"
+   version = "2.2">
    <BuildAction
       parallelizeBuildables = "YES"
-      buildImplicitDependencies = "YES">
+      buildImplicitDependencies = "YES"
+      buildArchitectures = "Automatic">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <AutocreatedTestPlanReference>
+            </AutocreatedTestPlanReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -18,7 +30,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D9F4BFD22B41BDB900E500DA"
+               BlueprintIdentifier = "D91222BA2B9E2BE6008A2547"
                BuildableName = "ImpostorUITests.xctest"
                BlueprintName = "ImpostorUITests"
                ReferencedContainer = "container:Impostor.xcodeproj">
@@ -36,16 +48,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D9F4BFB82B41BDB800E500DA"
-            BuildableName = "Impostor.app"
-            BlueprintName = "Impostor"
-            ReferencedContainer = "container:Impostor.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -56,9 +58,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D9F4BFB82B41BDB800E500DA"
-            BuildableName = "Impostor.app"
-            BlueprintName = "Impostor"
+            BlueprintIdentifier = "D91222BA2B9E2BE6008A2547"
+            BuildableName = "ImpostorUITests.xctest"
+            BlueprintName = "ImpostorUITests"
             ReferencedContainer = "container:Impostor.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

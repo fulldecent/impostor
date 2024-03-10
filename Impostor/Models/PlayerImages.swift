@@ -52,8 +52,12 @@ class PlayerImages: ObservableObject {
     }
 
     private func url(forPlayerIndex index: Int) -> URL {
-        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
-        let fileName = "playerimage-\(index).jpg"
-        return documentsURL.appendingPathComponent(fileName)
+        #if targetEnvironment(simulator)
+            return URL(filePath:"/Users/williamentriken/Developer/impostor/Headshot photos/\(index).jpg")
+        #else
+            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
+            let fileName = "playerimage-\(index).jpg"
+            return documentsURL.appendingPathComponent(fileName)
+        #endif
     }
 }
