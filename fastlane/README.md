@@ -15,13 +15,37 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 ## iOS
 
-### ios screenshots
+### ios make_screenshots
 
 ```sh
-[bundle exec] fastlane ios screenshots
+[bundle exec] fastlane ios make_screenshots
 ```
 
 Generate new localized screenshots
+
+### ios update_screenshots
+
+```sh
+[bundle exec] fastlane ios update_screenshots
+```
+
+Delete and upload new localized screenshots
+
+### ios release
+
+```sh
+[bundle exec] fastlane ios release
+```
+
+Submit a new app version to the App Store
+
+### ios delete_all_screenshots
+
+```sh
+[bundle exec] fastlane ios delete_all_screenshots
+```
+
+Delete all screenshots from App Store Connect
 
 ----
 

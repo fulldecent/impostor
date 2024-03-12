@@ -3,7 +3,14 @@
 - [x] Localize all UI strings
 - [x] Change the game strings to have one file and only pull in the first 80 if not paid
 - [x] Localize game strings
-- [ ] Integrate Fastlane for screenshots and publish to App Store
+- [x] Set up snapshot testing
+- [ ] Run snapshot tests
+- [x] Download metadata
+- [x] Localize metadata
+- [ ] Try upload metadata `bundle exec fastlane deliver upload_metadata`
+
+
+
 - [ ] Publish to App Store
 
 

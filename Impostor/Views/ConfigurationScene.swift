@@ -39,9 +39,12 @@ struct ConfigurationScene: View {
                 .bounceAppeared()
             }
             
-            ImpostorButton(systemImageName: "play.fill") {
-                startGameWithPlayerCount(players.count)
-            }
+            Button(
+                action: { startGameWithPlayerCount(players.count) },
+                label: { Image(systemName: "play.fill") }
+            )
+            .buttonStyle(ImpostorButtonStyle())
+            .accessibilityIdentifier("startGame")
 
             bottomBar
         }

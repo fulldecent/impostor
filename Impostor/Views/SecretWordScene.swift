@@ -30,11 +30,15 @@ struct SecretWordScene: View {
         VStack {
             Text("Player \(playerIndex + 1)")
                 .impostorTextStyle()
-
-            ImpostorButton(systemImageName: "eye") {
+            
+            Button(action: {
                 AudioManager.shared.playSoundEffect(named: "peek")
                 showingSecretWord = true
-            }
+            }, label: {
+                Image(systemName: "eye")
+            })
+            .buttonStyle(ImpostorButtonStyle())
+            .accessibilityIdentifier("seeSecretWord")
             
             Spacer()
             

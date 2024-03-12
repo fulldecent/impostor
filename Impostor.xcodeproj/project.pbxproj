@@ -35,6 +35,7 @@
 		D91224372B9E2DBF008A2547 /* camera.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D91224302B9E2DBF008A2547 /* camera.mp3 */; };
 		D91224392B9E2DCD008A2547 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D91224382B9E2DCD008A2547 /* Localizable.xcstrings */; };
 		D912243E2B9E2E36008A2547 /* gameWords.json in Resources */ = {isa = PBXBuildFile; fileRef = D912243D2B9E2E36008A2547 /* gameWords.json */; };
+		D9BEC9B32B9E43D900D4FDB6 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BEC9B02B9E43CA00D4FDB6 /* SnapshotHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,7 @@
 		D91224632B9E2E5B008A2547 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = da; path = da.lproj/gameWords.json; sourceTree = "<group>"; };
 		D91224642B9E2E5B008A2547 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = cs; path = cs.lproj/gameWords.json; sourceTree = "<group>"; };
 		D91224652B9E2E5B008A2547 /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = hr; path = hr.lproj/gameWords.json; sourceTree = "<group>"; };
+		D9BEC9B02B9E43CA00D4FDB6 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = ImpostorUITests/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 		D91222BE2B9E2BE6008A2547 /* ImpostorUITests */ = {
 			isa = PBXGroup;
 			children = (
+				D9BEC9B02B9E43CA00D4FDB6 /* SnapshotHelper.swift */,
 				D91222BF2B9E2BE6008A2547 /* ImpostorUITests.swift */,
 			);
 			path = ImpostorUITests;
@@ -454,6 +457,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D91222C02B9E2BE6008A2547 /* ImpostorUITests.swift in Sources */,
+				D9BEC9B32B9E43D900D4FDB6 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,6 +656,7 @@
 				DEVELOPMENT_TEAM = 8Q693ZG5RN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.word-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -661,7 +666,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.phor.Impostor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -680,6 +685,7 @@
 				DEVELOPMENT_TEAM = 8Q693ZG5RN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.word-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -689,7 +695,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.phor.Impostor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

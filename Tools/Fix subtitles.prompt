@@ -1,0 +1,49 @@
+# Using gpt-4-turbo-preview in playground
+
+We need to edit my iOS app store subtitles in several localizations.
+
+Here is the current draft:
+
+grep -H '.*' **/subtitle.txt                
+
+fastlane/metadata/ar-SA/subtitle.txt:لعبة حفلات لـ 3–12 لاعبين
+fastlane/metadata/ca/subtitle.txt:Un joc de festa per a 3–12 jugadors
+fastlane/metadata/cs/subtitle.txt:Večerní hra pro 3–12 hráčů
+fastlane/metadata/da/subtitle.txt:Et festspil for 3–12 spillere
+fastlane/metadata/de-DE/subtitle.txt:Das Partyspiel für 3–12 Spieler
+fastlane/metadata/el/subtitle.txt:Ένα παιχνίδι πάρτι για 3–12 παίκτες
+fastlane/metadata/en-AU/subtitle.txt:A party game for mates, 3–12 players
+fastlane/metadata/en-GB/subtitle.txt:A social deduction game for 3–12 players
+fastlane/metadata/en-US/subtitle.txt:A party game for 3–12 players
+fastlane/metadata/es-ES/subtitle.txt:Un juego de fiesta para 3–12 jugadores
+fastlane/metadata/es-MX/subtitle.txt:Un juego de fiesta para 3–12 jugadores
+fastlane/metadata/fi/subtitle.txt:Juhlapeli 3–12 pelaajalle
+fastlane/metadata/fr-CA/subtitle.txt:Un jeu de fête pour 3 à 12 joueurs
+fastlane/metadata/fr-FR/subtitle.txt:Un jeu de fête pour 3 à 12 joueurs
+fastlane/metadata/he/subtitle.txt:משחק המסיבות ל-3 עד 12 שחקנים
+fastlane/metadata/hi/subtitle.txt:3–12 खिलाड़ियों के लिए एक पार्टी गेम
+fastlane/metadata/hr/subtitle.txt:Zabavna igra za 3–12 igrača
+fastlane/metadata/hu/subtitle.txt:A tökéletes parti játék 3–12 játékos számára
+fastlane/metadata/id/subtitle.txt:Permainan pesta untuk 3–12 pemain
+fastlane/metadata/ja/subtitle.txt:3～12人用パーティーゲーム
+fastlane/metadata/ko/subtitle.txt:3-12명을 위한 파티 게임
+fastlane/metadata/ms/subtitle.txt:Permainan parti untuk 3–12 pemain
+fastlane/metadata/nl-NL/subtitle.txt:Een partyspel voor 3–12 spelers
+fastlane/metadata/pl/subtitle.txt:Impreza z przyjaciółmi dla 3–12 osób
+fastlane/metadata/pt-BR/subtitle.txt:Um jogo de festa para 3–12 pessoas
+fastlane/metadata/pt-PT/subtitle.txt:Um jogo de festa para 3–12 jogadores
+fastlane/metadata/ro/subtitle.txt:Un joc de petrecere pentru 3–12 jucători
+fastlane/metadata/ru/subtitle.txt:Вечеринка для 3–12 игроков
+fastlane/metadata/sk/subtitle.txt:Párty hra pre 3–12 hráčov
+fastlane/metadata/sv/subtitle.txt:Ett partyspel för 3–12 spelare
+fastlane/metadata/th/subtitle.txt:เกมปาร์ตี้สำหรับ 3–12 ผู้เล่น
+fastlane/metadata/tr/subtitle.txt:3–12 oyuncu için parti oyunu
+fastlane/metadata/uk/subtitle.txt:Вечірній ігровий хіт для компанії від 3 до 12 осіб
+fastlane/metadata/vi/subtitle.txt:Trò chơi tập thể từ 3 đến 12 người chơi
+fastlane/metadata/zh-Hans/subtitle.txt:派对游戏，3-12人参与
+fastlane/metadata/zh-Hant/subtitle.txt:派對遊戲，3至12人適玩
+
+
+Your task is to correct this metadata. Follow all Apple metadata guidelines and requirements. Each entry must be 30 characters or less!
+
+Your output must use echo commands to generate the files. Output only a single script with the non-interactive commands, and no additional commentary or fragmented code blocks. Ensure to use proper string quoting. Output every localization in the same order as the input.

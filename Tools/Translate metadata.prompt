@@ -1,0 +1,35 @@
+# Using gpt-4-turbo-preview in playground
+
+Here is my iOS App Store metadata.
+
+I got this by running `grep -H -r . fastlane/metadata/en-US | cat`
+
+fastlane/metadata/en-US/subtitle.txt:A party game for 3–12 players
+fastlane/metadata/en-US/keywords.txt:imposter,spy,party game,rpg,detective,heads up,drinking game,fps,multiplayer,word game,spelling,clan
+fastlane/metadata/en-US/release_notes.txt:Add Portuguese localization
+fastlane/metadata/en-US/name.txt:Who's the Impostor?
+fastlane/metadata/en-US/description.txt:It's the game that will be your "go to" for parties. Who's the Impostor is the fun and hilarious game that will keep you guessing and wondering which of your friends is being deceptive!
+fastlane/metadata/en-US/description.txt:From singing, to silly accents, to hotly contested facts -- use your best description to describe your own top secret word and convince your friends that you are not the Impostor!
+fastlane/metadata/en-US/description.txt:Play words from dozens of different themes from things you see around the house, celebrities, foods, pop references... or send in your own ideas!
+fastlane/metadata/en-US/description.txt:Features:
+fastlane/metadata/en-US/description.txt:- Play with two friends or up to 12 people.
+fastlane/metadata/en-US/description.txt:- Works in 10 languages based on your phone settings.
+fastlane/metadata/en-US/description.txt:- Easily turns into a drinking game (we aren't allowed to tell you the drinking rules).
+fastlane/metadata/en-US/description.txt:- Saves all your player photo selfies, or share them right to Facebook.
+fastlane/metadata/en-US/description.txt:From all the deception with your friends, the fun will never stop!
+fastlane/metadata/en-US/description.txt:Game-nighters, your app is here.
+
+Here are the instruction for the game:
+
+- A party game / for 3–12 people
+- Everyone sees their secret word / but the impostor's word is different
+- Each round players describe their word / then vote to eliminate one player
+- To win / the impostor must survive with one other player
+
+Your task is to generate new metadata another localization. Follow all Apple metadata guidelines and requirements. Embellish as needed for marketing.
+
+Your output must start with mkdir -p and include echo commands to generate the files. Output only a single script with the non-interactive commands, and no additional commentary or fragmented code blocks. Ensure to use proper string quoting.
+
+Your localization to do has the code:
+
+ar
