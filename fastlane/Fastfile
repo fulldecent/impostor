@@ -11,19 +11,38 @@
 #
 
 # Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
+update_fastlane
 
 default_platform(:ios)
 
 platform :ios do
   desc "Generate new localized screenshots"
-  lane :screenshots do
-    capture_screenshots(workspace: "Impostor.xcworkspace", scheme: "ImpostorUITests")
-    upload_to_app_store(skip_binary_upload: true, skip_metadata: true)
+  lane :make_screenshots do
+    capture_screenshots(scheme: "ImpostorUITests")
   end
 
-  desc "Uplaod screenshots"
-  lane :fd_uploadscreenshots do
-    upload_to_app_store
+  desc "Delete and upload new localized screenshots"
+  lane :update_screenshots do
+    upload_to_app_store(
+      skip_binary_upload: true,
+      skip_metadata: true,
+      overwrite_screenshots: true,
+    )
+  end
+
+  desc "Submit a new app version to the App Store"
+  lane :release do
+    build_app(scheme: "Impostor")
+  end
+
+  desc "Delete all screenshots from App Store Connect"
+  lane :delete_all_screenshots do
+    deliver(
+      submit_for_review: false,
+      skip_metadata: true,
+      skip_binary_upload: true,
+      screenshots_path: "screenshots/empty-dir", # Path to your empty folder
+      force: true, # Skip HTML report verification
+    )
   end
 end

@@ -1,0 +1,56 @@
+# Using gpt-4-turbo-preview in playground
+
+We need to edit my iOS app store keywords in several localizations.
+
+Here is the current draft:
+
+grep -H '.*' */keywords.txt
+ar-SA/keywords.txt:محتال,جاسوس,لعبة حفلات,لعبة تقمص أدوار,محقق,لعبة كلمات,لعبة شرب,لعبة متعددة اللاعبين,لعبة إملاء,قبيلة
+ca/keywords.txt:espia, joc de festa, rpg, detectiu, cap amunt, joc de beure, fps, multijugador
+cs/keywords.txt:podvodník, špion, večírková hra, RPG, detektiv, hlava nahoru, pitná hra, FPS, multiplayer, slovní hra, pravopis, klan
+da/keywords.txt:bedrager,spion,festspil,rollespil,detektiv,heads up,drikkespil,fps,multiplayer,ordspil,stavning,klan
+de-DE/keywords.txt:Betrüger,Spion,Partyspiel,Rollenspiel,Detektiv,Heads Up,Trinkspiel,FPS,Mehrspieler,Wortspiel,Buchstabieren,Clan
+el/keywords.txt:αποστολέας,κατάσκοπος,παιχνίδι πάρτι,rpg,ντετέκτιβ,σκέψου γρήγορα,παιχνίδι ποτού,fps,πολλαπλών παικτών,παιχνίδι λέξεων,ορθογραφία,φυλή
+en-AU/keywords.txt:imposter,spy,party game,rpg,detective,charades,drinking game,fps,multiplayer,word puzzle,spelling,team
+en-GB/keywords.txt:impostor,spy,social game,role play,mystery,party game,charades,drinking game,strategy,multiplayer,guessing,teams
+en-US/keywords.txt:imposter,spy,party game,rpg,detective,heads up,drinking game,fps,multiplayer,word game,spelling,clan
+es-ES/keywords.txt:impostor,espía,juego de fiesta,rpg,detective,charadas,juego de beber,fps,multijugador,juego de palabras,ortografía,clan
+es-MX/keywords.txt:impostor,espía,juego de fiesta,rpg,detective,charadas,juego de beber,fps,multijugador,juego de palabras,ortografía,clan
+fi/keywords.txt:impostori,vakooja,juhlapeli,roolipeli,detektiivi,charades,juomapeli,fps,moninpeli,sanapeli,oikeinkirjoitus,klaani
+fr-CA/keywords.txt:imposteur, espion, jeu de fête, rpg, détective, devine tête, jeu à boire, fps, multijoueur, jeu de mots, orthographe, clan
+fr-FR/keywords.txt:imposteur,espion,jeu de fête,rpg,détective,heads up,jeu à boire,fps,multijoueur,jeu de mot,orthographe,clan
+he/keywords.txt:מתחזה,רגלי,משחק מסיבה,רפ"ג,בלש,משחקי כוסות,משחק יריות,משחקים מרובי משתתפים,משחק מילים,איות,שבט
+hi/keywords.txt:इम्पोस्टर, जासूस, पार्टी गेम, आरपीजी, डिटेक्टिव, हेड्स अप, ड्रिंकिंग गेम, एफपीएस, मल्टीप्लेयर, वर्ड गेम, स्पेलिंग, क्लैन
+hr/keywords.txt:impostor,špijun,zabavna igra,rpg,detektiv,heads up,pijača igra,fps,multiplayer,igra riječi,pravopis,klan
+hu/keywords.txt:imposztor,kém,partijáték,RPG,nyomozó,fej fölötti,ivós játék,FPS,többjátékos,szójáték,betűzés,klán
+id/keywords.txt:penipu, mata-mata, permainan pesta, rpg, detektif, heads up, permainan minum, fps, multiplayer, permainan kata, ejaan, klan
+ja/keywords.txt:インポスター,スパイ,パーティーゲーム,RPG,探偵,ヘッズアップ,飲みゲーム,FPS,マルチプレイ,単語ゲーム,スペリング,クラン
+ko/keywords.txt:임포스터,스파이,파티 게임,RPG,추리,헤즈 업,음주 게임,FPS,멀티플레이어,단어 게임,철자,클랜
+ms/keywords.txt:penipu,perisik,permainan parti,rpg,detektif,heads up,permainan minum,fps,banyak pemain,permainan kata,ejaan,puak
+nl-NL/keywords.txt:bedrieger,spion,feestspel,rpg,detective,partygame,drinkspel,fps,multiplayer,woordspel,spelling,clan
+pl/keywords.txt:impostor,szpieg,imprezowa gra,rpg,detektywistyczna,heads up,pijąca gra,fps,multiplayer,gra słowna,literowanie,klan
+pt-BR/keywords.txt:impostor,espionagem,jogo de festa,rpg,detetive,cabeças erguidas,jogo com bebidas,fps,multijogador,jogo de palavras,ortografia,clã
+pt-PT/keywords.txt:impostor,espia,jogo de festa,rpg,detetive,cabeça para cima,jogo com bebidas,fps,multiplayer,jogo de palavras,ortografia,clã
+ro/keywords.txt:impostor,spion,joc de petrecere,rpg,detectiv,cap sau pajura,joc cu băuturi,fps,multiplayer,joc de cuvinte,ortografie,clan
+ru/keywords.txt:импостер,шпион,вечеринка,рпг,детектив,heads up,питьевая игра,шутер,мультиплеер,словесная игра,орфография,клан
+sk/keywords.txt:impostor,špión,párty hra,rpg,detektív,hra s nápovedou,pitná hra,fps,multiplayer,slovná hra,pravopis,kmeň
+sv/keywords.txt:bedragare,spion,festspel,rollspel,detektiv,charader,drinking game,fps,multiplayer,ordspel,stavning,klan
+th/keywords.txt:แอบแฝง,สายลับ,เกมปาร์ตี้,เกม RPG,นักสืบ,เกมคำโต้ตอบ,เกมดื่ม,เกม Fps,เกมหลายผู้เล่น,เกมคำศัพท์,การสะกดคำ,กลุ่ม
+tr/keywords.txt:içerik bulunamadı,ajan,parti oyunu,rpg,dedektif,kafa oyunu,içki oyunu,fps,çok oyunculu,kelime oyunu,heceleme,kabile
+uk/keywords.txt:імпостор,шпигун,вечірні ігри,рольові ігри,детектив,гра розуму,питна гра,шутер,мультиплеєр,словникова гра,орфографія,клан
+vi/keywords.txt:kẻ mạo danh,điệp viên,trò chơi nhóm,rpg,thám tử,trò chơi uống rượu,fps,đa người chơi,trò chơi từ,đánh vần,clan
+zh-Hans/keywords.txt:冒名顶替者,间谍,派对游戏,角色扮演,侦探,头脑风暴,喝酒游戏,第一人称射击,多人游戏,文字游戏,拼写,部落
+zh-Hant/keywords.txt:臥底,間諜,派對遊戲,角色扮演,偵探,頭上的答案,飲酒遊戲,FPS,多人,文字遊戲,拼字,氏族
+
+Here are the instruction for the game:
+
+- A party game / for 3–12 people
+- Everyone sees their secret word / but the impostor's word is different
+- Each round players describe their word / then vote to eliminate one player
+- To win / the impostor must survive with one other player
+
+Your task is to generate new metadata another localization. Follow all Apple metadata guidelines and requirements. Each entry must be 100 characters or less!
+
+Your output must use echo commands to generate the files. Output only a single script with the non-interactive commands, and no additional commentary or fragmented code blocks. Ensure to use proper string quoting. Output every localization in the same order as the input.
+
+"3-12 players" is a terrible keyword choice. When choosing keywords you want: spy game, party game, drinking game, and then some other keywords that are broad and popular and related to other popular games specifically in that locale.

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1510"
-   version = "1.3">
+   LastUpgradeVersion = "1530"
+   version = "2.2">
    <BuildAction
       parallelizeBuildables = "YES"
-      buildImplicitDependencies = "YES">
+      buildImplicitDependencies = "YES"
+      buildArchitectures = "Automatic">
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
@@ -12,13 +13,8 @@
             buildForProfiling = "NO"
             buildForArchiving = "NO"
             buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D91E58BF1D19B9C80068FFEF"
-               BuildableName = "ImpostorUITests.xctest"
-               BlueprintName = "ImpostorUITests"
-               ReferencedContainer = "container:Impostor.xcodeproj">
-            </BuildableReference>
+            <AutocreatedTestPlanReference>
+            </AutocreatedTestPlanReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
@@ -26,13 +22,15 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      shouldAutocreateTestPlan = "YES">
       <Testables>
          <TestableReference
-            skipped = "NO">
+            skipped = "NO"
+            parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D91E58BF1D19B9C80068FFEF"
+               BlueprintIdentifier = "D91222BA2B9E2BE6008A2547"
                BuildableName = "ImpostorUITests.xctest"
                BlueprintName = "ImpostorUITests"
                ReferencedContainer = "container:Impostor.xcodeproj">
@@ -50,15 +48,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D91E58BF1D19B9C80068FFEF"
-            BuildableName = "ImpostorUITests.xctest"
-            BlueprintName = "ImpostorUITests"
+            BlueprintIdentifier = "D91222A02B9E2BE2008A2547"
+            BuildableName = "Impostor.app"
+            BlueprintName = "Impostor"
             ReferencedContainer = "container:Impostor.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -66,15 +65,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D91E58BF1D19B9C80068FFEF"
-            BuildableName = "ImpostorUITests.xctest"
-            BlueprintName = "ImpostorUITests"
-            ReferencedContainer = "container:Impostor.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

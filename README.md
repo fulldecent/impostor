@@ -1,3 +1,3 @@
-Known problems:
+This is the Impostor iOS game.
 
-- With SPM, our dependencies are referenced online. If they go offline we can't build this project.
+Available on the App Store: https://apps.apple.com/us/app/whos-the-impostor/id784258202?uo=4

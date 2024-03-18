@@ -1,0 +1,1 @@
+Add Portuguese localization
