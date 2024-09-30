@@ -8,3 +8,4 @@ xcuserdata/
 ## FD
 /screenshots
 /fastlane/screenshots
+/.env.default

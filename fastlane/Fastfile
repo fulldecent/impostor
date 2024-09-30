@@ -11,7 +11,7 @@
 #
 
 # Uncomment the line if you want fastlane to automatically update itself
-update_fastlane
+# update_fastlane
 
 default_platform(:ios)
 
@@ -32,8 +32,13 @@ platform :ios do
 
   desc "Submit a new app version to the App Store"
   lane :release do
-    build_app(scheme: "Impostor")
-  end
+    increment_build_number(xcodeproj: "Impostor.xcodeproj")
+    build_app(
+      scheme: "Impostor",
+      project: "Impostor.xcodeproj",
+    )
+    upload_to_app_store()
+  end  
 
   desc "Delete all screenshots from App Store Connect"
   lane :delete_all_screenshots do

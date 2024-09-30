@@ -42,8 +42,25 @@ struct SharePhotoView: View {
         .background(Image("background"))
     }
     
+    func getAppIcon() -> UIImage? {
+        // Access the Info.plist dictionary
+        guard let iconsDictionary = Bundle.main.infoDictionary?["CFBundleIcons"] as? [String: Any],
+              // Access the primary icon dictionary
+              let primaryIcons = iconsDictionary["CFBundlePrimaryIcon"] as? [String: Any],
+              // Get the array of icon filenames
+              let iconFiles = primaryIcons["CFBundleIconFiles"] as? [String],
+              // The last item in the array typically represents the highest resolution icon
+              let iconName = iconFiles.last else {
+            print("Error: Could not retrieve app icon information from Info.plist.")
+            return nil
+        }
+        
+        // Load the UIImage using the icon name
+        return UIImage(named: iconName)
+    }
+    
     var bottomBar: some View {
-        let icon = UIImage(named: "AppIcon")!
+        let icon = getAppIcon() ?? UIImage()
         let appName = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String
             ?? Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String
             ?? ""
