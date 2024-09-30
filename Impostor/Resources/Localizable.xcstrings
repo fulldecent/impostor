@@ -9,12 +9,6 @@
             "value": "%lld لاعبين"
           }
         },
-        "base": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld players"
-          }
-        },
         "ca": {
           "stringUnit": {
             "state": "translated",
@@ -264,12 +258,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "لعبة حفلة"
-          }
-        },
-        "base": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "A party game"
           }
         },
         "ca": {
@@ -523,12 +511,6 @@
             "value": "ابدأ التصويت باستخدام"
           }
         },
-        "base": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Begin voting with"
-          }
-        },
         "ca": {
           "stringUnit": {
             "state": "translated",
@@ -778,12 +760,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "لكن كلمة المُتظاهر مختلفة"
-          }
-        },
-        "base": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "but the impostor's word is different"
           }
         },
         "ca": {
@@ -1037,12 +1013,6 @@
             "value": "يصف اللاعبون كلمتهم في كل جولة"
           }
         },
-        "base": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Each round players describe their word"
-          }
-        },
         "ca": {
           "stringUnit": {
             "state": "translated",
@@ -1294,12 +1264,6 @@
             "value": "الكل يرى كلمتهم السرية"
           }
         },
-        "base": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Everyone sees their secret word"
-          }
-        },
         "ca": {
           "stringUnit": {
             "state": "translated",
@@ -1548,12 +1512,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "تم شراء قائمة الكلمات الموسعة بالفعل"
-          }
-        },
-        "base": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Expanded word list already purchased"
           }
         },
         "ca": {
@@ -1807,12 +1765,6 @@
             "value": "ل٣–١٢ من اللاعبين"
           }
         },
-        "base": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "for 3–12 people"
-          }
-        },
         "ca": {
           "stringUnit": {
             "state": "translated",
@@ -2061,12 +2013,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "صورة جماعية"
-          }
-        },
-        "base": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Group selfie"
           }
         },
         "ca": {
@@ -2319,12 +2265,6 @@
             "value": "تم هزيمة المُتوهِّم"
           }
         },
-        "base": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Impostor was defeated"
-          }
-        },
         "ca": {
           "stringUnit": {
             "state": "translated",
@@ -2575,12 +2515,6 @@
             "value": "فاز المُتوهِّم"
           }
         },
-        "base": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Impostor won"
-          }
-        },
         "ca": {
           "stringUnit": {
             "state": "translated",
@@ -2829,12 +2763,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "اللاعب %lld"
-          }
-        },
-        "base": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Player %lld"
           }
         },
         "ca": {
@@ -3088,12 +3016,6 @@
             "value": "يجب على المخادع البقاء على قيد الحياة مع لاعب واحد آخر"
           }
         },
-        "base": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "the impostor must survive with one other player"
-          }
-        },
         "ca": {
           "stringUnit": {
             "state": "translated",
@@ -3343,12 +3265,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "ثم التصويت لإقصاء لاعب واحد"
-          }
-        },
-        "base": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "then vote to eliminate one player"
           }
         },
         "ca": {
@@ -3602,12 +3518,6 @@
             "value": "للفوز"
           }
         },
-        "base": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "To win"
-          }
-        },
         "ca": {
           "stringUnit": {
             "state": "translated",
@@ -3858,12 +3768,6 @@
             "value": "سري جدا\nلاعينك فقط"
           }
         },
-        "base": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "TOP SECRET\nFor your eyes only"
-          }
-        },
         "ca": {
           "stringUnit": {
             "state": "translated",
@@ -4112,12 +4016,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "أي لاعب تم إقصاءه؟"
-          }
-        },
-        "base": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Which player was eliminated?"
           }
         },
         "ca": {
