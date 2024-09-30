@@ -9,3 +9,5 @@ xcuserdata/
 /screenshots
 /fastlane/screenshots
 /.env.default
+*.ipa
+*.app.dSYM.zip
