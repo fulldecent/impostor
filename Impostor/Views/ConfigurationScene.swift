@@ -108,10 +108,7 @@ struct ConfigurationScene: View {
                 }
             }
 
-            ImpostorButton(systemImageName: "lightbulb") {
-                AudioManager.shared.playSoundEffect(named: "buttonPress")
-                doFeedback()
-            }
+            LanguagePickerButton()
 
             ImpostorButton(systemImageName: storeManager.isPurchased ? "checkmark" : "cart") {
                 AudioManager.shared.playSoundEffect(named: "buttonPress")
@@ -138,13 +135,7 @@ struct ConfigurationScene: View {
         }
     }
 
-    private func doFeedback() {
-        let handle = "@fulldecent"
-        let tweetText = "I have an idea for the Impostor game"
-        // make it URL encoded
-        let url = URL(string: "https://twitter.com/intent/tweet?text=\(handle) \(tweetText)")!
-        UIApplication.shared.open(url)
-    }
+
 }
 
 fileprivate extension View {
