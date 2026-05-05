@@ -8,6 +8,9 @@ xcuserdata/
 ## FD
 /screenshots
 /fastlane/screenshots
-/.env.default
+/fastlane-OLD/screenshots
+/fastlane/api_key.json
+/fastlane/AuthKey_*.p8
+/.env
 *.ipa
 *.app.dSYM.zip

@@ -16,12 +16,14 @@ override_status_bar(true)
 # And maybe check for this iOS version like https://support.apple.com/guide/iphone/iphone-models-compatible-with-ios-17-iphe3fa5df43/ios
 # Also see https://appstoreconnect.apple.com/apps/784258202/distribution/ios/version/inflight for what sizes are required
 devices([
-    "iPhone 15 Pro Max", # 6.7-inch
+    "iPhone 17 Pro Max", # 6.9-inch (covers required 6.7-inch class)
     # None of the available devices are 6.5-inch
     # None of the available devices are 5.4-inch
-    "iPad Pro (12.9-inch) (6th generation)", # 12.9-inch
-    "iPad Pro (11-inch) (4th generation)", # 11-inch
+    "iPad Pro 13-inch (M5)", # 13-inch
+    "iPad Pro 11-inch (M5)", # 11-inch
 ])
+
+concurrent_simulators(false)
 
 # Got this list using:
 # find . | grep 'lproj$' | sed 's/.*\///' | sed 's/.lproj//' | sort | uniq

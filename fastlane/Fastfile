@@ -1,44 +1,329 @@
-# This file contains the fastlane.tools configuration
-# You can find the documentation at https://docs.fastlane.tools
-#
-# For a list of all available actions, check out
-#
-#     https://docs.fastlane.tools/actions
-#
-# For a list of all available plugins, check out
-#
-#     https://docs.fastlane.tools/plugins/available-plugins
-#
+require "dotenv"
+require "json"
+require "fileutils"
+require "shellwords"
 
-# Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
+Dotenv.load
 
 default_platform(:ios)
 
+XCODEPROJ = "Impostor.xcodeproj"
+SCHEME = "Impostor"
+APP_TARGET = "Impostor"
+BUNDLE_ID = "net.phor.Impostor"
+
+def xcodeproj_path
+  File.expand_path(XCODEPROJ, __dir__ + "/..")
+end
+
+def current_marketing_version
+  require "xcodeproj"
+
+  project = Xcodeproj::Project.open(xcodeproj_path)
+  target = project.targets.find { |candidate| candidate.name == APP_TARGET }
+  UI.user_error!("Target #{APP_TARGET} not found in #{xcodeproj_path}") unless target
+
+  target.build_configurations.first.build_settings["MARKETING_VERSION"]
+end
+
+def set_marketing_version!(new_version)
+  require "xcodeproj"
+
+  project = Xcodeproj::Project.open(xcodeproj_path)
+  target = project.targets.find { |candidate| candidate.name == APP_TARGET }
+  UI.user_error!("Target #{APP_TARGET} not found in #{xcodeproj_path}") unless target
+
+  target.build_configurations.each do |config|
+    config.build_settings["MARKETING_VERSION"] = new_version
+  end
+
+  project.save
+end
+
+def current_build_number
+  get_build_number(xcodeproj: xcodeproj_path).to_i
+end
+
+def next_build_number
+  local_build = current_build_number
+  remote_build = 0
+  remote_version_build = 0
+
+  begin
+    remote_build = latest_testflight_build_number(
+      app_identifier: BUNDLE_ID,
+      initial_build_number: [local_build, 1].max,
+      live: false
+    ).to_i
+  rescue => error
+    UI.important("Falling back to local build number because App Store Connect overall build lookup failed: #{error.message}")
+  end
+
+  begin
+    remote_version_build = latest_testflight_build_number(
+      app_identifier: BUNDLE_ID,
+      version: current_marketing_version,
+      initial_build_number: [local_build, 1].max,
+      live: false
+    ).to_i
+  rescue => error
+    UI.important("Falling back to overall build number because App Store Connect version-specific build lookup failed: #{error.message}")
+  end
+
+  [local_build, remote_build, remote_version_build].max + 1
+end
+
+def bump_build_number!(build_number = nil)
+  next_build = build_number || next_build_number
+  increment_build_number(
+    xcodeproj: xcodeproj_path,
+    build_number: next_build.to_s
+  )
+  next_build
+end
+
+# Workaround: upload_to_testflight can return a stale previousBundleVersion
+# mismatch even when the archive has a higher CFBundleVersion.
+def altool_upload!(binary_path, type:)
+  config_path = File.expand_path("api_key.json", __dir__)
+  UI.user_error!("Missing fastlane/api_key.json") unless File.exist?(config_path)
+
+  config = JSON.parse(File.read(config_path))
+  key_id = config.fetch("key_id")
+  issuer_id = config.fetch("issuer_id")
+  key_filepath = File.expand_path(config.fetch("key_filepath"))
+  UI.user_error!("API key file not found at #{key_filepath}") unless File.exist?(key_filepath)
+
+  search_dirs = [
+    File.expand_path("~/.appstoreconnect/private_keys"),
+    File.expand_path("~/.private_keys"),
+    File.expand_path("~/private_keys"),
+    File.expand_path("./private_keys")
+  ]
+
+  unless search_dirs.any? { |dir| File.exist?(File.join(dir, "AuthKey_#{key_id}.p8")) }
+    target_dir = search_dirs.first
+    FileUtils.mkdir_p(target_dir)
+    FileUtils.cp(key_filepath, File.join(target_dir, "AuthKey_#{key_id}.p8"))
+  end
+
+  sh(
+    "xcrun altool --upload-app " \
+    "-f #{Shellwords.escape(binary_path)} " \
+    "-t #{Shellwords.escape(type)} " \
+    "--apiKey #{Shellwords.escape(key_id)} " \
+    "--apiIssuer #{Shellwords.escape(issuer_id)}"
+  )
+end
+
+before_all do
+  config_path = File.expand_path("api_key.json", __dir__)
+  next unless File.exist?(config_path)
+
+  config = JSON.parse(File.read(config_path))
+  app_store_connect_api_key(
+    key_id: config["key_id"],
+    issuer_id: config["issuer_id"],
+    key_filepath: config["key_filepath"],
+    in_house: config.fetch("in_house", false)
+  )
+end
+
+desc "Bump the marketing version. Pass bump:patch (default), bump:minor, or bump:major"
+lane :bump_version do |options|
+  bump_type = options[:bump] || "patch"
+  current = current_marketing_version
+  parts = current.split(".").map(&:to_i)
+  parts << 0 while parts.length < 3
+
+  case bump_type
+  when "major"
+    parts = [parts[0] + 1, 0, 0]
+  when "minor"
+    parts = [parts[0], parts[1] + 1, 0]
+  else
+    parts = [parts[0], parts[1], parts[2] + 1]
+  end
+
+  new_version = parts.join(".")
+  set_marketing_version!(new_version)
+  next_build = bump_build_number!
+  UI.success("Bumped to #{new_version} (build #{next_build})")
+end
+
+desc "Bump only the build number (used before each beta upload)"
+lane :bump_build do |options|
+  requested = options[:build_number]&.to_i
+  next_build = if requested && requested > 0
+    bump_build_number!(requested)
+  else
+    bump_build_number!
+  end
+  UI.success("Bumped build number to #{next_build}")
+end
+
 platform :ios do
+  desc "Capture App Store screenshots"
+  lane :screenshots do
+    capture_screenshots(scheme: "ImpostorUITests")
+  end
+
   desc "Generate new localized screenshots"
   lane :make_screenshots do
-    capture_screenshots(scheme: "ImpostorUITests")
+    screenshots
+  end
+
+  desc "Upload screenshots to App Store Connect"
+  lane :upload_screenshots do
+    upload_to_app_store(
+      app_version: current_marketing_version,
+      skip_binary_upload: true,
+      skip_metadata: true,
+      skip_screenshots: false,
+      overwrite_screenshots: true,
+      force: true,
+      run_precheck_before_submit: false
+    )
   end
 
   desc "Delete and upload new localized screenshots"
   lane :update_screenshots do
+    upload_screenshots
+  end
+
+  desc "Generate screenshots and upload them to App Store Connect"
+  lane :screenshots_and_upload do
+    screenshots
+    upload_screenshots
+  end
+
+  desc "Build a signed release .ipa and upload it to TestFlight"
+  lane :beta do |options|
+    requested_build_number = options[:build_number]&.to_i
+    build_number = if requested_build_number && requested_build_number > 0
+      bump_build_number!(requested_build_number)
+    else
+      bump_build_number!
+    end
+
+    UI.message("Using build number #{build_number}")
+    build_app(
+      project: XCODEPROJ,
+      scheme: SCHEME,
+      configuration: "Release",
+      export_method: "app-store",
+      destination: "generic/platform=iOS",
+      export_xcargs: "-allowProvisioningUpdates",
+      clean: true,
+      include_bitcode: true,
+      output_directory: "build",
+      output_name: "Impostor.ipa",
+      export_options: {
+        uploadSymbols: false
+      }
+    )
+
+    altool_upload!(File.expand_path("../build/Impostor.ipa", __dir__), type: "ios")
+  end
+
+  desc "Capture screenshots, attach a TestFlight build, and submit for review"
+  lane :release do |options|
+    notes = options[:notes]
+    if notes.nil? || notes.strip.empty?
+      notes = UI.input("Release notes (What's New) for en-US:")
+    end
+    UI.user_error!("Release notes are required to submit for review") if notes.nil? || notes.strip.empty?
+
+    selected_build_number = options[:build_number]&.to_s
+    selected_build_number = nil if selected_build_number&.strip&.empty?
+    run_screenshots = options[:screenshots].to_s.downcase != "false"
+
+    screenshots if run_screenshots
+
     upload_to_app_store(
+      app_version: current_marketing_version,
+      build_number: selected_build_number,
       skip_binary_upload: true,
-      skip_metadata: true,
+      skip_metadata: false,
+      skip_screenshots: !run_screenshots,
       overwrite_screenshots: true,
+      release_notes: { "en-US" => notes },
+      submit_for_review: true,
+      automatic_release: true,
+      submission_information: {
+        add_id_info_uses_idfa: false,
+        export_compliance_uses_encryption: false,
+        content_rights_contains_third_party_content: false
+      },
+      force: true,
+      run_precheck_before_submit: false
     )
   end
 
-  desc "Submit a new app version to the App Store"
-  lane :release do
-    increment_build_number(xcodeproj: "Impostor.xcodeproj")
-    build_app(
-      scheme: "Impostor",
-      project: "Impostor.xcodeproj",
+  desc "Submit existing metadata with explicit build (skip metadata upload)"
+  lane :release_submit_only do |options|
+    notes = options[:notes]
+    if notes.nil? || notes.strip.empty?
+      notes = UI.input("Release notes (What's New) for en-US:")
+    end
+    UI.user_error!("Release notes are required to submit for review") if notes.nil? || notes.strip.empty?
+
+    selected_build_number = options[:build_number]&.to_s
+    UI.user_error!("build_number is required") if selected_build_number.nil? || selected_build_number.strip.empty?
+
+    metadata_dir = File.expand_path("./metadata", __dir__)
+    release_notes_by_locale = {}
+    Dir.glob(File.join(metadata_dir, "*", "release_notes.txt")).each do |path|
+      locale = File.basename(File.dirname(path))
+      next if locale == "default"
+
+      content = File.read(path).strip
+      next if content.empty?
+
+      release_notes_by_locale[locale] = content
+    end
+    # Ensure at least one valid What's New payload is always provided.
+    release_notes_by_locale["en-US"] = notes
+
+    upload_to_app_store(
+      app_version: current_marketing_version,
+      build_number: selected_build_number,
+      skip_binary_upload: true,
+      skip_metadata: true,
+      skip_screenshots: true,
+      overwrite_screenshots: true,
+      release_notes: release_notes_by_locale,
+      submit_for_review: true,
+      automatic_release: true,
+      submission_information: {
+        add_id_info_uses_idfa: false,
+        export_compliance_uses_encryption: false,
+        content_rights_contains_third_party_content: false
+      },
+      force: true,
+      run_precheck_before_submit: false
     )
-    upload_to_app_store()
-  end  
+  end
+
+  desc "Run patch bump, TestFlight upload, then App Store submission"
+  lane :full_release do |options|
+    bump_type = options[:bump] || "patch"
+    bump_version(bump: bump_type)
+
+    build_number = options[:build_number]&.to_s
+    build_number = nil if build_number&.strip&.empty?
+
+    beta_options = {}
+    beta_options[:build_number] = build_number if build_number
+    beta(beta_options)
+
+    release_options = {
+      notes: options[:notes],
+      screenshots: options.fetch(:screenshots, true)
+    }
+    release_options[:build_number] = build_number if build_number
+    release(release_options)
+  end
 
   desc "Delete all screenshots from App Store Connect"
   lane :delete_all_screenshots do
@@ -46,8 +331,8 @@ platform :ios do
       submit_for_review: false,
       skip_metadata: true,
       skip_binary_upload: true,
-      screenshots_path: "screenshots/empty-dir", # Path to your empty folder
-      force: true, # Skip HTML report verification
+      screenshots_path: "screenshots/empty-dir",
+      force: true
     )
   end
 end
