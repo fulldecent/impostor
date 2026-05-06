@@ -1,9 +1,6 @@
-require "dotenv"
 require "json"
 require "fileutils"
 require "shellwords"
-
-Dotenv.load
 
 default_platform(:ios)
 
@@ -44,33 +41,12 @@ def current_build_number
   get_build_number(xcodeproj: xcodeproj_path).to_i
 end
 
+# Simple local build number increment per apple-development skill.
+# If upload fails with 'previousBundleVersion' or 'already been used',
+# do a one-time fix: set CURRENT_PROJECT_VERSION to remote highest + 1
+# in the Xcode project, commit, then resume normal local increments.
 def next_build_number
-  local_build = current_build_number
-  remote_build = 0
-  remote_version_build = 0
-
-  begin
-    remote_build = latest_testflight_build_number(
-      app_identifier: BUNDLE_ID,
-      initial_build_number: [local_build, 1].max,
-      live: false
-    ).to_i
-  rescue => error
-    UI.important("Falling back to local build number because App Store Connect overall build lookup failed: #{error.message}")
-  end
-
-  begin
-    remote_version_build = latest_testflight_build_number(
-      app_identifier: BUNDLE_ID,
-      version: current_marketing_version,
-      initial_build_number: [local_build, 1].max,
-      live: false
-    ).to_i
-  rescue => error
-    UI.important("Falling back to overall build number because App Store Connect version-specific build lookup failed: #{error.message}")
-  end
-
-  [local_build, remote_build, remote_version_build].max + 1
+  current_build_number + 1
 end
 
 def bump_build_number!(build_number = nil)
@@ -163,9 +139,12 @@ lane :bump_build do |options|
 end
 
 platform :ios do
-  desc "Capture App Store screenshots"
-  lane :screenshots do
-    capture_screenshots(scheme: "ImpostorUITests")
+  desc "Capture App Store screenshots. Pass locales:en-US,fr-FR or devices:'iPhone 16 Pro' to filter"
+  lane :screenshots do |options|
+    args = { scheme: "ImpostorUITests" }
+    args[:languages] = options[:locales].to_s.split(",").map(&:strip).reject(&:empty?) if options[:locales]
+    args[:devices] = options[:devices].to_s.split(",").map(&:strip).reject(&:empty?) if options[:devices]
+    capture_screenshots(args)
   end
 
   desc "Generate new localized screenshots"
@@ -226,7 +205,7 @@ platform :ios do
     altool_upload!(File.expand_path("../build/Impostor.ipa", __dir__), type: "ios")
   end
 
-  desc "Capture screenshots, attach a TestFlight build, and submit for review"
+  desc "Submit the latest TestFlight build for review"
   lane :release do |options|
     notes = options[:notes]
     if notes.nil? || notes.strip.empty?
@@ -236,16 +215,13 @@ platform :ios do
 
     selected_build_number = options[:build_number]&.to_s
     selected_build_number = nil if selected_build_number&.strip&.empty?
-    run_screenshots = options[:screenshots].to_s.downcase != "false"
-
-    screenshots if run_screenshots
 
     upload_to_app_store(
       app_version: current_marketing_version,
       build_number: selected_build_number,
       skip_binary_upload: true,
       skip_metadata: false,
-      skip_screenshots: !run_screenshots,
+      skip_screenshots: true,
       overwrite_screenshots: true,
       release_notes: { "en-US" => notes },
       submit_for_review: true,
@@ -317,9 +293,18 @@ platform :ios do
     beta_options[:build_number] = build_number if build_number
     beta(beta_options)
 
+    if options.fetch(:screenshots, true)
+      screenshot_options = {
+        locales: options[:locales],
+        devices: options[:devices]
+      }
+      screenshots(screenshot_options)
+      upload_screenshots
+    end
+
     release_options = {
       notes: options[:notes],
-      screenshots: options.fetch(:screenshots, true)
+      screenshots: false
     }
     release_options[:build_number] = build_number if build_number
     release(release_options)

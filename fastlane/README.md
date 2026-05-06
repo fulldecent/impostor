@@ -31,7 +31,6 @@ Bump only the build number (used before each beta upload)
 
 ----
 
-
 ## iOS
 
 ### ios screenshots
@@ -41,6 +40,8 @@ Bump only the build number (used before each beta upload)
 ```
 
 Capture App Store screenshots
+
+Pass `locales:en-US,fr-FR` or `devices:"iPhone 16 Pro"` to filter.
 
 ### ios make_screenshots
 
@@ -88,7 +89,7 @@ Build a signed release .ipa and upload it to TestFlight
 [bundle exec] fastlane ios release
 ```
 
-Capture screenshots, attach a TestFlight build, and submit for review
+Submit the latest TestFlight build for review
 
 ### ios release_submit_only
 
@@ -104,7 +105,7 @@ Submit existing metadata with explicit build (skip metadata upload)
 [bundle exec] fastlane ios full_release
 ```
 
-Run patch bump, TestFlight upload, then App Store submission
+Run patch bump, TestFlight upload, screenshot capture/upload, then App Store submission
 
 ### ios delete_all_screenshots
 
