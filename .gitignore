@@ -13,3 +13,11 @@ xcuserdata/
 /fastlane/AuthKey_*.p8
 *.ipa
 *.app.dSYM.zip
+
+## Documentation and demo files
+*.md
+!README.md
+*.png
+*.jpg
+*.jpeg
+*.gif

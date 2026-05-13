@@ -1,0 +1,32 @@
+name: Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: macos-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: List available simulators
+      run: |
+        xcrun simctl list devices available
+        
+    - name: List available SDKs
+      run: |
+        xcodebuild -showsdks
+    
+    - name: Build and Test
+      run: |
+        xcodebuild clean test \
+          -project Impostor.xcodeproj \
+          -scheme Impostor \
+          -destination 'platform=iOS Simulator,name=iPhone 15' \
+          -only-testing:ImpostorTests \
+          CODE_SIGNING_REQUIRED=NO \
+          CODE_SIGNING_ALLOWED=NO

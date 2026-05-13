@@ -36,6 +36,9 @@
 		D91224392B9E2DCD008A2547 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D91224382B9E2DCD008A2547 /* Localizable.xcstrings */; };
 		D912243E2B9E2E36008A2547 /* gameWords.json in Resources */ = {isa = PBXBuildFile; fileRef = D912243D2B9E2E36008A2547 /* gameWords.json */; };
 		D9BEC9B32B9E43D900D4FDB6 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BEC9B02B9E43CA00D4FDB6 /* SnapshotHelper.swift */; };
+		D9LANG012B9E2CED008A2547 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9LANG002B9E2CED008A2547 /* LanguageManager.swift */; };
+		D9LANG022B9E2CED008A2547 /* LanguagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9LANG012B9E2CED008A2547 /* LanguagePicker.swift */; };
+		D9LANG032B9E2CED008A2547 /* LanguageManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9LANG022B9E2CED008A2547 /* LanguageManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +131,9 @@
 		D91224652B9E2E5B008A2547 /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = hr; path = hr.lproj/gameWords.json; sourceTree = "<group>"; };
 		D979CD802B9FE40100404CEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D9BEC9B02B9E43CA00D4FDB6 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = ImpostorUITests/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		D9LANG002B9E2CED008A2547 /* LanguageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
+		D9LANG012B9E2CED008A2547 /* LanguagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguagePicker.swift; sourceTree = "<group>"; };
+		D9LANG022B9E2CED008A2547 /* LanguageManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				D91222B52B9E2BE6008A2547 /* ImpostorGameTests.swift */,
+				D9LANG022B9E2CED008A2547 /* LanguageManagerTests.swift */,
 			);
 			path = ImpostorTests;
 			sourceTree = "<group>";
@@ -214,6 +221,7 @@
 				D91222D02B9E2CD2008A2547 /* HelpScene.swift */,
 				D91222D32B9E2CD2008A2547 /* ImpostorButton.swift */,
 				D91222D72B9E2CD2008A2547 /* ImpostorTextStyle.swift */,
+				D9LANG012B9E2CED008A2547 /* LanguagePicker.swift */,
 				D91222D62B9E2CD2008A2547 /* PlayerSquare.swift */,
 				D91222D12B9E2CD2008A2547 /* ResultsScene.swift */,
 				D91222D42B9E2CD2008A2547 /* SecretWordScene.swift */,
@@ -228,6 +236,7 @@
 			children = (
 				D91222E72B9E2CED008A2547 /* AudioManager.swift */,
 				D91222E62B9E2CED008A2547 /* ImpostorGame.swift */,
+				D9LANG002B9E2CED008A2547 /* LanguageManager.swift */,
 				D91222E82B9E2CED008A2547 /* PlayerImages.swift */,
 				D91222E92B9E2CED008A2547 /* StoreManager.swift */,
 			);
@@ -442,6 +451,8 @@
 				D91222E12B9E2CD2008A2547 /* PlayerSquare.swift in Sources */,
 				D91222E32B9E2CD2008A2547 /* SharePhotoView.swift in Sources */,
 				D91222EC2B9E2CED008A2547 /* PlayerImages.swift in Sources */,
+				D9LANG012B9E2CED008A2547 /* LanguageManager.swift in Sources */,
+				D9LANG022B9E2CED008A2547 /* LanguagePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +461,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D91222B62B9E2BE6008A2547 /* ImpostorGameTests.swift in Sources */,
+				D9LANG032B9E2CED008A2547 /* LanguageManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
