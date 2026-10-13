@@ -10,6 +10,7 @@ xcuserdata/
 /fastlane/screenshots
 /fastlane-OLD/screenshots
 /fastlane/api_key.json
+/fastlane/report.xml
 /fastlane/AuthKey_*.p8
 *.ipa
 *.app.dSYM.zip

@@ -1,5 +1,7 @@
 # Impostor
 
+[![Build and test](https://github.com/fulldecent/impostor/actions/workflows/build-test.yml/badge.svg)](https://github.com/fulldecent/impostor/actions/workflows/build-test.yml) [![Lint](https://github.com/fulldecent/impostor/actions/workflows/lint.yml/badge.svg)](https://github.com/fulldecent/impostor/actions/workflows/lint.yml)
+
 This is the Impostor iOS game.
 
 Available on the App Store: <https://apps.apple.com/us/app/whos-the-impostor/id784258202?uo=4>
@@ -13,8 +15,6 @@ Every push to `main` runs the tests and uploads an iOS build to TestFlight. It g
 Store text lives in [fastlane/metadata](fastlane/metadata). Screenshots are generated at release time and are not committed. What's New is the newest section of [CHANGELOG.md](CHANGELOG.md).
 
 Release Please opens its pull request as `github-actions`. GitHub holds those checks until a person approves the workflow run.
-
-This follows [swift-app-template](https://github.com/fulldecent/swift-app-template) release 1.1.0 and the release workflow used by [8 Ball Answer](https://github.com/fulldecent/8-ball-answer).
 
 ### Setup
 
@@ -31,3 +31,7 @@ This follows [swift-app-template](https://github.com/fulldecent/swift-app-templa
 The workflow creates the iOS provisioning profile at build time.
 
 App Privacy, and whether the app uses the Advertising Identifier, stay in App Store Connect. fastlane sends the encryption answer and the third-party content answer.
+
+## References
+
+1. This project is built based on [best practices documented in swift-app-template](https://github.com/fulldecent/swift-app-template), release 1.1.0. The [build-and-test workflow](.github/workflows/build-test.yml), the [lint workflow](.github/workflows/lint.yml), and the [release workflow](.github/workflows/release.yml) are that release's three files. [8 Ball Answer](https://github.com/fulldecent/8-ball-answer) is where the template's upload rules were confirmed. This app ships iOS only. There is no Mac target and no `APP_STORE_MAC_INSTALLER_P12` secret. The template's sample app ships iOS and macOS.
