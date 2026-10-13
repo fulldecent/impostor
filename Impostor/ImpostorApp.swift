@@ -20,6 +20,14 @@ private struct ImpostorAppView: View {
   @State private var game: ImpostorGame?
 
   var body: some View {
+    if ProcessInfo.processInfo.arguments.contains("-screenshotHelp") {
+      HelpScene()
+    } else {
+      gameFlow
+    }
+  }
+
+  private var gameFlow: some View {
     ZStack {
       switch game?.status {
       case nil:
