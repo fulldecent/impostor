@@ -13,3 +13,8 @@ xcuserdata/
 /fastlane/AuthKey_*.p8
 *.ipa
 *.app.dSYM.zip
+*.p8
+*.p12
+vendor/bundle/
+.bundle/
+.env
